@@ -1,0 +1,4225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08CV1taQlkRXEdFAz0WFFNIRVVcOkVcU049BxNcWw==","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":1136}</script>
+    <title>Proposal Review: Predicting Bcr-Abl targets using a hybrid information extraction system</title>
+	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
+    <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/highlightjs/github.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/css.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/bootstrap-multiselect.css" />
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
+    
+    
+    
+    
+    
+
+
+	<!-- GoogleAnalytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-48550230-1', 'thinklab.com');
+	ga('require', 'displayfeatures');
+	
+	ga('send', 'pageview');
+
+	</script>
+
+
+
+
+
+
+</head>
+<body >
+  <form id="form_action" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+</form>
+
+	
+
+	<div class="body-wrapper">
+
+		
+
+
+<!-- <div style="height:5px;background-image:url('https://think-lab.s3.amazonaws.com/s/img/top-bg.gif');"></div> -->
+<div class="gradient">
+	<div class="main-review-div header-container">
+
+<table class="full-width" style="height:60px;"><tr>
+	<td style="width:200px;vertical-align:middle;padding-bottom:15px;">
+		<a href="/" style="font-weight:normal;color:#212121;"><img src="https://think-lab.s3.amazonaws.com/s/img/logo.png" width="160"></a>
+	</td><td style="vertical-align:middle;text-align:left;padding-top:6px;width:100%;padding-left:40px;">
+		<ul id="not-search-block"  class="main-header">
+
+
+			
+
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/proposals">Proposals</a></li>
+						<li><a href="/projects">Projects</a></li>
+						<li><a href="/publications">Article discussion</a></li>
+						<li><a href="/discussion">All discussion</a></li>
+					</ul>
+				</li>
+				<li><a href="/leaderboard">Leaderboard</a></li>
+
+			
+				<li><a href="/about">About</a></li>
+			
+
+
+		</ul>
+
+    <ul id="search-block" class="main-header" style="display: none; margin-right: 30px;">
+        <li class="full-width">
+            <form method="get" action="/search">
+			<div class="input-group full-width">
+				<input name="q" type="text" class="form-control search-input">
+			</div>
+            </form>
+        </li>
+    </ul>
+
+	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
+		<ul class="main-header pull-right" style="padding-left: 0;">
+    		
+                <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+            
+
+        </ul>
+    </ul>
+	</td>
+</tr></table>
+
+<!-- <div id="global-search-div" class="main-centered-div" style="display:none;">
+	<input type="text" value="" class="thread-search form-control" placeholder="Search" data-action="/discussion">
+</div> -->
+
+	</div>
+</div>
+
+		
+	  
+
+
+
+	  
+
+
+		
+
+		<div class="dark-head"><div class="main-review-div">
+
+			
+
+	
+
+
+	<div class="header-object-type"></div>
+
+	
+			<a class="btn btn-lg follow-link btn-follow pull-right active tt-top" style="margin-left:20px;" title="Follow project discussion" data-id="17" data-ctype="project" data-is-following="false">&nbsp;</a>
+	
+
+	<h2 class="header-object-name">Predicting Bcr-Abl targets using a hybrid information extraction system</h2>
+
+	
+	<div class="project-team">
+		<a href='/u/tongli'>Tong Shu Li</a>
+		 <!-- &nbsp; &nbsp; doi:<a href="https://doi.org/10.15363/thinklab.17">10.15363/thinklab.17</a> -->
+	</div>
+	
+
+		<!-- <div class="project-team">
+			<b>DOI:</b> <a href="https://doi.org/10.15363/thinklab.17">10.15363/thinklab.17</a>
+		</div> -->
+
+		
+			<div class="project-team">
+			<div class="proj-funding">
+				<b>Funding opportunity:</b>
+				
+					<a href="/funding/5/proposals">International Student Research Fellowships</a>
+				
+			</div>
+			</div>
+		
+
+	<div class="project-team">
+		
+		<div class="proposal-status proposal-status-lg proposal-status-awaiting-funder">Awaiting Funder</div>
+		
+		
+		
+	</div>
+
+
+
+
+	
+
+
+	<!-- <div class="project-team">
+		
+	</div> -->
+
+    <ul class="nav nav-tabs project-nav" style="margin-top:25px;">
+
+		
+
+		
+
+    
+
+		
+	    
+	        <li><a href="/p/HHMI_Bcr_Abl/proposal">Proposal</a></li>
+	    
+	    
+		
+
+		<li><a href="/p/HHMI_Bcr_Abl/discussion"><span class="nav-fig">5</span>Discussions</a></li>
+
+		
+			<li><a href="/p/HHMI_Bcr_Abl/leaderboard"><span class="nav-fig">6</span>Reviewers</a></li>
+		
+
+		
+
+		
+
+
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown"><span style="opacity:0.5">More <span class="caret"></span></span></a>
+            <ul class="dropdown-menu" style="font-size:13px;background-color:#819ec8">
+
+				
+
+				
+
+            <li><a href="/p/HHMI_Bcr_Abl/followers"><span class="nav-fig">7</span>Followers</a></li>
+            </ul>
+        </li>
+
+			
+
+    </ul>
+
+
+
+		</div></div>
+		
+<div id="review-toolbar">
+  <div class="review-toolbar-main">
+    <div id="review-toolbar-inner">
+
+    
+      <!-- <div id="review-toolbar-all" class="review-group" style="display:none;">
+        <a class="review-stats all-activity-link"><span class="glyphicon glyphicon-arrow-left"></span> All</a>
+      </div> -->
+      <div class="review-group">
+        <div class="dropdown" style="display:inline-block;">
+          <a href="#" id="activity-dropdown" class="review-stats dropdown-toggle activity-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
+          <ul class="dropdown-menu" aria-labelledby="activity-dropdown">
+            <li><a class="all-activity-link">All Activity</a></li>
+            <li><a class="unresolved-link">Unresolved</a></li>
+            <li role="separator" class="divider"></li>
+            
+              <li><a class="profile-activity-link" data-profile-id="48"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/48_small.jpg' width='30' height='30'> &nbsp;Benjamin Good</a></li>
+            
+              <li><a class="profile-activity-link" data-profile-id="17"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/17_small.jpg' width='30' height='30'> &nbsp;Daniel Himmelstein</a></li>
+            
+              <li><a class="profile-activity-link" data-profile-id="187"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'> &nbsp;Obi Griffith</a></li>
+            
+              <li><a class="profile-activity-link" data-profile-id="180"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/180_small.jpg' width='30' height='30'> &nbsp;Tim Putman</a></li>
+            
+              <li><a class="profile-activity-link" data-profile-id="181"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/181_small.jpg' width='30' height='30'> &nbsp;Andrew Su</a></li>
+            
+            <!-- <li role="separator" class="divider"></li>
+            
+              <li><a class="tt-top annotate-type-item" title="Strong point" data-id="1">
+                <span class="anno-bullet" style="background-color: #b5ff80"><span class="glyphicon glyphicon-arrow-up"></span></span>
+                 Strong point
+              </a></li>
+            
+              <li><a class="tt-top annotate-type-item" title="Needs specificity" data-id="4">
+                <span class="anno-bullet" style="background-color: #ff80ff"><span class="glyphicon glyphicon-screenshot"></span></span>
+                 Needs specificity
+              </a></li>
+            
+              <li><a class="tt-top annotate-type-item" title="Suggest expansion" data-id="2">
+                <span class="anno-bullet" style="background-color: #80ffff"><span class="glyphicon glyphicon-fullscreen"></span></span>
+                 Suggest expansion
+              </a></li>
+            
+              <li><a class="tt-top annotate-type-item" title="Difficult to read/understand" data-id="3">
+                <span class="anno-bullet" style="background-color: #ffca7f"><span class="glyphicon glyphicon-font"></span></span>
+                 Difficult to read/understand
+              </a></li>
+            
+              <li><a class="tt-top annotate-type-item" title="Error/inaccuracy" data-id="6">
+                <span class="anno-bullet" style="background-color: #ff8080"><span class="glyphicon glyphicon-exclamation-sign"></span></span>
+                 Error/inaccuracy
+              </a></li>
+            
+              <li><a class="tt-top annotate-type-item" title="Less is better" data-id="5">
+                <span class="anno-bullet" style="background-color: #80bfff"><span class="glyphicon glyphicon-remove"></span></span>
+                 Less is better
+              </a></li>
+             -->
+          </ul>
+        </div>
+        <a class='review-stats annotations-link tt-bottom' title="Annotations (Hotkey: A)">
+        <!-- <span class="review-stats-label"><span class="glyphicon glyphicon-pencil"></span></span> -->
+          <span class="review-stats-figure count-annotations"></span>
+          <span class="review-stats-label"><span style="text-decoration:underline">A</span>nnotations</span>
+          <!-- <span class="review-stats-label"><span class="glyphicon glyphicon-pencil"></span></span> -->
+        </a>
+        <a class='review-stats comments-link tt-bottom' title="Comments (Hotkey: C)">
+        <!-- <span class="review-stats-label"><span class="glyphicon glyphicon-comment"></span></span> -->
+          <span class="review-stats-figure count-comments"></span>
+          <span class="review-stats-label"><span style="text-decoration:underline">C</span>omments</span>
+          <!-- <span class="review-stats-label"><span class="glyphicon glyphicon-comment"></span></span> -->
+        </a>
+        <a style='display:none;' class='review-stats comment-groups-link tt-bottom' title="Comment Groups (Hotkey: C)">
+        <!-- <span class="review-stats-label"><span class="glyphicon glyphicon-comment"></span></span> -->
+          <span class="review-stats-figure count-comment-groups"></span>
+          <span class="review-stats-label"><span style="text-decoration:underline">C</span>omment Groups</span>
+          <!-- <span class="review-stats-label"><span class="glyphicon glyphicon-comment"></span></span> -->
+        </a>
+      </div>
+    
+
+
+
+
+    
+
+    <div class="review-group unread-comments-div">
+      <a class="review-stats tt-bottom" id="next_comment_button" title="(Hotkey: N)">
+        <!-- <span class="glyphicon glyphicon-comment"></span> -->
+        <span class="review-stats-figure" id="next_comment_button_count"></span>
+        <span style="text-decoration:underline;">N</span>ew Comments
+      </a>
+    </div>
+
+    <!--  -->
+
+
+      <div id="show-hl-details"></div>
+
+
+    <div class="progress progress-review pull-right">
+      <div id="progress_bar" class="progress-bar progress-bar-primary"></div>
+      <div id="scroll_bar" class="progress-bar progress-bar-scroll"></div>
+    </div>
+
+  </div>
+  <div class="review-toolbar-shadow"></div>
+</div>
+</div>
+
+<div style="height:66px;"></div>
+
+		<div class="main-review-div" style="margin-top:40px;padding-bottom:340px">
+	    
+
+  <div style="display:none;">
+    <div id="hl-toolbar-save" class="hl-toolbar">
+  <table style="width:450px;margin-bottom:5px;">
+    <tr>
+      <td style="width:50%">
+        
+          <a class="save-hl-icon tt-right" data-id="1" title=""><span class="icon-bg" style="background-color: #b5ff80"><span class="glyphicon glyphicon-arrow-up"></span></span><span class="icon-text">Strong point</span></a>
+          
+        
+          <a class="save-hl-icon tt-right" data-id="4" title=""><span class="icon-bg" style="background-color: #ff80ff"><span class="glyphicon glyphicon-screenshot"></span></span><span class="icon-text">Needs specificity</span></a>
+          
+        
+          <a class="save-hl-icon tt-right" data-id="2" title=" "><span class="icon-bg" style="background-color: #80ffff"><span class="glyphicon glyphicon-fullscreen"></span></span><span class="icon-text">Suggest expansion</span></a>
+          </td><td style="width:50%">
+        
+          <a class="save-hl-icon tt-right" data-id="3" title=" "><span class="icon-bg" style="background-color: #ffca7f"><span class="glyphicon glyphicon-font"></span></span><span class="icon-text">Difficult to read/understand</span></a>
+          
+        
+          <a class="save-hl-icon tt-right" data-id="6" title=""><span class="icon-bg" style="background-color: #ff8080"><span class="glyphicon glyphicon-exclamation-sign"></span></span><span class="icon-text">Error/inaccuracy</span></a>
+          
+        
+          <a class="save-hl-icon tt-right" data-id="5" title=""><span class="icon-bg" style="background-color: #80bfff"><span class="glyphicon glyphicon-remove"></span></span><span class="icon-text">Less is better</span></a>
+          
+        
+      </td>
+    </tr>
+  </table>
+
+  <div class="toolbar-comment-links">
+    
+      <a class="add-inline-comment" style="font-weight:bold;"><span class="icon-bg" style="background-color: silver"><span class="glyphicon glyphicon-comment"></span></span> <span class="icon-text">Add inline comment</span></a>
+      <a class="add-discussion" style="font-weight:bold;" data-href="/p/HHMI_Bcr_Abl/discussion/new?review=141"><span class="icon-bg" style="background-color: silver"><span class="glyphicon glyphicon-comment"></span></span> <span class="icon-text">Start discussion</span></a>
+    
+  </div>
+
+</div>
+
+    
+  </div>
+
+
+  <!-- Back to <a href="/p/HHMI_Bcr_Abl/proposal">document</a> -->
+
+  
+
+
+
+  
+
+
+
+
+
+
+    
+
+      
+
+      
+    
+
+
+
+
+
+
+<!-- </li> -->
+<!-- <li></li>
+<li>Click <strong>Add comment</strong> to add a minor point of feedback as an inline comment.</li>
+<li>Click <strong>Start discussion</strong> if any of the following are true:
+  <ul style="font-size:13px;">
+    <li>Your comment has the potential to lead to significant discussion</li>
+    <li>You'd like to draw more people into the conversation by tagging it</li>
+    <li>You think it makes sense to have your post indexed and searchable individually</li>
+    <li>You believe you have found a serious flaw in the proposal</li>
+  </ul>
+</li> -->
+<!-- </ol> -->
+
+
+
+
+  <table class="project-table" style="height:100%">
+    <tr>
+      <td class="main-table-content" style="padding-right:40px;padding-left:50px;padding-top:30px;">
+
+        
+
+<div class="document-body">
+
+  <div id="document_body">
+<div class="section-outer target-hl pl-target" id="section-1" data-num="1">
+
+	<div style="position:relative;">
+		
+			<a href="#section-1" class="pl-icon"><span class="glyphicon glyphicon-link"></span></a>
+		
+		<div class="section-profiles"></div>
+		<div class="section-main"><h1 class="doc-review-title">Predicting Bcr-Abl targets using a hybrid information extraction system</h1><p>Chronic myeloid leukemia (CML) is a disorder of uncontrolled leukocyte proliferation caused by a chromosome translocation resulting in Bcr-Abl, a constitutively active tyrosine kinase <span class="citation">[<a href="/doi/10.1002/ajh.24221" class="citation" data-key="10.1002/ajh.24221">1</a>, <a href="/doi/10.1126/science.2406902" class="citation" data-key="10.1126/science.2406902">2</a>]</span>. Over a thousand Americans die from CML each year due to resistance to existing therapies like imatinib <span class="citation">[<a href="http://www.cancer.org/acs/groups/content/@editorial/documents/document/acspc-044552.pdf" class="citation" data-key="cancer_facts">3</a>, <a href="http://www.ncbi.nlm.nih.gov/pubmed/26458439" class="citation" data-key="kimura2015">4</a>, <a href="/doi/10.2174/1568009615666150921141004" class="citation" data-key="10.2174/1568009615666150921141004">5</a>]</span>. Difficulties in selectively inhibiting Bcr-Abl have shifted drug development towards targeting downstream Bcr-Abl interactors, many of which are still unknown <span class="citation">[<a href="http://www.njmonline.nl/getpdf.php?id=1107" class="citation" data-key="thielen2011">6</a>]</span>. Identifying new Bcr-Abl targets would spur drug development and lead to novel CML treatments.</p>
+
+</div>
+	</div>
+
+</div>
+
+<div class="section-outer target-hl pl-target" id="section-2" data-num="2">
+
+	<div style="position:relative;">
+		
+			<a href="#section-2" class="pl-icon"><span class="glyphicon glyphicon-link"></span></a>
+		
+		<div class="section-profiles"></div>
+		<div class="section-main"><a name="proposal"></a><div class="figure" figure-id="proposal"><div class="figure-content"><img src="http://think-lab.s3.amazonaws.com/m/figures/16.jpg"></div>
+            <div class="signature-1">
+                <div class="figure-title">Figure 1. Informatics workflow for predicting Bcr-Abl targets.</div>
+                <div class="figure-description"><p>Biomedical publications are converted into a structured knowledge network using a hybrid information extraction system. I hypothesize that such a network can be used to predict novel Bcr-Abl targets.</p></div>
+            </div>
+        </div>
+
+</div>
+	</div>
+
+</div>
+
+<div class="section-outer target-hl pl-target" id="section-3" data-num="3">
+
+	<div style="position:relative;">
+		
+			<a href="#section-3" class="pl-icon"><span class="glyphicon glyphicon-link"></span></a>
+		
+		<div class="section-profiles"></div>
+		<div class="section-main"><p>Informatics techniques utilizing knowledge networks built from the biomedical literature have successfully identified novel p53 kinases and prostate cancer drugs <span class="citation">[<a href="/doi/10.4137/CIN.S13889" class="citation" data-key="10.4137/CIN.S13889">7</a>, <a href="/doi/10.1145/2623330.2623667" class="citation" data-key="10.1145/2623330.2623667">8</a>]</span>. By exhaustively processing millions of documents, informatics techniques discover insights previously missed by individual scientists. However, existing computer programs cannot extract a significant portion of important information due to limitations like being able to only process individual sentences <span class="citation">[<a href="/doi/10.1016/j.jbi.2014.05.013" class="citation" data-key="10.1016/j.jbi.2014.05.013">9</a>]</span>. Improvements to processing programs would increase the breadth and depth of extractable information <span class="citation">[<a href="/doi/10.1007/s11390-010-9313-5" class="citation" data-key="10.1007/s11390-010-9313-5">10</a>, <a href="/doi/10.1186/gb-2008-9-s2-s7" class="citation" data-key="10.1186/gb-2008-9-s2-s7">11</a>]</span>. Crowdsourcing, an approach using groups of untrained experts to perform complex tasks, has been applied to predict protein and mRNA structure and mine biomedical text <span class="citation">[<a href="/doi/10.1073/pnas.1313039111" class="citation" data-key="10.1073/pnas.1313039111">12</a>, <a href="/doi/10.1038/nature09304" class="citation" data-key="10.1038/nature09304">13</a>, <a href="/doi/10.1093/bioinformatics/btt333" class="citation" data-key="10.1093/bioinformatics/btt333">14</a>]</span>. Machine learning (ML) is an analytical technique that allows programs, or classifiers, to infer patterns from provided data <span class="citation">[<a href="https://mitpress.mit.edu/books/introduction-machine-learning-0" class="citation" data-key="alpaydin2014">15</a>]</span>.</p>
+
+</div>
+	</div>
+
+</div>
+
+<div class="section-outer target-hl pl-target" id="section-4" data-num="4">
+
+	<div style="position:relative;">
+		
+			<a href="#section-4" class="pl-icon"><span class="glyphicon glyphicon-link"></span></a>
+		
+		<div class="section-profiles"></div>
+		<div class="section-main"><p>I propose to identify cytoplasmic Bcr-Abl targets using an informatics technique combining crowdsourcing and automated text mining (<a href="#proposal">Figure 1</a>). I will develop an information extraction workflow using crowdsourcing and integrate machine learning methods for automated pattern recognition. This will allow a higher number of documents to be processed than what is possible with crowdsourcing alone at a quality higher than what is currently possible with automated programs. Applying the hybrid method to the literature surrounding CML and Bcr-Abl will answer the following two questions: 1) What are the limitations of existing automated information extraction programs? 2) What are previously unidentified targets of Bcr-Abl? Researchers in the natural language processing and drug discovery domains have long sought answers to these questions.</p>
+
+</div>
+	</div>
+
+</div>
+
+<div class="section-outer target-hl pl-target" id="section-5" data-num="5">
+
+	<div style="position:relative;">
+		
+			<a href="#section-5" class="pl-icon"><span class="glyphicon glyphicon-link"></span></a>
+		
+		<div class="section-profiles"></div>
+		<div class="section-main"><h2 id="specific-aims">Specific Aims</h2>
+
+<h3>Aim 1: Validate non-expert information extraction ability</h3>
+
+<p>The first step to developing a hybrid information extraction technique is to demonstrate that non-experts can read and interpret scientific publications. This step is necessary to ensure that the assertions extracted by the system can be trusted, a common problem in interpreting output of purely automated methods. In preliminary experiments we have determined that the pooled judgments of six non-experts is almost as accurate as domain experts at identifying biological concepts in text (<a href="#proof">Figure 2a</a>). On a more complex task of determining chemical-induced diseases, we found that using as few as four non-experts already gave accuracies of 65% (<a href="#proof">Figure 2b</a>), demonstrating that non-experts can interpret publications with little training. I will expand the difficulty and variety of tasks, and continue to evaluate worker performance by comparing performance to gold standards produced by expert biocurators.</p>
+
+</div>
+	</div>
+
+</div>
+
+<div class="section-outer target-hl pl-target" id="section-6" data-num="6">
+
+	<div style="position:relative;">
+		
+			<a href="#section-6" class="pl-icon"><span class="glyphicon glyphicon-link"></span></a>
+		
+		<div class="section-profiles"></div>
+		<div class="section-main"><a name="proof"></a><div class="figure" figure-id="proof"><div class="figure-content"><img src="http://think-lab.s3.amazonaws.com/m/figures/17.png"></div>
+            <div class="signature-1">
+                <div class="figure-title">Figure 2. Non-experts can interpret biomedical text.</div>
+                <div class="figure-description"><p><strong>a)</strong> Non-expert performance on a disease annotation task steadily improves as the number of workers increases, eventually reaching that of a domain expert. <strong>b)</strong> On a more complex chemical-disease relation identification task, non-experts found 56% of relations picked by experts, but 75% of the predictions were correct, leading to a overall performance of 65%.</p></div>
+            </div>
+        </div>
+
+</div>
+	</div>
+
+</div>
+
+<div class="section-outer target-hl pl-target" id="section-7" data-num="7">
+
+	<div style="position:relative;">
+		
+			<a href="#section-7" class="pl-icon"><span class="glyphicon glyphicon-link"></span></a>
+		
+		<div class="section-profiles"></div>
+		<div class="section-main"><h3>Aim 2: Integrate machine learning with a crowdsourcing workflow</h3>
+
+<p>Although preliminary studies have shown that ML techniques can be used to resolve judgment disagreements better than majority voting (<a href="#machine_learn">Figure 3a</a>), how the approaches can be used to complement one another is still mostly unknown, as the two approaches have historically been used independently <span class="citation">[<a href="/doi/10.1007/978-3-642-36406-8_1" class="citation" data-key="10.1007/978-3-642-36406-8_1">16</a>]</span>. To address this question, I will perform experiments attempting to fuse the two techniques together in novel ways in order to utilize the strengths of each technique.</p>
+
+</div>
+	</div>
+
+</div>
+
+<div class="section-outer target-hl pl-target" id="section-8" data-num="8">
+
+	<div style="position:relative;">
+		
+			<a href="#section-8" class="pl-icon"><span class="glyphicon glyphicon-link"></span></a>
+		
+		<div class="section-profiles"></div>
+		<div class="section-main"><p>For this aim, I will identify areas where predictive classifiers would provide an advantage over currently used methods. Our preliminary experiments show that task allotment and judgment aggregation would benefit from enhanced modelling. I will apply standard classifiers trained on crowd gathered data and compare whether performance or scalability increased. As a control, I will perform the same tasks with no classifiers. I expect that classifier application will enhance performance and increase the number of documents which can be processed, but that these improvements will be partially dependent upon the consistency of the human judgments.</p>
+
+</div>
+	</div>
+
+</div>
+
+<div class="section-outer target-hl pl-target" id="section-9" data-num="9">
+
+	<div style="position:relative;">
+		
+			<a href="#section-9" class="pl-icon"><span class="glyphicon glyphicon-link"></span></a>
+		
+		<div class="section-profiles"></div>
+		<div class="section-main"><h3>Aim 3: Identify downstream protein targets of Bcr-Abl</h3>
+
+<p>I will answer the following question: which cytoplasmic proteins in the literature are likely downstream targets of Bcr-Abl? To address this question, I will apply the hybrid information extraction system to documents related to Bcr-Abl to produce a knowledge network centered around the protein.</p>
+
+</div>
+	</div>
+
+</div>
+
+<div class="section-outer target-hl pl-target" id="section-10" data-num="10">
+
+	<div style="position:relative;">
+		
+			<a href="#section-10" class="pl-icon"><span class="glyphicon glyphicon-link"></span></a>
+		
+		<div class="section-profiles"></div>
+		<div class="section-main"><a name="machine_learn"></a><div class="figure" figure-id="machine_learn">
+                <table class="full-width" style="table-layout: fixed;"><tr><td style="width:50%">
+                    <div class="figure-content"><img src="http://think-lab.s3.amazonaws.com/m/figures/18.png"></div>
+                </td><td style="width:50%">
+                    
+            <div class="signature-2">
+                <div class="figure-title">Figure 3. Advantages of machine learning.</div>
+                <div class="figure-description"><p><strong>a)</strong> Using machine learning to aggregate votes increases performance by 26% compared to simple majority voting (adapted from <span class="citation">[<a href="/doi/10.1007/978-3-642-36406-8_1" class="citation" data-key="10.1007/978-3-642-36406-8_1">16</a>]</span>). <strong>b)</strong> An example of a prostate cancer drug identified using a network analysis <span class="citation">[<a href="/doi/10.4137/CIN.S13889" class="citation" data-key="10.4137/CIN.S13889">7</a>]</span>.</p></div>
+            </div>
+        
+                </td></tr></table>
+            </div>
+
+</div>
+	</div>
+
+</div>
+
+<div class="section-outer target-hl pl-target" id="section-11" data-num="11">
+
+	<div style="position:relative;">
+		
+			<a href="#section-11" class="pl-icon"><span class="glyphicon glyphicon-link"></span></a>
+		
+		<div class="section-profiles"></div>
+		<div class="section-main"><p>I will then overlay known Bcr-Abl targets and known non-targets with the extracted information graph, and use concept similarities and term connectivities to rank potential proteins based on their resemblance to known Bcr-Abl targets. For validation, I will ask a group of blinded clinicians to review the predictions based on the original supporting literature documents and judge for prediction validity. Real and fake targets will be introduced as control items to verify expert consistency. Since a similar network analysis was used to identify prostate cancer drugs (<a href="#machine_learn">Figure 3b</a>), I expect that the method will find at least one novel Bcr-Abl target, and that other proteins like extracellular proteins will rank near the bottom of the predictions <span class="citation">[<a href="/doi/10.4137/CIN.S13889" class="citation" data-key="10.4137/CIN.S13889">7</a>]</span>.</p>
+
+</div>
+	</div>
+
+</div>
+
+<div class="section-outer target-hl pl-target" id="section-12" data-num="12">
+
+	<div style="position:relative;">
+		
+			<a href="#section-12" class="pl-icon"><span class="glyphicon glyphicon-link"></span></a>
+		
+		<div class="section-profiles"></div>
+		<div class="section-main"><h3>Pitfalls and Alternatives</h3>
+
+<p>One potential complication is that processing the large set of CML documents using paid online crowdsourcing platforms will be prohibitively expensive. If this were to occur, we would instead re-adapt our crowdsourcing model to instead harness volunteers, large communities of which already exist <span class="citation">[<a href="http://wwwconference.org/proceedings/www2014/companion/p1049.pdf" class="citation" data-key="simpson2014">17</a>]</span>. In addition, the concept similarity method for finding new Bcr-Abl targets may not work for sparsely connected networks, in which case we would use an alternative concept category knowledge-based method instead <span class="citation">[<a href="/doi/10.4137/CIN.S13889" class="citation" data-key="10.4137/CIN.S13889">7</a>]</span>.</p>
+
+</div>
+	</div>
+
+</div>
+
+<div class="section-outer target-hl pl-target" id="section-13" data-num="13">
+
+	<div style="position:relative;">
+		
+			<a href="#section-13" class="pl-icon"><span class="glyphicon glyphicon-link"></span></a>
+		
+		<div class="section-profiles"></div>
+		<div class="section-main"><h3>Significance and Innovation</h3>
+
+<p>This proposal represents one of the first studies aiming to solve biological problems using a representation of the literature generated through crowdsourcing. The technique is novel in that it can be adapted to other domain specific problems, and can therefore be reused on different parts of the literature. Exposure of the general public to scientific literature through crowdsourcing also improves scientific literacy and outreach.</p>
+
+</div>
+	</div>
+
+</div>
+
+<div class="section-outer target-hl pl-target" id="section-14" data-num="14">
+
+	<div style="position:relative;">
+		
+			<a href="#section-14" class="pl-icon"><span class="glyphicon glyphicon-link"></span></a>
+		
+		<div class="section-profiles"></div>
+		<div class="section-main"><h3>Contributions</h3>
+
+<p>I conceived and devised the specific aims described. My advisor Dr. Su provided high-level feedback and advice regarding the proposal's research direction. Dr. Benjamin Good provided helpful discussion and insight.</p>
+
+</div>
+	</div>
+
+</div>
+
+<div class="section-outer target-hl pl-target" id="section-15" data-num="15">
+
+	<div style="position:relative;">
+		
+			<a href="#section-15" class="pl-icon"><span class="glyphicon glyphicon-link"></span></a>
+		
+		<div class="section-profiles"></div>
+		<div class="section-main"><hr>
+
+<h1 id="personal-statement">Personal Statement</h1>
+
+<p>Everyone's path to bioinformatics is different, and mine is no exception. During my early schooling I spent much of my time exploring the physical sciences broadly, trying to find the area where I felt the greatest interest. Although I found physics to be powerful and chemistry to be precise, I discovered that biology fascinated me the most because it has a direct and lasting influence on the people around me. Thanks to two excellent high school teachers who instilled in me an appreciation for both computer science and biology, I proceeded down the path which would eventually lead me to computational biology.</p>
+
+</div>
+	</div>
+
+</div>
+
+<div class="section-outer target-hl pl-target" id="section-16" data-num="16">
+
+	<div style="position:relative;">
+		
+			<a href="#section-16" class="pl-icon"><span class="glyphicon glyphicon-link"></span></a>
+		
+		<div class="section-profiles"></div>
+		<div class="section-main"><p>My journey towards bioinformatics began in earnest during high school. I was a member of our school's Programming Enrichment Group, an extracurricular activity focused on problem solving and critical thinking through algorithmic design. We participated in many programming competitions, and I along with other members of our club competed for a chance to represent Canada at the International Olympiad in Informatics at the Canadian Computing Competition. I relished in the logical rigor of informatics, and sought to apply it to other domains.</p>
+
+</div>
+	</div>
+
+</div>
+
+<div class="section-outer target-hl pl-target" id="section-17" data-num="17">
+
+	<div style="position:relative;">
+		
+			<a href="#section-17" class="pl-icon"><span class="glyphicon glyphicon-link"></span></a>
+		
+		<div class="section-profiles"></div>
+		<div class="section-main"><p>As an undergraduate I worked in Virginia Cornish's lab at Columbia University on a directed evolution project seeking to evolve protein binders. The project was motivated by a desire to develop protein therapeutics for targets difficult to target specifically with small molecules, such as Bcr-Abl. Under the guidance of my graduate mentor I helped to characterize variants generated by the in vivo protein recombination system. This was my first experience working in a laboratory, and I found science to be a demanding but ultimately fulfilling endeavour. I returned to the Cornish lab the following summer to continue my work, but unfortunately had to leave prior to the project's completion due to a year spent studying abroad at Oxford. The most valuable experience from my time in the lab, other than learning to balance research with my other academic commitments, was the exposure to experimental techniques requiring large scale data interpretation and analysis.</p>
+
+</div>
+	</div>
+
+</div>
+
+<div class="section-outer target-hl pl-target" id="section-18" data-num="18">
+
+	<div style="position:relative;">
+		
+			<a href="#section-18" class="pl-icon"><span class="glyphicon glyphicon-link"></span></a>
+		
+		<div class="section-profiles"></div>
+		<div class="section-main"><p>Upon starting my Ph.D. at Scripps after graduation, I quickly sought out Andrew Su's lab so that I could fulfill my interest in computation and biology. In particular the application of computational approaches to generate hypotheses from the existing literature fascinated me because I saw new opportunities to solve old problems like finding Bcr-Abl targets. In order to generate novel hypotheses, it is first necessary to create a computational representation of the literature. I realized that existing methods for generating these representations suffered either from a lack of quality or scalability, and sought to solve both problems by merging human judgments with automated machine learning. While working on this project I have had the opportunity to hone my communication skills through conference presentations, and managed to win a presentation prize.</p>
+
+</div>
+	</div>
+
+</div>
+
+<div class="section-outer target-hl pl-target" id="section-19" data-num="19">
+
+	<div style="position:relative;">
+		
+			<a href="#section-19" class="pl-icon"><span class="glyphicon glyphicon-link"></span></a>
+		
+		<div class="section-profiles"></div>
+		<div class="section-main"><p>Following completion of my Ph.D. I hope to broaden my research background by working as a postdoctoral researcher in a laboratory which is both able to make computationally guided hypotheses and able to verify them biologically. My eventual goal is to establish a research group of my own which is able to utilize and verify the predictions of rapidly advancing computational tools in order to produce treatments and results for patients directly. Support from HHMI at this early stage in my career would provide me with the freedom to guide and develop my own research path without having to worry about financial burdens. Thank you for considering my application.</p>
+
+
+
+
+
+
+
+
+
+</div>
+	</div>
+
+</div>
+</div>
+
+  
+
+  
+    <h1 id="references">References</h1>
+    <table class="references table-td-5"><tr><td><a href='/doi/10.1002/ajh.24221' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.1002/ajh.24221'><a href='/doi/10.1002/ajh.24221' class='pub-title'>Myeloproliferative neoplasms: A decade of discoveries and treatment advances</a><div class='pub-body'>Ayalew Tefferi (2015) <i>Am. J. Hematol.</i>. doi:<a class='pub-doi' href='https://doi.org/10.1002/ajh.24221'>10.1002/ajh.24221</a></div></div></td></tr><tr><td><a href='/doi/10.1126/science.2406902' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>2.</div></td><td><div class='doi-body' data-key='10.1126/science.2406902'><a href='/doi/10.1126/science.2406902' class='pub-title'>Induction of chronic myelogenous leukemia in mice by the P210bcr/abl gene of the Philadelphia chromosome</a><div class='pub-body'>G. Daley, R. Van Etten, D Baltimore (1990) <i>Science</i>. doi:<a class='pub-doi' href='https://doi.org/10.1126/science.2406902'>10.1126/science.2406902</a></div></div></td></tr><tr><td></td><td><div class='pub-order'>3.</div></td><td><div class='doi-body' data-key='cancer_facts'><a href='http://www.cancer.org/acs/groups/content/@editorial/documents/document/acspc-044552.pdf' class='pub-title'>American Cancer Society. Cancer Facts &amp; Figures 2015. Atlanta: American Cancer Society; 2015.</a></div></td></tr><tr><td></td><td><div class='pub-order'>4.</div></td><td><div class='doi-body' data-key='kimura2015'><a href='http://www.ncbi.nlm.nih.gov/pubmed/26458439' class='pub-title'>S. Kimura. State-of-the-art management of CML in 2015 and future prospects. The Japanese Journal of Clinical Hematology. 56.10 (2015) 2005-2014.</a></div></td></tr><tr><td><a href='/doi/10.2174/1568009615666150921141004' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>5.</div></td><td><div class='doi-body' data-key='10.2174/1568009615666150921141004'><a href='/doi/10.2174/1568009615666150921141004' class='pub-title'>New insights into the molecular resistance mechanisms of chronic myeloid leukemia</a><div class='pub-body'>Rui Huang, Qian Kang, Huimin Liu, Yuhua Li (2015) <i>Current Cancer Drug Targets</i>. doi:<a class='pub-doi' href='https://doi.org/10.2174/1568009615666150921141004'>10.2174/1568009615666150921141004</a></div></div></td></tr><tr><td></td><td><div class='pub-order'>6.</div></td><td><div class='doi-body' data-key='thielen2011'><a href='http://www.njmonline.nl/getpdf.php?id=1107' class='pub-title'>N. Thielen et al. New insights into the pathogenesis of chronic myeloid leukaemia: towards a path to cure. Netherlands Journal of Medicine 69.10 (2011) 430-440</a></div></td></tr><tr><td><a href='/doi/10.4137/CIN.S13889' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>7.</div></td><td><div class='doi-body' data-key='10.4137/CIN.S13889'><a href='/doi/10.4137/CIN.S13889' class='pub-title'>Exploiting Literature-derived Knowledge and Semantics to Identify Potential Prostate Cancer Drugs</a><div class='pub-body'>Zhang, Rui Zhang, Michael Cairelli, Marcelo Fiszman, Halil Kilicoglu, Thomas Rindflesch, Serguei Pakhomov, Genevieve Melton (2014) <i>CIN</i>. doi:<a class='pub-doi' href='https://doi.org/10.4137/CIN.S13889'>10.4137/CIN.S13889</a></div></div></td></tr><tr><td><a href='/doi/10.1145/2623330.2623667' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>8.</div></td><td><div class='doi-body' data-key='10.1145/2623330.2623667'><a href='/doi/10.1145/2623330.2623667' class='pub-title'>Automated hypothesis generation based on mining scientific literature</a><div class='pub-body'>Scott Spangler, Jeffrey N. Myers, Ioana Stanoi, Linda Kato, Ana Lelescu, Jacques J. Labrie, Neha Parikh, Andreas Martin Lisewski, Lawrence Donehower, Ying Chen, Olivier Lichtarge, Angela D. Wilkins, Benjamin J. Bachman, Meena Nagarajan, Tajhal Dayaram, Peter Haas, Sam Regenbogen, Curtis R. Pickering, Austin Comer (2014) <i>Proceedings of the 20th ACM SIGKDD international conference on Knowledge discovery and data mining - KDD &#39;14</i>. doi:<a class='pub-doi' href='https://doi.org/10.1145/2623330.2623667'>10.1145/2623330.2623667</a></div></div></td></tr><tr><td><a href='/doi/10.1016/j.jbi.2014.05.013' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>9.</div></td><td><div class='doi-body' data-key='10.1016/j.jbi.2014.05.013'><a href='/doi/10.1016/j.jbi.2014.05.013' class='pub-title'>Automatic construction of a large-scale and accurate drug-side-effect association knowledge base from biomedical literature</a><div class='pub-body'>Rong Xu, QuanQiu Wang (2014) <i>Journal of Biomedical Informatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1016/j.jbi.2014.05.013'>10.1016/j.jbi.2014.05.013</a></div></div></td></tr><tr><td><a href='/doi/10.1007/s11390-010-9313-5' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>10.</div></td><td><div class='doi-body' data-key='10.1007/s11390-010-9313-5'><a href='/doi/10.1007/s11390-010-9313-5' class='pub-title'>New Challenges for Biological Text-Mining in the Next Decade</a><div class='pub-body'>Hong-Jie Dai, Yen-Ching Chang, Richard Tzong-Han Tsai, Wen-Lian Hsu (2010) <i>J. Comput. Sci. Technol.</i>. doi:<a class='pub-doi' href='https://doi.org/10.1007/s11390-010-9313-5'>10.1007/s11390-010-9313-5</a></div></div></td></tr><tr><td><a href='/doi/10.1186/gb-2008-9-s2-s7' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>11.</div></td><td><div class='doi-body' data-key='10.1186/gb-2008-9-s2-s7'><a href='/doi/10.1186/gb-2008-9-s2-s7' class='pub-title'>Text mining for biology - the way forward: opinions from leading scientists</a><div class='pub-body'>Russ B Altman, Casey M Bergman, Judith Blake, Christian Blaschke, Aaron Cohen, Frank Gannon, Les Grivell, Udo Hahn, William Hersh, Lynette Hirschman, Lars Jensen, Martin Krallinger, Barend Mons, Seán I O&#39;Donoghue, Manuel C Peitsch, Dietrich Rebholz-Schuhmann, Hagit Shatkay, Alfonso Valencia (2008) <i>Genome Biol</i>. doi:<a class='pub-doi' href='https://doi.org/10.1186/gb-2008-9-s2-s7'>10.1186/gb-2008-9-s2-s7</a></div></div></td></tr><tr><td><a href='/doi/10.1073/pnas.1313039111' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>12.</div></td><td><div class='doi-body' data-key='10.1073/pnas.1313039111'><a href='/doi/10.1073/pnas.1313039111' class='pub-title'>RNA design rules from a massive open laboratory</a><div class='pub-body'>Jeehyung Lee, Wipapat Kladwang, Minjae Lee, Daniel Cantu, Martin Azizyan, Hanjoo Kim, Alex Limpaecher, Snehal Gaikwad, Sungroh Yoon, Adrien Treuille, Rhiju Das (2014) <i>Proceedings of the National Academy of Sciences</i>. doi:<a class='pub-doi' href='https://doi.org/10.1073/pnas.1313039111'>10.1073/pnas.1313039111</a></div></div></td></tr><tr><td><a href='/doi/10.1038/nature09304' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>13.</div></td><td><div class='doi-body' data-key='10.1038/nature09304'><a href='/doi/10.1038/nature09304' class='pub-title'>Predicting protein structures with a multiplayer online game</a><div class='pub-body'>Seth Cooper, Firas Khatib, Adrien Treuille, Janos Barbero, Jeehyung Lee, Michael Beenen, Andrew Leaver-Fay, David Baker, Zoran Popović, Foldit players (2010) <i>Nature</i>. doi:<a class='pub-doi' href='https://doi.org/10.1038/nature09304'>10.1038/nature09304</a></div></div></td></tr><tr><td><a href='/doi/10.1093/bioinformatics/btt333' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>14.</div></td><td><div class='doi-body' data-key='10.1093/bioinformatics/btt333'><a href='/doi/10.1093/bioinformatics/btt333' class='pub-title'>Crowdsourcing for bioinformatics</a><div class='pub-body'>B. M. Good, A. I. Su (2013) <i>Bioinformatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/bioinformatics/btt333'>10.1093/bioinformatics/btt333</a></div></div></td></tr><tr><td></td><td><div class='pub-order'>15.</div></td><td><div class='doi-body' data-key='alpaydin2014'><a href='https://mitpress.mit.edu/books/introduction-machine-learning-0' class='pub-title'>Ethem Alpaydin. Introduction to Machine Learning, Third Edition. MIT press. 2014.</a></div></td></tr><tr><td><a href='/doi/10.1007/978-3-642-36406-8_1' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>16.</div></td><td><div class='doi-body' data-key='10.1007/978-3-642-36406-8_1'><a href='/doi/10.1007/978-3-642-36406-8_1' class='pub-title'>Dynamic Bayesian Combination of Multiple Imperfect Classifiers</a><div class='pub-body'>Edwin Simpson, Stephen Roberts, Ioannis Psorakis, Arfon Smith (2013) <i>Decision Making and Imperfection</i>. doi:<a class='pub-doi' href='https://doi.org/10.1007/978-3-642-36406-8_1'>10.1007/978-3-642-36406-8_1</a></div></div></td></tr><tr><td></td><td><div class='pub-order'>17.</div></td><td><div class='doi-body' data-key='simpson2014'><a href='http://wwwconference.org/proceedings/www2014/companion/p1049.pdf' class='pub-title'>R. Simpson et al. Zooniverse: Observing the World&#39;s Largest Citizen Science Platform. In: Proceedings of the 23rd International Conference on World Wide Web. Seoul. 2014. 1049-1054.</a></div></td></tr></table>
+  
+  
+</div>
+
+
+      </td>
+      <td style="width:100%;height:100%; background-color:#f0f0f0;">
+
+        <div class="section-parents-outer">
+          <!-- <a class="btn btn-default full-width" style="position:absolute;left:0;top:0;z-index:99999;background:white;margin-left:20px;">Scroll Top</a> -->
+          <div class="section-parents">
+            
+                <div class="inline-group " data-profile-id='48' data-hl-id='175' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #ffca7f"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-font"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="1" data-profile-id="48" data-comment-id="620">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/48_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#1" class="ic-time">535 days</a>
+			
+		</div>
+		<a href="/u/b_good" class="inline-comment-name">Benjamin Good</a>
+		<div><p>CML causes Bcr-Abl ?   Don't you mean that a  chromosomal translocation results in the fusion of Bcr and Abl which results in the new gene Bcr-Abl, whose constitutive expression produces CML?  A small figure might be nice to explain the biology. </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="73" data-profile-id="17" data-comment-id="777">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/17_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#73" class="ic-time">518 days</a>
+			
+		</div>
+		<a href="/u/dhimmel" class="inline-comment-name">Daniel Himmelstein</a>
+		<div><p>I had similar thoughts (written before reading Dr. Good's comment):</p>
+
+<p>I am not a biologist. I have no idea what Bcr-Abl is. I am guessing it is a protein because of "constitutively active tyrosine kinase" but I don't fully grasp what is going on with the chromosome translocation. Without the translocation, are humans devoid of Bcr-Abl? Also searching for "Bcr-Abl" hasn't been helpful because "BCR-ABL" is a gene name. Is all CML caused by Bcr-Abl? Is all Bcr-Abl bad? </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='181' data-hl-id='235' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="26" data-profile-id="181" data-comment-id="662">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/181_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#26" class="ic-time">534 days</a>
+			
+		</div>
+		<a href="/u/andrewsu" class="inline-comment-name">Andrew Su</a>
+		<div><p>This is a key motivating principle for your proposal, so would be best to find a stronger citation and/or more citations. </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='48' data-hl-id='214' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-discussion" data-profile-id="48" data-comment-id="639" data-thread-id="143">
+	<!-- <div style="position:relative;"><a href="#d143" class="pl-icon"><span class="glyphicon glyphicon-link"></span></a></div> -->
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/48_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<!-- <div class="pull-right">
+			<a href="#d143" class="ic-time">535 days</a>
+		</div>
+		<a href="/u/b_good" class="inline-comment-name">Benjamin Good</a><br> -->
+		<div class="inline-discussion-comments">1</div>
+		<a class="inline-discussion-subject" href="/discussion/what-lies-downstream-of-bcr-abl/143">What lies ‘downstream’ of Bcr-Abl ?</a>
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='17' data-hl-id='355' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="74" data-profile-id="17" data-comment-id="778">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/17_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#74" class="ic-time">518 days</a>
+			
+		</div>
+		<a href="/u/dhimmel" class="inline-comment-name">Daniel Himmelstein</a>
+		<div><p>More Bcr-Abl confusion: are you considering a downstream protein a "Bcr-Abl target"?</p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='187' data-hl-id='288' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="37" data-profile-id="187" data-comment-id="718">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#37" class="ic-time">523 days</a>
+			
+		</div>
+		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
+		<div><p>I found this figure a little too general for its ambitious goals. It feels a bit naive. I don't think glucose metabolism is a good example of a part of the knowledge network that is likely to contribute to knowledge of Bcr-Abl targets. </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="75" data-profile-id="17" data-comment-id="779">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/17_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#75" class="ic-time">518 days</a>
+			
+		</div>
+		<a href="/u/dhimmel" class="inline-comment-name">Daniel Himmelstein</a>
+		<div><p>I have a hard time understanding the "Knowledge Network" from Figure 1. Drawing node borders in addition to edge arrows may help. My current understanding of your network at this point in reading is that you are using text mining + crowdsourcing to construct a metabolite network.</p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='48' data-hl-id='176' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #80bfff"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-remove"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="2" data-profile-id="48" data-comment-id="621">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/48_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#2" class="ic-time">535 days</a>
+			
+		</div>
+		<a href="/u/b_good" class="inline-comment-name">Benjamin Good</a>
+		<div><p>The figure should not come before its mention in the text.  You should not state your hypothesis a figure caption.   </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='48' data-hl-id='211' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="3" data-profile-id="48" data-comment-id="622">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/48_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#3" class="ic-time">535 days</a>
+			
+		</div>
+		<a href="/u/b_good" class="inline-comment-name">Benjamin Good</a>
+		<div><p>Would be better to introduce the concept first before you use it.  A knowledge network is ...   Don't depend on the figure to do that for you.   </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='181' data-hl-id='236' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="27" data-profile-id="181" data-comment-id="663">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/181_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#27" class="ic-time">534 days</a>
+			
+		</div>
+		<a href="/u/andrewsu" class="inline-comment-name">Andrew Su</a>
+		<div><p>You might consider briefly relating the story of Swanson / Reynaud / fish oil here instead of these refs.  It has the advantage of saying <em>how</em> information extraction can lead to testable hypotheses in an intuitively understandable way. </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='48' data-hl-id='179' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #80bfff"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-remove"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="4" data-profile-id="48" data-comment-id="623">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/48_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#4" class="ic-time">535 days</a>
+			
+		</div>
+		<a href="/u/b_good" class="inline-comment-name">Benjamin Good</a>
+		<div><p>either drop this or expand and be specific.  The sentence limitation does not apply to all techniques. </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='187' data-hl-id='289' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="38" data-profile-id="187" data-comment-id="719">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#38" class="ic-time">523 days</a>
+			
+		</div>
+		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
+		<div><p>awkward wording </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='17' data-hl-id='356' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="76" data-profile-id="17" data-comment-id="780">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/17_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#76" class="ic-time">518 days</a>
+			
+		</div>
+		<a href="/u/dhimmel" class="inline-comment-name">Daniel Himmelstein</a>
+		<div><p>The paragraph up till the end of this sentence has primed me: you've led me to believe that NLP programs need to span multiple sentences. The rest of the paragraph is a complete non-sequitur. I finish the paragraph confused, having just read a list of definition with no cohesive connection. </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='181' data-hl-id='237' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="28" data-profile-id="181" data-comment-id="664">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/181_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#28" class="ic-time">534 days</a>
+			
+		</div>
+		<a href="/u/andrewsu" class="inline-comment-name">Andrew Su</a>
+		<div><p>If crowdsourcing is a central theme, then devote a paragraph to it.  Here, it's buried and easily missed. </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='180' data-hl-id='215' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #80ffff"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-fullscreen"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="19" data-profile-id="180" data-comment-id="646">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/180_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#19" class="ic-time">535 days</a>
+			
+		</div>
+		<a href="/u/timputman" class="inline-comment-name">Tim Putman</a>
+		<div><p>I was under the impression that the untrained folk would be doing simple tasks. </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='187' data-hl-id='290' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="39" data-profile-id="187" data-comment-id="720">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#39" class="ic-time">523 days</a>
+			
+		</div>
+		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
+		<div><p>you haven't explained/introduced why cytoplasmic targets are of particular interest </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='17' data-hl-id='330' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #ff80ff"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-screenshot"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="77" data-profile-id="17" data-comment-id="781">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/17_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#77" class="ic-time">518 days</a>
+			
+		</div>
+		<a href="/u/dhimmel" class="inline-comment-name">Daniel Himmelstein</a>
+		<div><p>Don't be vague. I would get more out of: </p>
+
+<blockquote><p>I propose combining crowdsourcing and automated text mining to identify cytoplasmic Bcr-Abl targets </p></blockquote></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='181' data-hl-id='238' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="29" data-profile-id="181" data-comment-id="665">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/181_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#29" class="ic-time">534 days</a>
+			
+		</div>
+		<a href="/u/andrewsu" class="inline-comment-name">Andrew Su</a>
+		<div><p>will you mention feedback between crowdsourcing and text mining later?  I think this is an attractive point... </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='181' data-hl-id='239' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="30" data-profile-id="181" data-comment-id="666">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/181_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#30" class="ic-time">534 days</a>
+			
+		</div>
+		<a href="/u/andrewsu" class="inline-comment-name">Andrew Su</a>
+		<div><p>I'm assuming the glucose, g6p, f6p example is merely an example of a larger knowledge network.  If so, I think this is too specific — better generalize into a schematic network. </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='180' data-hl-id='216' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #ffca7f"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-font"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="20" data-profile-id="180" data-comment-id="647">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/180_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#20" class="ic-time">535 days</a>
+			
+		</div>
+		<a href="/u/timputman" class="inline-comment-name">Tim Putman</a>
+		<div><p>A little redundant to use "than what is..."  twice here </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='187' data-hl-id='291' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="40" data-profile-id="187" data-comment-id="721">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#40" class="ic-time">523 days</a>
+			
+		</div>
+		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
+		<div><p>The novelty of the hybrid method is a strength of this proposal </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='48' data-hl-id='185' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #ffca7f"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-font"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="5" data-profile-id="48" data-comment-id="624">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/48_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#5" class="ic-time">535 days</a>
+			
+		</div>
+		<a href="/u/b_good" class="inline-comment-name">Benjamin Good</a>
+		<div><p>Not seeing how this follows from the sentence before it.  </p>
+
+<p>I would take this out.   </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='187' data-hl-id='292' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="41" data-profile-id="187" data-comment-id="722">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#41" class="ic-time">523 days</a>
+			
+		</div>
+		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
+		<div><p>This is a bit bold. It remains to be seen whether the proposed approach will identify ANY previously unidentified targets </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='48' data-hl-id='188' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #ff8080"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-exclamation-sign"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="6" data-profile-id="48" data-comment-id="625">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/48_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#6" class="ic-time">535 days</a>
+			
+		</div>
+		<a href="/u/b_good" class="inline-comment-name">Benjamin Good</a>
+		<div><p>Seems like the first step would be to benchmark a fully automated approach to the specific task you had in mind.  (And before that, to define the specific task and why it is going to solve the biological problem) </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='48' data-hl-id='189' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #ff8080"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-exclamation-sign"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="7" data-profile-id="48" data-comment-id="626">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/48_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#7" class="ic-time">535 days</a>
+			
+		</div>
+		<a href="/u/b_good" class="inline-comment-name">Benjamin Good</a>
+		<div><p>If this were required as written, I would not believe that this would work.  You need to show the ability to divide and conquer the problem and not depend on individuals really deeply understanding scientific literature on their own. </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="78" data-profile-id="17" data-comment-id="782">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/17_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#78" class="ic-time">518 days</a>
+			
+		</div>
+		<a href="/u/dhimmel" class="inline-comment-name">Daniel Himmelstein</a>
+		<div><p>My comment on this phrase:</p>
+
+<p>I feel that this is a precondition for funding you. If in general it is unknown whether non-experts can read science publications, I don't see the point of exploring such a specific application of crowdsourcing.</p>
+
+<p>Now I agree that you should evaluate whether non-experts succeed on your specific problem, but you should have examples of where non-experts read science successfully. Here is one example that non-experts understood drug labels <span class="citation">[<a href="https://doi.org/10.1093/database/bav016" class="citation" data-key="10.1093/database/bav016">1</a>]</span>.</p>
+
+<p>Update: your next sentences answer the point, so you should assert that non-experts can from the start. </p></div>
+		<table style="display:none;"><tr><td><a href='/doi/10.1093/database/bav016' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.1093/database/bav016'><a href='/doi/10.1093/database/bav016' class='pub-title'>Scaling drug indication curation through crowdsourcing</a><div class='pub-body'>R. Khare, J. D. Burger, J. S. Aberdeen, D. W. Tresner-Kirsch, T. J. Corrales, L. Hirchman, Z. Lu (2015) <i>Database</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/database/bav016'>10.1093/database/bav016</a></div></div></td></tr></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='48' data-hl-id='190' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #ff8080"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-exclamation-sign"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="8" data-profile-id="48" data-comment-id="627">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/48_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#8" class="ic-time">535 days</a>
+			
+		</div>
+		<a href="/u/b_good" class="inline-comment-name">Benjamin Good</a>
+		<div><p>Accuracy of the system is fundamental.  I don't believe the previous sentence is enough to 'ensure' it. </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='181' data-hl-id='240' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="31" data-profile-id="181" data-comment-id="667">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/181_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#31" class="ic-time">534 days</a>
+			
+		</div>
+		<a href="/u/andrewsu" class="inline-comment-name">Andrew Su</a>
+		<div><p>Is this from Ben's PSB paper?  How do you define "performance"?  Surprised that experts achieve 100%... </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='187' data-hl-id='293' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="42" data-profile-id="187" data-comment-id="723">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#42" class="ic-time">523 days</a>
+			
+		</div>
+		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
+		<div><p>I think you should be specific here in the sentence about what type of biological concept. Say that you have shown that groups of non-experts can identify biological concepts such as diseases, genes, etc with high accuracy. If you just say "biological concepts" a reader might imagine something more complex and get riled up by this statement. </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='181' data-hl-id='241' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="32" data-profile-id="181" data-comment-id="668">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/181_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#32" class="ic-time">534 days</a>
+			
+		</div>
+		<a href="/u/andrewsu" class="inline-comment-name">Andrew Su</a>
+		<div><p>I don't think the figure illustrates well what the text says. </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='187' data-hl-id='294' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="43" data-profile-id="187" data-comment-id="724">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#43" class="ic-time">523 days</a>
+			
+		</div>
+		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
+		<div><p>For the </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='187' data-hl-id='295' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="44" data-profile-id="187" data-comment-id="725">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#44" class="ic-time">523 days</a>
+			
+		</div>
+		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
+		<div><p>Provide an example of what you mean here </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='187' data-hl-id='296' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="45" data-profile-id="187" data-comment-id="726">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#45" class="ic-time">523 days</a>
+			
+		</div>
+		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
+		<div><p>It would be helpful to explain the source of these non-experts </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='48' data-hl-id='192' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #ff80ff"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-screenshot"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="9" data-profile-id="48" data-comment-id="628">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/48_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#9" class="ic-time">535 days</a>
+			
+		</div>
+		<a href="/u/b_good" class="inline-comment-name">Benjamin Good</a>
+		<div><p>You need to have a specific plan </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="23" data-profile-id="180" data-comment-id="650">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/180_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#23" class="ic-time">535 days</a>
+			
+		</div>
+		<a href="/u/timputman" class="inline-comment-name">Tim Putman</a>
+		<div><p>I agree that specific steps need to be added </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='187' data-hl-id='297' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="46" data-profile-id="187" data-comment-id="727">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#46" class="ic-time">523 days</a>
+			
+		</div>
+		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
+		<div><p>word not necessary and repeats recent use </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='17' data-hl-id='357' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="79" data-profile-id="17" data-comment-id="783">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/17_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#79" class="ic-time">518 days</a>
+			
+		</div>
+		<a href="/u/dhimmel" class="inline-comment-name">Daniel Himmelstein</a>
+		<div><p>y-axis labels are unreadable. Either make them larger or remove them </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='17' data-hl-id='358' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="80" data-profile-id="17" data-comment-id="784">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/17_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#80" class="ic-time">518 days</a>
+			
+		</div>
+		<a href="/u/dhimmel" class="inline-comment-name">Daniel Himmelstein</a>
+		<div><p>Move the circles closer to increase the overlap size. The visual elicits the opposite response as the numbers. </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='187' data-hl-id='298' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="47" data-profile-id="187" data-comment-id="728">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#47" class="ic-time">523 days</a>
+			
+		</div>
+		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
+		<div><p>an </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='48' data-hl-id='199' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #ffca7f"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-font"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="10" data-profile-id="48" data-comment-id="629">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/48_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#10" class="ic-time">535 days</a>
+			
+		</div>
+		<a href="/u/b_good" class="inline-comment-name">Benjamin Good</a>
+		<div><p>This section is really not very clear.   </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='48' data-hl-id='194' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #ffca7f"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-font"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="11" data-profile-id="48" data-comment-id="630">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/48_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#11" class="ic-time">535 days</a>
+			
+		</div>
+		<a href="/u/b_good" class="inline-comment-name">Benjamin Good</a>
+		<div><p>Up until now I was assuming the ML had something to do with the target identification step.   </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='48' data-hl-id='195' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #ff8080"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-exclamation-sign"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-discussion" data-profile-id="48" data-comment-id="631" data-thread-id="142">
+	<!-- <div style="position:relative;"><a href="#d142" class="pl-icon"><span class="glyphicon glyphicon-link"></span></a></div> -->
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/48_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<!-- <div class="pull-right">
+			<a href="#d142" class="ic-time">535 days</a>
+		</div>
+		<a href="/u/b_good" class="inline-comment-name">Benjamin Good</a><br> -->
+		<div class="inline-discussion-comments">1</div>
+		<a class="inline-discussion-subject" href="/discussion/applications-of-machine-learning-for-aggregating-judgments/142">Applications of machine learning for aggregating judgments</a>
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='187' data-hl-id='299' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="48" data-profile-id="187" data-comment-id="729">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#48" class="ic-time">523 days</a>
+			
+		</div>
+		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
+		<div><p>combine </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='180' data-hl-id='217' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #80ffff"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-fullscreen"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="21" data-profile-id="180" data-comment-id="648">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/180_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#21" class="ic-time">535 days</a>
+			
+		</div>
+		<a href="/u/timputman" class="inline-comment-name">Tim Putman</a>
+		<div><p>I know you mention it a few paragraphs back, but maybe a little refresher or more description on what a classifier is. </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='17' data-hl-id='361' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="83" data-profile-id="17" data-comment-id="787">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/17_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#83" class="ic-time">518 days</a>
+			
+		</div>
+		<a href="/u/dhimmel" class="inline-comment-name">Daniel Himmelstein</a>
+		<div><p>Details please! What are your positives and negatives? What are your predictors? All this talk of machine learning and I can't figure out what your models will predict and what datasets they will be trained and tested on. </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='187' data-hl-id='300' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="49" data-profile-id="187" data-comment-id="730">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#49" class="ic-time">523 days</a>
+			
+		</div>
+		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
+		<div><p>This is a good opportunity for a specific hypothesis (always needed/expected in NIH-style grant applications). Rephrase as a hypothesis </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='48' data-hl-id='200' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #b5ff80"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-arrow-up"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="12" data-profile-id="48" data-comment-id="632">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/48_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#12" class="ic-time">535 days</a>
+			
+		</div>
+		<a href="/u/b_good" class="inline-comment-name">Benjamin Good</a>
+		<div><p>This should remain the focus.  You should be composing the other aims much more specifically to get to here. </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="24" data-profile-id="180" data-comment-id="651">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/180_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#24" class="ic-time">535 days</a>
+			
+		</div>
+		<a href="/u/timputman" class="inline-comment-name">Tim Putman</a>
+		<div><p>I think that this should be expanded on.  The knowledge network is key.  By making the connections through unbiased observations, the answer will come.  Very important to make it clear what this means.</p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='181' data-hl-id='242' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="33" data-profile-id="181" data-comment-id="669">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/181_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#33" class="ic-time">534 days</a>
+			
+		</div>
+		<a href="/u/andrewsu" class="inline-comment-name">Andrew Su</a>
+		<div><p>based on what corpus? </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='17' data-hl-id='362' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="84" data-profile-id="17" data-comment-id="788">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/17_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#84" class="ic-time">518 days</a>
+			
+		</div>
+		<a href="/u/dhimmel" class="inline-comment-name">Daniel Himmelstein</a>
+		<div><p>A little more background is needed in the caption to appreciate Figure 3A — performance of what? </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='48' data-hl-id='212' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="13" data-profile-id="48" data-comment-id="633">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/48_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#13" class="ic-time">535 days</a>
+			
+		</div>
+		<a href="/u/b_good" class="inline-comment-name">Benjamin Good</a>
+		<div><p>these are your controls.  Can your method predict them? </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='17' data-hl-id='359' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="81" data-profile-id="17" data-comment-id="785">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/17_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#81" class="ic-time">518 days</a>
+			
+		</div>
+		<a href="/u/dhimmel" class="inline-comment-name">Daniel Himmelstein</a>
+		<div><p>What is a "known non-targets" and where does that knowledge come from?</p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='48' data-hl-id='203' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #ff8080"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-exclamation-sign"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="14" data-profile-id="48" data-comment-id="634">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/48_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#14" class="ic-time">535 days</a>
+			
+		</div>
+		<a href="/u/b_good" class="inline-comment-name">Benjamin Good</a>
+		<div><p>Clinicians are the wrong judges of these predictions.  (Should be scientists)  What does blinded mean here?  Do they get both predicted and known?  You are missing the computational validation step before this. </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='181' data-hl-id='243' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="34" data-profile-id="181" data-comment-id="670">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/181_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#34" class="ic-time">534 days</a>
+			
+		</div>
+		<a href="/u/andrewsu" class="inline-comment-name">Andrew Su</a>
+		<div><p>Clinicians I don't think are the target audience (nor the best people to evaluate). You need either experts in Bcr-Abl, or ideally an experimental system to evaluate your predictions.   </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='187' data-hl-id='301' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="50" data-profile-id="187" data-comment-id="731">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#50" class="ic-time">523 days</a>
+			
+		</div>
+		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
+		<div><p>Again, rephrase this as specific hypothesis </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='48' data-hl-id='205' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #80ffff"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-fullscreen"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="15" data-profile-id="48" data-comment-id="635">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/48_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#15" class="ic-time">535 days</a>
+			
+		</div>
+		<a href="/u/b_good" class="inline-comment-name">Benjamin Good</a>
+		<div><p>You need stronger evidence than the one reference regarding prostate cancer to get here.  As it stands, I would not be convinced.  Further, since that work did not use crowdsourcing, why do you need to ?  If you just did exactly what they did, but enhanced their workflow through crowdsourcing, could you identify better drugs than they did?  WHy do you think so?  How similar is that to what you are planning to do here?</p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='17' data-hl-id='360' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="82" data-profile-id="17" data-comment-id="786">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/17_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#82" class="ic-time">518 days</a>
+			
+		</div>
+		<a href="/u/dhimmel" class="inline-comment-name">Daniel Himmelstein</a>
+		<div><p>Move this citation to the first part of the sentence? </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='17' data-hl-id='363' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="85" data-profile-id="17" data-comment-id="789">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/17_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#85" class="ic-time">518 days</a>
+			
+		</div>
+		<a href="/u/dhimmel" class="inline-comment-name">Daniel Himmelstein</a>
+		<div><p>The expense issue should be worked out beforehand. Given that you haven't explained the "concept similarity method", what's the point of introducing an alternative? You could just say we will use A if the network is sparse and B if the network is dense. </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='187' data-hl-id='302' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="51" data-profile-id="187" data-comment-id="732">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#51" class="ic-time">523 days</a>
+			
+		</div>
+		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
+		<div><p>This is the first mention of paid online crowdsourcing platforms. It should be introduced as an approach before it can become a potential pitfall </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='48' data-hl-id='206' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #ff8080"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-exclamation-sign"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="16" data-profile-id="48" data-comment-id="636">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/48_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#16" class="ic-time">535 days</a>
+			
+		</div>
+		<a href="/u/b_good" class="inline-comment-name">Benjamin Good</a>
+		<div><p>Seems easily estimated.   If you can predict it clearly, than its not a potential pitfall, its part of the plan.</p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='48' data-hl-id='207' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #ff8080"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-exclamation-sign"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="17" data-profile-id="48" data-comment-id="637">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/48_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#17" class="ic-time">535 days</a>
+			
+		</div>
+		<a href="/u/b_good" class="inline-comment-name">Benjamin Good</a>
+		<div><p>What about using a crowd-trained machine learning model ? </p>
+
+<p>This is what I thought you were going for.  (Personally I would be much more excited about this as a direction for integration)</p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="25" data-profile-id="180" data-comment-id="652">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/180_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#25" class="ic-time">535 days</a>
+			
+		</div>
+		<a href="/u/timputman" class="inline-comment-name">Tim Putman</a>
+		<div><p>I completely agree.  The free option is always more attractive</p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='187' data-hl-id='303' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="52" data-profile-id="187" data-comment-id="733">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#52" class="ic-time">523 days</a>
+			
+		</div>
+		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
+		<div><p>delete for redundancy </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='48' data-hl-id='213' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="18" data-profile-id="48" data-comment-id="638">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/48_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#18" class="ic-time">535 days</a>
+			
+		</div>
+		<a href="/u/b_good" class="inline-comment-name">Benjamin Good</a>
+		<div><p>the significance is the medical impact </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="36" data-profile-id="181" data-comment-id="672">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/181_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#36" class="ic-time">534 days</a>
+			
+		</div>
+		<a href="/u/andrewsu" class="inline-comment-name">Andrew Su</a>
+		<div><p>... though also agree with Toby that the generalizability of the significant too...</p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='187' data-hl-id='304' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="53" data-profile-id="187" data-comment-id="734">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#53" class="ic-time">523 days</a>
+			
+		</div>
+		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
+		<div><p>emphasize the hybrid approach here </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='187' data-hl-id='305' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="54" data-profile-id="187" data-comment-id="735">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#54" class="ic-time">523 days</a>
+			
+		</div>
+		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
+		<div><p>This is an awkward tautology. If everyone's path is different then by saying your is no exception you mean that yours is also different?  What if your path wasn't the exception then it would be the same? Impossible.  I suggest you drop this first sentence and just begin the story of your unique journey to comp biol. </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='187' data-hl-id='266' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #80bfff"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-remove"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="55" data-profile-id="187" data-comment-id="736">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#55" class="ic-time">523 days</a>
+			
+		</div>
+		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
+		<div><p>explored </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='187' data-hl-id='267' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #80bfff"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-remove"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="56" data-profile-id="187" data-comment-id="737">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#56" class="ic-time">523 days</a>
+			
+		</div>
+		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
+		<div><p>delete </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='187' data-hl-id='306' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="57" data-profile-id="187" data-comment-id="738">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#57" class="ic-time">523 days</a>
+			
+		</div>
+		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
+		<div><p>field? </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='187' data-hl-id='307' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="58" data-profile-id="187" data-comment-id="739">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#58" class="ic-time">523 days</a>
+			
+		</div>
+		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
+		<div><p>that most inspired me </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='187' data-hl-id='270' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #80bfff"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-remove"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="59" data-profile-id="187" data-comment-id="740">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#59" class="ic-time">523 days</a>
+			
+		</div>
+		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
+		<div><p>delete </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='187' data-hl-id='308' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="60" data-profile-id="187" data-comment-id="741">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#60" class="ic-time">523 days</a>
+			
+		</div>
+		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
+		<div><p>it was biology that  </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='187' data-hl-id='309' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="61" data-profile-id="187" data-comment-id="742">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#61" class="ic-time">523 days</a>
+			
+		</div>
+		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
+		<div><p>Make this its own sentence. it will have greater impact that way. </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='187' data-hl-id='310' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="62" data-profile-id="187" data-comment-id="743">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#62" class="ic-time">523 days</a>
+			
+		</div>
+		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
+		<div><p>I think you need a comma after this </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='187' data-hl-id='311' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="63" data-profile-id="187" data-comment-id="744">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#63" class="ic-time">523 days</a>
+			
+		</div>
+		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
+		<div><p>This feels redundant with above. Maybe just start with "In high school, I was ..." </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='187' data-hl-id='312' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="64" data-profile-id="187" data-comment-id="745">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#64" class="ic-time">523 days</a>
+			
+		</div>
+		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
+		<div><p>Sounds better as either "I relished the logical rigor of" or "I thrived on the logical rigor" or "I flourished in the logical rigor" </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='187' data-hl-id='313' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="65" data-profile-id="187" data-comment-id="746">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#65" class="ic-time">523 days</a>
+			
+		</div>
+		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
+		<div><p>Explain just a little more what this means </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='187' data-hl-id='314' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="66" data-profile-id="187" data-comment-id="747">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#66" class="ic-time">523 days</a>
+			
+		</div>
+		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
+		<div><p>rephrase </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='17' data-hl-id='364' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="86" data-profile-id="17" data-comment-id="790">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/17_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#86" class="ic-time">518 days</a>
+			
+		</div>
+		<a href="/u/dhimmel" class="inline-comment-name">Daniel Himmelstein</a>
+		<div><p>Is Bcr-Abl a small molecule, target, or protein therapeutic? </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='187' data-hl-id='315' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="67" data-profile-id="187" data-comment-id="748">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#67" class="ic-time">523 days</a>
+			
+		</div>
+		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
+		<div><p>italicize </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='187' data-hl-id='316' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="68" data-profile-id="187" data-comment-id="749">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#68" class="ic-time">523 days</a>
+			
+		</div>
+		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
+		<div><p>Why raise this as a negative?  Introduce your experience studying abroad as a separate positive growth experience. </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='180' data-hl-id='223' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #80ffff"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-fullscreen"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="22" data-profile-id="180" data-comment-id="649">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/180_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#22" class="ic-time">535 days</a>
+			
+		</div>
+		<a href="/u/timputman" class="inline-comment-name">Tim Putman</a>
+		<div><p>This could be expanded on.  That doesn't necessarily sound like an unfortunate thing.   </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="35" data-profile-id="181" data-comment-id="671">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/181_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#35" class="ic-time">534 days</a>
+			
+		</div>
+		<a href="/u/andrewsu" class="inline-comment-name">Andrew Su</a>
+		<div><p>agree, turn it into a positive...</p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='187' data-hl-id='317' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="69" data-profile-id="187" data-comment-id="750">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#69" class="ic-time">523 days</a>
+			
+		</div>
+		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
+		<div><p>further pursue my passion for? </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='187' data-hl-id='318' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="70" data-profile-id="187" data-comment-id="751">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#70" class="ic-time">523 days</a>
+			
+		</div>
+		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
+		<div><p>delete </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='187' data-hl-id='319' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="71" data-profile-id="187" data-comment-id="752">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#71" class="ic-time">523 days</a>
+			
+		</div>
+		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
+		<div><p>focused on utilizing and verifying </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+                <div class="inline-group " data-profile-id='187' data-hl-id='320' data-active='true'>
+
+  <div class="ic-triangle" style="border-top-color: #cecece"></div>
+	<div class="ic-type"><span class="glyphicon glyphicon-comment"></span></div>
+
+  
+
+  <div class="inline-objects">
+    
+      
+  
+<div class="inline-object inline-comment " data-comment-num="72" data-profile-id="187" data-comment-id="753">
+	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
+	<div class="inline-object-body">
+		<div class="pull-right">
+			<a href="#72" class="ic-time">523 days</a>
+			
+		</div>
+		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
+		<div><p>improve outcomes </p></div>
+		<table style="display:none;"></table>
+		
+	</div>
+</div>
+
+
+
+    
+  </div>
+
+  
+  <div class='reply-buttons'>
+    <a class="add-inline-reply-link">Reply</a>
+  </div>
+  
+
+</div>
+
+            
+          </div>
+        </div>
+
+      </td>
+    </tr>
+  </table>
+
+  
+
+
+		</div>
+
+
+		
+	    	<div class="footer">
+<div style="background:#dedede;">
+	<div class="main-centered-div text-center" style="padding:20px;">
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#d4bcb1b8b8bb94a0bcbdbabfb8b5b6fab7bbb9"><span class="__cf_email__" data-cfemail="09616c656566497d6160676265686b276a6664">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+	</div>
+</div>
+<div class="main-footer">
+	<div class="main-centered-div">
+
+<table class="full-width"><tr>
+	<td class="footer-nav">
+
+        <div class="foot-head">Explore</div>
+        <a href="/proposals">Proposals</a><br>
+        <a href="/projects">Projects</a><br>
+        <a href="/publications">Article discussion</a><br>
+        <a href="/discussion">All discussion</a><br>
+        <a href="/topics">Topics</a><br>
+        <!-- <a href="/funders">Funders</a><br> -->
+        <a href="/funding">Funding opportunities</a><br>
+
+	</td>
+	<td class="footer-nav">
+
+        <!-- <div class="foot-head">Help &amp; feedback</div>	 -->
+        <!-- <div class="foot-head">Intro</div>
+        <a href="/benefits/for-science">Why</a><br>
+        <a href="/how-it-works">How it works</a><br>
+
+<br> -->
+
+        <div class="foot-head">Community</div>
+        <a href="/leaderboard">Leaderboard</a><br>
+        <a href="/p/meta">Thinklab Meta</a><br>
+				<a href="/help/faq">Help</a><br>
+				<!-- <a href="/new-project">Start a proposal</a><br> -->
+        <!-- <a href="/benefits/proposal">Benefits</a><br> -->
+        <!-- <a href="/funding">Get funded</a><br> -->
+        <!-- <a href="/participate">Become a contributor</a><br> -->
+        <!-- <a href="/for-funders">For science funders</a><br> -->
+        <!-- <a href="/for-institutions">For institutions</a><br> -->
+
+	</td>
+	<td class="footer-nav">
+
+
+
+        <div class="foot-head">About</div>
+        <a href="/about">Overview</a><br>
+        <a href="/benefits">Benefits</a><br>
+        <a href="/how-it-works">How it works</a><br>
+        <a href="/about/story">Our story</a><br>
+        <a href="/blog">Our blog</a><br>
+        <a href="/about/jobs">Join the team</a><br>
+        <br>
+
+        <!-- <div class="foot-head">Help</div>
+        <a href="/help">Help</a><br>
+		 -->
+
+
+	</td>
+	<td class="footer-nav">
+		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
+		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<br><br>
+		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
+
+	</td>
+
+</tr></table>
+
+</div>
+</div>
+</div>
+
+		
+
+	</div>
+
+
+  <script></script>
+  <script>
+  var MEDIA_URL = 'https://think-lab.s3.amazonaws.com/m/';
+  var STATIC_URL = 'https://think-lab.s3.amazonaws.com/s/';
+  var page_is_authenticated = false;
+  var page_page = 'document_review';
+  var page_profile_id = undefined;
+</script>
+
+
+
+	<!-- Note different script type. MUST come before MathJax.js -->
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	        "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"],
+	                        scale: 110, linebreaks: { automatic:true },
+	                        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+	        tex2jax: { inlineMath: [ ["$$", "$$"], ["\\(","\\)"] ],
+	                    displayMath: [ ["$$$","$$$"], ["\\[", "\\]"] ],
+	                    processEscapes: true,}
+	            });
+
+	</script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://think-lab.s3.amazonaws.com/s/dist/main.min.js"></script>
+  
+
+
+
+  
+	<script>
+	var version_id = 5;
+  var page_thread_id = '141';
+  // var page_is_researcher = false;
+  var page_last_comment_num = 86;
+  var page_is_review_thread = true;
+  $(function() {
+    TL.hlTypes = {"1": {"color": "b5ff80", "hue": 95, "description": "Strong point", "icon": "arrow-up"}, "2": {"color": "80ffff", "hue": 180, "description": "Suggest expansion", "icon": "fullscreen"}, "3": {"color": "ffca7f", "hue": 35, "description": "Difficult to read/understand", "icon": "font"}, "4": {"color": "ff80ff", "hue": 300, "description": "Needs specificity", "icon": "screenshot"}, "5": {"color": "80bfff", "hue": 210, "description": "Less is better", "icon": "remove"}, "6": {"color": "ff8080", "hue": 0, "description": "Error/inaccuracy", "icon": "exclamation-sign"}};
+    TL.highlights = {"175": {"end": 213, "section": 1, "profile_id": "48", "is_resolved": false, "start": 193, "type": 3, "id": "175"}, "176": {"end": 307, "section": 2, "profile_id": "48", "is_resolved": false, "start": 229, "type": 5, "id": "176"}, "178": {"end": 135, "section": 3, "profile_id": "48", "is_resolved": false, "start": 124, "type": 3, "id": "178"}, "179": {"end": 303, "section": 3, "profile_id": "48", "is_resolved": false, "start": 261, "type": 5, "id": "179"}, "180": {"end": 474, "section": 3, "profile_id": "48", "is_resolved": false, "start": 403, "type": 5, "id": "180"}, "181": {"end": 515, "section": 3, "profile_id": "48", "is_resolved": false, "start": 496, "type": 3, "id": "181"}, "182": {"end": 675, "section": 3, "profile_id": "48", "is_resolved": false, "start": 608, "type": 2, "id": "182"}, "183": {"end": 650, "section": 3, "profile_id": "48", "is_resolved": false, "start": 633, "type": 3, "id": "183"}, "184": {"end": 285, "section": 4, "profile_id": "48", "is_resolved": false, "start": 143, "type": 4, "id": "184"}, "185": {"end": 668, "section": 4, "profile_id": "48", "is_resolved": false, "start": 586, "type": 3, "id": "185"}, "186": {"end": 724, "section": 4, "profile_id": "48", "is_resolved": false, "start": 671, "type": 1, "id": "186"}, "187": {"end": 842, "section": 4, "profile_id": "48", "is_resolved": false, "start": 725, "type": 5, "id": "187"}, "188": {"end": 88, "section": 5, "profile_id": "48", "is_resolved": false, "start": 77, "type": 6, "id": "188"}, "189": {"end": 226, "section": 5, "profile_id": "48", "is_resolved": false, "start": 148, "type": 6, "id": "189"}, "190": {"end": 260, "section": 5, "profile_id": "48", "is_resolved": false, "start": 254, "type": 6, "id": "190"}, "191": {"end": 483, "section": 5, "profile_id": "48", "is_resolved": false, "start": 480, "type": 3, "id": "191"}, "192": {"end": 863, "section": 5, "profile_id": "48", "is_resolved": false, "start": 813, "type": 4, "id": "192"}, "193": {"end": 455, "section": 6, "profile_id": "48", "is_resolved": false, "start": 319, "type": 3, "id": "193"}, "194": {"end": 197, "section": 7, "profile_id": "48", "is_resolved": false, "start": 147, "type": 3, "id": "194"}, "195": {"end": 356, "section": 7, "profile_id": "48", "is_resolved": false, "start": 230, "type": 6, "id": "195"}, "196": {"end": 119, "section": 8, "profile_id": "48", "is_resolved": false, "start": 14, "type": 4, "id": "196"}, "197": {"end": 236, "section": 8, "profile_id": "48", "is_resolved": false, "start": 159, "type": 3, "id": "197"}, "198": {"end": 359, "section": 8, "profile_id": "48", "is_resolved": false, "start": 238, "type": 2, "id": "198"}, "199": {"end": 34, "section": 7, "profile_id": "48", "is_resolved": false, "start": 7, "type": 3, "id": "199"}, "200": {"end": 52, "section": 9, "profile_id": "48", "is_resolved": false, "start": 0, "type": 1, "id": "200"}, "201": {"end": 350, "section": 9, "profile_id": "48", "is_resolved": false, "start": 305, "type": 2, "id": "201"}, "203": {"end": 291, "section": 11, "profile_id": "48", "is_resolved": false, "start": 272, "type": 6, "id": "203"}, "204": {"end": 371, "section": 11, "profile_id": "48", "is_resolved": false, "start": 362, "type": 5, "id": "204"}, "205": {"end": 651, "section": 11, "profile_id": "48", "is_resolved": false, "start": 624, "type": 2, "id": "205"}, "206": {"end": 200, "section": 12, "profile_id": "48", "is_resolved": false, "start": 179, "type": 6, "id": "206"}, "207": {"end": 281, "section": 12, "profile_id": "48", "is_resolved": false, "start": 255, "type": 6, "id": "207"}, "208": {"end": 372, "section": 12, "profile_id": "48", "is_resolved": false, "start": 347, "type": 2, "id": "208"}, "209": {"end": 449, "section": 12, "profile_id": "48", "is_resolved": false, "start": 422, "type": 2, "id": "209"}, "211": {"end": 51, "section": 3, "profile_id": "48", "is_resolved": false, "start": 33, "type": null, "id": "211"}, "212": {"end": 63, "section": 11, "profile_id": "48", "is_resolved": false, "start": 20, "type": null, "id": "212"}, "213": {"end": 12, "section": 13, "profile_id": "48", "is_resolved": false, "start": 0, "type": null, "id": "213"}, "214": {"end": 502, "section": 1, "profile_id": "48", "is_resolved": false, "start": 472, "type": null, "id": "214"}, "215": {"end": 676, "section": 3, "profile_id": "180", "is_resolved": false, "start": 653, "type": 2, "id": "215"}, "216": {"end": 471, "section": 4, "profile_id": "180", "is_resolved": false, "start": 287, "type": 3, "id": "216"}, "217": {"end": 70, "section": 8, "profile_id": "180", "is_resolved": false, "start": 53, "type": 2, "id": "217"}, "220": {"end": 405, "section": 11, "profile_id": "180", "is_resolved": false, "start": 235, "type": 2, "id": "220"}, "222": {"end": 339, "section": 13, "profile_id": "180", "is_resolved": false, "start": 189, "type": 1, "id": "222"}, "223": {"end": 740, "section": 17, "profile_id": "180", "is_resolved": false, "start": 702, "type": 2, "id": "223"}, "235": {"end": 502, "section": 1, "profile_id": "181", "is_resolved": false, "start": 429, "type": null, "id": "235"}, "236": {"end": 162, "section": 3, "profile_id": "181", "is_resolved": false, "start": 118, "type": null, "id": "236"}, "237": {"end": 603, "section": 3, "profile_id": "181", "is_resolved": false, "start": 590, "type": null, "id": "237"}, "238": {"end": 90, "section": 4, "profile_id": "181", "is_resolved": false, "start": 81, "type": null, "id": "238"}, "239": {"end": 140, "section": 4, "profile_id": "181", "is_resolved": false, "start": 132, "type": null, "id": "239"}, "240": {"end": 575, "section": 5, "profile_id": "181", "is_resolved": false, "start": 390, "type": null, "id": "240"}, "241": {"end": 731, "section": 5, "profile_id": "181", "is_resolved": false, "start": 577, "type": null, "id": "241"}, "242": {"end": 350, "section": 9, "profile_id": "181", "is_resolved": false, "start": 292, "type": null, "id": "242"}, "243": {"end": 292, "section": 11, "profile_id": "181", "is_resolved": false, "start": 281, "type": null, "id": "243"}, "251": {"end": 388, "section": 5, "profile_id": "187", "is_resolved": false, "start": 228, "type": 1, "id": "251"}, "266": {"end": 155, "section": 15, "profile_id": "187", "is_resolved": false, "start": 124, "type": 5, "id": "266"}, "267": {"end": 185, "section": 15, "profile_id": "187", "is_resolved": false, "start": 178, "type": 5, "id": "267"}, "270": {"end": 306, "section": 15, "profile_id": "187", "is_resolved": false, "start": 301, "type": 5, "id": "270"}, "282": {"end": 359, "section": 18, "profile_id": "187", "is_resolved": false, "start": 331, "type": 5, "id": "282"}, "283": {"end": 699, "section": 18, "profile_id": "187", "is_resolved": false, "start": 361, "type": 1, "id": "283"}, "288": {"end": 92, "section": 2, "profile_id": "187", "is_resolved": false, "start": 40, "type": null, "id": "288"}, "289": {"end": 474, "section": 3, "profile_id": "187", "is_resolved": false, "start": 403, "type": null, "id": "289"}, "290": {"end": 33, "section": 4, "profile_id": "187", "is_resolved": false, "start": 22, "type": null, "id": "290"}, "291": {"end": 498, "section": 4, "profile_id": "187", "is_resolved": false, "start": 472, "type": null, "id": "291"}, "292": {"end": 724, "section": 4, "profile_id": "187", "is_resolved": false, "start": 672, "type": null, "id": "292"}, "293": {"end": 555, "section": 5, "profile_id": "187", "is_resolved": false, "start": 536, "type": null, "id": "293"}, "294": {"end": 581, "section": 5, "profile_id": "187", "is_resolved": false, "start": 577, "type": null, "id": "294"}, "295": {"end": 640, "section": 5, "profile_id": "187", "is_resolved": false, "start": 615, "type": null, "id": "295"}, "296": {"end": 763, "section": 5, "profile_id": "187", "is_resolved": false, "start": 752, "type": null, "id": "296"}, "297": {"end": 932, "section": 5, "profile_id": "187", "is_resolved": false, "start": 921, "type": null, "id": "297"}, "298": {"end": 429, "section": 6, "profile_id": "187", "is_resolved": false, "start": 427, "type": null, "id": "298"}, "299": {"end": 434, "section": 7, "profile_id": "187", "is_resolved": false, "start": 430, "type": null, "id": "299"}, "300": {"end": 649, "section": 8, "profile_id": "187", "is_resolved": false, "start": 426, "type": null, "id": "300"}, "301": {"end": 751, "section": 11, "profile_id": "187", "is_resolved": false, "start": 584, "type": null, "id": "301"}, "302": {"end": 146, "section": 12, "profile_id": "187", "is_resolved": false, "start": 110, "type": null, "id": "302"}, "303": {"end": 262, "section": 12, "profile_id": "187", "is_resolved": false, "start": 255, "type": null, "id": "303"}, "304": {"end": 187, "section": 13, "profile_id": "187", "is_resolved": false, "start": 156, "type": null, "id": "304"}, "305": {"end": 95, "section": 15, "profile_id": "187", "is_resolved": false, "start": 22, "type": null, "id": "305"}, "306": {"end": 210, "section": 15, "profile_id": "187", "is_resolved": false, "start": 206, "type": null, "id": "306"}, "307": {"end": 245, "section": 15, "profile_id": "187", "is_resolved": false, "start": 211, "type": null, "id": "307"}, "308": {"end": 341, "section": 15, "profile_id": "187", "is_resolved": false, "start": 316, "type": null, "id": "308"}, "309": {"end": 434, "section": 15, "profile_id": "187", "is_resolved": false, "start": 365, "type": null, "id": "309"}, "310": {"end": 480, "section": 15, "profile_id": "187", "is_resolved": false, "start": 472, "type": null, "id": "310"}, "311": {"end": 71, "section": 16, "profile_id": "187", "is_resolved": false, "start": 0, "type": null, "id": "311"}, "312": {"end": 469, "section": 16, "profile_id": "187", "is_resolved": false, "start": 458, "type": null, "id": "312"}, "313": {"end": 143, "section": 17, "profile_id": "187", "is_resolved": false, "start": 121, "type": null, "id": "313"}, "314": {"end": 247, "section": 17, "profile_id": "187", "is_resolved": false, "start": 219, "type": null, "id": "314"}, "315": {"end": 398, "section": 17, "profile_id": "187", "is_resolved": false, "start": 391, "type": null, "id": "315"}, "316": {"end": 741, "section": 17, "profile_id": "187", "is_resolved": false, "start": 558, "type": null, "id": "316"}, "317": {"end": 112, "section": 18, "profile_id": "187", "is_resolved": false, "start": 105, "type": null, "id": "317"}, "318": {"end": 199, "section": 19, "profile_id": "187", "is_resolved": false, "start": 195, "type": null, "id": "318"}, "319": {"end": 324, "section": 19, "profile_id": "187", "is_resolved": false, "start": 289, "type": null, "id": "319"}, "320": {"end": 424, "section": 19, "profile_id": "187", "is_resolved": false, "start": 417, "type": null, "id": "320"}, "324": {"end": 254, "section": 1, "profile_id": "17", "is_resolved": false, "start": 206, "type": 3, "id": "324"}, "326": {"end": 227, "section": 2, "profile_id": "17", "is_resolved": false, "start": 109, "type": 3, "id": "326"}, "328": {"end": 303, "section": 3, "profile_id": "17", "is_resolved": false, "start": 170, "type": 1, "id": "328"}, "330": {"end": 80, "section": 4, "profile_id": "17", "is_resolved": false, "start": 59, "type": 4, "id": "330"}, "331": {"end": 243, "section": 4, "profile_id": "17", "is_resolved": false, "start": 227, "type": 4, "id": "331"}, "332": {"end": 285, "section": 4, "profile_id": "17", "is_resolved": false, "start": 227, "type": 4, "id": "332"}, "333": {"end": 192, "section": 4, "profile_id": "17", "is_resolved": false, "start": 161, "type": 4, "id": "333"}, "337": {"end": 528, "section": 7, "profile_id": "17", "is_resolved": false, "start": 430, "type": 4, "id": "337"}, "338": {"end": 198, "section": 8, "profile_id": "17", "is_resolved": false, "start": 159, "type": 2, "id": "338"}, "339": {"end": 649, "section": 8, "profile_id": "17", "is_resolved": false, "start": 238, "type": 4, "id": "339"}, "341": {"end": 179, "section": 9, "profile_id": "17", "is_resolved": false, "start": 55, "type": 1, "id": "341"}, "345": {"end": 493, "section": 11, "profile_id": "17", "is_resolved": false, "start": 407, "type": 1, "id": "345"}, "348": {"end": 187, "section": 13, "profile_id": "17", "is_resolved": false, "start": 89, "type": 4, "id": "348"}, "349": {"end": 337, "section": 13, "profile_id": "17", "is_resolved": false, "start": 189, "type": 5, "id": "349"}, "350": {"end": 94, "section": 15, "profile_id": "17", "is_resolved": false, "start": 22, "type": 1, "id": "350"}, "352": {"end": 870, "section": 17, "profile_id": "17", "is_resolved": false, "start": 796, "type": 5, "id": "352"}, "353": {"end": 863, "section": 18, "profile_id": "17", "is_resolved": false, "start": 845, "type": 4, "id": "353"}, "354": {"end": 227, "section": 19, "profile_id": "17", "is_resolved": false, "start": 119, "type": 4, "id": "354"}, "355": {"end": 572, "section": 1, "profile_id": "17", "is_resolved": false, "start": 557, "type": null, "id": "355"}, "356": {"end": 579, "section": 3, "profile_id": "17", "is_resolved": false, "start": 480, "type": null, "id": "356"}, "357": {"end": 171, "section": 6, "profile_id": "17", "is_resolved": false, "start": 154, "type": null, "id": "357"}, "358": {"end": 319, "section": 6, "profile_id": "17", "is_resolved": false, "start": 300, "type": null, "id": "358"}, "359": {"end": 63, "section": 11, "profile_id": "17", "is_resolved": false, "start": 46, "type": null, "id": "359"}, "360": {"end": 755, "section": 11, "profile_id": "17", "is_resolved": false, "start": 751, "type": null, "id": "360"}, "361": {"end": 271, "section": 8, "profile_id": "17", "is_resolved": false, "start": 245, "type": null, "id": "361"}, "362": {"end": 146, "section": 10, "profile_id": "17", "is_resolved": false, "start": 116, "type": null, "id": "362"}, "363": {"end": 25, "section": 12, "profile_id": "17", "is_resolved": false, "start": 0, "type": null, "id": "363"}, "364": {"end": 297, "section": 17, "profile_id": "17", "is_resolved": false, "start": 290, "type": null, "id": "364"}};
+    TL.profiles = {"48": {"username": "b_good", "countDiscussions": 0, "countAnnotations": 0, "countComments": 0, "has_image": true, "id": "48", "name": "Benjamin Good"}, "17": {"username": "dhimmel", "countDiscussions": 0, "countAnnotations": 0, "countComments": 0, "has_image": true, "id": "17", "name": "Daniel Himmelstein"}, "187": {"username": "obigriffith", "countDiscussions": 0, "countAnnotations": 0, "countComments": 0, "has_image": true, "id": "187", "name": "Obi Griffith"}, "180": {"username": "timputman", "countDiscussions": 0, "countAnnotations": 0, "countComments": 0, "has_image": true, "id": "180", "name": "Tim Putman"}, "181": {"username": "andrewsu", "countDiscussions": 0, "countAnnotations": 0, "countComments": 0, "has_image": true, "id": "181", "name": "Andrew Su"}};
+    TL.countYourNotes = 0;
+    TL.countAnnotations = 121;
+    TL.countComments = 86;
+    TL.countDiscussions = 2;
+    TL.pageNewDiscussionURL = "/p/HHMI_Bcr_Abl/discussion/new";
+    TL.threadLastSeenNum = null;
+    // TL.userIsAnnotating
+  });
+</script>
+
+
+
+<script>
+$(function() {
+  recordHit('document', 11);
+});
+</script>
+
+
+
+<script>
+$(function() {
+  recordHit('thread', 141);
+});
+</script>
+
+
+
+
+
+
+
+
+
+  <script src="https://think-lab.s3.amazonaws.com/s/dist/review.min.js"></script>
+
+
+
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>

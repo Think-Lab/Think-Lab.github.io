@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZgEOC19dW0QCEVtHU1gG","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":1107}</script>
+    <title>Why we predicted ictogenic tricyclic compounds treat epilepsy? | Thinklab</title>
+	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
+    <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/highlightjs/github.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/css.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/bootstrap-multiselect.css" />
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
+    
+    
+    
+    
+  
+    <meta name="citation_doi" content="10.15363/thinklab.d231">
+    <meta name="citation_title" content="Why we predicted ictogenic tricyclic compounds treat epilepsy?">
+    <meta name="citation_online_date" content="March 10, 2017">
+    <meta name="citation_author" content="Daniel Himmelstein">
+    <meta name="citation_journal_title" content="Thinklab">
+    <meta name="citation_publisher" content="Thinklab">
+  
+
+    
+
+
+	<!-- GoogleAnalytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-48550230-1', 'thinklab.com');
+	ga('require', 'displayfeatures');
+	
+	ga('send', 'pageview');
+
+	</script>
+
+
+
+
+
+
+</head>
+<body >
+  <form id="form_action" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+</form>
+
+	
+
+	<div class="body-wrapper">
+
+		
+
+
+<!-- <div style="height:5px;background-image:url('https://think-lab.s3.amazonaws.com/s/img/top-bg.gif');"></div> -->
+<div class="gradient">
+	<div class="main-centered-div header-container">
+
+<table class="full-width" style="height:60px;"><tr>
+	<td style="width:200px;vertical-align:middle;padding-bottom:15px;">
+		<a href="/" style="font-weight:normal;color:#212121;"><img src="https://think-lab.s3.amazonaws.com/s/img/logo.png" width="160"></a>
+	</td><td style="vertical-align:middle;text-align:left;padding-top:6px;width:100%;padding-left:40px;">
+		<ul id="not-search-block"  class="main-header">
+
+
+			
+
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/proposals">Proposals</a></li>
+						<li><a href="/projects">Projects</a></li>
+						<li><a href="/publications">Article discussion</a></li>
+						<li><a href="/discussion">All discussion</a></li>
+					</ul>
+				</li>
+				<li><a href="/leaderboard">Leaderboard</a></li>
+
+			
+				<li><a href="/about">About</a></li>
+			
+
+
+		</ul>
+
+    <ul id="search-block" class="main-header" style="display: none; margin-right: 30px;">
+        <li class="full-width">
+            <form method="get" action="/search">
+			<div class="input-group full-width">
+				<input name="q" type="text" class="form-control search-input">
+			</div>
+            </form>
+        </li>
+    </ul>
+
+	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
+		<ul class="main-header pull-right" style="padding-left: 0;">
+    		
+                <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+            
+
+        </ul>
+    </ul>
+	</td>
+</tr></table>
+
+<!-- <div id="global-search-div" class="main-centered-div" style="display:none;">
+	<input type="text" value="" class="thread-search form-control" placeholder="Search" data-action="/discussion">
+</div> -->
+
+	</div>
+</div>
+
+		
+	  
+
+
+
+	  
+
+
+		
+
+		<div class="dark-head"><div class="main-centered-div">
+
+			
+
+		</div></div>
+		
+		<div class="main-centered-div" style="margin-top:40px;padding-bottom:340px">
+	    
+
+<div style="margin-top:-20px; margin-bottom:20px;">
+
+    <a class="side-box" href="/doc/7/review#d231" style="background-color:#ebfdff;"><div class="side-type">Report:</div> <div class="side-title">Rephetio: Repurposing drugs on a hetnet [rephetio]</div></a><br>
+
+
+
+</div>
+
+<table style="margin-top:0px;"><tr>
+	<td class="thread-table-content">
+
+		<table class="full-width">
+			
+<tr class="comment-tr target-hl" id="1" data-comment-id="1486">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1486"></a>
+
+    
+
+			<h2 class="page-title" style="margin-bottom:5px;margin-top:0px !important;">Why we predicted ictogenic tricyclic compounds treat epilepsy?</h2>
+
+			<div style="margin-top:5px;color:gray;margin-bottom:20px;font-size:13px;">
+				<a style="font-weight:normal;color:#212121" href="/u/dhimmel"><strong>Daniel Himmelstein</strong></a>
+				<span class="is-researcher">Researcher</span>
+				&nbsp; <a href="#1" class="light">119 days ago</a>
+				
+			</div>
+
+      
+
+          <hr>
+		
+
+    <p>The epilepsy section of our <a href="https://thinklab.com/doc/7/review#section-34">initial report</a> states:</p>
+
+<blockquote><p>As an example, we predicted five tricyclic antidepressants primarily based on their binding to the GABAᴬ receptor.</p></blockquote>
+
+<p>This statement derived from an <a href="https://thinklab.com/discussion/prediction-in-epilepsy/224#2" class="citation thread-citation" data-key="10.15363/thinklab.d224">earlier comment</a> that.</p>
+
+<blockquote><p>The 15 predicted drugs that are known to induce seizures include five are tricyclic antidepressants (TCAs) (amitriptyline, imipramine, nortriptyline, clomipramine, desipramine)</p></blockquote>
+
+<p>However, our <a href="https://thinklab.com/discussion/visualizing-the-top-epilepsy-predictions-in-cytoscape/230#14" class="citation thread-citation" data-key="10.15363/thinklab.d230">new visualization</a> of the top epilepsy predictions and their targeted genes makes it clear that binding GABAᴬ isn't the cause of these predictions. For convenience, this visualization is reproduced below:</p>
+
+<p><img src="https://github.com/dhimmel/rephetio/raw/54ce1bacfe6392c04d6afd164df7718a0d2769b3/epilepsy/figure/combined/compound-network-combined.png" alt="Top epilepsy predictions"></p>
+
+<p>Specifically, I'm referring to <a href="https://neo4j.het.io/browser/?cmd=play&amp;arg=https://neo4j.het.io/guides/rep/DB00321/DOID_1826.html">amitriptyline</a>, <a href="https://neo4j.het.io/browser/?cmd=play&amp;arg=https://neo4j.het.io/guides/rep/DB00543/DOID_1826.html">amoxapine</a>, <a href="https://neo4j.het.io/browser/?cmd=play&amp;arg=https://neo4j.het.io/guides/rep/DB01242/DOID_1826.html">clomipramine</a>, <a href="https://neo4j.het.io/browser/?cmd=play&amp;arg=https://neo4j.het.io/guides/rep/DB00363/DOID_1826.html">clozapine</a>, <a href="https://neo4j.het.io/browser/?cmd=play&amp;arg=https://neo4j.het.io/guides/rep/DB00434/DOID_1826.html">cyproheptadine</a>, <a href="https://neo4j.het.io/browser/?cmd=play&amp;arg=https://neo4j.het.io/guides/rep/DB01151/DOID_1826.html">desipramine</a>, <a href="https://neo4j.het.io/browser/?cmd=play&amp;arg=https://neo4j.het.io/guides/rep/DB00458/DOID_1826.html">imipramine</a>, <a href="https://neo4j.het.io/browser/?cmd=play&amp;arg=https://neo4j.het.io/guides/rep/DB00408/DOID_1826.html">loxapine</a>, and <a href="https://neo4j.het.io/browser/?cmd=play&amp;arg=https://neo4j.het.io/guides/rep/DB00540/DOID_1826.html">nortriptyline</a>, which all share a tricyclic structure and cluster together in the visualization.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-306" class="inline-note toggle-parent" data-note-id="306">
+	<p><a href="/u/scootermorris">Scooter Morris</a>: Care should be taken against over-interpreting the "clusters" in your visualization.  In particular, if you look at the drugs listed closely, you'll see that there are actually two groups with only cyproheptadine and clozapine showing any similarity that crosses the groups.  The fact that the two groups are next to each other is a simple artifact of the layout.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-307" class="inline-note toggle-parent" data-note-id="307">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: <a href="/u/scootermorris" class="username">@scootermorris</a> great point. The 9 ictogenic tricyclic compounds can be broken into two groups based on their structures. First the <a href="https://en.wikipedia.org/wiki/Tricyclic_antidepressant">tricyclic antidepressants</a> — amitriptyline, imipramine, nortriptyline, clomipramine, and desipramine — have the three connected rings with a tail. Second there's cyproheptadine, loxapine, clozapine, and amoxapine, which all have a fourth ring that is not directly touching the tricyclic structure. These four compounds seem to have diverse therapeutic applications: cyproheptadine is a first-generation antihistamine, loxapine is a typical antipsychotic, clozapine is an atypical antipsychotic, and amoxapine is a tetracyclic antidepressant. So <a href="/u/scootermorris" class="username">@scootermorris</a> I think you're right that the small chemical differences may actual be quite meaningful.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="2" data-comment-id="1487">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1487"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#2" class="light">157 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Literature survey</h1>
+
+<p>Below is a collection of related literature, which I may update as the research continuous. The primary questions is why the 9 cyclic compounds listed above are ictogenic.</p>
+
+<p>From a 2010 article <span class="citation">[<a href="https://doi.org/10.1016/j.seizure.2009.11.005" class="citation hm " data-key="10.1016/j.seizure.2009.11.005">1</a>]</span>:</p>
+
+<blockquote><p>The mechanisms through which antidepressants alter neuronal excitability and modify seizure threshold are still largely unknown. Antidepressants act mainly by blocking the re-uptake of monoamines. Both animal and human data have shown that blocking the re-uptake of norepinephrine and/or serotonin has an anticonvulsant effect <span class="citation">[<a href="https://doi.org/10.1016/j.yebeh.2005.07.014" class="citation hm " data-key="10.1016/j.yebeh.2005.07.014">2</a>]</span>. The convulsive properties of antidepressants have been suggested to be the result of their possible local anaesthetic or anticholinergic effect <span class="citation">[<a href="https://doi.org/10.1016/s0006-2952(96)00509-6" class="citation hm " data-key="10.1016/s0006-2952(96)00509-6">3</a>]</span>. It has been proposed that selective serotonin re-uptake inhibitors (SSRIs) are less likely to cause seizures than cyclic antidepressants <span class="citation">[<a href="https://doi.org/10.1016/s0736-4679(97)00072-3" class="citation hm " data-key="10.1016/s0736-4679(97)00072-3">4</a>]</span>. On the other hand, seizures have been associated with SSRIs in previous studies of adverse events as in the case of escitaloprame <span class="citation">[<a href="https://doi.org/10.2165/00002018-199920030-00007" class="citation hm " data-key="10.2165/00002018-199920030-00007">5</a>]</span>.</p></blockquote>
+
+<p>From a 2016 article <span class="citation">[<a href="https://doi.org/10.1016/j.yebeh.2016.01.029" class="citation hm " data-key="10.1016/j.yebeh.2016.01.029">6</a>]</span>:</p>
+
+<blockquote><p>Antidepressants may disturb the neuronal balance and control of excitability, leading to seizures. Seizures may occur as a consequence of a misbalance between inhibitory GABAergic and excitatory glutamatergic neurotransmission with increase in glutamatergic activation and, thus, excessive calcium influx, initiating intracellular processes. The underlying mechanisms are not clear <span class="citation">[<a href="https://doi.org/10.2165/00002018-199818020-00004" class="citation hm " data-key="10.2165/00002018-199818020-00004">7</a>]</span>.</p></blockquote>
+
+<p>From a 2002 article <span class="citation">[<a href="https://doi.org/10.2165/00002018-200225020-00004" class="citation hm " data-key="10.2165/00002018-200225020-00004">8</a>]</span></p>
+
+<blockquote><p>Different specific mechanisms may be involved, which are mediated by the γ-aminobutyric acid (GABA) system and other neurotransmitters. Discussion of these mechanisms is beyond the scope of this review and readers may refer to specific reviews <span class="citation">[<a href="https://doi.org/10.1111/j.1528-1157.1998.tb01268.x" class="citation hm " data-key="10.1111/j.1528-1157.1998.tb01268.x">9</a>]</span>.</p></blockquote>
+
+<p>From a 1996 article <span class="citation">[<a href="https://doi.org/10.1016/s0006-2952(96)00509-6" class="citation hm " data-key="10.1016/s0006-2952(96)00509-6">3</a>]</span> (referenced in <span class="citation">[<a href="https://doi.org/10.1016/j.seizure.2009.11.005" class="citation hm " data-key="10.1016/j.seizure.2009.11.005">1</a>]</span> above):</p>
+
+<blockquote><p>Taken together, the total body of information strongly suggests that the pharmacodynamic action by which antidepressant drugs cause seizures is unrelated to their ability to block norepinephrine or serotonin reuptake. Rather, it seems more likely that these drugs produce convulsions by virtue of their local anesthetic or their antihistaminic/antimuscarinic properties.</p></blockquote>
+
+<p>Other references: <span class="citation">[<a href="https://doi.org/10.1007/s11910-016-0670-5" class="citation hm " data-key="10.1007/s11910-016-0670-5">10</a>]</span></p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="3" data-comment-id="1488">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1488"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#3" class="light">156 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Cholinergic receptors?</h1>
+
+<p>One visually striking pattern is that of the 9 ictogenic tricyclic compounds, 8 target cholinergic receptors. Furthermore, clomipramine also likely exhibits anti-cholinergic effects <span class="citation">[<a href="https://doi.org/10.1016/S0014-2999(02)01556-X" class="citation hm " data-key="10.1016/S0014-2999(02)01556-X">1</a>, <a href="https://doi.org/10.1016/S0014-2999(02)02557-8" class="citation hm " data-key="10.1016/S0014-2999(02)02557-8">2</a>, <a href="https://doi.org/10.1177/030006057300100537" class="citation hm " data-key="10.1177/030006057300100537">3</a>]</span>, which would mean all 9 ictogenic tricyclic compounds bind to cholinergic receptors. I have not confirmed this, but I believe these compounds are all antagonists of cholinergic receptors.</p>
+
+<p>There are two anti-ictogenic tricyclic compounds: oxcarbazepine and carbamazepine. Although these compounds likely have anti-cholinergic effects <span class="citation">[<a href="https://doi.org/10.1016/j.ejphar.2010.05.063" class="citation hm " data-key="10.1016/j.ejphar.2010.05.063">4</a>, <a href="https://doi.org/10.1016/0028-3908(76)90031-9" class="citation hm " data-key="10.1016/0028-3908(76)90031-9">5</a>, <a href="https://doi.org/10.1111/j.1528-1157.1999.tb00848.x" class="citation hm " data-key="10.1111/j.1528-1157.1999.tb00848.x">6</a>]</span>, they are unique in their targeting of the sodium channel (according to our visualization).</p>
+
+<p>Interestingly, there's evidence that cholinergic receptor inhibition may a therapeutic mechanism of action for carbamazepine <span class="citation">[<a href="https://doi.org/10.3389/fphys.2015.00022" class="citation hm " data-key="10.3389/fphys.2015.00022">7</a>]</span>. Quoting from <span class="citation">[<a href="https://doi.org/10.1111/j.1528-1157.1999.tb00848.x" class="citation hm " data-key="10.1111/j.1528-1157.1999.tb00848.x">6</a>]</span>:</p>
+
+<blockquote><p>The increased sensitivity of these mutant receptors supports the hypothesis that the antiepileptic activity of carbamazepine can, at least to some extent, be attributed to the nAChR inhibition.</p></blockquote>
+
+<p>And furthermore, the barbiturates — which clustered together and were all anti-ictogenic — also inhibit cholinergic receptors <span class="citation">[<a href="https://doi.org/10.1085/jgp.109.3.401" class="citation hm " data-key="10.1085/jgp.109.3.401">8</a>]</span>. Pharmacologists believe the primary mechanisms of action for barbituates on epilepsy are GABAᴀ agonism, blocking AMPA/kainate receptors, and inhibiting glutamate release <span class="citation">[<a href="https://doi.org/10.1111/epi.12025" class="citation hm " data-key="10.1111/epi.12025">9</a>]</span>. Potentially, the anti-cholinergic effects of barbiturates are overshadowed by these other mechanisms.</p>
+
+<p><a href="/u/pouyakhankhanian" class="username">@pouyakhankhanian</a>, do you also find the cholinergic receptors interesting here?</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+    		
+		</table>
+
+    
+
+    &nbsp;<br>
+    <a class="btn btn-primary btn-lg" href="/signup?next=/discussion/why-we-predicted-ictogenic-tricyclic-compounds-treat-epilepsy/231&suppress_message=1" style>Join to Reply</a>
+
+
+		<table class="references table-td-5" style="display:none;"><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d224' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d224'><a href='/discussion/prediction-in-epilepsy/224' class='pub-title'>Prediction in epilepsy</a><div class='pub-body'>Pouya Khankhanian, Daniel Himmelstein (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d224'>10.15363/thinklab.d224</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d230' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>2.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d230'><a href='/discussion/visualizing-the-top-epilepsy-predictions-in-cytoscape/230' class='pub-title'>Visualizing the top epilepsy predictions in Cytoscape</a><div class='pub-body'>Daniel Himmelstein, Pouya Khankhanian, Alexander Pico, Lars Juhl Jensen, Scooter Morris (2017) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d230'>10.15363/thinklab.d230</a></div></div></td></tr><tr><td><a href='/doi/10.1016/j.seizure.2009.11.005' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>3.</div></td><td><div class='doi-body' data-key='10.1016/j.seizure.2009.11.005'><a href='/doi/10.1016/j.seizure.2009.11.005' class='pub-title'>Seizure risk associated with neuroactive drugs: Data from the WHO adverse drug reactions database</a><div class='pub-body'>Eva Kumlien, Per Olov Lundberg (2010) <i>Seizure</i>. doi:<a class='pub-doi' href='https://doi.org/10.1016/j.seizure.2009.11.005'>10.1016/j.seizure.2009.11.005</a></div></div></td></tr><tr><td><a href='/doi/10.1016/j.yebeh.2005.07.014' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>4.</div></td><td><div class='doi-body' data-key='10.1016/j.yebeh.2005.07.014'><a href='/doi/10.1016/j.yebeh.2005.07.014' class='pub-title'>The serotonergic and noradrenergic effects of antidepressant drugs are anticonvulsant, not proconvulsant</a><div class='pub-body'>Phillip C. Jobe, Ronald A. Browning (2005) <i>Epilepsy &amp; Behavior</i>. doi:<a class='pub-doi' href='https://doi.org/10.1016/j.yebeh.2005.07.014'>10.1016/j.yebeh.2005.07.014</a></div></div></td></tr><tr><td><a href='/doi/10.1016/s0006-2952(96)00509-6' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>5.</div></td><td><div class='doi-body' data-key='10.1016/s0006-2952(96)00509-6'><a href='/doi/10.1016/s0006-2952(96)00509-6' class='pub-title'>Antidepressants and seizures: Clinical anecdotes overshadow neuroscience</a><div class='pub-body'>John W. Dailey, Dean K. Naritoku (1996) <i>Biochemical Pharmacology</i>. doi:<a class='pub-doi' href='https://doi.org/10.1016/s0006-2952(96)00509-6'>10.1016/s0006-2952(96)00509-6</a></div></div></td></tr><tr><td><a href='/doi/10.1016/s0736-4679(97)00072-3' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>6.</div></td><td><div class='doi-body' data-key='10.1016/s0736-4679(97)00072-3'><a href='/doi/10.1016/s0736-4679(97)00072-3' class='pub-title'>Fluoxetine versus tricyclic antidepressants: A prospective multicenter study of antidepressant drug overdoses</a><div class='pub-body'>Scott Phillips, Jeffrey Brent, Kenneth Kulig, John Heiligenstein, Martin Birkett (1997) <i>The Journal of Emergency Medicine</i>. doi:<a class='pub-doi' href='https://doi.org/10.1016/s0736-4679(97)00072-3'>10.1016/s0736-4679(97)00072-3</a></div></div></td></tr><tr><td><a href='/doi/10.2165/00002018-199920030-00007' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>7.</div></td><td><div class='doi-body' data-key='10.2165/00002018-199920030-00007'><a href='/doi/10.2165/00002018-199920030-00007' class='pub-title'>Adverse Reactions of Selective Serotonin Reuptake Inhibitors</a><div class='pub-body'>Olav Spigset (1999) <i>Drug Safety</i>. doi:<a class='pub-doi' href='https://doi.org/10.2165/00002018-199920030-00007'>10.2165/00002018-199920030-00007</a></div></div></td></tr><tr><td><a href='/doi/10.1016/j.yebeh.2016.01.029' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>8.</div></td><td><div class='doi-body' data-key='10.1016/j.yebeh.2016.01.029'><a href='/doi/10.1016/j.yebeh.2016.01.029' class='pub-title'>Proconvulsant effects of antidepressants — What is the current evidence?</a><div class='pub-body'>Cecilie Johannessen Landmark, Oliver Henning, Svein I. Johannessen (2016) <i>Epilepsy &amp; Behavior</i>. doi:<a class='pub-doi' href='https://doi.org/10.1016/j.yebeh.2016.01.029'>10.1016/j.yebeh.2016.01.029</a></div></div></td></tr><tr><td><a href='/doi/10.2165/00002018-199818020-00004' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>9.</div></td><td><div class='doi-body' data-key='10.2165/00002018-199818020-00004'><a href='/doi/10.2165/00002018-199818020-00004' class='pub-title'>Selecting an Antidepressant for Use in a Patient with Epilepsy</a><div class='pub-body'>Stephen Curran, Karel de Pauw (1998) <i>Drug Safety</i>. doi:<a class='pub-doi' href='https://doi.org/10.2165/00002018-199818020-00004'>10.2165/00002018-199818020-00004</a></div></div></td></tr><tr><td><a href='/doi/10.2165/00002018-200225020-00004' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>10.</div></td><td><div class='doi-body' data-key='10.2165/00002018-200225020-00004'><a href='/doi/10.2165/00002018-200225020-00004' class='pub-title'>Effects of Psychotropic Drugs on Seizure Threshold</a><div class='pub-body'>Francesco Pisani, Giancarla Oteri, Cinzia Costa, Giorgio Di Raimondo, Raoul Di Perri (2002) <i>Drug Safety</i>. doi:<a class='pub-doi' href='https://doi.org/10.2165/00002018-200225020-00004'>10.2165/00002018-200225020-00004</a></div></div></td></tr><tr><td><a href='/doi/10.1111/j.1528-1157.1998.tb01268.x' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>11.</div></td><td><div class='doi-body' data-key='10.1111/j.1528-1157.1998.tb01268.x'><a href='/doi/10.1111/j.1528-1157.1998.tb01268.x' class='pub-title'>Antiepileptic Drugs as a Cause of Worsening Seizures</a><div class='pub-body'>E. Perucca, L. Gram, G. Avanzini, O. Dulac (1998) <i>Epilepsia</i>. doi:<a class='pub-doi' href='https://doi.org/10.1111/j.1528-1157.1998.tb01268.x'>10.1111/j.1528-1157.1998.tb01268.x</a></div></div></td></tr><tr><td><a href='/doi/10.1007/s11910-016-0670-5' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>12.</div></td><td><div class='doi-body' data-key='10.1007/s11910-016-0670-5'><a href='/doi/10.1007/s11910-016-0670-5' class='pub-title'>The Impact of Psychoactive Drugs on Seizures and Antiepileptic Drugs</a><div class='pub-body'>Mitra Habibi, Felecia Hart, Jacquelyn Bainbridge (2016) <i>Current Neurology and Neuroscience Reports</i>. doi:<a class='pub-doi' href='https://doi.org/10.1007/s11910-016-0670-5'>10.1007/s11910-016-0670-5</a></div></div></td></tr><tr><td><a href='/doi/10.1016/S0014-2999(02)01556-X' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>13.</div></td><td><div class='doi-body' data-key='10.1016/S0014-2999(02)01556-X'><a href='/doi/10.1016/S0014-2999(02)01556-X' class='pub-title'>Effects of clomipramine on neuronal nicotinic acetylcholine receptors</a><div class='pub-body'>Héctor E. López-Valdés, Jesús Garcı́a-Colunga, Ricardo Miledi (2002) <i>European Journal of Pharmacology</i>. doi:<a class='pub-doi' href='https://doi.org/10.1016/S0014-2999(02)01556-X'>10.1016/S0014-2999(02)01556-X</a></div></div></td></tr><tr><td><a href='/doi/10.1016/S0014-2999(02)02557-8' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>14.</div></td><td><div class='doi-body' data-key='10.1016/S0014-2999(02)02557-8'><a href='/doi/10.1016/S0014-2999(02)02557-8' class='pub-title'>Comparison of the anticholinergic effects of the serotonergic antidepressants, paroxetine, fluvoxamine and clomipramine</a><div class='pub-body'>Jun Fujishiro, Taiichiro Imanishi, Kaname Onozawa, Masaki Tsushima (2002) <i>European Journal of Pharmacology</i>. doi:<a class='pub-doi' href='https://doi.org/10.1016/S0014-2999(02)02557-8'>10.1016/S0014-2999(02)02557-8</a></div></div></td></tr><tr><td><a href='/doi/10.1177/030006057300100537' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>15.</div></td><td><div class='doi-body' data-key='10.1177/030006057300100537'><a href='/doi/10.1177/030006057300100537' class='pub-title'>Anti-Cholinergic Effects of Clomipramine (Anafranil)</a><div class='pub-body'>D Thursfield (1973) <i>Journal of International Medical Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1177/030006057300100537'>10.1177/030006057300100537</a></div></div></td></tr><tr><td><a href='/doi/10.1016/j.ejphar.2010.05.063' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>16.</div></td><td><div class='doi-body' data-key='10.1016/j.ejphar.2010.05.063'><a href='/doi/10.1016/j.ejphar.2010.05.063' class='pub-title'>Effect of carbamazepine and oxcarbazepine on wild-type and mutant neuronal nicotinic acetylcholine receptors linked to nocturnal frontal lobe epilepsy</a><div class='pub-body'>Chiara Di Resta, Paola Ambrosi, Giulia Curia, Andrea Becchetti (2010) <i>European Journal of Pharmacology</i>. doi:<a class='pub-doi' href='https://doi.org/10.1016/j.ejphar.2010.05.063'>10.1016/j.ejphar.2010.05.063</a></div></div></td></tr><tr><td><a href='/doi/10.1016/0028-3908(76)90031-9' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>17.</div></td><td><div class='doi-body' data-key='10.1016/0028-3908(76)90031-9'><a href='/doi/10.1016/0028-3908(76)90031-9' class='pub-title'>Effect of carbamazepine on cholinergic parameters in rat brain areas</a><div class='pub-body'>S Consolo (1976) <i>Neuropharmacology</i>. doi:<a class='pub-doi' href='https://doi.org/10.1016/0028-3908(76)90031-9'>10.1016/0028-3908(76)90031-9</a></div></div></td></tr><tr><td><a href='/doi/10.1111/j.1528-1157.1999.tb00848.x' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>18.</div></td><td><div class='doi-body' data-key='10.1111/j.1528-1157.1999.tb00848.x'><a href='/doi/10.1111/j.1528-1157.1999.tb00848.x' class='pub-title'>Mutated Nicotinic Receptors Responsible for Autosomal Dominant Nocturnal Frontal Lobe Epilepsy are More Sensitive to Carbamazepine</a><div class='pub-body'>F. Picard, S. Bertrand, O. K. Steinlein, D. Bertrand (1999) <i>Epilepsia</i>. doi:<a class='pub-doi' href='https://doi.org/10.1111/j.1528-1157.1999.tb00848.x'>10.1111/j.1528-1157.1999.tb00848.x</a></div></div></td></tr><tr><td><a href='/doi/10.3389/fphys.2015.00022' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>19.</div></td><td><div class='doi-body' data-key='10.3389/fphys.2015.00022'><a href='/doi/10.3389/fphys.2015.00022' class='pub-title'>The role of nicotinic acetylcholine receptors in autosomal dominant nocturnal frontal lobe epilepsy</a><div class='pub-body'>Andrea Becchetti, Patrizia Aracri, Simone Meneghini, Simone Brusco, Alida Amadeo (2015) <i>Frontiers in Physiology</i>. doi:<a class='pub-doi' href='https://doi.org/10.3389/fphys.2015.00022'>10.3389/fphys.2015.00022</a></div></div></td></tr><tr><td><a href='/doi/10.1085/jgp.109.3.401' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>20.</div></td><td><div class='doi-body' data-key='10.1085/jgp.109.3.401'><a href='/doi/10.1085/jgp.109.3.401' class='pub-title'>Mechanisms of Barbiturate Inhibition of Acetylcholine Receptor Channels</a><div class='pub-body'>James P. Dilger, Rebecca Boguslavsky, Martin Barann, Tamir Katz, Ana Maria Vidal (1997) <i>The Journal of General Physiology</i>. doi:<a class='pub-doi' href='https://doi.org/10.1085/jgp.109.3.401'>10.1085/jgp.109.3.401</a></div></div></td></tr><tr><td><a href='/doi/10.1111/epi.12025' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>21.</div></td><td><div class='doi-body' data-key='10.1111/epi.12025'><a href='/doi/10.1111/epi.12025' class='pub-title'>How theories evolved concerning the mechanism of action of barbiturates</a><div class='pub-body'>Wolfgang Löscher, Michael A. Rogawski (2012) <i>Epilepsia</i>. doi:<a class='pub-doi' href='https://doi.org/10.1111/epi.12025'>10.1111/epi.12025</a></div></div></td></tr></table>
+
+    
+
+
+	</td>
+	<td class="thread-sidebar">
+
+
+			
+
+      <a class="btn btn-default follow-link btn-follow btn-lg is-following tt-top full-width" title="Follow discussion" data-id="231" data-ctype="thread" data-is-following="false">&nbsp;</a>
+
+      
+
+      
+        
+      
+
+
+				
+
+					<div class="details">Views</div>
+					<span style="font-size:20px;">31</span>
+
+        
+
+				
+					<div class="details">Topics</div>
+					<div style="margin-bottom:15px;">
+		            <a href="/topics/tricyclic-antidepressants" class="tag">Tricyclic Antidepressants</a><a href="/topics/epilepsy" class="tag">Epilepsy</a><a href="/topics/pharmacology" class="tag">Pharmacology</a>
+					</div>
+				
+
+
+		
+			<div class="details">Referenced by</div>
+			<div style="font-size:12px;"><ul style="padding-left:16px !important;">
+			
+				<li>
+					
+					Research report: <a href='/p/rephetio/report'>Rephetio: Repurposing drugs on a hetnet</a>
+				</li>
+			
+				</ul>
+			</div>
+		
+
+		
+			<div class="details">Cite this as</div>
+			<span style="font-size:12px;">
+				Daniel Himmelstein (2017) Why we predicted ictogenic tricyclic compounds treat epilepsy?. <i>Thinklab.</i> doi:<a href='https://doi.org/10.15363/thinklab.d231'>10.15363/thinklab.d231</a>
+			</span>
+		
+
+		<div class="details">License</div>
+		<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0;width:88px;height:31px;" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></p>
+
+		<div class="details">Share</div>
+		
+			
+				<a class="share-button fb" onclick="javascript:void(window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A//thinklab.com/discussion/why-we-predicted-ictogenic-tricyclic-compounds-treat-epilepsy/231','','width=600,height=460,menubar=no,status=no'));" href="#"></a>
+<a class="share-button twitter" onclick="javascript:void(window.open('https://twitter.com/share?text=Why%20we%20predicted%20ictogenic%20tricyclic%20compounds%20treat%20epilepsy%3F&url=https%3A//thinklab.com/discussion/why-we-predicted-ictogenic-tricyclic-compounds-treat-epilepsy/231','','width=600,height=300,menubar=no,status=no'));" href="#"></a>
+<a class="share-button google" onclick="javascript:void(window.open('https://plus.google.com/share?url=https%3A//thinklab.com/discussion/why-we-predicted-ictogenic-tricyclic-compounds-treat-epilepsy/231','','width=510,height=460,menubar=no,status=no'));" href="#"></a>
+
+			
+		
+
+	</td>
+</tr></table>
+
+
+		</div>
+
+
+		
+	    	<div class="footer">
+<div style="background:#dedede;">
+	<div class="main-centered-div text-center" style="padding:20px;">
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#b8d0ddd4d4d7f8ccd0d1d6d3d4d9da96dbd7d5"><span class="__cf_email__" data-cfemail="c9a1aca5a5a689bda1a0a7a2a5a8abe7aaa6a4">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+	</div>
+</div>
+<div class="main-footer">
+	<div class="main-centered-div">
+
+<table class="full-width"><tr>
+	<td class="footer-nav">
+
+        <div class="foot-head">Explore</div>
+        <a href="/proposals">Proposals</a><br>
+        <a href="/projects">Projects</a><br>
+        <a href="/publications">Article discussion</a><br>
+        <a href="/discussion">All discussion</a><br>
+        <a href="/topics">Topics</a><br>
+        <!-- <a href="/funders">Funders</a><br> -->
+        <a href="/funding">Funding opportunities</a><br>
+
+	</td>
+	<td class="footer-nav">
+
+        <!-- <div class="foot-head">Help &amp; feedback</div>	 -->
+        <!-- <div class="foot-head">Intro</div>
+        <a href="/benefits/for-science">Why</a><br>
+        <a href="/how-it-works">How it works</a><br>
+
+<br> -->
+
+        <div class="foot-head">Community</div>
+        <a href="/leaderboard">Leaderboard</a><br>
+        <a href="/p/meta">Thinklab Meta</a><br>
+				<a href="/help/faq">Help</a><br>
+				<!-- <a href="/new-project">Start a proposal</a><br> -->
+        <!-- <a href="/benefits/proposal">Benefits</a><br> -->
+        <!-- <a href="/funding">Get funded</a><br> -->
+        <!-- <a href="/participate">Become a contributor</a><br> -->
+        <!-- <a href="/for-funders">For science funders</a><br> -->
+        <!-- <a href="/for-institutions">For institutions</a><br> -->
+
+	</td>
+	<td class="footer-nav">
+
+
+
+        <div class="foot-head">About</div>
+        <a href="/about">Overview</a><br>
+        <a href="/benefits">Benefits</a><br>
+        <a href="/how-it-works">How it works</a><br>
+        <a href="/about/story">Our story</a><br>
+        <a href="/blog">Our blog</a><br>
+        <a href="/about/jobs">Join the team</a><br>
+        <br>
+
+        <!-- <div class="foot-head">Help</div>
+        <a href="/help">Help</a><br>
+		 -->
+
+
+	</td>
+	<td class="footer-nav">
+		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
+		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<br><br>
+		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
+
+	</td>
+
+</tr></table>
+
+</div>
+</div>
+</div>
+
+		
+
+	</div>
+
+
+  <script></script>
+  <script>
+  var MEDIA_URL = 'https://think-lab.s3.amazonaws.com/m/';
+  var STATIC_URL = 'https://think-lab.s3.amazonaws.com/s/';
+  var page_is_authenticated = false;
+  var page_page = 'discussion';
+  var page_profile_id = undefined;
+</script>
+
+
+
+	<!-- Note different script type. MUST come before MathJax.js -->
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	        "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"],
+	                        scale: 110, linebreaks: { automatic:true },
+	                        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+	        tex2jax: { inlineMath: [ ["$$", "$$"], ["\\(","\\)"] ],
+	                    displayMath: [ ["$$$","$$$"], ["\\[", "\\]"] ],
+	                    processEscapes: true,}
+	            });
+
+	</script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://think-lab.s3.amazonaws.com/s/dist/main.min.js"></script>
+  
+
+
+
+  
+	
+  
+  
+  
+<script>
+$(function() {
+  recordHit('thread', 231);
+});
+</script>
+
+
+
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>

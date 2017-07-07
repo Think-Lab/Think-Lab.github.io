@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZgEOC19dW0QCEVtHU1gG","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":276}</script>
+    <title>Expert curation of our indication catalog for disease-modifying treatments | Thinklab</title>
+	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
+    <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/highlightjs/github.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/css.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/bootstrap-multiselect.css" />
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
+    
+    
+    
+    
+  
+    <meta name="citation_doi" content="10.15363/thinklab.d95">
+    <meta name="citation_title" content="Expert curation of our indication catalog for disease-modifying treatments">
+    <meta name="citation_online_date" content="July 14, 2015">
+    <meta name="citation_author" content="Daniel Himmelstein, Pouya Khankhanian, Chrissy Hessler">
+    <meta name="citation_journal_title" content="Thinklab">
+    <meta name="citation_publisher" content="Thinklab">
+  
+
+    
+
+
+	<!-- GoogleAnalytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-48550230-1', 'thinklab.com');
+	ga('require', 'displayfeatures');
+	
+	ga('send', 'pageview');
+
+	</script>
+
+
+
+
+
+
+</head>
+<body >
+  <form id="form_action" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+</form>
+
+	
+
+	<div class="body-wrapper">
+
+		
+
+
+<!-- <div style="height:5px;background-image:url('https://think-lab.s3.amazonaws.com/s/img/top-bg.gif');"></div> -->
+<div class="gradient">
+	<div class="main-centered-div header-container">
+
+<table class="full-width" style="height:60px;"><tr>
+	<td style="width:200px;vertical-align:middle;padding-bottom:15px;">
+		<a href="/" style="font-weight:normal;color:#212121;"><img src="https://think-lab.s3.amazonaws.com/s/img/logo.png" width="160"></a>
+	</td><td style="vertical-align:middle;text-align:left;padding-top:6px;width:100%;padding-left:40px;">
+		<ul id="not-search-block"  class="main-header">
+
+
+			
+
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/proposals">Proposals</a></li>
+						<li><a href="/projects">Projects</a></li>
+						<li><a href="/publications">Article discussion</a></li>
+						<li><a href="/discussion">All discussion</a></li>
+					</ul>
+				</li>
+				<li><a href="/leaderboard">Leaderboard</a></li>
+
+			
+				<li><a href="/about">About</a></li>
+			
+
+
+		</ul>
+
+    <ul id="search-block" class="main-header" style="display: none; margin-right: 30px;">
+        <li class="full-width">
+            <form method="get" action="/search">
+			<div class="input-group full-width">
+				<input name="q" type="text" class="form-control search-input">
+			</div>
+            </form>
+        </li>
+    </ul>
+
+	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
+		<ul class="main-header pull-right" style="padding-left: 0;">
+    		
+                <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+            
+
+        </ul>
+    </ul>
+	</td>
+</tr></table>
+
+<!-- <div id="global-search-div" class="main-centered-div" style="display:none;">
+	<input type="text" value="" class="thread-search form-control" placeholder="Search" data-action="/discussion">
+</div> -->
+
+	</div>
+</div>
+
+		
+	  
+
+
+
+	  
+
+
+		
+
+		<div class="dark-head"><div class="main-centered-div">
+
+			
+
+		</div></div>
+		
+		<div class="main-centered-div" style="margin-top:40px;padding-bottom:340px">
+	    
+
+<div style="margin-top:-20px; margin-bottom:20px;">
+
+    <a class="side-box" href="/p/rephetio" style="background-color:#ebfdff;"><div class="side-type">Project:</div> <div class="side-title">Rephetio: Repurposing drugs on a hetnet [rephetio]</div></a><br>
+
+
+
+</div>
+
+<table style="margin-top:0px;"><tr>
+	<td class="thread-table-content">
+
+		<table class="full-width">
+			
+<tr class="comment-tr target-hl" id="1" data-comment-id="328">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="328"></a>
+
+    
+
+			<h2 class="page-title" style="margin-bottom:5px;margin-top:0px !important;">Expert curation of our indication catalog for disease-modifying treatments</h2>
+
+			<div style="margin-top:5px;color:gray;margin-bottom:20px;font-size:13px;">
+				<a style="font-weight:normal;color:#212121" href="/u/dhimmel"><strong>Daniel Himmelstein</strong></a>
+				<span class="is-researcher">Researcher</span>
+				&nbsp; <a href="#1" class="light">724 days ago</a>
+				
+			</div>
+
+      
+
+          <hr>
+		
+
+    <h2>Latest indication catalog</h2>
+
+<p>We have <a href="http://thinklab.com/discussion/how-should-we-construct-a-catalog-of-drug-indications/21#191">completed</a> a first-draft of our indication catalog. Recently, we updated the catalog with some <a href="http://thinklab.com/discussion/disease-ontology-feature-requests/68#221">fresh</a> disease cross-references. The latest catalog is now online (<a href="https://cdn.rawgit.com/dhimmel/indications/7c2b17f463babafcf4ec441e720b831340b186fe/merge.html#indication-table">webpage</a>, <a href="https://github.com/dhimmel/indications/blob/7c2b17f463babafcf4ec441e720b831340b186fe/data/indications.tsv">tsv</a>, <a href="https://github.com/dhimmel/indications/tree/7c2b17f463babafcf4ec441e720b831340b186fe">repository</a>).</p>
+
+<p>The catalog includes 1,388 high-confidence indications from four resources — MEDI-HPS <span class="citation">[<a href="https://doi.org/10.1136/amiajnl-2012-001431" class="citation" data-key="10.1136/amiajnl-2012-001431">1</a>]</span>, ehrlink <span class="citation">[<a href="https://doi.org/10.1136/amiajnl-2012-000852" class="citation" data-key="10.1136/amiajnl-2012-000852">2</a>]</span>, LabeledIn <span class="citation">[<a href="https://doi.org/10.1016/j.jbi.2014.08.004" class="citation" data-key="10.1016/j.jbi.2014.08.004">3</a>, <a href="https://doi.org/10.1093/database/bav016" class="citation" data-key="10.1093/database/bav016">4</a>]</span>, and PREDICT <span class="citation">[<a href="https://doi.org/10.1038/msb.2011.26" class="citation" data-key="10.1038/msb.2011.26">5</a>]</span> — and 1,114 low-confidence indications from MEDI-LPS <span class="citation">[<a href="https://doi.org/10.1136/amiajnl-2012-001431" class="citation" data-key="10.1136/amiajnl-2012-001431">1</a>]</span>. We are primarily concerned about the high-confidence associations which connect 108 diseases from <a href="http://thinklab.com/discussion/unifying-disease-vocabularies/44#144">DO Slim</a> and 744 small molecules from <a href="http://thinklab.com/discussion/unifying-drug-vocabularies/40#192">Drugbank Slim</a>.</p>
+
+<h2>Problematic indications</h2>
+
+<p>The source databases have a loose definition of indication — symptomatic treatments are often considered indications. For example, a narcolepsy drug approved for MS-induced fatigue is indicated for MS in our catalog. However, we are primarily interested in disease-modifying therapies. Since our method trains itself from this catalog, our predictions will recapitulate the types of indications included.</p>
+
+<h2>Seeking an expert</h2>
+
+<p>We are <strong>seeking an expert physician</strong> to manually review our 1,388 high-confidence indications and identify the disease-modifying subset. Since the classification is <em>unlikely</em> to be straightforward, we are looking for someone who can conceptualize the task from a high-throughput systems pharmacology perspective. We are happy to offer project authorship for a job well done.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="2" data-comment-id="376">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="376"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#2" class="light">698 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h2>Updated datasets</h2>
+
+<p>We modified the code and formats for our merged indication datasets (<a href="https://cdn.rawgit.com/dhimmel/indications/6375b195df61b6e0d44c4690abfa2ac0710bc690//merge.html#indication-table">website</a>, <a href="https://github.com/dhimmel/indications/tree/6375b195df61b6e0d44c4690abfa2ac0710bc690/data">downloads</a>). The underlying indications have not changed from <a href="#1">above</a>.</p>
+
+<h2>Pilot on 50 indications</h2>
+
+<p>We created a <a href="https://github.com/dhimmel/indications/blob/6375b195df61b6e0d44c4690abfa2ac0710bc690/data/curation.tsv">simpler tsv file</a> as a curation template. As a start, we are going to have two UCSF physicians each classify a <a href="https://github.com/dhimmel/indications/blob/6375b195df61b6e0d44c4690abfa2ac0710bc690/data/curation-subset.tsv">random subset</a> of 50 indications. These indications will be a pilot to see if the task is well-defined or needs revision.</p>
+
+<p>The curators will independently do a first pass. Then they will come to a consensus on conflicting classifications. We'll report back with our experience on the pilot. </p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="3" data-comment-id="436">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="436"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#3" class="light">657 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Curation pilot results</h1>
+
+<p><a href="/u/sergiobaranzini" class="username">@sergiobaranzini</a> recruited two UCSF physicians — <a href="http://greenlab.ucsf.edu/ari-j-green-md">Ari Green</a> (AJG) and <a href="http://profiles.ucsf.edu/christine.hessler">Christine Hessler</a> (CSH) — for the curation task. We asked the curators to independently classify 50 random indications as disease modifying or symptomatic. See the raw results for <a href="https://github.com/dhimmel/indications/blob/49efba793216dcaf739fe22a32f60c4549aa3f7a/curation/pilot/ajg.tsv">AJG</a> and <a href="https://github.com/dhimmel/indications/blob/49efba793216dcaf739fe22a32f60c4549aa3f7a/curation/pilot/csh.tsv">CSH</a>.</p>
+
+<h2>Combined results</h2>
+
+<p>While we did not specify that "not an indication" was an option, both curators identified these instances. While our indication dataset derives from high precision datasets, non-indications will be present. Thus, going forward we will include "not an indication" as a classification.</p>
+
+<p>I cleaned the curators free text into 3 classifications: <code>DM</code> for disease modifying, <code>SYM</code> for symptomatic, and <code>NOT</code> for not an indication. This cleaning step required some inference on my part and thus could have introduced a minor bias. The <a href="https://github.com/dhimmel/indications/blob/49efba793216dcaf739fe22a32f60c4549aa3f7a/curation/pilot/combined.tsv">combined results</a> show 66% agreement, with the following breakdown by curator:</p>
+
+<table class="table markdown-table"><thead><tr><th>class</th><th>ajg</th><th>csh</th></tr></thead><tbody><tr><td>DM</td><td>26</td><td>32</td></tr><tr><td>SYM</td><td>20</td><td>17</td></tr><tr><td>NOT</td><td>4</td><td>1</td></tr></tbody></table>
+
+<p>The pilot suggests that the compiled indications are ~58% disease modifying, ~37% symptomatic, and ~5% non-indications.</p>
+
+<h2>Definitions</h2>
+
+<p>We did not provide the curators with clear definitions of disease modifying and symptomatic. Our plan is to use the pilot experience to help define the categories. Preferably, these definitions should be crafted by the physicians.</p>
+
+<p>Informally, CSH defined disease modifying as:</p>
+
+<blockquote><p>any agent that changes the course of the illness or complications of the illness (not necessarily curing the disease, but preventing "flares" or complications). I'd ask myself, "is it poor form not to prescribe this medication to my patient with disease y and could I be sued for it?"</p></blockquote>
+
+<p>And symptomatic as:</p>
+
+<blockquote><p>agents that are used purely for patient's comfort and don't alter the course of the disease at all. </p></blockquote>
+
+<h2>Cocaine and cavities</h2>
+
+<p>One bizarre indication was <a href="http://www.drugbank.ca/drugs/DB00907">cocaine</a> and <a href="http://www.disease-ontology.org/term/DOID%3A216">dental carries</a>, which was contributed <a href="https://cdn.rawgit.com/dhimmel/indications/6375b195df61b6e0d44c4690abfa2ac0710bc690//merge.html#indication-table">by</a> MEDI-HPS <span class="citation">[<a href="https://doi.org/10.1136/amiajnl-2012-001431" class="citation" data-key="10.1136/amiajnl-2012-001431">1</a>]</span>. Since MEDI doesn't report its sources for individual indications and the authors <a href="http://thinklab.com/discussion/medi-indications-data-discrepancy-in-resource-specific-counts/31#2" class="citation thread-citation" data-key="10.15363/thinklab.d31">did not release</a> this data upon request, tracking down the provenance of this indication is difficult. However, MEDI does <a href="https://cdn.rawgit.com/dhimmel/indications/6375b195df61b6e0d44c4690abfa2ac0710bc690/medi/">specify</a> that this indication existed in SIDER 2 <span class="citation">[<a href="https://doi.org/10.1038/msb.2009.98" class="citation" data-key="10.1038/msb.2009.98">2</a>]</span>, which text mined drug labels. Presumably, <a href="http://www.drugs.com/pro/cocaine-hydrochloride-topical-solution.html">this label</a> for Cocaine Hydrochloride Topical Solution (brand name C-Topical) was the source for the cocaine–cavities indication. The label states the solution "is indicated for introduction of local (topical) anesthesia of accessible mucous membranes of the oral, laryngeal and nasal cavities." This suggests a non-indication or at most a symptomatic indication between cocaine and dental caries. However, for a SIDER 2 indication to be included in MEDI-HPS, at least one other source must report the indication. AJG informally suggested that the "reason for the hit is that cocaine accelerates dental caries and might therefore be considered disease modifying (but in a bad way)."</p>
+
+<h2>Next steps</h2>
+
+<p>The pilot experience proved the importance of expert curation of our compiled indication catalog. Before proceeding with the remaining indications, we should formally define the three classifications (DM, SYM, NOT). Clear definitions may increase the agreement between curators, but a final resolution stage for conflicts will be necessary.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="4" data-comment-id="446">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="446"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#4" class="light">644 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h2>Definitions</h2>
+
+<p>In a meeting yesterday, we (Ari Green, Christine Hessler, <a href="/u/dhimmel" class="username">@dhimmel</a>, <a href="/u/sergiobaranzini" class="username">@sergiobaranzini</a>) discussed the pilot experience and definitions. </p>
+
+<p>AJG pointed out that the term "disease modifying" is primarily used for rheumatology and multiple sclerosis. With this caveat in mind, we set out to identify a general definition that could apply broadly to complex disease. </p>
+
+<p>When considering possible definitions, <a href="/u/sergiobaranzini" class="username">@sergiobaranzini</a> and I stressed the following quality of a "disease modifying" indication:</p>
+
+<blockquote><p>If we predicted this indication, would the disease be considered an appropriate and precise application of the drug.</p></blockquote>
+
+<h3>We agreed on the following definitions:</h3>
+
+<ul><li><strong>disease modifying</strong> (<code>DM</code>) — a drug that therapeutically changes the underlying or downstream biology of the disease</li><li><strong>symptomatic</strong> (<code>SYM</code>) — a drug that treats a significant symptom of the disease</li><li><strong>non-indication</strong> (<code>NOT</code>) — a drug that neither therapeutically changes the underlying or downstream biology nor treats a significant symptom of the disease</li></ul>
+
+<p>We also agreed on the following <strong>guidelines</strong>:</p>
+
+<ul><li><strong>reasonable evidence</strong> of efficacy is required to be classified as disease modifying or symptomatic</li><li>if no classification accurately describes an indication, the <strong>most appropriate</strong> (although imperfect) classification should be chosen</li></ul>
+
+<h2>Next steps</h2>
+
+<p>AJG and CSH found many of their disagreements on the pilot indications resolved once a common definition was reached. With these definitions, we will now move onto the full set of indications, which AJG and CSH have agreed to curate.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="5" data-comment-id="675">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="675"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#5" class="light">527 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Results from first two curators</h1>
+
+<p>The curations from <a href="https://github.com/dhimmel/indications/blob/2e4d9be7ef911e48fdd10d99628b22098010d935/curation/ajg/curation-AJG.tsv" title="Ari Green's classifications">AJG</a> and <a href="https://github.com/dhimmel/indications/blob/2e4d9be7ef911e48fdd10d99628b22098010d935/curation/csh/curation-CSH.csv" title="Christine Hessler classifications">CSH</a> (<a href="/u/chrissyhessler" class="username">@chrissyhessler</a>) are in. Both curators went through and classified each of the 1,388 compound–disease pairs. The breakdown of their classifications are as follows:</p>
+
+<table class="table markdown-table"><thead><tr><th>class</th><th>AJG</th><th>CSH</th><th>AJG (as %)</th><th>CSH (as %)</th></tr></thead><tbody><tr><td>DM</td><td>599</td><td>593</td><td>43.2%</td><td>42.7%</td></tr><tr><td>SYM</td><td>514</td><td>517</td><td>37.0%</td><td>37.2%</td></tr><tr><td>NOT</td><td>275</td><td>278</td><td>19.8%</td><td>20.0%</td></tr></tbody></table>
+
+<p>Compared to the <a href="#3">pilot</a>, the curators classified a higher percentage of pairs as non-indications, while classifying a lower percentage as disease-modifying. Similar to the pilot, the curators agreed 68.0% percent of the time. The Cohen's kappa coefficient <span class="citation">[<a href="https://doi.org/10.1177/001316446002000104" class="citation" data-key="10.1177/001316446002000104">1</a>, <a href="https://doi.org/10.11613/BM.2012.031" class="citation" data-key="10.11613/BM.2012.031">2</a>]</span> between AJG and CSH was 49.9% (<a href="https://github.com/dhimmel/indications/blob/2e4d9be7ef911e48fdd10d99628b22098010d935/curation/tiebreaker-template.ipynb">notebook</a>), indicating <a href="http://www.stfm.org/fmhub/fm2005/May/Anthony360.pdf#page=3">moderate</a> agreement.</p>
+
+<p>Looking at only the 944 agreements, there were 447 disease-modifying, 351 symptomatic, and 146 non-indications. For the remaining <a href="https://github.com/dhimmel/indications/blob/2e4d9be7ef911e48fdd10d99628b22098010d935/curation/pk/template-pk.tsv">444 disagreements</a>, we plan to have a third curator break the tie.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="6" data-comment-id="676">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="676"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#6" class="light">526 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Recruitment of a third curator</h1>
+
+<p>We have recruited a third curator, Pouya Khankhanian, to break ties. Pouya is a resident physician in neurology at Penn. He received his in MD at UCSF.</p>
+
+<p>When learning of the task and before seeing this discussion and the three classifications, Pouya asked a few questions about what qualifies as an indication. While some of these may be cleared up by the <a href="#4">definitions</a> we decided on, I thought it would be helpful to post his questions here along my opinions.</p>
+
+<blockquote><p>Suppose a drug was indicated for treatment of seizures 10 years ago, but now we have a new drug that is more efficacious and has fewer side effects, so the old drug is no longer "indicated" in clinical practice. However, I suppose for the purposes of your study you would still want to call this "indicated"?</p></blockquote>
+
+<p>I would not disqualify this indication because it's no longer optimal. It still treats the disease and will therefore be helpful in training and validating our model.</p>
+
+<blockquote><p>Or, suppose a drug is clinically used for a disease, but is not actually indicated. Classic example is that almost all of our MS drugs are "not indicated" for treatment of progressive MS (meaning no trial has ever shown efficacy), but as you know most of our progressive MS patients get treated.</p></blockquote>
+
+<p>Off-label usages are acceptable as long as there's <em>reasonable evidence</em> of efficacy from a clinical perspective.</p>
+
+<blockquote><p>Or suppose a drug is like fifth line, and is only indicated if someone is medically refractory (i.e. they have failed the first four lines of drugs). Would you consider this "indicated"?</p></blockquote>
+
+<p>I don't think being far down the line should be a disqualifying factor for the reasons above.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="7" data-comment-id="900">
+  <td class="comment-profile-avatar">
+		<a href="/u/pouyakhankhanian"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/188_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="900"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/pouyakhankhanian">Pouya Khankhanian</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#7" class="light">503 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Initial results from the third curator</h1>
+
+<p>I was initially recruited to break the 444 disagreements between the other curators. After an initial pilot review of the first 80 or so disagreements, I noted some ambiguity in definition of the three classes that appeared to be giving rise to some of the disagreements. I discussed these with Daniel and we reached a more precise amended set of definitions.</p>
+
+<h3>Definitions:</h3>
+
+<ul><li><strong>disease modifying (DM) </strong> — a drug that therapeutically changes the underlying or downstream biology of the disease</li><li><strong>symptomatic (SYM) </strong> — a drug that treats a significant symptom of the disease</li><li><strong>non-indication (NOT) </strong> — a drug that neither therapeutically changes the underlying or downstream biology nor treats a significant symptom of the disease</li></ul>
+
+<h3>Guidelines:</h3>
+
+<ul><li><strong>reasonable evidence</strong> of efficacy is required to be classified as disease modifying or symptomatic. This includes off-label use.</li><li>if no classification accurately describes an indication, the <strong>most appropriate</strong> (although imperfect) classification should be chosen</li></ul>
+
+<h3>Amendments: (created 1/27/16, not seen by AJG and CSH)</h3>
+
+<ul><li><strong>Amendment 1: </strong> if a drug was <strong>previously indicated, but is no longer used</strong> due to side effects, or because there are better drugs, it is still considered <strong>DM</strong></li><li><strong>Amendment 2: </strong> it <strong>doesn't matter whether it is first line or fifth line</strong>, it's still considered <strong>DM</strong></li></ul>
+
+<h3>Assumptions: (by PK)</h3>
+
+<ul><li><strong>Assumption 1: DM trumps SYM. </strong> If a drug is clearly both disease modifying and also treats symptoms, then I will call it disease modifying. This is because most disease modifying drugs also treat symptoms.</li><li><strong>Assumption 2: SYM trumps NOT.</strong> If a drug is clearly symptomatic treatment, but can actually exacerbate the downstream biology of disease, then I chose SYM. I made this choice because this was the choice I saw most often made by AJG and CSH</li></ul>
+
+<p>With the revised definitions above, I reviewed the 444 disagreements as well as the 944 agreements (and suggested a change on 124 of these). I was not blinded to the other curators' decisions. I was able to see both of their decisions and also any comments they had left regarding their reasoning. In general, my strategy was to look three sources for each drug (unless I clearly already knew that a drug was DM or SYM): uptodate.com, drugbank.ca (link provided by Daniel in the spreadsheet), and a basic google search (which also served as a proxy for a pubmed search). When I noted that one of the two curators was calling an indication which I was not aware of (either DM or SYM), I would do a much more detailed search including a more detailed google search and a direct pubmed search. </p>
+
+<p>Below is the breakdown of classifications</p>
+
+<table class="table markdown-table"><thead><tr><th>class</th><th>AJG</th><th>CSH</th><th>PK</th><th></th><th>class</th><th>AJG</th><th>CSH</th><th>PK</th></tr></thead><tbody><tr><td>DM</td><td>599</td><td>593</td><td>755</td><td></td><td>DM</td><td>43.2%</td><td>42.7%</td><td>54.4%</td></tr><tr><td>SYM</td><td>514</td><td>517</td><td>390</td><td></td><td>SYM</td><td>37.0%</td><td>37.2%</td><td>28.1%</td></tr><tr><td>NOT</td><td>275</td><td>278</td><td>243</td><td></td><td>NOT</td><td>19.8%</td><td>20.0%</td><td>17.5%</td></tr><tr><td>total</td><td>1388</td><td>1388</td><td>1388</td><td></td><td>total</td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr></tbody></table>
+
+<p>The most notable difference was that I called DM more often than the other curators. There are at least two reasons for this. First, I was making use of amendment 1 and amendment 2 to make calls for DM, whereas the other curators were not using these amendments (in fact, when the other curators called NOT, they left comments such as "no longer recommended due to side effects", "not used anymore", or "rarely used"). Second, when I found a disagreement between two curators, I was more likely to agree with the curator who called DM. Specifically, of the 444 disagreements, there were 298 where one curator chose DM; of these 298 instances, I chose DM 204 times. I think this is because I did a more detailed search when I knew that one other curator thought that there was a DM indication. Of note, of the 146 times that the other curators were in disagreement between SYM and NOT, I chose SYM 76 times, I chose NOT 52 times, and I chose DM 18 times, likely for the same reasons described above.</p>
+
+<p>The <a href="https://github.com/dhimmel/indications/blob/d3d57b07abcf8d7af55f8e42ef7c4c99acd87ca8/curation/pk/template-pk%20final.xlsx">excel spreadsheet</a> includes a detailed discussion of every decision that I made. I will not re-iterate here the instances where I used one of the amendments above to change a call or to resolve a disagreement. I will also not detail instances where I changed a call because I thought another curator made a human error (for example, not classifying two proton-pump inhibitors in the same way for the same disease). I will also not re-iterate cases where I felt that one of the two other curators knew about an indication (either DM or SYM) and I was able to confirm evidence of this indication.</p>
+
+<p>I would like to enter into the discussion the cases where there was a tough decision to be made, and would like to welcome an open discussion to come to a consensus. In general, when there was a tough decision, I did look at the other curators' calls to see what the consensus would be. Below is a summary of this discussion (with greater detail given in the spreadsheet), organized by disease and drug class.</p>
+
+<ul><li><p><strong>hypertension, general </strong>— Hypertension (the disease entity) is a heterogenous group of diseases. The most likely subtype of hypertension was likely Essential Hypertension (ET). The disease of Hypertension (including ET) progresses to have complications such as strokes and heart attacks. Hypertension (i.e. high blood pressure) is also a symptom (of many diseases, including diseases that are not called "hypertension"). Within the disease of ET, hypertension is not just a symptom but also a marker of disease progression, i.e. controlling blood pressure (treating this symptom) will slow the advancement of the disease hypertension and prevent downstream biology (proven by evidence, guideline 1). Therefore, by assumption 1, a total of 29 drugs were called <strong>DM</strong> rather than SYM.</p></li><li><p><strong>hypertension, diuretics </strong>—all called <strong>DM</strong> due to amendment 1 and amendment 2</p></li><li><p><strong>hypertension, drugs used to treat ocular hypertension or pulmonary hypertension </strong>— "hypertension" as defined in Daniel's link as "chronic elevated blood pressure in the arteries" It is therefore not the same as "ocular hypertension" or "pulmonary hypertension" (I think the spirit of the definition is systemic arteries, not pulmonary arteries. Also, pulmonary hypertension is quite a different disease with different pharmacology).Therefore, I chose to put <strong>NOT</strong> for all of these.</p></li><li><p><strong>type 2 diabetes, drugs that lower blood sugar </strong>—Diabetes is similar to hypertension. The disease is a tendency to have high blood sugar (hyperglycemia). Hyperglycemia is a symptom (of both diabetes and other diseases). Within the disease of diabetes, hyperglycemia is both a symptom and a marker of disease progression. Therefore anything that lowers hyperglycemia will be <strong>DM</strong>.</p></li><li><p><strong>type 1 and type 2 diabetes, ACE inhibitors and ARBs </strong>— The downstream biology of DM2 includes proteinuria and eventual renal failure. ACE inhibitors and ARBs prevent this downstream biology in DM2 patients. Therefore they are <strong>DM</strong>.</p></li><li><p><strong>epilepsy, anti-epileptic drugs </strong>—I think that for consistency, all anti-epileptics should be either DM or SYM, as there is only very limited evidence that any of these drugs are different from each other. My thoughts would be to label them all as <strong>DM</strong>. Here is why: epilepsy syndrome (disease) is defined as a propensity to have seizures (symptom). However, the natural downstream biology of the disease is that each seizure that you actually have makes you more likely to have worse epilepsy in the future (i.e. seizures beget more seizures). One mechanism is that when you have a lot of seizures, you develop mesial temporal sclerosis, and mesial temporal sclerosis is a risk factor for further seizures. Therefore, I would argue that any drug which treats the symptom of seizure is actually affecting downstream biology, and is therefore disease modifying. And by assumption 1, DM trumps SYM.</p></li><li><p><strong>osteoarthritis, NSAIDs and steroids </strong>— I put everything as <strong>SYM</strong>. From <a href="http://emedicine.medscape.com/article/330487-medication">MedScape</a>: "To date, no disease-modifying or structure-modifying intervention has been proved effective in osteoarthritis." CSH agreed with this interpretation, while it was clear that AJG was conflicted. To play devil's advocate, you could potentially say that the biology of osteoarthritis (OA) that it starts with inflammation, and the "down-stream" biology is the pain (the primary symptom as well), and therefore NSAIDs prevent "down-stream" biology. However, if we want to make that decision, I think we should change all the NSAIDs and steroids to DM.</p></li><li><p><strong>cancers, pain medications </strong>— I think pain is a symptom of cancer and therefore I put all of these as <strong>SYM</strong>. CSH agreed, while AJG was conflicted and sometimes called NOT. </p></li><li><p><strong>hematologic cancers, steroids </strong>—steroids actually "treat" hematologic cancers, even though these days there are much better meds and steroids are not considered "treatment", in the past they were the first line. By amendment 1, I put all of these as <strong>DM</strong>.</p></li><li><p><strong>non-hematologic cancers, steroids </strong>— steroids treat the nausea symptoms associated with cancers. While many cancers can potentially cause nausea, most nausea in cancer patients is due to side effect of chemo. However, I still put <strong>SYM</strong> for these because they can treat nausea and nausea is potentially a side effect of any cancer. CSH agreed with me on most of these, AJG was conflicted.</p></li><li><p><strong>cancers, hydroxyurea and other chemotherapies </strong>— AJG called this DM for all cancers. CSH called it DM only for the cancers for which it is indicated. The truth is, any chemotherapy has theoretical benefit against any cancer (any quickly-reproducing cell type). One possibility would be to label all chemotherapies as DM for all cancers. I thought it would be better to be selective and only label DM for chemo that is used (or has been used) in a particular cancer. That way, the results of the drug-repurposing search would yield different results for different cancers (rather than giving the exact same result for all cancers because the input was exactly the same for all cancers).Thus, I labeled some <strong>DM</strong> and some as <strong>NOT</strong>.</p></li><li><p><strong>cancers, bisphosphonates </strong>— I don't think of bone loss as a "side effect" of cancers (at least not any of the cancers listed). Some people are malnourished and/or have drug-induced bone loss, or may have bone metastases, but I don't think this captures the essence of cancer. I chose to put <strong>NOT</strong> for all of these (CSH agreed, AJG generally chose SYM).</p></li><li><p><strong>coronary artery disease, drug to treat hypertension or diabetes </strong>— I treated this as pure coronary artery disease (CAD) in the absence of other causes. I did not interpret this as "CAD as a consequence of hypertension (HTN)" or "CAD as a consequence of diabetes (DM2)". It is true that many of these medications would help prevent CAD if CAD is considered as the "downstream biology" of HTN or DM2. However, the medications to not treat any biology downstream of CAD in the absence of HTN or DM2. I therefore labeled these as <strong>NOT</strong>.</p></li><li><p><strong>coronary artery disease, diuretics and other drugs used for congestive heart failure (CHF) </strong>— I consider these to be <strong>DM</strong>. Consider CHF as a common dowstream biology of coronary artery disease (CAD), specifically let's consider HFrEF. The biology of HFrEF is that the heart has poor cardiac output, thus there is fluid retention, thus there is further strain on the heart, creating a vicious cycle. Thus, diuretics should help avoid the vicious cycle and slow the downstream progression of disease. While no trial may have ever showed mortality benefit, I think there is reasonable evidence that this would be true.</p></li><li><p><strong>migraine, general </strong>— While AJG called everything SYM, CSH called one drug (amitryptilene) DM and everything else SYM, citing that this medications "may decrease frequency of migraines". I agreed with CSH's interpretation and actually chose to include many other medications as DM based on the same reasoning. Migraine disease is a propensity to get migraine headaches. Therefore, anything that decreased migraine frequency was considered by me to be <strong>DM</strong> (decreases the downstream biology that leads to headache). Anything that treated the pain of the headache I considered <strong>SYM</strong>.</p></li><li><p><strong>autoimmune diseases, steroids and NSAIDs </strong>— I labeled the steroids as <strong>DM</strong> and the NSAIDs as <strong>SYM</strong>. It is true that steroids are rarely if ever actually used for chronic disease (though often used to treat the symptoms of flares), mostly because of their terrible side-effect profile long-term. However, they do actually affect disease biology and do not specifically treat any specific symptom (for example, steroids do not cure "weakness", but do change the biology of the multiple sclerosis flare to help the patient recover from "weakness"). It was a close call for me for NSAIDs (as they do have anti-inflammatory properties, especially useful in the auto-immune arthritidies), but I went with consensus and chose SYM. The other curators tended not to call steroids DM (probably because they were thinking about side-effect profile), and they were inconsistent on their calls on NSAIDs.</p></li><li><p><strong>asthma, steroids and beta-agonists and anticholinergics </strong>— I put <strong>DM</strong> for all of these. I felt steroids are DM (since they are given to prevent attacks), long-acting beta-agonists are also DM in my opinion since they prevent attacks (in conjunction with steroids, despite the small increased risk of asthma-related death in people who don't use steroids). I put short acting beta-agonists as DM because they too can prevent downstream biology (since they are sometimes used, for example before exercise, to prevent downstream biology from happening).</p></li><li><p><strong>allergic rhinitis, steroids and anti-histamines and decongestants </strong>— CSH admittedly had a problem with this, she even noted "im having a hard time with allergic rhinitis. Maybe all of these meds are SYM.".  AJG was conflicted as well.  I chose to mark all of the steroids and anti-histamines as <strong>DM</strong> because they alter the immune response (the allergy). I chose to mark the decongestants (i.e. pseudoephedrine) as <strong>SYM</strong> because they treat a symptom (congestion) but not the underyling biology (the immune reaction)</p></li><li><p><strong>chronic obstructive pulmonary disease (COPD), general </strong>— I put steroids and beta-agonists as <strong>DM</strong> for similar reasons to asthma, though admittedly there is less evidence for this. I put all the antibiotics as <strong>SYM</strong> (they don't eradicate infection, they don't delay progression, they treat attacks) and did not differentiate between the antibiotics</p></li><li><p><strong>glaucoma, general </strong>— I agreed with CSH that almost every drug is DM, AJG was conflicted. I think it's more <strong>DM</strong>, based on similar discussion as hypertension.</p></li><li><p><strong>alcohol dependence, general </strong>— First, I included symptoms of alcohol withdrawal along with alcohol dependence, presumably because withdrawal symptoms are probably felt at some point in any person with alcohol dependence. Thus, I chose to mark chlordiazepoxide and zofran (used to treat withdrawal) as <strong>SYM</strong> (CSH agreed with both, AJG agreed with one of these). Next, there was the question of drugs designed to curb drinking (Citalopram, Disulfiram, Naltrexone, Acamprosate); I chose to mark these as <strong>DM</strong> because they are different from the drugs above in that they treat the urge to drink (modifying the disease) rather than the symptoms of not drinking (AJG agreed with all 5, CSH agreed with 1)</p></li><li><p><strong>psychiatric diseases other than alcohol/drug dependence, general </strong>— I agreed with both CSH and AJG that in general, the medications used are all <strong>SYM</strong> rather than DM (other than alcohol and nicotine dependence as described).</p></li><li><p><strong>alzheimer's disease, general </strong>— donepezil was marked as <strong>DM</strong> (agreed with AJG) because it is supposed to slow disease, not treat any specific symptom. Other cholinesterase inhibitors were changed to DM to match donepezil. I chose to group all antipsychotics as <strong>SYM</strong> in order to be consistent (AJG and CSH agreed most of the time)</p></li><li><p><strong>anemia </strong>— there is no good way to do this. Anemia is not a single disease, it is a very heterogeneous set of diseases (with very little overlap between sub-types in terms of incidence or pathophysiology). Though the most common cause of anemia is likely iron deficiency anemia, iron deficiency anemia accounts for probably a minority of all anemias. Specific types of anemia will of course respond to specific drugs  (autoimmune anemia to steroids, folate deficiency responds to folate, etc...). I was faced with two choices: (1) choose DM for anything which could treat any type of anemia or (2) choose DM for anything which could treat most types of anemia. Choice (2) means nothing will link to anemia (no DM or SYM) and anemia will essentially be removed from analysis. Choice (1) means we are choosing a variety of drugs to treat a variety of illnesses. I chose choice (2) because I think it's best to ignore anemia, given that it is such a heterogeneous set of diseases. AJG and CSH were rather inconsistent in their answers, it is clear that they too had difficulty with anemia. In summary, everything was marked as <strong>NOT</strong>.</p></li></ul>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-205" class="inline-note toggle-parent" data-note-id="205">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: Pouya's curations are available as a <a href="https://github.com/dhimmel/indications/blob/d3d57b07abcf8d7af55f8e42ef7c4c99acd87ca8/curation/pk/template-pk%20final.xlsx" title="GitHub · `template-pk final.xlsx`">spreadsheet</a> or <a href="https://github.com/dhimmel/indications/blob/49cf8e3858f124e552051fc1e8c1c229a43dadf6/curation/pk/curation-PK.tsv" title="GitHub · `curation-PK.tsv`">TSV file</a>.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="8" data-comment-id="905">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="905"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#8" class="light">500 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Overly broad and thus uninformative diseases</h1>
+
+<p><a href="/u/pouyakhankhanian" class="username">@pouyakhankhanian</a>, fantastic curation!</p>
+
+<p>From your comments, it appears that some of our diseases are too general from a pharmacological perspective. For example, you mention anemia and hypertension as particularly troublesome. To recap how we arrived at our 137 diseases, I <a href="http://thinklab.com/discussion/unifying-disease-vocabularies/44#6" class="citation thread-citation" data-key="10.15363/thinklab.d44">selected the subset</a> of Disease Ontology terms that have been analyzed using GWAS or were a 'body system' cancer. When diseases were redundant, a single disease was chosen (for example, coronary artery disease was chosen over myocardial infarction). In retrospect, input from physicians would have been prudent during this stage.</p>
+
+<p>When we created our <a href="http://thinklab.com/discussion/how-should-we-construct-a-catalog-of-drug-indications/21#21" class="citation thread-citation" data-key="10.15363/thinklab.d21">indication catalog</a> (which we're curating here), I propagated indications from specific to more general terms. For example, an indication for non-small cell lung carcinoma (<code>DOID:3908</code>) would be considered an indication for lung cancer (<code>DOID:1324</code>).</p>
+
+<p>In the cases of hypertension and anemia, <a href="/u/pouyakhankhanian" class="username">@pouyakhankhanian</a> found this practice problematic. Specifically, he considered pulmonary hypertension (<code>DOID:6432</code>) to be "quite a different disease with different pharmacology" than the definition of hypertension (<code>DOID:10763</code>). However the Disease Ontology defines pulmonary hypertension as a subtype of hypertension. Ocular hypertension (<code>DOID:9282</code>) is not a subtype — instead it's part of the glaucoma lineage. He also mentioned anemia as having heterogeneous subtypes.</p>
+
+<p>While my original guidance would have been to chose DM or SYM if the drug is DM or SYM for any subtype, I see the point that some diseases may be too broad and therefore uninformative for our prediction approach.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="9" data-comment-id="1059">
+  <td class="comment-profile-avatar">
+		<a href="/u/pouyakhankhanian"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/188_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1059"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/pouyakhankhanian">Pouya Khankhanian</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#9" class="light">500 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Re: "While my original guidance would have been to chose DM or SYM if the drug is DM or SYM for any subtype, I see the point that some diseases may be too broad and therefore uninformative for our prediction approach."</p>
+
+<p>I actually think either approach is reasonable. The key would be to maintain consistency throughout the curation process. After making a final decision on how to proceed, we can go back and ensure that we are being consistent.</p>
+
+<p>I also think we may want to consider the relative frequency of subtypes of disease. For example, "lung cancer" has probably three very common subtypes which each account for 25-30% of the total entity of "lung cancer". Similarly, 90-95% of "Hypertension" is accounted for by "essential hypertension", even if you include "pulmonary hypertension". in contrast, most of the subtypes of "anemia" included in this curation each account for probably less than 1-2% of all "anemia".</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="10" data-comment-id="1063">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1063"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#10" class="light">499 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Results from all three curators</h1>
+
+<p>To recap our curation effort thus far, we first had AJG and CSH (<a href="/u/chrissyhessler" class="username">@chrissyhessler</a>) independently classify the 1388 indications. Then a third curator, PK (<a href="/u/pouyakhankhanian" class="username">@pouyakhankhanian</a>), classified each indication with access to the picks and notes from the first two curators.</p>
+
+<p>PK provided <a href="#7">detailed documentation</a> of his methodology, with a focus on instances of disagreement. I now report of the results from all three curators (<a href="https://github.com/dhimmel/indications/blob/49cf8e3858f124e552051fc1e8c1c229a43dadf6/curation/results-three-curators.ipynb">notebook</a>, <a href="https://github.com/dhimmel/indications/blob/49cf8e3858f124e552051fc1e8c1c229a43dadf6/curation/results-three-curators.tsv">dataset</a>).</p>
+
+<p>PK's kappa coefficient was 51.5% with AJG and 65.1% with CSH. PK classified many indications as disease-modifying that the other curators considered symptomatic. Overall, there were <a href="https://github.com/dhimmel/indications/blob/49cf8e3858f124e552051fc1e8c1c229a43dadf6/curation/results-threeway-disagreements.tsv">34 threeway disagreements</a> and <a href="https://github.com/dhimmel/indications/blob/49cf8e3858f124e552051fc1e8c1c229a43dadf6/curation/results-PK-changes.tsv">124 instances</a> where PK disagreed with the consensus of the first two curators.</p>
+
+<h1>Reaching a consensus</h1>
+
+<p>The next step is to agree upon a consensus classification for each indication. These indications will go into our network and will be used to train our model for predicting drug repurposing.</p>
+
+<p>We would like the first two curators to review <a href="#7">PK's methodology</a> and voice their opinions. In particular, do AJG and CSH agree with PK's reasoning that led him to reverse <a href="https://github.com/dhimmel/indications/blob/49cf8e3858f124e552051fc1e8c1c229a43dadf6/curation/results-PK-changes.tsv">124 instances where they agreed</a>? Given this feedback, we will determine how to proceed.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="11" data-comment-id="1144">
+  <td class="comment-profile-avatar">
+		<a href="/u/chrissyhessler"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/s/img/p_default_medium.png' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1144"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/chrissyhessler">Chrissy Hessler</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#11" class="light">492 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Very thorough analysis by Pouya. I agree with the slight change in the definitions of categories. One clarification: is a drug still considered disease modifying if there are significant and dangerous side effects? amendment 1 seems to indicate that the answer is yes.</p>
+
+<p>For the most part, I agree with how you classified the following. I have made some comments for the particularly challenging disease categories:</p>
+
+<ul><li><strong>hypertension, general</strong></li><li><strong>hypertension, diuretics</strong></li><li><strong>hypertension, ocular and pulmonary htn</strong></li><li><strong>diabetes, drugs that lower blood sugar</strong></li><li><strong>diabetes, ACEi and ARBs</strong></li><li><strong>epilepsy</strong>: I think I agree with categorizing all AEDs as DM instead of SYM. I thought the pathophysiology behind MTS was not clearcut and treating someone with AEDs does not necessarily prevent MTS, although I think it may prevent morbidity and mortality.</li><li><strong>OA, NSAIDs and steroids</strong></li><li><strong>cancers, pain meds</strong></li><li><strong>hematologic cancers, steroids</strong></li><li><strong>non-heme cancers, steroids</strong></li><li><strong>cancers, hydroxyura and other chemotx</strong></li><li><strong>cancers, bisphos</strong></li><li><strong>CAD, drugs for htn or dm</strong></li><li><strong>CAD, diuretics</strong></li><li><strong>migraine</strong>: I think prophylactic medications should be DM; abortives may be better classified as SYM</li><li><strong>asthma, steroids, beta gonists, antichol</strong></li><li><strong>allergic rhinitis</strong>: this categorization makes sense to me.</li><li><strong>COPD, general</strong></li><li><strong>etoh dependence</strong></li><li><strong>psych disease</strong></li><li><strong>AD</strong></li><li><strong>anemia</strong>: I agree. It is like trying to categorize "leukocytosis" or some other lab abnormality, without getting at the etiology.</li></ul>
+
+<p>I am still stuck on one disease entity:</p>
+
+<ul><li><strong>Autoimmune diseases, steroids</strong>: do steroids actually change the long-term disease of autoimmune diseases? Do they reduce morbidity and mortality?</li></ul>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="12" data-comment-id="1146">
+  <td class="comment-profile-avatar">
+		<a href="/u/pouyakhankhanian"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/188_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1146"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/pouyakhankhanian">Pouya Khankhanian</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#12" class="light">491 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <ul><li><p><strong>Re: Autoimmune diseases and steroids</strong>. I do believe that steroids are DM in a variety of auto-immune diseases. The easiest examples are Lupus and RA where the occasional difficult-to-control patient is given low-dose maintenance steroids to prevent disease flares (i.e. reduce morbidity). Tougher examples include MS but there is some evidence that it may help decrease disease activity and relapse rate <span class="citation">[<a href="https://doi.org/10.1212/wnl.57.7.1239" class="citation" data-key="10.1212/wnl.57.7.1239">1</a>]</span>, which puts it is a similar category to say Copaxone which we would probably mark as DM (even though copaxone also does not delay progression of disease). Given that, I felt it was reasonable to assume the same for other auto-immune diseases, although I must admit I'm probably under-qualified to comment on the subtleties of this (perhaps we can curb-side a rheumatologist). I fully agree that there is a high side-effect burden and chronic steroids are probably not clinically indicated for treatment, but perhaps they should still DM for the purposes of this study. I think of it like this, if Daniel's analysis could suggest a drug because it acted on some of the same molecular targets as do steroids, but that drug had zero side effects, then would that drug be of interest in treating auto-immune diseases? If yes, then I think we should classify steroids as DM.</p></li><li><p><strong>Re: epilepsy</strong>. Good point that AEDs prevent morbidity and mortality, it's clearly better than my hand-waving and highly disputed MTS argument. Additionally, I think we should consider the same argument as above, if Daniel's network were to find a drug that acts on the same molecular targets as our AEDs, then would we consider that drug when treating epilepsy? I would think yes.</p></li><li><p><strong>Re: migraine</strong>. I wholly agree with what you wrote. I think I just didn't state it as clearly as you did.</p></li></ul>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="13" data-comment-id="1168">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1168"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#13" class="light">485 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Time is short to finalize our indication catalog by consensus.</p>
+
+<p><a href="/u/pouyakhankhanian" class="username">@pouyakhankhanian</a>, are any changes needed to your original classifications to reach a consensus with <a href="/u/chrissyhessler" class="username">@chrissyhessler</a> regarding epilepsy and migraine indications?</p>
+
+<p><a href="/u/pouyakhankhanian" class="username">@pouyakhankhanian</a>, how many indications are subject to what we decide for autoimmune diseases and steroids? I agree this is a tough call. In practice, steroids are <a href="http://www.nationalmssociety.org/For-Professionals/Clinical-Care/Managing-MS/Disease-Modification" title="Disease Modification · National MS Society">not referred to</a> as disease modifying for multiple sclerosis. However, I'm not convinced there is a logic to this omission that could be consistently applied to other diseases. Thoughts?</p>
+
+<p>We do want our catalog to be broadly applicable to projects beyond our specific study. In other words, we want the catalog to be generally useful to train and test computational approaches without too many disputable calls. </p>
+
+<blockquote><p>One clarification: is a drug still considered disease modifying if there are significant and dangerous side effects?</p></blockquote>
+
+<p>My take here is yes as long as the drug has been indicated in a disease-modifying capacity in some context. The context may be the time before the dangerous side effects were fully appreciated or the time before better tolerated therapies came to market.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="14" data-comment-id="1169">
+  <td class="comment-profile-avatar">
+		<a href="/u/pouyakhankhanian"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/188_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1169"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/pouyakhankhanian">Pouya Khankhanian</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#14" class="light">484 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <ul><li><p><strong>Re: migraines and epilepsy.</strong>  No changes need to be made to the spreadsheet, the proposed classification presented by CSH matches what I chose.</p></li><li><p><strong>Re: steroids and auto-immune diseases.</strong> There are about 70 steroid-autoimmune connections that would need to be subject to this decision. I think there are about 20 which are Rheumatoid Arthritis and Lupus, which I think are safely DM. That leaves another 50 which would have to be re-evaluated based on the decision. For the case of multiple sclerosis, I still tend to favor calling steroids DM for a few reasons. First, let's consider an easy (but  rare) example. Suppose a patient comes in with painful trigeminal neuralgia due to an active demyelinating lesion. One would give this patient steroids. The steroids would decrease active inflammation and demyelination, thereby decreasing the duration of time of the symptom of pain. The steroid does not actually treat the pain directly (like a "pain-killer"), but it treats the biology behind the pain. While it is true that the steroid does not slow the progression from RRMS to SPMS, nor does it prevent future attacks (hence it is not called "DM" in the clinic), it does affect the biology of the current attack. Next, let's consdier a more complex (but more common) example. Suppose a patient comes in with leg weakness making her unable to walk, due to an active demyelinating lesion. One would give this patient steroids. The steroids would decrease active inflammation and demyelination, thereby decreasing the duration of time of the symptom of weakness. The steroid does not directly treat weakness (like a drug like Ampyra might do). Again, while it is true that the steroid does not slow the progression from RRMS to SPMS, nor does it prevent future attacks (hence it is not called "DM" in the clinic), it does affect the biology of the current attack. Finally, let's consider <a href="http://journals.lww.com/neurotodayonline/Fulltext/2009/07020/Monthly_Steroid_Pulses_Cut_MS_Relapses_38_Percent.12.aspx" title="Neurology Green journal">this article</a>. In that article, they give monthly steroids and in order to prevent future attacks. They find that the number of future attacks is decreased (though it is likely not a large enough effect to justify the use of chronic steroids long-term given all the side effects that go along with chronic steroid use). Decreasing the number of attacks is exactly what defines nearly all of the drugs typically which are <a href="http://www.nationalmssociety.org/For-Professionals/Clinical-Care/Managing-MS/Disease-Modification" title="National MS Society definition of DM">"in practice... referred to as disease modifying"</a> (most of these drugs to not prevent progression from RRMS to SPMS). For the three reasons above, I would still tend to favor calling steroids DM in MS. If we choose otherwise, then I think we should use MS as an example to set up a precise definition of what qualifies as disease modifying in auto-immune diseases, and then re-evaluate the other 50 steroid-autoimmune indications based on that definition.</p></li></ul>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="15" data-comment-id="1171">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1171"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#15" class="light">482 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Announcing the consensus curation</h1>
+
+<p>In the interest of time, we are finalizing the consensus curation now. We have chosen the <a href="#7">PK curation</a> as the consensus. Discussion is still welcome and will be helpful for future incarnations of our catalog.</p>
+
+<h2>Resolving steroids for autoimmune disease</h2>
+
+<p>Both original curators were given a change to respond to the PK curation and methodology. In CSH's <a href="#11">response</a> and offline discussion with AJG, questions were raised regarding calling steroids DM for autoimmune diseases. Further discussion with PK, both above and offline, helped clarify the issue and convinced <a href="/u/sergiobaranzini" class="username">@sergiobaranzini</a> and I that the DM classification was appropriate.</p>
+
+<p>According to PK, steroids are not considered DM in the clinic because their poor risk–benefit ratios generally preclude longterm use. Clinicians interpret "disease modifying" to mean a therapy for changing the longterm disease course and therefore do not consider steroids, which are usually given for only a short period of time, disease modifying. However, our definition of DM does not require longterm modification. Nevertheless, PK points to some evidence <span class="citation">[<a href="https://doi.org/10.1097/01.NT.0000357562.58878.0a" class="citation" data-key="10.1097/01.NT.0000357562.58878.0a">1</a>, <a href="https://doi.org/10.1212/wnl.57.7.1239" class="citation" data-key="10.1212/wnl.57.7.1239">2</a>]</span> that steroids do modify the longterm disease course when administered over a prolonged period.</p>
+
+<p>While a clinician's decision to prescribe a steroid for an autoimmune disease is motivated by reducing symptoms, PK believes the steroid reduces symptoms by modifying the underlying disease biology. In his opinion, steroids lead to a short-term suppression of the underlying biology — in the case of autoimmune disease, the overactive immune response — leading to a short-term improvement in symptoms. One litmus test is that while a steroid may be prescribed to treat a specific symptom of a multiple sclerosis relapse, the steroid would not treat the symptom in the absence of MS.</p>
+
+<p>In conclusion, we are conformable with the decision that steroids modify autoimmune disease rather than treat their symptoms according to our <a href="#7">definition</a>. However, it's important to clarify that our indication catalog is designed primarily from a perspective of pathophysiology rather than clinical best practice.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="16" data-comment-id="1175">
+  <td class="comment-profile-avatar">
+		<a href="/u/pouyakhankhanian"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/188_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1175"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/pouyakhankhanian">Pouya Khankhanian</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#16" class="light">480 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <ul><li><strong>I think this is a valuable data source to maintain.</strong> I understand the need to freeze it at the moment for your analysis. Going forward, I'd love to see a couple additional data sources. One would be uptodate, which would add to the total number of indications (including those where side effects outweight potential benefit) and would give you precise disease-indications for drugs (no need for curation by experts). When thinking about a second data source which may help add to your total number of indications, I might suggest a more clinically relevant source (like medscape). I think your current data-sources are heavy on government approval and, per our discussion earlier, for often politico-economic reasons, drugs may be very commonly used but not had any pharma funding for official approval, and these drugs may not all be caught when surveying pharmacy or doctor's "indication notes" as those may lack sensitivity (due to under-reporting of key "disease" designations).</li><li><strong>I would keep an eye out for the steroids in auto-immune diseases</strong> Steroid represent a relatively large fraction of the drugs, and auto-immune diseases a reasonable fraction of the total diseases (approximately 5%). I would interpret any results that your algorithm suggests in light of this. For example, I expect this will drive your algorithm into picking things that "look" like steroids (in terms of molecular structure, and known targets of possible action). As you know, steroids are molecularly quite similar to each other, and are often associated with the same limited number of key molecular targets. The other immunosuppressive agents (i.e. all the other drugs on your typical clinical list of choices) represent a variety of shapes (molecular structure) and known targets, and may provider richer (but more subtle, and probably lower powered to get a trustworthy result) information, and hopefully provide a more nuanced drug suggestion rather than picking things that "look" like steroids (e.g. suggesting a drug that nobody would ever have considered) .</li><li><strong>Consider assigning mechanisms to drugs</strong>. If you note that something richer is to be gained by "decreasing the gain" in large drug classes (i.e. the class "steroids" includes about 10 drugs in the list), consider using drug classes as an attribute. This will also aid any person who will have to curate the disease-drug connections.</li><li><strong>The few remaining discrepancies, if using my calls as final calls</strong>. After the discussion of the major discrepancies (where multiple discrepant drug-disease connections hinged on a single discussion), there are still minor discrepancies. There appear to be 55 other discrepancies to eventually be evaluated, totaling less than 5 percent of the total number of connections. Given the small number of total calls (less than 5% of total calls) and the large amount of discussion that would be required to solve each one, it makes sense to go forward with a data freeze for your downstream analysis. But I think it would be great to have you at least aware of these, and we can decide what to do on future versions. <br>Of the 55 cases of discrepant calls, there are include 31 cases where my curation changed a previous agreement between the prior 2 curators, and those 24 cases where my curation resulted in a three way tie. <br>— 7 are explained directly by ammendment 1<br>— 14 where I made a call which was explained by a prior call regarding the same disease being connected to another drug within the same drug class<br>— 11 can be encapsulated in a discussion regarding hormone therapy in breast cancer. This is a more complex discussion than that of steroids, because the hormone therapies include "partial agonists". <br>— 3 which treated symptom of chemo rather than symptom of disease (therefore changed to NOT)<br>— 3 regarding SSRIs in parkinson's<br>— 17 discrepancies would each require a long discussion (similar to our discussions of diseases earlier). These are briefly denoted below.</li></ul>
+
+<table class="table markdown-table"><thead><tr><th>drug</th><th>disease</th><th>CSH</th><th>AJG</th><th>PK</th><th>PK_notes</th></tr></thead><tbody><tr><td>Memantine</td><td>Alzheimer's disease</td><td>SYM</td><td>SYM</td><td>DM</td><td>"neuroprotective", doesn't treat any symptom</td></tr><tr><td>Colchicine</td><td>primary biliary cirrhosis</td><td>NOT</td><td>NOT</td><td>DM</td><td>admittedly less evidence, but see <a href="http://www.uptodate.com/contents/overview-of-the-treatment-of-primary-biliary-cholangitis-primary-biliary-cirrhosis">"uptodate 'Overview of the treatment of primary biliary cholangitis (primary biliary cirrhosis)' "</a></td></tr><tr><td>Pentoxifylline</td><td>systemic scleroderma</td><td>SYM</td><td>SYM</td><td>DM</td><td>affects the biology of the disease, thereby easing symptoms</td></tr><tr><td>Tretinoin</td><td>peripheral nervous system neoplasm</td><td>NOT</td><td>NOT</td><td>DM</td><td>can treat sarcomas <span class="citation">[<a href="https://doi.org/10.1002/14651858.CD003256.pub2" class="citation" data-key="10.1002/14651858.CD003256.pub2">1</a>]</span> and per amendment 1</td></tr><tr><td>Ursodeoxycholic acid</td><td>primary biliary cirrhosis</td><td>SYM</td><td>SYM</td><td>DM</td><td>doesn't treat any symptom, only modifies disease, see <a href="http://www.uptodate.com/contents/overview-of-the-treatment-of-primary-biliary-cholangitis-primary-biliary-cirrhosis">"uptodate 'Overview of the treatment of primary biliary cholangitis (primary biliary cirrhosis)' "</a></td></tr><tr><td>Colchicine</td><td>systemic scleroderma</td><td>NOT</td><td>DM</td><td>SYM</td><td>for arthralgia, not aware of disease modification</td></tr><tr><td>Chenodeoxycholic acid</td><td>primary biliary cirrhosis</td><td>SYM</td><td>NOT</td><td>DM</td><td>in trials, see <a href="http://www.uptodate.com/contents/overview-of-the-treatment-of-primary-biliary-cholangitis-primary-biliary-cirrhosis">"uptodate 'Overview of the treatment of primary biliary cholangitis (primary biliary cirrhosis)' "</a></td></tr><tr><td>Dimenhydrinate</td><td>allergic rhinitis</td><td>SYM</td><td>NOT</td><td>DM</td><td>it blocks histamine-H1 just like benadryl. Granted, one would never actually use this in clinic (you would just use benadryl given better efficacy and less side effects), but given the mechanism of action there is reasonable evidence of efficacy</td></tr><tr><td>Dimenhydrinate</td><td>atopic dermatitis</td><td>SYM</td><td>NOT</td><td>DM</td><td>it blocks histamine-H1 just like benadryl. Granted, one would never actually use this in clinic (you would just use benadryl given better efficacy and less side effects), but given the mechanism of action there is reasonable evidence of efficacy</td></tr><tr><td>Sildenafil</td><td>type 1 diabetes mellitus</td><td>NOT</td><td>DM</td><td>SYM</td><td>may be DM for DM2 but not for DM1 <span class="citation">[<a href="https://doi.org/10.2337/diacare.26.2.279" class="citation" data-key="10.2337/diacare.26.2.279">2</a>]</span></td></tr><tr><td>Temozolomide</td><td>skin cancer</td><td>NOT</td><td>NOT</td><td>DM</td><td>melanoma</td></tr><tr><td>Acetylcysteine</td><td>chronic obstructive pulmonary disease</td><td>DM</td><td>DM</td><td>SYM</td><td>mucolytic, does not affect disease biology</td></tr><tr><td>Epoprostenol</td><td>systemic scleroderma</td><td>NOT</td><td>DM</td><td>SYM</td><td>not aware of disease modification, agree with CSH comment re: symptom</td></tr><tr><td>Timolol</td><td>coronary artery disease</td><td>NOT</td><td>SYM</td><td>DM</td><td>per <a href="http://www.uptodate.com/contents/timolol-systemic-drug-information?source=search_result&amp;search=timolol&amp;selectedTitle=1~36">"uptodate - Timolol Drug info"</a></td></tr><tr><td></td></tr><tr><td>Finasteride</td><td>prostate cancer</td><td>SYM</td><td>DM</td><td>NOT</td><td>prevents but doesn't treat it. Not sure what the symptomatic thing CSH refers to, does she mean symptoms of BPH? (and if so isn't that a different disease?)</td></tr><tr><td>Digoxin</td><td>dilated cardiomyopathy</td><td>DM</td><td>NOT</td><td>SYM</td><td>see <a href="http://www.uptodate.com/contents/overview-of-the-therapy-of-heart-failure-with-reduced-ejection-fraction">"uptodate: Overview of the therapy of heart failure with reduced ejection fraction"</a></td></tr><tr><td>Ergocalciferol</td><td>metabolic syndrome X</td><td>SYM</td><td>DM</td><td>NOT</td><td>would you give this med to anyone who has metabolic syndrome X but does not also have vitamin D deficiency?</td></tr></tbody></table>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+    		
+		</table>
+
+    
+
+    &nbsp;<br>
+    <a class="btn btn-primary btn-lg" href="/signup?next=/discussion/expert-curation-of-our-indication-catalog-for-disease-modifying-treatments/95&suppress_message=1" style>Join to Reply</a>
+
+
+		<table class="references table-td-5" style="display:none;"><tr><td><a href='/doi/10.1136/amiajnl-2012-001431' class='pub-comments tt-right' title='Article comments'>2</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.1136/amiajnl-2012-001431'><a href='/doi/10.1136/amiajnl-2012-001431' class='pub-title'>Development and evaluation of an ensemble resource linking medications to their indications</a><div class='pub-body'>W.-Q. Wei, R. M. Cronin, H. Xu, T. A. Lasko, L. Bastarache, J. C. Denny (2013) <i>Journal of the American Medical Informatics Association</i>. doi:<a class='pub-doi' href='https://doi.org/10.1136/amiajnl-2012-001431'>10.1136/amiajnl-2012-001431</a></div></div></td></tr><tr><td><a href='/doi/10.1136/amiajnl-2012-000852' class='pub-comments tt-right' title='Article comments'>3</a></td><td><div class='pub-order'>2.</div></td><td><div class='doi-body' data-key='10.1136/amiajnl-2012-000852'><a href='/doi/10.1136/amiajnl-2012-000852' class='pub-title'>Development and evaluation of a crowdsourcing methodology for knowledge base construction: identifying relationships between clinical problems and medications</a><div class='pub-body'>A. B. McCoy, A. Wright, A. Laxmisan, M. J. Ottosen, J. A. McCoy, D. Butten, D. F. Sittig (2012) <i>Journal of the American Medical Informatics Association</i>. doi:<a class='pub-doi' href='https://doi.org/10.1136/amiajnl-2012-000852'>10.1136/amiajnl-2012-000852</a></div></div></td></tr><tr><td><a href='/doi/10.1016/j.jbi.2014.08.004' class='pub-comments tt-right' title='Article comments'>5</a></td><td><div class='pub-order'>3.</div></td><td><div class='doi-body' data-key='10.1016/j.jbi.2014.08.004'><a href='/doi/10.1016/j.jbi.2014.08.004' class='pub-title'>LabeledIn: Cataloging labeled indications for human drugs</a><div class='pub-body'>Ritu Khare, Jiao Li, Zhiyong Lu (2014) <i>Journal of Biomedical Informatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1016/j.jbi.2014.08.004'>10.1016/j.jbi.2014.08.004</a></div></div></td></tr><tr><td><a href='/doi/10.1093/database/bav016' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>4.</div></td><td><div class='doi-body' data-key='10.1093/database/bav016'><a href='/doi/10.1093/database/bav016' class='pub-title'>Scaling drug indication curation through crowdsourcing</a><div class='pub-body'>R. Khare, J. D. Burger, J. S. Aberdeen, D. W. Tresner-Kirsch, T. J. Corrales, L. Hirchman, Z. Lu (2015) <i>Database</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/database/bav016'>10.1093/database/bav016</a></div></div></td></tr><tr><td><a href='/doi/10.1038/msb.2011.26' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>5.</div></td><td><div class='doi-body' data-key='10.1038/msb.2011.26'><a href='/doi/10.1038/msb.2011.26' class='pub-title'>PREDICT: a method for inferring novel drug indications with application to personalized medicine</a><div class='pub-body'>A. Gottlieb, G. Y. Stein, E. Ruppin, R. Sharan (2011) <i>Molecular Systems Biology</i>. doi:<a class='pub-doi' href='https://doi.org/10.1038/msb.2011.26'>10.1038/msb.2011.26</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d21' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>6.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d21'><a href='/discussion/how-should-we-construct-a-catalog-of-drug-indications/21' class='pub-title'>How should we construct a catalog of drug indications?</a><div class='pub-body'>Daniel Himmelstein, Benjamin Good, Tudor Oprea, Allison McCoy, Antoine Lizee (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d21'>10.15363/thinklab.d21</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d68' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>7.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d68'><a href='/discussion/disease-ontology-feature-requests/68' class='pub-title'>Disease Ontology feature requests</a><div class='pub-body'>Daniel Himmelstein (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d68'>10.15363/thinklab.d68</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d44' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>8.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d44'><a href='/discussion/unifying-disease-vocabularies/44' class='pub-title'>Unifying disease vocabularies</a><div class='pub-body'>Daniel Himmelstein, Tong Shu Li (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d44'>10.15363/thinklab.d44</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d40' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>9.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d40'><a href='/discussion/unifying-drug-vocabularies/40' class='pub-title'>Unifying drug vocabularies</a><div class='pub-body'>Daniel Himmelstein (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d40'>10.15363/thinklab.d40</a></div></div></td></tr><tr><td><a href='/doi/10.1136/amiajnl-2012-001431' class='pub-comments tt-right' title='Article comments'>2</a></td><td><div class='pub-order'>10.</div></td><td><div class='doi-body' data-key='10.1136/amiajnl-2012-001431'><a href='/doi/10.1136/amiajnl-2012-001431' class='pub-title'>Development and evaluation of an ensemble resource linking medications to their indications</a><div class='pub-body'>W.-Q. Wei, R. M. Cronin, H. Xu, T. A. Lasko, L. Bastarache, J. C. Denny (2013) <i>Journal of the American Medical Informatics Association</i>. doi:<a class='pub-doi' href='https://doi.org/10.1136/amiajnl-2012-001431'>10.1136/amiajnl-2012-001431</a></div></div></td></tr><tr><td><a href='/doi/10.1038/msb.2009.98' class='pub-comments tt-right' title='Article comments'>7</a></td><td><div class='pub-order'>11.</div></td><td><div class='doi-body' data-key='10.1038/msb.2009.98'><a href='/doi/10.1038/msb.2009.98' class='pub-title'>A side effect resource to capture phenotypic effects of drugs</a><div class='pub-body'>Michael Kuhn, Monica Campillos, Ivica Letunic, Lars Juhl Jensen, Peer Bork (2010) <i>Mol Syst Biol</i>. doi:<a class='pub-doi' href='https://doi.org/10.1038/msb.2009.98'>10.1038/msb.2009.98</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d31' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>12.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d31'><a href='/discussion/medi-indications-data-discrepancy-in-resource-specific-counts/31' class='pub-title'>MEDI indications data — discrepancy in resource-specific counts</a><div class='pub-body'>Daniel Himmelstein (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d31'>10.15363/thinklab.d31</a></div></div></td></tr><tr><td><a href='/doi/10.1177/001316446002000104' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>13.</div></td><td><div class='doi-body' data-key='10.1177/001316446002000104'><a href='/doi/10.1177/001316446002000104' class='pub-title'>A Coefficient of Agreement for Nominal Scales</a><div class='pub-body'>J. Cohen (1960) <i>Educational and Psychological Measurement</i>. doi:<a class='pub-doi' href='https://doi.org/10.1177/001316446002000104'>10.1177/001316446002000104</a></div></div></td></tr><tr><td><a href='/doi/10.11613/BM.2012.031' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>14.</div></td><td><div class='doi-body' data-key='10.11613/BM.2012.031'><a href='/doi/10.11613/BM.2012.031' class='pub-title'>Interrater reliability: the kappa statistic</a><div class='pub-body'>Marry L. McHugh (2012) <i>Biochemia Medica</i>. doi:<a class='pub-doi' href='https://doi.org/10.11613/BM.2012.031'>10.11613/BM.2012.031</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d44' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>15.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d44'><a href='/discussion/unifying-disease-vocabularies/44' class='pub-title'>Unifying disease vocabularies</a><div class='pub-body'>Daniel Himmelstein, Tong Shu Li (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d44'>10.15363/thinklab.d44</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d21' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>16.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d21'><a href='/discussion/how-should-we-construct-a-catalog-of-drug-indications/21' class='pub-title'>How should we construct a catalog of drug indications?</a><div class='pub-body'>Daniel Himmelstein, Benjamin Good, Tudor Oprea, Allison McCoy, Antoine Lizee (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d21'>10.15363/thinklab.d21</a></div></div></td></tr><tr><td><a href='/doi/10.1212/wnl.57.7.1239' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>17.</div></td><td><div class='doi-body' data-key='10.1212/wnl.57.7.1239'><a href='/doi/10.1212/wnl.57.7.1239' class='pub-title'>Effects of IV methylprednisolone on brain atrophy in relapsing-remitting MS</a><div class='pub-body'>R. Zivadinov, R. A. Rudick, R. De Masi, D. Nasuelli, M. Ukmar, R. S. Pozzi-Mucelli, A. Grop, G. Cazzato, M. Zorzon (2001) <i>Neurology</i>. doi:<a class='pub-doi' href='https://doi.org/10.1212/wnl.57.7.1239'>10.1212/wnl.57.7.1239</a></div></div></td></tr><tr><td><a href='/doi/10.1097/01.NT.0000357562.58878.0a' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>18.</div></td><td><div class='doi-body' data-key='10.1097/01.NT.0000357562.58878.0a'><a href='/doi/10.1097/01.NT.0000357562.58878.0a' class='pub-title'>Monthly Steroid Pulses Cut MS Relapses 38 Percent With Few Side Effects, Study Finds</a><div class='pub-body'>DAN HURLEY (2009) <i>Neurology Today</i>. doi:<a class='pub-doi' href='https://doi.org/10.1097/01.NT.0000357562.58878.0a'>10.1097/01.NT.0000357562.58878.0a</a></div></div></td></tr><tr><td><a href='/doi/10.1212/wnl.57.7.1239' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>19.</div></td><td><div class='doi-body' data-key='10.1212/wnl.57.7.1239'><a href='/doi/10.1212/wnl.57.7.1239' class='pub-title'>Effects of IV methylprednisolone on brain atrophy in relapsing-remitting MS</a><div class='pub-body'>R. Zivadinov, R. A. Rudick, R. De Masi, D. Nasuelli, M. Ukmar, R. S. Pozzi-Mucelli, A. Grop, G. Cazzato, M. Zorzon (2001) <i>Neurology</i>. doi:<a class='pub-doi' href='https://doi.org/10.1212/wnl.57.7.1239'>10.1212/wnl.57.7.1239</a></div></div></td></tr><tr><td><a href='/doi/10.1002/14651858.CD003256.pub2' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>20.</div></td><td><div class='doi-body' data-key='10.1002/14651858.CD003256.pub2'><a href='/doi/10.1002/14651858.CD003256.pub2' class='pub-title'>Treatment of severe or progressive Kaposi&#39;s sarcoma in HIV-infected adults</a><div class='pub-body'>Oluwatoyin F Gbabe, Charles I Okwundu, Martin Dedicoat, Esther E Freeman (2014) <i>Cochrane Database of Systematic Reviews</i>. doi:<a class='pub-doi' href='https://doi.org/10.1002/14651858.CD003256.pub2'>10.1002/14651858.CD003256.pub2</a></div></div></td></tr><tr><td><a href='/doi/10.2337/diacare.26.2.279' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>21.</div></td><td><div class='doi-body' data-key='10.2337/diacare.26.2.279'><a href='/doi/10.2337/diacare.26.2.279' class='pub-title'>Sildenafil Citrate for Treatment of Erectile Dysfunction in Men With Type 1 Diabetes: Results of a randomized controlled trial</a><div class='pub-body'>B. G.A. Stuckey, M. N. Jadzinsky, L. J. Murphy, F. Montorsi, A. Kadioglu, F. Fraige, P. Manzano, C. Deerochanawong (2003) <i>Diabetes Care</i>. doi:<a class='pub-doi' href='https://doi.org/10.2337/diacare.26.2.279'>10.2337/diacare.26.2.279</a></div></div></td></tr></table>
+
+    
+
+
+	</td>
+	<td class="thread-sidebar">
+
+
+			
+
+      <a class="btn btn-default follow-link btn-follow btn-lg is-following tt-top full-width" title="Follow discussion" data-id="95" data-ctype="thread" data-is-following="false">&nbsp;</a>
+
+      
+        <div class="status-box text-center"><span style="">Status:</span> 
+  Completed
+
+</div>
+      
+
+      
+        
+      
+
+
+				
+
+					<div class="details">Views</div>
+					<span style="font-size:20px;">261</span>
+
+        
+
+				
+					<div class="details">Topics</div>
+					<div style="margin-bottom:15px;">
+		            <a href="/topics/indications" class="tag">Indications</a><a href="/topics/disease-modifying-therapy" class="tag">Disease-Modifying Therapy</a><a href="/topics/expert-curation" class="tag">Expert Curation</a><a href="/topics/symptomatic-treatment" class="tag">Symptomatic Treatment</a>
+					</div>
+				
+
+
+		
+			<div class="details">Referenced by</div>
+			<div style="font-size:12px;"><ul style="padding-left:16px !important;">
+			
+				<li>
+					
+					<a href='/discussion/one-network-to-rule-them-all/102' class='thread-title'>One network to rule them all</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/incorporating-drugcentral-data-in-our-network/186' class='thread-title'>Incorporating DrugCentral data in our network</a>
+				</li>
+			
+				<li>
+					
+					Research report: <a href='/p/rephetio/report'>Rephetio: Repurposing drugs on a hetnet</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/assessing-the-informativeness-of-features/115' class='thread-title'>Assessing the informativeness of features</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/predictions-of-whether-a-compound-treats-a-disease/203' class='thread-title'>Predictions of whether a compound treats a disease</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/data-nomenclature-naming-and-abbreviating-our-network-types/162' class='thread-title'>Data nomenclature: naming and abbreviating our network types</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/how-should-we-construct-a-catalog-of-drug-indications/21' class='thread-title'>How should we construct a catalog of drug indications?</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/announcing-pharmacotherapydb-the-open-catalog-of-drug-therapies-for-disease/182' class='thread-title'>Announcing PharmacotherapyDB: the Open Catalog of Drug Therapies for Disease</a>
+				</li>
+			
+				<li>
+					[<a href="/p/meta/discussion" style="color:#333333">meta</a>] 
+					<a href='/discussion/hypothesis-for-alerting-authors-of-writing-errors-in-discussion-posts/167' class='thread-title'>Hypothesis for alerting authors of writing errors in discussion posts</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/assessing-the-quality-and-applicability-of-the-sider-2-resource/30' class='thread-title'>Assessing the quality and applicability of the SIDER 2 resource</a>
+				</li>
+			
+				</ul>
+			</div>
+		
+
+		
+			<div class="details">Cite this as</div>
+			<span style="font-size:12px;">
+				Daniel Himmelstein, Pouya Khankhanian, Chrissy Hessler (2015) Expert curation of our indication catalog for disease-modifying treatments. <i>Thinklab.</i> doi:<a href='https://doi.org/10.15363/thinklab.d95'>10.15363/thinklab.d95</a>
+			</span>
+		
+
+		<div class="details">License</div>
+		<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0;width:88px;height:31px;" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></p>
+
+		<div class="details">Share</div>
+		
+			
+				<a class="share-button fb" onclick="javascript:void(window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A//thinklab.com/discussion/expert-curation-of-our-indication-catalog-for-disease-modifying-treatments/95','','width=600,height=460,menubar=no,status=no'));" href="#"></a>
+<a class="share-button twitter" onclick="javascript:void(window.open('https://twitter.com/share?text=Expert%20curation%20of%20our%20indication%20catalog%20for%20disease-modifying%20treatments&url=https%3A//thinklab.com/discussion/expert-curation-of-our-indication-catalog-for-disease-modifying-treatments/95','','width=600,height=300,menubar=no,status=no'));" href="#"></a>
+<a class="share-button google" onclick="javascript:void(window.open('https://plus.google.com/share?url=https%3A//thinklab.com/discussion/expert-curation-of-our-indication-catalog-for-disease-modifying-treatments/95','','width=510,height=460,menubar=no,status=no'));" href="#"></a>
+
+			
+		
+
+	</td>
+</tr></table>
+
+
+		</div>
+
+
+		
+	    	<div class="footer">
+<div style="background:#dedede;">
+	<div class="main-centered-div text-center" style="padding:20px;">
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#87efe2ebebe8c7f3efeee9ecebe6e5a9e4e8ea"><span class="__cf_email__" data-cfemail="234b464f4f4c63574b4a4d484f42410d404c4e">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+	</div>
+</div>
+<div class="main-footer">
+	<div class="main-centered-div">
+
+<table class="full-width"><tr>
+	<td class="footer-nav">
+
+        <div class="foot-head">Explore</div>
+        <a href="/proposals">Proposals</a><br>
+        <a href="/projects">Projects</a><br>
+        <a href="/publications">Article discussion</a><br>
+        <a href="/discussion">All discussion</a><br>
+        <a href="/topics">Topics</a><br>
+        <!-- <a href="/funders">Funders</a><br> -->
+        <a href="/funding">Funding opportunities</a><br>
+
+	</td>
+	<td class="footer-nav">
+
+        <!-- <div class="foot-head">Help &amp; feedback</div>	 -->
+        <!-- <div class="foot-head">Intro</div>
+        <a href="/benefits/for-science">Why</a><br>
+        <a href="/how-it-works">How it works</a><br>
+
+<br> -->
+
+        <div class="foot-head">Community</div>
+        <a href="/leaderboard">Leaderboard</a><br>
+        <a href="/p/meta">Thinklab Meta</a><br>
+				<a href="/help/faq">Help</a><br>
+				<!-- <a href="/new-project">Start a proposal</a><br> -->
+        <!-- <a href="/benefits/proposal">Benefits</a><br> -->
+        <!-- <a href="/funding">Get funded</a><br> -->
+        <!-- <a href="/participate">Become a contributor</a><br> -->
+        <!-- <a href="/for-funders">For science funders</a><br> -->
+        <!-- <a href="/for-institutions">For institutions</a><br> -->
+
+	</td>
+	<td class="footer-nav">
+
+
+
+        <div class="foot-head">About</div>
+        <a href="/about">Overview</a><br>
+        <a href="/benefits">Benefits</a><br>
+        <a href="/how-it-works">How it works</a><br>
+        <a href="/about/story">Our story</a><br>
+        <a href="/blog">Our blog</a><br>
+        <a href="/about/jobs">Join the team</a><br>
+        <br>
+
+        <!-- <div class="foot-head">Help</div>
+        <a href="/help">Help</a><br>
+		 -->
+
+
+	</td>
+	<td class="footer-nav">
+		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
+		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<br><br>
+		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
+
+	</td>
+
+</tr></table>
+
+</div>
+</div>
+</div>
+
+		
+
+	</div>
+
+
+  <script></script>
+  <script>
+  var MEDIA_URL = 'https://think-lab.s3.amazonaws.com/m/';
+  var STATIC_URL = 'https://think-lab.s3.amazonaws.com/s/';
+  var page_is_authenticated = false;
+  var page_page = 'discussion';
+  var page_profile_id = undefined;
+</script>
+
+
+
+	<!-- Note different script type. MUST come before MathJax.js -->
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	        "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"],
+	                        scale: 110, linebreaks: { automatic:true },
+	                        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+	        tex2jax: { inlineMath: [ ["$$", "$$"], ["\\(","\\)"] ],
+	                    displayMath: [ ["$$$","$$$"], ["\\[", "\\]"] ],
+	                    processEscapes: true,}
+	            });
+
+	</script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://think-lab.s3.amazonaws.com/s/dist/main.min.js"></script>
+  
+
+
+
+  
+	
+  
+  
+  
+<script>
+$(function() {
+  recordHit('thread', 95);
+});
+</script>
+
+
+
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>

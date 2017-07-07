@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZgEOC19dW0QCEVtHU1gG","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":217}</script>
+    <title>Comments &amp; Notes interface and behaviour - Suggestions | Thinklab</title>
+	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
+    <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/highlightjs/github.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/css.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/bootstrap-multiselect.css" />
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
+    
+    
+    
+    
+  
+
+    
+
+
+	<!-- GoogleAnalytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-48550230-1', 'thinklab.com');
+	ga('require', 'displayfeatures');
+	
+	ga('send', 'pageview');
+
+	</script>
+
+
+
+
+
+
+</head>
+<body >
+  <form id="form_action" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+</form>
+
+	
+
+	<div class="body-wrapper">
+
+		
+
+
+<!-- <div style="height:5px;background-image:url('https://think-lab.s3.amazonaws.com/s/img/top-bg.gif');"></div> -->
+<div class="gradient">
+	<div class="main-centered-div header-container">
+
+<table class="full-width" style="height:60px;"><tr>
+	<td style="width:200px;vertical-align:middle;padding-bottom:15px;">
+		<a href="/" style="font-weight:normal;color:#212121;"><img src="https://think-lab.s3.amazonaws.com/s/img/logo.png" width="160"></a>
+	</td><td style="vertical-align:middle;text-align:left;padding-top:6px;width:100%;padding-left:40px;">
+		<ul id="not-search-block"  class="main-header">
+
+
+			
+
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/proposals">Proposals</a></li>
+						<li><a href="/projects">Projects</a></li>
+						<li><a href="/publications">Article discussion</a></li>
+						<li><a href="/discussion">All discussion</a></li>
+					</ul>
+				</li>
+				<li><a href="/leaderboard">Leaderboard</a></li>
+
+			
+				<li><a href="/about">About</a></li>
+			
+
+
+		</ul>
+
+    <ul id="search-block" class="main-header" style="display: none; margin-right: 30px;">
+        <li class="full-width">
+            <form method="get" action="/search">
+			<div class="input-group full-width">
+				<input name="q" type="text" class="form-control search-input">
+			</div>
+            </form>
+        </li>
+    </ul>
+
+	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
+		<ul class="main-header pull-right" style="padding-left: 0;">
+    		
+                <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+            
+
+        </ul>
+    </ul>
+	</td>
+</tr></table>
+
+<!-- <div id="global-search-div" class="main-centered-div" style="display:none;">
+	<input type="text" value="" class="thread-search form-control" placeholder="Search" data-action="/discussion">
+</div> -->
+
+	</div>
+</div>
+
+		
+	  
+
+
+
+	  
+
+
+		
+
+		<div class="dark-head"><div class="main-centered-div">
+
+			
+
+		</div></div>
+		
+		<div class="main-centered-div" style="margin-top:40px;padding-bottom:340px">
+	    
+
+<div style="margin-top:-20px; margin-bottom:20px;">
+
+    <a class="side-box" href="/p/meta" style="background-color:#ebfdff;"><div class="side-type">Project:</div> <div class="side-title">Thinklab Meta [meta]</div></a><br>
+
+
+
+</div>
+
+<table style="margin-top:0px;"><tr>
+	<td class="thread-table-content">
+
+		<table class="full-width">
+			
+<tr class="comment-tr target-hl" id="1" data-comment-id="172">
+  <td class="comment-profile-avatar">
+		<a href="/u/alizee"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/23_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="172"></a>
+
+    
+
+			<h2 class="page-title" style="margin-bottom:5px;margin-top:0px !important;">Comments &amp; Notes interface and behaviour - Suggestions</h2>
+
+			<div style="margin-top:5px;color:gray;margin-bottom:20px;font-size:13px;">
+				<a style="font-weight:normal;color:#212121" href="/u/alizee"><strong>Antoine Lizee</strong></a>
+				
+				&nbsp; <a href="#1" class="light">800 days ago</a>
+				
+			</div>
+
+      
+
+          <hr>
+		
+
+    <p>It seems that a few things around the way people interact with comments and notes could change for better. Here is a thread to discuss it.</p>
+
+<p>I'll begin with a couple of suggestions:</p>
+
+<ul><li><p>I might have missed something, but it seems that there is no way to delete a comment. As the user base of the platform grows, it might be useful to add this feature, at least for a certain amount of time after posting. Especially since full editing is available without time limit.</p></li><li><p>Notes should be "upvotable". As SO and other knowledge crowd-sharing platforms have shown (and I understand we might want to do things differently), the key information is sometimes better placed in a note of an existing comment. I am not sure how this should work, but it seems that something similar to comments with smaller values should be enough to give the <em>opportunity</em> of rewarding important notes.</p></li></ul>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-102" class="inline-note toggle-parent" data-note-id="102">
+	<p><a href="/u/alizee">Antoine Lizee</a>: Of course, deletion of thread-making posts should not be possible.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="2" data-comment-id="175">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="175"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				
+				<span class="light">&nbsp;<a href="#2" class="light">799 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <blockquote><p>it seems that there is no way to delete a comment</p></blockquote>
+
+<p>I would support comment deletion once/if version history of discussions are tracked. I also encourage a mandatory "justification" field when deleting a comment.</p>
+
+<blockquote><p>Notes should be "upvotable"</p></blockquote>
+
+<p>At this stage with limited examples of note usage on ThinkLab, I have difficulty assessing whether voting would be a worthwhile feature. I'm still new to the whole comment versus note distinction, so it may take me a long time to develop an opinion here.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-92" class="inline-note toggle-parent" data-note-id="92">
+	<p><a href="/u/alizee">Antoine Lizee</a>: I agree on the limited usage of notes so far. Adding the upvotable feature might be premature.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-101" class="inline-note toggle-parent" data-note-id="101">
+	<p><a href="/u/alizee">Antoine Lizee</a>: I'm in favor of the mandatory field for deletion.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="3" data-comment-id="180">
+  <td class="comment-profile-avatar">
+		<a href="/u/jackpark"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/s/img/p_default_medium.png' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="180"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/jackpark">Jack Park</a>
+				
+				<span class="light">&nbsp;<a href="#3" class="light">798 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>In relation to comments, it seems to me that there is an opportunity to bring structure to them.  If bringing structure to, let's call them "threads", then there are further comments (other topics) to add.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-93" class="inline-note toggle-parent" data-note-id="93">
+	<p><a href="/u/alizee">Antoine Lizee</a>: What do you mean by "structure"?
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-94" class="inline-note toggle-parent" data-note-id="94">
+	<p><a href="/u/alizee">Antoine Lizee</a>: On a related note, I agree that "comment" might not be the right term for the posts on ThinkLab.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-95" class="inline-note toggle-parent" data-note-id="95">
+	<p><a href="/u/jackpark">Jack Park</a>: What do I mean by "structure"?<br>That's a very good question since I carry a lot of tacit thoughts that really need to come out.<br>My thinking is this: this "thread" is essentially a linear list. It's a conversation sequenced temporally. With careful use of <a href="/u/thingies" class="username">@thingies</a>, one can add just a bit of structure. The fact that I am replying to an indented set of comments on my comment, there already is structure, though I was not allowed to indent my comment against those comments, so structure, as implemented here, has its limits. I'll start a new, um, comment, about structure.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="4" data-comment-id="182">
+  <td class="comment-profile-avatar">
+		<a href="/u/jackpark"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/s/img/p_default_medium.png' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="182"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/jackpark">Jack Park</a>
+				
+				<span class="light">&nbsp;<a href="#4" class="light">798 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p> Structure other than linear lists, I believe, offers opportunities to render our conversations more useful along these dimensions: Ability to isolate questions and their responses and any pro or con arguments from other questions in a visual sense; that isolation raises the opportunity to maintain an improved "signal to noise" ratio.<br>Structure, in my view, entails two opportunities:<br>1) make use of natural outline structures to as many depth levels as required<br>2) provide some form of node type identifier, which would include these types (drawn from the Issue-based Information Systems vocabulary first isolated by Jeff Conklin and implemented in <a href="http://compendium.open.ac.uk/" target="_blank">http://compendium.open.ac.uk/</a> and, in part, at <a href="http://debategraph.org/" target="_blank">http://debategraph.org/</a>): question (issue), answer (position), pro or con arguments, reference, decision, and note.<br>3) restrict each node in such a conversation to <em>one topic</em>. That is because each topic should carry its own "thread".</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="5" data-comment-id="189">
+  <td class="comment-profile-avatar">
+		<a href="/u/jspauld"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/2_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="189"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/jspauld">Jesse Spaulding</a>
+				
+				<span class="light">&nbsp;<a href="#5" class="light">794 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p><strong>Re: deletion of comments</strong></p>
+
+<p>I don't really have a good sense of what the best thing to do here is yet. So I think it's best just to hold off on doing anything for now. For the time being users can just edit their comment and type in <code>[deleted]</code> or something like that (possibly giving a reason). Over time I think we'll have a better understanding of the type of scenarios people are deleting comments in and if this is causing any problems. In general I don't think we want people deleting comments.</p>
+
+<p><strong>Re: notes being "upvotable"</strong></p>
+
+<p>I agree that it's premature given that even I'm not sure what role the notes feature should play yet.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="6" data-comment-id="194">
+  <td class="comment-profile-avatar">
+		<a href="/u/jspauld"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/2_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="194"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/jspauld">Jesse Spaulding</a>
+				
+				<span class="light">&nbsp;<a href="#6" class="light">794 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p><strong>Re: adding more structure to comments</strong></p>
+
+<p>I've addressed this in two posts: </p>
+
+<ul><li><a href="http://thinklab.com/discussion/why-thinklab-uses-a-flat-discussion-structure-not-threaded/63">Why ThinkLab uses a flat discussion structure (not threaded)</a></li><li><a href="http://thinklab.com/discussion/should-we-aim-to-keep-discussions-narrowly-focused/64">Should we aim to keep discussions narrowly focused?</a></li></ul>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+    		
+		</table>
+
+    
+
+    &nbsp;<br>
+    <a class="btn btn-primary btn-lg" href="/signup?next=/discussion/comments-notes-interface-and-behaviour-suggestions/60&suppress_message=1" style>Join to Reply</a>
+
+
+		<table class="references table-td-5" style="display:none;"><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d63' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d63'><a href='/discussion/why-thinklab-uses-a-flat-discussion-structure-not-threaded/63' class='pub-title'>Why ThinkLab uses a flat discussion structure (not threaded)</a><div class='pub-body'>Jesse Spaulding, Jack Park (2015) <i>Thinklab</i>. https://thinklab.com/d/63</div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d64' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>2.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d64'><a href='/discussion/should-we-aim-to-keep-discussions-narrowly-focused/64' class='pub-title'>Should we aim to keep discussions narrowly focused?</a><div class='pub-body'>Jesse Spaulding, Daniel Himmelstein, Antoine Lizee (2015) <i>Thinklab</i>. https://thinklab.com/d/64</div></div></td></tr></table>
+
+    
+
+
+	</td>
+	<td class="thread-sidebar">
+
+
+			
+
+      <a class="btn btn-default follow-link btn-follow btn-lg is-following tt-top full-width" title="Follow discussion" data-id="60" data-ctype="thread" data-is-following="false">&nbsp;</a>
+
+      
+        <div class="status-box text-center"><span style="">Status:</span> 
+  Deferred
+
+</div>
+      
+
+      
+        
+
+          <div class="details">
+            
+            Labels
+          </div>
+
+          
+            <a href='/p/meta/discussion?q=[Discussion System]' class='pl pl-sidebar pl-black' style='background-color:#b4ffe8'><span class='glyphicon glyphicon-tag'></span>&nbsp; Discussion System</a>
+          
+            <a href='/p/meta/discussion?q=[Feature Suggestion]' class='pl pl-sidebar pl-black' style='background-color:#e0dbff'><span class='glyphicon glyphicon-tag'></span>&nbsp; Feature Suggestion</a>
+          
+        
+      
+
+
+				
+
+					<div class="details">Views</div>
+					<span style="font-size:20px;">68</span>
+
+        
+
+				
+					<div class="details">Topics</div>
+					<div style="margin-bottom:15px;">
+		            <a href="/topics/comments" class="tag">Comments</a>
+					</div>
+				
+
+
+		
+			<div class="details">Referenced by</div>
+			<div style="font-size:12px;"><ul style="padding-left:16px !important;">
+			
+				<li>
+					
+					<a href='/discussion/should-we-aim-to-keep-discussions-narrowly-focused/64' class='thread-title'>Should we aim to keep discussions narrowly focused?</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/thinklab-editor-and-markdown-suggestions/59' class='thread-title'>ThinkLab editor and markdown suggestions</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/why-thinklab-uses-a-flat-discussion-structure-not-threaded/63' class='thread-title'>Why ThinkLab uses a flat discussion structure (not threaded)</a>
+				</li>
+			
+				</ul>
+			</div>
+		
+
+		
+			<div class="details">Cite this as</div>
+			<span style="font-size:12px;">
+				Antoine Lizee, Daniel Himmelstein, Jack Park, Jesse Spaulding (2015) Comments &amp; Notes interface and behaviour - Suggestions. <i>Thinklab.</i> https://thinklab.com/d/60
+			</span>
+		
+
+		<div class="details">License</div>
+		<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0;width:88px;height:31px;" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></p>
+
+		<div class="details">Share</div>
+		
+			
+				<a class="share-button fb" onclick="javascript:void(window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A//thinklab.com/discussion/comments-notes-interface-and-behaviour-suggestions/60','','width=600,height=460,menubar=no,status=no'));" href="#"></a>
+<a class="share-button twitter" onclick="javascript:void(window.open('https://twitter.com/share?text=Comments%20%26%20Notes%20interface%20and%20behaviour%20-%20Suggestions&url=https%3A//thinklab.com/discussion/comments-notes-interface-and-behaviour-suggestions/60','','width=600,height=300,menubar=no,status=no'));" href="#"></a>
+<a class="share-button google" onclick="javascript:void(window.open('https://plus.google.com/share?url=https%3A//thinklab.com/discussion/comments-notes-interface-and-behaviour-suggestions/60','','width=510,height=460,menubar=no,status=no'));" href="#"></a>
+
+			
+		
+
+	</td>
+</tr></table>
+
+
+		</div>
+
+
+		
+	    	<div class="footer">
+<div style="background:#dedede;">
+	<div class="main-centered-div text-center" style="padding:20px;">
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#650d0009090a25110d0c0b0e0904074b060a08"><span class="__cf_email__" data-cfemail="59313c353536192d3130373235383b773a3634">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+	</div>
+</div>
+<div class="main-footer">
+	<div class="main-centered-div">
+
+<table class="full-width"><tr>
+	<td class="footer-nav">
+
+        <div class="foot-head">Explore</div>
+        <a href="/proposals">Proposals</a><br>
+        <a href="/projects">Projects</a><br>
+        <a href="/publications">Article discussion</a><br>
+        <a href="/discussion">All discussion</a><br>
+        <a href="/topics">Topics</a><br>
+        <!-- <a href="/funders">Funders</a><br> -->
+        <a href="/funding">Funding opportunities</a><br>
+
+	</td>
+	<td class="footer-nav">
+
+        <!-- <div class="foot-head">Help &amp; feedback</div>	 -->
+        <!-- <div class="foot-head">Intro</div>
+        <a href="/benefits/for-science">Why</a><br>
+        <a href="/how-it-works">How it works</a><br>
+
+<br> -->
+
+        <div class="foot-head">Community</div>
+        <a href="/leaderboard">Leaderboard</a><br>
+        <a href="/p/meta">Thinklab Meta</a><br>
+				<a href="/help/faq">Help</a><br>
+				<!-- <a href="/new-project">Start a proposal</a><br> -->
+        <!-- <a href="/benefits/proposal">Benefits</a><br> -->
+        <!-- <a href="/funding">Get funded</a><br> -->
+        <!-- <a href="/participate">Become a contributor</a><br> -->
+        <!-- <a href="/for-funders">For science funders</a><br> -->
+        <!-- <a href="/for-institutions">For institutions</a><br> -->
+
+	</td>
+	<td class="footer-nav">
+
+
+
+        <div class="foot-head">About</div>
+        <a href="/about">Overview</a><br>
+        <a href="/benefits">Benefits</a><br>
+        <a href="/how-it-works">How it works</a><br>
+        <a href="/about/story">Our story</a><br>
+        <a href="/blog">Our blog</a><br>
+        <a href="/about/jobs">Join the team</a><br>
+        <br>
+
+        <!-- <div class="foot-head">Help</div>
+        <a href="/help">Help</a><br>
+		 -->
+
+
+	</td>
+	<td class="footer-nav">
+		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
+		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<br><br>
+		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
+
+	</td>
+
+</tr></table>
+
+</div>
+</div>
+</div>
+
+		
+
+	</div>
+
+
+  <script></script>
+  <script>
+  var MEDIA_URL = 'https://think-lab.s3.amazonaws.com/m/';
+  var STATIC_URL = 'https://think-lab.s3.amazonaws.com/s/';
+  var page_is_authenticated = false;
+  var page_page = 'discussion';
+  var page_profile_id = undefined;
+</script>
+
+
+
+	<!-- Note different script type. MUST come before MathJax.js -->
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	        "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"],
+	                        scale: 110, linebreaks: { automatic:true },
+	                        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+	        tex2jax: { inlineMath: [ ["$$", "$$"], ["\\(","\\)"] ],
+	                    displayMath: [ ["$$$","$$$"], ["\\[", "\\]"] ],
+	                    processEscapes: true,}
+	            });
+
+	</script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://think-lab.s3.amazonaws.com/s/dist/main.min.js"></script>
+  
+
+
+
+  
+	
+  
+  
+  
+<script>
+$(function() {
+  recordHit('thread', 60);
+});
+</script>
+
+
+
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>

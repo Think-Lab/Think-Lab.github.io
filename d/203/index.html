@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZgEOC19dW0QCEVtHU1gG","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":831}</script>
+    <title>Predictions of whether a compound treats a disease | Thinklab</title>
+	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
+    <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/highlightjs/github.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/css.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/bootstrap-multiselect.css" />
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
+    
+    
+    
+    
+  
+    <meta name="citation_doi" content="10.15363/thinklab.d203">
+    <meta name="citation_title" content="Predictions of whether a compound treats a disease">
+    <meta name="citation_online_date" content="May 17, 2016">
+    <meta name="citation_author" content="Daniel Himmelstein, Chrissy Hessler, Pouya Khankhanian">
+    <meta name="citation_journal_title" content="Thinklab">
+    <meta name="citation_publisher" content="Thinklab">
+  
+
+    
+
+
+	<!-- GoogleAnalytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-48550230-1', 'thinklab.com');
+	ga('require', 'displayfeatures');
+	
+	ga('send', 'pageview');
+
+	</script>
+
+
+
+
+
+
+</head>
+<body >
+  <form id="form_action" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+</form>
+
+	
+
+	<div class="body-wrapper">
+
+		
+
+
+<!-- <div style="height:5px;background-image:url('https://think-lab.s3.amazonaws.com/s/img/top-bg.gif');"></div> -->
+<div class="gradient">
+	<div class="main-centered-div header-container">
+
+<table class="full-width" style="height:60px;"><tr>
+	<td style="width:200px;vertical-align:middle;padding-bottom:15px;">
+		<a href="/" style="font-weight:normal;color:#212121;"><img src="https://think-lab.s3.amazonaws.com/s/img/logo.png" width="160"></a>
+	</td><td style="vertical-align:middle;text-align:left;padding-top:6px;width:100%;padding-left:40px;">
+		<ul id="not-search-block"  class="main-header">
+
+
+			
+
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/proposals">Proposals</a></li>
+						<li><a href="/projects">Projects</a></li>
+						<li><a href="/publications">Article discussion</a></li>
+						<li><a href="/discussion">All discussion</a></li>
+					</ul>
+				</li>
+				<li><a href="/leaderboard">Leaderboard</a></li>
+
+			
+				<li><a href="/about">About</a></li>
+			
+
+
+		</ul>
+
+    <ul id="search-block" class="main-header" style="display: none; margin-right: 30px;">
+        <li class="full-width">
+            <form method="get" action="/search">
+			<div class="input-group full-width">
+				<input name="q" type="text" class="form-control search-input">
+			</div>
+            </form>
+        </li>
+    </ul>
+
+	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
+		<ul class="main-header pull-right" style="padding-left: 0;">
+    		
+                <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+            
+
+        </ul>
+    </ul>
+	</td>
+</tr></table>
+
+<!-- <div id="global-search-div" class="main-centered-div" style="display:none;">
+	<input type="text" value="" class="thread-search form-control" placeholder="Search" data-action="/discussion">
+</div> -->
+
+	</div>
+</div>
+
+		
+	  
+
+
+
+	  
+
+
+		
+
+		<div class="dark-head"><div class="main-centered-div">
+
+			
+
+		</div></div>
+		
+		<div class="main-centered-div" style="margin-top:40px;padding-bottom:340px">
+	    
+
+<div style="margin-top:-20px; margin-bottom:20px;">
+
+    <a class="side-box" href="/p/rephetio" style="background-color:#ebfdff;"><div class="side-type">Project:</div> <div class="side-title">Rephetio: Repurposing drugs on a hetnet [rephetio]</div></a><br>
+
+
+
+</div>
+
+<table style="margin-top:0px;"><tr>
+	<td class="thread-table-content">
+
+		<table class="full-width">
+			
+<tr class="comment-tr target-hl" id="1" data-comment-id="1273">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1273"></a>
+
+    
+
+			<h2 class="page-title" style="margin-bottom:5px;margin-top:0px !important;">Predictions of whether a compound treats a disease</h2>
+
+			<div style="margin-top:5px;color:gray;margin-bottom:20px;font-size:13px;">
+				<a style="font-weight:normal;color:#212121" href="/u/dhimmel"><strong>Daniel Himmelstein</strong></a>
+				<span class="is-researcher">Researcher</span>
+				&nbsp; <a href="#1" class="light">416 days ago</a>
+				
+			</div>
+
+      
+
+          <hr>
+		
+
+    <p>Project Rephetio has finally reached its prediction stage. A brief recap, we created <a href="https://github.com/dhimmel/hetionet" title="Hetionet on GitHub">Hetionet v1.0</a> — an integrative network with 2,250,197 relationships of 24 types. Then we extracted features from the network to quantify the prevalence of specific path types between each compound and disease. Finally, we <a href="https://thinklab.com/discussion/our-hetnet-edge-prediction-methodology-the-modeling-framework-for-project-rephetio/210#4" class="citation thread-citation" data-key="10.15363/thinklab.d210">fit a model</a> to translate from network-based features to a probability of treatment for a given compound–disease pair.</p>
+
+<p>In total, we make predictions for 209,168 compound–disease pairs between 1,538 approved small molecule compounds and 136 complex diseases. Our model was trained on 755 disease-modifying indications (treatments) from <a href="https://thinklab.com/discussion/announcing-pharmacotherapydb-the-open-catalog-of-drug-therapies-for-disease/182" class="citation thread-citation" data-key="10.15363/thinklab.d182">PharmacotherapyDB v1.0</a>. Hence, our predicted probabilities assume a true prevalence of treatment of 0.36%. Note that in reality the prevalence of treatment is higher and thus are predicted probabilities are on the low side.</p>
+
+<p>Our top predictions (probability &gt; 1%) are available in this <a href="https://docs.zoho.com/sheet/published.do?rid=e69hz753221749d71463d874d3cb7eeed03c6" title="Project Rephetio Top Predictions">online spreadsheet</a>. The full set of predictions is available as <a href="https://github.com/dhimmel/learn/blob/a7766ea00da67f5cf03bd77e6e613a262918f1b8/prediction/predictions/probabilities.tsv" title="probabilities.tsv on GitHub">TSV file</a>.</p>
+
+<p>Our model relied heavily on the following features which positively influence the prediction. Each feature corresponds to a type of path:</p>
+
+<ul><li><strong>CbGbCtD</strong>: whether the compound binds to the same genes as compounds which treat the disease</li><li><strong>CbGaD</strong>: whether the compound binds to genes that are associated with the disease</li><li><strong>CiPCiCtD</strong>: whether the compound belongs to the same pharmacologic classes as compounds that treat the disease</li><li><strong>CrCtD</strong>: whether the compound chemically resembles compounds that treat the disease</li><li><strong>CtDrD</strong>: whether the compound treats diseases which resemble the disease</li><li><strong>CrCrCtD</strong>: whether the compound resembles compounds that resemble compounds that treat the disease.</li><li><strong>CcSEcCtD</strong>: whether the compound causes the same side effects as compounds that treat the disease</li><li><strong>CpDpCtD</strong>: whether the compound palliates the same diseases as compounds that treat the disease</li><li><strong>CbGpPWpGaD</strong>: whether the compound binds to genes that participate in the same pathways as genes associated with the disease</li><li><strong>CbGeAlD</strong>: whether the compound binds to genes that are expressed in the anatomies affected by the disease</li></ul>
+
+<p>We are working on a method for investigating the specific network paths supporting each prediction. Stay tuned and let us know what you think of the predictions.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="2" data-comment-id="1319">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1319"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#2" class="light">416 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Assessing prediction performance</h1>
+
+<p>We've assembled four sets of indications to assess our predictions on:</p>
+
+<ul><li><strong>Disease Modifying</strong> — the 755 disease modifying treatments in <a href="https://thinklab.com/discussion/announcing-pharmacotherapydb-the-open-catalog-of-drug-therapies-for-disease/182" class="citation thread-citation" data-key="10.15363/thinklab.d182">PharmacotherapyDB v1.0</a>. These indications are included in the hetnet as <em>treats</em> edges and used to train the logistic regression model. Due to <a href="https://thinklab.com/discussion/edge-dropout-contamination-in-hetnet-edge-prediction/215" class="citation thread-citation" data-key="10.15363/thinklab.d215">edge dropout contamination</a> and <a href="https://thinklab.com/discussion/network-edge-prediction-how-to-deal-with-self-testing/194" class="citation thread-citation" data-key="10.15363/thinklab.d194">self-testing</a>, overfitting could potentially inflate performance on this set. Therefore, for the three remaining indication sets, we remove any observations that were positives in this set.</li><li><strong>DrugCentral</strong> — We discovered the <a href="https://github.com/olegursu/drugtarget">DrugCentral database</a> after completing our <a href="https://thinklab.com/discussion/expert-curation-of-our-indication-catalog-for-disease-modifying-treatments/95" class="citation thread-citation" data-key="10.15363/thinklab.d95">physician curation</a> for PharmacotherapyDB. This database <a href="https://thinklab.com/discussion/incorporating-drugcentral-data-in-our-network/186#3" class="citation thread-citation" data-key="10.15363/thinklab.d186">contained 210 additional indications</a>. While we haven't curated these indications yet, we observed a high proportion of disease modifying therapy.</li><li><strong>Clinical Trial</strong> — We <a href="https://thinklab.com/discussion/cataloging-drugdisease-therapies-in-the-clinicaltrialsgov-database/212#2" class="citation thread-citation" data-key="10.15363/thinklab.d212">compiled indications</a> that have been investigated by clinical trial from <a href="https://clinicaltrials.gov/">ClinicalTrials.gov</a>. This set contains 5,594 indications.</li><li><strong>Symptomatic</strong> — 390 symptomatic indications from PharacotherapyDB. These edges are included in the hetnet as <em>palliates</em> edges.</li></ul>
+
+<h2>Visualizing performance</h2>
+
+<p><img src="https://github.com/dhimmel/learn/blob/master/prediction/figure/performance.png?raw=true" alt="Predictions performance on four indication sets"></p>
+
+<p>The above figure assesses how well our predictions prioritize four sets of indications. A) The y-axis labels denote the number of indications (+) and non-indications (−) composing each set. Violin plots with quartile lines show the distribution of indications when compound–disease pairs are ordered by their prediction. In all four cases, the actual indications were ranked highly by our predictions. B) ROC Curves with AUROCs in the legend. C) Precision–Recall Curves with AUPRCs in the legend.</p>
+
+<p>A variant of Panel A above designed to be more familiar to the biologist shows where the positives lie:</p>
+
+<p><img src="https://github.com/dhimmel/learn/blob/e9a9a1db762dc59263eb7884a55c55e26d1d19b1/prediction/figure/performance-gel.png?raw=true" alt="Predictions performance on four indication sets"></p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="3" data-comment-id="1325">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1325"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#3" class="light">378 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Announcing Prediction Browsing and Visualization</h1>
+
+<p>The Project Rephetio Browser is live at <a href="http://het.io/repurpose/"><strong>het.io/repurpose</strong></a> letting you browse 209,168 drug repurposing predictions. Users can navigate by compound or by disease. Each prediction can be investigated in the Hetionet Browser — a read only Neo4j database available at <a href="https://neo4j.het.io/browser/">neo4j.het.io</a> that we <a href="https://thinklab.com/discussion/hosting-hetionet-in-the-cloud-creating-a-public-neo4j-instance/216" class="citation thread-citation" data-key="10.15363/thinklab.d216">just released</a>.</p>
+
+<p>For each prediction, we created a guide for the Neo4j Browser to provide additional information. Details include a query to visualize the top ten <a href="https://thinklab.com/discussion/decomposing-predictions-into-their-network-support/229#2" class="citation thread-citation" data-key="10.15363/thinklab.d229">paths contributing</a> to a prediction as well as links to clinical trials investigating a compound–disease pair.</p>
+
+<h2>Seeking feedback</h2>
+
+<p>We'd love to hear what people think about our predictions. Are they reasonable? Are they interesting? Where do we do well? Where do we do poorly?</p>
+
+<p>We're especially interested in a few examples that showcase our approach. So please share any compound–disease pairs where our approach did a good job capturing the relevant pharmacology and disease pathophysiology.</p>
+
+<p>Paging our contributors with clinical or pharmacological expertise: <a href="/u/pouyakhankhanian" class="username">@pouyakhankhanian</a> <a href="/u/chrissyhessler" class="username">@chrissyhessler</a> <a href="/u/TIOprea" class="username">@TIOprea</a> <a href="/u/cknoxrun" class="username">@cknoxrun</a> <a href="/u/mkgilson" class="username">@mkgilson</a> <a href="/u/alexanderpico" class="username">@alexanderpico</a> <a href="/u/allisonmccoy" class="username">@allisonmccoy</a> <a href="/u/ritukhare" class="username">@ritukhare</a>. All feedback is welcome!</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="4" data-comment-id="1327">
+  <td class="comment-profile-avatar">
+		<a href="/u/chrissyhessler"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/s/img/p_default_medium.png' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1327"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/chrissyhessler">Chrissy Hessler</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#4" class="light">378 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Great work! I have just started familiarizing myself with this database so I apologize if I misunderstand the terminology. </p>
+
+<p>I notice that in migraine, amitriptyline does not have a high predicted probability of treating migraine (0.013).  Yet this is a medication often used for migraine, similar to nortriptyline, which scores higher (0.086).</p>
+
+<p> Am I understanding this correctly? If so, why does amitriptyline not score highly?</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="5" data-comment-id="1328">
+  <td class="comment-profile-avatar">
+		<a href="/u/chrissyhessler"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/s/img/p_default_medium.png' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1328"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/chrissyhessler">Chrissy Hessler</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#5" class="light">378 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>A small point- i think we should use the term "epilepsy" rather than "epilepsy syndrome"- the word syndrome implies that the epilepsy is part of a constellation of associated features. Perhaps Ari and Pouya can weigh in. </p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="6" data-comment-id="1329">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1329"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#6" class="light">378 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <blockquote><p>I think we should use the term "epilepsy" rather than "epilepsy syndrome"</p></blockquote>
+
+<p>We rely on the <a href="http://disease-ontology.org/">Disease Ontology</a> for coding diseases <span class="citation">[<a href="/discussion/unifying-disease-vocabularies/44" class="citation" data-key="10.15363/thinklab.d44">1</a>, <a href="https://doi.org/10.1093/nar/gku1011" class="citation" data-key="10.1093/nar/gku1011">2</a>]</span>. I'm hesitant to deviate from the Disease Ontology names because it adds an extra layer of complexity and upkeep. Instead, I relayed your request to the <a href="https://github.com/DiseaseOntology/HumanDiseaseOntology/issues/159" title="DiseaseOntology/HumanDiseaseOntology#159 on GitHub: Renaming epilepsy syndrome to epilepsy">DO Issue Tracker</a>, as we've done in the past <span class="citation">[<a href="/discussion/disease-ontology-feature-requests/68" class="citation" data-key="10.15363/thinklab.d68">3</a>]</span>.</p>
+
+<p>Presently, we also have issues with some compound names that are ALL CAPS due to upstream issues in DrugBank. If many people feel strongly about these names, I'll reconsider fixing them on our end.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="7" data-comment-id="1330">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1330"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#7" class="light">378 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Amitriptyline versus nortriptyline for treating migraine</h1>
+
+<blockquote><p>I notice that in migraine, amitriptyline does not have a high predicted probability of treating migraine (0.013). Yet this is a medication often used for migraine, similar to nortriptyline, which scores higher (0.086).</p></blockquote>
+
+<p><a href="/u/chrissyhessler" class="username">@chrissyhessler</a>, great question regarding our <a href="http://het.io/repurpose/browse.html?id=DOID_6364" title="Browse Project Rephetio predictions for migraine">migraine predictions</a>.</p>
+
+<h2>Amitriptyline</h2>
+
+<p>We can use the Neo4j Browser to investigate the amitriptyline–migraine prediction (<a href="https://neo4j.het.io/browser/?cmd=play&amp;arg=https://neo4j.het.io/guides/rep/DB00321/DOID_6364.html">follow this link</a> and press the play button). I've copied the first paragraph of the guide:</p>
+
+<blockquote><p>Project Rephetio predicted a <strong>probability of 1.390%</strong> that Amitriptyline (<a href="http://www.drugbank.ca/drugs/DB00321"><code>DB00321</code></a>) treats migraine (<a href="http://www.disease-ontology.org/?id=DOID:6364"><code>DOID:6364</code></a>). This probability represents a 2.85-fold enrichment over the background prevalence of treatment. This prediction is in the 97.8th percentile for Amitriptyline and the 93.9th percentile for migraine.</p></blockquote>
+
+<p>So one thing to note is that while the probability is low, amitriptyline comparatively scores highly. Our algorithm bases its probabilities around a positive prevalence of 0.36%, since there are 755 known treatments out of 209,168 possible compound–disease pairs. Therefore, while 1.39% sounds low, it's actually a 2.85-fold enrichment. Now let's look into the top 10 paths supporting that amitriptyline treats migraine (by executing the Cypher query in the guide):</p>
+
+<p><img src="https://cloud.githubusercontent.com/assets/1117703/16347762/6f9e5c7a-3a1c-11e6-8f3d-4d8abf81e2c0.png" alt="Does Amitriptyline treat migraine?"></p>
+
+<p>Amitriptyline–migraine is actually a cool example because it's not overwhelmingly supported by a single path. The 10th most influential path above (<em>amitriptyline–binds–HTR1A–associates–migraine</em>) still provides 3.53% of the total support (as shown in the second slide of the guide). <br>29.7% of the support is due to <em>CpDpCtD</em> paths (as shown in the third slide), which means amitriptyline palliates the same diseases as compounds that treat migraine. 29.0% of the support is due to <em>CbGaD</em> paths: amitriptyline binds to migraine-associated proteins. 16.7% of support is due to <em>CbGbCtD</em> paths: amitriptyline binds to similar proteins as compounds that treat migraine. 9.1% of support is due to <em>CrCrCtD</em> paths: amitriptyline is chemically similar to a compound that is chemical similar to a migraine treatment. The list goes on with support due to pathways (<em>CbGpPWpGaD</em>), side effects (<em>CcSEcCtD</em>), and tissue specificity (<em>CbGeAlD</em>).</p>
+
+<h2>Nortriptyline</h2>
+
+<p>If you already have the Neo4j Browser open, you can play the nortriptyline–migraine guide by running <code>:play https://neo4j.het.io/guides/rep/DB00540/DOID_6364.html</code>. The overview and 10 most supportive paths are copied below:</p>
+
+<blockquote><p>Project Rephetio predicted a <strong>probability of 8.615%</strong> that Nortriptyline (<a href="http://www.drugbank.ca/drugs/DB00540"><code>DB00540</code></a>) treats migraine (<a href="http://www.disease-ontology.org/?id=DOID:6364"><code>DOID:6364</code></a>). This probability represents a 22.86-fold enrichment over the background prevalence of treatment. This prediction is in the 100.0th percentile for Nortriptyline and the 99.4th percentile for migraine.</p></blockquote>
+
+<p><img src="https://cloud.githubusercontent.com/assets/1117703/16348316/c1a5ef12-3a1f-11e6-8d00-c44609f3e7fb.png" alt="Does Nortriptyline treat migraine?"></p>
+
+<p>Notice that many paths are the same for nortriptyline and amitriptyline. Both compounds target serotonin receptors that are associated with migraine. Both compounds share symptomatic uses that support their efficacy against migraine. Now the one major difference is the <em>nortriptyline–resembles–amitriptyline–treats–migraine</em> path, which provides 24.2% of the total support for the nortriptyline prediction.</p>
+
+<p>Why doesn't amitriptyline draw support from a <em>amitriptyline–resembles–nortriptyline–treats–migraine</em> path? <a href="https://thinklab.com/discussion/announcing-pharmacotherapydb-the-open-catalog-of-drug-therapies-for-disease/182" class="citation thread-citation" data-key="10.15363/thinklab.d182">PharmacotherapyDB</a> <strong>doesn't</strong> contain an indication between nortriptyline and migraine but <strong>does</strong> contain an indication between amitriptyline and migraine. While <a href="https://thinklab.com/discussion/path-exclusion-conditions/134#4" class="citation thread-citation" data-key="10.15363/thinklab.d134">we ignore</a> the amitriptyline–migraine treatment when extracting paths for the amitriptyline–migraine prediction, we do not ignore this treatment when extracting paths for the nortriptyline–migraine prediction.</p>
+
+<p>Hence, <a href="/u/chrissyhessler" class="username">@chrissyhessler</a> stumbled upon an interesting example of how missing knowledge in Hetionet combines with our machine learning approach to mediate predictions.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="8" data-comment-id="1336">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1336"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#8" class="light">372 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Bupropion for nicotine dependence</h1>
+
+<p>I was looking into several historical instances of repurposing (<a href="https://github.com/dhimmel/learn/blob/e5e7459532944cafcf542ef6ddfe9184548224d9/validate/repurposing-examples.tsv">compiled from</a> a 2013 article <span class="citation">[<a href="https://doi.org/10.1016/j.tips.2013.03.004" class="citation" data-key="10.1016/j.tips.2013.03.004">1</a>]</span>). One example that caught my eye was bupropion for nicotine dependence. Here's some historical context from a 2008 review <span class="citation">[<a href="https://doi.org/10.2147/COPD.S1121" class="citation" data-key="10.2147/COPD.S1121">2</a>]</span>:</p>
+
+<blockquote><p>Bupropion was developed as an antidepressant for the treatment of major depressive disorder in 1989 as a thrice-daily immediate release formulation <span class="citation">[<a href="https://doi.org/10.4088/pcc.v07n0305" class="citation" data-key="10.4088/pcc.v07n0305">3</a>]</span>. In 1996 a twice daily sustained release (SR) formulation was produced and, in 1997 the smoking cessation properties were first noticed in the United States of America (US) <span class="citation">[<a href="https://doi.org/10.1385/comp:32:1:26" class="citation" data-key="10.1385/comp:32:1:26">4</a>]</span>. Following evaluation as an anti-smoking agent <span class="citation">[<a href="https://doi.org/10.1056/nejm199710233371703" class="citation" data-key="10.1056/nejm199710233371703">5</a>]</span>, it became licensed as an aid to smoking cessation and is now a recognised first line antismoking agent in both the UK and US.</p></blockquote>
+
+<p>The following quote from a 2012 article speaks to the serendipity of this repurposing <span class="citation">[<a href="https://doi.org/10.1093/ntr/nts201" class="citation" data-key="10.1093/ntr/nts201">6</a>]</span>:</p>
+
+<blockquote><p>The ability of bupropion to facilitate smoking cessation was discovered serendipitously when it was shown to decrease cigarette consumption in depressed patients. The precise mechanism through which bupropion facilitates abstinence is unclear but nevertheless raises the intriguing possibility that other FDA-approved medications could likewise facilitate smoking cessation through novel mechanisms of action.</p></blockquote>
+
+<p>I looked into our prediction for bupropion and nicotine dependence (<a href="https://neo4j.het.io/browser/?cmd=play&amp;arg=https://neo4j.het.io/guides/rep/DB01156/DOID_0050742.html">see in browser</a>):</p>
+
+<blockquote><p>Project Rephetio predicted a probability of 1.265% that Bupropion (<a href="http://www.drugbank.ca/drugs/DB01156"><code>DB01156</code></a>) treats nicotine dependence (<a href="http://www.disease-ontology.org/?id=DOID:0050742"><code>DOID:0050742</code></a>). This probability represents a 2.50-fold enrichment over the background prevalance of treatment. This prediction is in the 96.3th percentile for Bupropion and the 99.5th percentile for nicotine dependence.</p></blockquote>
+
+<p>While the predicted probability is not exceptional, bupropion was in the top 99.5th percentile (<a href="http://het.io/repurpose/browse.html?id=DOID_0050742">ranked 9th</a>) for nicotine dependence. The following diagram shows the 10 paths providing the most support for this prediction:</p>
+
+<p><img src="https://cloud.githubusercontent.com/assets/1117703/16503512/5d56d140-3ee1-11e6-9522-e820c30f67fd.png" alt="bupropion-nicotine"></p>
+
+<p>Our approach picks up that bupropion causes terminal insomnia as does varenicline — the only other FDA-approved smoking cessation compound. Indeed, insomnia is one of the primary side effects of bupropion <span class="citation">[<a href="https://doi.org/10.1007/s00228-003-0693-0" class="citation" data-key="10.1007/s00228-003-0693-0">7</a>, <a href="https://doi.org/10.2147/COPD.S1121" class="citation" data-key="10.2147/COPD.S1121">2</a>]</span> and is also a documented side effect of varenicline <span class="citation">[<a href="https://doi.org/10.1016/j.amjmed.2008.01.017" class="citation" data-key="10.1016/j.amjmed.2008.01.017">8</a>]</span>. This shared side effect could underlie a common mechanism of action.</p>
+
+<h2>Top predictions for nicotine dependence</h2>
+
+<p>Our top 3 predictions for treating nicotine dependence (or smoking cessation) are nicotine, cytisine, and galantamine. Nicotine is included in PharmacotherapyDB as a symptomatic indication and matched 86 clinical trials. Cytisine is an encouraging prediction because it's shown efficacy in trial <span class="citation">[<a href="https://doi.org/10.1056/NEJMoa1102035" class="citation" data-key="10.1056/NEJMoa1102035">9</a>, <a href="https://doi.org/10.1056/NEJMoa1407764" class="citation" data-key="10.1056/NEJMoa1407764">10</a>]</span> and has been used by smokers for decades as a well-tolerated and low-cost cessation therapy <span class="citation">[<a href="https://doi.org/10.1002/14651858.CD006103.pub7" class="citation" data-key="10.1002/14651858.CD006103.pub7">11</a>]</span>. There is currently an ongoing <a href="https://clinicaltrials.gov/ct2/show/NCT01669538" title="Effect of Galantamine on Short-term Abstinence (GAL-K)">clinical trial</a> at the University of Pennsylvania for galantamine and quitting smoking. The trial has recently shown positive early results <span class="citation">[<a href="https://doi.org/10.1038/tp.2015.209" class="citation" data-key="10.1038/tp.2015.209">12</a>]</span>.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="9" data-comment-id="1348">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1348"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#9" class="light">308 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Predictions for decitabine</h1>
+
+<p>Decitabine (<a href="http://www.drugbank.ca/drugs/DB01262" title="Decitabine on DrugBank"><code>DB01262</code></a>) is a treatment for myelodysplastic syndromes — which are not included in Hetionet v1.0 as a disease. In Europe, decitabine was approved for acute myeloid leukemia (AML) in 2012, but Hetionet v1.0 does not contain any indications for this drug. Therefore, all of <a href="http://het.io/repurpose/browse.html?id=DB01262" title="Project Rephetio predictions for decitabine">decitabine's predictions</a> are novel from the perspective of the network.</p>
+
+<p>The top prediction at 16.5% is <strong>hematologic cancer</strong>, a supertype of AML. This prediction <a href="https://neo4j.het.io/browser/?cmd=play&amp;arg=https://neo4j.het.io/guides/rep/DB01262/DOID_2531.html" title="Hetionet Neo4j Browser: decitabine--hematologic cancer prediction">draws support</a> from a large number of paths. Decitabine binds <em>DNMT3A</em> and <em>DCK</em>, two hematologic cancer associated genes. Furthermore, several treatments for hematologic cancer — including Pentostatin, Clofarabine, Nelarabine,  Cytarabine — belong to the "Nucleic Acid Synthesis Inhibitors" pharmacologic class along with decitabine. And finally, decitabine chemically resembles the four other compounds mentioned above.</p>
+
+<p>Other top cancer predictions for decitabine include the lymphatic system (4.87%), stomach (2.94%), breast (2.74%), pancreas (1.76%), bladder (1.71%), lung (1.48%), and kidney (1.47%). All of these cancers besides the stomach have clinical trials for decitabine. Below we visualizing the most <a href="https://neo4j.het.io/browser/?cmd=play&amp;arg=https://neo4j.het.io/guides/rep/DB01262/DOID_1324.html" title="Hetionet Neo4j Browser: decitabine--lung cancer prediction">supportive paths</a> for <strong>lung cancer</strong>. Most of the support comes from decitabine's similarity to lung-cancer-therapy gemcitabine. Our method also picked up that decitabine's target genes <em>DNMT1</em> and <em>DNMT3A</em> are expressed in relevant anatomies for lung cancer. However, we really only care about the tissue-specificity of the genes contained within potentially mechanistic paths, such as <em>DCK</em> below, which is required to enzymatically activate decitabine <span class="citation">[<a href="https://doi.org/10.1053/j.seminhematol.2005.05.002" class="citation" data-key="10.1053/j.seminhematol.2005.05.002">1</a>]</span>. Therefore, a future direction could be to engineer meta-<em>patterns</em> (rather than paths) that capture the benefits of tissue-specificity <span class="citation">[<a href="https://doi.org/10.1038/ng.3259" class="citation" data-key="10.1038/ng.3259">2</a>]</span>.</p>
+
+<p><img src="https://cloud.githubusercontent.com/assets/1117703/18216262/ad56cfe6-7123-11e6-96ef-60b35cf1ca1b.png" alt="decitabine-lung-cancer"></p>
+
+<p>The fifth ranking prediction, however, is not a cancer but instead <strong>multiple sclerosis</strong> (MS). The MS prediction is based on decitabine's resemblance to cladribine — an efficacious MS treatment that was never approved due to safety concerns <span class="citation">[<a href="https://doi.org/10.1056/NEJMoa0902533" class="citation" data-key="10.1056/NEJMoa0902533">3</a>, <a href="https://doi.org/10.4137/JCNSD.S5128" class="citation" data-key="10.4137/JCNSD.S5128">4</a>, <a href="https://doi.org/10.1097/WNF.0b013e318204cd90" class="citation" data-key="10.1097/WNF.0b013e318204cd90">5</a>]</span>, although risks may have been overstated <span class="citation">[<a href="https://doi.org/10.1212/nxi.0000000000000158" class="citation" data-key="10.1212/nxi.0000000000000158">6</a>]</span> and regulatory review <a href="https://multiplesclerosisnewstoday.com/2016/07/20/20160720merck-european-medicines-agency-accept-review-marketing-authorization-cladribine-tablets/" title="Merck KGaA’s Investigational MS Therapy Cladribine Gets EMA Marketing Authorization Application Review. July 20, 2016. Daniela Semedo. Multiple Sclerosis News Today">has recommenced</a>. Additional support for treating MS with decitabine came from azathioprine — a longstanding and economical MS therapy <span class="citation">[<a href="https://doi.org/10.1002/14651858.CD003982.pub2" class="citation" data-key="10.1002/14651858.CD003982.pub2">7</a>, <a href="https://doi.org/10.1371/journal.pone.0113371" class="citation" data-key="10.1371/journal.pone.0113371">8</a>]</span> — also being a nucleic acid synthesis inhibitor. Supporting this prediction, a 2014 abstract reported that decitabine completely blocked symptoms in EAE (a preclinical model of MS) <span class="citation">[<a href="https://doi.org/10.1016/j.jneuroim.2014.08.591" class="citation" data-key="10.1016/j.jneuroim.2014.08.591">9</a>]</span>. The <a href="https://neo4j.het.io/browser/?cmd=play&amp;arg=https://neo4j.het.io/guides/rep/DB01262/DOID_2377.html" title="Hetionet Neo4j Browser: decitabine--multiple sclerosis prediction">decitabine–MS prediction</a> is visualized below:</p>
+
+<p><img src="https://cloud.githubusercontent.com/assets/1117703/18216265/ae89218e-7123-11e6-992c-6c87067330ef.png" alt="decitabine-ms"></p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="10" data-comment-id="1349">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1349"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#10" class="light">307 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Predictions for trifluridine</h1>
+
+<p>Trifluridine (<a href="http://www.drugbank.ca/drugs/DB00432" title="Trifluridine on DrugBank"><code>DB00432</code></a>) is an antiviral drug most commonly applied via solution to the eye for treatment of herpes simplex virus (HSV). Trifluridine does not contain any indications in Hetionet v1.0. Here are the top five <a href="http://het.io/repurpose/browse.html?id=DB00432">predictions for trifluridine</a>:</p>
+
+<table class="table markdown-table"><thead><tr><th>Name</th><th>Prediction</th><th>Compound Pctl</th><th>Disease Pctl</th><th>Visualize</th></tr></thead><tbody><tr><td>acquired immunodeficiency syndrome</td><td>14.4%</td><td>100%</td><td>99.4%</td><td><a href="https://neo4j.het.io/browser/?cmd=play&amp;arg=https://neo4j.het.io/guides/rep/DB00432/DOID_635.html">browser</a></td></tr><tr><td>stomach cancer</td><td>13.1%</td><td>99.3%</td><td>99.9%</td><td><a href="https://neo4j.het.io/browser/?cmd=play&amp;arg=https://neo4j.het.io/guides/rep/DB00432/DOID_10534.html">browser</a></td></tr><tr><td>hepatitis B</td><td>5.37%</td><td>98.5%</td><td>99.5%</td><td><a href="https://neo4j.het.io/browser/?cmd=play&amp;arg=https://neo4j.het.io/guides/rep/DB00432/DOID_2043.html">browser</a></td></tr><tr><td>hematologic cancer</td><td>3.19%</td><td>97.8%</td><td>96.0%</td><td><a href="https://neo4j.het.io/browser/?cmd=play&amp;arg=https://neo4j.het.io/guides/rep/DB00432/DOID_2531.html">browser</a></td></tr><tr><td>multiple sclerosis</td><td>2.18%</td><td>97.1%</td><td>98.2%</td><td><a href="https://neo4j.het.io/browser/?cmd=play&amp;arg=https://neo4j.het.io/guides/rep/DB00432/DOID_2377.html">browser</a></td></tr></tbody></table>
+
+<p>HSV isn't included as a disease in Hetionet v1.0, yet Project Rephetio picked up on the antiviral powers of trifluridine and suggested treatment of <strong>acquired immunodeficiency syndrome</strong> (AIDS) and hepatitis B (HBV). The AIDS prediction (visualized below) is supported by the five existing AIDS therapies that are also nucleoside analogs. The similarity between trifluridine and stavudine/zidovudine is further supported by chemical resemblance and in the case of zidovudine a common binding to thymidine kinase-1 (<em>TK1</em> gene). Thymidine kinase-1 phosphorylates trifluridine into its active form, trifluridine monophosphate <span class="citation">[<a href="https://doi.org/10.1038/nrclinonc.2014.51" class="citation" data-key="10.1038/nrclinonc.2014.51">1</a>]</span>.</p>
+
+<p><img src="https://cloud.githubusercontent.com/assets/1117703/18218456/d916072a-7130-11e6-9fdf-bd55ff8d6ed6.png" alt="trifluridine-aids"></p>
+
+<p>Several of the top predictions for trifluridine were cancers. It turns out that in 2015, the <a href="http://www.fda.gov/NewsEvents/Newsroom/PressAnnouncements/ucm463650.htm" title="FDA approves new oral medication to treat patients with advanced colorectal cancer. FDA News Release. September 22, 2015">FDA approved</a> a combination of trifluridine and tipiracil — code named TAS-102 and trade named Lonsurf — to treat advanced <strong>colorectal cancer</strong> after it increased median survival from 5.3 to 7.1 months in Phase 3 trial <span class="citation">[<a href="https://doi.org/10.1056/NEJMoa1414325" class="citation" data-key="10.1056/NEJMoa1414325">2</a>]</span>.</p>
+
+<p>The therapeutic effect of TAS-102 on colorectal cancer is due to the cytotoxicity of trifluridine monophosphate <span class="citation">[<a href="https://doi.org/10.1111/j.1349-7006.2007.00477.x" class="citation" data-key="10.1111/j.1349-7006.2007.00477.x">3</a>]</span>. Cytotoxity occurs to thymidylate synthase inhibition and DNA dysfunction <span class="citation">[<a href="https://doi.org/10.1016/j.critrevonc.2016.05.015" class="citation" data-key="10.1016/j.critrevonc.2016.05.015">4</a>, <a href="https://doi.org/10.1016/j.ctrv.2015.06.001" class="citation" data-key="10.1016/j.ctrv.2015.06.001">5</a>]</span>. The addition of tipiracil improves the bioavailability of trifluridine by inhibiting thymidine phosphorylase which degrades trifluridine. Colon cancer was eighth highest prediction for trifluridine at 1.5% (99.0th percentile for colon cancer) and is <a href="https://neo4j.het.io/browser/?cmd=play&amp;arg=https://neo4j.het.io/guides/rep/DB00432/DOID_219.html" title="Hetionet Neo4j Browser: trifluridine--colon cancer">visualized</a> below:</p>
+
+<p><img src="https://cloud.githubusercontent.com/assets/1117703/18218455/d91001c2-7130-11e6-96aa-66e0ad94d8a4.png" alt="trifluridine-colon-cancer"></p>
+
+<p>The prediction is supported by other colon cancer treatments — capecitabine and fluorouracil — also being nucleic acid synthesis inhibitors. Furthermore, trifluridine binds to thymidylate synthetase (<em>TYMS</em> gene) and thymidine phosphorylase (<em>TYMP</em> gene), which are respectively responsible for its efficacy and short half-life as explained above. Our method picks up that <em>TYMP</em> is expressed in the endothelium. A pharmacologist could interpret this knowledge to infer that thymidine is necessary to prolong bioavailability when delivering trifluridine to endothelial cancers. Also important for identifying which cancers trifluridine will treat best is the tissue-specific expression of <em>TYMS</em> and <em>TK1</em>. In fact, a recent study found stomach cancers (our top cancer prediction for trifluridine) highly express both the <em>TYMS</em> and <em>TK1</em> proteins <span class="citation">[<a href="https://doi.org/10.3892/or_00000770" class="citation" data-key="10.3892/or_00000770">6</a>]</span>. We can query Hetionet for to see which stomach-cancer-affected tissues upregulate thymidylate genes:</p>
+
+<pre><code class="no-highlight hljs">MATCH path = (compound:Compound)-[:BINDS_CbG]-(gene:Gene)-[:UPREGULATES_AuG]-(:Anatomy)-[:LOCALIZES_DlA]-(disease:Disease)
+WHERE
+  compound.name = 'Trifluridine' AND
+  gene.description CONTAINS 'thymid' AND
+  disease.name = 'stomach cancer'
+RETURN path</code></pre>
+
+<p>Finally, trifluridine was also predicted to treat <strong>multiple sclerosis</strong>. The mechanisms underlying this prediction are similar to <a href="#9">decitabine</a>. Trifluridine resembles cladribine. Furthermore, like the MS-treatment azathioprine, trifluridine is a nucleic acid synthesis inhibitor and nucleoside analog. Additionally, the immunosuppressant methotrexate is an effective therapy for MS <span class="citation">[<a href="https://doi.org/10.1002/14651858.CD003208.pub2" class="citation" data-key="10.1002/14651858.CD003208.pub2">7</a>]</span>. While the exact mechanism of methotrexate's efficacy against MS remains elusive <span class="citation">[<a href="https://doi.org/10.1177/1756285610379885" class="citation" data-key="10.1177/1756285610379885">8</a>]</span>, our prediction highlights the potential involvement of thymidylate synthetase (<em>TYMS</em>).</p>
+
+<p><img src="https://cloud.githubusercontent.com/assets/1117703/18218457/d91644c4-7130-11e6-996b-6e8781281943.png" alt="trifluridine-ms"></p>
+
+<p>In conclusion, Project Rephetio identified three categories of disease — neoplastic, autoimmune, and viral — where trifluridine may exhibit efficacy. While little literature existed which probed the non-cancer applications, this appears to be an area of ongoing and relentless discovery.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="11" data-comment-id="1350">
+  <td class="comment-profile-avatar">
+		<a href="/u/pouyakhankhanian"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/188_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1350"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/pouyakhankhanian">Pouya Khankhanian</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#11" class="light">305 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>In seeking other examples, I perused somewhat randomly the top predictions of three diseases that I'm familiar with. I think it would be a very difficult process to evaluate diseases that I'm not familiar with. </p>
+
+<p>Epilepsy:<br>The top ~45 indications, all  have score greater than 10. The distribution of scores seems much higher than in other diseases. <br>scores 50-60 — 4 indications<br>scores 40-50 — 8 indications<br>scores 30-40 — 8 indications<br>scores 20-30 — 9 indications<br>scores 10-20 — 14 indications<br>Of the top ~45, all but 2 are clinically classified as "anti-epileptics" so that's excellent! There are three of interest:<br>– Sevoflurane is not known as an "anti-epileptic". But sevoflurane is an Anesthetic with rather incompletely known mechanism of action. At least a handful of other anesthetics have been repurposed for epilepsy. The mechanism of action could involve GABA receptors.<br>– Amitriptyline (score 25, 98.4 percentile) is actually relatively contraindicated in epilepsy, it can worsen epilepsy. potentially interesting to explore the mechanism why this drug was picked.<br>– Tiagabine (score 28, 98.6 percentile) I believe was mis-categorized as a "NOT" by all three reviewers, sadly. I think should have been a DM based on the rules.</p>
+
+<p>Multiple Sclerosis:<br>The distribution of scores is much lower.<br>Scores 10-15  — 3 indications<br>Scores 5-10    — 6 indications<br>Of these top 9, I think 7 are steroids so that makes sense. Here are the others:<br>– Clofarabine. It's a chemotherapy for cancers of leukocytes. Chemotherapies for leukocyte cancers have been previously repurposed for MS (like Rituximab and Ocrelizumab for example)<br>– Pemetrexed is a chemotherapy for small cell lung cancer (among others). Chemotherapies as a large class have been previously repurposed for MS. .</p>
+
+<p>Migraine:<br>Scores 30-40  — 1 indication<br>Scores 20-30  — 1 indication<br>Scores 10-20  — 6 indications<br>Scores 5-10 — 14 indications<br>– Oxcarbazepine, top score 33, was an outlier score, but as we have seen above the score is often less relevant than the rank. Still, I looked further into it, apparently people did believe in it (it is of a class that had already been successfully repurposed for migraine), but it failed after multiple trials. <br>All the drugs with score &gt;5 are of known drug classes that have been successfully repurposed for migraine (anti-epileptics, neuroleptics, TCAs, B-blockers, SSRI).</p>
+
+<p>In summary, the top scores come from drugs that are good candidates because they belong to a drug class that has already been repurposed for a given indication. I have not dug deep enough to find a "novel idea" (a repurposing suggestion for a drug that is not already in a class of drugs that has been previously repurposed successfully). In searching for a novel idea, I can think of two approaches<br>1. delve deeper into lower scores and lower percentiles in each disease, specifically scores less than 5, and percentiles less than 95%.<br>2. look for high-score / high-percentile "novel ideas" in all the other diseases. This would require massive user input (Ari, Chrissy, and I working together would probably require like 30 solid days of work). But it could be automated.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="12" data-comment-id="1351">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1351"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#12" class="light">304 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Epilepsy</h1>
+
+<p><a href="/u/pouyakhankhanian" class="username">@pouyakhankhanian</a>, that's exciting to hear our top <a href="http://het.io/repurpose/browse.html?id=DOID_1826" title="Project Rephetio Predictions for epilepsy">epilepsy predictions</a> (above 10%) had a precision of 95.5% (43 / 45). Epilepsy seems to be an interesting disease because despite the many established therapies, there's still a large portion of patients  with seizures that are uncontrolled by current medications <span class="citation">[<a href="https://doi.org/10.1038/nrd4126" class="citation" data-key="10.1038/nrd4126">1</a>]</span>.</p>
+
+<h2>Tiagabine–Epilepsy</h2>
+
+<p>Tiagabine was classified as a non-indication in PharmacotherapyDB v1.0, but is used to treat epilepsy <span class="citation">[<a href="https://doi.org/10.2147/NDT.S833" class="citation" data-key="10.2147/NDT.S833">2</a>]</span>. However, in some settings tiagabine may also trigger seizures <span class="citation">[<a href="https://doi.org/10.1056/NEJMc055301" class="citation" data-key="10.1056/NEJMc055301">3</a>]</span>. This example brings up an interesting consideration: many anti-epileptic drugs may also be epileptogenic (epilepsy inducing) depending on the context <span class="citation">[<a href="https://doi.org/10.1016/S0387-7604(99)00113-8" class="citation" data-key="10.1016/S0387-7604(99)00113-8">4</a>]</span>.</p>
+
+<h2>Amitriptyline–Epilepsy</h2>
+
+<p><a href="/u/pouyakhankhanian" class="username">@pouyakhankhanian</a> brought up that amitriptyline is contraindicated for epilepsy. Accordingly, several studies suggest that amitriptyline causes seizures <span class="citation">[<a href="https://doi.org/10.1016/S0140-6736(68)91356-1" class="citation" data-key="10.1016/S0140-6736(68)91356-1">5</a>, <a href="https://doi.org/10.1191/0960327106ht511oa" class="citation" data-key="10.1191/0960327106ht511oa">6</a>, <a href="https://doi.org/10.1176/ajp.137.11.1461" class="citation" data-key="10.1176/ajp.137.11.1461">7</a>]</span>. Our approach found the following <a href="https://neo4j.het.io/browser/?cmd=play&amp;arg=https://neo4j.het.io/guides/rep/DB00321/DOID_1826.html" title="Hetionet Browser: amitriptyline--epilepsy prediction">support for</a> amitriptyline treating epilepsy:</p>
+
+<ul><li>21.5% of the prediction resulted from: Amitriptyline–treats–Migraine–resembles–Epilepsy</li><li>15.2% of the Amitriptyline–resembles–Oxcarbazepine–treats–Epilepsy</li><li>Many other paths of the following metapaths also contributed: CbGaD, CpDpCtD, CrCrCtD, CbGbCtD</li></ul>
+
+<p>It's likely that our method cannot fully differentiate between indications and contraindications. In other words, certain paths may increase the probability of indication and contraindication similarly and our predictions may also enrich for detrimental therapies.</p>
+
+<h2>Sevoflurane–Epilepsy</h2>
+
+<p>Regarding the <a href="https://neo4j.het.io/browser/?cmd=play&amp;arg=https://neo4j.het.io/guides/rep/DB01236/DOID_1826.html" title="Hetionet Browser: sevoflurane--epilepsy prediction">prediction</a> that sevoflurane treats epilepsy, this is the top <a href="http://het.io/repurpose/browse.html?id=DB01236">prediction for sevoflurane</a> and is in the 97.3rd percentile for epilepsy. Here are the top ten paths supporting this prediction:</p>
+
+<p><img src="https://cloud.githubusercontent.com/assets/1117703/18256790/2c9d1312-7388-11e6-8c33-873058fc4965.png" alt="sevoflurane-epilepsy"></p>
+
+<p>However contrary to our prediction, I did find some evidence that sevoflurane could be epileptogenic <span class="citation">[<a href="https://doi.org/10.1111/j.1460-9592.2004.01538.x" class="citation" data-key="10.1111/j.1460-9592.2004.01538.x">8</a>, <a href="https://doi.org/10.1097/00000539-200010000-00041" class="citation" data-key="10.1097/00000539-200010000-00041">9</a>, <a href="https://doi.org/10.1093/bja/aes027" class="citation" data-key="10.1093/bja/aes027">10</a>]</span>. However, potentially a bigger concern is whether sevoflurane has appropriate pharmacokinetics for epilepsy. According to DrugBank (<a href="http://www.drugbank.ca/drugs/DB01236"><code>DB01236</code></a>), sevoflurane does cross the blood–brain barrier which is important. However, sevoflurane is volatile and administered via inhalation. Now, this may not always be a disqualifying factor. For example, some pharmaceutical companies are more interested in "drug repositioning aided by reformulation" than solely repositioning <span class="citation">[<a href="https://doi.org/10.3402/jmahp.v1i0.21131" class="citation" data-key="10.3402/jmahp.v1i0.21131">11</a>]</span>. However, in this case, I just don't know.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="13" data-comment-id="1352">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1352"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#13" class="light">303 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Clofarabine</h1>
+
+<p>Clofarabine (<a href="http://www.drugbank.ca/drugs/DB00631" title="Clofarabine on DrugBank"><code>DB00631</code></a>) is a purine nucleoside analogue, which was approved in 2004 for special cases of paediatric leukaemia <span class="citation">[<a href="https://doi.org/10.1038/nrd2055" class="citation" data-key="10.1038/nrd2055">1</a>, <a href="https://doi.org/10.2147/btt.s10123" class="citation" data-key="10.2147/btt.s10123">2</a>, <a href="https://doi.org/10.1016/j.bcp.2009.06.094" class="citation" data-key="10.1016/j.bcp.2009.06.094">3</a>]</span> Our top <a href="http://het.io/repurpose/browse.html?id=DB00631" title="Project Rephetio predictions for Clofarabine">prediction for clofarabine</a>  at 18.5% is hematologic cancer — a superterm of its approved indication, which is included in the network as a disease-modifying indication. At 10.2% the second prediction is lymphatic system cancer, which has been investigated by 14 trials.</p>
+
+<p>The third prediction is multiple sclerosis (MS) at 8.80%, representing a 24-fold enrichment over the null probability. MS is the only non-cancer prediction for clofarabine in the top 10. Furthermore, clofarabine is the fourth highest <a href="http://het.io/repurpose/browse.html?id=DOID_2377" title="Project Rephetio predictions for multiple sclerosis">MS prediction</a> with the three higher predictions corresponding to known disease-modifying therapies. Hetnet support for <a href="https://neo4j.het.io/browser/?cmd=play&amp;arg=https://neo4j.het.io/guides/rep/DB00631/DOID_2377.html" title="Hetionet Browser: support for treating multiple sclerosis with clofarabine">the prediction</a> is shown below:</p>
+
+<p><img src="https://cloud.githubusercontent.com/assets/1117703/18327558/1ed9d890-7519-11e6-8127-773e7cb64746.png" alt="clofarabine-ms" title="Visualizing the prediction that Clofarabine treats multiple sclerosis"></p>
+
+<p>Clofarabine is a hybrid of cladribine and fludarabine <span class="citation">[<a href="https://doi.org/10.2147/btt.s10123" class="citation" data-key="10.2147/btt.s10123">2</a>, <a href="https://doi.org/10.1182/blood-2003-06-2122" class="citation" data-key="10.1182/blood-2003-06-2122">4</a>]</span> as detected by Hetionet's chemical resemblance relationships. Cladribine showed promising phase 3 results and was approved in Australia and Russia before being withdrawn due to safety concerns <span class="citation">[<a href="https://doi.org/10.1056/NEJMoa0902533" class="citation" data-key="10.1056/NEJMoa0902533">5</a>, <a href="https://doi.org/10.1080/14737175.2016.1176531" class="citation" data-key="10.1080/14737175.2016.1176531">6</a>]</span> (see more discussion on cladribine for MS <a href="#10">above</a>. Our method picked up on the similarities between cladribine and clofarabine, both in terms of structure and targets. A recent phase II add-on study,  found that fludarabine may be have greater efficacy against MS than methylprednisolone <span class="citation">[<a href="https://doi.org/10.1177/1756285615626049" class="citation" data-key="10.1177/1756285615626049">7</a>]</span>. In addition, clofarabine is a nucleic acid synthesis inhibitor like azathioprine — an effective multiple sclerosis treatment <span class="citation">[<a href="https://doi.org/10.1371/journal.pone.0113371" class="citation" data-key="10.1371/journal.pone.0113371">8</a>]</span>. Clofarabine relies on deoxycytidine kinase (<em>DCK</em> gene) for intracellular phosphorylation and activation <span class="citation">[<a href="https://doi.org/10.1107/S0907444905034293" class="citation" data-key="10.1107/S0907444905034293">9</a>]</span></p>
+
+<p>While I didn't see any trials for clofarabine in MS, purine nucleoside analogues have had success in autoimmune disease <span class="citation">[<a href="https://doi.org/10.2174/092986706778742918" class="citation" data-key="10.2174/092986706778742918">10</a>]</span>. Additionally, US Patent <a href="https://www.google.com/patents/US7772206" title="Methods and compositions for the treatment of autoimmune disorders using clofarabine">US7772206</a> claims the following application for clofarabine:</p>
+
+<blockquote><p>In a preferred embodiment, the invention encompasses a method for treating, preventing, or managing multiple sclerosis utilizing doses higher than 1 mg/kg per day, preferably higher than 1.25 mg/kg per day.</p></blockquote>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="14" data-comment-id="1354">
+  <td class="comment-profile-avatar">
+		<a href="/u/pouyakhankhanian"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/188_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1354"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/pouyakhankhanian">Pouya Khankhanian</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#14" class="light">300 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>The epilepsy discussion has been moved to:<br><a href="https://thinklab.com/discussion/prediction-in-epilepsy/224#2" class="citation thread-citation" data-key="10.15363/thinklab.d224">https://thinklab.com/discussion/prediction-in-epilepsy/224#2</a></p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="16" data-comment-id="1359">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1359"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#16" class="light">291 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Clofarabine Synopsis</h1>
+
+<p>Above, <a href="#13">I discussed</a> our clofarabine predictions. I created a summary of those findings for our project report. However, in private communications <a href="/u/pouyakhankhanian" class="username">@pouyakhankhanian</a> noted:</p>
+
+<blockquote><p>Regarding clofarabine, my only issue is that it's very obvious. I suspect that if you ask ten clinicians about using clofarabine in MS, I suspect most would guess that clofarabine would work in MS patients. Perhaps you are looking for something obvious in order to validate your approach. But it's not something that will ever result in someone repurposing a drug based on your predictions.</p></blockquote>
+
+<p>Therefore, we've decided to remove this example from the draft report. To preserve the content, I will post it here.</p>
+
+<hr>
+
+<p>Clofarabine is an FDA-approved treatment for certain cases of acute lymphoblastic leukemia (ALL) <span class="citation">[<a href="https://doi.org/10.1038/nrd2055" class="citation" data-key="10.1038/nrd2055">1</a>]</span>. Our top <a href="http://het.io/repurpose/browse.html?id=DB00631" title="Project Rephetio predictions for clofarabine (DB00631)">prediction for clofarabine</a> was hematologic cancer (50.27-fold over null), which is a supertype of ALL and listed as a disease-modifying indication in PharacotherapyDB. Second was lymphatic system cancer (27.14-fold), which matched 14 clinical trials. Third was multiple sclerosis (MS, 23.37-fold). Notably, MS was the only non-cancer in the top 10 predictions for clofarabine, and clofarabine was in the 99.8th percentile of MS predictions. As shown in <a href="#clofarabine_ms_figure">Figure 5</a>, our approach based this prediction on the successful repurposing of other chemotherapeutics for MS <span class="citation">[<a href="https://doi.org/10.1177/1756285610379885" class="citation" data-key="10.1177/1756285610379885">2</a>]</span> — particularly cladribine <span class="citation">[<a href="https://doi.org/10.1056/NEJMoa0902533" class="citation" data-key="10.1056/NEJMoa0902533">3</a>]</span> and azathioprine <span class="citation">[<a href="https://doi.org/10.1002/14651858.CD003982.pub2" class="citation" data-key="10.1002/14651858.CD003982.pub2">4</a>]</span>. Besides <a href="https://www.google.com/patents/US7772206" title="US Patent 7772206: Methods and compositions for the treatment of autoimmune disorders using clofarabine. 2010">a patent</a> that encompasses treating MS with clofarabine, there is little literature on this potential repurposing, despite the favorable pharmacological properties of clofarabine compared to cladribine <span class="citation">[<a href="https://doi.org/10.1016/j.bcp.2009.06.094" class="citation" data-key="10.1016/j.bcp.2009.06.094">5</a>]</span>.</p>
+
+<h3>Figure</h3>
+
+<p><em>Legend for <a href="#13">figure above</a></em>:</p>
+
+<p><strong>Evidence supporting the repurposing of clofarabine for multiple sclerosis.</strong> In total, 769 paths of 10 types provided positive <a href="https://neo4j.het.io/browser/?cmd=play&amp;arg=https://neo4j.het.io/guides/rep/DB00631/DOID_2377.html" title="Hetionet Browser for the prediction that clofarabine treats multiple sclerosis">support for repurposing</a> clofarabine for MS. The ten most supportive paths are visualized. Several important aspects of clofarabine's pharmacology are illustrated. Clofarabine is a hybrid of cladribine and fludarabine and relies on deoxycytidine kinase (<em>DCK</em>) for phosphorylation into its active form <span class="citation">[<a href="https://doi.org/10.1016/j.bcp.2009.06.094" class="citation" data-key="10.1016/j.bcp.2009.06.094">5</a>]</span>. Ultimately, the purine-analog-metabolites of clofarabine, cladribine, and azathioprine inhibit nucleic acid synthesis. Since the resulting cytoxicity is pronounced in lymphocytes, these compounds are attractive MS therapeutics <span class="citation">[<a href="https://doi.org/10.1177/1756285610379885" class="citation" data-key="10.1177/1756285610379885">2</a>]</span>.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="17" data-comment-id="1365">
+  <td class="comment-profile-avatar">
+		<a href="/u/pouyakhankhanian"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/188_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1365"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/pouyakhankhanian">Pouya Khankhanian</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#17" class="light">264 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Plot of prediction scores by disease</h1>
+
+<p><img src="https://cloud.githubusercontent.com/assets/1117703/18564280/d392df62-7b58-11e6-9c6f-16b6f977458b.png" alt="prediction score by disease"></p>
+
+<p>The y-axis is the prediction score (the predicted probability of treatment) for compounds in each disease. The 97th, 98th, and 99th percentile prediction scores in each disease are also shown. Allergic rhinitis, asthma, coronary artery disease, epilepsy, hematologic cancer, hypertension, osteoporosis, psoriasis, and type 2 diabetes are highlighted in red; these diseases had the highest prediction score tail distributions. </p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+    		
+		</table>
+
+    
+
+    &nbsp;<br>
+    <a class="btn btn-primary btn-lg" href="/signup?next=/discussion/predictions-of-whether-a-compound-treats-a-disease/203&suppress_message=1" style>Join to Reply</a>
+
+
+		<table class="references table-td-5" style="display:none;"><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d210' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d210'><a href='/discussion/our-hetnet-edge-prediction-methodology-the-modeling-framework-for-project-rephetio/210' class='pub-title'>Our hetnet edge prediction methodology: the modeling framework for Project Rephetio</a><div class='pub-body'>Daniel Himmelstein (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d210'>10.15363/thinklab.d210</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d182' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>2.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d182'><a href='/discussion/announcing-pharmacotherapydb-the-open-catalog-of-drug-therapies-for-disease/182' class='pub-title'>Announcing PharmacotherapyDB: the Open Catalog of Drug Therapies for Disease</a><div class='pub-body'>Daniel Himmelstein (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d182'>10.15363/thinklab.d182</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d182' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>3.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d182'><a href='/discussion/announcing-pharmacotherapydb-the-open-catalog-of-drug-therapies-for-disease/182' class='pub-title'>Announcing PharmacotherapyDB: the Open Catalog of Drug Therapies for Disease</a><div class='pub-body'>Daniel Himmelstein (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d182'>10.15363/thinklab.d182</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d215' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>4.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d215'><a href='/discussion/edge-dropout-contamination-in-hetnet-edge-prediction/215' class='pub-title'>Edge dropout contamination in hetnet edge prediction</a><div class='pub-body'>Daniel Himmelstein (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d215'>10.15363/thinklab.d215</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d194' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>5.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d194'><a href='/discussion/network-edge-prediction-how-to-deal-with-self-testing/194' class='pub-title'>Network Edge Prediction: how to deal with self-testing</a><div class='pub-body'>Antoine Lizee, Daniel Himmelstein (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d194'>10.15363/thinklab.d194</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d95' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>6.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d95'><a href='/discussion/expert-curation-of-our-indication-catalog-for-disease-modifying-treatments/95' class='pub-title'>Expert curation of our indication catalog for disease-modifying treatments</a><div class='pub-body'>Daniel Himmelstein, Pouya Khankhanian, Chrissy Hessler (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d95'>10.15363/thinklab.d95</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d186' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>7.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d186'><a href='/discussion/incorporating-drugcentral-data-in-our-network/186' class='pub-title'>Incorporating DrugCentral data in our network</a><div class='pub-body'>Daniel Himmelstein, Oleg Ursu, Mike Gilson, Pouya Khankhanian, Tudor Oprea (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d186'>10.15363/thinklab.d186</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d212' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>8.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d212'><a href='/discussion/cataloging-drugdisease-therapies-in-the-clinicaltrialsgov-database/212' class='pub-title'>Cataloging drug–disease therapies in the ClinicalTrials.gov database</a><div class='pub-body'>Daniel Himmelstein (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d212'>10.15363/thinklab.d212</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d216' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>9.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d216'><a href='/discussion/hosting-hetionet-in-the-cloud-creating-a-public-neo4j-instance/216' class='pub-title'>Hosting Hetionet in the cloud: creating a public Neo4j instance</a><div class='pub-body'>Daniel Himmelstein (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d216'>10.15363/thinklab.d216</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d229' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>10.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d229'><a href='/discussion/decomposing-predictions-into-their-network-support/229' class='pub-title'>Decomposing predictions into their network support</a><div class='pub-body'>Daniel Himmelstein (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d229'>10.15363/thinklab.d229</a></div></div></td></tr><tr><td><a href='/doi/10.15363/thinklab.d44' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>11.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d44'><a href='/discussion/unifying-disease-vocabularies/44' class='pub-title'>Unifying disease vocabularies</a><div class='pub-body'>Daniel Himmelstein, Tong Shu Li (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d44'>10.15363/thinklab.d44</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gku1011' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>12.</div></td><td><div class='doi-body' data-key='10.1093/nar/gku1011'><a href='/doi/10.1093/nar/gku1011' class='pub-title'>Disease Ontology 2015 update: an expanded and updated database of human diseases for linking biomedical knowledge through disease data</a><div class='pub-body'>W. A. Kibbe, C. Arze, V. Felix, E. Mitraka, E. Bolton, G. Fu, C. J. Mungall, J. X. Binder, J. Malone, D. Vasant, H. Parkinson, L. M. Schriml (2014) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gku1011'>10.1093/nar/gku1011</a></div></div></td></tr><tr><td><a href='/doi/10.15363/thinklab.d68' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>13.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d68'><a href='/discussion/disease-ontology-feature-requests/68' class='pub-title'>Disease Ontology feature requests</a><div class='pub-body'>Daniel Himmelstein (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d68'>10.15363/thinklab.d68</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d182' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>14.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d182'><a href='/discussion/announcing-pharmacotherapydb-the-open-catalog-of-drug-therapies-for-disease/182' class='pub-title'>Announcing PharmacotherapyDB: the Open Catalog of Drug Therapies for Disease</a><div class='pub-body'>Daniel Himmelstein (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d182'>10.15363/thinklab.d182</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d134' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>15.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d134'><a href='/discussion/path-exclusion-conditions/134' class='pub-title'>Path exclusion conditions</a><div class='pub-body'>Daniel Himmelstein (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d134'>10.15363/thinklab.d134</a></div></div></td></tr><tr><td><a href='/doi/10.1016/j.tips.2013.03.004' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>16.</div></td><td><div class='doi-body' data-key='10.1016/j.tips.2013.03.004'><a href='/doi/10.1016/j.tips.2013.03.004' class='pub-title'>Challenges and opportunities of drug repositioning</a><div class='pub-body'>Natalia Novac (2013) <i>Trends in Pharmacological Sciences</i>. doi:<a class='pub-doi' href='https://doi.org/10.1016/j.tips.2013.03.004'>10.1016/j.tips.2013.03.004</a></div></div></td></tr><tr><td><a href='/doi/10.2147/COPD.S1121' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>17.</div></td><td><div class='doi-body' data-key='10.2147/COPD.S1121'>Citation not found.</div></td></tr><tr><td><a href='/doi/10.4088/pcc.v07n0305' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>18.</div></td><td><div class='doi-body' data-key='10.4088/pcc.v07n0305'><a href='/doi/10.4088/pcc.v07n0305' class='pub-title'>15 Years of Clinical Experience With Bupropion HCl</a><div class='pub-body'>Maurizio Fava, A. John Rush, Michael E. Thase, Anita Clayton, Stephen M. Stahl, James F. Pradko, J. Andrew Johnston (2005) <i>Prim. Care Companion J. Clin. Psychiatry</i>. doi:<a class='pub-doi' href='https://doi.org/10.4088/pcc.v07n0305'>10.4088/pcc.v07n0305</a></div></div></td></tr><tr><td><a href='/doi/10.1385/comp:32:1:26' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>19.</div></td><td><div class='doi-body' data-key='10.1385/comp:32:1:26'><a href='/doi/10.1385/comp:32:1:26' class='pub-title'>Bupropion for Smoking Cessation: A Review</a><div class='pub-body'>Elisa K. Tong, Timothy P. Carmody, Joel A. Simon (2006) <i>COMP</i>. doi:<a class='pub-doi' href='https://doi.org/10.1385/comp:32:1:26'>10.1385/comp:32:1:26</a></div></div></td></tr><tr><td><a href='/doi/10.1056/nejm199710233371703' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>20.</div></td><td><div class='doi-body' data-key='10.1056/nejm199710233371703'><a href='/doi/10.1056/nejm199710233371703' class='pub-title'>A Comparison of Sustained-Release Bupropion and Placebo for Smoking Cessation</a><div class='pub-body'>Richard D. Hurt, David P.L. Sachs, Elbert D. Glover, Kenneth P. Offord, J. Andrew Johnston, Lowell C. Dale, Moise A. Khayrallah, Darrell R. Schroeder, Penny N. Glover, C. Rollynn Sullivan, Ivana T. Croghan, Pamela M. Sullivan (1997) <i>New England Journal of Medicine</i>. doi:<a class='pub-doi' href='https://doi.org/10.1056/nejm199710233371703'>10.1056/nejm199710233371703</a></div></div></td></tr><tr><td><a href='/doi/10.1093/ntr/nts201' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>21.</div></td><td><div class='doi-body' data-key='10.1093/ntr/nts201'><a href='/doi/10.1093/ntr/nts201' class='pub-title'>Development of Novel Pharmacotherapeutics for Tobacco Dependence: Progress and Future Directions</a><div class='pub-body'>D. Harmey, P. R. Griffin, P. J. Kenny (2012) <i>Nicotine &amp; Tobacco Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/ntr/nts201'>10.1093/ntr/nts201</a></div></div></td></tr><tr><td><a href='/doi/10.1007/s00228-003-0693-0' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>22.</div></td><td><div class='doi-body' data-key='10.1007/s00228-003-0693-0'><a href='/doi/10.1007/s00228-003-0693-0' class='pub-title'>Evaluation of the safety of bupropion (Zyban) for smoking cessation from experience gained in general practice use in England in 2000</a><div class='pub-body'>Andrew Boshier, Lynda V. Wilton, Saad A. W. Shakir (2003) <i>European Journal of Clinical Pharmacology</i>. doi:<a class='pub-doi' href='https://doi.org/10.1007/s00228-003-0693-0'>10.1007/s00228-003-0693-0</a></div></div></td></tr><tr><td><a href='/doi/10.1016/j.amjmed.2008.01.017' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>23.</div></td><td><div class='doi-body' data-key='10.1016/j.amjmed.2008.01.017'><a href='/doi/10.1016/j.amjmed.2008.01.017' class='pub-title'>Efficacy and Safety of Varenicline for Smoking Cessation</a><div class='pub-body'>J. Taylor Hays, Jon O. Ebbert, Amit Sood (2008) <i>The American Journal of Medicine</i>. doi:<a class='pub-doi' href='https://doi.org/10.1016/j.amjmed.2008.01.017'>10.1016/j.amjmed.2008.01.017</a></div></div></td></tr><tr><td><a href='/doi/10.1056/NEJMoa1102035' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>24.</div></td><td><div class='doi-body' data-key='10.1056/NEJMoa1102035'><a href='/doi/10.1056/NEJMoa1102035' class='pub-title'>Placebo-Controlled Trial of Cytisine for Smoking Cessation</a><div class='pub-body'>Robert West, Witold Zatonski, Magdalena Cedzynska, Dorota Lewandowska, Joanna Pazik, Paul Aveyard, John Stapleton (2011) <i>New England Journal of Medicine</i>. doi:<a class='pub-doi' href='https://doi.org/10.1056/NEJMoa1102035'>10.1056/NEJMoa1102035</a></div></div></td></tr><tr><td><a href='/doi/10.1056/NEJMoa1407764' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>25.</div></td><td><div class='doi-body' data-key='10.1056/NEJMoa1407764'><a href='/doi/10.1056/NEJMoa1407764' class='pub-title'>Cytisine versus Nicotine for Smoking Cessation</a><div class='pub-body'>Natalie Walker, Colin Howe, Marewa Glover, Hayden McRobbie, Joanne Barnes, Vili Nosa, Varsha Parag, Bruce Bassett, Christopher Bullen (2014) <i>New England Journal of Medicine</i>. doi:<a class='pub-doi' href='https://doi.org/10.1056/NEJMoa1407764'>10.1056/NEJMoa1407764</a></div></div></td></tr><tr><td><a href='/doi/10.1002/14651858.CD006103.pub7' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>26.</div></td><td><div class='doi-body' data-key='10.1002/14651858.CD006103.pub7'><a href='/doi/10.1002/14651858.CD006103.pub7' class='pub-title'>Nicotine receptor partial agonists for smoking cessation</a><div class='pub-body'>Kate Cahill, Nicola Lindson-Hawley, Kyla H Thomas, Thomas R Fanshawe, Tim Lancaster (2016) <i>Cochrane Database of Systematic Reviews</i>. doi:<a class='pub-doi' href='https://doi.org/10.1002/14651858.CD006103.pub7'>10.1002/14651858.CD006103.pub7</a></div></div></td></tr><tr><td><a href='/doi/10.1038/tp.2015.209' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>27.</div></td><td><div class='doi-body' data-key='10.1038/tp.2015.209'><a href='/doi/10.1038/tp.2015.209' class='pub-title'>Repeated administration of an acetylcholinesterase inhibitor attenuates nicotine taking in rats and smoking behavior in human smokers</a><div class='pub-body'>R L Ashare, B A Kimmey, L E Rupprecht, M E Bowers, M R Hayes, H D Schmidt (2016) <i>Translational Psychiatry</i>. doi:<a class='pub-doi' href='https://doi.org/10.1038/tp.2015.209'>10.1038/tp.2015.209</a></div></div></td></tr><tr><td><a href='/doi/10.1053/j.seminhematol.2005.05.002' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>28.</div></td><td><div class='doi-body' data-key='10.1053/j.seminhematol.2005.05.002'><a href='/doi/10.1053/j.seminhematol.2005.05.002' class='pub-title'>Pharmacology of 5-Aza-2′-deoxycytidine (decitabine)</a><div class='pub-body'>Richard L. Momparler (2005) <i>Seminars in Hematology</i>. doi:<a class='pub-doi' href='https://doi.org/10.1053/j.seminhematol.2005.05.002'>10.1053/j.seminhematol.2005.05.002</a></div></div></td></tr><tr><td><a href='/doi/10.1038/ng.3259' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>29.</div></td><td><div class='doi-body' data-key='10.1038/ng.3259'><a href='/doi/10.1038/ng.3259' class='pub-title'>Understanding multicellular function and disease with human tissue-specific networks</a><div class='pub-body'>Casey S Greene, Arjun Krishnan, Aaron K Wong, Emanuela Ricciotti, Rene A Zelaya, Daniel S Himmelstein, Ran Zhang, Boris M Hartmann, Elena Zaslavsky, Stuart C Sealfon, Daniel I Chasman, Garret A FitzGerald, Kara Dolinski, Tilo Grosser, Olga G Troyanskaya (2015) <i>Nat Genet</i>. doi:<a class='pub-doi' href='https://doi.org/10.1038/ng.3259'>10.1038/ng.3259</a></div></div></td></tr><tr><td><a href='/doi/10.1056/NEJMoa0902533' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>30.</div></td><td><div class='doi-body' data-key='10.1056/NEJMoa0902533'><a href='/doi/10.1056/NEJMoa0902533' class='pub-title'>A Placebo-Controlled Trial of Oral Cladribine for Relapsing Multiple Sclerosis</a><div class='pub-body'>Gavin Giovannoni, Giancarlo Comi, Stuart Cook, Kottil Rammohan, Peter Rieckmann, Per Soelberg Sørensen, Patrick Vermersch, Peter Chang, Anthony Hamlett, Bruno Musch, Steven J. Greenberg (2010) <i>New England Journal of Medicine</i>. doi:<a class='pub-doi' href='https://doi.org/10.1056/NEJMoa0902533'>10.1056/NEJMoa0902533</a></div></div></td></tr><tr><td><a href='/doi/10.4137/JCNSD.S5128' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>31.</div></td><td><div class='doi-body' data-key='10.4137/JCNSD.S5128'><a href='/doi/10.4137/JCNSD.S5128' class='pub-title'>Current and Emerging Therapies for the Treatment of Multiple Sclerosis: Focus on Cladribine</a><div class='pub-body'>Miravalle, Schreiner, Miravalle (2012) <i>JCNSD</i>. doi:<a class='pub-doi' href='https://doi.org/10.4137/JCNSD.S5128'>10.4137/JCNSD.S5128</a></div></div></td></tr><tr><td><a href='/doi/10.1097/WNF.0b013e318204cd90' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>32.</div></td><td><div class='doi-body' data-key='10.1097/WNF.0b013e318204cd90'><a href='/doi/10.1097/WNF.0b013e318204cd90' class='pub-title'>Cladribine</a><div class='pub-body'>Thomas P. Leist, Robert Weissert (2011) <i>Clinical Neuropharmacology</i>. doi:<a class='pub-doi' href='https://doi.org/10.1097/WNF.0b013e318204cd90'>10.1097/WNF.0b013e318204cd90</a></div></div></td></tr><tr><td><a href='/doi/10.1212/nxi.0000000000000158' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>33.</div></td><td><div class='doi-body' data-key='10.1212/nxi.0000000000000158'><a href='/doi/10.1212/nxi.0000000000000158' class='pub-title'>No evidence for higher risk of cancer in patients with multiple sclerosis taking cladribine</a><div class='pub-body'>Julia Pakpoor, Giulio Disanto, Daniel R. Altmann, Sue Pavitt, Benjamin P. Turner, Monica Marta, Gunnar Juliusson, David Baker, Jeremy Chataway, Klaus Schmierer (2015) <i>Neurology - Neuroimmunology Neuroinflammation</i>. doi:<a class='pub-doi' href='https://doi.org/10.1212/nxi.0000000000000158'>10.1212/nxi.0000000000000158</a></div></div></td></tr><tr><td><a href='/doi/10.1002/14651858.CD003982.pub2' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>34.</div></td><td><div class='doi-body' data-key='10.1002/14651858.CD003982.pub2'><a href='/doi/10.1002/14651858.CD003982.pub2' class='pub-title'>Azathioprine for multiple sclerosis</a><div class='pub-body'>Ilaria Casetta, Gerardo Iuliano, Graziella Filippini (2007) <i>Cochrane Database of Systematic Reviews</i>. doi:<a class='pub-doi' href='https://doi.org/10.1002/14651858.CD003982.pub2'>10.1002/14651858.CD003982.pub2</a></div></div></td></tr><tr><td><a href='/doi/10.1371/journal.pone.0113371' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>35.</div></td><td><div class='doi-body' data-key='10.1371/journal.pone.0113371'><a href='/doi/10.1371/journal.pone.0113371' class='pub-title'>Azathioprine versus Beta Interferons for Relapsing-Remitting Multiple Sclerosis: A Multicentre Randomized Non-Inferiority Trial</a><div class='pub-body'>Luca Massacesi, Irene Tramacere, Salvatore Amoroso, Mario A. Battaglia, Maria Donata Benedetti, Graziella Filippini, Loredana La Mantia, Anna Repice, Alessandra Solari, Gioacchino Tedeschi, Clara Milanese (2014) <i>PLoS ONE</i>. doi:<a class='pub-doi' href='https://doi.org/10.1371/journal.pone.0113371'>10.1371/journal.pone.0113371</a></div></div></td></tr><tr><td><a href='/doi/10.1016/j.jneuroim.2014.08.591' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>36.</div></td><td><div class='doi-body' data-key='10.1016/j.jneuroim.2014.08.591'><a href='/doi/10.1016/j.jneuroim.2014.08.591' class='pub-title'>The DNA methylation inhibitor decitabine completely blocks autoimmune mediated CNS demyelination</a><div class='pub-body'>Kristof Thewissen, Jerome Hendriks, Piet Stinissen, Helena Slaets, Niels Hellings (2014) <i>Journal of Neuroimmunology</i>. doi:<a class='pub-doi' href='https://doi.org/10.1016/j.jneuroim.2014.08.591'>10.1016/j.jneuroim.2014.08.591</a></div></div></td></tr><tr><td><a href='/doi/10.1038/nrclinonc.2014.51' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>37.</div></td><td><div class='doi-body' data-key='10.1038/nrclinonc.2014.51'><a href='/doi/10.1038/nrclinonc.2014.51' class='pub-title'>Standing the test of time: targeting thymidylate biosynthesis in cancer therapy</a><div class='pub-body'>Peter M. Wilson, Peter V. Danenberg, Patrick G. Johnston, Heinz-Josef Lenz, Robert D. Ladner (2014) <i>Nature Reviews Clinical Oncology</i>. doi:<a class='pub-doi' href='https://doi.org/10.1038/nrclinonc.2014.51'>10.1038/nrclinonc.2014.51</a></div></div></td></tr><tr><td><a href='/doi/10.1056/NEJMoa1414325' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>38.</div></td><td><div class='doi-body' data-key='10.1056/NEJMoa1414325'><a href='/doi/10.1056/NEJMoa1414325' class='pub-title'>Randomized Trial of TAS-102 for Refractory Metastatic Colorectal Cancer</a><div class='pub-body'>Robert J. Mayer, Eric Van Cutsem, Alfredo Falcone, Takayuki Yoshino, Rocio Garcia-Carbonero, Nobuyuki Mizunuma, Kentaro Yamazaki, Yasuhiro Shimada, Josep Tabernero, Yoshito Komatsu, Alberto Sobrero, Eveline Boucher, Marc Peeters, Ben Tran, Heinz-Josef Lenz, Alberto Zaniboni, Howard Hochster, James M. Cleary, Hans Prenen, Fabio Benedetti, Hirokazu Mizuguchi, Lukas Makris, Masanobu Ito, Atsushi Ohtsu (2015) <i>New England Journal of Medicine</i>. doi:<a class='pub-doi' href='https://doi.org/10.1056/NEJMoa1414325'>10.1056/NEJMoa1414325</a></div></div></td></tr><tr><td><a href='/doi/10.1111/j.1349-7006.2007.00477.x' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>39.</div></td><td><div class='doi-body' data-key='10.1111/j.1349-7006.2007.00477.x'><a href='/doi/10.1111/j.1349-7006.2007.00477.x' class='pub-title'>Therapeutic potential of the dual-targeted TAS-102 formulation in the treatment of gastrointestinal malignancies</a><div class='pub-body'>Olaf H. Temmink, Tomohiro Emura, Michiel de Bruin, Masakazu Fukushima, Godefridus J. Peters (2007) <i>Cancer Science</i>. doi:<a class='pub-doi' href='https://doi.org/10.1111/j.1349-7006.2007.00477.x'>10.1111/j.1349-7006.2007.00477.x</a></div></div></td></tr><tr><td><a href='/doi/10.1016/j.critrevonc.2016.05.015' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>40.</div></td><td><div class='doi-body' data-key='10.1016/j.critrevonc.2016.05.015'><a href='/doi/10.1016/j.critrevonc.2016.05.015' class='pub-title'>Review on TAS-102 development and its use for metastatic colorectal cancer</a><div class='pub-body'>Jose Mauricio Mota, Leonardo G. Fonseca, Maria Ignez Braghiroli, Paulo M. Hoff (2016) <i>Critical Reviews in Oncology/Hematology</i>. doi:<a class='pub-doi' href='https://doi.org/10.1016/j.critrevonc.2016.05.015'>10.1016/j.critrevonc.2016.05.015</a></div></div></td></tr><tr><td><a href='/doi/10.1016/j.ctrv.2015.06.001' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>41.</div></td><td><div class='doi-body' data-key='10.1016/j.ctrv.2015.06.001'><a href='/doi/10.1016/j.ctrv.2015.06.001' class='pub-title'>TAS-102, a novel antitumor agent: A review of the mechanism of action</a><div class='pub-body'>Heinz-Josef Lenz, Sebastian Stintzing, Fotios Loupakis (2015) <i>Cancer Treatment Reviews</i>. doi:<a class='pub-doi' href='https://doi.org/10.1016/j.ctrv.2015.06.001'>10.1016/j.ctrv.2015.06.001</a></div></div></td></tr><tr><td><a href='/doi/10.3892/or_00000770' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>42.</div></td><td><div class='doi-body' data-key='10.3892/or_00000770'><a href='/doi/10.3892/or_00000770' class='pub-title'>Immunohistochemical characterization of pyrimidine synthetic enzymes, thymidine kinase-1 and thymidylate synthase, in various types of cancer</a><div class='pub-body'>Kamoshida (2010) <i>Oncology Reports</i>. doi:<a class='pub-doi' href='https://doi.org/10.3892/or_00000770'>10.3892/or_00000770</a></div></div></td></tr><tr><td><a href='/doi/10.1002/14651858.CD003208.pub2' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>43.</div></td><td><div class='doi-body' data-key='10.1002/14651858.CD003208.pub2'><a href='/doi/10.1002/14651858.CD003208.pub2' class='pub-title'>Methotrexate for multiple sclerosis</a><div class='pub-body'>Orla Gray, Gavin V McDonnell, Raeburn B Forbes (2004) <i>Cochrane Database of Systematic Reviews</i>. doi:<a class='pub-doi' href='https://doi.org/10.1002/14651858.CD003208.pub2'>10.1002/14651858.CD003208.pub2</a></div></div></td></tr><tr><td><a href='/doi/10.1177/1756285610379885' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>44.</div></td><td><div class='doi-body' data-key='10.1177/1756285610379885'><a href='/doi/10.1177/1756285610379885' class='pub-title'>Chemotherapeutics in the treatment of multiple sclerosis</a><div class='pub-body'>B. C. Kieseier, D. R. Jeffery (2010) <i>Therapeutic Advances in Neurological Disorders</i>. doi:<a class='pub-doi' href='https://doi.org/10.1177/1756285610379885'>10.1177/1756285610379885</a></div></div></td></tr><tr><td><a href='/doi/10.1038/nrd4126' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>45.</div></td><td><div class='doi-body' data-key='10.1038/nrd4126'><a href='/doi/10.1038/nrd4126' class='pub-title'>New avenues for anti-epileptic drug discovery and development</a><div class='pub-body'>Wolfgang Löscher, Henrik Klitgaard, Roy E. Twyman, Dieter Schmidt (2013) <i>Nature Reviews Drug Discovery</i>. doi:<a class='pub-doi' href='https://doi.org/10.1038/nrd4126'>10.1038/nrd4126</a></div></div></td></tr><tr><td><a href='/doi/10.2147/NDT.S833' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>46.</div></td><td><div class='doi-body' data-key='10.2147/NDT.S833'><a href='/doi/10.2147/NDT.S833' class='pub-title'>Tiagabine: efficacy and safety in partial seizures – current status</a><div class='pub-body'>Juergen Bauer (2008) <i>NDT</i>. doi:<a class='pub-doi' href='https://doi.org/10.2147/NDT.S833'>10.2147/NDT.S833</a></div></div></td></tr><tr><td><a href='/doi/10.1056/NEJMc055301' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>47.</div></td><td><div class='doi-body' data-key='10.1056/NEJMc055301'><a href='/doi/10.1056/NEJMc055301' class='pub-title'>Seizure Activity and Off-Label Use of Tiagabine</a><div class='pub-body'>Charlene M. Flowers, Judith A. Racoosin, Cindy Kortepeter (2006) <i>New England Journal of Medicine</i>. doi:<a class='pub-doi' href='https://doi.org/10.1056/NEJMc055301'>10.1056/NEJMc055301</a></div></div></td></tr><tr><td><a href='/doi/10.1016/S0387-7604(99)00113-8' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>48.</div></td><td><div class='doi-body' data-key='10.1016/S0387-7604(99)00113-8'><a href='/doi/10.1016/S0387-7604(99)00113-8' class='pub-title'>When antiepileptic drugs aggravate epilepsy</a><div class='pub-body'>Pierre Genton (2000) <i>Brain and Development</i>. doi:<a class='pub-doi' href='https://doi.org/10.1016/S0387-7604(99)00113-8'>10.1016/S0387-7604(99)00113-8</a></div></div></td></tr><tr><td><a href='/doi/10.1016/S0140-6736(68)91356-1' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>49.</div></td><td><div class='doi-body' data-key='10.1016/S0140-6736(68)91356-1'><a href='/doi/10.1016/S0140-6736(68)91356-1' class='pub-title'>EPILEPTIC FITS AS A PROBABLE SIDE-EFFECT OF AMITRIPTYLINE</a><div class='pub-body'>T.A. Betts, P.L. Kalra, Rosemary Cooper, P.M. Jeavons (1968) <i>The Lancet</i>. doi:<a class='pub-doi' href='https://doi.org/10.1016/S0140-6736(68)91356-1'>10.1016/S0140-6736(68)91356-1</a></div></div></td></tr><tr><td><a href='/doi/10.1191/0960327106ht511oa' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>50.</div></td><td><div class='doi-body' data-key='10.1191/0960327106ht511oa'><a href='/doi/10.1191/0960327106ht511oa' class='pub-title'>Acute amitriptyline intoxication: an analysis of 44 children</a><div class='pub-body'>Hüseyin Çaksen, Sinan Akbayram, Dursun Odabaş, Hanefi Özbek, Mehmet Erol, Cihangir Akgün, Oğuz Tuncer, Cahide Yılmaz (2006) <i>Human &amp; Experimental Toxicology</i>. doi:<a class='pub-doi' href='https://doi.org/10.1191/0960327106ht511oa'>10.1191/0960327106ht511oa</a></div></div></td></tr><tr><td><a href='/doi/10.1176/ajp.137.11.1461' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>51.</div></td><td><div class='doi-body' data-key='10.1176/ajp.137.11.1461'><a href='/doi/10.1176/ajp.137.11.1461' class='pub-title'>Seizures during tricyclic therapy</a><div class='pub-body'> (1980) <i>American Journal of Psychiatry</i>. doi:<a class='pub-doi' href='https://doi.org/10.1176/ajp.137.11.1461'>10.1176/ajp.137.11.1461</a></div></div></td></tr><tr><td><a href='/doi/10.1111/j.1460-9592.2004.01538.x' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>52.</div></td><td><div class='doi-body' data-key='10.1111/j.1460-9592.2004.01538.x'><a href='/doi/10.1111/j.1460-9592.2004.01538.x' class='pub-title'>Sevoflurane and epileptiform EEG changes</a><div class='pub-body'>ISABELLE CONSTANT, ROBERT SEEMAN, ISABELLE MURAT (2005) <i>Pediatric Anesthesia</i>. doi:<a class='pub-doi' href='https://doi.org/10.1111/j.1460-9592.2004.01538.x'>10.1111/j.1460-9592.2004.01538.x</a></div></div></td></tr><tr><td><a href='/doi/10.1097/00000539-200010000-00041' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>53.</div></td><td><div class='doi-body' data-key='10.1097/00000539-200010000-00041'><a href='/doi/10.1097/00000539-200010000-00041' class='pub-title'>The Epileptogenic Properties of the Volatile Anesthetics Sevoflurane and Isoflurane in Patients with Epilepsy</a><div class='pub-body'>Takehiko Iijima, Zenkou Nakamura, Yasuhide Iwao, Hiroshi Sankawa (2000) <i>Anesthesia &amp; Analgesia</i>. doi:<a class='pub-doi' href='https://doi.org/10.1097/00000539-200010000-00041'>10.1097/00000539-200010000-00041</a></div></div></td></tr><tr><td><a href='/doi/10.1093/bja/aes027' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>54.</div></td><td><div class='doi-body' data-key='10.1093/bja/aes027'><a href='/doi/10.1093/bja/aes027' class='pub-title'>Anaesthesia and epilepsy</a><div class='pub-body'>A. Perks, S. Cheema, R. Mohanraj (2012) <i>British Journal of Anaesthesia</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/bja/aes027'>10.1093/bja/aes027</a></div></div></td></tr><tr><td><a href='/doi/10.3402/jmahp.v1i0.21131' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>55.</div></td><td><div class='doi-body' data-key='10.3402/jmahp.v1i0.21131'><a href='/doi/10.3402/jmahp.v1i0.21131' class='pub-title'>Drug reformulations and repositioning in pharmaceutical industry and its impact on market access: reassessment of nomenclature</a><div class='pub-body'>Murteira Susana, Ghezaiel Zied, Karray Slim, Lamure Michel (2013) <i>Journal of Market Access &amp; Health Policy</i>. doi:<a class='pub-doi' href='https://doi.org/10.3402/jmahp.v1i0.21131'>10.3402/jmahp.v1i0.21131</a></div></div></td></tr><tr><td><a href='/doi/10.1038/nrd2055' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>56.</div></td><td><div class='doi-body' data-key='10.1038/nrd2055'><a href='/doi/10.1038/nrd2055' class='pub-title'>Discovery and development of clofarabine: a nucleoside analogue for treating cancer</a><div class='pub-body'>Peter L. Bonate, Larry Arthaud, William R. Cantrell, Katherine Stephenson, John A. Secrist, Steve Weitman (2006) <i>Nature Reviews Drug Discovery</i>. doi:<a class='pub-doi' href='https://doi.org/10.1038/nrd2055'>10.1038/nrd2055</a></div></div></td></tr><tr><td><a href='/doi/10.2147/btt.s10123' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>57.</div></td><td><div class='doi-body' data-key='10.2147/btt.s10123'><a href='/doi/10.2147/btt.s10123' class='pub-title'>Use of clofarabine for acute childhood leukemia</a><div class='pub-body'>Riccardo Masetti (2010) <i>BTT</i>. doi:<a class='pub-doi' href='https://doi.org/10.2147/btt.s10123'>10.2147/btt.s10123</a></div></div></td></tr><tr><td><a href='/doi/10.1016/j.bcp.2009.06.094' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>58.</div></td><td><div class='doi-body' data-key='10.1016/j.bcp.2009.06.094'><a href='/doi/10.1016/j.bcp.2009.06.094' class='pub-title'>Mechanisms of anti-cancer action and pharmacology of clofarabine</a><div class='pub-body'>Anna Zhenchuk, Koroush Lotfi, Gunnar Juliusson, Freidoun Albertioni (2009) <i>Biochemical Pharmacology</i>. doi:<a class='pub-doi' href='https://doi.org/10.1016/j.bcp.2009.06.094'>10.1016/j.bcp.2009.06.094</a></div></div></td></tr><tr><td><a href='/doi/10.1182/blood-2003-06-2122' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>59.</div></td><td><div class='doi-body' data-key='10.1182/blood-2003-06-2122'><a href='/doi/10.1182/blood-2003-06-2122' class='pub-title'>Clofarabine, a novel nucleoside analog, is active in pediatric patients with advanced leukemia</a><div class='pub-body'>S. Jeha (2003) <i>Blood</i>. doi:<a class='pub-doi' href='https://doi.org/10.1182/blood-2003-06-2122'>10.1182/blood-2003-06-2122</a></div></div></td></tr><tr><td><a href='/doi/10.1056/NEJMoa0902533' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>60.</div></td><td><div class='doi-body' data-key='10.1056/NEJMoa0902533'><a href='/doi/10.1056/NEJMoa0902533' class='pub-title'>A Placebo-Controlled Trial of Oral Cladribine for Relapsing Multiple Sclerosis</a><div class='pub-body'>Gavin Giovannoni, Giancarlo Comi, Stuart Cook, Kottil Rammohan, Peter Rieckmann, Per Soelberg Sørensen, Patrick Vermersch, Peter Chang, Anthony Hamlett, Bruno Musch, Steven J. Greenberg (2010) <i>New England Journal of Medicine</i>. doi:<a class='pub-doi' href='https://doi.org/10.1056/NEJMoa0902533'>10.1056/NEJMoa0902533</a></div></div></td></tr><tr><td><a href='/doi/10.1080/14737175.2016.1176531' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>61.</div></td><td><div class='doi-body' data-key='10.1080/14737175.2016.1176531'><a href='/doi/10.1080/14737175.2016.1176531' class='pub-title'>Failed, interrupted and inconclusive trials on relapsing multiple sclerosis treatment: update 2010–2015</a><div class='pub-body'>Steffen Pfeuffer, Tobias Ruck, Christoph Kleinschnitz, Heinz Wiendl, Sven G. Meuth (2016) <i>Expert Review of Neurotherapeutics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1080/14737175.2016.1176531'>10.1080/14737175.2016.1176531</a></div></div></td></tr><tr><td><a href='/doi/10.1177/1756285615626049' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>62.</div></td><td><div class='doi-body' data-key='10.1177/1756285615626049'><a href='/doi/10.1177/1756285615626049' class='pub-title'>Fludarabine add-on therapy in interferon-beta-treated patients with multiple sclerosis experiencing breakthrough disease</a><div class='pub-body'>S. J. Greenberg, R. Zivadinov, P. Lee-Kwen, J. Sharma, M. Planter, M. Umhauer, N. Glenister, R. Bakshi (2016) <i>Therapeutic Advances in Neurological Disorders</i>. doi:<a class='pub-doi' href='https://doi.org/10.1177/1756285615626049'>10.1177/1756285615626049</a></div></div></td></tr><tr><td><a href='/doi/10.1371/journal.pone.0113371' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>63.</div></td><td><div class='doi-body' data-key='10.1371/journal.pone.0113371'><a href='/doi/10.1371/journal.pone.0113371' class='pub-title'>Azathioprine versus Beta Interferons for Relapsing-Remitting Multiple Sclerosis: A Multicentre Randomized Non-Inferiority Trial</a><div class='pub-body'>Luca Massacesi, Irene Tramacere, Salvatore Amoroso, Mario A. Battaglia, Maria Donata Benedetti, Graziella Filippini, Loredana La Mantia, Anna Repice, Alessandra Solari, Gioacchino Tedeschi, Clara Milanese (2014) <i>PLoS ONE</i>. doi:<a class='pub-doi' href='https://doi.org/10.1371/journal.pone.0113371'>10.1371/journal.pone.0113371</a></div></div></td></tr><tr><td><a href='/doi/10.1107/S0907444905034293' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>64.</div></td><td><div class='doi-body' data-key='10.1107/S0907444905034293'><a href='/doi/10.1107/S0907444905034293' class='pub-title'>The structure of human deoxycytidine kinase in complex with clofarabine reveals key interactions for prodrug activation</a><div class='pub-body'>Yan Zhang, John A. Secrist, Steven E. Ealick (2006) <i>Acta Crystallogr D Biol Cryst</i>. doi:<a class='pub-doi' href='https://doi.org/10.1107/S0907444905034293'>10.1107/S0907444905034293</a></div></div></td></tr><tr><td><a href='/doi/10.2174/092986706778742918' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>65.</div></td><td><div class='doi-body' data-key='10.2174/092986706778742918'><a href='/doi/10.2174/092986706778742918' class='pub-title'>Purine Nucleoside Analogs as Immunosuppressive and Antineoplastic Agents: Mechanism of Action and Clinical Activity</a><div class='pub-body'>Tadeusz Robak, Ewa Lech-Maranda, Anna Korycka, Ewa Robak (2006) <i>CMC</i>. doi:<a class='pub-doi' href='https://doi.org/10.2174/092986706778742918'>10.2174/092986706778742918</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d224' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>66.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d224'><a href='/discussion/prediction-in-epilepsy/224' class='pub-title'>Prediction in epilepsy</a><div class='pub-body'>Pouya Khankhanian, Daniel Himmelstein (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d224'>10.15363/thinklab.d224</a></div></div></td></tr><tr><td><a href='/doi/10.1038/nrd2055' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>67.</div></td><td><div class='doi-body' data-key='10.1038/nrd2055'><a href='/doi/10.1038/nrd2055' class='pub-title'>Discovery and development of clofarabine: a nucleoside analogue for treating cancer</a><div class='pub-body'>Peter L. Bonate, Larry Arthaud, William R. Cantrell, Katherine Stephenson, John A. Secrist, Steve Weitman (2006) <i>Nature Reviews Drug Discovery</i>. doi:<a class='pub-doi' href='https://doi.org/10.1038/nrd2055'>10.1038/nrd2055</a></div></div></td></tr><tr><td><a href='/doi/10.1177/1756285610379885' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>68.</div></td><td><div class='doi-body' data-key='10.1177/1756285610379885'><a href='/doi/10.1177/1756285610379885' class='pub-title'>Chemotherapeutics in the treatment of multiple sclerosis</a><div class='pub-body'>B. C. Kieseier, D. R. Jeffery (2010) <i>Therapeutic Advances in Neurological Disorders</i>. doi:<a class='pub-doi' href='https://doi.org/10.1177/1756285610379885'>10.1177/1756285610379885</a></div></div></td></tr><tr><td><a href='/doi/10.1056/NEJMoa0902533' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>69.</div></td><td><div class='doi-body' data-key='10.1056/NEJMoa0902533'><a href='/doi/10.1056/NEJMoa0902533' class='pub-title'>A Placebo-Controlled Trial of Oral Cladribine for Relapsing Multiple Sclerosis</a><div class='pub-body'>Gavin Giovannoni, Giancarlo Comi, Stuart Cook, Kottil Rammohan, Peter Rieckmann, Per Soelberg Sørensen, Patrick Vermersch, Peter Chang, Anthony Hamlett, Bruno Musch, Steven J. Greenberg (2010) <i>New England Journal of Medicine</i>. doi:<a class='pub-doi' href='https://doi.org/10.1056/NEJMoa0902533'>10.1056/NEJMoa0902533</a></div></div></td></tr><tr><td><a href='/doi/10.1002/14651858.CD003982.pub2' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>70.</div></td><td><div class='doi-body' data-key='10.1002/14651858.CD003982.pub2'><a href='/doi/10.1002/14651858.CD003982.pub2' class='pub-title'>Azathioprine for multiple sclerosis</a><div class='pub-body'>Ilaria Casetta, Gerardo Iuliano, Graziella Filippini (2007) <i>Cochrane Database of Systematic Reviews</i>. doi:<a class='pub-doi' href='https://doi.org/10.1002/14651858.CD003982.pub2'>10.1002/14651858.CD003982.pub2</a></div></div></td></tr><tr><td><a href='/doi/10.1016/j.bcp.2009.06.094' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>71.</div></td><td><div class='doi-body' data-key='10.1016/j.bcp.2009.06.094'><a href='/doi/10.1016/j.bcp.2009.06.094' class='pub-title'>Mechanisms of anti-cancer action and pharmacology of clofarabine</a><div class='pub-body'>Anna Zhenchuk, Koroush Lotfi, Gunnar Juliusson, Freidoun Albertioni (2009) <i>Biochemical Pharmacology</i>. doi:<a class='pub-doi' href='https://doi.org/10.1016/j.bcp.2009.06.094'>10.1016/j.bcp.2009.06.094</a></div></div></td></tr></table>
+
+    
+
+
+	</td>
+	<td class="thread-sidebar">
+
+
+			
+
+      <a class="btn btn-default follow-link btn-follow btn-lg is-following tt-top full-width" title="Follow discussion" data-id="203" data-ctype="thread" data-is-following="false">&nbsp;</a>
+
+      
+        <div class="status-box text-center"><span style="">Status:</span> 
+  Open
+
+</div>
+      
+
+      
+        
+      
+
+
+				
+
+					<div class="details">Views</div>
+					<span style="font-size:20px;">330</span>
+
+        
+
+				
+					<div class="details">Topics</div>
+					<div style="margin-bottom:15px;">
+		            <a href="/topics/pharmacology" class="tag">Pharmacology</a><a href="/topics/hnep" class="tag">HNEP</a><a href="/topics/hetnet" class="tag">Hetnet</a><a href="/topics/predictions" class="tag">Predictions</a>
+					</div>
+				
+
+
+		
+			<div class="details">Referenced by</div>
+			<div style="font-size:12px;"><ul style="padding-left:16px !important;">
+			
+				<li>
+					
+					<a href='/discussion/prediction-in-epilepsy/224' class='thread-title'>Prediction in epilepsy</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/decomposing-predictions-into-their-network-support/229' class='thread-title'>Decomposing predictions into their network support</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/incorporating-drugcentral-data-in-our-network/186' class='thread-title'>Incorporating DrugCentral data in our network</a>
+				</li>
+			
+				<li>
+					
+					Research report: <a href='/p/rephetio/report'>Rephetio: Repurposing drugs on a hetnet</a>
+				</li>
+			
+				</ul>
+			</div>
+		
+
+		
+			<div class="details">Cite this as</div>
+			<span style="font-size:12px;">
+				Daniel Himmelstein, Chrissy Hessler, Pouya Khankhanian (2016) Predictions of whether a compound treats a disease. <i>Thinklab.</i> doi:<a href='https://doi.org/10.15363/thinklab.d203'>10.15363/thinklab.d203</a>
+			</span>
+		
+
+		<div class="details">License</div>
+		<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0;width:88px;height:31px;" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></p>
+
+		<div class="details">Share</div>
+		
+			
+				<a class="share-button fb" onclick="javascript:void(window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A//thinklab.com/discussion/predictions-of-whether-a-compound-treats-a-disease/203','','width=600,height=460,menubar=no,status=no'));" href="#"></a>
+<a class="share-button twitter" onclick="javascript:void(window.open('https://twitter.com/share?text=Predictions%20of%20whether%20a%20compound%20treats%20a%20disease&url=https%3A//thinklab.com/discussion/predictions-of-whether-a-compound-treats-a-disease/203','','width=600,height=300,menubar=no,status=no'));" href="#"></a>
+<a class="share-button google" onclick="javascript:void(window.open('https://plus.google.com/share?url=https%3A//thinklab.com/discussion/predictions-of-whether-a-compound-treats-a-disease/203','','width=510,height=460,menubar=no,status=no'));" href="#"></a>
+
+			
+		
+
+	</td>
+</tr></table>
+
+
+		</div>
+
+
+		
+	    	<div class="footer">
+<div style="background:#dedede;">
+	<div class="main-centered-div text-center" style="padding:20px;">
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#cca4a9a0a0a38cb8a4a5a2a7a0adaee2afa3a1"><span class="__cf_email__" data-cfemail="dcb4b9b0b0b39ca8b4b5b2b7b0bdbef2bfb3b1">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+	</div>
+</div>
+<div class="main-footer">
+	<div class="main-centered-div">
+
+<table class="full-width"><tr>
+	<td class="footer-nav">
+
+        <div class="foot-head">Explore</div>
+        <a href="/proposals">Proposals</a><br>
+        <a href="/projects">Projects</a><br>
+        <a href="/publications">Article discussion</a><br>
+        <a href="/discussion">All discussion</a><br>
+        <a href="/topics">Topics</a><br>
+        <!-- <a href="/funders">Funders</a><br> -->
+        <a href="/funding">Funding opportunities</a><br>
+
+	</td>
+	<td class="footer-nav">
+
+        <!-- <div class="foot-head">Help &amp; feedback</div>	 -->
+        <!-- <div class="foot-head">Intro</div>
+        <a href="/benefits/for-science">Why</a><br>
+        <a href="/how-it-works">How it works</a><br>
+
+<br> -->
+
+        <div class="foot-head">Community</div>
+        <a href="/leaderboard">Leaderboard</a><br>
+        <a href="/p/meta">Thinklab Meta</a><br>
+				<a href="/help/faq">Help</a><br>
+				<!-- <a href="/new-project">Start a proposal</a><br> -->
+        <!-- <a href="/benefits/proposal">Benefits</a><br> -->
+        <!-- <a href="/funding">Get funded</a><br> -->
+        <!-- <a href="/participate">Become a contributor</a><br> -->
+        <!-- <a href="/for-funders">For science funders</a><br> -->
+        <!-- <a href="/for-institutions">For institutions</a><br> -->
+
+	</td>
+	<td class="footer-nav">
+
+
+
+        <div class="foot-head">About</div>
+        <a href="/about">Overview</a><br>
+        <a href="/benefits">Benefits</a><br>
+        <a href="/how-it-works">How it works</a><br>
+        <a href="/about/story">Our story</a><br>
+        <a href="/blog">Our blog</a><br>
+        <a href="/about/jobs">Join the team</a><br>
+        <br>
+
+        <!-- <div class="foot-head">Help</div>
+        <a href="/help">Help</a><br>
+		 -->
+
+
+	</td>
+	<td class="footer-nav">
+		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
+		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<br><br>
+		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
+
+	</td>
+
+</tr></table>
+
+</div>
+</div>
+</div>
+
+		
+
+	</div>
+
+
+  <script></script>
+  <script>
+  var MEDIA_URL = 'https://think-lab.s3.amazonaws.com/m/';
+  var STATIC_URL = 'https://think-lab.s3.amazonaws.com/s/';
+  var page_is_authenticated = false;
+  var page_page = 'discussion';
+  var page_profile_id = undefined;
+</script>
+
+
+
+	<!-- Note different script type. MUST come before MathJax.js -->
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	        "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"],
+	                        scale: 110, linebreaks: { automatic:true },
+	                        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+	        tex2jax: { inlineMath: [ ["$$", "$$"], ["\\(","\\)"] ],
+	                    displayMath: [ ["$$$","$$$"], ["\\[", "\\]"] ],
+	                    processEscapes: true,}
+	            });
+
+	</script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://think-lab.s3.amazonaws.com/s/dist/main.min.js"></script>
+  
+
+
+
+  
+	
+  
+  
+  
+<script>
+$(function() {
+  recordHit('thread', 203);
+});
+</script>
+
+
+
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>

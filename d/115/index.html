@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZgEOC19dW0QCEVtHU1gG","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":541}</script>
+    <title>Assessing the informativeness of features | Thinklab</title>
+	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
+    <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/highlightjs/github.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/css.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/bootstrap-multiselect.css" />
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
+    
+    
+    
+    
+  
+    <meta name="citation_doi" content="10.15363/thinklab.d115">
+    <meta name="citation_title" content="Assessing the informativeness of features">
+    <meta name="citation_online_date" content="Oct. 4, 2015">
+    <meta name="citation_author" content="Daniel Himmelstein">
+    <meta name="citation_journal_title" content="Thinklab">
+    <meta name="citation_publisher" content="Thinklab">
+  
+
+    
+
+
+	<!-- GoogleAnalytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-48550230-1', 'thinklab.com');
+	ga('require', 'displayfeatures');
+	
+	ga('send', 'pageview');
+
+	</script>
+
+
+
+
+
+
+</head>
+<body >
+  <form id="form_action" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+</form>
+
+	
+
+	<div class="body-wrapper">
+
+		
+
+
+<!-- <div style="height:5px;background-image:url('https://think-lab.s3.amazonaws.com/s/img/top-bg.gif');"></div> -->
+<div class="gradient">
+	<div class="main-centered-div header-container">
+
+<table class="full-width" style="height:60px;"><tr>
+	<td style="width:200px;vertical-align:middle;padding-bottom:15px;">
+		<a href="/" style="font-weight:normal;color:#212121;"><img src="https://think-lab.s3.amazonaws.com/s/img/logo.png" width="160"></a>
+	</td><td style="vertical-align:middle;text-align:left;padding-top:6px;width:100%;padding-left:40px;">
+		<ul id="not-search-block"  class="main-header">
+
+
+			
+
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/proposals">Proposals</a></li>
+						<li><a href="/projects">Projects</a></li>
+						<li><a href="/publications">Article discussion</a></li>
+						<li><a href="/discussion">All discussion</a></li>
+					</ul>
+				</li>
+				<li><a href="/leaderboard">Leaderboard</a></li>
+
+			
+				<li><a href="/about">About</a></li>
+			
+
+
+		</ul>
+
+    <ul id="search-block" class="main-header" style="display: none; margin-right: 30px;">
+        <li class="full-width">
+            <form method="get" action="/search">
+			<div class="input-group full-width">
+				<input name="q" type="text" class="form-control search-input">
+			</div>
+            </form>
+        </li>
+    </ul>
+
+	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
+		<ul class="main-header pull-right" style="padding-left: 0;">
+    		
+                <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+            
+
+        </ul>
+    </ul>
+	</td>
+</tr></table>
+
+<!-- <div id="global-search-div" class="main-centered-div" style="display:none;">
+	<input type="text" value="" class="thread-search form-control" placeholder="Search" data-action="/discussion">
+</div> -->
+
+	</div>
+</div>
+
+		
+	  
+
+
+
+	  
+
+
+		
+
+		<div class="dark-head"><div class="main-centered-div">
+
+			
+
+		</div></div>
+		
+		<div class="main-centered-div" style="margin-top:40px;padding-bottom:340px">
+	    
+
+<div style="margin-top:-20px; margin-bottom:20px;">
+
+    <a class="side-box" href="/p/rephetio" style="background-color:#ebfdff;"><div class="side-type">Project:</div> <div class="side-title">Rephetio: Repurposing drugs on a hetnet [rephetio]</div></a><br>
+
+
+
+</div>
+
+<table style="margin-top:0px;"><tr>
+	<td class="thread-table-content">
+
+		<table class="full-width">
+			
+<tr class="comment-tr target-hl" id="1" data-comment-id="450">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="450"></a>
+
+    
+
+			<h2 class="page-title" style="margin-bottom:5px;margin-top:0px !important;">Assessing the informativeness of features</h2>
+
+			<div style="margin-top:5px;color:gray;margin-bottom:20px;font-size:13px;">
+				<a style="font-weight:normal;color:#212121" href="/u/dhimmel"><strong>Daniel Himmelstein</strong></a>
+				<span class="is-researcher">Researcher</span>
+				&nbsp; <a href="#1" class="light">642 days ago</a>
+				
+			</div>
+
+      
+
+          <hr>
+		
+
+    <h1>Preliminary feature computation</h1>
+
+<h2>Background</h2>
+
+<p>Our method for <a href="http://het.io/hnep">hetnet edge prediction</a> <span class="citation">[<a href="https://doi.org/10.1371/journal.pcbi.1004259" class="citation" data-key="10.1371/journal.pcbi.1004259">1</a>]</span> works by quantifying the connectivity between a source and target node. For this project, source nodes are compounds and target nodes are diseases. To extract a feature from the network, we quantify the prevalence of a specific type of paths (metapath) for each compound–disease pair. We use a metric called the <a href="https://doi.org/10.1371/journal.pcbi.1004259#article1.body1.sec2.sec2.p1">degree weighted path count</a> (<em>DWPC</em>) to quantify the extent that that a path of the specified type connects a compound and disease. The <em>DWPC</em> downweights paths through high degree nodes, which are less specific and therefore likely less informative. Thus each metapath yields a feature. We evaluate the predictiveness of a feature by whether it discriminates indicated from non-indicated compound–disease pairs.</p>
+
+<h2>Methods</h2>
+
+<p>We computed features for the 261 metapaths with length ≤ 3 for all <a href="http://thinklab.com/discussion/how-should-we-construct-a-catalog-of-drug-indications/21#191" class="citation thread-citation" data-key="10.15363/thinklab.d21">1,386 indications</a> and 4,227 non-indications. The 4,227 non-indications were randomly selected from all non-indications. We computed features for 2%, rather than 100%, of non-indications to decrease computation time. This compromise allows us to quickly assess feature-specific performance via <a href="https://en.wikipedia.org/wiki/Receiver_operating_characteristic#Area_under_the_curve">AUROC</a>, but does not allow us to make comprehensive predictions or provide reliable estimates of measures that depend the balance between positives and negatives, such as <a href="https://en.wikipedia.org/wiki/Precision_and_recall">AUPRC</a> and properly-scaled predicted probabilities.</p>
+
+<p>We separately assessed the performance of each of the 261 features (<a href="https://github.com/dhimmel/learn/blob/eabff6bdbe777cb21ad731a7b788720eb1d622f8/learn.ipynb">notebook</a>). We used the <em>DWPC</em> with <span class="math">$$w = 0.4$$</span> — the dampening exponent to control the downweighting of paths through high degree nodes. We chose <span class="math">$$w = 0.4$$</span> because that was optimal in our previous study <span class="citation">[<a href="https://doi.org/10.1371/journal.pcbi.1004259" class="citation" data-key="10.1371/journal.pcbi.1004259">1</a>]</span> and performance <a href="https://doi.org/10.1371/journal.pcbi.1004259.s003">was stable</a> for surrounding parameter choices.</p>
+
+<h2>Results</h2>
+
+<p>We created a <a href="https://github.com/dhimmel/learn/blob/eabff6bdbe777cb21ad731a7b788720eb1d622f8/data/auc.tsv">table of feature performance</a>. Scroll to the bottom of <a href="https://github.com/dhimmel/learn/blob/eabff6bdbe777cb21ad731a7b788720eb1d622f8/learn.ipynb">this notebook</a> for the abbreviation system used in the <code>metapath</code> column. <code>nonzero</code> indicates the proportion of compound–disease pairs that had at least one path for that metapath. <code>auroc</code> represents the chance that a random indication received a higher <em>DWPC</em> than a random non-indication. Stay tuned to this discussion for further analysis.</p>
+
+<h2>Limitations</h2>
+
+<p>There are still a few steps remaining before we can draw conclusions on the mechanisms of efficacy:</p>
+
+<ul><li>Our expert curated indication catalog is not yet ready. Therefore, an <a href="http://thinklab.com/discussion/expert-curation-of-our-indication-catalog-for-disease-modifying-treatments/95#3" class="citation thread-citation" data-key="10.15363/thinklab.d95">estimated 42%</a> the 1,386 indications are symptomatic or non-indications.</li><li>We haven't yet created permuted networks to compute feature performance on. <a href="https://doi.org/10.1371/journal.pcbi.1004259.s003#article1.body1.sec2.sec6.p1">Permuted networks</a> preserve degree but destroy edge specificity. Much of the current performance is likely attributable to node degree rather than edge specificity. For example, compounds that are indicated for many other diseases are more likely to be indicated for the target disease. Many of our 261 features will capture this effect.</li></ul>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="2" data-comment-id="476">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="476"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#2" class="light">635 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>General assessment</h1>
+
+<p>We assessed general performance trends on our <a href="#1">preliminary</a> set of 261 features (<a href="http://nbviewer.ipython.org/github/dhimmel/learn/blob/ed022ecd93f0599887a359486f3e8849ecda1a03/feature-assess.ipynb">interactive notebook</a>). We discuss the findings below:</p>
+
+<p>All <a href="https://github.com/dhimmel/learn/blob/ed022ecd93f0599887a359486f3e8849ecda1a03/data/auc.tsv">features</a> yielded AUROCs ≥ 0.5. In other words, no features were negatively associated with indication status: greater path prevalence between a compound and disease never resulted in a lower therapeutic likelihood. The lack of negatively associated features is unsurprising given that our network is primarily composed of general relationships. For example, we have a compound–gene edge for <a href="https://en.wikipedia.org/wiki/Biological_target#Drug_targets">targeting</a> but not for <a href="https://en.wikipedia.org/wiki/Agonist">agonism</a> or <a href="https://en.wikipedia.org/wiki/Receptor_antagonist">antagonism</a>.</p>
+
+<p>The majority of features had AUROC ≤ 0.53. In other words, most features performed only slightly better than random. However, a quarter of the features had AUROC ≥ 0.60, and five features had AUROC ≥ 0.80. The strong performance of a subset of features is encouraging.</p>
+
+<p>We <a href="http://nbviewer.ipython.org/github/dhimmel/learn/blob/ed022ecd93f0599887a359486f3e8849ecda1a03/feature-assess.ipynb#Performance-by-path-length">did not observe</a> major differences in the distributions of AUROCs for features with length 2 versus length 3 metapaths. However, since there are many more metapaths with length 3 than 2, the top performing features were mostly of length 3.</p>
+
+<p>Performance <a href="http://nbviewer.ipython.org/github/dhimmel/learn/blob/ed022ecd93f0599887a359486f3e8849ecda1a03/feature-assess.ipynb#Feature-AUROC-versus-non-zero-fraction">strongly correlated</a> with the fraction of nonzero values per feature. Metapaths traversing sparsely connected areas of the hetnet performed poorly because they yielded <span class="math">$$DWPC = 0$$</span> for almost all compound–disease pairs.</p>
+
+<p>AUROC and AUPRC <a href="http://nbviewer.ipython.org/github/dhimmel/learn/blob/ed022ecd93f0599887a359486f3e8849ecda1a03/feature-assess.ipynb#Feature-AUPRC-versus-AUROC">were</a> positively correlated. However, features with AUROCs near 0.5 (the random expectation) often had AUPRCs considerably above 0.25 (the random expectation). These features were often &gt; 99% zero. Therefore, we suspect the low-AUROC features produced decent top predictions but poor comprehensive predictions due to sparsity, leading to discordance between AUROCs and AUPRCs <span class="citation">[<a href="https://doi.org/10.1145/1143844.1143874" class="citation" data-key="10.1145/1143844.1143874">1</a>, <a href="https://doi.org/10.1371/journal.pone.0009202" class="citation" data-key="10.1371/journal.pone.0009202">2</a>]</span>.</p>
+
+<p>One reason we primarily rely on AUROC rather than AUPRC is to enable comparisons across different prevalences. We may consider using the AUCROC (area under the condensed ROC  <span class="citation">[<a href="https://doi.org/10.1093/bioinformatics/btq140" class="citation" data-key="10.1093/bioinformatics/btq140">3</a>]</span>) to emphasize top predictions while remaining balance-agnostic.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="3" data-comment-id="1311">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1311"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#3" class="light">418 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h2>Feature improvements</h2>
+
+<p>We've made several improvements that affect our features. Compared to the <a href="#3">previous post</a> the following updates were made:</p>
+
+<ol><li>We completed the first production version of our hetnet named Hetionet v1.0. See <a href="https://thinklab.com/discussion/data-nomenclature-naming-and-abbreviating-our-network-types/162#8" class="citation thread-citation" data-key="10.15363/thinklab.d162">this post</a> for the updated metagraph and type abbreviations.</li><li>We <a href="https://thinklab.com/discussion/announcing-pharmacotherapydb-the-open-catalog-of-drug-therapies-for-disease/182" class="citation thread-citation" data-key="10.15363/thinklab.d182">created PharamacotherapyDB</a> which refined our indication catalog to differentiate between disease modifying and symptomatic indications. Now disease modifying indications (called treatments or <code>DM</code>) are positives and all other compound–disease pairs (observations) are negatives.</li><li>We <a href="https://thinklab.com/discussion/using-the-neo4j-graph-database-for-hetnets/112#4" class="citation thread-citation" data-key="10.15363/thinklab.d112">switched</a> from using our pure python toolset (<a href="https://github.com/dhimmel/hetio/blob/2c135fcd32616d6979972105ba60b003d65c98bd/hetio/pathtools.py"><code>hetio.pathtools</code></a>) to Neo4j for computing network-based features. While we maintained the <a href="https://thinklab.com/discussion/path-exclusion-conditions/134" class="citation thread-citation" data-key="10.15363/thinklab.d134">duplicate node exclusion</a> for path traversal, there are some minor differences in the Cypher and <code>hetio.pathtools</code> DWPC algorithms.</li><li>We <a href="https://thinklab.com/discussion/transforming-dwpcs-for-hetnet-edge-prediction/193#6" class="citation thread-citation" data-key="10.15363/thinklab.d193">identified a transformation</a> to make DWPCs distributions more appropriate for modeling.</li><li>We computed DWPCs for all 1,206 metapaths with lengths 2–4. <a href="https://github.com/dhimmel/integrate/blob/095747de9efe42a9ed1e23ab18db282e14705cd9/viz/auto/data/metapath-counts.tsv#L129" title="Metapath counts for each length-source-target combination">1,072</a> of the methapaths are length 4.</li><li>We computed DWPCs on five <a href="https://thinklab.com/discussion/assessing-the-effectiveness-of-our-hetnet-permutations/178" class="citation thread-citation" data-key="10.15363/thinklab.d178">permuted networks</a>.</li><li>We invented a DWPC derivative called <em>residual DWPC</em> (R-DWPC), which is the difference between DWPC and average permuted DWPC for an observation.</li></ol>
+
+<h2>AUROC-based metrics for assessing DWPC features</h2>
+
+<p>The performance for each of 1,206 DWPC features is now available (<a href="https://github.com/dhimmel/learn/blob/e1c46ddc7e04a3d3eac6b907298c58db1d32a95b/all-features/data/feature-performance/auroc.tsv">dataset</a>). The dataset consists of the following AUROC-based performance metrics:</p>
+
+<ul><li><code>dwpc_auroc</code>: the AUROC of a DWPC</li><li><code>pdwpc_auroc</code>: the average AUROC of a DWPC across permuted networks but computed on the positives and negatives corresponding to the unpermuted network</li><li><code>rdwpc_auroc</code>: the AUROC of a residual DWPC</li><li><code>pdwpc_primary_auroc</code>: the average AUROC of a DWPC across permuted networks. This AUROC uses reassigned positives and negatives based on the specific treatment edges in each permuted network</li><li><code>delta_auroc</code>: the <code>dwpc_auroc</code> minus the <code>pdwpc_primary_auroc</code> for a metapath</li><li><code>pval_delta_auroc</code>: the p-value from a t-test of the difference between the <code>dwpc_auroc</code> and the five corresponding primary permuted AUROCs.</li></ul>
+
+<p>We're adopting the Δ AUROC (<code>delta_auroc</code>) as our main assessment of feature informativeness. The Δ AUROC is preferable to the plain DWPC AUROC because it assesses whether the specific edges of a metapath are predictive. Otherwise predictiveness may be dominated by node degree effects — an often overlooked shortcoming of many network analyses <span class="citation">[<a href="https://doi.org/10.1371/journal.pone.0017258" class="citation" data-key="10.1371/journal.pone.0017258">1</a>, <a href="https://doi.org/10.1161/CIRCGENETICS.115.001181" class="citation" data-key="10.1161/CIRCGENETICS.115.001181">2</a>]</span>. The R-DWPC AUROC (<code>rdwpc_auroc</code>) is a promising metric for the future but currently suffers from an <a href="https://thinklab.com/discussion/edge-dropout-contamination-in-hetnet-edge-prediction/215" class="citation thread-citation" data-key="10.15363/thinklab.d215">edge-dropout contamination issue</a>.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="4" data-comment-id="1279">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1279"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#4" class="light">416 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Visualizing metaedge informativeness</h1>
+
+<p>The following figure shows the Δ AUROC for each of the 1,206 metapaths (<a href="https://github.com/dhimmel/learn/blob/master/all-features/6-rvisualize.ipynb">notebook</a>). Metapaths are assigned to their composing metaedges, so the <em>CbGaD</em> metapath will show up under <em>Compound–binds–Gene</em> and <em>Disease–associates–Gene</em>. Metaedges are ordered by their max Δ AUROC metapath, under the assumption that a metapath's performance is limited by its least informative metaedge.</p>
+
+<p><img src="https://github.com/dhimmel/learn/blob/a7766ea00da67f5cf03bd77e6e613a262918f1b8/all-features/data/feature-performance/delta-auroc.png?raw=true" alt="Performance by metaedge"></p>
+
+<p>While informativeness varies by metaedge, it appears that almost all data types we integrated are informative of whether a compound treats a disease.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="5" data-comment-id="1374">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1374"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#5" class="light">245 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Interactive metaedge table</h1>
+
+<p>An interactive metaedge table is available online at <a href="http://het.io/repurpose/metapaths.html">http://het.io/repurpose/metapaths.html</a>. Here you can browse and search through all 1,206 metapaths. The interface currently looks like:</p>
+
+<p><img src="https://cloud.githubusercontent.com/assets/1117703/20021803/df14bac8-a2ad-11e6-904e-8c12813582e0.png" alt="Screenshot of the Project Rephetio Metaedge Browser at http://het.io/repurpose/metapaths.html"></p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+    		
+		</table>
+
+    
+
+    &nbsp;<br>
+    <a class="btn btn-primary btn-lg" href="/signup?next=/discussion/assessing-the-informativeness-of-features/115&suppress_message=1" style>Join to Reply</a>
+
+
+		<table class="references table-td-5" style="display:none;"><tr><td><a href='/doi/10.1371/journal.pcbi.1004259' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.1371/journal.pcbi.1004259'><a href='/doi/10.1371/journal.pcbi.1004259' class='pub-title'>Heterogeneous Network Edge Prediction: A Data Integration Approach to Prioritize Disease-Associated Genes</a><div class='pub-body'>Daniel S. Himmelstein, Sergio E. Baranzini (2015) <i>PLOS Computational Biology</i>. doi:<a class='pub-doi' href='https://doi.org/10.1371/journal.pcbi.1004259'>10.1371/journal.pcbi.1004259</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d21' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>2.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d21'><a href='/discussion/how-should-we-construct-a-catalog-of-drug-indications/21' class='pub-title'>How should we construct a catalog of drug indications?</a><div class='pub-body'>Daniel Himmelstein, Benjamin Good, Tudor Oprea, Allison McCoy, Antoine Lizee (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d21'>10.15363/thinklab.d21</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d95' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>3.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d95'><a href='/discussion/expert-curation-of-our-indication-catalog-for-disease-modifying-treatments/95' class='pub-title'>Expert curation of our indication catalog for disease-modifying treatments</a><div class='pub-body'>Daniel Himmelstein, Pouya Khankhanian, Chrissy Hessler (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d95'>10.15363/thinklab.d95</a></div></div></td></tr><tr><td><a href='/doi/10.1145/1143844.1143874' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>4.</div></td><td><div class='doi-body' data-key='10.1145/1143844.1143874'><a href='/doi/10.1145/1143844.1143874' class='pub-title'>The relationship between Precision-Recall and ROC curves</a><div class='pub-body'>Jesse Davis, Mark Goadrich (2006) <i>Proceedings of the 23rd international conference on Machine learning - ICML &#39;06</i>. doi:<a class='pub-doi' href='https://doi.org/10.1145/1143844.1143874'>10.1145/1143844.1143874</a></div></div></td></tr><tr><td><a href='/doi/10.1371/journal.pone.0009202' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>5.</div></td><td><div class='doi-body' data-key='10.1371/journal.pone.0009202'><a href='/doi/10.1371/journal.pone.0009202' class='pub-title'>Towards a Rigorous Assessment of Systems Biology Models: The DREAM3 Challenges</a><div class='pub-body'>Robert J. Prill, Daniel Marbach, Julio Saez-Rodriguez, Peter K. Sorger, Leonidas G. Alexopoulos, Xiaowei Xue, Neil D. Clarke, Gregoire Altan-Bonnet, Gustavo Stolovitzky (2010) <i>PLoS ONE</i>. doi:<a class='pub-doi' href='https://doi.org/10.1371/journal.pone.0009202'>10.1371/journal.pone.0009202</a></div></div></td></tr><tr><td><a href='/doi/10.1093/bioinformatics/btq140' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>6.</div></td><td><div class='doi-body' data-key='10.1093/bioinformatics/btq140'><a href='/doi/10.1093/bioinformatics/btq140' class='pub-title'>A CROC stronger than ROC: measuring, visualizing and optimizing early retrieval</a><div class='pub-body'>S. J. Swamidass, C.-A. Azencott, K. Daily, P. Baldi (2010) <i>Bioinformatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/bioinformatics/btq140'>10.1093/bioinformatics/btq140</a></div></div></td></tr><tr><td><a href='/doi/10.1371/journal.pone.0017258' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>7.</div></td><td><div class='doi-body' data-key='10.1371/journal.pone.0017258'><a href='/doi/10.1371/journal.pone.0017258' class='pub-title'>The Impact of Multifunctional Genes on &quot;Guilt by Association&quot; Analysis</a><div class='pub-body'>Jesse Gillis, Paul Pavlidis (2011) <i>PLoS ONE</i>. doi:<a class='pub-doi' href='https://doi.org/10.1371/journal.pone.0017258'>10.1371/journal.pone.0017258</a></div></div></td></tr><tr><td><a href='/doi/10.1161/CIRCGENETICS.115.001181' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>8.</div></td><td><div class='doi-body' data-key='10.1161/CIRCGENETICS.115.001181'><a href='/doi/10.1161/CIRCGENETICS.115.001181' class='pub-title'>Genetic Association–Guided Analysis of Gene Networks for the Study of Complex Traits</a><div class='pub-body'>Casey S. Greene, Daniel S. Himmelstein (2016) <i>Circulation: Cardiovascular Genetics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1161/CIRCGENETICS.115.001181'>10.1161/CIRCGENETICS.115.001181</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d162' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>9.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d162'><a href='/discussion/data-nomenclature-naming-and-abbreviating-our-network-types/162' class='pub-title'>Data nomenclature: naming and abbreviating our network types</a><div class='pub-body'>Daniel Himmelstein, Lars Juhl Jensen, Pouya Khankhanian (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d162'>10.15363/thinklab.d162</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d182' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>10.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d182'><a href='/discussion/announcing-pharmacotherapydb-the-open-catalog-of-drug-therapies-for-disease/182' class='pub-title'>Announcing PharmacotherapyDB: the Open Catalog of Drug Therapies for Disease</a><div class='pub-body'>Daniel Himmelstein (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d182'>10.15363/thinklab.d182</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d112' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>11.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d112'><a href='/discussion/using-the-neo4j-graph-database-for-hetnets/112' class='pub-title'>Using the neo4j graph database for hetnets</a><div class='pub-body'>Daniel Himmelstein (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d112'>10.15363/thinklab.d112</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d134' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>12.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d134'><a href='/discussion/path-exclusion-conditions/134' class='pub-title'>Path exclusion conditions</a><div class='pub-body'>Daniel Himmelstein (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d134'>10.15363/thinklab.d134</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d193' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>13.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d193'><a href='/discussion/transforming-dwpcs-for-hetnet-edge-prediction/193' class='pub-title'>Transforming DWPCs for hetnet edge prediction</a><div class='pub-body'>Daniel Himmelstein, Pouya Khankhanian, Antoine Lizee (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d193'>10.15363/thinklab.d193</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d178' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>14.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d178'><a href='/discussion/assessing-the-effectiveness-of-our-hetnet-permutations/178' class='pub-title'>Assessing the effectiveness of our hetnet permutations</a><div class='pub-body'>Daniel Himmelstein (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d178'>10.15363/thinklab.d178</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d215' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>15.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d215'><a href='/discussion/edge-dropout-contamination-in-hetnet-edge-prediction/215' class='pub-title'>Edge dropout contamination in hetnet edge prediction</a><div class='pub-body'>Daniel Himmelstein (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d215'>10.15363/thinklab.d215</a></div></div></td></tr></table>
+
+    
+
+
+	</td>
+	<td class="thread-sidebar">
+
+
+			
+
+      <a class="btn btn-default follow-link btn-follow btn-lg is-following tt-top full-width" title="Follow discussion" data-id="115" data-ctype="thread" data-is-following="false">&nbsp;</a>
+
+      
+        <div class="status-box text-center"><span style="">Status:</span> 
+  Open
+
+</div>
+      
+
+      
+        
+      
+
+
+				
+
+					<div class="details">Views</div>
+					<span style="font-size:20px;">113</span>
+
+        
+
+				
+					<div class="details">Topics</div>
+					<div style="margin-bottom:15px;">
+		            <a href="/topics/hnep" class="tag">HNEP</a><a href="/topics/features" class="tag">Features</a><a href="/topics/metapaths" class="tag">Metapaths</a><a href="/topics/hetnets" class="tag">Hetnets</a>
+					</div>
+				
+
+
+		
+			<div class="details">Referenced by</div>
+			<div style="font-size:12px;"><ul style="padding-left:16px !important;">
+			
+				<li>
+					
+					<a href='/discussion/our-hetnet-edge-prediction-methodology-the-modeling-framework-for-project-rephetio/210' class='thread-title'>Our hetnet edge prediction methodology: the modeling framework for Project Rephetio</a>
+				</li>
+			
+				<li>
+					
+					Research report: <a href='/p/rephetio/report'>Rephetio: Repurposing drugs on a hetnet</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/introducing-the-residual-degree-weighted-path-count-r-dwpc/214' class='thread-title'>Introducing the Residual Degree Weighted Path Count (R-DWPC)</a>
+				</li>
+			
+				</ul>
+			</div>
+		
+
+		
+			<div class="details">Cite this as</div>
+			<span style="font-size:12px;">
+				Daniel Himmelstein (2015) Assessing the informativeness of features. <i>Thinklab.</i> doi:<a href='https://doi.org/10.15363/thinklab.d115'>10.15363/thinklab.d115</a>
+			</span>
+		
+
+		<div class="details">License</div>
+		<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0;width:88px;height:31px;" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></p>
+
+		<div class="details">Share</div>
+		
+			
+				<a class="share-button fb" onclick="javascript:void(window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A//thinklab.com/discussion/assessing-the-informativeness-of-features/115','','width=600,height=460,menubar=no,status=no'));" href="#"></a>
+<a class="share-button twitter" onclick="javascript:void(window.open('https://twitter.com/share?text=Assessing%20the%20informativeness%20of%20features&url=https%3A//thinklab.com/discussion/assessing-the-informativeness-of-features/115','','width=600,height=300,menubar=no,status=no'));" href="#"></a>
+<a class="share-button google" onclick="javascript:void(window.open('https://plus.google.com/share?url=https%3A//thinklab.com/discussion/assessing-the-informativeness-of-features/115','','width=510,height=460,menubar=no,status=no'));" href="#"></a>
+
+			
+		
+
+	</td>
+</tr></table>
+
+
+		</div>
+
+
+		
+	    	<div class="footer">
+<div style="background:#dedede;">
+	<div class="main-centered-div text-center" style="padding:20px;">
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#fd9598919192bd8995949396919c9fd39e9290"><span class="__cf_email__" data-cfemail="81e9e4ededeec1f5e9e8efeaede0e3afe2eeec">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+	</div>
+</div>
+<div class="main-footer">
+	<div class="main-centered-div">
+
+<table class="full-width"><tr>
+	<td class="footer-nav">
+
+        <div class="foot-head">Explore</div>
+        <a href="/proposals">Proposals</a><br>
+        <a href="/projects">Projects</a><br>
+        <a href="/publications">Article discussion</a><br>
+        <a href="/discussion">All discussion</a><br>
+        <a href="/topics">Topics</a><br>
+        <!-- <a href="/funders">Funders</a><br> -->
+        <a href="/funding">Funding opportunities</a><br>
+
+	</td>
+	<td class="footer-nav">
+
+        <!-- <div class="foot-head">Help &amp; feedback</div>	 -->
+        <!-- <div class="foot-head">Intro</div>
+        <a href="/benefits/for-science">Why</a><br>
+        <a href="/how-it-works">How it works</a><br>
+
+<br> -->
+
+        <div class="foot-head">Community</div>
+        <a href="/leaderboard">Leaderboard</a><br>
+        <a href="/p/meta">Thinklab Meta</a><br>
+				<a href="/help/faq">Help</a><br>
+				<!-- <a href="/new-project">Start a proposal</a><br> -->
+        <!-- <a href="/benefits/proposal">Benefits</a><br> -->
+        <!-- <a href="/funding">Get funded</a><br> -->
+        <!-- <a href="/participate">Become a contributor</a><br> -->
+        <!-- <a href="/for-funders">For science funders</a><br> -->
+        <!-- <a href="/for-institutions">For institutions</a><br> -->
+
+	</td>
+	<td class="footer-nav">
+
+
+
+        <div class="foot-head">About</div>
+        <a href="/about">Overview</a><br>
+        <a href="/benefits">Benefits</a><br>
+        <a href="/how-it-works">How it works</a><br>
+        <a href="/about/story">Our story</a><br>
+        <a href="/blog">Our blog</a><br>
+        <a href="/about/jobs">Join the team</a><br>
+        <br>
+
+        <!-- <div class="foot-head">Help</div>
+        <a href="/help">Help</a><br>
+		 -->
+
+
+	</td>
+	<td class="footer-nav">
+		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
+		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<br><br>
+		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
+
+	</td>
+
+</tr></table>
+
+</div>
+</div>
+</div>
+
+		
+
+	</div>
+
+
+  <script></script>
+  <script>
+  var MEDIA_URL = 'https://think-lab.s3.amazonaws.com/m/';
+  var STATIC_URL = 'https://think-lab.s3.amazonaws.com/s/';
+  var page_is_authenticated = false;
+  var page_page = 'discussion';
+  var page_profile_id = undefined;
+</script>
+
+
+
+	<!-- Note different script type. MUST come before MathJax.js -->
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	        "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"],
+	                        scale: 110, linebreaks: { automatic:true },
+	                        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+	        tex2jax: { inlineMath: [ ["$$", "$$"], ["\\(","\\)"] ],
+	                    displayMath: [ ["$$$","$$$"], ["\\[", "\\]"] ],
+	                    processEscapes: true,}
+	            });
+
+	</script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://think-lab.s3.amazonaws.com/s/dist/main.min.js"></script>
+  
+
+
+
+  
+	
+  
+  
+  
+<script>
+$(function() {
+  recordHit('thread', 115);
+});
+</script>
+
+
+
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>

@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZgEOC19dW0QCEVtHU1gG","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":1440}</script>
+    <title>Brainstorming future directions for Hetionet | Thinklab</title>
+	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
+    <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/highlightjs/github.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/css.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/bootstrap-multiselect.css" />
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
+    
+    
+    
+    
+  
+    <meta name="citation_doi" content="10.15363/thinklab.d227">
+    <meta name="citation_title" content="Brainstorming future directions for Hetionet">
+    <meta name="citation_online_date" content="Nov. 19, 2016">
+    <meta name="citation_author" content="Daniel Himmelstein, Benjamin Good, Pouya Khankhanian, Alex Ratner">
+    <meta name="citation_journal_title" content="Thinklab">
+    <meta name="citation_publisher" content="Thinklab">
+  
+
+    
+
+
+	<!-- GoogleAnalytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-48550230-1', 'thinklab.com');
+	ga('require', 'displayfeatures');
+	
+	ga('send', 'pageview');
+
+	</script>
+
+
+
+
+
+
+</head>
+<body >
+  <form id="form_action" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+</form>
+
+	
+
+	<div class="body-wrapper">
+
+		
+
+
+<!-- <div style="height:5px;background-image:url('https://think-lab.s3.amazonaws.com/s/img/top-bg.gif');"></div> -->
+<div class="gradient">
+	<div class="main-centered-div header-container">
+
+<table class="full-width" style="height:60px;"><tr>
+	<td style="width:200px;vertical-align:middle;padding-bottom:15px;">
+		<a href="/" style="font-weight:normal;color:#212121;"><img src="https://think-lab.s3.amazonaws.com/s/img/logo.png" width="160"></a>
+	</td><td style="vertical-align:middle;text-align:left;padding-top:6px;width:100%;padding-left:40px;">
+		<ul id="not-search-block"  class="main-header">
+
+
+			
+
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/proposals">Proposals</a></li>
+						<li><a href="/projects">Projects</a></li>
+						<li><a href="/publications">Article discussion</a></li>
+						<li><a href="/discussion">All discussion</a></li>
+					</ul>
+				</li>
+				<li><a href="/leaderboard">Leaderboard</a></li>
+
+			
+				<li><a href="/about">About</a></li>
+			
+
+
+		</ul>
+
+    <ul id="search-block" class="main-header" style="display: none; margin-right: 30px;">
+        <li class="full-width">
+            <form method="get" action="/search">
+			<div class="input-group full-width">
+				<input name="q" type="text" class="form-control search-input">
+			</div>
+            </form>
+        </li>
+    </ul>
+
+	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
+		<ul class="main-header pull-right" style="padding-left: 0;">
+    		
+                <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+            
+
+        </ul>
+    </ul>
+	</td>
+</tr></table>
+
+<!-- <div id="global-search-div" class="main-centered-div" style="display:none;">
+	<input type="text" value="" class="thread-search form-control" placeholder="Search" data-action="/discussion">
+</div> -->
+
+	</div>
+</div>
+
+		
+	  
+
+
+
+	  
+
+
+		
+
+		<div class="dark-head"><div class="main-centered-div">
+
+			
+
+		</div></div>
+		
+		<div class="main-centered-div" style="margin-top:40px;padding-bottom:340px">
+	    
+
+<div style="margin-top:-20px; margin-bottom:20px;">
+
+    <a class="side-box" href="/p/rephetio" style="background-color:#ebfdff;"><div class="side-type">Project:</div> <div class="side-title">Rephetio: Repurposing drugs on a hetnet [rephetio]</div></a><br>
+
+
+
+</div>
+
+<table style="margin-top:0px;"><tr>
+	<td class="thread-table-content">
+
+		<table class="full-width">
+			
+<tr class="comment-tr target-hl" id="1" data-comment-id="1380">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1380"></a>
+
+    
+
+			<h2 class="page-title" style="margin-bottom:5px;margin-top:0px !important;">Brainstorming future directions for Hetionet</h2>
+
+			<div style="margin-top:5px;color:gray;margin-bottom:20px;font-size:13px;">
+				<a style="font-weight:normal;color:#212121" href="/u/dhimmel"><strong>Daniel Himmelstein</strong></a>
+				<span class="is-researcher">Researcher</span>
+				&nbsp; <a href="#1" class="light">229 days ago</a>
+				
+			</div>
+
+      
+
+          <hr>
+		
+
+    <p>Last Friday, in an <a href="http://greenelab-onboarding.readthedocs.io/en/latest/communication.html#meetings" title="Greene Lab Onboarding: Meetings">applied imagination</a> meeting for the <a href="/u/caseygreene" class="username">@caseygreene</a> lab, we brainstormed future directions for Hetionet. The timing worked out well as we had just released our <a href="https://thinklab.com/p/rephetio/report">initial report</a> <span class="citation">[<a href="/p/rephetio/report" class="citation" data-key="10.15363/thinklab.a7">1</a>, <a href="https://doi.org/10.1101/087619" class="citation" data-key="10.1101/087619">2</a>]</span>.</p>
+
+<p><strong>The following modifications to Hetionet were brought up:</strong></p>
+
+<ul><li>Adding biologic drugs, e.g. antibodies, since Hetionet v1.0 <a href="https://thinklab.com/discussion/unifying-drug-vocabularies/40#5" class="citation thread-citation" data-key="10.15363/thinklab.d40">only includes</a> approved small molecules. In previous private communications, <a href="/u/sergiobaranzini" class="username">@sergiobaranzini</a> has also strongly supported adding biologics as well as a more comprehensive set of small molecules.</li><li>Adding metabolites since the efficacy of many small molecules results from metabolites.</li><li>Updating Hetionet continuously in an automated fashion. Versioning could enable updates, using a scheme similar to API versioning. For example, we could use versioned URLs for our Neo4j Browser, such as <code>v1.het.io</code>.</li><li>Adding microbiome information, such as microbial communities and drug-microbe interactions.</li><li>Create the network by <a href="https://github.com/HazyResearch/snorkel">snorkeling</a> the literature. Hetionet v1.0 could be used as the "ground truth" to extract labeling functions. We alluded to data programming techniques in the report, writing "Going forward, advances in automated mining of the scientific literature could enable extraction of precise relationship types at omics scale <span class="citation">[<a href="https://doi.org/10.1145/2939502.2939515" class="citation" data-key="10.1145/2939502.2939515">3</a>]</span>."</li><li>Adding SNPs, potentially using <a href="http://exac.broadinstitute.org/">ExAC</a> <span class="citation">[<a href="https://doi.org/10.1038/nature19057" class="citation" data-key="10.1038/nature19057">4</a>]</span> for allele frequencies.</li><li>Adding a discovery date property to relationships. Year of earliest publication could provide a proxy for some relationship types with source publication metadata. This could allow us to see if we can predict future knowledge from past knowledge and help address <a href="https://thinklab.com/discussion/text-as-a-resource-for-network-population/48#2" class="citation thread-citation" data-key="10.15363/thinklab.d48">knowledge biases</a>.</li><li>Incorporating universal edge weights representing confidence in a relationship. In the past, <a href="/u/larsjuhljensen" class="username">@larsjuhljensen</a> has also <a href="https://thinklab.com/discussion/the-tissues-resource-for-the-tissue-specificity-of-genes/91#3" class="citation thread-citation" data-key="10.15363/thinklab.d91">strongly advocated</a> against our binarization of uncertain relationships.</li><li>Supporting the addition of user-supplied relationships</li><li>Adopting more ontologies. Perform propagation during query-time. See <a href="https://github.com/greenelab/hetontology">Hetontology</a> which aims to host all openly-licensed OBOFoundry ontologies in a public Neo4j instance.</li></ul>
+
+<p><strong>The following modifications to Project Rephetio were brought up:</strong></p>
+
+<ul><li>Quantifying the significance of a predication. Showing enrichment over null rather than probability of treatment to provide more context.</li><li>Algorithms that account for relationship weight/confidence when measuring path prevalence for a given metapath between two nodes.</li><li>Focusing on drugs and diseases as perturbations to biological systems/pathways.</li><li>Better capturing tissue specific effects. Accounting for which tissues/anatomies drug efficacy occurs in for a specific compound and disease. How do drugs work in a specific tissue?</li><li>Queries that leverage metapatterns, rather than just metapaths. Metapatterns encompass queries that search for more than just a simple path. Metapatterns could help create tissue-specific aware features and drill down on the mechanisms of drug efficacy. Currently, we identify when a drug will work, but not necessarily why a drug will work (mechanisms).</li></ul>
+
+<p><strong>The following new applications of Hetionet were discussed:</strong></p>
+
+<ul><li>Predicting drug-drug interactions.</li><li>Allowing users to provide their own gene sets. Enabling some sort of gene set enrichment queries. For example, what drugs interact with a given gene set?</li><li>When multiple drugs are available for a disease, what are the differences and which drug should be used for a given patient?</li><li>Clustering nodes, such as extracting gene modules.</li></ul>
+
+<p>Thanks to everyone who participated: <a href="/u/caseygreene" class="username">@caseygreene</a>, Jaclyn Taroni, Jie Tan 💻, <a href="/u/gregway" class="username">@gregway</a>, Brett Beaulieu-Jones, René Zelaya, Matt Huyck 💻, Dongbo Hu, Amy Campbell, Kathy Chen, Timothy Chang, Linda Zhou, and Stephen Woloszynek (💻 denotes virtual participation). There're clearly more ideas than time, which is why these discussions are important — so we pursue only the best!</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="2" data-comment-id="1381">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1381"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#2" class="light">229 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Building on <strong>Adopting more ontologies. Perform propagation during query-time</strong>, here is text I had sitting in a draft:</p>
+
+<blockquote><p>Currently, we don't include ontological edges. For example, there is no <em>myelination→is_a→axon ensheathment</em> relationship despite its presence in the Gene Ontology. We omitted this information because we didn't have a query framework that accommodated its complexity. However, Neo4j supports <a href="https://neo4j.com/docs/developer-manual/3.0/cypher/#_variable_length">variable-length pattern matching</a>, which will make realtime transitive closure feasible.</p></blockquote>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="3" data-comment-id="1383">
+  <td class="comment-profile-avatar">
+		<a href="/u/b_good"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/48_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1383"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/b_good">Benjamin Good</a>
+				
+				<span class="light">&nbsp;<a href="#3" class="light">226 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p><a href="/u/dhimmel" class="username">@dhimmel</a> I would really like to find a way to collaborate more directly.  We have two PhD students and a postdoc all working on extensions to the hetionet project - <strong>thanks entirely to your efforts to be open here on ThinkLab</strong>.  They are interested in: DeepDive/SNorkel, extending to rare genetic diseases, expanding drug coverage (particularly in relation to the <a href="http://www.calibr.org">Calibr</a> collection we now will have access to), and generally improving the framework itself.  </p>
+
+<p>Apart from their interests, one of the things I would personally like to see is a better exposure of the network you have assembled to the community beyond bioinformaticians.  The purposes are both to support hypothesis generation for them and to tap into their collective expertise to crowdsource the curation and extension of the network.  One way that might be achieved would be to load it into an incarnation of an application I am building in partnership with Richard Bruskiewich and his team at <a href="http://medgeninformatics.net/">Star Informatics</a> called knowledge.bio.  The <a href="http://knowledge.bio">first version of knowledge.bio</a> is online now, described in a <a href="http://biorxiv.org/content/early/2016/05/26/055525">BioarXiv article</a> and available on in the <a href="https://bitbucket.org/sulab/kb1">kb1 bitbucket repo</a>.  The next version is due to be released at the end of the year, is a complete rewrite (including a move to neo4j), makes extensive use of wikidata,  supports limited social features, and is available in the <a href="https://bitbucket.org/sulab/kb2">kb2 repo</a>.  </p>
+
+<p>Everything above is at the 'strong starting point' phase.  If you or other members of your group are interested in joining forces to take them to fruition, let us know!</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="4" data-comment-id="1384">
+  <td class="comment-profile-avatar">
+		<a href="/u/b_good"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/48_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1384"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/b_good">Benjamin Good</a>
+				
+				<span class="light">&nbsp;<a href="#4" class="light">226 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>We are also working with the Monarch consortium on a large knowledge integration project known as TransMed.  This will be leveraging and extending the <a href="https://github.com/SciGraph/SciGraph">SciGraph</a> system they built for Monarch.  SciGraph exposes OWL ontologies and associated knowledge bases for query in the form of graph databases like neo4j.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="5" data-comment-id="1385">
+  <td class="comment-profile-avatar">
+		<a href="/u/pouyakhankhanian"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/188_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1385"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/pouyakhankhanian">Pouya Khankhanian</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#5" class="light">225 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p><a href="/u/dhimmel" class="username">@dhimmel</a> thats an excellent list of potential ideas. I'd fully agree with expanding to include (reliable) data types as much as possible. The idea of automated continuous updating is very cool, but seems like a ton of workhours to maintain long term. Drug-drug interactions can easily be tested against a "gold standard" database. I'm guessing it's relatively cheap (in work hours) for you to re-write the code to create drug-drug matches?</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="6" data-comment-id="1391">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1391"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#6" class="light">219 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <blockquote><p>The idea of automated continuous updating is very cool, but seems like a ton of workhours to maintain long term.</p></blockquote>
+
+<p><a href="/u/pouyakhankhanian" class="username">@pouyakhankhanian</a>, if we move to more automated techniques on more standardized inputs, I thinks it's possible to entirely automate updates. One area of interest in my current lab, the <a href="http://www.greenelab.com/">Greene Lab</a>, is automation <span class="citation">[<a href="https://doi.org/10.1101/056473" class="citation" data-key="10.1101/056473">1</a>]</span>. As a simple example, see <a href="https://github.com/dhimmel/thinklytics"><code>dhimmel/thinklytics</code></a> which automatically backs up and analyzes <em>Thinklab</em> content on a daily basis. Obviously, building Hetionet is much more complex, which means automation will be more difficult but also more valuable.</p>
+
+<blockquote><p>Drug-drug interactions can easily be tested against a "gold standard" database. I'm guessing it's relatively cheap (in work hours) for you to re-write the code to create drug-drug matches?</p></blockquote>
+
+<p>Yeah that wouldn't be too bad. I'd probably rework some of the current analysis pipeline to be more reproducible and automatable. Currently, it's difficult for others to re-execute and extend our computations — see for example, <a href="https://github.com/dhimmel/integrate/issues/9">this issue</a> by <a href="/u/tongli" class="username">@tongli</a>.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="7" data-comment-id="1392">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1392"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#7" class="light">219 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <blockquote><p><a href="/u/dhimmel" class="username">@dhimmel</a> I would really like to find a way to collaborate more directly. We have two PhD students and a postdoc all working on extensions to the hetionet project - thanks entirely to your efforts to be open here on ThinkLab.</p></blockquote>
+
+<p><a href="/u/b_good" class="username">@b_good</a> definitely. First, let me say that it's been super encouraging to see your team extend Hetionet / Rephetio. I'm not entirely sure what extensions you're working on, but the GitHub Issues opened have helped me see the sticking points of my old workflows.</p>
+
+<p>From your comment, I think we're all thinking along the same lines. All biomedical knowledge should be mined from the literature into a hetnet. The hetnet should be stored in Neo4j. Nodes should be from ontologies and standardized vocabularies that can be automatically maintained. Curation should be fully outsourced or, if necessary, crowdsourced. Layers on top of the Neo4j database will likely be needed to provide biologists with user-friendly interfaces for domain-specific functionality.</p>
+
+<p>I think that we're at a point where we can achieve the above objectives. One outstanding issue that I'd love input on is how to deal with context-specific relationships. For example, protein interactions that only exist in a certain tissue <span class="citation">[<a href="https://doi.org/10.1186/s13059-016-0913-4" class="citation" data-key="10.1186/s13059-016-0913-4">1</a>]</span>. I don't think my conception of hetnets or Neo4j's graph model are well-suited for this task.</p>
+
+<p>But to the point, let's not duplicate efforts. I'm hoping that everyone who shares our vision can join forces into a collaborative open source development community. There's lot's of overlap with the NCATS Biomedical Translator Program, which funded <a href="https://ncats.nih.gov/translator/projects">investigators from 11 Universities</a>. <a href="/u/b_good" class="username">@b_good</a> are you affiliated with any of these projects and are they something we could also leverage — i.e. will their development be open source and are they pursuing related or complementary approaches to what we've outlined?</p>
+
+<p>So any suggestions on how best to structure collaboration? I personally think open source GitHub repos that operate on a pull request model are ideal. The difficultly will be coordination, recruitment, and providing an incentive structure that rewards collaboration.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-279" class="inline-note toggle-parent" data-note-id="279">
+	<p><a href="/u/larsjuhljensen">Lars Juhl Jensen</a>: I'm generally happy to contribute - let me know if there are any holes that need to be plugged, and I'll let you know if I have anything or know who does. Also, whereas I'm not part of the NCATS Biomedical Translator, I am part of the NIH funded IDG Knowledge Management Central, which would be another public source of already integrated data.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-280" class="inline-note toggle-parent" data-note-id="280">
+	<p><a href="/u/b_good">Benjamin Good</a>: Our lab is part of the NCATS Translator program.  On a technical level, our team (led by OHSU) will mainly be extending the scigraph system mentioned above.  We will be supporting/using/building this knowledge graph with the Wikidata and BioThings projects.  More to follow on that as things take shape (just got started).  </p>
+
+<p>I've posed the question of how to organize a collaboration here to our group and will also circle back on that front - I hope that they will chime in individually here as I invited them to do.  I think github pull request structure makes sense in general.  Would like to see what specific projects would make sense to take on as a first step though.  If we are serious here, a periodic shared  virtual lab meeting would be a good step forward.  </p>
+
+<p>In terms of context, the wikidata qualifier structure is a pretty lightweight approach that suits a graph db and can be pretty expressive.  I wouldn't limit things to neo4j - there more and more solif competitors out there with different optimal uses.  e.g. I am personally quite impressed with BlazeGraph performance and its ability to host a SPARQL endpoint is compelling from the standpoint of encouraging interoperability on the Web.  
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="8" data-comment-id="1393">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1393"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#8" class="light">219 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Mining knowledge from the literature</h1>
+
+<p>In the early days of Project Rephetio, <a href="/u/b_good" class="username">@b_good</a> <a href="https://thinklab.com/discussion/text-as-a-resource-for-network-population/48" class="citation thread-citation" data-key="10.15363/thinklab.d48">suggested</a> mining text to populate our network. We didn't end up doing much text mining to construct Hetionet v1.0. We did indirectly use relationships extracted from the literature, though <a href="https://thinklab.com/discussion/mining-knowledge-from-medline-articles-and-their-indexed-mesh-terms/67" class="citation thread-citation" data-key="10.15363/thinklab.d67">MEDLINE term co-occurrence</a> and <a href="https://thinklab.com/d/48#3">resources</a> that curated literature.</p>
+
+<p>In general, we were more excited about "edges from systematic technologies that are not subject to knowledge biases" and invested our time in integrating resources such as <a href="https://thinklab.com/discussion/computing-consensus-transcriptional-profiles-for-lincs-l1000-perturbations/43" class="citation thread-citation" data-key="10.15363/thinklab.d43">LINCS L1000</a> and <a href="https://thinklab.com/discussion/stargeo-expression-signatures-for-disease-using-crowdsourced-geo-annotation/96" class="citation thread-citation" data-key="10.15363/thinklab.d96">STARGEO</a>. Our hope was to leverage systematic high-throughput technologies to make novel and insightful drug repurposing predictions. However, as we discuss in our report <span class="citation">[<a href="/p/rephetio/report" class="citation" data-key="10.15363/thinklab.a7">1</a>]</span>:</p>
+
+<blockquote><p>Ideally, different data types would provide orthogonal information. However, our model for whether a compound treats a disease focused on 11 metapaths — a small portion of the hundreds of metapaths available. While parsimony aids interpretation, our model did not draw on the weakly-predictive high-throughput data types — which are intriguing for their novelty, scalability, and cost-effectiveness — as much as we had hypothesized. Instead our model selected types of information traditionally considered in pharmacology. </p></blockquote>
+
+<p>I think increasing our number of positives and fixing <a href="https://thinklab.com/discussion/edge-dropout-contamination-in-hetnet-edge-prediction/215" class="citation thread-citation" data-key="10.15363/thinklab.d215">edge dropout contamination</a> — for example by training on novel <a href="https://thinklab.com/discussion/cataloging-drugdisease-therapies-in-the-clinicaltrialsgov-database/212" class="citation thread-citation" data-key="10.15363/thinklab.d212">clinical trail indications</a> — could help incorporate weakly predictive metapaths into our models. However, the findings of Project Rephetio suggest that we should redirect focus to incorporating established knowledge embedded in the literature.</p>
+
+<p><a href="/u/b_good" class="username">@b_good</a>, I saw that <a href="http://knowledge.bio">knowledge.bio</a> <span class="citation">[<a href="https://doi.org/10.1101/055525" class="citation" data-key="10.1101/055525">2</a>]</span> uses the <a href="https://skr3.nlm.nih.gov/SemMedDB/">Semantic MEDLINE Database</a> (SemMedDB) <span class="citation">[<a href="https://doi.org/10.1093/bioinformatics/bts591" class="citation" data-key="10.1093/bioinformatics/bts591">3</a>]</span>. How good is SemMedDB? Unfortunately, SemMedDB appears to have troubling terms &amp; conditions despite being a US government work and primarily factual. I know <a href="/u/andrewsu" class="username">@andrewsu</a> is in communication with the National Library of Medicine to fix these legal impediments to reuse. In my next post, I'll discuss Snorkel — the question being whether implementing Snorkel will provide sufficient advantages over existing databases, such as SemMedDB.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-281" class="inline-note toggle-parent" data-note-id="281">
+	<p><a href="/u/b_good">Benjamin Good</a>: SemMedDB (created using <a href="https://semrep.nlm.nih.gov">SemRep</a> which you can install locally) is a good general purpose starting point.  It certainly has a lot of good content in it, but it also has a pretty high false positive rate at both the concept tagging and relation prediction levels.  I think for any given entity type, say genes, you could make or find a better tagger (e.g. BANNER) and that the same could be said for most of the relations.  Getting all those different systems running at PubMed scale would be hard but could be worthwhile..  Though the license isn't perfect, the intent is very clearly along the lines of what we hope to see: "SKR resources are available to all requesters, both within and outside the United States, at no charge. "  and I doubt very much there would be any real legal ramifications of using the tools or their outputs.  </p>
+
+<p>Improving the quality of SemMedDB is something I've been hoping to work on with a crowdsourcing/machine learning angle for some time.  One of the main ideas behind knowledge.bio and the reason we seeded it at first with Semmed content was to attract expert users to flag correct and incorrect assertions..  
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="9" data-comment-id="1397">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1397"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#9" class="light">218 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Snorkeling the literature</h1>
+
+<p>Snorkel describes itself as a "a lightweight platform for developing information extraction systems using <a href="https://arxiv.org/abs/1605.07723" title="Data Programming: Creating Large Training Sets, Quickly. arXiv.">data programming</a>" (<a href="https://github.com/HazyResearch/snorkel" title="GitHub"><code>HazyResearch/snorkel</code></a> on GitHub) <span class="citation">[<a href="https://doi.org/10.1145/2939502.2939515" class="citation" data-key="10.1145/2939502.2939515">1</a>]</span>. There's a <a href="https://youtu.be/iSQHelJ1xxU" title="Data Programming NIPS 2016 Spotlight Video">short video</a> describing data programming, although the terminology is a bit foreign to me. Therefore, <a href="/u/caseygreene" class="username">@caseygreene</a> and I videochatted with the lead developer, <a href="https://github.com/ajratner">Alex Ratner</a>, of the Christopher Ré Lab at Stanford.</p>
+
+<p>Here were the takeaways. We could use snorkel to fill in missing relationships in Hetionet. Each of the 24 relationship types would be a distinct classification problem, where we instruct snorkel to learn how to extract that relationship type from the literature. We would start with a single labeling function, which would return true for relationships in Hetionet and false otherwise (distant supervision). Snorkel would fit a generative model that outputs the existing relationships <strong>and more</strong>.</p>
+
+<p>This approach is intriguing for several reasons:</p>
+
+<ul><li>We could fill in missing relationships where Hetionet doesn't currently contain all of the knowledge from the literature.</li><li>Each extracted relationship could refer back to the specific phrases supporting it throughout the literature.</li><li>The resulting hetnets would be free of <a href="https://thinklab.com/discussion/integrating-resources-with-disparate-licensing-into-an-open-network/107" class="citation thread-citation" data-key="10.15363/thinklab.d107">licensing restrictions</a> and therefore could be released fully as CC0.</li><li>The approach can be largely automated and deployed as new literature enters the corpus.</li><li>The approach scales whereas existing human curation approaches do not.</li><li>The approach generalizes meaning each relationship type doesn't require an entirely new processing pipeline.</li></ul>
+
+<p>Alex mentioned the following three steps that take the most time:</p>
+
+<ol><li><strong>data processing</strong> and munging — preparing the input data. Hopefully, the burden here could be minimized since Hetionet v1.0 is already standardized and integrated. Furthermore, Alex mentioned that they've indexed certain portions of PubMed, so we wouldn't have to spend lot's of time configuring a literature corpus in the beginning.</li><li><strong>test set curation</strong> — expert curation of specific phrases from the literature corpus as negative or positives to evaluate performance. Potentially, we could withhold relationships and use them for testing, but the relationships are downstream from the actual classification which occurs at the level of actual text. It sounded like uneven prior probabilities of relationship based on node degree, which <a href="https://thinklab.com/discussion/network-edge-prediction-estimating-the-prior/201" class="citation thread-citation" data-key="10.15363/thinklab.d201">we've experienced</a>, could be an issue with testing on withheld relationships.</li><li><strong>error analysis</strong> — investigating where errors are being made and adding labeling functions to rectify the errors (direct supervision). This step could be amenable to crowdsourcing by community review.</li></ol>
+
+<p>We discussed doing a pilot project based on a single relationship type in Hetionet v1.0 — perhaps <em>Compound–treats–Disease</em> since we've already done substantial curation to create <a href="https://thinklab.com/discussion/announcing-pharmacotherapydb-the-open-catalog-of-drug-therapies-for-disease/182" class="citation thread-citation" data-key="10.15363/thinklab.d182">PharmacotherapyDB</a>.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-282" class="inline-note toggle-parent" data-note-id="282">
+	<p><a href="/u/b_good">Benjamin Good</a>: We have had several folks attempt to Snorkel and before that to use raw DeepDive with very limited success so far.  Conceptually it seems completely awesome and exactly the right way to go.  The implementation(s) have been in a serious state of flux and that has made it a challenge to use.  I still like it and and I know Chris Re is keen to get more use in the biomedical space.  Perhaps this is an area where joining forces would help tip the balance.  
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-284" class="inline-note toggle-parent" data-note-id="284">
+	<p><a href="/u/alexratner">Alex Ratner</a>: <a href="/u/b_good" class="username">@b_good</a> I think this is a very fair take, and we're excited to tip that balance!  Working with a bunch of our "local" colaborators at Stanford, we've been having a lot of success using Snorkel.  However, it's certainly still at a stage where our active involvement–both for help/bugfixes and active collaboration on code development–seems to be a big help, in part since the code is evolving so rapidly in response to feedback.  We're hoping that it will begin to increasingly stabilize soon; and any feedback you have for us on how we could make it easier to use would be greatly appreciated, either via github issues, a skype call, or on this platform!</p>
+
+<p><a href="/u/dhimmel" class="username">@dhimmel</a> A few quick notes on your notes:</p>
+
+<ul><li><p>Regarding your point about not having to create an entirely new pipeline for each relation (edge) type: This is indeed an area we're very excited about!  To clarify: in a standard ML approach to relation extraction, you would indeed have to set up a new pipeline for each relation type- most annoyingly, you'd have to hand label training data for each one.  In our approach, you have to write labeling functions (LFs)–just python fns in Snorkel–but then you can potentially share some of these across multiple relation types.  And as I was getting excited about on our call, we're starting to work on automating this "sharing" of supervision signal within a multi-relation extraction project...</p></li><li><p>Re: Data processing &amp; test set curation: To reiterate what we discussed, we'd love to get more of this data out in the open &amp; shared!  To that end, we're currently preprocessing a lot of the data (PubMed abstracts to start) and plan to post this.  This preprocessing (e.g.: running through NLP pipelines to split sentences, tokenize words, parse linguistic signals &amp; grammatical structure, and then aligning with external entity annotations) is often very messy and time consuming, even though it's not part of what we'd consider Snorkel's "core task".  So we're hoping to get it out of the way for people.  Any pooling of efforts here would be awesome!</p></li><li><p>Re: Error analysis: Just to be clear, I would consider error analysis as one component of the broader process of "developing the extractor", or more specifically for Snorkel, developing labeling functions.  And this would still not be "direct supervision", because you're still not hand-labeling individual examples (although you always could)</p></li></ul>
+
+<p>Anyway, very excited to chat further with everyone here!</p>
+
+<p>-Alex
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-298" class="inline-note toggle-parent" data-note-id="298">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: Thanks <a href="/u/b_good" class="username">@b_good</a> and <a href="/u/alexratner" class="username">@alexratner</a> for weighing in. The Greene Lab has got a new rotation  student, David Nicholson, who is interesting in piloting Snorkel. We <a href="https://github.com/greenelab/snorkeling/issues/1">were thinking</a> of starting with <em>Compound–treats–Disease</em> relationships. The project is on GitHub at <a href="https://github.com/greenelab/snorkeling"><code>greenelab/snorkeling</code></a>. Your time permitting, <a href="/u/b_good" class="username">@b_good</a> we'd love your involvement, especially in the early stages where your feedback will lead us down the right path. <a href="/u/b_good" class="username">@b_good</a>, do you have a GitHub handle?
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-299" class="inline-note toggle-parent" data-note-id="299">
+	<p><a href="/u/b_good">Benjamin Good</a>: <a href="/u/dhimmel" class="username">@dhimmel</a> would love to be involved but am currently on family leave.  (Back in February).  Suggest engaging with <a href="/u/tongli" class="username">@tongli</a> from our lab.  I believe he has the most relevant  experience to offer and can connect you to other lab members (active and departed) that have worked with it.  Obviously <a href="/u/alexratner" class="username">@alexratner</a> is probably your best resource here :)..
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-300" class="inline-note toggle-parent" data-note-id="300">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: <a href="/u/b_good" class="username">@b_good</a> ah yes, congrats on <a href="https://twitter.com/bgood/status/808069248543096832">Version 3.0</a>. Enjoy the time away — will try not to bother you.</p>
+
+<p><a href="/u/tongli" class="username">@tongli</a> (<a href="https://github.com/veleritas"><code>veleritas</code></a> on GitHub) — feel free to get involved on <code>greenelab/snorkeling</code> as little or much as you want. If interested, I can mention you for pull request review or issues where I think your input may be helpful.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-301" class="inline-note toggle-parent" data-note-id="301">
+	<p><a href="/u/b_good">Benjamin Good</a>: <a href="/u/dhimmel" class="username">@dhimmel</a> quick note that you might consider starting with a relation type (or 2) that are less semantically complex and more plentiful in the research literature than 'treats'.  As you  and others have demonstrated, potential new 'treats' relations can be inferred based on specific constellations of other relations (e.g. genetic interaction, physical interaction etc).  Even if DeepDive magic can eventually start figuring out those deeper signatures automatically, its probably worth a look as a starting point..   
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="10" data-comment-id="1415">
+  <td class="comment-profile-avatar">
+		<a href="/u/b_good"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/48_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1415"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/b_good">Benjamin Good</a>
+				
+				<span class="light">&nbsp;<a href="#10" class="light">214 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Regarding the initial preprocessing (e.g. splitting, NER) of PubMed, I wonder if the <a href="http://pubannotation.org">PubAnnotation</a> project might provide some useful structures and data ?  </p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="11" data-comment-id="1461">
+  <td class="comment-profile-avatar">
+		<a href="/u/alexratner"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/313_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1461"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/alexratner">Alex Ratner</a>
+				
+				<span class="light">&nbsp;<a href="#11" class="light">181 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Hi <a href="/u/dhimmel" class="username">@dhimmel</a> this is really exciting!  Thoughts (some others also in the issues discussion of your repo):</p>
+
+<ul><li><p>Is <em>compound</em> functionally too different from chemical?  We have tags for chemical and disease in Snorkel format already, for PubMed abstracts via <a href="https://www.ncbi.nlm.nih.gov/CBBresearch/Lu/Demo/PubTator/">PubTator</a>.  If compound is different, we also have / are working on tools for building custom entity taggers for this, but it's just another step that would have to be tackled</p></li><li><p>I definitely agree with <a href="/u/b_good" class="username">@b_good</a>'s general sentiment of starting with simpler relation types, although don't have a lot of intuition for which are more tractable.  Easy things to check off when selecting extraction schema:</p><ul><li>Make sure that the relation type is well defined / unambiguous enough that you can cleanly annotate some example yourself</li><li>Test some simple baseline methods (e.g. a regex or two) to make sure it's not too simple / general (if it is, maybe the regex is good enough, and no need for Snorkel; or maybe this is good cue to jump to the more specific, complex relation type you actually care about!)</li></ul></li><li><p><a href="/u/b_good" class="username">@b_good</a> that resource looks really cool, thanks for sharing!</p></li></ul>
+
+<p>We're trying to wrap up a bunch of dev stuff that's been scattered about over last month or so, hoping to push something to dev and master in next 1-2 weeks, stay tuned!</p>
+
+<p>Thanks,<br>Alex</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="12" data-comment-id="1466">
+  <td class="comment-profile-avatar">
+		<a href="/u/b_good"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/48_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1466"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/b_good">Benjamin Good</a>
+				
+				<span class="light">&nbsp;<a href="#12" class="light">179 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>I think it would be a great experimental setup to begin your extraction work using the relationships in your current hetnet as your gold standard (standards.. one per relation type).  First that means you have a gold standard already which is a huge part of the work in building up an NLP system (and can likely publish good results in NLP-related arenas).  Second, if it works, you have an automated way to grow the hetnet on a daily basis and potentially to scrub out the licensed content.  Third you set yourself up for a great experiment - can a drug-treats-disease automatic relation finder outperform your results from the hetnet + R inference model?   How can those methods be harmonized?</p>
+
+<p>This will be a great project... </p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="13" data-comment-id="1467">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1467"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#13" class="light">175 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p><a href="/u/b_good" class="username">@b_good</a>, <a href="#12">your comment</a> nails the promise of snorkeling hetnets. I was envisioning using Snorkel for network construction rather than relationship prediction. In other words, I'd want each literature extracted relationship to derive from specific phrases that directly attest to the relationships' existence. However you bring up an interesting point — will Snorkel begin to infer relationships and become a substitute for hetnet edge prediction?</p>
+
+<h2>The <em>Compound–treats–Disease</em> Pilot</h2>
+
+<blockquote><p>you might consider starting with a relation type (or 2) that are less semantically complex and more plentiful in the research literature than 'treats'.</p></blockquote>
+
+<p>Is whether a compound <em>treats</em> a disease really so semantically complex? For example, here is an example abstract sentence which implies a CtD relationship from <a href="https://www.ncbi.nlm.nih.gov/CBBresearch/Lu/Demo/PubTator/curator_identifier.cgi?user=User636411530&amp;pmid=8694680&amp;searchtype=PubMed_Search&amp;query=8694680&amp;page=1&amp;Species_display=1&amp;Chemical_display=1&amp;Gene_display=1&amp;Disease_display=1&amp;Mutation_display=1&amp;tax=">an abstract</a> <span class="citation">[<a href="https://doi.org/10.1001/archpsyc.1996.01830080023006" class="citation hm " data-key="10.1001/archpsyc.1996.01830080023006">1</a>]</span>:</p>
+
+<blockquote><p>Acamprosate proved to be a safe and effective aid in treating alcohol-dependent patients and in maintaining the abstinence of patients during 2 years.</p></blockquote>
+
+<p>I'm hoping we can steer Snorkel away from making inferences say based on the genes involved in alcohol dependence and instead focus on actual statements of clinical efficacy. PharmacotherapyDB has 755 disease-modifying treatments — <a href="/u/ajratner" class="username">@ajratner</a> will this be sufficient to support an effective labeling function? If not, we could expand to all <a href="https://thinklab.com/discussion/cataloging-drugdisease-therapies-in-the-clinicaltrialsgov-database/212#2" class="citation thread-citation" data-key="10.15363/thinklab.d212">clinical trial indications</a>, which would give us ~30,000 gold standard relationships.</p>
+
+<p><a href="/u/b_good" class="username">@b_good</a> if we struggle at snorkeling <em>treats</em> relationships, we could always pilot another relationship type that was more semantically straightforward and plentiful. <em>Gene–interacts–Gene</em> <a href="https://thinklab.com/discussion/creating-a-catalog-of-protein-interactions/85#9" class="citation thread-citation" data-key="10.15363/thinklab.d85">relationships</a> would be one possibility.</p>
+
+<h2>Entity tagging and mapping</h2>
+
+<blockquote><p>Is compound functionally too different from chemical? We have tags for chemical and disease in Snorkel format already, for PubMed abstracts via <a href="https://www.ncbi.nlm.nih.gov/CBBresearch/Lu/Demo/PubTator/">PubTator</a>.</p></blockquote>
+
+<p><a href="/u/alexratner" class="username">@alexratner</a>, compound and chemical are the same thing. Looks like PubTator tags<br>genes, diseases, species, chemicals, and mutations <span class="citation">[<a href="https://doi.org/10.1093/nar/gkt441" class="citation hm " data-key="10.1093/nar/gkt441">2</a>, <a href="https://doi.org/10.1093/database/bas041" class="citation hm " data-key="10.1093/database/bas041">3</a>]</span>. Of these, Hetionet contains genes, diseases, and chemicals. </p>
+
+<ul><li><p>PubTator uses Entrez Gene for genes, as <a href="https://thinklab.com/discussion/using-entrez-gene-as-our-gene-vocabulary/34#12" class="citation thread-citation" data-key="10.15363/thinklab.d34">do we</a>. Genes are tagged using <a href="https://www.ncbi.nlm.nih.gov/CBBresearch/Lu/Demo/tmTools/#GNormPlus">GNormPlus</a> <span class="citation">[<a href="https://doi.org/10.1155/2015/918710" class="citation hm " data-key="10.1155/2015/918710">4</a>]</span>.</p></li><li><p>PubTator uses <a href="https://www.ncbi.nlm.nih.gov/CBBresearch/Lu/Demo/tmTools/#DNorm">DNorm</a> to tag diseases <span class="citation">[<a href="https://doi.org/10.1093/bioinformatics/btt474" class="citation hm " data-key="10.1093/bioinformatics/btt474">5</a>]</span>, which uses MEDIC. MEDIC is the disease vocabulary used by the Comparative Toxicogenomics Database (CTD) <span class="citation">[<a href="https://doi.org/10.1093/database/bar065" class="citation hm " data-key="10.1093/database/bar065">6</a>]</span>, which consists of OMIM and MeSH terms.</p></li><li><p>Compounds in PubTator are tagged with <a href="https://www.ncbi.nlm.nih.gov/CBBresearch/Lu/Demo/tmTools/#tmChem">tmChem</a> <span class="citation">[<a href="https://doi.org/10.1186/1758-2946-7-S1-S3" class="citation hm " data-key="10.1186/1758-2946-7-S1-S3">7</a>]</span>, which uses MeSH and ChEBI, so we'll have to find <a href="https://twitter.com/biocs/status/818376472641544192">a way</a> to map MeSH to Drugbank.</p></li></ul>
+
+<h2>Future Snorkel discussion</h2>
+
+<p>I'd like to make sure this brainstorming discussion doesn't explode with Snorkel implementation details. So for any Snorkel comments that will generate lot's of discussion, let's either create new discussions on Thinklab or <a href="https://github.com/greenelab/snorkeling/issues">issues</a> on <code>greenelab/snorkeling</code>. We can also make a new Thinklab project for snorkeling.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="14" data-comment-id="1470">
+  <td class="comment-profile-avatar">
+		<a href="/u/alexratner"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/313_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1470"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/alexratner">Alex Ratner</a>
+				
+				<span class="light">&nbsp;<a href="#14" class="light">170 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p><a href="/u/dhimmel" class="username">@dhimmel</a> Sorry for the delayed response here.  I 100% agree with your statement <em>"I was envisioning using Snorkel for network construction rather than relationship prediction. In other words, I'd want each literature extracted relationship to derive from specific phrases that directly attest to the relationships' existence."</em></p>
+
+<p>In some sense this is an engineering decision: we <em>could</em> train any predictive model, but it seems best in our experience to train one to extract the concrete explicit <em>mentions</em> of relations, and then to do further reasoning / prediction / analysis over these.</p>
+
+<p>In terms of the complexity of the <em>treats</em> relationship is probably higher than you'd expect... thank you natural language... but definitely very doable (actually, we have a chemical-induced disease extraction application using CTD distant supervision which beats state-of-the-art on a BioCreatives task, will clean up as tutorial soon...)</p>
+
+<p>However as to which labeling functions / weak supervision will be good enough... no great easy answers, let's see what happens!</p>
+
+<p>Great to hear that our entity types are aligned.</p>
+
+<p>Also, we just released v0.5.0, so hopefully this helps!</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+    		
+		</table>
+
+    
+
+    &nbsp;<br>
+    <a class="btn btn-primary btn-lg" href="/signup?next=/discussion/brainstorming-future-directions-for-hetionet/227&suppress_message=1" style>Join to Reply</a>
+
+
+		<table class="references table-td-5" style="display:none;"><tr><td><a href='/doi/10.15363/thinklab.a7' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.a7'><a href='/p/rephetio/report' class='pub-title'>Rephetio: Repurposing drugs on a hetnet [report]</a><div class='pub-body'>Daniel Himmelstein, Antoine Lizee, Chrissy Hessler, Leo Brueggeman, Sabrina Chen, Dexter Hadley, Ari Green, Pouya Khankhanian, Sergio Baranzini (2016) <i>Thinklab</i>. doi:<a class='pub-doi' href='https://doi.org/10.15363/thinklab.a7'>10.15363/thinklab.a7</a></div></div></td></tr><tr><td><a href='/doi/10.1101/087619' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>2.</div></td><td><div class='doi-body' data-key='10.1101/087619'><a href='/doi/10.1101/087619' class='pub-title'>Systematic integration of biomedical knowledge prioritizes drugs for repurposing</a><div class='pub-body'>Daniel S Himmelstein, Antoine Lizee, Christine Hessler, Leo Brueggeman, Sabrina L Chen, Dexter Hadley, Ari Green, Pouya Khankhanian, Sergio E Baranzini (2016) <i>Cold Spring Harbor Laboratory Press</i>. doi:<a class='pub-doi' href='https://doi.org/10.1101/087619'>10.1101/087619</a></div></div></td></tr><tr><td><a href='/doi/10.1145/2939502.2939515' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>3.</div></td><td><div class='doi-body' data-key='10.1145/2939502.2939515'><a href='/doi/10.1145/2939502.2939515' class='pub-title'>Data programming with DDLite</a><div class='pub-body'>Henry R. Ehrenberg, Jaeho Shin, Alexander J. Ratner, Jason A. Fries, Christopher Ré (2016) <i>Proceedings of the Workshop on Human-In-the-Loop Data Analytics - HILDA &#39;16</i>. doi:<a class='pub-doi' href='https://doi.org/10.1145/2939502.2939515'>10.1145/2939502.2939515</a></div></div></td></tr><tr><td><a href='/doi/10.1038/nature19057' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>4.</div></td><td><div class='doi-body' data-key='10.1038/nature19057'><a href='/doi/10.1038/nature19057' class='pub-title'>Analysis of protein-coding genetic variation in 60,706 humans</a><div class='pub-body'>Monkol Lek, Konrad J. Karczewski, Eric V. Minikel, Kaitlin E. Samocha, Eric Banks, Timothy Fennell, Anne H. O’Donnell-Luria, James S. Ware, Andrew J. Hill, Beryl B. Cummings, Taru Tukiainen, Daniel P. Birnbaum, Jack A. Kosmicki, Laramie E. Duncan, Karol Estrada, Fengmei Zhao, James Zou, Emma Pierce-Hoffman, Joanne Berghout, David N. Cooper, Nicole Deflaux, Mark DePristo, Ron Do, Jason Flannick, Menachem Fromer, Laura Gauthier, Jackie Goldstein, Namrata Gupta, Daniel Howrigan, Adam Kiezun, Mitja I. Kurki, Ami Levy Moonshine, Pradeep Natarajan, Lorena Orozco, Gina M. Peloso, Ryan Poplin, Manuel A. Rivas, Valentin Ruano-Rubio, Samuel A. Rose, Douglas M. Ruderfer, Khalid Shakir, Peter D. Stenson, Christine Stevens, Brett P. Thomas, Grace Tiao, Maria T. Tusie-Luna, Ben Weisburd, Hong-Hee Won, Dongmei Yu, David M. Altshuler, Diego Ardissino, Michael Boehnke, John Danesh, Stacey Donnelly, Roberto Elosua, Jose C. Florez, Stacey B. Gabriel, Gad Getz, Stephen J. Glatt, Christina M. Hultman, Sekar Kathiresan, Markku Laakso, Steven McCarroll, Mark I. McCarthy, Dermot McGovern, Ruth McPherson, Benjamin M. Neale, Aarno Palotie, Shaun M. Purcell, Danish Saleheen, Jeremiah M. Scharf, Pamela Sklar, Patrick F. Sullivan, Jaakko Tuomilehto, Ming T. Tsuang, Hugh C. Watkins, James G. Wilson, Mark J. Daly, Daniel G. MacArthur (2016) <i>Nature</i>. doi:<a class='pub-doi' href='https://doi.org/10.1038/nature19057'>10.1038/nature19057</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d40' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>5.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d40'><a href='/discussion/unifying-drug-vocabularies/40' class='pub-title'>Unifying drug vocabularies</a><div class='pub-body'>Daniel Himmelstein (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d40'>10.15363/thinklab.d40</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d48' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>6.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d48'><a href='/discussion/text-as-a-resource-for-network-population/48' class='pub-title'>Text as a resource for network population?</a><div class='pub-body'>Benjamin Good, Daniel Himmelstein (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d48'>10.15363/thinklab.d48</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d91' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>7.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d91'><a href='/discussion/the-tissues-resource-for-the-tissue-specificity-of-genes/91' class='pub-title'>The TISSUES resource for the tissue-specificity of genes</a><div class='pub-body'>Daniel Himmelstein, Lars Juhl Jensen (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d91'>10.15363/thinklab.d91</a></div></div></td></tr><tr><td><a href='/doi/10.1101/056473' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>8.</div></td><td><div class='doi-body' data-key='10.1101/056473'><a href='/doi/10.1101/056473' class='pub-title'>Reproducible Computational Workflows with Continuous Analysis</a><div class='pub-body'>Brett K Beaulieu-Jones, Casey S Greene (2016) <i>Cold Spring Harbor Laboratory Press</i>. doi:<a class='pub-doi' href='https://doi.org/10.1101/056473'>10.1101/056473</a></div></div></td></tr><tr><td><a href='/doi/10.1186/s13059-016-0913-4' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>9.</div></td><td><div class='doi-body' data-key='10.1186/s13059-016-0913-4'><a href='/doi/10.1186/s13059-016-0913-4' class='pub-title'>There is no human interactome</a><div class='pub-body'>Michael P. Washburn (2016) <i>Genome Biology</i>. doi:<a class='pub-doi' href='https://doi.org/10.1186/s13059-016-0913-4'>10.1186/s13059-016-0913-4</a></div></div></td></tr><tr><td><a href='/doi/10.15363/thinklab.a7' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>10.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.a7'><a href='/p/rephetio/report' class='pub-title'>Rephetio: Repurposing drugs on a hetnet [report]</a><div class='pub-body'>Daniel Himmelstein, Antoine Lizee, Chrissy Hessler, Leo Brueggeman, Sabrina Chen, Dexter Hadley, Ari Green, Pouya Khankhanian, Sergio Baranzini (2016) <i>Thinklab</i>. doi:<a class='pub-doi' href='https://doi.org/10.15363/thinklab.a7'>10.15363/thinklab.a7</a></div></div></td></tr><tr><td><a href='/doi/10.1101/055525' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>11.</div></td><td><div class='doi-body' data-key='10.1101/055525'><a href='/doi/10.1101/055525' class='pub-title'>Knowledge.Bio: A Web application for exploring, building and sharing webs of biomedical relationships mined from PubMed</a><div class='pub-body'>Richard Bruskiewich, Kenneth Huellas-Bruskiewicz, Farzin Ahmed, Rajaram Kaliyaperumal, Mark Thompson, Erik Schultes, Kristina M Hettne, Andrew I Su, Benjamin M Good (2016) <i>Cold Spring Harbor Laboratory Press</i>. doi:<a class='pub-doi' href='https://doi.org/10.1101/055525'>10.1101/055525</a></div></div></td></tr><tr><td><a href='/doi/10.1093/bioinformatics/bts591' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>12.</div></td><td><div class='doi-body' data-key='10.1093/bioinformatics/bts591'><a href='/doi/10.1093/bioinformatics/bts591' class='pub-title'>SemMedDB: a PubMed-scale repository of biomedical semantic predications</a><div class='pub-body'>H. Kilicoglu, D. Shin, M. Fiszman, G. Rosemblat, T. C. Rindflesch (2012) <i>Bioinformatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/bioinformatics/bts591'>10.1093/bioinformatics/bts591</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d48' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>13.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d48'><a href='/discussion/text-as-a-resource-for-network-population/48' class='pub-title'>Text as a resource for network population?</a><div class='pub-body'>Benjamin Good, Daniel Himmelstein (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d48'>10.15363/thinklab.d48</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d67' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>14.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d67'><a href='/discussion/mining-knowledge-from-medline-articles-and-their-indexed-mesh-terms/67' class='pub-title'>Mining knowledge from MEDLINE articles and their indexed MeSH terms</a><div class='pub-body'>Daniel Himmelstein, Alex Pankov (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d67'>10.15363/thinklab.d67</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d43' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>15.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d43'><a href='/discussion/computing-consensus-transcriptional-profiles-for-lincs-l1000-perturbations/43' class='pub-title'>Computing consensus transcriptional profiles for LINCS L1000 perturbations</a><div class='pub-body'>Daniel Himmelstein, Caty Chung (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d43'>10.15363/thinklab.d43</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d96' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>16.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d96'><a href='/discussion/stargeo-expression-signatures-for-disease-using-crowdsourced-geo-annotation/96' class='pub-title'>STARGEO: expression signatures for disease using crowdsourced GEO annotation</a><div class='pub-body'>Daniel Himmelstein, Frederic Bastian, Dexter Hadley, Casey Greene (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d96'>10.15363/thinklab.d96</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d215' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>17.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d215'><a href='/discussion/edge-dropout-contamination-in-hetnet-edge-prediction/215' class='pub-title'>Edge dropout contamination in hetnet edge prediction</a><div class='pub-body'>Daniel Himmelstein (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d215'>10.15363/thinklab.d215</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d212' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>18.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d212'><a href='/discussion/cataloging-drugdisease-therapies-in-the-clinicaltrialsgov-database/212' class='pub-title'>Cataloging drug–disease therapies in the ClinicalTrials.gov database</a><div class='pub-body'>Daniel Himmelstein (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d212'>10.15363/thinklab.d212</a></div></div></td></tr><tr><td><a href='/doi/10.1145/2939502.2939515' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>19.</div></td><td><div class='doi-body' data-key='10.1145/2939502.2939515'><a href='/doi/10.1145/2939502.2939515' class='pub-title'>Data programming with DDLite</a><div class='pub-body'>Henry R. Ehrenberg, Jaeho Shin, Alexander J. Ratner, Jason A. Fries, Christopher Ré (2016) <i>Proceedings of the Workshop on Human-In-the-Loop Data Analytics - HILDA &#39;16</i>. doi:<a class='pub-doi' href='https://doi.org/10.1145/2939502.2939515'>10.1145/2939502.2939515</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d107' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>20.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d107'><a href='/discussion/integrating-resources-with-disparate-licensing-into-an-open-network/107' class='pub-title'>Integrating resources with disparate licensing into an open network</a><div class='pub-body'>Daniel Himmelstein, Lars Juhl Jensen, MacKenzie Smith, Katie Fortney, Caty Chung (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d107'>10.15363/thinklab.d107</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d201' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>21.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d201'><a href='/discussion/network-edge-prediction-estimating-the-prior/201' class='pub-title'>Network Edge Prediction: Estimating the prior</a><div class='pub-body'>Antoine Lizee, Daniel Himmelstein (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d201'>10.15363/thinklab.d201</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d182' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>22.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d182'><a href='/discussion/announcing-pharmacotherapydb-the-open-catalog-of-drug-therapies-for-disease/182' class='pub-title'>Announcing PharmacotherapyDB: the Open Catalog of Drug Therapies for Disease</a><div class='pub-body'>Daniel Himmelstein (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d182'>10.15363/thinklab.d182</a></div></div></td></tr><tr><td><a href='/doi/10.1001/archpsyc.1996.01830080023006' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>23.</div></td><td><div class='doi-body' data-key='10.1001/archpsyc.1996.01830080023006'><a href='/doi/10.1001/archpsyc.1996.01830080023006' class='pub-title'>Relapse Prevention by Acamprosate</a><div class='pub-body'>Henning Sass (1996) <i>Archives of General Psychiatry</i>. doi:<a class='pub-doi' href='https://doi.org/10.1001/archpsyc.1996.01830080023006'>10.1001/archpsyc.1996.01830080023006</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkt441' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>24.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkt441'><a href='/doi/10.1093/nar/gkt441' class='pub-title'>PubTator: a web-based text mining tool for assisting biocuration</a><div class='pub-body'>C.-H. Wei, H.-Y. Kao, Z. Lu (2013) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkt441'>10.1093/nar/gkt441</a></div></div></td></tr><tr><td><a href='/doi/10.1093/database/bas041' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>25.</div></td><td><div class='doi-body' data-key='10.1093/database/bas041'><a href='/doi/10.1093/database/bas041' class='pub-title'>Accelerating literature curation with text-mining tools: a case study of using PubTator to curate genes in PubMed abstracts</a><div class='pub-body'>C.-H. Wei, B. R. Harris, D. Li, T. Z. Berardini, E. Huala, H.-Y. Kao, Z. Lu (2012) <i>Database</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/database/bas041'>10.1093/database/bas041</a></div></div></td></tr><tr><td><a href='/doi/10.1155/2015/918710' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>26.</div></td><td><div class='doi-body' data-key='10.1155/2015/918710'><a href='/doi/10.1155/2015/918710' class='pub-title'>GNormPlus: An Integrative Approach for Tagging Genes, Gene Families, and Protein Domains</a><div class='pub-body'>Chih-Hsuan Wei, Hung-Yu Kao, Zhiyong Lu (2015) <i>BioMed Research International</i>. doi:<a class='pub-doi' href='https://doi.org/10.1155/2015/918710'>10.1155/2015/918710</a></div></div></td></tr><tr><td><a href='/doi/10.1093/bioinformatics/btt474' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>27.</div></td><td><div class='doi-body' data-key='10.1093/bioinformatics/btt474'><a href='/doi/10.1093/bioinformatics/btt474' class='pub-title'>DNorm: disease name normalization with pairwise learning to rank</a><div class='pub-body'>R. Leaman, R. Islamaj Dogan, Z. Lu (2013) <i>Bioinformatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/bioinformatics/btt474'>10.1093/bioinformatics/btt474</a></div></div></td></tr><tr><td><a href='/doi/10.1093/database/bar065' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>28.</div></td><td><div class='doi-body' data-key='10.1093/database/bar065'><a href='/doi/10.1093/database/bar065' class='pub-title'>MEDIC: a practical disease vocabulary used at the Comparative Toxicogenomics Database</a><div class='pub-body'>A. P. Davis, T. C. Wiegers, M. C. Rosenstein, C. J. Mattingly (2012) <i>Database</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/database/bar065'>10.1093/database/bar065</a></div></div></td></tr><tr><td><a href='/doi/10.1186/1758-2946-7-S1-S3' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>29.</div></td><td><div class='doi-body' data-key='10.1186/1758-2946-7-S1-S3'><a href='/doi/10.1186/1758-2946-7-S1-S3' class='pub-title'>tmChem: a high performance approach for chemical named entity recognition and normalization</a><div class='pub-body'>Robert Leaman, Chih-Hsuan Wei, Zhiyong Lu (2015) <i>Journal of Cheminformatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1186/1758-2946-7-S1-S3'>10.1186/1758-2946-7-S1-S3</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d212' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>30.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d212'><a href='/discussion/cataloging-drugdisease-therapies-in-the-clinicaltrialsgov-database/212' class='pub-title'>Cataloging drug–disease therapies in the ClinicalTrials.gov database</a><div class='pub-body'>Daniel Himmelstein (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d212'>10.15363/thinklab.d212</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d85' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>31.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d85'><a href='/discussion/creating-a-catalog-of-protein-interactions/85' class='pub-title'>Creating a catalog of protein interactions</a><div class='pub-body'>Daniel Himmelstein, Dexter Hadley, Alexey Strokach (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d85'>10.15363/thinklab.d85</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d34' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>32.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d34'><a href='/discussion/using-entrez-gene-as-our-gene-vocabulary/34' class='pub-title'>Using Entrez Gene as our gene vocabulary</a><div class='pub-body'>Daniel Himmelstein, Casey Greene, Alexander Pico (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d34'>10.15363/thinklab.d34</a></div></div></td></tr></table>
+
+    
+
+
+	</td>
+	<td class="thread-sidebar">
+
+
+			
+
+      <a class="btn btn-default follow-link btn-follow btn-lg is-following tt-top full-width" title="Follow discussion" data-id="227" data-ctype="thread" data-is-following="false">&nbsp;</a>
+
+      
+        <div class="status-box text-center"><span style="">Status:</span> 
+  Open
+
+</div>
+      
+
+      
+        
+      
+
+
+				
+
+					<div class="details">Views</div>
+					<span style="font-size:20px;">151</span>
+
+        
+
+				
+					<div class="details">Topics</div>
+					<div style="margin-bottom:15px;">
+		            <a href="/topics/hetionet" class="tag">Hetionet</a><a href="/topics/hetnets" class="tag">Hetnets</a><a href="/topics/planning" class="tag">Planning</a><a href="/topics/future" class="tag">Future</a><a href="/topics/applied-imagination" class="tag">Applied Imagination</a>
+					</div>
+				
+
+
+		
+			<div class="details">Referenced by</div>
+			<div style="font-size:12px;"><ul style="padding-left:16px !important;">
+			
+				<li>
+					
+					Research report: <a href='/p/rephetio/report'>Rephetio: Repurposing drugs on a hetnet</a>
+				</li>
+			
+				</ul>
+			</div>
+		
+
+		
+			<div class="details">Cite this as</div>
+			<span style="font-size:12px;">
+				Daniel Himmelstein, Benjamin Good, Pouya Khankhanian, Alex Ratner (2016) Brainstorming future directions for Hetionet. <i>Thinklab.</i> doi:<a href='https://doi.org/10.15363/thinklab.d227'>10.15363/thinklab.d227</a>
+			</span>
+		
+
+		<div class="details">License</div>
+		<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0;width:88px;height:31px;" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></p>
+
+		<div class="details">Share</div>
+		
+			
+				<a class="share-button fb" onclick="javascript:void(window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A//thinklab.com/discussion/brainstorming-future-directions-for-hetionet/227','','width=600,height=460,menubar=no,status=no'));" href="#"></a>
+<a class="share-button twitter" onclick="javascript:void(window.open('https://twitter.com/share?text=Brainstorming%20future%20directions%20for%20Hetionet&url=https%3A//thinklab.com/discussion/brainstorming-future-directions-for-hetionet/227','','width=600,height=300,menubar=no,status=no'));" href="#"></a>
+<a class="share-button google" onclick="javascript:void(window.open('https://plus.google.com/share?url=https%3A//thinklab.com/discussion/brainstorming-future-directions-for-hetionet/227','','width=510,height=460,menubar=no,status=no'));" href="#"></a>
+
+			
+		
+
+	</td>
+</tr></table>
+
+
+		</div>
+
+
+		
+	    	<div class="footer">
+<div style="background:#dedede;">
+	<div class="main-centered-div text-center" style="padding:20px;">
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#3a525f5656557a4e52535451565b5814595557"><span class="__cf_email__" data-cfemail="4c24292020230c3824252227202d2e622f2321">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+	</div>
+</div>
+<div class="main-footer">
+	<div class="main-centered-div">
+
+<table class="full-width"><tr>
+	<td class="footer-nav">
+
+        <div class="foot-head">Explore</div>
+        <a href="/proposals">Proposals</a><br>
+        <a href="/projects">Projects</a><br>
+        <a href="/publications">Article discussion</a><br>
+        <a href="/discussion">All discussion</a><br>
+        <a href="/topics">Topics</a><br>
+        <!-- <a href="/funders">Funders</a><br> -->
+        <a href="/funding">Funding opportunities</a><br>
+
+	</td>
+	<td class="footer-nav">
+
+        <!-- <div class="foot-head">Help &amp; feedback</div>	 -->
+        <!-- <div class="foot-head">Intro</div>
+        <a href="/benefits/for-science">Why</a><br>
+        <a href="/how-it-works">How it works</a><br>
+
+<br> -->
+
+        <div class="foot-head">Community</div>
+        <a href="/leaderboard">Leaderboard</a><br>
+        <a href="/p/meta">Thinklab Meta</a><br>
+				<a href="/help/faq">Help</a><br>
+				<!-- <a href="/new-project">Start a proposal</a><br> -->
+        <!-- <a href="/benefits/proposal">Benefits</a><br> -->
+        <!-- <a href="/funding">Get funded</a><br> -->
+        <!-- <a href="/participate">Become a contributor</a><br> -->
+        <!-- <a href="/for-funders">For science funders</a><br> -->
+        <!-- <a href="/for-institutions">For institutions</a><br> -->
+
+	</td>
+	<td class="footer-nav">
+
+
+
+        <div class="foot-head">About</div>
+        <a href="/about">Overview</a><br>
+        <a href="/benefits">Benefits</a><br>
+        <a href="/how-it-works">How it works</a><br>
+        <a href="/about/story">Our story</a><br>
+        <a href="/blog">Our blog</a><br>
+        <a href="/about/jobs">Join the team</a><br>
+        <br>
+
+        <!-- <div class="foot-head">Help</div>
+        <a href="/help">Help</a><br>
+		 -->
+
+
+	</td>
+	<td class="footer-nav">
+		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
+		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<br><br>
+		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
+
+	</td>
+
+</tr></table>
+
+</div>
+</div>
+</div>
+
+		
+
+	</div>
+
+
+  <script></script>
+  <script>
+  var MEDIA_URL = 'https://think-lab.s3.amazonaws.com/m/';
+  var STATIC_URL = 'https://think-lab.s3.amazonaws.com/s/';
+  var page_is_authenticated = false;
+  var page_page = 'discussion';
+  var page_profile_id = undefined;
+</script>
+
+
+
+	<!-- Note different script type. MUST come before MathJax.js -->
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	        "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"],
+	                        scale: 110, linebreaks: { automatic:true },
+	                        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+	        tex2jax: { inlineMath: [ ["$$", "$$"], ["\\(","\\)"] ],
+	                    displayMath: [ ["$$$","$$$"], ["\\[", "\\]"] ],
+	                    processEscapes: true,}
+	            });
+
+	</script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://think-lab.s3.amazonaws.com/s/dist/main.min.js"></script>
+  
+
+
+
+  
+	
+  
+  
+  
+<script>
+$(function() {
+  recordHit('thread', 227);
+});
+</script>
+
+
+
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>

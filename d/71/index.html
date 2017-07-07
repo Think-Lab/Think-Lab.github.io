@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZgEOC19dW0QCEVtHU1gG","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":224}</script>
+    <title>Calculating genomic windows for GWAS lead SNPs | Thinklab</title>
+	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
+    <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/highlightjs/github.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/css.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/bootstrap-multiselect.css" />
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
+    
+    
+    
+    
+  
+    <meta name="citation_doi" content="10.15363/thinklab.d71">
+    <meta name="citation_title" content="Calculating genomic windows for GWAS lead SNPs">
+    <meta name="citation_online_date" content="June 8, 2015">
+    <meta name="citation_author" content="Daniel Himmelstein, Marina Sirota, Greg Way">
+    <meta name="citation_journal_title" content="Thinklab">
+    <meta name="citation_publisher" content="Thinklab">
+  
+
+    
+
+
+	<!-- GoogleAnalytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-48550230-1', 'thinklab.com');
+	ga('require', 'displayfeatures');
+	
+	ga('send', 'pageview');
+
+	</script>
+
+
+
+
+
+
+</head>
+<body >
+  <form id="form_action" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+</form>
+
+	
+
+	<div class="body-wrapper">
+
+		
+
+
+<!-- <div style="height:5px;background-image:url('https://think-lab.s3.amazonaws.com/s/img/top-bg.gif');"></div> -->
+<div class="gradient">
+	<div class="main-centered-div header-container">
+
+<table class="full-width" style="height:60px;"><tr>
+	<td style="width:200px;vertical-align:middle;padding-bottom:15px;">
+		<a href="/" style="font-weight:normal;color:#212121;"><img src="https://think-lab.s3.amazonaws.com/s/img/logo.png" width="160"></a>
+	</td><td style="vertical-align:middle;text-align:left;padding-top:6px;width:100%;padding-left:40px;">
+		<ul id="not-search-block"  class="main-header">
+
+
+			
+
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/proposals">Proposals</a></li>
+						<li><a href="/projects">Projects</a></li>
+						<li><a href="/publications">Article discussion</a></li>
+						<li><a href="/discussion">All discussion</a></li>
+					</ul>
+				</li>
+				<li><a href="/leaderboard">Leaderboard</a></li>
+
+			
+				<li><a href="/about">About</a></li>
+			
+
+
+		</ul>
+
+    <ul id="search-block" class="main-header" style="display: none; margin-right: 30px;">
+        <li class="full-width">
+            <form method="get" action="/search">
+			<div class="input-group full-width">
+				<input name="q" type="text" class="form-control search-input">
+			</div>
+            </form>
+        </li>
+    </ul>
+
+	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
+		<ul class="main-header pull-right" style="padding-left: 0;">
+    		
+                <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+            
+
+        </ul>
+    </ul>
+	</td>
+</tr></table>
+
+<!-- <div id="global-search-div" class="main-centered-div" style="display:none;">
+	<input type="text" value="" class="thread-search form-control" placeholder="Search" data-action="/discussion">
+</div> -->
+
+	</div>
+</div>
+
+		
+	  
+
+
+
+	  
+
+
+		
+
+		<div class="dark-head"><div class="main-centered-div">
+
+			
+
+		</div></div>
+		
+		<div class="main-centered-div" style="margin-top:40px;padding-bottom:340px">
+	    
+
+<div style="margin-top:-20px; margin-bottom:20px;">
+
+    <a class="side-box" href="/p/rephetio" style="background-color:#ebfdff;"><div class="side-type">Project:</div> <div class="side-title">Rephetio: Repurposing drugs on a hetnet [rephetio]</div></a><br>
+
+
+
+</div>
+
+<table style="margin-top:0px;"><tr>
+	<td class="thread-table-content">
+
+		<table class="full-width">
+			
+<tr class="comment-tr target-hl" id="1" data-comment-id="239">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="239"></a>
+
+    
+
+			<h2 class="page-title" style="margin-bottom:5px;margin-top:0px !important;">Calculating genomic windows for GWAS lead SNPs</h2>
+
+			<div style="margin-top:5px;color:gray;margin-bottom:20px;font-size:13px;">
+				<a style="font-weight:normal;color:#212121" href="/u/dhimmel"><strong>Daniel Himmelstein</strong></a>
+				<span class="is-researcher">Researcher</span>
+				&nbsp; <a href="#1" class="light">760 days ago</a>
+				
+			</div>
+
+      
+
+          <hr>
+		
+
+    <h2>Background</h2>
+
+<p>GWAS uncover disease-associated loci, but due to sparse genotyping arrays and linkage disequilibrium (LD), identifying the specific SNP driving the association is difficult. Therefore, GWAS usually report the most significant hit as the single lead SNP for a loci, leaving the identification of a causal SNP for later research. Often multiple GWAS of the same disease will identify different lead SNPs in the same region, presumable all tagging the same causal variant. Therefore, around any lead SNP is a <em>region of indetermination</em>—a genomic window in which the SNP driving the association is likely to reside.</p>
+
+<h2>Application</h2>
+
+<p>When extracting disease-gene associations from the <a href="//www.ebi.ac.uk/gwas/">GWAS Catalog</a> <span class="citation">[<a href="https://doi.org/10.1093/nar/gkt1229" class="citation" data-key="10.1093/nar/gkt1229">1</a>]</span>, we collapse multiple associations for the same disease into loci (regions) <span class="citation">[<a href="https://doi.org/10.1371/journal.pcbi.1004259" class="citation" data-key="10.1371/journal.pcbi.1004259">2</a>]</span>. Starting with lead SNPs for each association, we find the corresponding windows and overlap them into genomically disjoint sets.</p>
+
+<p>Previously, we retrieved windows for GWAS lead-SNPs from the <a href="https://www.broadinstitute.org/mpg/dapple/dappleTMP.php">DAPPLE</a> <span class="citation">[<a href="https://doi.org/10.1371/journal.pgen.1001273" class="citation" data-key="10.1371/journal.pgen.1001273">3</a>]</span> wingspan files. DAPPLE windows "were calculated for each lead-SNP by finding the furthest upstream and downstream SNPs where <span class="math">$$r^2 &gt; 0.5$$</span> and extending outwards to the next recombination hotspot <span class="citation">[<a href="https://doi.org/10.1371/journal.pcbi.1004259" class="citation" data-key="10.1371/journal.pcbi.1004259">2</a>]</span>."</p>
+
+<p>However, DAPPLE relied on HapMap <span class="citation">[<a href="https://doi.org/10.1038/nature04226" class="citation" data-key="10.1038/nature04226">4</a>]</span> for LD data, which is now outdated. Many SNPs in the GWAS catalog are not in HapMap. Since HapMap is missing many SNPs, extending to the next recombination hotspot was necessary.</p>
+
+<h1>Questions</h1>
+
+<ol><li><strong>Given a lead SNP, how should we identify the furthest upstream and downstream SNPs with <span class="math">$$r^2$$</span> exceeding a given threshold?</strong> Which data and tools should we use?</li><li>In the context of GWAS loci, is <span class="math">$$r^2 &gt; 0.5$$</span> too low of a threshold for windows?</li><li>Is the recombination hotspot extension necessary?</li></ol>
+
+<p>We would like to identify windows for ~5000 SNPs which are identified in dbSNP build 142 rsids.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="2" data-comment-id="240">
+  <td class="comment-profile-avatar">
+		<a href="/u/marinasirota"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/103_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="240"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/marinasirota">Marina Sirota</a>
+				
+				<span class="light">&nbsp;<a href="#2" class="light">760 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>I would suggest using 1000 genomes for the LD calculation here with a more stringent r^2 cutoff (maybe 0.8?). Some LD information is available through their browser</p>
+
+<p><a href="http://browser.1000genomes.org/Homo_sapiens/Location/Genome?db=core;r=2:31451742-31452000">http://browser.1000genomes.org/Homo_sapiens/Location/Genome?db=core;r=2:31451742-31452000</a></p>
+
+<p>Here is a thread discussing similar ideas:<br><a href="https://www.biostars.org/p/2909/">https://www.biostars.org/p/2909/</a></p>
+
+<p>The other resource of interest is the ExAC dataset: <a href="http://exac.broadinstitute.org/">http://exac.broadinstitute.org/</a> I don't think the LD data is available, but it's worthwhile reaching out to them!</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="3" data-comment-id="254">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="254"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#3" class="light">757 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p><a href="/u/marinasirota" class="username">@marinasirota</a>, thanks for the advice.</p>
+
+<p>The <a href="https://www.broadinstitute.org/mpg/snap/ldsearch.php">SNAP Proxy Search</a> <span class="citation">[<a href="https://doi.org/10.1093/bioinformatics/btn564" class="citation" data-key="10.1093/bioinformatics/btn564">1</a>]</span> allows us to find all SNPs within 500kb and with LD above a provided threshold for the query SNP, using 1000 Genomes (KG) pilot data.</p>
+
+<p>One issue with KG is that the whole-genome sequencing was done at low depth (4x coverage) and that only 179 samples were sequenced: 60 CEU, 59 YRI, 30 CHB, and 30 JPT <span class="citation">[<a href="https://doi.org/10.1038/nature09534" class="citation" data-key="10.1038/nature09534">2</a>]</span>. Therefore many low frequency or technically difficult variants were likely missed. Since GWAS have mostly focused on common variants, the puniness of 1000 Genomes pilot data may be acceptable.</p>
+
+<p>We went ahead and evaluated the SNAP LD information from KG for our GWAS lead SNPs. For each lead SNP, we found all SNPs in <span class="math">$$r^2 \geq 0.8$$</span> in the European subset of 60 individuals. The <a href="https://github.com/dhimmel/gwas-catalog/blob/568e063010d725c335a019ac20c2d023d000f5d4/windows.ipynb">findings are as follows</a>:</p>
+
+<ul><li>Of 5,255 GWAS lead SNPs, 517 were not found by SNAP</li><li>SNPs with lower minor allele frequencies were more likely to have large windows (kilobase spans). We speculate this results from greater noise in <span class="math">$$r^2$$</span> values when the number of minor alleles is low, enabling far away SNPs to appear in high LD by chance. </li><li>614 lead SNPs have a zero-length span — no SNPs were found with LD exceeding the threshold. Most likely this is due to the incompleteness of KG.</li><li>Window spans measured in kilobases are highly, positively correlated with spans measured in centimorgans. Therefore, we cannot chose a single centimorgan threshold to approximate windows calculated using the <span class="math">$$r^2$$</span> method.</li></ul>
+
+<p>In conclusion, the KG data retrieved from SNAP is feasible but not ideal. We will look into larger datasets and have <a href="https://github.com/konradjk/exac_browser/issues/189">reached out to the ExAC team</a>.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-125" class="inline-note toggle-parent" data-note-id="125">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: 2015-06-12: I reassessed the implications of the centimorgan versus kilobase window span correlation. My current conclusion is that a single centimorgan threshold cannot be chosen that produces similar windows to the <em>r</em>-squared method.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="4" data-comment-id="259">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="259"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#4" class="light">756 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Permissive <span class="math">$$r^2$$</span> threshold when relying on low-powered LD data</h1>
+
+<p><a href="/u/marinasirota" class="username">@marinasirota</a>, I intuitively agree that for the modern GWAS assaying and imputing millions of SNPs, lead SNPs are likely be in <span class="math">$$r^2 \geq 0.8$$</span> with the SNPs driving the association. However, when using the 1000 Genomes Pilot data for LD, I think we should use a more permissive threshold of <span class="math">$$r^2 \geq 0.5$$</span>. The 0.8 threshold produces <a href="https://github.com/dhimmel/gwas-catalog/blob/568e063010d725c335a019ac20c2d023d000f5d4/windows.ipynb">614</a> windows with zero-length spans compared to <a href="https://github.com/dhimmel/gwas-catalog/blob/cbc30cbe88bda38c7ebe9c32802b051436431065/windows.ipynb">149</a> for the 0.5 threshold. Zero-length spans are equivalent to declaring that the lead SNP is the only SNP capable of creating the association. I would prefer to minimize these instances when we have such incomplete LD information.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="5" data-comment-id="260">
+  <td class="comment-profile-avatar">
+		<a href="/u/marinasirota"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/103_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="260"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/marinasirota">Marina Sirota</a>
+				
+				<span class="light">&nbsp;<a href="#5" class="light">756 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p><a href="/u/dhimmel" class="username">@dhimmel</a> - that makes sense.  </p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="6" data-comment-id="298">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="298"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#6" class="light">745 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>1000 Genomes Phase 3 data</h1>
+
+<p>We have <a href="http://www.1000genomes.org/announcements/phase-3-variant-set-additional-allele-frequencies-functional-annotation-and-other-data">become aware</a> that more recent and comprehensive 1000 Genomes data exists, it's just not included in SNAP. The phase 3 dataset contains ~2500 individuals with whole-genome sequencing.</p>
+
+<p>The phase 3 data was <a href="http://www.ensembl.info/blog/2015/06/18/1000-genomes-phase-3-frequencies-genotypes-and-ld-data/#comments">recently added</a> to the Ensembl database. Ensembl has a <a href="http://uswest.ensembl.org/info/docs/api/variation/true">perl API</a>, which should be able to find all SNPs in LD with a lead SNP.</p>
+
+<p>We found <a href="https://www.biostars.org/p/109785/#110102">example code</a> and have <a href="https://www.biostars.org/p/109785/#147784">reached out</a> for advice because our implementation is <a href="http://nbviewer.ipython.org/github/dhimmel/ensembl-api/blob/5ee80e036a8dd4e5416c2af6ddd5ae7a1a9c5a44/linkage.ipynb">currently failing</a>.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="7" data-comment-id="536">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="536"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#7" class="light">613 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>LDlink</h1>
+
+<p>A recently-published <a href="http://analysistools.nci.nih.gov/LDlink/">webapp called LDlink</a> calculates SNPs in LD for a given lead SNP using 1000 Genomes Phase 3 data <span class="citation">[<a href="https://doi.org/10.1093/bioinformatics/btv402" class="citation" data-key="10.1093/bioinformatics/btv402">1</a>]</span>. The LDproxy feature allows specifying a lead SNP and reference population. The resulting table of proxy SNPs is downloadable as a tsv.</p>
+
+<p>Unfortunately, the service doesn't release a public API. Therefore, querying at scale could be difficult.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="8" data-comment-id="1231">
+  <td class="comment-profile-avatar">
+		<a href="/u/gregway"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/s/img/p_default_medium.png' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1231"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/gregway">Greg Way</a>
+				
+				<span class="light">&nbsp;<a href="#8" class="light">455 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Extracting LD from 1000 genomes data is not straightforward. Here is a rough outline of the solution I came up with. I used Plink1.9 <a href="https://www.cog-genomics.org/plink2/">https://www.cog-genomics.org/plink2/</a> and VCFTools. It will require some tweaking for specific applications.</p>
+
+<h1>Step 0: Download 1000 genomes data and remove duplicate SNP IDs</h1>
+
+<h1></h1>
+
+<h1>Step 1: use vcftools to generate a population specific tped file</h1>
+
+<pre><code class="no-highlight hljs">vcftools --gzvcf &lt;vcf_file&gt; --plink-tped --keep &lt;samples.txt&gt; --out &lt;tped_fh&gt;</code></pre>
+
+<p>where &lt;samples.txt&gt; is the location of a text file with a single column of sample IDs</p>
+
+<h1>Step 2: transpose the tped file (more efficient than creating a ped file originally)</h1>
+
+<pre><code class="no-highlight hljs">plink --tfile &lt;tped_fh&gt; --recode --threads &lt;num_threads&gt; --no-sex --no-pheno --out &lt;ped_fh&gt;</code></pre>
+
+<h1>Step 3: use Plink1.9 to pull out an LD matrix</h1>
+
+<pre><code class="no-highlight hljs">plink --file &lt;vcf_file&gt; --allow-no-sex --r2 --threads &lt;num_threads&gt; --ld-window-r2 &lt;window&gt; --chr &lt;chromosome&gt; --ld-snps &lt;snp_string&gt; --out &lt;out_name&gt;</code></pre>
+
+<p>where &lt;snp_string&gt; is a comma separated list of RS IDs</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+    		
+		</table>
+
+    
+
+    &nbsp;<br>
+    <a class="btn btn-primary btn-lg" href="/signup?next=/discussion/calculating-genomic-windows-for-gwas-lead-snps/71&suppress_message=1" style>Join to Reply</a>
+
+
+		<table class="references table-td-5" style="display:none;"><tr><td><a href='/doi/10.1093/nar/gkt1229' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkt1229'><a href='/doi/10.1093/nar/gkt1229' class='pub-title'>The NHGRI GWAS Catalog, a curated resource of SNP-trait associations</a><div class='pub-body'>D. Welter, J. MacArthur, J. Morales, T. Burdett, P. Hall, H. Junkins, A. Klemm, P. Flicek, T. Manolio, L. Hindorff, H. Parkinson (2013) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkt1229'>10.1093/nar/gkt1229</a></div></div></td></tr><tr><td><a href='/doi/10.1371/journal.pcbi.1004259' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>2.</div></td><td><div class='doi-body' data-key='10.1371/journal.pcbi.1004259'><a href='/doi/10.1371/journal.pcbi.1004259' class='pub-title'>Heterogeneous Network Edge Prediction: A Data Integration Approach to Prioritize Disease-Associated Genes</a><div class='pub-body'>Daniel S. Himmelstein, Sergio E. Baranzini (2015) <i>PLOS Computational Biology</i>. doi:<a class='pub-doi' href='https://doi.org/10.1371/journal.pcbi.1004259'>10.1371/journal.pcbi.1004259</a></div></div></td></tr><tr><td><a href='/doi/10.1371/journal.pgen.1001273' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>3.</div></td><td><div class='doi-body' data-key='10.1371/journal.pgen.1001273'><a href='/doi/10.1371/journal.pgen.1001273' class='pub-title'>Proteins Encoded in Genomic Regions Associated with Immune-Mediated Disease Physically Interact and Suggest Underlying Biology</a><div class='pub-body'>Elizabeth J. Rossin, Kasper Lage, Soumya Raychaudhuri, Ramnik J. Xavier, Diana Tatar, Yair Benita, Chris Cotsapas, Mark J. Daly (2011) <i>PLoS Genetics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1371/journal.pgen.1001273'>10.1371/journal.pgen.1001273</a></div></div></td></tr><tr><td><a href='/doi/10.1038/nature04226' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>4.</div></td><td><div class='doi-body' data-key='10.1038/nature04226'><a href='/doi/10.1038/nature04226' class='pub-title'>A haplotype map of the human genome</a><div class='pub-body'>The International HapMap Consortium (2005) <i>Nature</i>. doi:<a class='pub-doi' href='https://doi.org/10.1038/nature04226'>10.1038/nature04226</a></div></div></td></tr><tr><td><a href='/doi/10.1093/bioinformatics/btn564' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>5.</div></td><td><div class='doi-body' data-key='10.1093/bioinformatics/btn564'><a href='/doi/10.1093/bioinformatics/btn564' class='pub-title'>SNAP: a web-based tool for identification and annotation of proxy SNPs using HapMap</a><div class='pub-body'>A. D. Johnson, R. E. Handsaker, S. L. Pulit, M. M. Nizzari, C. J. O&#39;Donnell, P. I. W. de Bakker (2008) <i>Bioinformatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/bioinformatics/btn564'>10.1093/bioinformatics/btn564</a></div></div></td></tr><tr><td><a href='/doi/10.1038/nature09534' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>6.</div></td><td><div class='doi-body' data-key='10.1038/nature09534'><a href='/doi/10.1038/nature09534' class='pub-title'>A map of human genome variation from population-scale sequencing</a><div class='pub-body'>Richard M. Durbin, David L. Altshuler, Richard M. Durbin, Gonçalo R. Abecasis, David R. Bentley, Aravinda Chakravarti, Andrew G. Clark, Francis S. Collins, Francisco M. De La Vega, Peter Donnelly, Michael Egholm, Paul Flicek, Stacey B. Gabriel, Richard A. Gibbs, Bartha M. Knoppers, Eric S. Lander, Hans Lehrach, Elaine R. Mardis, Gil A. McVean, Debbie A. Nickerson, Leena Peltonen, Alan J. Schafer, Stephen T. Sherry, Jun Wang, Richard K. Wilson, Richard A. Gibbs, David Deiros, Mike Metzker, Donna Muzny, Jeff Reid, David Wheeler, Jun Wang, Jingxiang Li, Min Jian, Guoqing Li, Ruiqiang Li, Huiqing Liang, Geng Tian, Bo Wang, Jian Wang, Wei Wang, Huanming Yang, Xiuqing Zhang, Huisong Zheng, Eric S. Lander, David L. Altshuler, Lauren Ambrogio, Toby Bloom, Kristian Cibulskis, Tim J. Fennell, Stacey B. Gabriel, David B. Jaffe, Erica Shefler, Carrie L. Sougnez, David R. Bentley, Niall Gormley, Sean Humphray, Zoya Kingsbury, Paula Koko-Gonzales, Jennifer Stone, Kevin J. McKernan, Gina L. Costa, Jeffry K. Ichikawa, Clarence C. Lee, Ralf Sudbrak, Hans Lehrach, Tatiana A. Borodina, Andreas Dahl, Alexey N. Davydov, Peter Marquardt, Florian Mertes, Wilfiried Nietfeld, Philip Rosenstiel, Stefan Schreiber, Aleksey V. Soldatov, Bernd Timmermann, Marius Tolzmann, Michael Egholm, Jason Affourtit, Dana Ashworth, Said Attiya, Melissa Bachorski, Eli Buglione, Adam Burke, Amanda Caprio, Christopher Celone, Shauna Clark, David Conners, Brian Desany, Lisa Gu, Lorri Guccione, Kalvin Kao, Andrew Kebbel, Jennifer Knowlton, Matthew Labrecque, Louise McDade, Craig Mealmaker, Melissa Minderman, Anne Nawrocki, Faheem Niazi, Kristen Pareja, Ravi Ramenani, David Riches, Wanmin Song, Cynthia Turcotte, Shally Wang, Elaine R. Mardis, Richard K. Wilson, David Dooling, Lucinda Fulton, Robert Fulton, George Weinstock, Richard M. Durbin, John Burton, David M. Carter, Carol Churcher, Alison Coffey, Anthony Cox, Aarno Palotie, Michael Quail, Tom Skelly, James Stalker, Harold P. Swerdlow, Daniel Turner, Anniek De Witte, Shane Giles, Richard A. Gibbs, David Wheeler, Matthew Bainbridge, Danny Challis, Aniko Sabo, Fuli Yu, Jin Yu, Jun Wang, Xiaodong Fang, Xiaosen Guo, Ruiqiang Li, Yingrui Li, Ruibang Luo, Shuaishuai Tai, Honglong Wu, Hancheng Zheng, Xiaole Zheng, Yan Zhou, Guoqing Li, Jian Wang, Huanming Yang, Gabor T. Marth, Erik P. Garrison, Weichun Huang, Amit Indap, Deniz Kural, Wan-Ping Lee, Wen Fung Leong, Aaron R. Quinlan, Chip Stewart, Michael P. Stromberg, Alistair N. Ward, Jiantao Wu, Charles Lee, Ryan E. Mills, Xinghua Shi, Mark J. Daly, Mark A. DePristo, David L. Altshuler, Aaron D. Ball, Eric Banks, Toby Bloom, Brian L. Browning, Kristian Cibulskis, Tim J. Fennell, Kiran V. Garimella, Sharon R. Grossman, Robert E. Handsaker, Matt Hanna, Chris Hartl, David B. Jaffe, Andrew M. Kernytsky, Joshua M. Korn, Heng Li, Jared R. Maguire, Steven A. McCarroll, Aaron McKenna, James C. Nemesh, Anthony A. Philippakis, Ryan E. Poplin, Alkes Price, Manuel A. Rivas, Pardis C. Sabeti, Stephen F. Schaffner, Erica Shefler, Ilya A. Shlyakhter, David N. Cooper, Edward V. Ball, Matthew Mort, Andrew D. Phillips, Peter D. Stenson, Jonathan Sebat, Vladimir Makarov, Kenny Ye, Seungtai C. Yoon, Carlos D. Bustamante, Andrew G. Clark, Adam Boyko, Jeremiah Degenhardt, Simon Gravel, Ryan N. Gutenkunst, Mark Kaganovich, Alon Keinan, Phil Lacroute, Xin Ma, Andy Reynolds, Laura Clarke, Paul Flicek, Fiona Cunningham, Javier Herrero, Stephen Keenen, Eugene Kulesha, Rasko Leinonen, William M. McLaren, Rajesh Radhakrishnan, Richard E. Smith, Vadim Zalunin, Xiangqun Zheng-Bradley, Jan O. Korbel, Adrian M. Stütz, Sean Humphray, Markus Bauer, R. Keira Cheetham, Tony Cox, Michael Eberle, Terena James, Scott Kahn, Lisa Murray, Aravinda Chakravarti, Kai Ye, Francisco M. De La Vega, Yutao Fu, Fiona C. L. Hyland, Jonathan M. Manning, Stephen F. McLaughlin, Heather E. Peckham, Onur Sakarya, Yongming A. Sun, Eric F. Tsung, Mark A. Batzer, Miriam K. Konkel, Jerilyn A. Walker, Ralf Sudbrak, Marcus W. Albrecht, Vyacheslav S. Amstislavskiy, Ralf Herwig, Dimitri V. Parkhomchuk, Stephen T. Sherry, Richa Agarwala, Hoda M. Khouri, Aleksandr O. Morgulis, Justin E. Paschall, Lon D. Phan, Kirill E. Rotmistrovsky, Robert D. Sanders, Martin F. Shumway, Chunlin Xiao, Gil A. McVean, Adam Auton, Zamin Iqbal, Gerton Lunter, Jonathan L. Marchini, Loukas Moutsianas, Simon Myers, Afidalina Tumian, Brian Desany, James Knight, Roger Winer, David W. Craig, Steve M. Beckstrom-Sternberg, Alexis Christoforides, Ahmet A. Kurdoglu, John V. Pearson, Shripad A. Sinari, Waibhav D. Tembe, David Haussler, Angie S. Hinrichs, Sol J. Katzman, Andrew Kern, Robert M. Kuhn, Molly Przeworski, Ryan D. Hernandez, Bryan Howie, Joanna L. Kelley, S. Cord Melton, Gonçalo R. Abecasis, Yun Li, Paul Anderson, Tom Blackwell, Wei Chen, William O. Cookson, Jun Ding, Hyun Min Kang, Mark Lathrop, Liming Liang, Miriam F. Moffatt, Paul Scheet, Carlo Sidore, Matthew Snyder, Xiaowei Zhan, Sebastian Zöllner, Philip Awadalla, Ferran Casals, Youssef Idaghdour, John Keebler, Eric A. Stone, Martine Zilversmit, Lynn Jorde, Jinchuan Xing, Evan E. Eichler, Gozde Aksay, Can Alkan, Iman Hajirasouliha, Fereydoun Hormozdiari, Jeffrey M. Kidd, S. Cenk Sahinalp, Peter H. Sudmant, Elaine R. Mardis, Ken Chen, Asif Chinwalla, Li Ding, Daniel C. Koboldt, Mike D. McLellan, David Dooling, George Weinstock, John W. Wallis, Michael C. Wendl, Qunyuan Zhang, Richard M. Durbin, Cornelis A. Albers, Qasim Ayub, Senduran Balasubramaniam, Jeffrey C. Barrett, David M. Carter, Yuan Chen, Donald F. Conrad, Petr Danecek, Emmanouil T. Dermitzakis, Min Hu, Ni Huang, Matt E. Hurles, Hanjun Jin, Luke Jostins, Thomas M. Keane, Si Quang Le, Sarah Lindsay, Quan Long, Daniel G. MacArthur, Stephen B. Montgomery, Leopold Parts, James Stalker, Chris Tyler-Smith, Klaudia Walter, Yujun Zhang, Mark B. Gerstein, Michael Snyder, Alexej Abyzov, Suganthi Balasubramanian, Robert Bjornson, Jiang Du, Fabian Grubert, Lukas Habegger, Rajini Haraksingh, Justin Jee, Ekta Khurana, Hugo Y. K. Lam, Jing Leng, Xinmeng Jasmine Mu, Alexander E. Urban, Zhengdong Zhang, Yingrui Li, Ruibang Luo, Gabor T. Marth, Erik P. Garrison, Deniz Kural, Aaron R. Quinlan, Chip Stewart, Michael P. Stromberg, Alistair N. Ward, Jiantao Wu, Charles Lee, Ryan E. Mills, Xinghua Shi, Steven A. McCarroll, Eric Banks, Mark A. DePristo, Robert E. Handsaker, Chris Hartl, Joshua M. Korn, Heng Li, James C. Nemesh, Jonathan Sebat, Vladimir Makarov, Kenny Ye, Seungtai C. Yoon, Jeremiah Degenhardt, Mark Kaganovich, Laura Clarke, Richard E. Smith, Xiangqun Zheng-Bradley, Jan O. Korbel, Sean Humphray, R. Keira Cheetham, Michael Eberle, Scott Kahn, Lisa Murray, Kai Ye, Francisco M. De La Vega, Yutao Fu, Heather E. Peckham, Yongming A. Sun, Mark A. Batzer, Miriam K. Konkel, Jerilyn A. Walker, Chunlin Xiao, Zamin Iqbal, Brian Desany, Tom Blackwell, Matthew Snyder, Jinchuan Xing, Evan E. Eichler, Gozde Aksay, Can Alkan, Iman Hajirasouliha, Fereydoun Hormozdiari, Jeffrey M. Kidd, Ken Chen, Asif Chinwalla, Li Ding, Mike D. McLellan, John W. Wallis, Matt E. Hurles, Donald F. Conrad, Klaudia Walter, Yujun Zhang, Mark B. Gerstein, Michael Snyder, Alexej Abyzov, Jiang Du, Fabian Grubert, Rajini Haraksingh, Justin Jee, Ekta Khurana, Hugo Y. K. Lam, Jing Leng, Xinmeng Jasmine Mu, Alexander E. Urban, Zhengdong Zhang, Richard A. Gibbs, Matthew Bainbridge, Danny Challis, Cristian Coafra, Huyen Dinh, Christie Kovar, Sandy Lee, Donna Muzny, Lynne Nazareth, Jeff Reid, Aniko Sabo, Fuli Yu, Jin Yu, Gabor T. Marth, Erik P. Garrison, Amit Indap, Wen Fung Leong, Aaron R. Quinlan, Chip Stewart, Alistair N. Ward, Jiantao Wu, Kristian Cibulskis, Tim J. Fennell, Stacey B. Gabriel, Kiran V. Garimella, Chris Hartl, Erica Shefler, Carrie L. Sougnez, Jane Wilkinson, Andrew G. Clark, Simon Gravel, Fabian Grubert, Laura Clarke, Paul Flicek, Richard E. Smith, Xiangqun Zheng-Bradley, Stephen T. Sherry, Hoda M. Khouri, Justin E. Paschall, Martin F. Shumway, Chunlin Xiao, Gil A. McVean, Sol J. Katzman, Gonçalo R. Abecasis, Tom Blackwell, Elaine R. Mardis, David Dooling, Lucinda Fulton, Robert Fulton, Daniel C. Koboldt, Richard M. Durbin, Senduran Balasubramaniam, Allison Coffey, Thomas M. Keane, Daniel G. MacArthur, Aarno Palotie, Carol Scott, James Stalker, Chris Tyler-Smith, Mark B. Gerstein, Suganthi Balasubramanian, Aravinda Chakravarti, Bartha M. Knoppers, Gonçalo R. Abecasis, Carlos D. Bustamante, Neda Gharani, Richard A. Gibbs, Lynn Jorde, Jane S. Kaye, Alastair Kent, Taosha Li, Amy L. McGuire, Gil A. McVean, Pilar N. Ossorio, Charles N. Rotimi, Yeyang Su, Lorraine H. Toji, Chris Tyler-Smith, Lisa D. Brooks, Adam L. Felsenfeld, Jean E. McEwen, Assya Abdallah, Christopher R. Juenger, Nicholas C. Clemm, Francis S. Collins, Audrey Duncanson, Eric D. Green, Mark S. Guyer, Jane L. Peterson, Alan J. Schafer, Gonçalo R. Abecasis, David L. Altshuler, Adam Auton, Lisa D. Brooks, Richard M. Durbin, Richard A. Gibbs, Matt E. Hurles, Gil A. McVean (2010) <i>Nature</i>. doi:<a class='pub-doi' href='https://doi.org/10.1038/nature09534'>10.1038/nature09534</a></div></div></td></tr><tr><td><a href='/doi/10.1093/bioinformatics/btv402' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>7.</div></td><td><div class='doi-body' data-key='10.1093/bioinformatics/btv402'><a href='/doi/10.1093/bioinformatics/btv402' class='pub-title'>LDlink: a web-based application for exploring population-specific haplotype structure and linking correlated alleles of possible functional variants: Fig. 1.</a><div class='pub-body'>Mitchell J. Machiela, Stephen J. Chanock (2015) <i>Bioinformatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/bioinformatics/btv402'>10.1093/bioinformatics/btv402</a></div></div></td></tr></table>
+
+    
+
+
+	</td>
+	<td class="thread-sidebar">
+
+
+			
+
+      <a class="btn btn-default follow-link btn-follow btn-lg is-following tt-top full-width" title="Follow discussion" data-id="71" data-ctype="thread" data-is-following="false">&nbsp;</a>
+
+      
+        <div class="status-box text-center"><span style="">Status:</span> 
+  Deferred
+
+</div>
+      
+
+      
+        
+      
+
+
+				
+
+					<div class="details">Views</div>
+					<span style="font-size:20px;">704</span>
+
+        
+
+				
+					<div class="details">Topics</div>
+					<div style="margin-bottom:15px;">
+		            <a href="/topics/genomics" class="tag">Genomics</a><a href="/topics/genetics" class="tag">Genetics</a><a href="/topics/ld" class="tag">LD</a><a href="/topics/loci" class="tag">Loci</a><a href="/topics/gwas-catalog" class="tag">GWAS Catalog</a><a href="/topics/1000-genomes" class="tag">1000 Genomes</a><a href="/topics/recombination-hotspots" class="tag">Recombination Hotspots</a><a href="/topics/hapmap" class="tag">HapMap</a><a href="/topics/linkage-disequilibrium" class="tag">Linkage Disequilibrium</a>
+					</div>
+				
+
+
+		
+			<div class="details">Referenced by</div>
+			<div style="font-size:12px;"><ul style="padding-left:16px !important;">
+			
+				<li>
+					
+					Research report: <a href='/p/rephetio/report'>Rephetio: Repurposing drugs on a hetnet</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/extracting-disease-gene-associations-from-the-gwas-catalog/80' class='thread-title'>Extracting disease-gene associations from the GWAS Catalog</a>
+				</li>
+			
+				</ul>
+			</div>
+		
+
+		
+			<div class="details">Cite this as</div>
+			<span style="font-size:12px;">
+				Daniel Himmelstein, Marina Sirota, Greg Way (2015) Calculating genomic windows for GWAS lead SNPs. <i>Thinklab.</i> doi:<a href='https://doi.org/10.15363/thinklab.d71'>10.15363/thinklab.d71</a>
+			</span>
+		
+
+		<div class="details">License</div>
+		<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0;width:88px;height:31px;" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></p>
+
+		<div class="details">Share</div>
+		
+			
+				<a class="share-button fb" onclick="javascript:void(window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A//thinklab.com/discussion/calculating-genomic-windows-for-gwas-lead-snps/71','','width=600,height=460,menubar=no,status=no'));" href="#"></a>
+<a class="share-button twitter" onclick="javascript:void(window.open('https://twitter.com/share?text=Calculating%20genomic%20windows%20for%20GWAS%20lead%20SNPs&url=https%3A//thinklab.com/discussion/calculating-genomic-windows-for-gwas-lead-snps/71','','width=600,height=300,menubar=no,status=no'));" href="#"></a>
+<a class="share-button google" onclick="javascript:void(window.open('https://plus.google.com/share?url=https%3A//thinklab.com/discussion/calculating-genomic-windows-for-gwas-lead-snps/71','','width=510,height=460,menubar=no,status=no'));" href="#"></a>
+
+			
+		
+
+	</td>
+</tr></table>
+
+
+		</div>
+
+
+		
+	    	<div class="footer">
+<div style="background:#dedede;">
+	<div class="main-centered-div text-center" style="padding:20px;">
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#6b030e0707042b1f03020500070a0945080406"><span class="__cf_email__" data-cfemail="f49c9198989bb4809c9d9a9f989596da979b99">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+	</div>
+</div>
+<div class="main-footer">
+	<div class="main-centered-div">
+
+<table class="full-width"><tr>
+	<td class="footer-nav">
+
+        <div class="foot-head">Explore</div>
+        <a href="/proposals">Proposals</a><br>
+        <a href="/projects">Projects</a><br>
+        <a href="/publications">Article discussion</a><br>
+        <a href="/discussion">All discussion</a><br>
+        <a href="/topics">Topics</a><br>
+        <!-- <a href="/funders">Funders</a><br> -->
+        <a href="/funding">Funding opportunities</a><br>
+
+	</td>
+	<td class="footer-nav">
+
+        <!-- <div class="foot-head">Help &amp; feedback</div>	 -->
+        <!-- <div class="foot-head">Intro</div>
+        <a href="/benefits/for-science">Why</a><br>
+        <a href="/how-it-works">How it works</a><br>
+
+<br> -->
+
+        <div class="foot-head">Community</div>
+        <a href="/leaderboard">Leaderboard</a><br>
+        <a href="/p/meta">Thinklab Meta</a><br>
+				<a href="/help/faq">Help</a><br>
+				<!-- <a href="/new-project">Start a proposal</a><br> -->
+        <!-- <a href="/benefits/proposal">Benefits</a><br> -->
+        <!-- <a href="/funding">Get funded</a><br> -->
+        <!-- <a href="/participate">Become a contributor</a><br> -->
+        <!-- <a href="/for-funders">For science funders</a><br> -->
+        <!-- <a href="/for-institutions">For institutions</a><br> -->
+
+	</td>
+	<td class="footer-nav">
+
+
+
+        <div class="foot-head">About</div>
+        <a href="/about">Overview</a><br>
+        <a href="/benefits">Benefits</a><br>
+        <a href="/how-it-works">How it works</a><br>
+        <a href="/about/story">Our story</a><br>
+        <a href="/blog">Our blog</a><br>
+        <a href="/about/jobs">Join the team</a><br>
+        <br>
+
+        <!-- <div class="foot-head">Help</div>
+        <a href="/help">Help</a><br>
+		 -->
+
+
+	</td>
+	<td class="footer-nav">
+		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
+		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<br><br>
+		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
+
+	</td>
+
+</tr></table>
+
+</div>
+</div>
+</div>
+
+		
+
+	</div>
+
+
+  <script></script>
+  <script>
+  var MEDIA_URL = 'https://think-lab.s3.amazonaws.com/m/';
+  var STATIC_URL = 'https://think-lab.s3.amazonaws.com/s/';
+  var page_is_authenticated = false;
+  var page_page = 'discussion';
+  var page_profile_id = undefined;
+</script>
+
+
+
+	<!-- Note different script type. MUST come before MathJax.js -->
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	        "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"],
+	                        scale: 110, linebreaks: { automatic:true },
+	                        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+	        tex2jax: { inlineMath: [ ["$$", "$$"], ["\\(","\\)"] ],
+	                    displayMath: [ ["$$$","$$$"], ["\\[", "\\]"] ],
+	                    processEscapes: true,}
+	            });
+
+	</script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://think-lab.s3.amazonaws.com/s/dist/main.min.js"></script>
+  
+
+
+
+  
+	
+  
+  
+  
+<script>
+$(function() {
+  recordHit('thread', 71);
+});
+</script>
+
+
+
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>

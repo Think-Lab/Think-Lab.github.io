@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZgEOC19dW0QCEVtHU1gG","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":559}</script>
+    <title>Tissue-specific gene expression resources | Thinklab</title>
+	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
+    <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/highlightjs/github.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/css.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/bootstrap-multiselect.css" />
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
+    
+    
+    
+    
+  
+    <meta name="citation_doi" content="10.15363/thinklab.d81">
+    <meta name="citation_title" content="Tissue-specific gene expression resources">
+    <meta name="citation_online_date" content="June 17, 2015">
+    <meta name="citation_author" content="Daniel Himmelstein, Frederic Bastian">
+    <meta name="citation_journal_title" content="Thinklab">
+    <meta name="citation_publisher" content="Thinklab">
+  
+
+    
+
+
+	<!-- GoogleAnalytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-48550230-1', 'thinklab.com');
+	ga('require', 'displayfeatures');
+	
+	ga('send', 'pageview');
+
+	</script>
+
+
+
+
+
+
+</head>
+<body >
+  <form id="form_action" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+</form>
+
+	
+
+	<div class="body-wrapper">
+
+		
+
+
+<!-- <div style="height:5px;background-image:url('https://think-lab.s3.amazonaws.com/s/img/top-bg.gif');"></div> -->
+<div class="gradient">
+	<div class="main-centered-div header-container">
+
+<table class="full-width" style="height:60px;"><tr>
+	<td style="width:200px;vertical-align:middle;padding-bottom:15px;">
+		<a href="/" style="font-weight:normal;color:#212121;"><img src="https://think-lab.s3.amazonaws.com/s/img/logo.png" width="160"></a>
+	</td><td style="vertical-align:middle;text-align:left;padding-top:6px;width:100%;padding-left:40px;">
+		<ul id="not-search-block"  class="main-header">
+
+
+			
+
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/proposals">Proposals</a></li>
+						<li><a href="/projects">Projects</a></li>
+						<li><a href="/publications">Article discussion</a></li>
+						<li><a href="/discussion">All discussion</a></li>
+					</ul>
+				</li>
+				<li><a href="/leaderboard">Leaderboard</a></li>
+
+			
+				<li><a href="/about">About</a></li>
+			
+
+
+		</ul>
+
+    <ul id="search-block" class="main-header" style="display: none; margin-right: 30px;">
+        <li class="full-width">
+            <form method="get" action="/search">
+			<div class="input-group full-width">
+				<input name="q" type="text" class="form-control search-input">
+			</div>
+            </form>
+        </li>
+    </ul>
+
+	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
+		<ul class="main-header pull-right" style="padding-left: 0;">
+    		
+                <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+            
+
+        </ul>
+    </ul>
+	</td>
+</tr></table>
+
+<!-- <div id="global-search-div" class="main-centered-div" style="display:none;">
+	<input type="text" value="" class="thread-search form-control" placeholder="Search" data-action="/discussion">
+</div> -->
+
+	</div>
+</div>
+
+		
+	  
+
+
+
+	  
+
+
+		
+
+		<div class="dark-head"><div class="main-centered-div">
+
+			
+
+		</div></div>
+		
+		<div class="main-centered-div" style="margin-top:40px;padding-bottom:340px">
+	    
+
+<div style="margin-top:-20px; margin-bottom:20px;">
+
+    <a class="side-box" href="/p/rephetio" style="background-color:#ebfdff;"><div class="side-type">Project:</div> <div class="side-title">Rephetio: Repurposing drugs on a hetnet [rephetio]</div></a><br>
+
+
+
+</div>
+
+<table style="margin-top:0px;"><tr>
+	<td class="thread-table-content">
+
+		<table class="full-width">
+			
+<tr class="comment-tr target-hl" id="1" data-comment-id="272">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="272"></a>
+
+    
+
+			<h2 class="page-title" style="margin-bottom:5px;margin-top:0px !important;">Tissue-specific gene expression resources</h2>
+
+			<div style="margin-top:5px;color:gray;margin-bottom:20px;font-size:13px;">
+				<a style="font-weight:normal;color:#212121" href="/u/dhimmel"><strong>Daniel Himmelstein</strong></a>
+				<span class="is-researcher">Researcher</span>
+				&nbsp; <a href="#1" class="light">751 days ago</a>
+				
+			</div>
+
+      
+
+          <hr>
+		
+
+    <p>We would to know the expression level of each gene in as many tissues and cell types as possible. Humans only for now. What are the best resources and methods to go about this?</p>
+
+<p>Here are some relevant resources we compiled (in order of preference):</p>
+
+<ol><li>The Genotype-Tissue Expression project (<a href="http://www.gtexportal.org/home/">GTEx</a>) <span class="citation">[<a href="https://doi.org/10.1126/science.aaa0355" class="citation" data-key="10.1126/science.aaa0355">1</a>]</span></li><li>Baseline Expression Atlas (<a href="//www.ebi.ac.uk/gxa/help/baseline-atlas.html">BEA</a>) <span class="citation">[<a href="https://doi.org/10.1093/nar/gkt1270" class="citation" data-key="10.1093/nar/gkt1270">2</a>]</span></li><li>Human Protein Atlas (<a href="//www.proteinatlas.org/">HPA</a>) <span class="citation">[<a href="https://doi.org/10.1126/science.1260419" class="citation" data-key="10.1126/science.1260419">3</a>]</span></li><li>GNF Gene Expression Atlas (<a href="http://biogps.org/dataset/1/geneatlas-u133a-gcrma/">BodyMap</a>) <span class="citation">[<a href="https://doi.org/10.1073/pnas.0400782101" class="citation" data-key="10.1073/pnas.0400782101">4</a>]</span></li><li>Human Proteome Map (<a href="http://www.humanproteomemap.org/">HPM</a>) <span class="citation">[<a href="https://doi.org/10.1038/nature13302" class="citation" data-key="10.1038/nature13302">5</a>]</span></li><li>Gene Enrichment Profiler (<a href="//xavierlab2.mgh.harvard.edu/EnrichmentProfiler/">GEP</a>) <span class="citation">[<a href="https://doi.org/10.1182/blood-2010-01-263855" class="citation" data-key="10.1182/blood-2010-01-263855">6</a>]</span></li><li>A global map of human gene expression (<a href="https://www.ebi.ac.uk/arrayexpress/experiments/E-MTAB-62/">E-MTAB-62</a>) <span class="citation">[<a href="https://doi.org/10.1038/nbt0410-322" class="citation" data-key="10.1038/nbt0410-322">7</a>]</span></li><li>Unveiling RNA Sample Annotation (<a href="//ursa.princeton.edu/">USRA</a>) <span class="citation">[<a href="https://doi.org/10.1093/bioinformatics/btt529" class="citation" data-key="10.1093/bioinformatics/btt529">8</a>]</span></li><li>RNA-Seq Atlas <span class="citation">[<a href="https://doi.org/10.1093/bioinformatics/bts084" class="citation" data-key="10.1093/bioinformatics/bts084">9</a>]</span></li></ol>
+
+<p><strong>Additional resources found since initial post</strong>:</p>
+
+<ul><li><a href="http://bgee.unil.ch/">Bgee</a> <span class="citation">[<a href="https://doi.org/10.1007/978-3-540-69828-9_12" class="citation" data-key="10.1007/978-3-540-69828-9_12">10</a>]</span></li><li><a href="http://tissues.jensenlab.org/About">TISSUES</a> <span class="citation">[<a href="https://doi.org/10.7717/peerj.1054" class="citation" data-key="10.7717/peerj.1054">11</a>]</span></li></ul>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="2" data-comment-id="273">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="273"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#2" class="light">751 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p><a href="/u/marinasirota" class="username">@marinasirota</a> recommended GTEx because of the large number samples per tissue and the use of RNA-seq.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="3" data-comment-id="278">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="278"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#3" class="light">750 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Bgee</h1>
+
+<p>On a GitHub issues discussion on mapping GTEx data to Uberon, <a href="https://github.com/obophenotype/uberon/issues/704#issuecomment-113134400">Frederic Bastian suggested Bgee</a> as a database for human tissue-specific expression measurements under normal conditions — exactly what we're looking for.</p>
+
+<p><a href="http://bgee.unil.ch/">Bgee</a> was designed for comparative genomics <span class="citation">[<a href="https://doi.org/10.1007/978-3-540-69828-9_12" class="citation" data-key="10.1007/978-3-540-69828-9_12">1</a>]</span> and therefore maps sample sites to standard vocabularies (like Uberon) and contains data for many species (not needed now but may be in the future).</p>
+
+<p>Genes are in Ensembl identifiers which we can easily convert to Entrez GeneIDs. Highly processed and relevant datasets <a href="http://bgee.unil.ch/?page=doc&amp;action=call_files#single_expr">appear to be available</a>:</p>
+
+<ul><li>Presence/absence of expression</li><li>Over-/under-expression across anatomy or life stages</li></ul>
+
+<p>Specifically, we want to create three matrices with Entrez GeneID columns and Uberon/CL rows. We are interested in the adult development stage. The values should binary or continuous allowing us to pick an inclusion threshold later. The three desired matrices of tissue-specific expression are:</p>
+
+<ol><li>Transcript presence in adult </li><li>Transcript over-expression compared to other adult human sites</li><li>Transcript under-expression compared to other adult human sites</li></ol>
+
+<p>Bgee does not yet include GTEx RNA-Seq data but will integrate this data in the coming months. <strong>Question for Bgee team:</strong> do you compute transcript abundance from raw data? I am not stoked about the Flux Capacitor software used by GTEx for <a href="https://liorpachter.wordpress.com/2013/10/21/gtex/">reasons pointed out by others</a>.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="4" data-comment-id="280">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="280"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#4" class="light">749 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Bgee parameters</h1>
+
+<p>The <a href="http://bgee.unil.ch/?page=download&amp;action=expr_calls#id9606">Bgee human downloads</a> are user-friendly and should be easy to process. We just have a few questions:</p>
+
+<h2>Transcript presence</h2>
+
+<p>For determining expression presence, we want to pick a single and broad <strong>developmental stage</strong>, such as adult. The <a href="http://bgee.unil.ch/?page=doc&amp;action=call_files#single_expr">propagation</a> up the developmental ontology means we don't need to pick a stage that has been directly assayed by many studies. Post-juvenile adult stage (<code>UBERON:0000113</code>) is used for the differential expression analysis. Which stage should we choose?</p>
+
+<p>Next, what <strong>evidence threshold</strong> should we require to consider a gene expressed I was thinking requiring <code>call_quality == 'high quality'</code> and <code>expression in {'present', 'low ambiguity'}</code>. We could also use a more complex metric on the <a href="http://bgee.unil.ch/?page=doc&amp;action=call_files#single_expr">complete file</a>. </p>
+
+<h2>Differential expression</h2>
+
+<p>We would like to include two differential expression edges in our network: one for under-expression and one for over-expression. For the over-expression dataset, is <code>call_quality == 'high quality'</code> and <code>differential_expression  == 'over-expression'</code> the right filter?</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="5" data-comment-id="284">
+  <td class="comment-profile-avatar">
+		<a href="/u/fbastian"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/s/img/p_default_medium.png' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="284"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/fbastian">Frederic Bastian</a>
+				
+				<span class="light">&nbsp;<a href="#5" class="light">749 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <blockquote><p>do you compute transcript abundance from raw data? I am not stoked about the Flux Capacitor software used by GTEx for reasons pointed out by others.</p></blockquote>
+
+<p>Yes, we do. We map reads to transcriptome using TopHat2; read counts extracted using HTseq; length of longest annotated transcript used.<br>(edit: woops, you said transcript abundance. We only provide expression data "per gene")</p>
+
+<p>Currently, we do not use TMM normalization between samples for the RPKM values we provide, but we will in the next release. We also want to get away from RPKM values, and provide TPM values (for motivation, see <span class="citation">[<a href="https://doi.org/10.1007/s12064-012-0162-3" class="citation" data-key="10.1007/s12064-012-0162-3">1</a>]</span>).</p>
+
+<p>To generate differential expression calls, we use TMM normalization, then voom + limma. This has been shown to perform well (see <span class="citation">[<a href="https://doi.org/10.1093/bib/bbt086" class="citation" data-key="10.1093/bib/bbt086">2</a>]</span>). </p>
+
+<p>We will provide complete documentation by July. </p>
+
+<blockquote><p>The values should binary or continuous allowing us to pick an inclusion threshold later.</p></blockquote>
+
+<p>So have you noticed that we also provide RPKM values, not only the qualitative "calls"?</p>
+
+<blockquote><p>Post-juvenile adult stage (UBERON:0000113) is used for the differential expression analysis. Which stage should we choose?</p></blockquote>
+
+<p>Post-juvenile in human also includes 13-18 yo, so I don't know if you want to include those. HsapDv:0000087 "human adult stage" would be a "true" adult stage. But I think we don't use it for "differential expression across anatomy", we could correct that if you need it. It should be correctly used for "differential expression across development", if we have the data. And of course it is correctly used for the "presence/absence" calls.</p>
+
+<p>Note that "differential expression" calls are not propagated, so you might still need to examine all stages for "differential expression across development". But for "presence/absence", you can safely rely on the propagation, and only retrieve results for your stage of interest. </p>
+
+<p>You might want to use the "complete" file, you will have more data propagated. Also, if you use the "complete" file, you might decide to rely only on RNA-Seq data, and avoid the "ambiguity" states.</p>
+
+<blockquote><p>what evidence threshold should we require to consider a gene expressed I was thinking requiring call_quality == 'high quality' and expression in {'present', 'low ambiguity'}. We could also use a more complex metric on the complete file. </p></blockquote>
+
+<p>Presence low quality seems also to give good results, but here it is up to you to decide whether you want to be more on the false negative side, or more on the false positive side.</p>
+
+<blockquote><p>For the over-expression dataset, is call_quality == 'high quality' and differential_expression == 'over-expression' the right filter?</p></blockquote>
+
+<p>I would definitely use the "low quality" as well here. Because the overall call generated is based on a voting system weighted by p-values, so even if it is "low quality" because of conflicting analyses, the best p-value has won anyway. <br>Again, if you use the "complete" file, you might decide to rely only on RNA-Seq data, and avoid the "ambiguity" states.</p>
+
+<p>Edit: oh, I didn't notice you where mentioning "transcript abundance". We only provide expression data "per gene", not "per transcript".</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-132" class="inline-note toggle-parent" data-note-id="132">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: My mistake regarding "transcript abundance" — we actually only care about gene abundance.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-133" class="inline-note toggle-parent" data-note-id="133">
+	<p><a href="/u/fbastian">Frederic Bastian</a>: <span><a href="/u/dhimmel" class="username">@dhimmel</a>: OK, it should fit your needs then. Let me know if you have any other question.</span>
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="6" data-comment-id="289">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="289"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#6" class="light">748 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>We have done some initial analyses on the Bgee data (<a href="http://nbviewer.ipython.org/github/dhimmel/bgee/blob/b26d396bbe6b137372731f031f544c7da47e314c/bgee.ipynb">notebook</a>). We stuck with the simple files because:</p>
+
+<ul><li>we would like to outsource as much of the difficult decision-making as possible.</li><li>we want a method that is resilient to changing technologies and Bgee revisions — not a method that is only optimal for a specific Bgee release.</li></ul>
+
+<p>Here are our initial findings.</p>
+
+<h2>Gene presence</h2>
+
+<p>We chose the filter:</p>
+
+<p></p><pre><code class="python">call_quality in {'high quality', 'low quality'} and expression in {'present', 'low ambiguity'}</code></pre>
+
+<p>We chose a permissive filter that is not limited to RNA-Seq. In the future, when Bgee contains more sources, we could increase these thresholds.</p>
+
+<p>The developmental stage "25-44 year-old human stage" (<code>HsapDv:0000090</code>) has the most present genes. "Human adult stage" (<code>HsapDv:0000087</code>) is comparatively quite underpopulated with major organs like heart having no present genes (<a href="http://nbviewer.ipython.org/github/dhimmel/bgee/blob/b26d396bbe6b137372731f031f544c7da47e314c/bgee.ipynb#Figure-1:-Number-of-genes-present-by-developmental-stage-and-anatomical-entity">Figure 1</a>). I was surprised because I thought adult would subsume 25-44 and the expression data would be propagated. <a href="/u/fbastian" class="username">@fbastian</a>, any idea what is going on? Should we take 25-44 as our developmental context or should we collapse data across adult developmental stages. Is the differential-expression data lacking if it's only calculated on "post-juvenile adult stage"?</p>
+
+<p>Compared to the distribution of expressed genes in the GNF Expression Atlas (<a href="http://nbviewer.ipython.org/github/dhimmel/bgee/blob/b26d396bbe6b137372731f031f544c7da47e314c/bgee.ipynb#Figure-3:-Distibution-of-genes-present-per-tissue-in-GNF-Expression-Atlas">Figure 3</a>), Bgee had much more variation by tissue. This is expected since Bgee integrates diverse data of varied throughput and a is an acceptable sacrifice for broader input data.</p>
+
+<h2>Differential expression</h2>
+
+<p>We identified differential expression with <code>call_quality in {'low quality', 'high quality'}</code>. <a href="http://nbviewer.ipython.org/github/dhimmel/bgee/blob/b26d396bbe6b137372731f031f544c7da47e314c/bgee.ipynb#Figure-2:-Number-of-differntially-expressed-genes-present-by-anatomical-entity">Figure 2</a> shows that we identified a large number of DE-genes across a variety of anatomical entities. Some tissues or cell types, such as leukocytes and testis, have over 10,000 under/over-expressed genes (almost every gene). Is this biologically meaningful or the result of data coverage or other experimental artifacts?</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="7" data-comment-id="292">
+  <td class="comment-profile-avatar">
+		<a href="/u/fbastian"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/s/img/p_default_medium.png' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="292"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/fbastian">Frederic Bastian</a>
+				
+				<span class="light">&nbsp;<a href="#7" class="light">748 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>(on a side note, I didn't know IPython/Jupyter, I discovered it thanks to you and I fell in love with it, this is amazing; also, it's great to have other people to investigate our data, and check their quality)</p>
+
+<blockquote><p>I was surprised because I thought adult would subsume 25-44 and the expression data would be propagated</p></blockquote>
+
+<p>So, we propagate the data, but in the simple file we only display conditions that were actually observed in experimental data (no conditions appearing from propagation only). It means that we never had an experiment studying "heart" at stage "human adult stage". Which makes sense, because annotating experimental data with such a broad term basically mean "we know it was a heart from an adult, but no idea which age"; we often have more detailed information.</p>
+
+<p>This is why the complete file would work better for you, as we also display conditions from "propagation only"; you should see lots of data for "heart" at "human adult stage". Of note, even in the complete file you get the "global" call generated by us, see column 7 and 8: <a href="http://bgee.org/?page=doc&amp;action=call_files#single_expr_complete">http://bgee.org/?page=doc&amp;action=call_files#single_expr_complete</a><br>So you wouldn't have to do the decision-making, even when using the complete file.</p>
+
+<p>But your problem is interesting, maybe we should "relax" the filtering of conditions in the simple file, I will think about it.<br>This difference in filtering was explained in the documentation, should we clarify it?</p>
+
+<blockquote><p>Some tissues or cell types, such as leukocytes and testis, have over 10,000 under/over-expressed genes (almost every gene). Is this biologically meaningful or the result of data coverage or other experimental artifacts?</p></blockquote>
+
+<p>I think it is meaningful. First, it is not almost every gene, from the complete file (where you can also find genes never shown to have differential expression) you can see that we have about 20,000 genes tested for differential expression; so, in the majority of tissues you get a reasonable percentage of genes differentially expressed. Second, I'm not surprised by the outlier tissues you found, for instance we know that testis and brain have very specific expression. Third, you almost always found more genes under-expressed than over-expressed, and this is actually an interesting pattern, that we have observed by other methods.</p>
+
+<p>I will discuss this with my colleagues to be sure they get to the same conclusion, and will get back to you. But I think everything looks good. </p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="8" data-comment-id="293">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="293"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#8" class="light">748 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Completed Bgee analysis — version 0</h1>
+
+<h2>Tissue-specific gene presence</h2>
+
+<blockquote><p>we propagate the data, but in the simple file we only display conditions that were actually observed in experimental data (no conditions appearing from propagation only)</p></blockquote>
+
+<p>Okay I switched to the complete file for presence/absence. The updated <a href="http://nbviewer.ipython.org/github/dhimmel/bgee/blob/bd50da6c931675a0316a71ab5c6d7d1bbd35f8bd/bgee.ipynb#Figure-1:-Number-of-genes-present-by-developmental-stage-and-anatomical-entity">Figure 1</a> makes much more sense now. We chose to go with "human adult stage" (<code>HsapDv:0000087</code>) as the developmental stage, which now has broad coverage across tissues, however with fewer present genes than "life cycle" as expected. We converted to entrez genes and ended up with a matrix of 18,997 genes (16,278 coding) × 666 anatomical entities (<a href="https://github.com/dhimmel/bgee/blob/bd50da6c931675a0316a71ab5c6d7d1bbd35f8bd/data/present-in-adult.tsv.gz">download</a>). On average, 41.1% of genes were expressed in a given anatomical entity.</p>
+
+<blockquote><p>But your problem is interesting, maybe we should "relax" the filtering of conditions in the simple file, I will think about it. This difference in filtering was explained in the documentation, should we clarify it?</p></blockquote>
+
+<p>I misinterpreted the <a href="http://bgee.unil.ch/?page=doc&amp;action=call_files#single_expr">documentation</a> by assuming that if a developmental stage had any annotations, propagated values would be provided for all anatomies of that stage. Instead, propagated values are only included for stage–anatomy combinations with annotations. Perhaps the documentation should make it more clear that many use cases will require the complete file due to this issue. Another consideration is that processing the complete file was consuming up to 80 GB of RAM at points — not an issue <em>personally</em> but could be for others.</p>
+
+<h2>Tissue-specific differential expression</h2>
+
+<p>We converted the differential expression to entrez genes and ended up with a matrix of 18,620 genes (16,184 coding) × 98 anatomical entities (<a href="http://nbviewer.ipython.org/github/dhimmel/bgee/blob/bd50da6c931675a0316a71ab5c6d7d1bbd35f8bd/bgee.ipynb#Read-and-process-differential-expression-data">notebook</a>, <a href="https://github.com/dhimmel/bgee/blob/bd50da6c931675a0316a71ab5c6d7d1bbd35f8bd/data/diffex.tsv.gz">download</a>).</p>
+
+<h1>General Bgee feedback</h1>
+
+<p><a href="/u/fbastian" class="username">@fbastian</a>, in the presence download, for a given gene–stage–anatomy combination is there at most one row? For the anatomy-based differential expression download, for a given gene–anatomy combination is there at most one row? Better documentation of what uniquely defines an observation (row) would be helpful.</p>
+
+<p>Since the downloaded zip files only contain a single file, I think gzip compression makes more sense.</p>
+
+<p>Finally, I prefer lowercase column names with underscores rather than spaces. This naming convention avoids frustrating <a href="https://github.com/hadley/readr/blob/efd422504762d703bc8c67a40c36e52466e275b3/README.md#output">R munging</a> and enables unquoted variable reference in R and python. Understandably, you may not want to change for compatibility issues.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="9" data-comment-id="297">
+  <td class="comment-profile-avatar">
+		<a href="/u/fbastian"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/s/img/p_default_medium.png' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="297"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/fbastian">Frederic Bastian</a>
+				
+				<span class="light">&nbsp;<a href="#9" class="light">746 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <blockquote><p>Some tissues or cell types, such as leukocytes and testis, have over 10,000 under/over-expressed genes (almost every gene). Is this biologically meaningful or the result of data coverage or other experimental artifacts?</p></blockquote>
+
+<p>I discussed this with my colleagues as promised, they agree that everything looks fine. We just get to the conclusion that maybe we could use a FDR correction over all analyses (currently, p-values are corrected on a "per analysis" basis), to decrease the number of differentially expressed genes in the most studied organs. </p>
+
+<blockquote><p>matrix of 18,997 genes (16,278 coding) × 666 anatomical entities</p></blockquote>
+
+<p>Great, I just want to warn you that lots of these structures are not independent (e.g., "cerebellum" is not independent from "brain"). I don't know what type of analyses you plan, but this can sometimes be problematic. If you need it, I can provide you a script accepting a list of organs as argument, and returning only the most-precise "independent" organs.</p>
+
+<blockquote><p>in the presence download, for a given gene–stage–anatomy combination is there at most one row</p></blockquote>
+
+<p>Yes.</p>
+
+<blockquote><p>For the anatomy-based differential expression download, for a given gene–anatomy combination is there at most one row?</p></blockquote>
+
+<p>No, because an analysis could compare organ A, B, C at stage embryo, another one compare the organs A, B, C at stage adult. So, for a given gene, you would have two entries for organ A: one at stage embryo, another one at stage adult.<br>So, it is as for presence download, it is at most one row for a given gene–stage–anatomy combination.</p>
+
+<blockquote><p>I think gzip compression makes more sense.</p></blockquote>
+
+<p>Not for Windows users (yes, it exists :p)</p>
+
+<p>Thank you for your feedback, we will take it into account, it is much appreciated. Notably we will remove the spaces in header, will update the documentation, and will change the filtering in simple files.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="10" data-comment-id="299">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="299"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#10" class="light">745 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <blockquote><p>we could use a FDR correction over all analyses</p></blockquote>
+
+<p>I support the correction for multiple testing.</p>
+
+<blockquote><p>So, it is as for presence download, it is at most one row for a given gene–stage–anatomy combination.</p></blockquote>
+
+<p>I thought all rows in the "Over-/Under-expression across anatomy" download were for "post-juvenile adult stage", so row uniqueness depends only on gene and anatomy?</p>
+
+<blockquote><p>lots of these structures are not independent (e.g., "cerebellum" is not independent from "brain"). I don't know what type of analyses you plan, but this can sometimes be problematic.</p></blockquote>
+
+<p>We enforce uniqueness for the metanodes where we are predicting edges (<a href="http://thinklab.com/discussion/unifying-drug-vocabularies/40#192">compounds</a> and <a href="http://thinklab.com/discussion/unifying-disease-vocabularies/44#144">diseases</a>). We are not planning on eradicating term overlap for other metanodes such as <a href="http://thinklab.com/discussion/compiling-gene-ontology-annotations-into-an-easy-to-use-format/39">GO Domains</a>, <a href="http://thinklab.com/discussion/tissue-node/41#286">Anatomy</a>, and <a href="http://thinklab.com/discussion/mining-knowledge-from-medline-articles-and-their-indexed-mesh-terms/67#222">Symptom</a>. The consequence of this duplicity is unknown and something that <a href="http://het.io/hnep/">HNEP</a> researchers should eventually confront.</p>
+
+<p>Our method downweights paths through high-degree nodes, which reduces the impact of highly-redundant supernodes such as "anatomical entity", "anatomical structure", and "anatomical system". However, our implementation has not been optimized and may get bogged down by all these expression edges. Therefore we may consider removing anatomies that are too broad to be meaningful. We could also consider pruning for independence.</p>
+
+<blockquote><p>If you need it, I can provide you a script accepting a list of organs as argument, and returning only the most-precise "independent" organs.</p></blockquote>
+
+<p>Yes, I don't <em>need</em> it but <em>want</em> to see the script out of interest. Primarily, I am curious about how your algorithm, since I often encounter these problems.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="11" data-comment-id="539">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="539"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#11" class="light">611 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Bgee discussion migrating</h1>
+
+<p>I started a <a href="http://thinklab.com/discussion/processing-bgee-for-tissue-specific-gene-presence-and-overunder-expression/124" class="citation thread-citation" data-key="10.15363/thinklab.d124">designated discussion</a> for Bgee. Please direct further Bgee attention there.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+    		
+		</table>
+
+    
+
+    &nbsp;<br>
+    <a class="btn btn-primary btn-lg" href="/signup?next=/discussion/tissue-specific-gene-expression-resources/81&suppress_message=1" style>Join to Reply</a>
+
+
+		<table class="references table-td-5" style="display:none;"><tr><td><a href='/doi/10.1126/science.aaa0355' class='pub-comments tt-right' title='Article comments'>15</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.1126/science.aaa0355'><a href='/doi/10.1126/science.aaa0355' class='pub-title'>The human transcriptome across tissues and individuals</a><div class='pub-body'>M. Mele, P. G. Ferreira, F. Reverter, D. S. DeLuca, J. Monlong, M. Sammeth, T. R. Young, J. M. Goldmann, D. D. Pervouchine, T. J. Sullivan, R. Johnson, A. V. Segre, S. Djebali, A. Niarchou, T. G. Consortium, F. A. Wright, T. Lappalainen, M. Calvo, G. Getz, E. T. Dermitzakis, K. G. Ardlie, R. Guigo (2015) <i>Science</i>. doi:<a class='pub-doi' href='https://doi.org/10.1126/science.aaa0355'>10.1126/science.aaa0355</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkt1270' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>2.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkt1270'><a href='/doi/10.1093/nar/gkt1270' class='pub-title'>Expression Atlas update--a database of gene and transcript expression from microarray- and sequencing-based functional genomics experiments</a><div class='pub-body'>R. Petryszak, T. Burdett, B. Fiorelli, N. A. Fonseca, M. Gonzalez-Porta, E. Hastings, W. Huber, S. Jupp, M. Keays, N. Kryvych, J. McMurry, J. C. Marioni, J. Malone, K. Megy, G. Rustici, A. Y. Tang, J. Taubert, E. Williams, O. Mannion, H. E. Parkinson, A. Brazma (2013) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkt1270'>10.1093/nar/gkt1270</a></div></div></td></tr><tr><td><a href='/doi/10.1126/science.1260419' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>3.</div></td><td><div class='doi-body' data-key='10.1126/science.1260419'><a href='/doi/10.1126/science.1260419' class='pub-title'>Tissue-based map of the human proteome</a><div class='pub-body'>M. Uhlen, L. Fagerberg, B. M. Hallstrom, C. Lindskog, P. Oksvold, A. Mardinoglu, A. Sivertsson, C. Kampf, E. Sjostedt, A. Asplund, I. Olsson, K. Edlund, E. Lundberg, S. Navani, C. A.-K. Szigyarto, J. Odeberg, D. Djureinovic, J. O. Takanen, S. Hober, T. Alm, P.-H. Edqvist, H. Berling, H. Tegel, J. Mulder, J. Rockberg, P. Nilsson, J. M. Schwenk, M. Hamsten, K. von Feilitzen, M. Forsberg, L. Persson, F. Johansson, M. Zwahlen, G. von Heijne, J. Nielsen, F. Ponten (2015) <i>Science</i>. doi:<a class='pub-doi' href='https://doi.org/10.1126/science.1260419'>10.1126/science.1260419</a></div></div></td></tr><tr><td><a href='/doi/10.1073/pnas.0400782101' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>4.</div></td><td><div class='doi-body' data-key='10.1073/pnas.0400782101'><a href='/doi/10.1073/pnas.0400782101' class='pub-title'>A gene atlas of the mouse and human protein-encoding transcriptomes</a><div class='pub-body'>A. I. Su, T. Wiltshire, S. Batalov, H. Lapp, K. A. Ching, D. Block, J. Zhang, R. Soden, M. Hayakawa, G. Kreiman, M. P. Cooke, J. R. Walker, J. B. Hogenesch (2004) <i>Proceedings of the National Academy of Sciences</i>. doi:<a class='pub-doi' href='https://doi.org/10.1073/pnas.0400782101'>10.1073/pnas.0400782101</a></div></div></td></tr><tr><td><a href='/doi/10.1038/nature13302' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>5.</div></td><td><div class='doi-body' data-key='10.1038/nature13302'><a href='/doi/10.1038/nature13302' class='pub-title'>A draft map of the human proteome</a><div class='pub-body'>Min-Sik Kim, Sneha M. Pinto, Derese Getnet, Raja Sekhar Nirujogi, Srikanth S. Manda, Raghothama Chaerkady, Anil K. Madugundu, Dhanashree S. Kelkar, Ruth Isserlin, Shobhit Jain, Joji K. Thomas, Babylakshmi Muthusamy, Pamela Leal-Rojas, Praveen Kumar, Nandini A. Sahasrabuddhe, Lavanya Balakrishnan, Jayshree Advani, Bijesh George, Santosh Renuse, Lakshmi Dhevi N. Selvan, Arun H. Patil, Vishalakshi Nanjappa, Aneesha Radhakrishnan, Samarjeet Prasad, Tejaswini Subbannayya, Rajesh Raju, Manish Kumar, Sreelakshmi K. Sreenivasamurthy, Arivusudar Marimuthu, Gajanan J. Sathe, Sandip Chavan, Keshava K. Datta, Yashwanth Subbannayya, Apeksha Sahu, Soujanya D. Yelamanchi, Savita Jayaram, Pavithra Rajagopalan, Jyoti Sharma, Krishna R. Murthy, Nazia Syed, Renu Goel, Aafaque A. Khan, Sartaj Ahmad, Gourav Dey, Keshav Mudgal, Aditi Chatterjee, Tai-Chung Huang, Jun Zhong, Xinyan Wu, Patrick G. Shaw, Donald Freed, Muhammad S. Zahari, Kanchan K. Mukherjee, Subramanian Shankar, Anita Mahadevan, Henry Lam, Christopher J. Mitchell, Susarla Krishna Shankar, Parthasarathy Satishchandra, John T. Schroeder, Ravi Sirdeshmukh, Anirban Maitra, Steven D. Leach, Charles G. Drake, Marc K. Halushka, T. S. Keshava Prasad, Ralph H. Hruban, Candace L. Kerr, Gary D. Bader, Christine A. Iacobuzio-Donahue, Harsha Gowda, Akhilesh Pandey (2014) <i>Nature</i>. doi:<a class='pub-doi' href='https://doi.org/10.1038/nature13302'>10.1038/nature13302</a></div></div></td></tr><tr><td><a href='/doi/10.1182/blood-2010-01-263855' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>6.</div></td><td><div class='doi-body' data-key='10.1182/blood-2010-01-263855'><a href='/doi/10.1182/blood-2010-01-263855' class='pub-title'>Gene enrichment profiles reveal T-cell development, differentiation, and lineage-specific transcription factors including ZBTB25 as a novel NF-AT repressor</a><div class='pub-body'>Y. Benita, Z. Cao, C. Giallourakis, C. Li, A. Gardet, R. J. Xavier (2010) <i>Blood</i>. doi:<a class='pub-doi' href='https://doi.org/10.1182/blood-2010-01-263855'>10.1182/blood-2010-01-263855</a></div></div></td></tr><tr><td><a href='/doi/10.1038/nbt0410-322' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>7.</div></td><td><div class='doi-body' data-key='10.1038/nbt0410-322'><a href='/doi/10.1038/nbt0410-322' class='pub-title'>A global map of human gene expression</a><div class='pub-body'>Margus Lukk, Misha Kapushesky, Janne Nikkilä, Helen Parkinson, Angela Goncalves, Wolfgang Huber, Esko Ukkonen, Alvis Brazma (2010) <i>Nat Biotechnol</i>. doi:<a class='pub-doi' href='https://doi.org/10.1038/nbt0410-322'>10.1038/nbt0410-322</a></div></div></td></tr><tr><td><a href='/doi/10.1093/bioinformatics/btt529' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>8.</div></td><td><div class='doi-body' data-key='10.1093/bioinformatics/btt529'><a href='/doi/10.1093/bioinformatics/btt529' class='pub-title'>Ontology-aware classification of tissue and cell-type signals in gene expression profiles across platforms and technologies</a><div class='pub-body'>Y.-s. Lee, A. Krishnan, Q. Zhu, O. G. Troyanskaya (2013) <i>Bioinformatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/bioinformatics/btt529'>10.1093/bioinformatics/btt529</a></div></div></td></tr><tr><td><a href='/doi/10.1093/bioinformatics/bts084' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>9.</div></td><td><div class='doi-body' data-key='10.1093/bioinformatics/bts084'><a href='/doi/10.1093/bioinformatics/bts084' class='pub-title'>RNA-Seq Atlas--a reference database for gene expression profiling in normal tissue by next-generation sequencing</a><div class='pub-body'>M. Krupp, J. U. Marquardt, U. Sahin, P. R. Galle, J. Castle, A. Teufel (2012) <i>Bioinformatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/bioinformatics/bts084'>10.1093/bioinformatics/bts084</a></div></div></td></tr><tr><td><a href='/doi/10.1007/978-3-540-69828-9_12' class='pub-comments tt-right' title='Article comments'>8</a></td><td><div class='pub-order'>10.</div></td><td><div class='doi-body' data-key='10.1007/978-3-540-69828-9_12'><a href='/doi/10.1007/978-3-540-69828-9_12' class='pub-title'>Bgee: Integrating and Comparing Heterogeneous Transcriptome Data Among Species</a><div class='pub-body'>Frederic Bastian, Gilles Parmentier, Julien Roux, Sebastien Moretti, Vincent Laudet, Marc Robinson-Rechavi (2008) <i>Data Integration in the Life Sciences</i>. doi:<a class='pub-doi' href='https://doi.org/10.1007/978-3-540-69828-9_12'>10.1007/978-3-540-69828-9_12</a></div></div></td></tr><tr><td><a href='/doi/10.7717/peerj.1054' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>11.</div></td><td><div class='doi-body' data-key='10.7717/peerj.1054'><a href='/doi/10.7717/peerj.1054' class='pub-title'>Comprehensive comparison of large-scale tissue expression datasets</a><div class='pub-body'>Alberto Santos, Kalliopi Tsafou, Christian Stolte, Sune Pletscher-Frankild, Seán I. O’Donoghue, Lars Juhl Jensen (2015) <i>PeerJ</i>. doi:<a class='pub-doi' href='https://doi.org/10.7717/peerj.1054'>10.7717/peerj.1054</a></div></div></td></tr><tr><td><a href='/doi/10.1007/978-3-540-69828-9_12' class='pub-comments tt-right' title='Article comments'>8</a></td><td><div class='pub-order'>12.</div></td><td><div class='doi-body' data-key='10.1007/978-3-540-69828-9_12'><a href='/doi/10.1007/978-3-540-69828-9_12' class='pub-title'>Bgee: Integrating and Comparing Heterogeneous Transcriptome Data Among Species</a><div class='pub-body'>Frederic Bastian, Gilles Parmentier, Julien Roux, Sebastien Moretti, Vincent Laudet, Marc Robinson-Rechavi (2008) <i>Data Integration in the Life Sciences</i>. doi:<a class='pub-doi' href='https://doi.org/10.1007/978-3-540-69828-9_12'>10.1007/978-3-540-69828-9_12</a></div></div></td></tr><tr><td><a href='/doi/10.1007/s12064-012-0162-3' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>13.</div></td><td><div class='doi-body' data-key='10.1007/s12064-012-0162-3'><a href='/doi/10.1007/s12064-012-0162-3' class='pub-title'>Measurement of mRNA abundance using RNA-seq data: RPKM measure is inconsistent among samples</a><div class='pub-body'>Günter P. Wagner, Koryu Kin, Vincent J. Lynch (2012) <i>Theory Biosci.</i>. doi:<a class='pub-doi' href='https://doi.org/10.1007/s12064-012-0162-3'>10.1007/s12064-012-0162-3</a></div></div></td></tr><tr><td><a href='/doi/10.1093/bib/bbt086' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>14.</div></td><td><div class='doi-body' data-key='10.1093/bib/bbt086'><a href='/doi/10.1093/bib/bbt086' class='pub-title'>Comparison of software packages for detecting differential expression in RNA-seq studies</a><div class='pub-body'>F. Seyednasrollah, A. Laiho, L. L. Elo (2013) <i>Briefings in Bioinformatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/bib/bbt086'>10.1093/bib/bbt086</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d40' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>15.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d40'><a href='/discussion/unifying-drug-vocabularies/40' class='pub-title'>Unifying drug vocabularies</a><div class='pub-body'>Daniel Himmelstein (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d40'>10.15363/thinklab.d40</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d44' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>16.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d44'><a href='/discussion/unifying-disease-vocabularies/44' class='pub-title'>Unifying disease vocabularies</a><div class='pub-body'>Daniel Himmelstein, Tong Shu Li (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d44'>10.15363/thinklab.d44</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d39' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>17.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d39'><a href='/discussion/compiling-gene-ontology-annotations-into-an-easy-to-use-format/39' class='pub-title'>Compiling Gene Ontology annotations into an easy-to-use format</a><div class='pub-body'>Daniel Himmelstein, Casey Greene, Venkat Malladi, Frederic Bastian (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d39'>10.15363/thinklab.d39</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d41' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>18.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d41'><a href='/discussion/tissue-node/41' class='pub-title'>Tissue Node</a><div class='pub-body'>Venkat Malladi, Daniel Himmelstein, Chris Mungall (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d41'>10.15363/thinklab.d41</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d67' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>19.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d67'><a href='/discussion/mining-knowledge-from-medline-articles-and-their-indexed-mesh-terms/67' class='pub-title'>Mining knowledge from MEDLINE articles and their indexed MeSH terms</a><div class='pub-body'>Daniel Himmelstein, Alex Pankov (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d67'>10.15363/thinklab.d67</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d124' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>20.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d124'><a href='/discussion/processing-bgee-for-tissue-specific-gene-presence-and-overunder-expression/124' class='pub-title'>Processing Bgee for tissue-specific gene presence and over/under-expression</a><div class='pub-body'>Daniel Himmelstein, Frederic Bastian (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d124'>10.15363/thinklab.d124</a></div></div></td></tr></table>
+
+    
+
+
+	</td>
+	<td class="thread-sidebar">
+
+
+			
+
+      <a class="btn btn-default follow-link btn-follow btn-lg is-following tt-top full-width" title="Follow discussion" data-id="81" data-ctype="thread" data-is-following="false">&nbsp;</a>
+
+      
+        <div class="status-box text-center"><span style="">Status:</span> 
+  Completed
+
+</div>
+      
+
+      
+        
+      
+
+
+				
+
+					<div class="details">Views</div>
+					<span style="font-size:20px;">823</span>
+
+        
+
+				
+					<div class="details">Topics</div>
+					<div style="margin-bottom:15px;">
+		            <a href="/topics/rnaseq" class="tag">RNASeq</a><a href="/topics/transcription" class="tag">Transcription</a><a href="/topics/gene-expression" class="tag">Gene Expression</a><a href="/topics/tissue-specificity" class="tag">Tissue Specificity</a><a href="/topics/microarrays" class="tag">Microarrays</a>
+					</div>
+				
+
+
+		
+			<div class="details">Referenced by</div>
+			<div style="font-size:12px;"><ul style="padding-left:16px !important;">
+			
+				<li>
+					
+					Research report: <a href='/p/rephetio/report'>Rephetio: Repurposing drugs on a hetnet</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/processing-bgee-for-tissue-specific-gene-presence-and-overunder-expression/124' class='thread-title'>Processing Bgee for tissue-specific gene presence and over/under-expression</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/processing-gtex-for-tissue-specific-gene-expression/82' class='thread-title'>Processing GTEx for tissue-specific gene expression</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/text-as-a-resource-for-network-population/48' class='thread-title'>Text as a resource for network population?</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/the-tissues-resource-for-the-tissue-specificity-of-genes/91' class='thread-title'>The TISSUES resource for the tissue-specificity of genes</a>
+				</li>
+			
+				</ul>
+			</div>
+		
+
+		
+			<div class="details">Cite this as</div>
+			<span style="font-size:12px;">
+				Daniel Himmelstein, Frederic Bastian (2015) Tissue-specific gene expression resources. <i>Thinklab.</i> doi:<a href='https://doi.org/10.15363/thinklab.d81'>10.15363/thinklab.d81</a>
+			</span>
+		
+
+		<div class="details">License</div>
+		<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0;width:88px;height:31px;" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></p>
+
+		<div class="details">Share</div>
+		
+			
+				<a class="share-button fb" onclick="javascript:void(window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A//thinklab.com/discussion/tissue-specific-gene-expression-resources/81','','width=600,height=460,menubar=no,status=no'));" href="#"></a>
+<a class="share-button twitter" onclick="javascript:void(window.open('https://twitter.com/share?text=Tissue-specific%20gene%20expression%20resources&url=https%3A//thinklab.com/discussion/tissue-specific-gene-expression-resources/81','','width=600,height=300,menubar=no,status=no'));" href="#"></a>
+<a class="share-button google" onclick="javascript:void(window.open('https://plus.google.com/share?url=https%3A//thinklab.com/discussion/tissue-specific-gene-expression-resources/81','','width=510,height=460,menubar=no,status=no'));" href="#"></a>
+
+			
+		
+
+	</td>
+</tr></table>
+
+
+		</div>
+
+
+		
+	    	<div class="footer">
+<div style="background:#dedede;">
+	<div class="main-centered-div text-center" style="padding:20px;">
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#4a222f2626250a3e22232421262b2864292527"><span class="__cf_email__" data-cfemail="533b363f3f3c13273b3a3d383f32317d303c3e">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+	</div>
+</div>
+<div class="main-footer">
+	<div class="main-centered-div">
+
+<table class="full-width"><tr>
+	<td class="footer-nav">
+
+        <div class="foot-head">Explore</div>
+        <a href="/proposals">Proposals</a><br>
+        <a href="/projects">Projects</a><br>
+        <a href="/publications">Article discussion</a><br>
+        <a href="/discussion">All discussion</a><br>
+        <a href="/topics">Topics</a><br>
+        <!-- <a href="/funders">Funders</a><br> -->
+        <a href="/funding">Funding opportunities</a><br>
+
+	</td>
+	<td class="footer-nav">
+
+        <!-- <div class="foot-head">Help &amp; feedback</div>	 -->
+        <!-- <div class="foot-head">Intro</div>
+        <a href="/benefits/for-science">Why</a><br>
+        <a href="/how-it-works">How it works</a><br>
+
+<br> -->
+
+        <div class="foot-head">Community</div>
+        <a href="/leaderboard">Leaderboard</a><br>
+        <a href="/p/meta">Thinklab Meta</a><br>
+				<a href="/help/faq">Help</a><br>
+				<!-- <a href="/new-project">Start a proposal</a><br> -->
+        <!-- <a href="/benefits/proposal">Benefits</a><br> -->
+        <!-- <a href="/funding">Get funded</a><br> -->
+        <!-- <a href="/participate">Become a contributor</a><br> -->
+        <!-- <a href="/for-funders">For science funders</a><br> -->
+        <!-- <a href="/for-institutions">For institutions</a><br> -->
+
+	</td>
+	<td class="footer-nav">
+
+
+
+        <div class="foot-head">About</div>
+        <a href="/about">Overview</a><br>
+        <a href="/benefits">Benefits</a><br>
+        <a href="/how-it-works">How it works</a><br>
+        <a href="/about/story">Our story</a><br>
+        <a href="/blog">Our blog</a><br>
+        <a href="/about/jobs">Join the team</a><br>
+        <br>
+
+        <!-- <div class="foot-head">Help</div>
+        <a href="/help">Help</a><br>
+		 -->
+
+
+	</td>
+	<td class="footer-nav">
+		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
+		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<br><br>
+		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
+
+	</td>
+
+</tr></table>
+
+</div>
+</div>
+</div>
+
+		
+
+	</div>
+
+
+  <script></script>
+  <script>
+  var MEDIA_URL = 'https://think-lab.s3.amazonaws.com/m/';
+  var STATIC_URL = 'https://think-lab.s3.amazonaws.com/s/';
+  var page_is_authenticated = false;
+  var page_page = 'discussion';
+  var page_profile_id = undefined;
+</script>
+
+
+
+	<!-- Note different script type. MUST come before MathJax.js -->
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	        "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"],
+	                        scale: 110, linebreaks: { automatic:true },
+	                        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+	        tex2jax: { inlineMath: [ ["$$", "$$"], ["\\(","\\)"] ],
+	                    displayMath: [ ["$$$","$$$"], ["\\[", "\\]"] ],
+	                    processEscapes: true,}
+	            });
+
+	</script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://think-lab.s3.amazonaws.com/s/dist/main.min.js"></script>
+  
+
+
+
+  
+	
+  
+  
+  
+<script>
+$(function() {
+  recordHit('thread', 81);
+});
+</script>
+
+
+
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>

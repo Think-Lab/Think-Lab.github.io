@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZgEOC19dW0QCEVtHU1gG","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":681}</script>
+    <title>Add your ThinkLab feedback here in Meta | Thinklab</title>
+	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
+    <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/highlightjs/github.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/css.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/bootstrap-multiselect.css" />
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
+    
+    
+    
+    
+  
+
+    
+
+
+	<!-- GoogleAnalytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-48550230-1', 'thinklab.com');
+	ga('require', 'displayfeatures');
+	
+	ga('send', 'pageview');
+
+	</script>
+
+
+
+
+
+
+</head>
+<body >
+  <form id="form_action" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+</form>
+
+	
+
+	<div class="body-wrapper">
+
+		
+
+
+<!-- <div style="height:5px;background-image:url('https://think-lab.s3.amazonaws.com/s/img/top-bg.gif');"></div> -->
+<div class="gradient">
+	<div class="main-centered-div header-container">
+
+<table class="full-width" style="height:60px;"><tr>
+	<td style="width:200px;vertical-align:middle;padding-bottom:15px;">
+		<a href="/" style="font-weight:normal;color:#212121;"><img src="https://think-lab.s3.amazonaws.com/s/img/logo.png" width="160"></a>
+	</td><td style="vertical-align:middle;text-align:left;padding-top:6px;width:100%;padding-left:40px;">
+		<ul id="not-search-block"  class="main-header">
+
+
+			
+
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/proposals">Proposals</a></li>
+						<li><a href="/projects">Projects</a></li>
+						<li><a href="/publications">Article discussion</a></li>
+						<li><a href="/discussion">All discussion</a></li>
+					</ul>
+				</li>
+				<li><a href="/leaderboard">Leaderboard</a></li>
+
+			
+				<li><a href="/about">About</a></li>
+			
+
+
+		</ul>
+
+    <ul id="search-block" class="main-header" style="display: none; margin-right: 30px;">
+        <li class="full-width">
+            <form method="get" action="/search">
+			<div class="input-group full-width">
+				<input name="q" type="text" class="form-control search-input">
+			</div>
+            </form>
+        </li>
+    </ul>
+
+	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
+		<ul class="main-header pull-right" style="padding-left: 0;">
+    		
+                <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+            
+
+        </ul>
+    </ul>
+	</td>
+</tr></table>
+
+<!-- <div id="global-search-div" class="main-centered-div" style="display:none;">
+	<input type="text" value="" class="thread-search form-control" placeholder="Search" data-action="/discussion">
+</div> -->
+
+	</div>
+</div>
+
+		
+	  
+
+
+
+	  
+
+
+		
+
+		<div class="dark-head"><div class="main-centered-div">
+
+			
+
+		</div></div>
+		
+		<div class="main-centered-div" style="margin-top:40px;padding-bottom:340px">
+	    
+
+<div style="margin-top:-20px; margin-bottom:20px;">
+
+    <a class="side-box" href="/p/meta" style="background-color:#ebfdff;"><div class="side-type">Project:</div> <div class="side-title">Thinklab Meta [meta]</div></a><br>
+
+
+
+</div>
+
+<table style="margin-top:0px;"><tr>
+	<td class="thread-table-content">
+
+		<table class="full-width">
+			
+<tr class="comment-tr target-hl" id="1" data-comment-id="3">
+  <td class="comment-profile-avatar">
+		<a href="/u/jspauld"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/2_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="3"></a>
+
+    
+
+			<h2 class="page-title" style="margin-bottom:5px;margin-top:0px !important;">Add your ThinkLab feedback here in Meta</h2>
+
+			<div style="margin-top:5px;color:gray;margin-bottom:20px;font-size:13px;">
+				<a style="font-weight:normal;color:#212121" href="/u/jspauld"><strong>Jesse Spaulding</strong></a>
+				
+				&nbsp; <a href="#1" class="light">903 days ago</a>
+				
+			</div>
+
+      
+
+          <hr>
+		
+
+    <p>Hi folks,</p>
+
+<p>I'm writing this comment in <a href="http://thinklab.com/p/meta">Meta</a>, an area of the site where community members can discuss ThinkLab itself. If you have any feedback, questions, or suggestions this is where you should post them.</p>
+
+<p>Posting publicly will give others the chance to weigh in. (And that's kind of the point of this site.) However, if you'd prefer to give feedback privately, that's also encouraged. You may email me at <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="dcb6b9afafb99ca8b4b5b2b7b0bdbef2bfb3b1">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-12" class="inline-note toggle-parent" data-note-id="12">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: Meta link is broken. Also, perhaps a feature so I can delete this note once the issue is fixed.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-13" class="inline-note toggle-parent" data-note-id="13">
+	<p><a href="/u/jspauld">Jesse Spaulding</a>: Fixed. For now the plan is to wait and see how often it's requested to be able to delete a note. I don't think it's something we want happening a lot. Although, if people are free to edit their comments it makes sense that they could delete it as well.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-14" class="inline-note toggle-parent" data-note-id="14">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: I still get a 'ERR_EMPTY_RESPONSE' error when clicking <a href="http://thinklab.com/p/meta">Meta</a>. I was thinking, once these bugs are fixed, we could delete these messages, but I'm fine with the messages staying online.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-19" class="inline-note toggle-parent" data-note-id="19">
+	<p><a href="/u/jspauld">Jesse Spaulding</a>: I actually fixed a different Meta link. Now both are fixed. As trivial as this conversation is I think it's best to leave it :)
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="2" data-comment-id="36">
+  <td class="comment-profile-avatar">
+		<a href="/u/alizee"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/23_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="36"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/alizee">Antoine Lizee</a>
+				
+				<span class="light">&nbsp;<a href="#2" class="light">896 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Hi all,</p>
+
+<p>I'm not fond of how are treated the output links, for the references in particular. I find it a bit frustrating to arrive on a page with only the title and Disccusion/Followers. I wondered if it was broken at first. Now I get it, you can click on the doi to get to the destination, but I think the UX is a bit puzzling. <br>I'd rather have on the page itself a preview of the ressource. If it's an image, let's get it, if it's a paper, the abstract... Something.<br>Another solution would be to ask if I want to go directly to the link at the moment I click on it.</p>
+
+<p>Best,<br>Antoine</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-18" class="inline-note toggle-parent" data-note-id="18">
+	<p><a href="/u/jspauld">Jesse Spaulding</a>: Thanks for the feedback. The preview of the resource may not be possible. However, we should be able to come up with a better UX for those who want to go directly to the link (most people). Will work on it..
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-34" class="inline-note toggle-parent" data-note-id="34">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: <p><a href="/u/jspauld" class="username">@jspauld</a>, the new display format and linking system for references is a big improvement. Some suggestions:</p>
+
+<ul><li>the tooltip that appears when hovering over a references disappears when I move my mouse over it (so I cannot click links or copy text).</li><li>the author list is overly punctuated. I prefer the sparsely punctuated format of "Wei WQ, Cronin RM, ...".</li><li>consider journal names in italic</li><li>consider article names in bold or underlined</li><li>consider implementing in <a href="http://citationstyles.org/">citation style language</a> and <a href="https://github.com/citation-style-language/styles">sharing</a>, so I can use the style for my RMarkdown documents.</li></ul>
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-53" class="inline-note toggle-parent" data-note-id="53">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: <a href="/u/jspauld" class="username">@jspauld</a>, perhaps we should be able to associate multiple publications with a single discussion. For example, many resources have an initial publication and periodical update publications. Or a discussion could compare two resources and therefore be applicable to both.
+
+<p>It would also be helpful for publication pages to link out to all citing pages.</p>
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-55" class="inline-note toggle-parent" data-note-id="55">
+	<p><a href="/u/jspauld">Jesse Spaulding</a>: <span><a href="/u/dhimmel" class="username">@dhimmel</a> Agree with your points and will work on it.</span>
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-70" class="inline-note toggle-parent" data-note-id="70">
+	<p><a href="/u/jspauld">Jesse Spaulding</a>: <span><a href="/u/dhimmel" class="username">@dhimmel</a> Most of your suggestions have been implemented. Publication pages now link out to all citing pages, and I've created a <a href="http://thinklab.com/discussion/new-citation-features/45">separate post</a> about that.</span>
+		
+	</p>
+	
+	<table style="display:none;"><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d45' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d45'><a href='/discussion/new-features-for-tracking-thinklab-citations/45' class='pub-title'>New features for tracking ThinkLab citations</a><div class='pub-body'>Jesse Spaulding (2015) <i>Thinklab</i>. https://thinklab.com/d/45</div></div></td></tr></table>
+</li>
+
+<li id="note-72" class="inline-note toggle-parent" data-note-id="72">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: <span><a href="/u/jspauld" class="username">@jspauld</a>, I am getting a database error when I try to change the publication associated with a <a href="http://thinklab.com/discussion/processing-labeledin-to-extract-indications/46">discussion</a>.</span>
+		
+	</p>
+	
+	<table style="display:none;"><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d46' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d46'><a href='/discussion/processing-labeledin-to-extract-indications/46' class='pub-title'>Processing LabeledIn to extract indications</a><div class='pub-body'>Daniel Himmelstein, Ritu  Khare (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d46'>10.15363/thinklab.d46</a></div></div></td></tr></table>
+</li>
+
+<li id="note-74" class="inline-note toggle-parent" data-note-id="74">
+	<p><a href="/u/jspauld">Jesse Spaulding</a>: <span><a href="/u/dhimmel" class="username">@dhimmel</a> should be fixed now. Please ignore the last message — I was mistakenly still logged in as you.</span>
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="3" data-comment-id="37">
+  <td class="comment-profile-avatar">
+		<a href="/u/alizee"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/23_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="37"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/alizee">Antoine Lizee</a>
+				
+				<span class="light">&nbsp;<a href="#3" class="light">896 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>More a silly question than constructive feedback: can we change our handle after creation of the profile? I somewhat screwed up the profile creation part, and I've been told I could have during these steps, but I can't find the functionality anywhere now. </p>
+
+<p>Thanks,<br>Antoine</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-16" class="inline-note toggle-parent" data-note-id="16">
+	<p><a href="/u/jspauld">Jesse Spaulding</a>: Yes, you can. If you click your profile image in the top right of the screen you will see a menu. Click 'Account'. This UI is being used by others, such as Twitter. But, I don't actually think it's that intuitive — so, may change it.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-20" class="inline-note toggle-parent" data-note-id="20">
+	<p><a href="/u/alizee">Antoine Lizee</a>: Okay I should've dig a bit further to understand "account" and "profile" settings are different. It's not that counter-intuitive, but adding a link to the account settings in the profile editing pane and vice-versa would be nice. Or just two tabs? Thanks for the quick answer.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="4" data-comment-id="39">
+  <td class="comment-profile-avatar">
+		<a href="/u/alizee"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/23_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="39"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/alizee">Antoine Lizee</a>
+				
+				<span class="light">&nbsp;<a href="#4" class="light">896 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>In the "It breaks" section,</p>
+
+<p>I cannot change my profile image. I get a page with just written in plain text "server error".<br>I managed to find one image that went through, but I have no idea why.</p>
+
+<p>Best,<br>Antoine</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-17" class="inline-note toggle-parent" data-note-id="17">
+	<p><a href="/u/jspauld">Jesse Spaulding</a>: This should be fixed. Can you try again with one of the images that didn't work?
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-22" class="inline-note toggle-parent" data-note-id="22">
+	<p><a href="/u/alizee">Antoine Lizee</a>: It works now, thanks. But I need to refresh the profile page to see the modifications.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="5" data-comment-id="68">
+  <td class="comment-profile-avatar">
+		<a href="/u/caseygreene"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/22_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="68"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/caseygreene">Casey Greene</a>
+				
+				<span class="light">&nbsp;<a href="#5" class="light">863 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Are e-mails being evaluated during login in a case sensitive manner? It seems like I have to remember the precise capitalization that I used when I signed up. Case sensitive e-mail systems are discouraged but allowed by RFC2821, but I don't know if they are prevalent enough (I haven't encountered one) to matter for the convenience trade-off.</p>
+
+<p>Edit: Link to RFC (second paragraph of 2.4): <a href="http://www.faqs.org/rfcs/rfc2821.html" target="_blank">http://www.faqs.org/rfcs/rfc2821.html</a></p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-51" class="inline-note toggle-parent" data-note-id="51">
+	<p><a href="/u/jspauld">Jesse Spaulding</a>: Good catch! Yes, they were evaluated case sensitive. This should be fixed now.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="6" data-comment-id="80">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="80"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				
+				<span class="light">&nbsp;<a href="#6" class="light">843 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Author order in crossref</h1>
+
+<p>Our project is now citable with a doi <span class="citation">[<a href="https://doi.org/10.15363/thinklab.4" class="citation" data-key="10.15363/thinklab.4">1</a>]</span>!</p>
+
+<p>However, the current <a href="http://search.crossref.org/?q=10.15363%2Fthinklab.4">author order in crossref</a> is incorrect.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-56" class="inline-note toggle-parent" data-note-id="56">
+	<p><a href="/u/jspauld">Jesse Spaulding</a>: Will fix. We forgot to update that when we added author ordering to ThinkLab.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-80" class="inline-note toggle-parent" data-note-id="80">
+	<p><a href="/u/jspauld">Jesse Spaulding</a>: Author ordering with Crossref has now been corrected.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+    		
+		</table>
+
+    
+
+    &nbsp;<br>
+    <a class="btn btn-primary btn-lg" href="/signup?next=/discussion/add-your-thinklab-feedback-here-in-meta/2&suppress_message=1" style>Join to Reply</a>
+
+
+		<table class="references table-td-5" style="display:none;"><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d45' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d45'><a href='/discussion/new-features-for-tracking-thinklab-citations/45' class='pub-title'>New features for tracking ThinkLab citations</a><div class='pub-body'>Jesse Spaulding (2015) <i>Thinklab</i>. https://thinklab.com/d/45</div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d46' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>2.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d46'><a href='/discussion/processing-labeledin-to-extract-indications/46' class='pub-title'>Processing LabeledIn to extract indications</a><div class='pub-body'>Daniel Himmelstein, Ritu  Khare (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d46'>10.15363/thinklab.d46</a></div></div></td></tr><tr><td><a href='/doi/10.15363/thinklab.4' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>3.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.4'><a href='/p/rephetio' class='pub-title'>Rephetio: Repurposing drugs on a hetnet [project]</a><div class='pub-body'>Daniel Himmelstein, Antoine Lizee, Chrissy Hessler, Leo Brueggeman, Sabrina Chen, Dexter Hadley, Ari Green, Pouya Khankhanian, Sergio Baranzini (2016) <i>Thinklab</i>. doi:<a class='pub-doi' href='https://doi.org/10.15363/thinklab.4'>10.15363/thinklab.4</a></div></div></td></tr></table>
+
+    
+
+
+	</td>
+	<td class="thread-sidebar">
+
+
+			
+
+      <a class="btn btn-default follow-link btn-follow btn-lg is-following tt-top full-width" title="Follow discussion" data-id="2" data-ctype="thread" data-is-following="false">&nbsp;</a>
+
+      
+        <div class="status-box text-center"><span style="">Status:</span> 
+  Completed
+
+</div>
+      
+
+      
+        
+
+          <div class="details">
+            
+            Labels
+          </div>
+
+          
+            <a href='/p/meta/discussion?q=[Biz Dev]' class='pl pl-sidebar pl-black' style='background-color:#e5ffad'><span class='glyphicon glyphicon-tag'></span>&nbsp; Biz Dev</a>
+          
+        
+      
+
+
+				
+
+					<div class="details">Views</div>
+					<span style="font-size:20px;">58</span>
+
+        
+
+				
+
+
+		
+			<div class="details">Referenced by</div>
+			<div style="font-size:12px;"><ul style="padding-left:16px !important;">
+			
+				<li>
+					
+					<a href='/discussion/new-features-for-tracking-thinklab-citations/45' class='thread-title'>New features for tracking ThinkLab citations</a>
+				</li>
+			
+				</ul>
+			</div>
+		
+
+		
+			<div class="details">Cite this as</div>
+			<span style="font-size:12px;">
+				Jesse Spaulding, Antoine Lizee, Casey Greene, Daniel Himmelstein (2015) Add your ThinkLab feedback here in Meta. <i>Thinklab.</i> https://thinklab.com/d/2
+			</span>
+		
+
+		<div class="details">License</div>
+		<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0;width:88px;height:31px;" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></p>
+
+		<div class="details">Share</div>
+		
+			
+				<a class="share-button fb" onclick="javascript:void(window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A//thinklab.com/discussion/add-your-thinklab-feedback-here-in-meta/2','','width=600,height=460,menubar=no,status=no'));" href="#"></a>
+<a class="share-button twitter" onclick="javascript:void(window.open('https://twitter.com/share?text=Add%20your%20ThinkLab%20feedback%20here%20in%20Meta&url=https%3A//thinklab.com/discussion/add-your-thinklab-feedback-here-in-meta/2','','width=600,height=300,menubar=no,status=no'));" href="#"></a>
+<a class="share-button google" onclick="javascript:void(window.open('https://plus.google.com/share?url=https%3A//thinklab.com/discussion/add-your-thinklab-feedback-here-in-meta/2','','width=510,height=460,menubar=no,status=no'));" href="#"></a>
+
+			
+		
+
+	</td>
+</tr></table>
+
+
+		</div>
+
+
+		
+	    	<div class="footer">
+<div style="background:#dedede;">
+	<div class="main-centered-div text-center" style="padding:20px;">
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#2a424f4646456a5e42434441464b4804494547"><span class="__cf_email__" data-cfemail="177f727b7b7857637f7e797c7b76753974787a">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+	</div>
+</div>
+<div class="main-footer">
+	<div class="main-centered-div">
+
+<table class="full-width"><tr>
+	<td class="footer-nav">
+
+        <div class="foot-head">Explore</div>
+        <a href="/proposals">Proposals</a><br>
+        <a href="/projects">Projects</a><br>
+        <a href="/publications">Article discussion</a><br>
+        <a href="/discussion">All discussion</a><br>
+        <a href="/topics">Topics</a><br>
+        <!-- <a href="/funders">Funders</a><br> -->
+        <a href="/funding">Funding opportunities</a><br>
+
+	</td>
+	<td class="footer-nav">
+
+        <!-- <div class="foot-head">Help &amp; feedback</div>	 -->
+        <!-- <div class="foot-head">Intro</div>
+        <a href="/benefits/for-science">Why</a><br>
+        <a href="/how-it-works">How it works</a><br>
+
+<br> -->
+
+        <div class="foot-head">Community</div>
+        <a href="/leaderboard">Leaderboard</a><br>
+        <a href="/p/meta">Thinklab Meta</a><br>
+				<a href="/help/faq">Help</a><br>
+				<!-- <a href="/new-project">Start a proposal</a><br> -->
+        <!-- <a href="/benefits/proposal">Benefits</a><br> -->
+        <!-- <a href="/funding">Get funded</a><br> -->
+        <!-- <a href="/participate">Become a contributor</a><br> -->
+        <!-- <a href="/for-funders">For science funders</a><br> -->
+        <!-- <a href="/for-institutions">For institutions</a><br> -->
+
+	</td>
+	<td class="footer-nav">
+
+
+
+        <div class="foot-head">About</div>
+        <a href="/about">Overview</a><br>
+        <a href="/benefits">Benefits</a><br>
+        <a href="/how-it-works">How it works</a><br>
+        <a href="/about/story">Our story</a><br>
+        <a href="/blog">Our blog</a><br>
+        <a href="/about/jobs">Join the team</a><br>
+        <br>
+
+        <!-- <div class="foot-head">Help</div>
+        <a href="/help">Help</a><br>
+		 -->
+
+
+	</td>
+	<td class="footer-nav">
+		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
+		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<br><br>
+		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
+
+	</td>
+
+</tr></table>
+
+</div>
+</div>
+</div>
+
+		
+
+	</div>
+
+
+  <script></script>
+  <script>
+  var MEDIA_URL = 'https://think-lab.s3.amazonaws.com/m/';
+  var STATIC_URL = 'https://think-lab.s3.amazonaws.com/s/';
+  var page_is_authenticated = false;
+  var page_page = 'discussion';
+  var page_profile_id = undefined;
+</script>
+
+
+
+	<!-- Note different script type. MUST come before MathJax.js -->
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	        "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"],
+	                        scale: 110, linebreaks: { automatic:true },
+	                        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+	        tex2jax: { inlineMath: [ ["$$", "$$"], ["\\(","\\)"] ],
+	                    displayMath: [ ["$$$","$$$"], ["\\[", "\\]"] ],
+	                    processEscapes: true,}
+	            });
+
+	</script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://think-lab.s3.amazonaws.com/s/dist/main.min.js"></script>
+  
+
+
+
+  
+	
+  
+  
+  
+<script>
+$(function() {
+  recordHit('thread', 2);
+});
+</script>
+
+
+
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>

@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZgEOC19dW0QCEVtHU1gG","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":328}</script>
+    <title>Describing Hetionet v1.0 through visualization and statistics | Thinklab</title>
+	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
+    <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/highlightjs/github.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/css.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/bootstrap-multiselect.css" />
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
+    
+    
+    
+    
+  
+    <meta name="citation_doi" content="10.15363/thinklab.d202">
+    <meta name="citation_title" content="Describing Hetionet v1.0 through visualization and statistics">
+    <meta name="citation_online_date" content="April 16, 2016">
+    <meta name="citation_author" content="Daniel Himmelstein, Sergio Baranzini, Casey Greene">
+    <meta name="citation_journal_title" content="Thinklab">
+    <meta name="citation_publisher" content="Thinklab">
+  
+
+    
+
+
+	<!-- GoogleAnalytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-48550230-1', 'thinklab.com');
+	ga('require', 'displayfeatures');
+	
+	ga('send', 'pageview');
+
+	</script>
+
+
+
+
+
+
+</head>
+<body >
+  <form id="form_action" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+</form>
+
+	
+
+	<div class="body-wrapper">
+
+		
+
+
+<!-- <div style="height:5px;background-image:url('https://think-lab.s3.amazonaws.com/s/img/top-bg.gif');"></div> -->
+<div class="gradient">
+	<div class="main-centered-div header-container">
+
+<table class="full-width" style="height:60px;"><tr>
+	<td style="width:200px;vertical-align:middle;padding-bottom:15px;">
+		<a href="/" style="font-weight:normal;color:#212121;"><img src="https://think-lab.s3.amazonaws.com/s/img/logo.png" width="160"></a>
+	</td><td style="vertical-align:middle;text-align:left;padding-top:6px;width:100%;padding-left:40px;">
+		<ul id="not-search-block"  class="main-header">
+
+
+			
+
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/proposals">Proposals</a></li>
+						<li><a href="/projects">Projects</a></li>
+						<li><a href="/publications">Article discussion</a></li>
+						<li><a href="/discussion">All discussion</a></li>
+					</ul>
+				</li>
+				<li><a href="/leaderboard">Leaderboard</a></li>
+
+			
+				<li><a href="/about">About</a></li>
+			
+
+
+		</ul>
+
+    <ul id="search-block" class="main-header" style="display: none; margin-right: 30px;">
+        <li class="full-width">
+            <form method="get" action="/search">
+			<div class="input-group full-width">
+				<input name="q" type="text" class="form-control search-input">
+			</div>
+            </form>
+        </li>
+    </ul>
+
+	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
+		<ul class="main-header pull-right" style="padding-left: 0;">
+    		
+                <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+            
+
+        </ul>
+    </ul>
+	</td>
+</tr></table>
+
+<!-- <div id="global-search-div" class="main-centered-div" style="display:none;">
+	<input type="text" value="" class="thread-search form-control" placeholder="Search" data-action="/discussion">
+</div> -->
+
+	</div>
+</div>
+
+		
+	  
+
+
+
+	  
+
+
+		
+
+		<div class="dark-head"><div class="main-centered-div">
+
+			
+
+		</div></div>
+		
+		<div class="main-centered-div" style="margin-top:40px;padding-bottom:340px">
+	    
+
+<div style="margin-top:-20px; margin-bottom:20px;">
+
+    <a class="side-box" href="/p/rephetio" style="background-color:#ebfdff;"><div class="side-type">Project:</div> <div class="side-title">Rephetio: Repurposing drugs on a hetnet [rephetio]</div></a><br>
+
+
+
+</div>
+
+<table style="margin-top:0px;"><tr>
+	<td class="thread-table-content">
+
+		<table class="full-width">
+			
+<tr class="comment-tr target-hl" id="1" data-comment-id="1271">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1271"></a>
+
+    
+
+			<h2 class="page-title" style="margin-bottom:5px;margin-top:0px !important;">Describing Hetionet v1.0 through visualization and statistics</h2>
+
+			<div style="margin-top:5px;color:gray;margin-bottom:20px;font-size:13px;">
+				<a style="font-weight:normal;color:#212121" href="/u/dhimmel"><strong>Daniel Himmelstein</strong></a>
+				<span class="is-researcher">Researcher</span>
+				&nbsp; <a href="#1" class="light">447 days ago</a>
+				
+			</div>
+
+      
+
+          <hr>
+		
+
+    <p>We have finished building the hetnet for Project Rephetio, which we've named <a href="https://github.com/dhimmel/hetionet">Hetionet</a>. As we gear up for the version 1.0 release, we'd like to provide statistics and visualizations to help users appreciate the network. Here we'll discuss ways to communicate hetnet topology and showcase our current visualizations.</p>
+
+<p>Here are some points to keep in mind:</p>
+
+<ul><li>the hetnet, which consists of 47,031 nodes of 11 types and 2,250,197 edges of 24 types, will break most existing visualization software</li><li>we prefer approaches that are automatable: we're looking for sustainable and versatile solutions</li></ul>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="2" data-comment-id="1272">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1272"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#2" class="light">445 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Metagraph</h1>
+
+<p>A metagaph is the graph of types in a hetnet. In Neo4j speak, metagraphs are often referred to as "data models". Another synonymous term is "network schema". Here is the metagraph for Hetionet v1.0:</p>
+
+<p><img src="https://github.com/dhimmel/rephetio/blob/103054a2bc3f86998fed6cb3753d1ecdb5cbe1e7/figure/metagraph.png?raw=true" alt="Hetionet v1.0 Metagraph" title="Hetionet v1.0 Metagraph"></p>
+
+<p>Metagraphs show what types of entities and relationships are included in the network. However by design, they don't provide any information on the actual nodes or edges.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="3" data-comment-id="1275">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1275"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#3" class="light">445 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Circular metanode layout</h1>
+
+<p>One of our primary methods for showing the actual hetnet has been a layout which groups nodes by their type. For each metanode, nodes are laid out in circles. Edges are colored by their type. Here is the circular metanode layout for Hetionet:</p>
+
+<p><img src="https://github.com/dhimmel/rephetio/blob/103054a2bc3f86998fed6cb3753d1ecdb5cbe1e7/figure/hetionet-v1.0-labeled.png?raw=true" alt="Hetionet v1.0 Circular Metanode Layout" title="Hetionet v1.0"></p>
+
+<p>This method of visualization gives users a bird's eye view of the hetnet. It begins to show certain summary statistics, such as the number of nodes per metanode. It also weakly illustrates whether a metaedge is concentrated to a few high degree nodes or is well dispersed. However, this visualization is primarily meant to be aesthetic and generally accessible.</p>
+
+<p>In the past, we've received positive feedback on the circular metanode layout. This <a href="https://doi.org/10.1371/journal.pcbi.1004259.g001" title="Fig 1. Heterogeneous network integrates diverse information domains">visualization for our previous project</a> took 2nd place for the most aesthetically pleasing network visualization in the <a href="http://www.cytoscape.org/cy32_launch_challenge.html">Cytoscape 3.2 Launch Challenge</a>.</p>
+
+<h2>Methods</h2>
+
+<p>We create this visualization in <a href="http://www.cytoscape.org/">Cytoscape</a> <span class="citation">[<a href="https://doi.org/10.1101/gr.1239303" class="citation" data-key="10.1101/gr.1239303">1</a>, <a href="https://doi.org/10.1093/bioinformatics/btq675" class="citation" data-key="10.1093/bioinformatics/btq675">2</a>]</span> — a Java-based desktop application for network visualization with strong adoption in biology (current version 3.3.0). Creating this visualization is labor intensive and frustrating, since our hetnets push Cytoscape to its limits.</p>
+
+<p>To make the visualization possible, we limit the number of edges per type to 5,000 (by setting <a href="https://github.com/dhimmel/hetio/blob/2c135fcd32616d6979972105ba60b003d65c98bd/hetio/readwrite.py#L260" title="hetio.readwrite.write_sif"><code>max_edges = 5000</code></a>). One side effect is that Cytoscape only shows the subset of nodes connected by the selected edge subset. Hence, the visualization moderately reflects the number of nodes per metanode and poorly reflects the number of edges per metaedge.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="4" data-comment-id="1276">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1276"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#4" class="light">445 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Metapath counts by metanode pairs</h1>
+
+<p>This is a new visualization we're trying out that is based solely on the <a href="#2">metagraph</a>. The plot shows the number of metapaths (types of paths) that connect a source and target metanode for a given length. The Length 1 condition shows the number of metaedges connecting two nodes. The longer lengths help show the combinatoric explosion in types of connectivity on the hetnet. Here's the graph for Hetionet v1.0 (<a href="https://github.com/dhimmel/integrate/blob/b53b835dbac09101c2036328b3fc72644fcb71bc/viz/auto/2-netviz.ipynb">notebook</a>):</p>
+
+<p><img src="https://github.com/dhimmel/integrate/blob/095747de9efe42a9ed1e23ab18db282e14705cd9/viz/auto/figure/metapath-counts.png?raw=true" alt="Hetionet Metapath Counts" title="Hetionet v1.0 Metapath Counts by Metanode Pairs"></p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-245" class="inline-note toggle-parent" data-note-id="245">
+	<p><a href="/u/alizee">Antoine Lizee</a>: Beautiful - why not the complete square? I find it easier to read and the remaining space is left blank here anyway.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="5" data-comment-id="1277">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1277"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#5" class="light">445 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Chord diagram of edges per type</h1>
+
+<p><a href="https://en.wikipedia.org/wiki/Chord_diagram">Chord diagrams</a>, also called radial network diagrams, consist of nodes laid out as segments in a circle and edges as chords connecting the segments. In our example, metanodes are laid out on along the perimeter with chords corresponding to metaedges:</p>
+
+<p><img src="https://github.com/dhimmel/integrate/blob/095747de9efe42a9ed1e23ab18db282e14705cd9/viz/auto/figure/edge-chord-diagram.png?raw=true" alt="Hetionet Chord Diagram" title="Hetionet v1.0 Chord Diagram"></p>
+
+<p>Note that we transform sqaure root transformed the edge count for each metaedge, represented with chord width. The segment width for metanodes does not correspond to the proportion of total nodes which may be slightly confusing.</p>
+
+<p>Chord diagrams were popularized by the <a href="http://circos.ca/">Circos</a> app <span class="citation">[<a href="https://doi.org/10.1101/gr.092759.109" class="citation" data-key="10.1101/gr.092759.109">1</a>]</span>. We created our visualization the the R <a href="https://github.com/jokergoo/circlize"><code>circlize</code></a> package <span class="citation">[<a href="https://doi.org/10.1093/bioinformatics/btu393" class="citation" data-key="10.1093/bioinformatics/btu393">2</a>]</span> (<a href="https://github.com/dhimmel/integrate/blob/b53b835dbac09101c2036328b3fc72644fcb71bc/viz/auto/2-netviz.ipynb">notebook</a>).</p>
+
+<h2>Chord diagram of edges?</h2>
+
+<p>Another option is to explore a chord diagram showing actual edges (see Fig. 13B in <span class="citation">[<a href="https://doi.org/10.1109/tvcg.2006.147" class="citation" data-key="10.1109/tvcg.2006.147">3</a>]</span>). I'm hesitant to invest time here, but let us know if you think a chord diagram of edges is promising.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-266" class="inline-note toggle-parent" data-note-id="266">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: Noting the <a href="http://mycircos.iric.ca/">myCircos webapp</a> to make circos plots online <span class="citation">[<a href="https://doi.org/10.1101/052605" class="citation" data-key="10.1101/052605">1</a>]</span>.
+		
+	</p>
+	
+	<table style="display:none;"><tr><td><a href='/doi/10.1101/052605' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.1101/052605'><a href='/doi/10.1101/052605' class='pub-title'>myCircos: Facilitating the Creation and Use of Circos Plots Online</a><div class='pub-body'>Caroline Labelle, Geneviève Boucher, Sébastien Lemieux (2016) <i>Cold Spring Harbor Laboratory Press</i>. doi:<a class='pub-doi' href='https://doi.org/10.1101/052605'>10.1101/052605</a></div></div></td></tr></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="6" data-comment-id="1278">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1278"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#6" class="light">445 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Hive plots</h1>
+
+<p>Martin Krzywinski — creator of Circos which led to the technology for making our <a href="#5">chord diagram</a> — also created a type of visualization called a <a href="http://www.hiveplot.net/">hive plot</a> <span class="citation">[<a href="https://doi.org/10.1093/bib/bbr069" class="citation" data-key="10.1093/bib/bbr069">1</a>]</span>. Hive plots lay nodes out along lines which extend radially from a center point. Edges are drawn as curved lines between nodes. The most mature method for generating hive plots looks to be the <a href="https://www.bcgsc.ca/wiki/display/jhive/home" title="jhive - A Java GUI for Hive Plots"><code>jhive</code></a> Java application.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-246" class="inline-note toggle-parent" data-note-id="246">
+	<p><a href="/u/alizee">Antoine Lizee</a>: Thanks for the reference - great read. It seems hard to implement without easy-to-use tools. Will you give it a try?
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-253" class="inline-note toggle-parent" data-note-id="253">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: I created a <a href="https://github.com/dhimmel/integrate/blob/e8406a94e6388ce5d5c3e136b508a1219c4fab64/viz/auto/data/hetionet-v1.0-simple.dot" title="hetionet-v1.0-simple.dot">DOT file</a> for a subnetwork of 1000 random nodes. I struggled with the <code>jhive v0.2.7</code> GUI — I couldn't figure out how to assign each node type to its own axis. The next steps would be to look into the Python hive plots packages <a href="https://github.com/CSB-IG/pyveplot"><code>pyveplot</code></a> and <a href="https://github.com/ericmjl/hiveplot"><code>hiveplot</code></a>. However, I'm suspicious whether hive plots will be able to handle the complexity of our hetnet. The <code>jhive</code> implementation seems to be limited to three axes.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-254" class="inline-note toggle-parent" data-note-id="254">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: I think we'd need at least 7 axes: SE + PC, C, G, A, D, S, BP + CC + MF + PW. Ideally, we could break from the polar coordinate system, so not all node-alignment-axes have to start from the same origin.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="7" data-comment-id="1282">
+  <td class="comment-profile-avatar">
+		<a href="/u/sergiobaranzini"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/20_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1282"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/sergiobaranzini">Sergio Baranzini</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#7" class="light">443 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>How about this?<br>Just tweaking settings in Cytoscape <br><img src="https://raw.githubusercontent.com/dhimmel/integrate/f11d7ce796c5805457fd7b729c91326d93881eee/viz/network-lines.png" alt="daniel_net"></p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="8" data-comment-id="1368">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1368"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#8" class="light">263 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p><a href="/u/sergiobaranzini" class="username">@sergiobaranzini</a>, very nice. Arranging compounds and diseases in a line helps communicate our application of Hetionet to predict drug efficacy. Below is a labeled, landscape version:</p>
+
+<p><img src="https://github.com/dhimmel/rephetio/raw/127b094076684b40ea35f6e42aca8967afdb9f56/figure/hetionet-v1.0-labeled-landscape.png" alt="hetionet v1.0 labeled landscape" title="Hetionet 1.0: The hetnet visualized. Nodes are drawn as dots and laid out orbitally, thus forming circles. Edges are colored by type."></p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="9" data-comment-id="1371">
+  <td class="comment-profile-avatar">
+		<a href="/u/caseygreene"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/22_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1371"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/caseygreene">Casey Greene</a>
+				
+				<span class="light">&nbsp;<a href="#9" class="light">262 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>I wanted a black background version of the figures, so I quickly color rotated and inverted the images. I couldn't figure out how to upload figures on thinklab - perhaps I don't have access to the project manager. In any case, you can generate them yourself easily with this command:</p>
+
+<p><code>convert hetionet-v1.0-labeled-landscape.png -modulate 100,100,0 -negate hetionet-v1.0-labeled-landscape-invertcr.png</code></p>
+
+<p>Thanks to <a href="/u/dhimmel" class="username">@dhimmel</a>'s note below:</p>
+
+<p><img src="https://cloud.githubusercontent.com/assets/542643/19480670/41b61926-9519-11e6-8db3-126980293bcb.png" alt="hetionet-v1 0-labeled-landscape-invertcr"></p>
+
+<p><img src="https://cloud.githubusercontent.com/assets/542643/19480669/41b30d8a-9519-11e6-84d2-721f5d0aeece.png" alt="hetionet-v1 0-labeled-invertcr"></p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-273" class="inline-note toggle-parent" data-note-id="273">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: <a href="/u/caseygreene" class="username">@caseygreene</a> we've been using a bit of a hack to host images for discussions. We use GitHub's drag-and-drop <a href="https://github.com/dhimmel/rephetio/issues/1">image hosting in this issue</a>. Then you just take the markdown embed code that's generated and use it here.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-276" class="inline-note toggle-parent" data-note-id="276">
+	<p><a href="/u/caseygreene">Casey Greene</a>: <a href="/u/dhimmel" class="username">@dhimmel</a> : Gotcha! Edited post.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-277" class="inline-note toggle-parent" data-note-id="277">
+	<p><a href="/u/sergiobaranzini">Sergio Baranzini</a>: I like the black background!<br>Actually, this was the original color, but we decided to make it white for the paper. 
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+    		
+		</table>
+
+    
+
+    &nbsp;<br>
+    <a class="btn btn-primary btn-lg" href="/signup?next=/discussion/describing-hetionet-v10-through-visualization-and-statistics/202&suppress_message=1" style>Join to Reply</a>
+
+
+		<table class="references table-td-5" style="display:none;"><tr><td><a href='/doi/10.1101/gr.1239303' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.1101/gr.1239303'><a href='/doi/10.1101/gr.1239303' class='pub-title'>Cytoscape: A Software Environment for Integrated Models of Biomolecular Interaction Networks</a><div class='pub-body'>P. Shannon (2003) <i>Genome Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1101/gr.1239303'>10.1101/gr.1239303</a></div></div></td></tr><tr><td><a href='/doi/10.1093/bioinformatics/btq675' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>2.</div></td><td><div class='doi-body' data-key='10.1093/bioinformatics/btq675'><a href='/doi/10.1093/bioinformatics/btq675' class='pub-title'>Cytoscape 2.8: new features for data integration and network visualization</a><div class='pub-body'>M. E. Smoot, K. Ono, J. Ruscheinski, P.-L. Wang, T. Ideker (2010) <i>Bioinformatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/bioinformatics/btq675'>10.1093/bioinformatics/btq675</a></div></div></td></tr><tr><td><a href='/doi/10.1101/gr.092759.109' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>3.</div></td><td><div class='doi-body' data-key='10.1101/gr.092759.109'><a href='/doi/10.1101/gr.092759.109' class='pub-title'>Circos: An information aesthetic for comparative genomics</a><div class='pub-body'>M. Krzywinski, J. Schein, I. Birol, J. Connors, R. Gascoyne, D. Horsman, S. J. Jones, M. A. Marra (2009) <i>Genome Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1101/gr.092759.109'>10.1101/gr.092759.109</a></div></div></td></tr><tr><td><a href='/doi/10.1093/bioinformatics/btu393' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>4.</div></td><td><div class='doi-body' data-key='10.1093/bioinformatics/btu393'><a href='/doi/10.1093/bioinformatics/btu393' class='pub-title'>circlize implements and enhances circular visualization in R</a><div class='pub-body'>Z. Gu, L. Gu, R. Eils, M. Schlesner, B. Brors (2014) <i>Bioinformatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/bioinformatics/btu393'>10.1093/bioinformatics/btu393</a></div></div></td></tr><tr><td><a href='/doi/10.1109/tvcg.2006.147' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>5.</div></td><td><div class='doi-body' data-key='10.1109/tvcg.2006.147'><a href='/doi/10.1109/tvcg.2006.147' class='pub-title'>Hierarchical Edge Bundles: Visualization of Adjacency Relations in Hierarchical Data</a><div class='pub-body'>D. Holten (2006) <i>IEEE Trans. Visual. Comput. Graphics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1109/tvcg.2006.147'>10.1109/tvcg.2006.147</a></div></div></td></tr><tr><td><a href='/doi/10.1101/052605' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>6.</div></td><td><div class='doi-body' data-key='10.1101/052605'><a href='/doi/10.1101/052605' class='pub-title'>myCircos: Facilitating the Creation and Use of Circos Plots Online</a><div class='pub-body'>Caroline Labelle, Geneviève Boucher, Sébastien Lemieux (2016) <i>Cold Spring Harbor Laboratory Press</i>. doi:<a class='pub-doi' href='https://doi.org/10.1101/052605'>10.1101/052605</a></div></div></td></tr><tr><td><a href='/doi/10.1093/bib/bbr069' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>7.</div></td><td><div class='doi-body' data-key='10.1093/bib/bbr069'><a href='/doi/10.1093/bib/bbr069' class='pub-title'>Hive plots--rational approach to visualizing networks</a><div class='pub-body'>M. Krzywinski, I. Birol, S. J. Jones, M. A. Marra (2011) <i>Briefings in Bioinformatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/bib/bbr069'>10.1093/bib/bbr069</a></div></div></td></tr></table>
+
+    
+
+
+	</td>
+	<td class="thread-sidebar">
+
+
+			
+
+      <a class="btn btn-default follow-link btn-follow btn-lg is-following tt-top full-width" title="Follow discussion" data-id="202" data-ctype="thread" data-is-following="false">&nbsp;</a>
+
+      
+        <div class="status-box text-center"><span style="">Status:</span> 
+  Open
+
+</div>
+      
+
+      
+        
+      
+
+
+				
+
+					<div class="details">Views</div>
+					<span style="font-size:20px;">224</span>
+
+        
+
+				
+					<div class="details">Topics</div>
+					<div style="margin-bottom:15px;">
+		            <a href="/topics/hetionet" class="tag">Hetionet</a><a href="/topics/hetnets" class="tag">Hetnets</a><a href="/topics/data-visualization" class="tag">Data Visualization</a>
+					</div>
+				
+
+
+		
+			<div class="details">Referenced by</div>
+			<div style="font-size:12px;"><ul style="padding-left:16px !important;">
+			
+				<li>
+					
+					<a href='/doc/7/review' class='thread-title'><span class='inbox-icon tt-top glyphicon glyphicon-flash'></span>Report Review: Rephetio: Repurposing drugs on a hetnet</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/one-network-to-rule-them-all/102' class='thread-title'>One network to rule them all</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/visualizing-the-top-epilepsy-predictions-in-cytoscape/230' class='thread-title'>Visualizing the top epilepsy predictions in Cytoscape</a>
+				</li>
+			
+				</ul>
+			</div>
+		
+
+		
+			<div class="details">Cite this as</div>
+			<span style="font-size:12px;">
+				Daniel Himmelstein, Sergio Baranzini, Casey Greene (2016) Describing Hetionet v1.0 through visualization and statistics. <i>Thinklab.</i> doi:<a href='https://doi.org/10.15363/thinklab.d202'>10.15363/thinklab.d202</a>
+			</span>
+		
+
+		<div class="details">License</div>
+		<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0;width:88px;height:31px;" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></p>
+
+		<div class="details">Share</div>
+		
+			
+				<a class="share-button fb" onclick="javascript:void(window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A//thinklab.com/discussion/describing-hetionet-v10-through-visualization-and-statistics/202','','width=600,height=460,menubar=no,status=no'));" href="#"></a>
+<a class="share-button twitter" onclick="javascript:void(window.open('https://twitter.com/share?text=Describing%20Hetionet%20v1.0%20through%20visualization%20and%20statistics&url=https%3A//thinklab.com/discussion/describing-hetionet-v10-through-visualization-and-statistics/202','','width=600,height=300,menubar=no,status=no'));" href="#"></a>
+<a class="share-button google" onclick="javascript:void(window.open('https://plus.google.com/share?url=https%3A//thinklab.com/discussion/describing-hetionet-v10-through-visualization-and-statistics/202','','width=510,height=460,menubar=no,status=no'));" href="#"></a>
+
+			
+		
+
+	</td>
+</tr></table>
+
+
+		</div>
+
+
+		
+	    	<div class="footer">
+<div style="background:#dedede;">
+	<div class="main-centered-div text-center" style="padding:20px;">
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#e28a878e8e8da2968a8b8c898e8380cc818d8f"><span class="__cf_email__" data-cfemail="7a121f1616153a0e12131411161b1854191517">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+	</div>
+</div>
+<div class="main-footer">
+	<div class="main-centered-div">
+
+<table class="full-width"><tr>
+	<td class="footer-nav">
+
+        <div class="foot-head">Explore</div>
+        <a href="/proposals">Proposals</a><br>
+        <a href="/projects">Projects</a><br>
+        <a href="/publications">Article discussion</a><br>
+        <a href="/discussion">All discussion</a><br>
+        <a href="/topics">Topics</a><br>
+        <!-- <a href="/funders">Funders</a><br> -->
+        <a href="/funding">Funding opportunities</a><br>
+
+	</td>
+	<td class="footer-nav">
+
+        <!-- <div class="foot-head">Help &amp; feedback</div>	 -->
+        <!-- <div class="foot-head">Intro</div>
+        <a href="/benefits/for-science">Why</a><br>
+        <a href="/how-it-works">How it works</a><br>
+
+<br> -->
+
+        <div class="foot-head">Community</div>
+        <a href="/leaderboard">Leaderboard</a><br>
+        <a href="/p/meta">Thinklab Meta</a><br>
+				<a href="/help/faq">Help</a><br>
+				<!-- <a href="/new-project">Start a proposal</a><br> -->
+        <!-- <a href="/benefits/proposal">Benefits</a><br> -->
+        <!-- <a href="/funding">Get funded</a><br> -->
+        <!-- <a href="/participate">Become a contributor</a><br> -->
+        <!-- <a href="/for-funders">For science funders</a><br> -->
+        <!-- <a href="/for-institutions">For institutions</a><br> -->
+
+	</td>
+	<td class="footer-nav">
+
+
+
+        <div class="foot-head">About</div>
+        <a href="/about">Overview</a><br>
+        <a href="/benefits">Benefits</a><br>
+        <a href="/how-it-works">How it works</a><br>
+        <a href="/about/story">Our story</a><br>
+        <a href="/blog">Our blog</a><br>
+        <a href="/about/jobs">Join the team</a><br>
+        <br>
+
+        <!-- <div class="foot-head">Help</div>
+        <a href="/help">Help</a><br>
+		 -->
+
+
+	</td>
+	<td class="footer-nav">
+		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
+		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<br><br>
+		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
+
+	</td>
+
+</tr></table>
+
+</div>
+</div>
+</div>
+
+		
+
+	</div>
+
+
+  <script></script>
+  <script>
+  var MEDIA_URL = 'https://think-lab.s3.amazonaws.com/m/';
+  var STATIC_URL = 'https://think-lab.s3.amazonaws.com/s/';
+  var page_is_authenticated = false;
+  var page_page = 'discussion';
+  var page_profile_id = undefined;
+</script>
+
+
+
+	<!-- Note different script type. MUST come before MathJax.js -->
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	        "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"],
+	                        scale: 110, linebreaks: { automatic:true },
+	                        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+	        tex2jax: { inlineMath: [ ["$$", "$$"], ["\\(","\\)"] ],
+	                    displayMath: [ ["$$$","$$$"], ["\\[", "\\]"] ],
+	                    processEscapes: true,}
+	            });
+
+	</script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://think-lab.s3.amazonaws.com/s/dist/main.min.js"></script>
+  
+
+
+
+  
+	
+  
+  
+  
+<script>
+$(function() {
+  recordHit('thread', 202);
+});
+</script>
+
+
+
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>

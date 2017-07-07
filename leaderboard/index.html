@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZhITCVRRWVUCFUFaUFAOBBU=","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":1240}</script>
+    <title>Thinklab</title>
+	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
+    <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/highlightjs/github.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/css.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/bootstrap-multiselect.css" />
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
+    
+    
+    
+    
+    
+
+
+	<!-- GoogleAnalytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-48550230-1', 'thinklab.com');
+	ga('require', 'displayfeatures');
+	
+	ga('send', 'pageview');
+
+	</script>
+
+
+
+
+
+
+</head>
+<body >
+  <form id="form_action" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+</form>
+
+	
+
+	<div class="body-wrapper">
+
+		
+
+
+<!-- <div style="height:5px;background-image:url('https://think-lab.s3.amazonaws.com/s/img/top-bg.gif');"></div> -->
+<div class="gradient">
+	<div class="main-centered-div header-container">
+
+<table class="full-width" style="height:60px;"><tr>
+	<td style="width:200px;vertical-align:middle;padding-bottom:15px;">
+		<a href="/" style="font-weight:normal;color:#212121;"><img src="https://think-lab.s3.amazonaws.com/s/img/logo.png" width="160"></a>
+	</td><td style="vertical-align:middle;text-align:left;padding-top:6px;width:100%;padding-left:40px;">
+		<ul id="not-search-block"  class="main-header">
+
+
+			
+
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/proposals">Proposals</a></li>
+						<li><a href="/projects">Projects</a></li>
+						<li><a href="/publications">Article discussion</a></li>
+						<li><a href="/discussion">All discussion</a></li>
+					</ul>
+				</li>
+				<li class="active"><a href="/leaderboard">Leaderboard</a></li>
+
+			
+				<li><a href="/about">About</a></li>
+			
+
+
+		</ul>
+
+    <ul id="search-block" class="main-header" style="display: none; margin-right: 30px;">
+        <li class="full-width">
+            <form method="get" action="/search">
+			<div class="input-group full-width">
+				<input name="q" type="text" class="form-control search-input">
+			</div>
+            </form>
+        </li>
+    </ul>
+
+	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
+		<ul class="main-header pull-right" style="padding-left: 0;">
+    		
+                <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+            
+
+        </ul>
+    </ul>
+	</td>
+</tr></table>
+
+<!-- <div id="global-search-div" class="main-centered-div" style="display:none;">
+	<input type="text" value="" class="thread-search form-control" placeholder="Search" data-action="/discussion">
+</div> -->
+
+	</div>
+</div>
+
+		
+	  
+
+
+
+	  
+
+
+		
+
+		<div class="dark-head"><div class="main-centered-div">
+
+			
+
+		</div></div>
+		
+		<div class="main-centered-div" style="margin-top:40px;padding-bottom:340px">
+	    
+
+  <h2 class="page-title">Thinklab impact leaderboard</h2>
+
+  <table class="full-width"><tr><td>
+
+      
+
+<table class="table small-headers table-leaderboard td-right">
+	<tr>
+		<th style="width:1%; text-align:left;padding-right:0px !important;"></th>
+		<td style="width:1%;"></td>
+		<th style="width:45%; text-align:left;"></th>
+		<!-- <th style="width:35%; text-align:left">Institution</th> -->
+    <th style="width:10%;padding-left:0px !important;"><span class='tt-top' title="Proposals published">Proposals</span></th>
+    <th style="width:10%;padding-left:0px !important;"><span class='tt-top' title="Comments made">Comments</span></th>
+    <th style="width:10%;padding-left:0px !important;"><span class='tt-top' title="Ratings given">Ratings</span></th>
+    <!-- <th style="width:10%;padding-left:0px !important;"><span class='tt-top' title="Annotations made">Annotations</span></th> -->
+  	<th style="width:10%;padding-left:0px !important;"><span class='tt-top' title="Confirmed + unconfirmed earnings">Earnings*</span></th>
+    <th style="width:10%;padding-left:0px !important;"><span class='tt-top' title="Impact points">Points</span></th>
+	</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#1</td>
+	<td><a style="display:inline-block;" href="/u/dhimmel"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/17_small.jpg' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/dhimmel">Daniel Himmelstein</a><br>
+		<a class="lead-institution" href="/institutions/8855">University of California, San Francisco</a> </td>
+	<td>1</td>
+	<td>518</td>
+	<td>200</td>
+	<!-- <td>69</td> -->
+	<td><span class="earnings">$454</span></td>
+	<td><span class="points">2208</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#2</td>
+	<td><a style="display:inline-block;" href="/u/jspauld"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/2_small.jpg' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/jspauld">Jesse Spaulding</a><br>
+		<a class="lead-institution" href="/institutions/1">ThinkLab</a> </td>
+	<td>2</td>
+	<td>158</td>
+	<td>133</td>
+	<!-- <td>74</td> -->
+	<td><span class="earnings">$63</span></td>
+	<td><span class="points">736</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#3</td>
+	<td><a style="display:inline-block;" href="/u/larsjuhljensen"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/125_small.jpg' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/larsjuhljensen">Lars Juhl Jensen</a><br>
+		<a class="lead-institution" href="/institutions/879">University of Copenhagen</a> </td>
+	<td class="zero-items">0</td>
+	<td>51</td>
+	<td>136</td>
+	<!-- <td>24</td> -->
+	<td><span class="earnings">$340</span></td>
+	<td><span class="points">561</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#4</td>
+	<td><a style="display:inline-block;" href="/u/alizee"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/23_small.jpg' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/alizee">Antoine Lizee</a><br>
+		<a class="lead-institution" href="/institutions/8855">University of California, San Francisco</a> </td>
+	<td>1</td>
+	<td>39</td>
+	<td>28</td>
+	<!-- <td class="zero-items">0</td> -->
+	<td><span class="earnings">$251</span></td>
+	<td><span class="points">554</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#5</td>
+	<td><a style="display:inline-block;" href="/u/b_good"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/48_small.jpg' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/b_good">Benjamin Good</a><br>
+		<a class="lead-institution" href="/institutions/8768">The Scripps Research Institute</a> </td>
+	<td>1</td>
+	<td>41</td>
+	<td>5</td>
+	<!-- <td>37</td> -->
+	<td><span class="earnings">$182</span></td>
+	<td><span class="points">338</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#6</td>
+	<td><a style="display:inline-block;" href="/u/caseygreene"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/22_small.jpg' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/caseygreene">Casey Greene</a><br>
+		<a class="lead-institution" href="/institutions/8990">University of Pennsylvania</a> </td>
+	<td class="zero-items">0</td>
+	<td>82</td>
+	<td>10</td>
+	<!-- <td>49</td> -->
+	<td><span class="earnings">$187</span></td>
+	<td><span class="points">310</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#7</td>
+	<td><a style="display:inline-block;" href="/u/alexanderpico"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/104_small.jpg' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/alexanderpico">Alexander Pico</a><br>
+		<a class="lead-institution" href="/institutions/8855">University of California, San Francisco</a> </td>
+	<td>1</td>
+	<td>17</td>
+	<td>2</td>
+	<!-- <td class="zero-items">0</td> -->
+	<td><span class="earnings">$131</span></td>
+	<td><span class="points">279</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#8</td>
+	<td><a style="display:inline-block;" href="/u/fbastian"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/s/img/p_default_small.png' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/fbastian">Frederic Bastian</a><br>
+		<a class="lead-institution" href="/institutions/10051">Swiss Institute of Bioinformatics</a> </td>
+	<td class="zero-items">0</td>
+	<td>14</td>
+	<td class="zero-items">0</td>
+	<!-- <td class="zero-items">0</td> -->
+	<td><span class="earnings">$186</span></td>
+	<td><span class="points">200</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#9</td>
+	<td><a style="display:inline-block;" href="/u/tongli"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/176_small.jpg' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/tongli">Tong Shu Li</a><br>
+		<a class="lead-institution" href="/institutions/8768">The Scripps Research Institute</a> </td>
+	<td>1</td>
+	<td>11</td>
+	<td>6</td>
+	<!-- <td class="zero-items">0</td> -->
+	<td><span class="earnings">$43</span></td>
+	<td><span class="points">173</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#10</td>
+	<td><a style="display:inline-block;" href="/u/pouyakhankhanian"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/188_small.jpg' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/pouyakhankhanian">Pouya Khankhanian</a><br>
+		<a class="lead-institution" href="/institutions/8990">University of Pennsylvania</a> </td>
+	<td>1</td>
+	<td>23</td>
+	<td class="zero-items">0</td>
+	<!-- <td class="zero-items">0</td> -->
+	<td><span class="earnings">$5</span></td>
+	<td><span class="points">172</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#11</td>
+	<td><a style="display:inline-block;" href="/u/hollyganz"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/4_small.jpg' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/hollyganz">Holly Ganz</a><br>
+		<a class="lead-institution" href="/institutions/8847">University of California, Davis</a> </td>
+	<td>1</td>
+	<td>8</td>
+	<td class="zero-items">0</td>
+	<!-- <td class="zero-items">0</td> -->
+	<td class="zero-items"><span class="earnings">$0</span></td>
+	<td><span class="points">124</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#12</td>
+	<td><a style="display:inline-block;" href="/u/leobrueggeman"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/21_small.jpg' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/leobrueggeman">Leo Brueggeman</a><br>
+		<a class="lead-institution" href=""></a> </td>
+	<td>1</td>
+	<td>5</td>
+	<td>1</td>
+	<!-- <td class="zero-items">0</td> -->
+	<td class="zero-items"><span class="earnings">$0</span></td>
+	<td><span class="points">116</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#13</td>
+	<td><a style="display:inline-block;" href="/u/jonathaneisen"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/5_small.jpg' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/jonathaneisen">Jonathan Eisen</a><br>
+		<a class="lead-institution" href="/institutions/8847">University of California, Davis</a> </td>
+	<td>1</td>
+	<td>3</td>
+	<td class="zero-items">0</td>
+	<!-- <td class="zero-items">0</td> -->
+	<td><span class="earnings">$11</span></td>
+	<td><span class="points">116</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#14</td>
+	<td><a style="display:inline-block;" href="/u/idrdex"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/s/img/p_default_small.png' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/idrdex">Dexter Hadley</a><br>
+		<a class="lead-institution" href="/institutions/8855">University of California, San Francisco</a> </td>
+	<td>1</td>
+	<td>4</td>
+	<td class="zero-items">0</td>
+	<!-- <td class="zero-items">0</td> -->
+	<td class="zero-items"><span class="earnings">$0</span></td>
+	<td><span class="points">112</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#15</td>
+	<td><a style="display:inline-block;" href="/u/sabrinachen"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/112_small.jpg' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/sabrinachen">Sabrina Chen</a><br>
+		<a class="lead-institution" href="/institutions/7928">Johns Hopkins University</a> </td>
+	<td>1</td>
+	<td>3</td>
+	<td class="zero-items">0</td>
+	<!-- <td class="zero-items">0</td> -->
+	<td class="zero-items"><span class="earnings">$0</span></td>
+	<td><span class="points">109</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#16</td>
+	<td><a style="display:inline-block;" href="/u/chrissyhessler"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/s/img/p_default_small.png' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/chrissyhessler">Chrissy Hessler</a><br>
+		<a class="lead-institution" href="/institutions/8855">University of California, San Francisco</a> </td>
+	<td>1</td>
+	<td>3</td>
+	<td class="zero-items">0</td>
+	<!-- <td class="zero-items">0</td> -->
+	<td class="zero-items"><span class="earnings">$0</span></td>
+	<td><span class="points">109</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#17</td>
+	<td><a style="display:inline-block;" href="/u/brembs"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/157_small.jpg' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/brembs">Björn Brembs</a><br>
+		<a class="lead-institution" href="/institutions/16701">Universität Regensburg</a> </td>
+	<td>1</td>
+	<td>3</td>
+	<td class="zero-items">0</td>
+	<!-- <td class="zero-items">0</td> -->
+	<td class="zero-items"><span class="earnings">$0</span></td>
+	<td><span class="points">109</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#18</td>
+	<td><a style="display:inline-block;" href="/u/davidcoil"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/6_small.jpg' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/davidcoil">David Coil</a><br>
+		<a class="lead-institution" href="/institutions/8847">University of California, Davis</a> </td>
+	<td>1</td>
+	<td>2</td>
+	<td class="zero-items">0</td>
+	<!-- <td class="zero-items">0</td> -->
+	<td class="zero-items"><span class="earnings">$0</span></td>
+	<td><span class="points">106</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#19</td>
+	<td><a style="display:inline-block;" href="/u/sergiobaranzini"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/20_small.jpg' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/sergiobaranzini">Sergio Baranzini</a><br>
+		<a class="lead-institution" href="/institutions/8855">University of California, San Francisco</a> </td>
+	<td>1</td>
+	<td>2</td>
+	<td class="zero-items">0</td>
+	<!-- <td class="zero-items">0</td> -->
+	<td class="zero-items"><span class="earnings">$0</span></td>
+	<td><span class="points">106</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#20</td>
+	<td><a style="display:inline-block;" href="/u/sridhargutam"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/189_small.jpg' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/sridhargutam">Sridhar Gutam</a><br>
+		<a class="lead-institution" href="/institutions/16704">Indian Council of Agricultural Research</a> </td>
+	<td>1</td>
+	<td>1</td>
+	<td class="zero-items">0</td>
+	<!-- <td class="zero-items">0</td> -->
+	<td class="zero-items"><span class="earnings">$0</span></td>
+	<td><span class="points">103</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#21</td>
+	<td><a style="display:inline-block;" href="/u/glebpitsevich"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/191_small.jpg' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/glebpitsevich">Gleb Pitsevich</a><br>
+		<a class="lead-institution" href=""></a> </td>
+	<td>1</td>
+	<td class="zero-items">0</td>
+	<td class="zero-items">0</td>
+	<!-- <td class="zero-items">0</td> -->
+	<td class="zero-items"><span class="earnings">$0</span></td>
+	<td><span class="points">100</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#22</td>
+	<td><a style="display:inline-block;" href="/u/katiedahlhausen"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/s/img/p_default_small.png' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/katiedahlhausen">Katie Dahlhausen</a><br>
+		<a class="lead-institution" href="/institutions/8847">University of California, Davis</a> </td>
+	<td>1</td>
+	<td class="zero-items">0</td>
+	<td class="zero-items">0</td>
+	<!-- <td class="zero-items">0</td> -->
+	<td class="zero-items"><span class="earnings">$0</span></td>
+	<td><span class="points">100</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#23</td>
+	<td><a style="display:inline-block;" href="/u/fac2003"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/s/img/p_default_small.png' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/fac2003">Fabien Campagne</a><br>
+		<a class="lead-institution" href="/institutions/7582">Weill Cornell Medicine</a> </td>
+	<td>1</td>
+	<td class="zero-items">0</td>
+	<td class="zero-items">0</td>
+	<!-- <td class="zero-items">0</td> -->
+	<td class="zero-items"><span class="earnings">$0</span></td>
+	<td><span class="points">100</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#24</td>
+	<td><a style="display:inline-block;" href="/u/ruthlee"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/s/img/p_default_small.png' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/ruthlee">Ruth Lee</a><br>
+		<a class="lead-institution" href="/institutions/8847">University of California, Davis</a> </td>
+	<td>1</td>
+	<td class="zero-items">0</td>
+	<td class="zero-items">0</td>
+	<!-- <td class="zero-items">0</td> -->
+	<td class="zero-items"><span class="earnings">$0</span></td>
+	<td><span class="points">100</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#25</td>
+	<td><a style="display:inline-block;" href="/u/leesali"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/s/img/p_default_small.png' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/leesali">Leesa Li</a><br>
+		<a class="lead-institution" href="/institutions/8847">University of California, Davis</a> </td>
+	<td>1</td>
+	<td class="zero-items">0</td>
+	<td class="zero-items">0</td>
+	<!-- <td class="zero-items">0</td> -->
+	<td class="zero-items"><span class="earnings">$0</span></td>
+	<td><span class="points">100</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#26</td>
+	<td><a style="display:inline-block;" href="/u/alexandershatalin"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/s/img/p_default_small.png' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/alexandershatalin">Alexander Shatalin</a><br>
+		<a class="lead-institution" href=""></a> </td>
+	<td>1</td>
+	<td class="zero-items">0</td>
+	<td class="zero-items">0</td>
+	<!-- <td class="zero-items">0</td> -->
+	<td class="zero-items"><span class="earnings">$0</span></td>
+	<td><span class="points">100</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#27</td>
+	<td><a style="display:inline-block;" href="/u/hollybik"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/12_small.jpg' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/hollybik">Holly Bik</a><br>
+		<a class="lead-institution" href="/institutions/8847">University of California, Davis</a> </td>
+	<td>1</td>
+	<td class="zero-items">0</td>
+	<td class="zero-items">0</td>
+	<!-- <td class="zero-items">0</td> -->
+	<td class="zero-items"><span class="earnings">$0</span></td>
+	<td><span class="points">100</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#28</td>
+	<td><a style="display:inline-block;" href="/u/arigreen"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/s/img/p_default_small.png' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/arigreen">Ari Green</a><br>
+		<a class="lead-institution" href="/institutions/8855">University of California, San Francisco</a> </td>
+	<td>1</td>
+	<td class="zero-items">0</td>
+	<td class="zero-items">0</td>
+	<!-- <td class="zero-items">0</td> -->
+	<td class="zero-items"><span class="earnings">$0</span></td>
+	<td><span class="points">100</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#29</td>
+	<td><a style="display:inline-block;" href="/u/cknoxrun"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/241_small.jpg' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/cknoxrun">Craig Knox</a><br>
+		<a class="lead-institution" href="/institutions/6241">University of Alberta</a> </td>
+	<td class="zero-items">0</td>
+	<td>2</td>
+	<td class="zero-items">0</td>
+	<!-- <td class="zero-items">0</td> -->
+	<td class="zero-items"><span class="earnings">$0</span></td>
+	<td><span class="points">97</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#30</td>
+	<td><a style="display:inline-block;" href="/u/mkgilson"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/s/img/p_default_small.png' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/mkgilson">Mike Gilson</a><br>
+		<a class="lead-institution" href="/institutions/8854">University of California, San Diego</a> </td>
+	<td class="zero-items">0</td>
+	<td>13</td>
+	<td class="zero-items">0</td>
+	<!-- <td class="zero-items">0</td> -->
+	<td><span class="earnings">$45</span></td>
+	<td><span class="points">91</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#31</td>
+	<td><a style="display:inline-block;" href="/u/chrismungall"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/s/img/p_default_small.png' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/chrismungall">Chris Mungall</a><br>
+		<a class="lead-institution" href="/institutions/9277">Lawrence Berkeley National Laboratory</a> </td>
+	<td class="zero-items">0</td>
+	<td>4</td>
+	<td class="zero-items">0</td>
+	<!-- <td class="zero-items">0</td> -->
+	<td><span class="earnings">$72</span></td>
+	<td><span class="points">76</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#32</td>
+	<td><a style="display:inline-block;" href="/u/jonathanwren"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/86_small.jpg' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/jonathanwren">Jonathan Wren</a><br>
+		<a class="lead-institution" href="/institutions/9245">Oklahoma Medical Research Foundation</a> </td>
+	<td class="zero-items">0</td>
+	<td>2</td>
+	<td class="zero-items">0</td>
+	<!-- <td class="zero-items">0</td> -->
+	<td><span class="earnings">$71</span></td>
+	<td><span class="points">75</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#33</td>
+	<td><a style="display:inline-block;" href="/u/vsmalladi"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/s/img/p_default_small.png' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/vsmalladi">Venkat Malladi</a><br>
+		<a class="lead-institution" href="/institutions/9047">University of Texas Southwestern Medical Center at Dallas</a> </td>
+	<td class="zero-items">0</td>
+	<td>9</td>
+	<td class="zero-items">0</td>
+	<!-- <td class="zero-items">0</td> -->
+	<td><span class="earnings">$61</span></td>
+	<td><span class="points">70</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#34</td>
+	<td><a style="display:inline-block;" href="/u/katiefortney"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/137_small.jpg' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/katiefortney">Katie Fortney</a><br>
+		<a class="lead-institution" href="/institutions/8852">University of California, Oakland</a> </td>
+	<td class="zero-items">0</td>
+	<td>2</td>
+	<td class="zero-items">0</td>
+	<!-- <td class="zero-items">0</td> -->
+	<td><span class="earnings">$48</span></td>
+	<td><span class="points">70</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#35</td>
+	<td><a style="display:inline-block;" href="/u/TIOprea"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/75_small.jpg' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/TIOprea">Tudor Oprea</a><br>
+		<a class="lead-institution" href="/institutions/8966">University of New Mexico Health Sciences Center</a> </td>
+	<td class="zero-items">0</td>
+	<td>6</td>
+	<td class="zero-items">0</td>
+	<!-- <td class="zero-items">0</td> -->
+	<td><span class="earnings">$43</span></td>
+	<td><span class="points">65</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#36</td>
+	<td><a style="display:inline-block;" href="/u/obigriffith"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/obigriffith">Obi Griffith</a><br>
+		<a class="lead-institution" href="/institutions/9131">Washington University in St. Louis</a> </td>
+	<td class="zero-items">0</td>
+	<td>38</td>
+	<td class="zero-items">0</td>
+	<!-- <td>39</td> -->
+	<td><span class="earnings">$14</span></td>
+	<td><span class="points">65</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#37</td>
+	<td><a style="display:inline-block;" href="/u/mackenziesmith"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/135_small.jpg' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/mackenziesmith">MacKenzie Smith</a><br>
+		<a class="lead-institution" href="/institutions/8847">University of California, Davis</a> </td>
+	<td class="zero-items">0</td>
+	<td>2</td>
+	<td class="zero-items">0</td>
+	<!-- <td class="zero-items">0</td> -->
+	<td><span class="earnings">$60</span></td>
+	<td><span class="points">62</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#38</td>
+	<td><a style="display:inline-block;" href="/u/cchung"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/s/img/p_default_small.png' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/cchung">Caty Chung</a><br>
+		<a class="lead-institution" href="/institutions/8937">University of Miami</a> </td>
+	<td class="zero-items">0</td>
+	<td>5</td>
+	<td class="zero-items">0</td>
+	<!-- <td class="zero-items">0</td> -->
+	<td><span class="earnings">$51</span></td>
+	<td><span class="points">56</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#39</td>
+	<td><a style="display:inline-block;" href="/u/daniel_mietchen"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/25_small.jpg' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/daniel_mietchen">Daniel Mietchen</a><br>
+		<a class="lead-institution" href="/institutions/9244">National Institutes of Health (NIH)</a> </td>
+	<td class="zero-items">0</td>
+	<td>14</td>
+	<td class="zero-items">0</td>
+	<!-- <td>36</td> -->
+	<td><span class="earnings">$28</span></td>
+	<td><span class="points">55</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#40</td>
+	<td><a style="display:inline-block;" href="/u/kristinahettne"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/196_small.jpg' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/kristinahettne">Kristina Hettne</a><br>
+		<a class="lead-institution" href="/institutions/9783">Leiden University Medical Center</a> </td>
+	<td>1</td>
+	<td>1</td>
+	<td class="zero-items">0</td>
+	<!-- <td class="zero-items">0</td> -->
+	<td class="zero-items"><span class="earnings">$0</span></td>
+	<td><span class="points">53</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#41</td>
+	<td><a style="display:inline-block;" href="/u/markthompson"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/s/img/p_default_small.png' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/markthompson">Mark Thompson</a><br>
+		<a class="lead-institution" href="/institutions/9783">Leiden University Medical Center</a> </td>
+	<td>1</td>
+	<td class="zero-items">0</td>
+	<td class="zero-items">0</td>
+	<!-- <td class="zero-items">0</td> -->
+	<td class="zero-items"><span class="earnings">$0</span></td>
+	<td><span class="points">50</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#42</td>
+	<td><a style="display:inline-block;" href="/u/allisonmccoy"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/77_small.jpg' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/allisonmccoy">Allison McCoy</a><br>
+		<a class="lead-institution" href="/institutions/8770">The Tulane University of New Orleans</a> </td>
+	<td class="zero-items">0</td>
+	<td>5</td>
+	<td class="zero-items">0</td>
+	<!-- <td class="zero-items">0</td> -->
+	<td><span class="earnings">$37</span></td>
+	<td><span class="points">42</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#43</td>
+	<td><a style="display:inline-block;" href="/u/jackpark"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/s/img/p_default_small.png' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/jackpark">Jack Park</a><br>
+		<a class="lead-institution" href=""></a> </td>
+	<td class="zero-items">0</td>
+	<td>5</td>
+	<td>1</td>
+	<!-- <td class="zero-items">0</td> -->
+	<td><span class="earnings">$29</span></td>
+	<td><span class="points">35</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#44</td>
+	<td><a style="display:inline-block;" href="/u/ostrokach"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/226_small.jpg' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/ostrokach">Alexey Strokach</a><br>
+		<a class="lead-institution" href="/institutions/6715">University of Toronto at Scarborough</a> </td>
+	<td class="zero-items">0</td>
+	<td>2</td>
+	<td>1</td>
+	<!-- <td class="zero-items">0</td> -->
+	<td><span class="earnings">$26</span></td>
+	<td><span class="points">29</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#45</td>
+	<td><a style="display:inline-block;" href="/u/ritukhare"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/s/img/p_default_small.png' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/ritukhare">Ritu  Khare</a><br>
+		<a class="lead-institution" href="/institutions/9243">The Children&#39;s Hospital of Philadelphia</a> </td>
+	<td class="zero-items">0</td>
+	<td>2</td>
+	<td class="zero-items">0</td>
+	<!-- <td class="zero-items">0</td> -->
+	<td><span class="earnings">$22</span></td>
+	<td><span class="points">24</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#46</td>
+	<td><a style="display:inline-block;" href="/u/apankov"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/s/img/p_default_small.png' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/apankov">Alex Pankov</a><br>
+		<a class="lead-institution" href="/institutions/8855">University of California, San Francisco</a> </td>
+	<td class="zero-items">0</td>
+	<td>2</td>
+	<td class="zero-items">0</td>
+	<!-- <td class="zero-items">0</td> -->
+	<td><span class="earnings">$20</span></td>
+	<td><span class="points">22</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#47</td>
+	<td><a style="display:inline-block;" href="/u/JamesMeadow"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/14_small.jpg' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/JamesMeadow">James Meadow</a><br>
+		<a class="lead-institution" href="/institutions/8988">University of Oregon</a> </td>
+	<td class="zero-items">0</td>
+	<td>1</td>
+	<td class="zero-items">0</td>
+	<!-- <td class="zero-items">0</td> -->
+	<td class="zero-items"><span class="earnings">$0</span></td>
+	<td><span class="points">21</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#48</td>
+	<td><a style="display:inline-block;" href="/u/marinasirota"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/103_small.jpg' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/marinasirota">Marina Sirota</a><br>
+		<a class="lead-institution" href="/institutions/8855">University of California, San Francisco</a> </td>
+	<td class="zero-items">0</td>
+	<td>2</td>
+	<td class="zero-items">0</td>
+	<!-- <td class="zero-items">0</td> -->
+	<td><span class="earnings">$17</span></td>
+	<td><span class="points">19</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#49</td>
+	<td><a style="display:inline-block;" href="/u/gregway"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/s/img/p_default_small.png' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/gregway">Greg Way</a><br>
+		<a class="lead-institution" href="/institutions/8990">University of Pennsylvania</a> </td>
+	<td class="zero-items">0</td>
+	<td>1</td>
+	<td class="zero-items">0</td>
+	<!-- <td class="zero-items">0</td> -->
+	<td><span class="earnings">$18</span></td>
+	<td><span class="points">19</span></td>
+</tr>
+
+<tr>
+	<td style="text-align:left;padding: 0px !important;padding-top:8px !important;color:gray;">#50</td>
+	<td><a style="display:inline-block;" href="/u/olegursu"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/s/img/p_default_small.png' width='40' height='40'></a> </td>
+	<td style="text-align:left;"><a class="lead-name" href="/u/olegursu">Oleg Ursu</a><br>
+		<a class="lead-institution" href="/institutions/8966">University of New Mexico Health Sciences Center</a> </td>
+	<td class="zero-items">0</td>
+	<td>3</td>
+	<td class="zero-items">0</td>
+	<!-- <td class="zero-items">0</td> -->
+	<td class="zero-items"><span class="earnings">$0</span></td>
+	<td><span class="points">18</span></td>
+</tr>
+
+</table>
+
+  	  <p style="font-size:12px;">* Earnings include both confirmed and unconfirmed earnings</p>
+      
+    <ul class="pagination">
+        <li class="disabled"><a class="prev-page-url" href="#">&laquo;</a></li>
+        <li><a style="color:gray;" href="#">Page 1 of 2</a></li>
+        <li><a class="next-page-url" href="?page=2">&raquo;</a></li>
+    </ul>
+
+
+
+  </td><td style="width:260px;padding-left:40px;">
+
+    <!-- <div class="benefits-box">
+      <h3>Thinklab Meta</h3>
+
+      <a href="/p/meta">More</a>
+    </div>
+  <br> -->
+    <div class="benefits-box">
+      <h3>FAQ</h3>
+      <ul style="padding-left:30px;margin-bottom:0px;margin-left:-10px;">
+        <li><a href="/help/points">How are points earned?</a></li>
+        <li><a href="/help/rewards#earnings-calculation">How are earnings calculated?</a></li>
+
+        </ul>
+    </div>
+
+  </td></tr></table>
+
+
+		</div>
+
+
+		
+	    	<div class="footer">
+<div style="background:#dedede;">
+	<div class="main-centered-div text-center" style="padding:20px;">
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#08606d646467487c6061666364696a266b6765"><span class="__cf_email__" data-cfemail="c8a0ada4a4a788bca0a1a6a3a4a9aae6aba7a5">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+	</div>
+</div>
+<div class="main-footer">
+	<div class="main-centered-div">
+
+<table class="full-width"><tr>
+	<td class="footer-nav">
+
+        <div class="foot-head">Explore</div>
+        <a href="/proposals">Proposals</a><br>
+        <a href="/projects">Projects</a><br>
+        <a href="/publications">Article discussion</a><br>
+        <a href="/discussion">All discussion</a><br>
+        <a href="/topics">Topics</a><br>
+        <!-- <a href="/funders">Funders</a><br> -->
+        <a href="/funding">Funding opportunities</a><br>
+
+	</td>
+	<td class="footer-nav">
+
+        <!-- <div class="foot-head">Help &amp; feedback</div>	 -->
+        <!-- <div class="foot-head">Intro</div>
+        <a href="/benefits/for-science">Why</a><br>
+        <a href="/how-it-works">How it works</a><br>
+
+<br> -->
+
+        <div class="foot-head">Community</div>
+        <a href="/leaderboard">Leaderboard</a><br>
+        <a href="/p/meta">Thinklab Meta</a><br>
+				<a href="/help/faq">Help</a><br>
+				<!-- <a href="/new-project">Start a proposal</a><br> -->
+        <!-- <a href="/benefits/proposal">Benefits</a><br> -->
+        <!-- <a href="/funding">Get funded</a><br> -->
+        <!-- <a href="/participate">Become a contributor</a><br> -->
+        <!-- <a href="/for-funders">For science funders</a><br> -->
+        <!-- <a href="/for-institutions">For institutions</a><br> -->
+
+	</td>
+	<td class="footer-nav">
+
+
+
+        <div class="foot-head">About</div>
+        <a href="/about">Overview</a><br>
+        <a href="/benefits">Benefits</a><br>
+        <a href="/how-it-works">How it works</a><br>
+        <a href="/about/story">Our story</a><br>
+        <a href="/blog">Our blog</a><br>
+        <a href="/about/jobs">Join the team</a><br>
+        <br>
+
+        <!-- <div class="foot-head">Help</div>
+        <a href="/help">Help</a><br>
+		 -->
+
+
+	</td>
+	<td class="footer-nav">
+		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
+		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<br><br>
+		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
+
+	</td>
+
+</tr></table>
+
+</div>
+</div>
+</div>
+
+		
+
+	</div>
+
+
+  <script></script>
+  <script>
+  var MEDIA_URL = 'https://think-lab.s3.amazonaws.com/m/';
+  var STATIC_URL = 'https://think-lab.s3.amazonaws.com/s/';
+  var page_is_authenticated = false;
+  var page_page = 'leaderboard';
+  var page_profile_id = undefined;
+</script>
+
+
+
+	<!-- Note different script type. MUST come before MathJax.js -->
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	        "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"],
+	                        scale: 110, linebreaks: { automatic:true },
+	                        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+	        tex2jax: { inlineMath: [ ["$$", "$$"], ["\\(","\\)"] ],
+	                    displayMath: [ ["$$$","$$$"], ["\\[", "\\]"] ],
+	                    processEscapes: true,}
+	            });
+
+	</script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://think-lab.s3.amazonaws.com/s/dist/main.min.js"></script>
+  
+
+
+
+  
+	
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>

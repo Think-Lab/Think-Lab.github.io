@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZgEOC19dW0QCEVtHU1gG","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":524}</script>
+    <title>Mining knowledge from MEDLINE articles and their indexed MeSH terms | Thinklab</title>
+	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
+    <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/highlightjs/github.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/css.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/bootstrap-multiselect.css" />
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
+    
+    
+    
+    
+  
+    <meta name="citation_doi" content="10.15363/thinklab.d67">
+    <meta name="citation_title" content="Mining knowledge from MEDLINE articles and their indexed MeSH terms">
+    <meta name="citation_online_date" content="May 10, 2015">
+    <meta name="citation_author" content="Daniel Himmelstein, Alex Pankov">
+    <meta name="citation_journal_title" content="Thinklab">
+    <meta name="citation_publisher" content="Thinklab">
+  
+
+    
+
+
+	<!-- GoogleAnalytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-48550230-1', 'thinklab.com');
+	ga('require', 'displayfeatures');
+	
+	ga('send', 'pageview');
+
+	</script>
+
+
+
+
+
+
+</head>
+<body >
+  <form id="form_action" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+</form>
+
+	
+
+	<div class="body-wrapper">
+
+		
+
+
+<!-- <div style="height:5px;background-image:url('https://think-lab.s3.amazonaws.com/s/img/top-bg.gif');"></div> -->
+<div class="gradient">
+	<div class="main-centered-div header-container">
+
+<table class="full-width" style="height:60px;"><tr>
+	<td style="width:200px;vertical-align:middle;padding-bottom:15px;">
+		<a href="/" style="font-weight:normal;color:#212121;"><img src="https://think-lab.s3.amazonaws.com/s/img/logo.png" width="160"></a>
+	</td><td style="vertical-align:middle;text-align:left;padding-top:6px;width:100%;padding-left:40px;">
+		<ul id="not-search-block"  class="main-header">
+
+
+			
+
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/proposals">Proposals</a></li>
+						<li><a href="/projects">Projects</a></li>
+						<li><a href="/publications">Article discussion</a></li>
+						<li><a href="/discussion">All discussion</a></li>
+					</ul>
+				</li>
+				<li><a href="/leaderboard">Leaderboard</a></li>
+
+			
+				<li><a href="/about">About</a></li>
+			
+
+
+		</ul>
+
+    <ul id="search-block" class="main-header" style="display: none; margin-right: 30px;">
+        <li class="full-width">
+            <form method="get" action="/search">
+			<div class="input-group full-width">
+				<input name="q" type="text" class="form-control search-input">
+			</div>
+            </form>
+        </li>
+    </ul>
+
+	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
+		<ul class="main-header pull-right" style="padding-left: 0;">
+    		
+                <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+            
+
+        </ul>
+    </ul>
+	</td>
+</tr></table>
+
+<!-- <div id="global-search-div" class="main-centered-div" style="display:none;">
+	<input type="text" value="" class="thread-search form-control" placeholder="Search" data-action="/discussion">
+</div> -->
+
+	</div>
+</div>
+
+		
+	  
+
+
+
+	  
+
+
+		
+
+		<div class="dark-head"><div class="main-centered-div">
+
+			
+
+		</div></div>
+		
+		<div class="main-centered-div" style="margin-top:40px;padding-bottom:340px">
+	    
+
+<div style="margin-top:-20px; margin-bottom:20px;">
+
+    <a class="side-box" href="/p/rephetio" style="background-color:#ebfdff;"><div class="side-type">Project:</div> <div class="side-title">Rephetio: Repurposing drugs on a hetnet [rephetio]</div></a><br>
+
+
+
+</div>
+
+<table style="margin-top:0px;"><tr>
+	<td class="thread-table-content">
+
+		<table class="full-width">
+			
+<tr class="comment-tr target-hl" id="1" data-comment-id="217">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="217"></a>
+
+    
+
+			<h2 class="page-title" style="margin-bottom:5px;margin-top:0px !important;">Mining knowledge from MEDLINE articles and their indexed MeSH terms</h2>
+
+			<div style="margin-top:5px;color:gray;margin-bottom:20px;font-size:13px;">
+				<a style="font-weight:normal;color:#212121" href="/u/dhimmel"><strong>Daniel Himmelstein</strong></a>
+				<span class="is-researcher">Researcher</span>
+				&nbsp; <a href="#1" class="light">789 days ago</a>
+				
+			</div>
+
+      
+
+          <hr>
+		
+
+    <h2>Background</h2>
+
+<p>The National Library of Medicine (NLM) produces a catalog of 23 million journal articles called PubMed. PubMed contains <a href="//www.nlm.nih.gov/pubs/factsheets/dif_med_pub.html">two subsets</a> that are relevant for literature mining:</p>
+
+<ol><li><strong>PubMed Central (PMC)</strong> — 3.4 million articles that include full texts, rather than just abstracts.</li><li><strong>MEDLINE</strong> — 21 million articles that are manually annotated with their topics. Topics are chosen from the MeSH vocabulary. 5,594 journals are <a href="http://www.ncbi.nlm.nih.gov/nlmcatalog/?term=currentlyindexed">currently indexed</a>.</li></ol>
+
+<p>MeSH, which stands for Medical Subject Headings, is a broad terminology of ~27 thousand terms structured hierarchically to form an ontology. <em>Skilled subject analysts</em> at the NLM <a href="//www.ncbi.nlm.nih.gov/books/NBK3827/#pubmedhelp.MeSH_Terms_MH">typically assign</a> 10–12 MeSH terms per article and denote a subset of these terms as <em>major topics</em>.</p>
+
+<h2>Application</h2>
+
+<p>Text mining, as <a href="//thinklab.com/discussion/text-as-a-resource-for-network-population/48">suggested to us</a> by <a href="/u/b_good" class="username">@b_good</a>, is an intriguing technique because it is widely-applicable and draws from a knowledge base of epic proportions <span class="citation">[<a href="https://doi.org/10.1186/1742-5581-3-2" class="citation" data-key="10.1186/1742-5581-3-2">1</a>]</span>.</p>
+
+<p>We would like to infer relationships between nodes in our network based on MEDLINE cooccurrence. We will search for pairs of MeSH terms that are assigned to the same articles beyond what would be expected if the terms were unrelated. This approach has successfully identified disease symptoms <span class="citation">[<a href="https://doi.org/10.1038/ncomms5212" class="citation" data-key="10.1038/ncomms5212">2</a>]</span> (<a href="https://cdn.rawgit.com/dhimmel/hsdn/51d31d738fe3cad0a12c736b8def333729c3c7f4/index.html">browse results</a>). The method is versatile and can be applied to any nodes which have been mapped to MeSH.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="2" data-comment-id="222">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="222"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#2" class="light">786 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1><em>Proof of concept</em> implementation</h1>
+
+<p>We implemented a topic cooccurrence calculator based on MEDLINE and used this method to identify <strong>disease-symptom relationships</strong> (<a href="//nbviewer.ipython.org/github/dhimmel/medline/blob/61590a7007d282429694e52a3a6743af99c1ab12/symptoms.ipynb">notebook</a>, <a href="https://github.com/dhimmel/medline/blob/61590a7007d282429694e52a3a6743af99c1ab12/eutility.py">API query script</a>, <a href="https://raw.githubusercontent.com/dhimmel/medline/gh-pages/data/disease-symptom-cooccurrence.tsv">tsv of results</a>).</p>
+
+<p>First we created a <strong>disease set</strong> of 119 MeSH terms that mapped to DO slim diseases (<a href="https://github.com/dhimmel/medline/blob/61590a7007d282429694e52a3a6743af99c1ab12/data/DO-slim-to-mesh.tsv">tsv of diseases</a>). Next, we created a <strong>symptom set</strong> of 438 MeSH terms by finding all descendants of <code>D012816</code> (Signs and Symptoms) (<a href="//nbviewer.ipython.org/github/dhimmel/mesh/blob/e561301360e6de2140dedeaa7c7e17ce4714eb7f/mesh.ipynb">notebook</a>, <a href="https://github.com/dhimmel/mesh/blob/e561301360e6de2140dedeaa7c7e17ce4714eb7f/data/symptoms.tsv">tsv of symptoms</a>).</p>
+
+<p>For each disease, we identified the articles where that disease was a major topic. For each symptom, we identified the articles where that symptom was a topic. We then identified the articles that contained both a disease major topic and symptom topic. We based further analysis only on these 392,397 articles that contain at least one disease–symptom cooccurrence.</p>
+
+<p>For each symptom–disease pair, we calculated:</p>
+
+<ul><li><code>cooccurrence</code> — the number of articles where the disease and symptom terms cooccurred.</li><li><code>expected</code> — the number of expected cooccurrences by chance based on each term's marginal frequency.</li><li><code>enrichment</code> — <code>cooccurrence</code> divided by <code>expected</code>.</li><li><code>odds_ratio</code> — the odds of <code>cooccurrence</code> divided by the odds of <code>expected</code>. This calculation appears to be slightly messed up due to non-integer expected counts.</li><li><code>p_fisher</code> — the p-value from Fisher's exact test evaluating whether the observed cooccurrence exceeded that expected by chance.</li></ul>
+
+<p><a href="/u/apankov" class="username">@apankov</a>, can you comment on the Fisher's exact test and whether there is a superior way to identify terms that significantly cooccur?</p>
+
+<p><a href="/u/b_good" class="username">@b_good</a> or others: do you know of better metrics for literature mining? One issue is that our approach may miss common symptoms that are not greatly enriched for any particular disease. The HSDN study <span class="citation">[<a href="https://doi.org/10.1038/ncomms5212" class="citation" data-key="10.1038/ncomms5212">1</a>]</span> used a TF-IDF measure, but <a href="//thinklab.com/discussion/human-symptom-disease-network-mesh-id-matching/52#167">we require</a> metrics that are comparable across diseases.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="3" data-comment-id="223">
+  <td class="comment-profile-avatar">
+		<a href="/u/apankov"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/s/img/p_default_medium.png' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="223"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/apankov">Alex Pankov</a>
+				
+				<span class="light">&nbsp;<a href="#3" class="light">785 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>I think the Fisher's exact test will be accepted well by reviewers, but Barnard's test could be a good alternative. Otherwise, if you can calculate a p-value based on permutation (or get a bootstrapped estimates for the variance of the number of expected cooccurrences) , that could be an easy, straightforward approach.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="4" data-comment-id="224">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="224"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#4" class="light">783 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Thanks <a href="/u/apankov" class="username">@apankov</a>. I couldn't find a python implementation of <a href="https://en.wikipedia.org/wiki/Barnard%27s_test">Barnard's test</a> <span class="citation">[<a href="https://doi.org/10.1038/156177a0" class="citation" data-key="10.1038/156177a0">1</a>, <a href="https://doi.org/10.1093/biomet/34.1-2.123" class="citation" data-key="10.1093/biomet/34.1-2.123">2</a>]</span>, so I think we'll stick with <a href="https://en.wikipedia.org/wiki/Fisher%27s_exact_test">Fisher's exact test</a> <span class="citation">[<a href="https://doi.org/10.2307/2340521" class="citation" data-key="10.2307/2340521">3</a>]</span> for simplicity. The fidelity of <em>p</em>-values is not a major concern here.</p>
+
+<p>However, it has occurred to me that in our above post, we incorrectly created the contingency table for the exact test. We now <a href="https://github.com/dhimmel/medline/blob/a3e35d7dd58fb64f4043247e661259c743dce7d5/cooccurrence.py#L44">construct it</a> similarly to <a href="https://dx.doi.org/10.1016/j.jbi.2006.11.003#tbl1">Table 1 of this paper</a> <span class="citation">[<a href="https://doi.org/10.1016/j.jbi.2006.11.003" class="citation" data-key="10.1016/j.jbi.2006.11.003">4</a>]</span> so that the contingency table is:</p>
+
+<p></p><div class="math">$$$
+\begin{bmatrix}
+a &amp; b\\
+c &amp; d
+\end{bmatrix}
+$$$</div>
+
+<p>where</p>
+
+<ul><li><em>a</em> is the number of studies with both the disease and the symptom (<code>cooccurrence</code>)</li><li><em>b</em> is the number of studies with the disease and without the symptom</li><li><em>c</em> is the number of studies without the disease and with the symptom</li><li><em>d</em> is the number of studies without either the disease or symptom</li></ul>
+
+<p>The revised symptom–disease pair tsv file is <a href="https://raw.githubusercontent.com/dhimmel/medline/a3e35d7dd58fb64f4043247e661259c743dce7d5/data/disease-symptom-cooccurrence.tsv">available here</a>.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-123" class="inline-note toggle-parent" data-note-id="123">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: See this <a href="https://raw.githubusercontent.com/dhimmel/medline/2a427d37c4174e492873e2387c9b1d51236a4f7b/data/disease-symptom-cooccurrence.tsv">newer symptom–disease pair tsv file</a> which has <a href="https://github.com/dhimmel/medline/commit/2a427d37c4174e492873e2387c9b1d51236a4f7b?diff=unified#diff-3417fe5acc9338308981e0e58eca0f11">additional</a> DO slim diseases with MeSH mappings. 
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="5" data-comment-id="229">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="229"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#5" class="light">778 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Anatomy–Disease Relationships</h1>
+
+<p>The Uberon ontology <span class="citation">[<a href="https://doi.org/10.1186/gb-2012-13-1-r5" class="citation" data-key="10.1186/gb-2012-13-1-r5">1</a>]</span> of anatomical structures includes MeSH <a href="https://github.com/dhimmel/uberon/blob/0c50839eb3e58a89e81018978f269210d2212d58/data/mesh-map.tsv">cross-references</a>. Thus, we performed our MEDLINE cooccurrence analysis described above to find relationships between diseases and anatomical structures (<a href="http://nbviewer.ipython.org/github/dhimmel/medline/blob/ef0aef8b9c4bfcaa4cf46f03efe6d0ea0dc5d13b/tissues.ipynb">notebook</a>, <a href="https://raw.githubusercontent.com/dhimmel/medline/ef0aef8b9c4bfcaa4cf46f03efe6d0ea0dc5d13b/data/disease-uberon-cooccurrence.tsv">tsv download</a>).</p>
+
+<p>The ability of this method to capture disease localization was exceptional. For example, the top five terms by <em>p</em>-value for multiple sclerosis were:</p>
+
+<table class="table markdown-table"><thead><tr><th>mesh_name</th><th>cooccurrence</th><th>expected</th><th>enrichment</th><th>odds_ratio</th><th>p_fisher</th></tr></thead><tbody><tr><td>Central Nervous System</td><td>881</td><td>38.6</td><td>22.8</td><td>34.3</td><td>0.000</td></tr><tr><td>Spinal Cord</td><td>1492</td><td>80.8</td><td>18.5</td><td>27.5</td><td>0.000</td></tr><tr><td>Myelin Sheath</td><td>1006</td><td>19.9</td><td>50.5</td><td>146.8</td><td>0.000</td></tr><tr><td>Brain</td><td>4777</td><td>778.3</td><td>6.1</td><td>11.5</td><td>0.000</td></tr><tr><td>Optic Nerve</td><td>372</td><td>36.5</td><td>10.2</td><td>11.9</td><td>0.000</td></tr></tbody></table>
+
+<p>One improvement would be to exclude Uberon terms that don't exist in humans such as venom (<code>UBERON:0007113</code>). Additionally, there are some <a href="https://github.com/obophenotype/uberon/issues/698#issuecomment-104079963">Uberon–MeSH mapping issues</a> that should get resolved soon allowing us to update the analysis.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="6" data-comment-id="326">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="326"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#6" class="light">724 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Disease–Disease Relationships</h1>
+
+<p>We computed disease similarities based on MEDLINE cooccurrences. Refer to <a href="http://thinklab.com/discussion/disease-similarity-from-medline-topic-cooccurrence/93" class="citation thread-citation" data-key="10.15363/thinklab.d93">this discussion</a> for more information.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="7" data-comment-id="1382">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1382"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#7" class="light">229 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Noting MRCOC</h1>
+
+<p>Head this through a <a href="https://twitter.com/bgood/status/800130613076336640">Tweet</a> by <a href="/u/b_good" class="username">@b_good</a>. It appears that the National Library of Medicine precomputes literature co-occurrences for MeSH terms. See the page <a href="https://ii.nlm.nih.gov/MRCOC.shtml">MEDLINE Co-Occurrences (MRCOC) Files</a>.</p>
+
+<p>This could replace some or all functionality of <a href="https://github.com/dhimmel/medline"><code>dhimmel/medline</code></a> — however, I haven't actually looked into whether it's a user friendly substitute. Just wanted to take note.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+    		
+		</table>
+
+    
+
+    &nbsp;<br>
+    <a class="btn btn-primary btn-lg" href="/signup?next=/discussion/mining-knowledge-from-medline-articles-and-their-indexed-mesh-terms/67&suppress_message=1" style>Join to Reply</a>
+
+
+		<table class="references table-td-5" style="display:none;"><tr><td><a href='/doi/10.1186/1742-5581-3-2' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.1186/1742-5581-3-2'>None</div></td></tr><tr><td><a href='/doi/10.1038/ncomms5212' class='pub-comments tt-right' title='Article comments'>4</a></td><td><div class='pub-order'>2.</div></td><td><div class='doi-body' data-key='10.1038/ncomms5212'><a href='/doi/10.1038/ncomms5212' class='pub-title'>Human symptoms–disease network</a><div class='pub-body'>XueZhong Zhou, Jörg Menche, Albert-László Barabási, Amitabh Sharma (2014) <i>Nat Comms</i>. doi:<a class='pub-doi' href='https://doi.org/10.1038/ncomms5212'>10.1038/ncomms5212</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d48' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>3.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d48'><a href='/discussion/text-as-a-resource-for-network-population/48' class='pub-title'>Text as a resource for network population?</a><div class='pub-body'>Benjamin Good, Daniel Himmelstein (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d48'>10.15363/thinklab.d48</a></div></div></td></tr><tr><td><a href='/doi/10.1038/ncomms5212' class='pub-comments tt-right' title='Article comments'>4</a></td><td><div class='pub-order'>4.</div></td><td><div class='doi-body' data-key='10.1038/ncomms5212'><a href='/doi/10.1038/ncomms5212' class='pub-title'>Human symptoms–disease network</a><div class='pub-body'>XueZhong Zhou, Jörg Menche, Albert-László Barabási, Amitabh Sharma (2014) <i>Nat Comms</i>. doi:<a class='pub-doi' href='https://doi.org/10.1038/ncomms5212'>10.1038/ncomms5212</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d52' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>5.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d52'><a href='/discussion/human-symptom-disease-network-mesh-id-matching/52' class='pub-title'>Human Symptom Disease Network-MeSH ID Matching</a><div class='pub-body'>Leo Brueggeman, Daniel Himmelstein (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d52'>10.15363/thinklab.d52</a></div></div></td></tr><tr><td><a href='/doi/10.1038/156177a0' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>6.</div></td><td><div class='doi-body' data-key='10.1038/156177a0'><a href='/doi/10.1038/156177a0' class='pub-title'>A New Test for 2 × 2 Tables</a><div class='pub-body'>G. A. BABNARD (1945) <i>Nature</i>. doi:<a class='pub-doi' href='https://doi.org/10.1038/156177a0'>10.1038/156177a0</a></div></div></td></tr><tr><td><a href='/doi/10.1093/biomet/34.1-2.123' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>7.</div></td><td><div class='doi-body' data-key='10.1093/biomet/34.1-2.123'><a href='/doi/10.1093/biomet/34.1-2.123' class='pub-title'>SIGNIFICANCE TESTS FOR 2×2 TABLES</a><div class='pub-body'>G. A. BARNARD (1947) <i>Biometrika</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/biomet/34.1-2.123'>10.1093/biomet/34.1-2.123</a></div></div></td></tr><tr><td><a href='/doi/10.2307/2340521' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>8.</div></td><td><div class='doi-body' data-key='10.2307/2340521'><a href='/doi/10.2307/2340521' class='pub-title'>On the Interpretation of χ 2 from Contingency Tables, and the Calculation of P</a><div class='pub-body'>R. A. Fisher (1922) <i>Journal of the Royal Statistical Society</i>. doi:<a class='pub-doi' href='https://doi.org/10.2307/2340521'>10.2307/2340521</a></div></div></td></tr><tr><td><a href='/doi/10.1016/j.jbi.2006.11.003' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>9.</div></td><td><div class='doi-body' data-key='10.1016/j.jbi.2006.11.003'><a href='/doi/10.1016/j.jbi.2006.11.003' class='pub-title'>A statistical methodology for analyzing co-occurrence data from a large sample</a><div class='pub-body'>Hui Cao, George Hripcsak, Marianthi Markatou (2007) <i>Journal of Biomedical Informatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1016/j.jbi.2006.11.003'>10.1016/j.jbi.2006.11.003</a></div></div></td></tr><tr><td><a href='/doi/10.1186/gb-2012-13-1-r5' class='pub-comments tt-right' title='Article comments'>16</a></td><td><div class='pub-order'>10.</div></td><td><div class='doi-body' data-key='10.1186/gb-2012-13-1-r5'><a href='/doi/10.1186/gb-2012-13-1-r5' class='pub-title'>Uberon, an integrative multi-species anatomy ontology</a><div class='pub-body'>Christopher J Mungall, Carlo Torniai, Georgios V Gkoutos, Suzanna E Lewis, Melissa A Haendel (2012) <i>Genome Biol</i>. doi:<a class='pub-doi' href='https://doi.org/10.1186/gb-2012-13-1-r5'>10.1186/gb-2012-13-1-r5</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d93' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>11.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d93'><a href='/discussion/disease-similarity-from-medline-topic-cooccurrence/93' class='pub-title'>Disease similarity from MEDLINE topic cooccurrence</a><div class='pub-body'>Daniel Himmelstein (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d93'>10.15363/thinklab.d93</a></div></div></td></tr></table>
+
+    
+
+
+	</td>
+	<td class="thread-sidebar">
+
+
+			
+
+      <a class="btn btn-default follow-link btn-follow btn-lg is-following tt-top full-width" title="Follow discussion" data-id="67" data-ctype="thread" data-is-following="false">&nbsp;</a>
+
+      
+        <div class="status-box text-center"><span style="">Status:</span> 
+  Completed
+
+</div>
+      
+
+      
+        
+      
+
+
+				
+
+					<div class="details">Views</div>
+					<span style="font-size:20px;">279</span>
+
+        
+
+				
+					<div class="details">Topics</div>
+					<div style="margin-bottom:15px;">
+		            <a href="/topics/text-mining" class="tag">Text Mining</a><a href="/topics/medline" class="tag">MEDLINE</a><a href="/topics/literature-mining" class="tag">Literature Mining</a><a href="/topics/pubmed" class="tag">Pubmed</a><a href="/topics/mesh" class="tag">MeSH</a>
+					</div>
+				
+
+
+		
+			<div class="details">Referenced by</div>
+			<div style="font-size:12px;"><ul style="padding-left:16px !important;">
+			
+				<li>
+					
+					<a href='/discussion/brainstorming-future-directions-for-hetionet/227' class='thread-title'>Brainstorming future directions for Hetionet</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/prediction-in-epilepsy/224' class='thread-title'>Prediction in epilepsy</a>
+				</li>
+			
+				<li>
+					
+					Research report: <a href='/p/rephetio/report'>Rephetio: Repurposing drugs on a hetnet</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/disease-ontology-feature-requests/68' class='thread-title'>Disease Ontology feature requests</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/suggestions-for-additional-information-types/22' class='thread-title'>Suggestions for additional information types?</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/tissue-specific-gene-expression-resources/81' class='thread-title'>Tissue-specific gene expression resources</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/text-as-a-resource-for-network-population/48' class='thread-title'>Text as a resource for network population?</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/tissue-node/41' class='thread-title'>Tissue Node</a>
+				</li>
+			
+				<li>
+					[<a href="/p/meta/discussion" style="color:#333333">meta</a>] 
+					<a href='/discussion/citing-thinklab-discussions-feedback-please/69' class='thread-title'>Citing ThinkLab discussions — feedback please</a>
+				</li>
+			
+				</ul>
+			</div>
+		
+
+		
+			<div class="details">Cite this as</div>
+			<span style="font-size:12px;">
+				Daniel Himmelstein, Alex Pankov (2015) Mining knowledge from MEDLINE articles and their indexed MeSH terms. <i>Thinklab.</i> doi:<a href='https://doi.org/10.15363/thinklab.d67'>10.15363/thinklab.d67</a>
+			</span>
+		
+
+		<div class="details">License</div>
+		<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0;width:88px;height:31px;" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></p>
+
+		<div class="details">Share</div>
+		
+			
+				<a class="share-button fb" onclick="javascript:void(window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A//thinklab.com/discussion/mining-knowledge-from-medline-articles-and-their-indexed-mesh-terms/67','','width=600,height=460,menubar=no,status=no'));" href="#"></a>
+<a class="share-button twitter" onclick="javascript:void(window.open('https://twitter.com/share?text=Mining%20knowledge%20from%20MEDLINE%20articles%20and%20their%20indexed%20MeSH%20terms&url=https%3A//thinklab.com/discussion/mining-knowledge-from-medline-articles-and-their-indexed-mesh-terms/67','','width=600,height=300,menubar=no,status=no'));" href="#"></a>
+<a class="share-button google" onclick="javascript:void(window.open('https://plus.google.com/share?url=https%3A//thinklab.com/discussion/mining-knowledge-from-medline-articles-and-their-indexed-mesh-terms/67','','width=510,height=460,menubar=no,status=no'));" href="#"></a>
+
+			
+		
+
+	</td>
+</tr></table>
+
+
+		</div>
+
+
+		
+	    	<div class="footer">
+<div style="background:#dedede;">
+	<div class="main-centered-div text-center" style="padding:20px;">
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#6d05080101022d1905040306010c0f430e0200"><span class="__cf_email__" data-cfemail="ef878a838380af9b87868184838e8dc18c8082">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+	</div>
+</div>
+<div class="main-footer">
+	<div class="main-centered-div">
+
+<table class="full-width"><tr>
+	<td class="footer-nav">
+
+        <div class="foot-head">Explore</div>
+        <a href="/proposals">Proposals</a><br>
+        <a href="/projects">Projects</a><br>
+        <a href="/publications">Article discussion</a><br>
+        <a href="/discussion">All discussion</a><br>
+        <a href="/topics">Topics</a><br>
+        <!-- <a href="/funders">Funders</a><br> -->
+        <a href="/funding">Funding opportunities</a><br>
+
+	</td>
+	<td class="footer-nav">
+
+        <!-- <div class="foot-head">Help &amp; feedback</div>	 -->
+        <!-- <div class="foot-head">Intro</div>
+        <a href="/benefits/for-science">Why</a><br>
+        <a href="/how-it-works">How it works</a><br>
+
+<br> -->
+
+        <div class="foot-head">Community</div>
+        <a href="/leaderboard">Leaderboard</a><br>
+        <a href="/p/meta">Thinklab Meta</a><br>
+				<a href="/help/faq">Help</a><br>
+				<!-- <a href="/new-project">Start a proposal</a><br> -->
+        <!-- <a href="/benefits/proposal">Benefits</a><br> -->
+        <!-- <a href="/funding">Get funded</a><br> -->
+        <!-- <a href="/participate">Become a contributor</a><br> -->
+        <!-- <a href="/for-funders">For science funders</a><br> -->
+        <!-- <a href="/for-institutions">For institutions</a><br> -->
+
+	</td>
+	<td class="footer-nav">
+
+
+
+        <div class="foot-head">About</div>
+        <a href="/about">Overview</a><br>
+        <a href="/benefits">Benefits</a><br>
+        <a href="/how-it-works">How it works</a><br>
+        <a href="/about/story">Our story</a><br>
+        <a href="/blog">Our blog</a><br>
+        <a href="/about/jobs">Join the team</a><br>
+        <br>
+
+        <!-- <div class="foot-head">Help</div>
+        <a href="/help">Help</a><br>
+		 -->
+
+
+	</td>
+	<td class="footer-nav">
+		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
+		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<br><br>
+		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
+
+	</td>
+
+</tr></table>
+
+</div>
+</div>
+</div>
+
+		
+
+	</div>
+
+
+  <script></script>
+  <script>
+  var MEDIA_URL = 'https://think-lab.s3.amazonaws.com/m/';
+  var STATIC_URL = 'https://think-lab.s3.amazonaws.com/s/';
+  var page_is_authenticated = false;
+  var page_page = 'discussion';
+  var page_profile_id = undefined;
+</script>
+
+
+
+	<!-- Note different script type. MUST come before MathJax.js -->
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	        "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"],
+	                        scale: 110, linebreaks: { automatic:true },
+	                        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+	        tex2jax: { inlineMath: [ ["$$", "$$"], ["\\(","\\)"] ],
+	                    displayMath: [ ["$$$","$$$"], ["\\[", "\\]"] ],
+	                    processEscapes: true,}
+	            });
+
+	</script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://think-lab.s3.amazonaws.com/s/dist/main.min.js"></script>
+  
+
+
+
+  
+	
+  
+  
+  
+<script>
+$(function() {
+  recordHit('thread', 67);
+});
+</script>
+
+
+
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>

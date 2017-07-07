@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZgEOC19dW0QCEVtHU1gG","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":183}</script>
+    <title>How to address the risk of stealing ideas | Thinklab</title>
+	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
+    <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/highlightjs/github.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/css.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/bootstrap-multiselect.css" />
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
+    
+    
+    
+    
+  
+    <meta name="citation_doi" content="10.15363/thinklab.d161">
+    <meta name="citation_title" content="How to address the risk of stealing ideas">
+    <meta name="citation_online_date" content="Feb. 16, 2016">
+    <meta name="citation_author" content="Lars Juhl Jensen, Jesse Spaulding, Daniel Himmelstein">
+    <meta name="citation_journal_title" content="Thinklab">
+    <meta name="citation_publisher" content="Thinklab">
+  
+
+    
+
+
+	<!-- GoogleAnalytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-48550230-1', 'thinklab.com');
+	ga('require', 'displayfeatures');
+	
+	ga('send', 'pageview');
+
+	</script>
+
+
+
+
+
+
+</head>
+<body >
+  <form id="form_action" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+</form>
+
+	
+
+	<div class="body-wrapper">
+
+		
+
+
+<!-- <div style="height:5px;background-image:url('https://think-lab.s3.amazonaws.com/s/img/top-bg.gif');"></div> -->
+<div class="gradient">
+	<div class="main-centered-div header-container">
+
+<table class="full-width" style="height:60px;"><tr>
+	<td style="width:200px;vertical-align:middle;padding-bottom:15px;">
+		<a href="/" style="font-weight:normal;color:#212121;"><img src="https://think-lab.s3.amazonaws.com/s/img/logo.png" width="160"></a>
+	</td><td style="vertical-align:middle;text-align:left;padding-top:6px;width:100%;padding-left:40px;">
+		<ul id="not-search-block"  class="main-header">
+
+
+			
+
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/proposals">Proposals</a></li>
+						<li><a href="/projects">Projects</a></li>
+						<li><a href="/publications">Article discussion</a></li>
+						<li><a href="/discussion">All discussion</a></li>
+					</ul>
+				</li>
+				<li><a href="/leaderboard">Leaderboard</a></li>
+
+			
+				<li><a href="/about">About</a></li>
+			
+
+
+		</ul>
+
+    <ul id="search-block" class="main-header" style="display: none; margin-right: 30px;">
+        <li class="full-width">
+            <form method="get" action="/search">
+			<div class="input-group full-width">
+				<input name="q" type="text" class="form-control search-input">
+			</div>
+            </form>
+        </li>
+    </ul>
+
+	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
+		<ul class="main-header pull-right" style="padding-left: 0;">
+    		
+                <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+            
+
+        </ul>
+    </ul>
+	</td>
+</tr></table>
+
+<!-- <div id="global-search-div" class="main-centered-div" style="display:none;">
+	<input type="text" value="" class="thread-search form-control" placeholder="Search" data-action="/discussion">
+</div> -->
+
+	</div>
+</div>
+
+		
+	  
+
+
+
+	  
+
+
+		
+
+		<div class="dark-head"><div class="main-centered-div">
+
+			
+
+		</div></div>
+		
+		<div class="main-centered-div" style="margin-top:40px;padding-bottom:340px">
+	    
+
+<div style="margin-top:-20px; margin-bottom:20px;">
+
+    <a class="side-box" href="/doc/12/review#d161" style="background-color:#ebfdff;"><div class="side-type">Proposal:</div> <div class="side-title">Thinklab: A platform for open review of research grant proposals [thinklabOSP]</div></a><br>
+
+
+
+</div>
+
+<table style="margin-top:0px;"><tr>
+	<td class="thread-table-content">
+
+		<table class="full-width">
+			
+<tr class="comment-tr target-hl" id="1" data-comment-id="800">
+  <td class="comment-profile-avatar">
+		<a href="/u/larsjuhljensen"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/125_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="800"></a>
+
+    
+
+			<h2 class="page-title" style="margin-bottom:5px;margin-top:0px !important;">How to address the risk of stealing ideas</h2>
+
+			<div style="margin-top:5px;color:gray;margin-bottom:20px;font-size:13px;">
+				<a style="font-weight:normal;color:#212121" href="/u/larsjuhljensen"><strong>Lars Juhl Jensen</strong></a>
+				
+				&nbsp; <a href="#1" class="light">507 days ago</a>
+				
+			</div>
+
+      
+
+          <hr>
+		
+
+    <p>After a first quick read through the proposal, I think the main weakness is the issue of stealing ideas. Currently, I do not feel this is addressed in a good way.</p>
+
+<p>The proposal acknowledges that this will be a concern of many researchers, and that this indeed is inherent to the way the system currently works. I fully agree with that. The problem is the proposed solution: "In our view, the solution to this predicament is clear: we need to change the rules of the game!" In effect, what you write is that the ThinkLab approach won't work within the current system.</p>
+
+<p>As a reviewer, I would tend to say that this implies that you're putting the cart before the horse. You are trying to develop a very specific tool that won't work until the whole system has been changed, which is likely to take a long time. On other words, why develop the system now? Why not focus on changing the system and worry about developing the tool, once the system makes it feasible?</p>
+
+<p>(I am obviously playing devil's advocate here.)</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="2" data-comment-id="801">
+  <td class="comment-profile-avatar">
+		<a href="/u/jspauld"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/2_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="801"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/jspauld">Jesse Spaulding</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#2" class="light">507 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Thanks for playing devil's advocate. I think there's a few things we need to clarify.</p>
+
+<p>By "changing the rules of the game", we don't mean to imply that the <em>entire</em> system must change at once. Funders can change the rules of the game just for those researchers that they fund. They can require that proposals be submitted openly in the same way that they require that results must be published openly.</p>
+
+<p>Basically, the idea here is that funders have a lot of power because demand for funding is so much higher than supply. Now it's possible requiring an openly submitted proposal could result in lower quality researchers applying initially — but you could also look at it another way: the result may be that the only teams that apply are those that are confident that they are the best team for the job. An open process could save funders a huge amount of time filtering through poor proposals.</p>
+
+<p>We should also clarify that we see "changing the rules of the game" as the <em>ideal</em> solution. Basically, we need to use language that leaves room for the possibility that we can start to persuade some grant writers to share their proposals without funders changing anything at all.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="3" data-comment-id="803">
+  <td class="comment-profile-avatar">
+		<a href="/u/larsjuhljensen"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/125_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="803"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/larsjuhljensen">Lars Juhl Jensen</a>
+				
+				<span class="light">&nbsp;<a href="#3" class="light">506 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>I agree that researchers will largely tend to follow the money, so if funders start demanding that proposals are shared in a public manner, people would do so. There are some pretty big caveats to that statement, though.</p>
+
+<p>Firstly, the chance of getting promoted and getting grants also depends a lot on having good publications. There would thus till be a very strong force pulling in the opposite direction, unless both universities and funders stop looking so much at people's publication records.</p>
+
+<p>Secondly, it will enforce the already a very common practice that grant proposals in fact "plan" to do what has already been done (but not published quite yet), and that the money are subsequently channelled into other projects, for which the PI will apply for funding later. PHD Comics explains this well: <a href="http://www.phdcomics.com/comics/archive.php?comicid=1431">http://www.phdcomics.com/comics/archive.php?comicid=1431</a></p>
+
+<p>It will be very hard to convince scientists to share ideas they have not even started to work on yet, in a scientific world where being the first to do something is key.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="4" data-comment-id="806">
+  <td class="comment-profile-avatar">
+		<a href="/u/jspauld"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/2_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="806"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/jspauld">Jesse Spaulding</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#4" class="light">505 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <blockquote><p>Firstly, the chance of getting promoted and getting grants also depends a lot on having good publications. There would thus till be a very strong force pulling in the opposite direction</p></blockquote>
+
+<p>Yes, that's true but not sure it's a problem. Surely one good incentive and one bad one is better than 2 bad ones. Also consider that scientists are already pulled in two directions. For example they know that sharing data is good for science (pulling them to share data), but at the same time they think it may be risky for their career to do so (pulling them to hoard data).</p>
+
+<blockquote><p>Secondly, it will enforce the already a very common practice that grant proposals in fact "plan" to do what has already been done (but not published quite yet), and that the money are subsequently channelled into other projects, for which the PI will apply for funding later. PHD Comics explains this well: <a href="http://www.phdcomics.com/comics/archive.php?comicid=1431">http://www.phdcomics.com/comics/archive.php?comicid=1431</a></p></blockquote>
+
+<p>This is really interesting. I have heard this before but I don't think I properly appreciated the implications. If researchers have already conducted most of the research they propose to do, it takes away a significant portion of the benefit we've highlighted in having grant proposals openly reviewed. What do you think <a href="/u/daniel_mietchen" class="username">@daniel_mietchen</a>?</p>
+
+<blockquote><p>It will be very hard to convince scientists to share ideas they have not even started to work on yet, in a scientific world where being the first to do something is key.</p></blockquote>
+
+<p>There is one model that should overcome this problem. The only problem is it may be <em>even harder</em> to get funders to go for this one. Basically, funders would put up a pool of money to reward research idea generation in a particular area of interest. Scientists would contribute ideas (that they were not working on themselves), and there would be some kind of collaborative process to find the best ideas and then develop them into full research plans. There would then be some kind of bidding process where research groups could bid to actually conduct the research. This was actually one of my original ideas but it seemed to radical as a starting point!</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="5" data-comment-id="810">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="810"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				
+				<span class="light">&nbsp;<a href="#5" class="light">505 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Incentives for open proposals</h1>
+
+<p>In most cases posting an open proposal will <em>prevent</em> others from scooping you:</p>
+
+<ol><li>Posting the proposal establishes precedent. You will likely get cited by highly similar works.</li><li>Other researches are dissuaded from pursuing your idea because you could beat them to the finish line.</li><li>Other researchers who were considering the idea will contribute to your project rather than taking the risk of performing the project in parallel.</li><li>Similar concerns regarding preprints haven't played out. Preprints often bring considerable attention to a project with <a href="http://blog.dhimmel.com/preprints-2015/" title="The preprint in 2015 and what comes next">few disadvantages</a>.</li></ol>
+
+<p>And if others are really better suited to perform your proposal and are willing to invest the time, then you should consider a different project because you're at high risk for being scooped regardless of whether you proposal is public.</p>
+
+<h3>The internet and the visibility of your research</h3>
+
+<p>However, one incentive trumps all prior considerations. It's an incentive based on a mechanism few scientists understand: the nature of information propagation on the internet. </p>
+
+<p>First, page visits, attention, and incoming hyperlinks are cumulative over time: the older a piece of content, the more it will have been consumed. Once your proposal is posted, you start becoming recognized by the internet as an expert on the topic. It's a highly time dependent process — people stumble upon content in unpredictable ways over a prolonged period of exposure.</p>
+
+<p>Second, activity brings webpages to the top of feeds, increases search engine rankings, and gives consumers a dose of fresh content. When you post a proposal and continue the project openly, you harness increased online activity for your research.</p>
+
+<p>Open science allows you to passively build a brand by letting your content propagate throughout the internet. And from my experience, your personal brand is far more important than journal publications for career advancement.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="6" data-comment-id="811">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="811"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				
+				<span class="light">&nbsp;<a href="#6" class="light">505 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Already-been-done proposals</h1>
+
+<p>Great point <a href="/u/larsjuhljensen" class="username">@larsjuhljensen</a> that many grant proposals are already partially completed upon submission. In these instances, <em>Thinklab</em>'s proposal review features lose much of their appeal.</p>
+
+<p>However, the <em>Thinklab</em> model is the long term solution to already-been-done proposals. By creating a home for open proposals, <em>Thinklab</em> creates the infrastructure to begin rewarding the posting of proposals. The <a href="#5">incentives for open proposals</a> will lead to a race to propose first. The proposal curve will shift to more nascent ideas, as proposal creators rush to establish precedence.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="7" data-comment-id="813">
+  <td class="comment-profile-avatar">
+		<a href="/u/larsjuhljensen"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/125_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="813"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/larsjuhljensen">Lars Juhl Jensen</a>
+				
+				<span class="light">&nbsp;<a href="#7" class="light">505 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Regarding the already-been-done proposals, it is important to appreciate why researchers behave like that. In my experience, there are two major reasons:</p>
+
+<p>1) The grant system is too slow. If you get an idea and apply to get funding for it, someone else will have gotten the same idea, done the job, and published the result by the time you get the money start. You thus need to have some "money in the bank" that allows you to start immediately when you have a great idea.</p>
+
+<p>2) Rigid funding rules. The European Commission in particular has been very bad at making grants that are essentially contracts. If you don't deliver the promised deliverables, you will be in all kinds of trouble and even may have to pay back part of the money that you've already spent! Of course, if what you do is actual research, you cannot know with certainty that things will work. Unless, of course, you have already done them before you make promises.</p>
+
+<p>I am not convinced that Thinklab would make people would rush to establish precedence but putting their idea out in public. It again all depends on how researchers are evaluated by e.g. universities: as long as the evaluators care about who publish first, that is what researchers will optimize for doing. This is also why researchers in most fields are still hesitant to use prepring repositories; what counts is who publishes first, not who deposits first.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="8" data-comment-id="816">
+  <td class="comment-profile-avatar">
+		<a href="/u/jspauld"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/2_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="816"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/jspauld">Jesse Spaulding</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#8" class="light">505 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p><a href="/u/larsjuhljensen" class="username">@larsjuhljensen</a> consider this: </p>
+
+<p>If funders start requiring openly posted proposals, at first this may enforce the practice of researchers "planning" to do what has already been done. Because if they're going to have their research ideas published on the internet they want to make sure they have a head start in getting to publish the results. I agree with this logic.</p>
+
+<p>However there are a few things that would work against this I think:</p>
+
+<ol><li><p>We're asking researchers to publish their proposals openly <em>and</em> participate in a collaborative process where the community helps them improve the plan. Because this is in public it will significantly increase the awkwardness of pretending they haven't already done what they propose to do.</p></li><li><p>The open collaborative process I just described actually has significant benefit to the researcher. It helps them improve their research plan! And it may even identify fundamental flaws in their proposal. If the researcher has to publish their research plan <em>anyway</em>, they might as well do it before they start the research so they can benefit from the feedback.</p></li><li><p>If researcher A has published a research plan proposing to do X, this will <em>prevent</em> researcher B from submitting the same idea for funding. This creates an <em>extremely</em> strong incentive for researchers to publish their research ideas as soon as possible. If they don't, it means another researcher might publish the idea first and thereby prevent them from obtaining funding based on the merits of that idea.</p></li></ol>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="9" data-comment-id="852">
+  <td class="comment-profile-avatar">
+		<a href="/u/larsjuhljensen"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/125_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="852"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/larsjuhljensen">Lars Juhl Jensen</a>
+				
+				<span class="light">&nbsp;<a href="#9" class="light">504 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Ad 1: I think people usually apply for funding for work that they have already done, but not published yet. Pretending to not have done it already is thus not quite so awkward as if it was published already.</p>
+
+<p>Ad 2: I completely see the advantages of getting input to improve a research plan. Question is if it is sufficient to outweigh the disadvantage of risking that someone steals your idea at the stage when it is still only an idea. I would expect people to mostly share proposals that represent incremental work on their current line of research, not proposals that are based on truly novel ideas.</p>
+
+<p>Ad 3: I sure hope you are wrong! If someone proposing an idea and failing to get funding were to prevent anyone else from trying to get funding for the idea, that would be a major roadblock for science. It would effectively grant monopoly on ideas.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="10" data-comment-id="873">
+  <td class="comment-profile-avatar">
+		<a href="/u/jspauld"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/2_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="873"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/jspauld">Jesse Spaulding</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#10" class="light">504 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <blockquote><p>Ad 1: I think people usually apply for funding for work that they have already done, but not published yet. Pretending to not have done it already is thus not quite so awkward as if it was published already.</p></blockquote>
+
+<p>Fair point, but we could simply add a checkbox that says "I certify I have not already completed anything I am proposing to do". The parts that they <em>have</em> already done can be stated as such. I would imagine such a checkbox would work for 90% of people — especially when they have to carry on conversations as if it is true.</p>
+
+<blockquote><p>Ad 2: I completely see the advantages of getting input to improve a research plan. Question is if it is sufficient to outweigh the disadvantage of risking that someone steals your idea at the stage when it is still only an idea. I would expect people to mostly share proposals that represent incremental work on their current line of research, not proposals that are based on truly novel ideas.</p></blockquote>
+
+<p>Just to be clear: getting feedback was only <em>one</em> of the incentives. The primary one being that sharing ideas at an early stage would be a requirement of getting funded. Several other meaningful incentives were described by <a href="/u/dhimmel" class="username">@dhimmel</a> <a href="http://thinklab.com/discussion/how-to-address-the-risk-of-stealing-ideas/161#5" class="citation thread-citation" data-key="10.15363/thinklab.d161">above</a>. </p>
+
+<p>If a research idea is truly novel or brilliant, I could quite easily imagine a future where a large portion of respect and credit is bestowed on whoever shared it first. With that said, I do see that at the present moment a novel idea will give researchers more incentive to keep it secret. But that's okay. I believe Thinklab can be successful even with a small percentage of proposals starting to come online initially. </p>
+
+<p>Also just real quick: it's kind of become common knowledge in the startup community that people have overblown fears of their ideas being stolen, while simultaneously undervaluing the importance of sharing their ideas to get feedback. I suspect the same is true in research.</p>
+
+<blockquote><p>Ad 3: I sure hope you are wrong! If someone proposing an idea and failing to get funding were to prevent anyone else from trying to get funding for the idea, that would be a major roadblock for science. It would effectively grant monopoly on ideas.</p></blockquote>
+
+<p>Keep in mind there is not really going to be a hard and fast rule. I'm just speculating about what will happen. If qualified research group A submits a proposal before qualified research group B, I imagine a culture norm will develop where group A gets some kind of priority. (It seems only natural.) However, if group A is <em>not</em> adequately qualified, it also seems natural that funders could choose another research group to do it. As you said, if they couldn't this would be a major problem. This would ultimately be up to funders to decide — but they are, of course, sensitive to researcher opinion.</p>
+
+<p>I think we've covered a lot of ground. One of my big takeaways is that funders really ought to take a moment and think about what they're doing. If researchers have already conducted the work they propose to do, it reveals the entire logic of their funding mechanism as a sham. If Thinklab can start working with science funders as clients, we'll be in a position to push them towards more sensible models. It's clear to me that researchers need to be in a position to share ideas when they have them, get feedback from the community immediately, and start working immediately thereafter.</p>
+
+<p>Sorry for making people read so much!! Good conversation though.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+    		
+		</table>
+
+    
+
+    &nbsp;<br>
+    <a class="btn btn-primary btn-lg" href="/signup?next=/discussion/how-to-address-the-risk-of-stealing-ideas/161&suppress_message=1" style>Join to Reply</a>
+
+
+		<table class="references table-td-5" style="display:none;"><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d161' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d161'><a href='/discussion/how-to-address-the-risk-of-stealing-ideas/161' class='pub-title'>How to address the risk of stealing ideas</a><div class='pub-body'>Lars Juhl Jensen, Jesse Spaulding, Daniel Himmelstein (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d161'>10.15363/thinklab.d161</a></div></div></td></tr></table>
+
+    
+
+
+	</td>
+	<td class="thread-sidebar">
+
+
+			
+
+      <a class="btn btn-default follow-link btn-follow btn-lg is-following tt-top full-width" title="Follow discussion" data-id="161" data-ctype="thread" data-is-following="false">&nbsp;</a>
+
+      
+        <div class="status-box text-center"><span style="">Status:</span> 
+  Open
+
+</div>
+      
+
+      
+
+
+				
+
+					<div class="details">Views</div>
+					<span style="font-size:20px;">150</span>
+
+        
+
+				
+
+
+		
+			<div class="details">Referenced by</div>
+			<div style="font-size:12px;"><ul style="padding-left:16px !important;">
+			
+				<li>
+					
+					<a href='/doc/12/review' class='thread-title'><span class='inbox-icon tt-top glyphicon glyphicon-flash'></span>Proposal Review: Thinklab: A platform for open review of research grant proposals</a>
+				</li>
+			
+				</ul>
+			</div>
+		
+
+		
+			<div class="details">Cite this as</div>
+			<span style="font-size:12px;">
+				Lars Juhl Jensen, Jesse Spaulding, Daniel Himmelstein (2016) How to address the risk of stealing ideas. <i>Thinklab.</i> doi:<a href='https://doi.org/10.15363/thinklab.d161'>10.15363/thinklab.d161</a>
+			</span>
+		
+
+		<div class="details">License</div>
+		<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0;width:88px;height:31px;" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></p>
+
+		<div class="details">Share</div>
+		
+			
+				<a class="share-button fb" onclick="javascript:void(window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A//thinklab.com/discussion/how-to-address-the-risk-of-stealing-ideas/161','','width=600,height=460,menubar=no,status=no'));" href="#"></a>
+<a class="share-button twitter" onclick="javascript:void(window.open('https://twitter.com/share?text=How%20to%20address%20the%20risk%20of%20stealing%20ideas&url=https%3A//thinklab.com/discussion/how-to-address-the-risk-of-stealing-ideas/161','','width=600,height=300,menubar=no,status=no'));" href="#"></a>
+<a class="share-button google" onclick="javascript:void(window.open('https://plus.google.com/share?url=https%3A//thinklab.com/discussion/how-to-address-the-risk-of-stealing-ideas/161','','width=510,height=460,menubar=no,status=no'));" href="#"></a>
+
+			
+		
+
+	</td>
+</tr></table>
+
+
+		</div>
+
+
+		
+	    	<div class="footer">
+<div style="background:#dedede;">
+	<div class="main-centered-div text-center" style="padding:20px;">
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#761e131a1a1936021e1f181d1a17145815191b"><span class="__cf_email__" data-cfemail="1179747d7d7e516579787f7a7d70733f727e7c">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+	</div>
+</div>
+<div class="main-footer">
+	<div class="main-centered-div">
+
+<table class="full-width"><tr>
+	<td class="footer-nav">
+
+        <div class="foot-head">Explore</div>
+        <a href="/proposals">Proposals</a><br>
+        <a href="/projects">Projects</a><br>
+        <a href="/publications">Article discussion</a><br>
+        <a href="/discussion">All discussion</a><br>
+        <a href="/topics">Topics</a><br>
+        <!-- <a href="/funders">Funders</a><br> -->
+        <a href="/funding">Funding opportunities</a><br>
+
+	</td>
+	<td class="footer-nav">
+
+        <!-- <div class="foot-head">Help &amp; feedback</div>	 -->
+        <!-- <div class="foot-head">Intro</div>
+        <a href="/benefits/for-science">Why</a><br>
+        <a href="/how-it-works">How it works</a><br>
+
+<br> -->
+
+        <div class="foot-head">Community</div>
+        <a href="/leaderboard">Leaderboard</a><br>
+        <a href="/p/meta">Thinklab Meta</a><br>
+				<a href="/help/faq">Help</a><br>
+				<!-- <a href="/new-project">Start a proposal</a><br> -->
+        <!-- <a href="/benefits/proposal">Benefits</a><br> -->
+        <!-- <a href="/funding">Get funded</a><br> -->
+        <!-- <a href="/participate">Become a contributor</a><br> -->
+        <!-- <a href="/for-funders">For science funders</a><br> -->
+        <!-- <a href="/for-institutions">For institutions</a><br> -->
+
+	</td>
+	<td class="footer-nav">
+
+
+
+        <div class="foot-head">About</div>
+        <a href="/about">Overview</a><br>
+        <a href="/benefits">Benefits</a><br>
+        <a href="/how-it-works">How it works</a><br>
+        <a href="/about/story">Our story</a><br>
+        <a href="/blog">Our blog</a><br>
+        <a href="/about/jobs">Join the team</a><br>
+        <br>
+
+        <!-- <div class="foot-head">Help</div>
+        <a href="/help">Help</a><br>
+		 -->
+
+
+	</td>
+	<td class="footer-nav">
+		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
+		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<br><br>
+		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
+
+	</td>
+
+</tr></table>
+
+</div>
+</div>
+</div>
+
+		
+
+	</div>
+
+
+  <script></script>
+  <script>
+  var MEDIA_URL = 'https://think-lab.s3.amazonaws.com/m/';
+  var STATIC_URL = 'https://think-lab.s3.amazonaws.com/s/';
+  var page_is_authenticated = false;
+  var page_page = 'discussion';
+  var page_profile_id = undefined;
+</script>
+
+
+
+	<!-- Note different script type. MUST come before MathJax.js -->
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	        "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"],
+	                        scale: 110, linebreaks: { automatic:true },
+	                        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+	        tex2jax: { inlineMath: [ ["$$", "$$"], ["\\(","\\)"] ],
+	                    displayMath: [ ["$$$","$$$"], ["\\[", "\\]"] ],
+	                    processEscapes: true,}
+	            });
+
+	</script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://think-lab.s3.amazonaws.com/s/dist/main.min.js"></script>
+  
+
+
+
+  
+	
+  
+  
+  
+<script>
+$(function() {
+  recordHit('thread', 161);
+});
+</script>
+
+
+
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>

@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZgEOC19dW0QCEVtHU1gG","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":1263}</script>
+    <title>Visualizing the top epilepsy predictions in Cytoscape | Thinklab</title>
+	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
+    <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/highlightjs/github.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/css.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/bootstrap-multiselect.css" />
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
+    
+    
+    
+    
+  
+    <meta name="citation_doi" content="10.15363/thinklab.d230">
+    <meta name="citation_title" content="Visualizing the top epilepsy predictions in Cytoscape">
+    <meta name="citation_online_date" content="Jan. 24, 2017">
+    <meta name="citation_author" content="Daniel Himmelstein, Pouya Khankhanian, Alexander Pico, Lars Juhl Jensen, Scooter Morris">
+    <meta name="citation_journal_title" content="Thinklab">
+    <meta name="citation_publisher" content="Thinklab">
+  
+
+    
+
+
+	<!-- GoogleAnalytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-48550230-1', 'thinklab.com');
+	ga('require', 'displayfeatures');
+	
+	ga('send', 'pageview');
+
+	</script>
+
+
+
+
+
+
+</head>
+<body >
+  <form id="form_action" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+</form>
+
+	
+
+	<div class="body-wrapper">
+
+		
+
+
+<!-- <div style="height:5px;background-image:url('https://think-lab.s3.amazonaws.com/s/img/top-bg.gif');"></div> -->
+<div class="gradient">
+	<div class="main-centered-div header-container">
+
+<table class="full-width" style="height:60px;"><tr>
+	<td style="width:200px;vertical-align:middle;padding-bottom:15px;">
+		<a href="/" style="font-weight:normal;color:#212121;"><img src="https://think-lab.s3.amazonaws.com/s/img/logo.png" width="160"></a>
+	</td><td style="vertical-align:middle;text-align:left;padding-top:6px;width:100%;padding-left:40px;">
+		<ul id="not-search-block"  class="main-header">
+
+
+			
+
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/proposals">Proposals</a></li>
+						<li><a href="/projects">Projects</a></li>
+						<li><a href="/publications">Article discussion</a></li>
+						<li><a href="/discussion">All discussion</a></li>
+					</ul>
+				</li>
+				<li><a href="/leaderboard">Leaderboard</a></li>
+
+			
+				<li><a href="/about">About</a></li>
+			
+
+
+		</ul>
+
+    <ul id="search-block" class="main-header" style="display: none; margin-right: 30px;">
+        <li class="full-width">
+            <form method="get" action="/search">
+			<div class="input-group full-width">
+				<input name="q" type="text" class="form-control search-input">
+			</div>
+            </form>
+        </li>
+    </ul>
+
+	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
+		<ul class="main-header pull-right" style="padding-left: 0;">
+    		
+                <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+            
+
+        </ul>
+    </ul>
+	</td>
+</tr></table>
+
+<!-- <div id="global-search-div" class="main-centered-div" style="display:none;">
+	<input type="text" value="" class="thread-search form-control" placeholder="Search" data-action="/discussion">
+</div> -->
+
+	</div>
+</div>
+
+		
+	  
+
+
+
+	  
+
+
+		
+
+		<div class="dark-head"><div class="main-centered-div">
+
+			
+
+		</div></div>
+		
+		<div class="main-centered-div" style="margin-top:40px;padding-bottom:340px">
+	    
+
+<div style="margin-top:-20px; margin-bottom:20px;">
+
+    <a class="side-box" href="/p/rephetio" style="background-color:#ebfdff;"><div class="side-type">Project:</div> <div class="side-title">Rephetio: Repurposing drugs on a hetnet [rephetio]</div></a><br>
+
+
+
+</div>
+
+<table style="margin-top:0px;"><tr>
+	<td class="thread-table-content">
+
+		<table class="full-width">
+			
+<tr class="comment-tr target-hl" id="1" data-comment-id="1471">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1471"></a>
+
+    
+
+			<h2 class="page-title" style="margin-bottom:5px;margin-top:0px !important;">Visualizing the top epilepsy predictions in Cytoscape</h2>
+
+			<div style="margin-top:5px;color:gray;margin-bottom:20px;font-size:13px;">
+				<a style="font-weight:normal;color:#212121" href="/u/dhimmel"><strong>Daniel Himmelstein</strong></a>
+				<span class="is-researcher">Researcher</span>
+				&nbsp; <a href="#1" class="light">164 days ago</a>
+				
+			</div>
+
+      
+
+          <hr>
+		
+
+    <p>We're focusing on epilepsy as case study in our Project Rephetio <a href="https://doi.org/10.15363/thinklab.a7">report</a> <span class="citation">[<a href="https://doi.org/10.15363/thinklab.a7" class="citation hm citation-self" data-key="10.15363/thinklab.a7">1</a>, <a href="https://doi.org/10.1101/087619" class="citation hm " data-key="10.1101/087619">2</a>]</span>. Specifically, we're interested in the <a href="https://thinklab.com/discussion/prediction-in-epilepsy/224#5" class="citation thread-citation" data-key="10.15363/thinklab.d224">top 100 compounds</a> predicted to treat epilepsy.</p>
+
+<p>One way to investigate these 100 epilepsy predictions is to view them in a chemical similarity network. In a <a href="https://thinklab.com/discussion/prediction-in-epilepsy/224#9" class="citation thread-citation" data-key="10.15363/thinklab.d224">previous comment</a>, I exported this visualization from our Hetionet Neo4j Browser. However, now I'd like to pursue this visualization further, so here we'll discuss how to perfect this visualization in <a href="http://www.cytoscape.org/">Cytoscape</a> <span class="citation">[<a href="https://doi.org/10.1101/gr.1239303" class="citation hm " data-key="10.1101/gr.1239303">3</a>, <a href="https://doi.org/10.1002/0471250953.bi0813s47" class="citation hm " data-key="10.1002/0471250953.bi0813s47">4</a>]</span>.</p>
+
+<p>For this project, we've already used Cytoscape to <a href="https://thinklab.com/discussion/describing-hetionet-v10-through-visualization-and-statistics/202#8" class="citation thread-citation" data-key="10.15363/thinklab.d202">visualize Hetionet</a>. Here we'll be using it for a much more zoomed-in plot!</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="2" data-comment-id="1472">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1472"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#2" class="light">164 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>From Neo4j to Cytoscape</h1>
+
+<p><a href="http://apps.cytoscape.org/apps/cyneo4j">cyNeo4j</a> is a Cytoscape app that allows you to load networks from Cypher queries on a remote Neo4j instance <span class="citation">[<a href="https://doi.org/10.1093/bioinformatics/btv460" class="citation hm " data-key="10.1093/bioinformatics/btv460">1</a>]</span>. Sadly, <a href="https://github.com/gsummer/cyNeo4j">development</a> of cyNeo4j has stalled, but I was able get it to import the <a href="https://thinklab.com/discussion/prediction-in-epilepsy/224#9" class="citation thread-citation" data-key="10.15363/thinklab.d224">compound network</a> from <a href="https://neo4j.het.io">https://neo4j.het.io</a> using two steps:</p>
+
+<ol><li>Query the 100 compound nodes</li><li>Query for <code>RESEMBLES_CrC</code> relationships between the 100 compounds</li></ol>
+
+<p>The resulting Cytoscape session is online at <a href="https://github.com/dhimmel/rephetio/blob/ce1d95a1166feaf08ca2f3c8a869a5d754c044ea/epilepsy/figure/compound-network/compound-network.cys"><code>compound-network.cys</code></a>. Here is the resulting visualization:</p>
+
+<p><img src="https://github.com/dhimmel/rephetio/raw/ce1d95a1166feaf08ca2f3c8a869a5d754c044ea/epilepsy/figure/compound-network/compound-network.png" alt="Chemical similarity network of the top 100 epilepsy predictions from Project Rephetio" title="Colors represent the compound's effect on ictogenesis"></p>
+
+<p>Compounds are colored by their effect on ictogenesis — whether they suppress seizures (blue), have an unknown effect (white), or generate seizures (red). Tagging <a href="/u/pouyakhankhanian" class="username">@pouyakhankhanian</a>, as yesterday we discussed additional ways to visualize our epilepsy predictions.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="3" data-comment-id="1473">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1473"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#3" class="light">164 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Improving the visualization</h1>
+
+<p>I'd like to improve the visualization <a href="#2">above</a>.</p>
+
+<p>But before going any further, is a network with 100 labeled nodes too expansive for a manuscript visualization? If we do have labeled nodes — which is really helpful — can we make the labels a readable font size?</p>
+
+<p>One alternative to compound names would be drawing compound structures using <a href="http://apps.cytoscape.org/apps/chemViz2">chemViz2</a>. We could then made nodes circular or square to conserve space.</p>
+
+<p>I'd also like to make text always fit within a node.</p>
+
+<p>Finally, I'm really interested in drawing rings around the nodes that are composed of colored arcs. Each arc would represent how much a certain target of the compound contributed to the prediction (following from <a href="https://thinklab.com/discussion/prediction-in-epilepsy/224#11" class="citation thread-citation" data-key="10.15363/thinklab.d224">this comment</a>).</p>
+
+<p>Cytoscape 3.4.0 has a <a href="http://manual.cytoscape.org/en/3.4.0/Styles.html#using-graphics-in-styles">ring chart</a>. Alternatively, the <a href="http://apps.cytoscape.org/apps/enhancedgraphics">enhancedGraphics</a> app <span class="citation">[<a href="https://doi.org/10.12688/f1000research.4460.1" class="citation hm " data-key="10.12688/f1000research.4460.1">1</a>]</span> has circle/circos charts that may do the job. I briefly tried out the builtin ring chart but couldn't get the rings to surround the "round rectangle" node shape — instead the rights were drawn inside the nodes.</p>
+
+<p>Tagging <a href="/u/sergiobaranzini" class="username">@sergiobaranzini</a> &amp; <a href="/u/alexanderpico" class="username">@alexanderpico</a> — two experts of Cytoscape. Any suggestions?</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="4" data-comment-id="1474">
+  <td class="comment-profile-avatar">
+		<a href="/u/pouyakhankhanian"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/188_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1474"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/pouyakhankhanian">Pouya Khankhanian</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#4" class="light">164 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>The network displayed above is already interesting. There is a clear barbiturate cluster and a clear benzodiazepine cluster. The tricyclic antidepressants (TCAs) cluster together as well in the lower right, and are colored pink because they are ictogenic. Overall, I think this is a good figure with a lot of information. </p>
+
+<p>We discussed adding more layers of information, specifically to use the edges. I would be in favor of trying to display the source edge information. Specifically, I'm interested in the times when the source edge is Compound-Gene. The reason for this is that I was particularly amazed at how many of the "modern epilepsy genes" (the SCNs, the CACNAs, the GRIN/GRIK/GRIAs, KCNs) were included as source edges (note that these are not target edges, these genes are too modern and were presumably not included in the network as gene-epilepsy edges). In particular, I'd want to see if there is some clustering of drugs based on what gene target they act one. This may serve to reclassify the AEDs, a class of drugs which has historically been difficult to classify cleanly. I showed this to Ingo Helbig an epilepsy geneticist who shared my interest, hope he can join thinklab to share some of his insight. </p>
+
+<p>Regarding the use of chemical shapes rather than names, I personally prefer the names. I would never be able to pick out patterns in chemical shapes, but names for me reveal obvious clusters. Consider 3-letter abbreviations for drugs if you want to decrease the size of the text label (there are pretty standard 3-letter abbreviations for epilepsy drugs, we would have to create 3-letter abbreviations for the other drugs, CBZ: Carbamazepine, LTG: Lamotrigine, OXC: oxcarbazpine, VPA: sodium valproate, TPM: Topiramate, CLB: clobazam, GBP: gabapentin, LEV: levetiracetam, PHT: Phenytoin, TGM: tiagabine, ZON: zonisamide, PGN: pregabalin, ESM: Ethosuximide, CLN: clonazepam, RUF: rufinamide, VGB: vigabatrin).</p>
+
+<p>Hope <a href="/u/sergiobaranzini" class="username">@sergiobaranzini</a> and/or <a href="/u/alexanderpico" class="username">@alexanderpico</a> can help with the visualization. </p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="5" data-comment-id="1475">
+  <td class="comment-profile-avatar">
+		<a href="/u/alexanderpico"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/104_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1475"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/alexanderpico">Alexander Pico</a>
+				
+				<span class="light">&nbsp;<a href="#5" class="light">164 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>In terms of Cytoscape tips, you're on the right track with enhancedGraphics. There is a new version coming soon that will provide more label options as well, like drop-shadows, to make them easier to read on various backgrounds. You can email Scooter at <a href="/cdn-cgi/l/email-protection#a0d3c3cfcfd4c5d2e0c3c7cc8ed5c3d3c68ec5c4d5"><span class="__cf_email__" data-cfemail="cbb8a8a4a4bfaeb98ba8aca7e5bea8b8ade5aeafbe">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a> for an advanced copy if you want to try it now.</p>
+
+<p>Circle charts only work with circle nodes, as far as I understand, so you'll have to compromise between labels inside rectangles and circular data graphics. Alternative would be striped chart within the rectangle that would "fill" from left to right per the contribution to the prediction, i.e., in 3-5 stages (depending on what your data look like).</p>
+
+<p>I would shy away from showing compound structures for <em>all</em> the nodes in this example, since there are so many. If it make sense, you could show selected structures to make particular points.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="6" data-comment-id="1477">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1477"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#6" class="light">162 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Version 2 with target piecharts</h1>
+
+<p>Thanks <a href="/u/alexanderpico" class="username">@alexanderpico</a> and <a href="/u/pouyakhankhanian" class="username">@pouyakhankhanian</a> for the feedback. Here's the latest version that shows the normalized contribution of each target (gene group) to the prediction. It's way more informative and interesting than before (and hopefully still legible)!</p>
+
+<p><img src="https://github.com/dhimmel/rephetio/raw/3f3e6ecb7a9b8bb64cde76ac8176d31fc19fdc42/epilepsy/figure/compound-network/compound-network.png" alt="Predicted epilepsy compound network"></p>
+
+<p>Making the legend was a pain. I had to first choose colors, which I selected from <a href="https://github.com/d3/d3-scale/blob/2225fe65f3b0aa2c76588d78a18e4412adfc5795/README.md#schemeCategory10">d3's category10</a>. Then I manually applied the colors to the Cytoscape chart options. However, I couldn't generate the legend in Cytoscape, so I used <code>ggplot2</code> in R and pieced together the SVG exports in Inkscape. So lot's of opportunity for errors and difficult to automate.</p>
+
+<blockquote><p>Alternative would be striped chart within the rectangle that would "fill" from left to right per the contribution to the prediction</p></blockquote>
+
+<p><a href="/u/alexanderpico" class="username">@alexanderpico</a> great idea regarding a striped chart within the node. Unfortunately, I couldn't find any other good properties besides fill color for representing the compound's effect on ictogenesis, which the striped chart would displace.</p>
+
+<blockquote><p>In particular, I'd want to see if there is some clustering of drugs based on what gene target they act one.</p></blockquote>
+
+<p><a href="/u/pouyakhankhanian" class="username">@pouyakhankhanian</a> hopefully this is now within reach. The raw data for the piecharts is available in <a href="https://github.com/dhimmel/rephetio/blob/3f3e6ecb7a9b8bb64cde76ac8176d31fc19fdc42/epilepsy/figure/compound-network/target-contributions-wide.tsv"><code>target-contributions-wide.tsv</code></a> if anything is hard to see in the network. </p>
+
+<p>I manually laid out disconnected compounds. The visualization could be improved by placing similar compounds together. For example, I placed sevoflurane with the other halogenated ethers even though it's chemical similarity was not strong enough to have any <em>resembles</em> relationships. So <a href="/u/pouyakhankhanian" class="username">@pouyakhankhanian</a>, feel free to play with the <a href="https://github.com/dhimmel/rephetio/blob/3f3e6ecb7a9b8bb64cde76ac8176d31fc19fdc42/epilepsy/figure/compound-network/compound-network.cys">cytoscape session</a> to help organize things.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-303" class="inline-note toggle-parent" data-note-id="303">
+	<p><a href="/u/larsjuhljensen">Lars Juhl Jensen</a>: With all due respect, I think you have overloaded your visualization with properties. By having so many different properties visualized in a single figure, it is near impossible to spot any patterns. The art of visualization is to highlight what is important; the way to do that is by not showing what is not important.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="7" data-comment-id="1478">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1478"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#7" class="light">162 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Cytoscape in the web browser?</h1>
+
+<p>Obviousely, having the above visualization as an interactive web visualization would be super cool and useful. I've heard about <a href="http://js.cytoscape.org/">cytoscape.js</a> <span class="citation">[<a href="https://doi.org/10.1093/bioinformatics/btv557" class="citation hm " data-key="10.1093/bioinformatics/btv557">1</a>]</span> which is designed for this purpose. Hence, I exported the visualization from Cytoscape to a webpage <span class="citation">[<a href="https://doi.org/10.12688/f1000research.4510.2" class="citation hm " data-key="10.12688/f1000research.4510.2">2</a>]</span> with the commands:</p>
+
+<blockquote><p>File &gt; Export &gt; Network View(s) as Web Page</p></blockquote>
+
+<p>After unzipping the export, I launched a webserver using Python 3 (<code>python -m http.server</code>). The resulting webpage, hosted locally, showed an interactive version of the <a href="#2">initial graph</a>. Awesome! Unfortunately, the pie charts were not included in the visualization.</p>
+
+<p>One final feature I'd like to implement that cytoscape.js may support is node hyperlinks. So for example, clicking the Isocarboxazid node would <a href="https://neo4j.het.io/browser/?cmd=play&amp;arg=https://neo4j.het.io/guides/rep/DB01247/DOID_1826.html" title="Hetionet Neo4j Browser. Does Isocarboxazid treat epilepsy syndrome?">navigate you here</a>. Scripted editing of the SVG may also be a viable <a href="http://bl.ocks.org/d3noob/8150631" title="Adding links to objects">option here</a>.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-302" class="inline-note toggle-parent" data-note-id="302">
+	<p><a href="/u/pouyakhankhanian">Pouya Khankhanian</a>: Unfortunate that the links and pie charts don't work. Still I think the links you provide to cytoscape and neo4j allow quite a bit of interaction. It is not ideal but it is better than what we've had for a lot of projects.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="8" data-comment-id="1479">
+  <td class="comment-profile-avatar">
+		<a href="/u/pouyakhankhanian"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/188_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1479"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/pouyakhankhanian">Pouya Khankhanian</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#8" class="light">161 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>It's incredibly busy but I really do find it quite informative. The big benzo cluster on the upper right is clearly GABA heavy. The other big cluster is the barbituate cluster on the bottom, just left of center. This cluster is GABA/glutamate/Choline heavy. The halogentated ethers on the bottom right (I guess sevoflurane was not connected but moved closer for clarity) are also interesting, they seem to have potassium channels in common as well as GABA.</p>
+
+<p>Perhaps one of the most interesting clusters is the TCA (tricyclic antidepressant) cluster. We can tell they are ictogenic because they are shaded pink. It's interesting that these seem to share the CYP genes in common. Recall that CYP genes are actually not mechanistically related to epilepsy, but it just so happens that many seizure meds interact with the CYP protein. I'm a little surprised that there is not as much GABA in this cluster. </p>
+
+<p>The carbonic anhydrase inhibitors are clustered and are associated with the carbonic anhydrase proteins as expected.</p>
+
+<p>One very note-worthy thing is that the hetionet was not a prior "aware" of all these genes that are associated with epilepsy (i.e. there was no direct gene-disease connection in the network for most of these genes), and yet it still used these epilepsy genes to make it's predictions. The likely reason that genes associated with epilepsy were not connected to epilepsy via a gene-disease connection is because these are very rare mutations, most of these genes have been reported in only a handful of people. <a href="/u/dhimmel" class="username">@dhimmel</a> any thoughts about using this network for gene discovery? (sounds like a rabbit-hole though)</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="9" data-comment-id="1480">
+  <td class="comment-profile-avatar">
+		<a href="/u/larsjuhljensen"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/125_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1480"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/larsjuhljensen">Lars Juhl Jensen</a>
+				
+				<span class="light">&nbsp;<a href="#9" class="light">161 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>I have made an alternative suggestion for the pie chart figure:</p>
+
+<p><img src="https://cloud.githubusercontent.com/assets/1117703/22377022/557b3946-e47e-11e6-957f-0130ada2f6ca.png" alt="compound-network-ljj"><br>What I changed was to make the nodes be just the pie charts, move the text labels to not be on top of the pie charts (to improve readability), recolor the pie charts using a color scale from ColorBrewer, and reduce edge width to reduce clutter.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="10" data-comment-id="1481">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1481"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#10" class="light">161 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p><a href="/u/larsjuhljensen" class="username">@larsjuhljensen</a> thanks for the suggestions. I'm excited about reducing clutter and improving readability. Stay tuned for a version that incorporates your modifications.</p>
+
+<blockquote><p>there was no direct gene-disease connection in the network for most of these genes</p></blockquote>
+
+<p><a href="/u/pouyakhankhanian" class="username">@pouyakhankhanian</a>, I'm not so sure about this. You can run the following query at <a href="https://neo4j.het.io">https://neo4j.het.io</a> to see all epilepsy-associated genes in Hetionet v1.0.</p>
+
+<pre><code class="no-highlight hljs">MATCH (disease:Disease)-[assoc:ASSOCIATES_DaG]-(gene:Gene)
+WHERE disease.name = 'epilepsy syndrome'
+RETURN
+  gene.name AS gene_symbol,
+  gene.description AS gene_name,
+  assoc.sources AS sources
+ ORDER BY gene_symbol</code></pre>
+
+<p>I suspect these 399 associations contain many of the "very rare mutations … reported in only a handful of people" that you're thinking of. Quoting <a href="https://thinklab.com/p/rephetio/report">our report</a>:</p>
+
+<blockquote><p><em>Disease–associates–Gene</em> edges were extracted from the GWAS Catalog <span class="citation">[<a href="https://doi.org/10.5281/zenodo.48428" class="citation hm citation-figure" data-key="10.5281/zenodo.48428">1</a>]</span>, DISEASES <span class="citation">[<a href="https://doi.org/10.15363/thinklab.d106" class="citation hm citation-self" data-key="10.15363/thinklab.d106">2</a>, <a href="https://doi.org/10.5281/zenodo.48425" class="citation hm citation-figure" data-key="10.5281/zenodo.48425">3</a>]</span>, DisGeNET <span class="citation">[<a href="https://doi.org/10.15363/thinklab.d105" class="citation hm citation-self" data-key="10.15363/thinklab.d105">4</a>, <a href="https://doi.org/10.5281/zenodo.48426" class="citation hm citation-figure" data-key="10.5281/zenodo.48426">5</a>]</span>, and DOAF <span class="citation">[<a href="https://doi.org/10.15363/thinklab.d94" class="citation hm citation-self" data-key="10.15363/thinklab.d94">6</a>, <a href="https://doi.org/10.5281/zenodo.48427" class="citation hm citation-figure" data-key="10.5281/zenodo.48427">7</a>]</span>.</p></blockquote>
+
+<p>I think DISEASES, DisGeNET, and possibly DOAF are capable of containing associations based on rare mutations that were discovered prior to ~2015.</p>
+
+<p>Another way we can approach the issue is by looking at the contribution of <em>Epilepsy–associates–Gene</em> (target edges) on our top 100 predictions. <a href="https://github.com/dhimmel/rephetio/blob/3f3e6ecb7a9b8bb64cde76ac8176d31fc19fdc42/epilepsy/data/target-edge-associates-contributions.tsv">This table</a> shows how much each gene group that was associated with epilepsy contributed to the top predictions. The gene groups with contributions greater than 1% are shown below:</p>
+
+<table class="table markdown-table"><thead><tr><th>Gene Group</th><th>Paths</th><th>Contribution</th><th>Genes</th></tr></thead><tbody><tr><td>gamma-aminobutyric acid (GABA) A receptor</td><td>23347</td><td>6.834</td><td>GABRA1, GABRA5, GABRB2, GABRB3, GABRD, GABRG2</td></tr><tr><td>glutamate receptor</td><td>20142</td><td>2.2849</td><td>GRIA1, GRIA2, GRIA4, GRIK1, GRIK2, GRIK5, GRIN2A, GRIN2B, GRM1, GRM2, GRM3, GRM4, GRM5, GRM8</td></tr><tr><td>sodium channel</td><td>2678</td><td>2.1133</td><td>SCN1A, SCN1B, SCN2A, SCN3A, SCN4A, SCN8A, SCN9A</td></tr><tr><td>calcium channel</td><td>10209</td><td>1.5873</td><td>CACNA1A, CACNA1D, CACNA1G, CACNA1H, CACNA2D2, CACNB4, CACNG2, CACNG3</td></tr><tr><td>potassium channel</td><td>15467</td><td>1.547</td><td>KCNAB2, KCNB1, KCNC1, KCNC4, KCND2, KCNH1, KCNJ10, KCNJ11, KCNK3, KCNK9, KCNMA1, KCNQ2, KCNQ3, KCNQ4, KCNV1</td></tr><tr><td>cholinergic receptor</td><td>13397</td><td>1.5254</td><td>CHRM1, CHRM2, CHRM3, CHRNA2, CHRNA4, CHRNA7, CHRNB2</td></tr><tr><td>cytochrome P450</td><td>9365</td><td>1.1146</td><td>CYP11A1, CYP2C19, CYP2D6</td></tr><tr><td>carbonic anhydrase</td><td>1268</td><td>0.79162</td><td>CA13, CA4</td></tr></tbody></table>
+
+<p>These are the same gene groups as the <a href="https://thinklab.com/discussion/prediction-in-epilepsy/224#11" class="citation thread-citation" data-key="10.15363/thinklab.d224">source edge analysis identified</a>. However, in this list, the cytochrome P450 family is demoted, as it's the only group that's not mechanistically related to epilepsy pathophysiology.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="11" data-comment-id="1482">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1482"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#11" class="light">160 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Version 3 to decrease clutter</h1>
+
+<p>Based on <a href="/u/larsjuhljensen" class="username">@larsjuhljensen</a> <a href="#9">suggestions</a>, I created the next iteration of the visualization (<a href="https://github.com/dhimmel/rephetio/blob/f969a7356e54dfdc2659cefbaec937fc0d0f6c4d/epilepsy/figure/compound-network/compound-network.cys"><code>compound-network.cys</code></a>):</p>
+
+<p><img src="https://github.com/dhimmel/rephetio/raw/f969a7356e54dfdc2659cefbaec937fc0d0f6c4d/epilepsy/figure/compound-network/compound-network.png" alt="Top epilepsy prediction viz"></p>
+
+<p>Nodes are now entirely their target-contribution piechart. Ditching the rounded rectangles and moving the text atop nodes saved space. The compound names will still be small but should be readable at printout size. I moved the effect on ictogenesis to the node border, since I think this information is crucial.</p>
+
+<p>I also moved the disconnected nodes around to put similar compounds (either by name or target contributions) together.</p>
+
+<p>Of course, suggestions still welcome.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-304" class="inline-note toggle-parent" data-note-id="304">
+	<p><a href="/u/larsjuhljensen">Lars Juhl Jensen</a>: 
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-305" class="inline-note toggle-parent" data-note-id="305">
+	<p><a href="/u/larsjuhljensen">Lars Juhl Jensen</a>: 
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="12" data-comment-id="1483">
+  <td class="comment-profile-avatar">
+		<a href="/u/larsjuhljensen"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/125_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1483"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/larsjuhljensen">Lars Juhl Jensen</a>
+				
+				<span class="light">&nbsp;<a href="#12" class="light">160 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>I find it is too packed and that it is thus hard to spot clusters because there are nodes everywhere. I would make the figure taller to get some more real estate and rearrange the nodes so that there is some free space between your clusters. There is an element of horror vacui to this visualization; white space should be your friend.</p>
+
+<p>And sorry to be so negative, but I still find the figure to overloaded in terms of visual properties. Maybe the effect on ictogenesis is important to show, but in that case you'll have to remove something else. Right now, by attempting to show everything at the same time, you in my opinion effectively end up showing nothing.</p>
+
+<p>Here are some questions to consider for improving the figure further:</p>
+
+<ul><li>What is the main conclusion that you want people to draw from looking at this figure?</li><li>You have two types of effect on ictogenesis coded in light blue and light red. Are both equally important? If not, could you maybe just highlight the one that is important?</li><li>Part of what makes this hard to look at is the number of target classes. By having so many classes, you use up a lot of color space, making it hard to show anything else. Could some classes be left out? Could some be combined (e.g. calcium channels + potassium channels + sodium channels = cation channels)?</li><li>Are the relevant target classes shown? When I try to find the target class that best discriminates between nodes with red circles and nodes with blue circles, it appears to be the class "other". This suggests to me that, despite showing so much, you are in fact not showing what matters most.</li><li>And last but certainly not least: are you sure this should even be shown as a network? Your focus seems to be all kinds of properties of the nodes, whereas the edges barely matter, except for showing that there are certain groups of chemically similar compounds. Simply categorizing the compounds might be a much better way to represent this.</li></ul>
+
+<p>Just trying to be constructive here.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="13" data-comment-id="1484">
+  <td class="comment-profile-avatar">
+		<a href="/u/scootermorris"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/s/img/p_default_medium.png' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1484"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/scootermorris">Scooter Morris</a>
+				
+				<span class="light">&nbsp;<a href="#13" class="light">158 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Sorry to be late to the discussion!  One thing you may want to try is using an edge-weighted layout like the one below.  I added the 2D structure diagrams using chemViz2, as an example, but I frankly wouldn't recommend it — I think that the pie charts are more informative and you would have to zoom in pretty far to be able to see any of the differences in the compound structures.  The edge-weighted layout does show some subtlety that is lost on the more compact representation IMHO, but at the cost of reduced visibility of individual nodes.<br><img src="http://www.cgl.ucsf.edu/home/scooter/chemical-similarity.png" alt="Edge Weighted Version" title="Edge Weighted"></p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="14" data-comment-id="1485">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1485"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#14" class="light">157 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Version 4 three panel format</h1>
+
+<p>Thanks <a href="/u/larsjuhljensen" class="username">@larsjuhljensen</a> and <a href="/u/scootermorris" class="username">@scootermorris</a> for the help. Your comments help guide this iteration. Unfortunately, I have little more time to work on this visualization, so while I'll appreciate more suggestions, I may not incorporate them here (although they'll guide my future thinking).</p>
+
+<p>The new version contains three panels (<a href="https://github.com/dhimmel/rephetio/blob/54ce1bacfe6392c04d6afd164df7718a0d2769b3/epilepsy/figure/combined/compound-network-combined.pdf">pdf</a>, <a href="https://github.com/dhimmel/rephetio/blob/54ce1bacfe6392c04d6afd164df7718a0d2769b3/epilepsy/figure/compound-network/compound-network.cys">session</a>). Panel A shows the ranked top 100 epilepsy predictions, colored by their effect on ictogenesis (<a href="https://thinklab.com/doc/7/review#section-31">more info</a>). The curve denotes the predicted probability of treatment. Panel B shows the structural similarity network for these compounds with structures drawn. Panel C is the same network and layout as Panel B, but shows target contributions as pie charts.</p>
+
+<p><img src="https://github.com/dhimmel/rephetio/raw/54ce1bacfe6392c04d6afd164df7718a0d2769b3/epilepsy/figure/combined/compound-network-combined.png" alt="compound-network-combined"></p>
+
+<p>Thanks <a href="/u/scootermorris" class="username">@scootermorris</a> for having made <a href="http://apps.cytoscape.org/apps/layoutsaver">layoutSaver</a>, which saved me lot's of time by syncing the node positions between the structure and target networks.</p>
+
+<p><a href="/u/larsjuhljensen" class="username">@larsjuhljensen</a> call me a kenophobe 😉, but I do think minimizing space usage, especially with this monstrosity, is important. I agree that the extra space and grid alignment of <a href="https://thinklab.com/discussion/visualizing-the-top-epilepsy-predictions-in-cytoscape/230#9" class="citation thread-citation" data-key="10.15363/thinklab.d230">your figure</a> improve the aesthetics and readability. However, I couldn't achieve the correct dimensionality (printable and readable on a single page) without a bit of horror vacui.</p>
+
+<blockquote><p>What is the main conclusion that you want people to draw from looking at this figure?</p></blockquote>
+
+<p>The figure is supposed to provide pharmacological context to our top 100 epilepsy predictions. It's certainly exploratory — there are a few conclusions we'll point out, but I'm hoping the viewer will be able to generate their own observations or questions. In part, this figure helps us answer our own questions as well.</p>
+
+<blockquote><p>You have two types of effect on ictogenesis coded in light blue and light red. Are both equally important? If not, could you maybe just highlight the one that is important?</p></blockquote>
+
+<p>All three categories (red, blue, white) are crucial.</p>
+
+<blockquote><p>Part of what makes this hard to look at is the number of target classes. By having so many classes, you use up a lot of color space, making it hard to show anything else. Could some classes be left out? Could some be combined (e.g. calcium channels + potassium channels + sodium channels = cation channels)?</p></blockquote>
+
+<p>Something I'll consider. The categories were automatically generated and ordered. I like showing how we detect almost all of the bonafide anticonvulsant targets.</p>
+
+<blockquote><p>Are the relevant target classes shown? When I try to find the target class that best discriminates between nodes with red circles and nodes with blue circles, it appears to be the class "other". This suggests to me that, despite showing so much, you are in fact not showing what matters most.</p></blockquote>
+
+<p>Still have to look into the ictogenic compounds more in light of this visualization. The fact that our method cannot differentiate the ictogenic compounds is a shortcoming, although one that is important to highlight and that we are comfortable with.</p>
+
+<blockquote><p>And last but certainly not least: are you sure this should even be shown as a network? Your focus seems to be all kinds of properties of the nodes, whereas the edges barely matter, except for showing that there are certain groups of chemically similar compounds. Simply categorizing the compounds might be a much better way to represent this.</p></blockquote>
+
+<p>It's not imperative that's its shown as a network. But I do think a 2-dimensional projection of the compounds that places similar compounds together is most effective. A network of chemical structure seemed like the easiest way to get there.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+    		
+		</table>
+
+    
+
+    &nbsp;<br>
+    <a class="btn btn-primary btn-lg" href="/signup?next=/discussion/visualizing-the-top-epilepsy-predictions-in-cytoscape/230&suppress_message=1" style>Join to Reply</a>
+
+
+		<table class="references table-td-5" style="display:none;"><tr><td><a href='/doi/10.15363/thinklab.a7' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.a7'><a href='/p/rephetio/report' class='pub-title'>Rephetio: Repurposing drugs on a hetnet [report]</a><div class='pub-body'>Daniel Himmelstein, Antoine Lizee, Chrissy Hessler, Leo Brueggeman, Sabrina Chen, Dexter Hadley, Ari Green, Pouya Khankhanian, Sergio Baranzini (2016) <i>Thinklab</i>. doi:<a class='pub-doi' href='https://doi.org/10.15363/thinklab.a7'>10.15363/thinklab.a7</a></div></div></td></tr><tr><td><a href='/doi/10.1101/087619' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>2.</div></td><td><div class='doi-body' data-key='10.1101/087619'><a href='/doi/10.1101/087619' class='pub-title'>Systematic integration of biomedical knowledge prioritizes drugs for repurposing</a><div class='pub-body'>Daniel S Himmelstein, Antoine Lizee, Christine Hessler, Leo Brueggeman, Sabrina L Chen, Dexter Hadley, Ari Green, Pouya Khankhanian, Sergio E Baranzini (2016) <i>Cold Spring Harbor Laboratory Press</i>. doi:<a class='pub-doi' href='https://doi.org/10.1101/087619'>10.1101/087619</a></div></div></td></tr><tr><td><a href='/doi/10.1101/gr.1239303' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>3.</div></td><td><div class='doi-body' data-key='10.1101/gr.1239303'><a href='/doi/10.1101/gr.1239303' class='pub-title'>Cytoscape: A Software Environment for Integrated Models of Biomolecular Interaction Networks</a><div class='pub-body'>P. Shannon (2003) <i>Genome Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1101/gr.1239303'>10.1101/gr.1239303</a></div></div></td></tr><tr><td><a href='/doi/10.1002/0471250953.bi0813s47' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>4.</div></td><td><div class='doi-body' data-key='10.1002/0471250953.bi0813s47'><a href='/doi/10.1002/0471250953.bi0813s47' class='pub-title'>Biological Network Exploration with Cytoscape 3</a><div class='pub-body'>Gang Su, John H. Morris, Barry Demchak, Gary D. Bader (2014) <i>Current Protocols in Bioinformatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1002/0471250953.bi0813s47'>10.1002/0471250953.bi0813s47</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d224' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>5.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d224'><a href='/discussion/prediction-in-epilepsy/224' class='pub-title'>Prediction in epilepsy</a><div class='pub-body'>Pouya Khankhanian, Daniel Himmelstein (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d224'>10.15363/thinklab.d224</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d224' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>6.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d224'><a href='/discussion/prediction-in-epilepsy/224' class='pub-title'>Prediction in epilepsy</a><div class='pub-body'>Pouya Khankhanian, Daniel Himmelstein (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d224'>10.15363/thinklab.d224</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d202' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>7.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d202'><a href='/discussion/describing-hetionet-v10-through-visualization-and-statistics/202' class='pub-title'>Describing Hetionet v1.0 through visualization and statistics</a><div class='pub-body'>Daniel Himmelstein, Sergio Baranzini, Casey Greene (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d202'>10.15363/thinklab.d202</a></div></div></td></tr><tr><td><a href='/doi/10.1093/bioinformatics/btv460' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>8.</div></td><td><div class='doi-body' data-key='10.1093/bioinformatics/btv460'><a href='/doi/10.1093/bioinformatics/btv460' class='pub-title'>cyNeo4j: connecting Neo4j and Cytoscape: Fig. 1.</a><div class='pub-body'>Georg Summer, Thomas Kelder, Keiichiro Ono, Marijana Radonjic, Stephane Heymans, Barry Demchak (2015) <i>Bioinformatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/bioinformatics/btv460'>10.1093/bioinformatics/btv460</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d224' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>9.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d224'><a href='/discussion/prediction-in-epilepsy/224' class='pub-title'>Prediction in epilepsy</a><div class='pub-body'>Pouya Khankhanian, Daniel Himmelstein (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d224'>10.15363/thinklab.d224</a></div></div></td></tr><tr><td><a href='/doi/10.12688/f1000research.4460.1' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>10.</div></td><td><div class='doi-body' data-key='10.12688/f1000research.4460.1'><a href='/doi/10.12688/f1000research.4460.1' class='pub-title'>enhancedGraphics: a Cytoscape app for enhanced node graphics</a><div class='pub-body'>John H. Morris, Allan Kuchinsky, Thomas E. Ferrin, Alexander R. Pico (2014) <i>F1000Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.12688/f1000research.4460.1'>10.12688/f1000research.4460.1</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d224' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>11.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d224'><a href='/discussion/prediction-in-epilepsy/224' class='pub-title'>Prediction in epilepsy</a><div class='pub-body'>Pouya Khankhanian, Daniel Himmelstein (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d224'>10.15363/thinklab.d224</a></div></div></td></tr><tr><td><a href='/doi/10.1093/bioinformatics/btv557' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>12.</div></td><td><div class='doi-body' data-key='10.1093/bioinformatics/btv557'><a href='/doi/10.1093/bioinformatics/btv557' class='pub-title'>Cytoscape.js: a graph theory library for visualisation and analysis</a><div class='pub-body'>Max Franz, Christian T. Lopes, Gerardo Huck, Yue Dong, Onur Sumer, Gary D. Bader (2015) <i>Bioinformatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/bioinformatics/btv557'>10.1093/bioinformatics/btv557</a></div></div></td></tr><tr><td><a href='/doi/10.12688/f1000research.4510.2' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>13.</div></td><td><div class='doi-body' data-key='10.12688/f1000research.4510.2'><a href='/doi/10.12688/f1000research.4510.2' class='pub-title'>Cytoscape tools for the web age: D3.js and Cytoscape.js exporters</a><div class='pub-body'>Keiichiro Ono, Barry Demchak, Trey Ideker (2014) <i>F1000Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.12688/f1000research.4510.2'>10.12688/f1000research.4510.2</a></div></div></td></tr><tr><td><a href='/doi/10.5281/zenodo.48428' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>14.</div></td><td><div class='doi-body' data-key='10.5281/zenodo.48428'><a href='/doi/10.5281/zenodo.48428' class='pub-title'>dhimmel/gwas-catalog v1.0: Extracting geneâdisease associations from the GWAS Catalog</a><div class='pub-body'>Daniel S. Himmelstein, Sergio E. Baranzini (2016) <i>Zenodo</i>. doi:<a class='pub-doi' href='https://doi.org/10.5281/zenodo.48428'>10.5281/zenodo.48428</a></div></div></td></tr><tr><td><a href='/doi/10.15363/thinklab.d106' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>15.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d106'><a href='/discussion/processing-the-diseases-resource-for-diseasegene-relationships/106' class='pub-title'>Processing the DISEASES resource for disease–gene relationships</a><div class='pub-body'>Daniel Himmelstein, Lars Juhl Jensen (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d106'>10.15363/thinklab.d106</a></div></div></td></tr><tr><td><a href='/doi/10.5281/zenodo.48425' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>16.</div></td><td><div class='doi-body' data-key='10.5281/zenodo.48425'><a href='/doi/10.5281/zenodo.48425' class='pub-title'>dhimmel/diseases v1.0: Processing the DISEASES database of geneâdisease associations</a><div class='pub-body'>Daniel S. Himmelstein, Lars Juhl Jensen (2016) <i>Zenodo</i>. doi:<a class='pub-doi' href='https://doi.org/10.5281/zenodo.48425'>10.5281/zenodo.48425</a></div></div></td></tr><tr><td><a href='/doi/10.15363/thinklab.d105' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>17.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d105'><a href='/discussion/processing-disgenet-for-disease-gene-relationships/105' class='pub-title'>Processing DisGeNET for disease-gene relationships</a><div class='pub-body'>Daniel Himmelstein, janet piñero (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d105'>10.15363/thinklab.d105</a></div></div></td></tr><tr><td><a href='/doi/10.5281/zenodo.48426' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>18.</div></td><td><div class='doi-body' data-key='10.5281/zenodo.48426'><a href='/doi/10.5281/zenodo.48426' class='pub-title'>dhimmel/disgenet v1.0: Processing the DisGeNET database of geneâdisease associations</a><div class='pub-body'>Daniel S. Himmelstein, Janet PiĂąero (2016) <i>Zenodo</i>. doi:<a class='pub-doi' href='https://doi.org/10.5281/zenodo.48426'>10.5281/zenodo.48426</a></div></div></td></tr><tr><td><a href='/doi/10.15363/thinklab.d94' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>19.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d94'><a href='/discussion/functional-disease-annotations-for-genes-using-doaf/94' class='pub-title'>Functional disease annotations for genes using DOAF</a><div class='pub-body'>Daniel Himmelstein (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d94'>10.15363/thinklab.d94</a></div></div></td></tr><tr><td><a href='/doi/10.5281/zenodo.48427' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>20.</div></td><td><div class='doi-body' data-key='10.5281/zenodo.48427'><a href='/doi/10.5281/zenodo.48427' class='pub-title'>dhimmel/doaf v1.0: Processing the DOAF database of geneâdisease associations</a><div class='pub-body'>Daniel S. Himmelstein (2016) <i>Zenodo</i>. doi:<a class='pub-doi' href='https://doi.org/10.5281/zenodo.48427'>10.5281/zenodo.48427</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d224' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>21.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d224'><a href='/discussion/prediction-in-epilepsy/224' class='pub-title'>Prediction in epilepsy</a><div class='pub-body'>Pouya Khankhanian, Daniel Himmelstein (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d224'>10.15363/thinklab.d224</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d230' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>22.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d230'><a href='/discussion/visualizing-the-top-epilepsy-predictions-in-cytoscape/230' class='pub-title'>Visualizing the top epilepsy predictions in Cytoscape</a><div class='pub-body'>Daniel Himmelstein, Pouya Khankhanian, Alexander Pico, Lars Juhl Jensen, Scooter Morris (2017) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d230'>10.15363/thinklab.d230</a></div></div></td></tr></table>
+
+    
+
+
+	</td>
+	<td class="thread-sidebar">
+
+
+			
+
+      <a class="btn btn-default follow-link btn-follow btn-lg is-following tt-top full-width" title="Follow discussion" data-id="230" data-ctype="thread" data-is-following="false">&nbsp;</a>
+
+      
+
+      
+        
+      
+
+
+				
+
+					<div class="details">Views</div>
+					<span style="font-size:20px;">94</span>
+
+        
+
+				
+					<div class="details">Topics</div>
+					<div style="margin-bottom:15px;">
+		            <a href="/topics/compounds" class="tag">Compounds</a><a href="/topics/networks" class="tag">Networks</a><a href="/topics/cytoscape" class="tag">Cytoscape</a><a href="/topics/visualization" class="tag">Visualization</a><a href="/topics/epilepsy" class="tag">Epilepsy</a>
+					</div>
+				
+
+
+		
+			<div class="details">Referenced by</div>
+			<div style="font-size:12px;"><ul style="padding-left:16px !important;">
+			
+				<li>
+					
+					<a href='/discussion/why-we-predicted-ictogenic-tricyclic-compounds-treat-epilepsy/231' class='thread-title'>Why we predicted ictogenic tricyclic compounds treat epilepsy?</a>
+				</li>
+			
+				<li>
+					
+					Research report: <a href='/p/rephetio/report'>Rephetio: Repurposing drugs on a hetnet</a>
+				</li>
+			
+				</ul>
+			</div>
+		
+
+		
+			<div class="details">Cite this as</div>
+			<span style="font-size:12px;">
+				Daniel Himmelstein, Pouya Khankhanian, Alexander Pico, Lars Juhl Jensen, Scooter Morris (2017) Visualizing the top epilepsy predictions in Cytoscape. <i>Thinklab.</i> doi:<a href='https://doi.org/10.15363/thinklab.d230'>10.15363/thinklab.d230</a>
+			</span>
+		
+
+		<div class="details">License</div>
+		<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0;width:88px;height:31px;" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></p>
+
+		<div class="details">Share</div>
+		
+			
+				<a class="share-button fb" onclick="javascript:void(window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A//thinklab.com/discussion/visualizing-the-top-epilepsy-predictions-in-cytoscape/230','','width=600,height=460,menubar=no,status=no'));" href="#"></a>
+<a class="share-button twitter" onclick="javascript:void(window.open('https://twitter.com/share?text=Visualizing%20the%20top%20epilepsy%20predictions%20in%20Cytoscape&url=https%3A//thinklab.com/discussion/visualizing-the-top-epilepsy-predictions-in-cytoscape/230','','width=600,height=300,menubar=no,status=no'));" href="#"></a>
+<a class="share-button google" onclick="javascript:void(window.open('https://plus.google.com/share?url=https%3A//thinklab.com/discussion/visualizing-the-top-epilepsy-predictions-in-cytoscape/230','','width=510,height=460,menubar=no,status=no'));" href="#"></a>
+
+			
+		
+
+	</td>
+</tr></table>
+
+
+		</div>
+
+
+		
+	    	<div class="footer">
+<div style="background:#dedede;">
+	<div class="main-centered-div text-center" style="padding:20px;">
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#3f575a5353507f4b57565154535e5d115c5052"><span class="__cf_email__" data-cfemail="e38b868f8f8ca3978b8a8d888f8281cd808c8e">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+	</div>
+</div>
+<div class="main-footer">
+	<div class="main-centered-div">
+
+<table class="full-width"><tr>
+	<td class="footer-nav">
+
+        <div class="foot-head">Explore</div>
+        <a href="/proposals">Proposals</a><br>
+        <a href="/projects">Projects</a><br>
+        <a href="/publications">Article discussion</a><br>
+        <a href="/discussion">All discussion</a><br>
+        <a href="/topics">Topics</a><br>
+        <!-- <a href="/funders">Funders</a><br> -->
+        <a href="/funding">Funding opportunities</a><br>
+
+	</td>
+	<td class="footer-nav">
+
+        <!-- <div class="foot-head">Help &amp; feedback</div>	 -->
+        <!-- <div class="foot-head">Intro</div>
+        <a href="/benefits/for-science">Why</a><br>
+        <a href="/how-it-works">How it works</a><br>
+
+<br> -->
+
+        <div class="foot-head">Community</div>
+        <a href="/leaderboard">Leaderboard</a><br>
+        <a href="/p/meta">Thinklab Meta</a><br>
+				<a href="/help/faq">Help</a><br>
+				<!-- <a href="/new-project">Start a proposal</a><br> -->
+        <!-- <a href="/benefits/proposal">Benefits</a><br> -->
+        <!-- <a href="/funding">Get funded</a><br> -->
+        <!-- <a href="/participate">Become a contributor</a><br> -->
+        <!-- <a href="/for-funders">For science funders</a><br> -->
+        <!-- <a href="/for-institutions">For institutions</a><br> -->
+
+	</td>
+	<td class="footer-nav">
+
+
+
+        <div class="foot-head">About</div>
+        <a href="/about">Overview</a><br>
+        <a href="/benefits">Benefits</a><br>
+        <a href="/how-it-works">How it works</a><br>
+        <a href="/about/story">Our story</a><br>
+        <a href="/blog">Our blog</a><br>
+        <a href="/about/jobs">Join the team</a><br>
+        <br>
+
+        <!-- <div class="foot-head">Help</div>
+        <a href="/help">Help</a><br>
+		 -->
+
+
+	</td>
+	<td class="footer-nav">
+		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
+		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<br><br>
+		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
+
+	</td>
+
+</tr></table>
+
+</div>
+</div>
+</div>
+
+		
+
+	</div>
+
+
+  <script></script>
+  <script>
+  var MEDIA_URL = 'https://think-lab.s3.amazonaws.com/m/';
+  var STATIC_URL = 'https://think-lab.s3.amazonaws.com/s/';
+  var page_is_authenticated = false;
+  var page_page = 'discussion';
+  var page_profile_id = undefined;
+</script>
+
+
+
+	<!-- Note different script type. MUST come before MathJax.js -->
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	        "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"],
+	                        scale: 110, linebreaks: { automatic:true },
+	                        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+	        tex2jax: { inlineMath: [ ["$$", "$$"], ["\\(","\\)"] ],
+	                    displayMath: [ ["$$$","$$$"], ["\\[", "\\]"] ],
+	                    processEscapes: true,}
+	            });
+
+	</script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://think-lab.s3.amazonaws.com/s/dist/main.min.js"></script>
+  
+
+
+
+  
+	
+  
+  
+  
+<script>
+$(function() {
+  recordHit('thread', 230);
+});
+</script>
+
+
+
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZgEOC19dW0QCEVtHU1gG","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":258}</script>
+    <title>Introducing ThinkLab — A platform for massively collaborative open science | Thinklab</title>
+	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
+    <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/highlightjs/github.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/css.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/bootstrap-multiselect.css" />
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
+    
+    
+    
+    
+  
+
+    
+
+
+	<!-- GoogleAnalytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-48550230-1', 'thinklab.com');
+	ga('require', 'displayfeatures');
+	
+	ga('send', 'pageview');
+
+	</script>
+
+
+
+
+
+
+</head>
+<body >
+  <form id="form_action" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+</form>
+
+	
+
+	<div class="body-wrapper">
+
+		
+
+
+<!-- <div style="height:5px;background-image:url('https://think-lab.s3.amazonaws.com/s/img/top-bg.gif');"></div> -->
+<div class="gradient">
+	<div class="main-centered-div header-container">
+
+<table class="full-width" style="height:60px;"><tr>
+	<td style="width:200px;vertical-align:middle;padding-bottom:15px;">
+		<a href="/" style="font-weight:normal;color:#212121;"><img src="https://think-lab.s3.amazonaws.com/s/img/logo.png" width="160"></a>
+	</td><td style="vertical-align:middle;text-align:left;padding-top:6px;width:100%;padding-left:40px;">
+		<ul id="not-search-block"  class="main-header">
+
+
+			
+
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/proposals">Proposals</a></li>
+						<li><a href="/projects">Projects</a></li>
+						<li><a href="/publications">Article discussion</a></li>
+						<li><a href="/discussion">All discussion</a></li>
+					</ul>
+				</li>
+				<li><a href="/leaderboard">Leaderboard</a></li>
+
+			
+				<li><a href="/about">About</a></li>
+			
+
+
+		</ul>
+
+    <ul id="search-block" class="main-header" style="display: none; margin-right: 30px;">
+        <li class="full-width">
+            <form method="get" action="/search">
+			<div class="input-group full-width">
+				<input name="q" type="text" class="form-control search-input">
+			</div>
+            </form>
+        </li>
+    </ul>
+
+	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
+		<ul class="main-header pull-right" style="padding-left: 0;">
+    		
+                <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+            
+
+        </ul>
+    </ul>
+	</td>
+</tr></table>
+
+<!-- <div id="global-search-div" class="main-centered-div" style="display:none;">
+	<input type="text" value="" class="thread-search form-control" placeholder="Search" data-action="/discussion">
+</div> -->
+
+	</div>
+</div>
+
+		
+	  
+
+
+
+	  
+
+
+		
+
+		<div class="dark-head"><div class="main-centered-div">
+
+			
+
+		</div></div>
+		
+		<div class="main-centered-div" style="margin-top:40px;padding-bottom:340px">
+	    
+
+<div style="margin-top:-20px; margin-bottom:20px;">
+
+    <div style='height:1px;'></div>
+    <!-- <a class="side-box" style="background-color:#ebfdff;" href="/blog"><div class="side-title">Thinklab Blog</div></a> -->
+
+
+
+</div>
+
+<table style="margin-top:0px;"><tr>
+	<td class="thread-table-content">
+
+		<table class="full-width">
+			
+<tr class="comment-tr target-hl" id="1" data-comment-id="76">
+  <td class="comment-profile-avatar">
+		<a href="/u/jspauld"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/2_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="76"></a>
+
+    
+
+			<h2 class="page-title" style="margin-bottom:5px;margin-top:0px !important;">Introducing ThinkLab — A platform for massively collaborative open science</h2>
+
+			<div style="margin-top:5px;color:gray;margin-bottom:20px;font-size:13px;">
+				<a style="font-weight:normal;color:#212121" href="/u/jspauld"><strong>Jesse Spaulding</strong></a>
+				
+				&nbsp; <a href="#1" class="light">843 days ago</a>
+				
+			</div>
+
+      
+
+          <hr>
+		
+
+    <p>Today, I'm excited to announce <a href="http://thinklab.com">ThinkLab</a>! </p>
+
+<p>ThinkLab is building a platform for academic scientists to share their research openly, online, and in real-time, while collaborating with a worldwide network of their peers. The goal is to accelerate scientific discovery through a model of research that I’m calling “massively collaborative” open science.</p>
+
+<p>But critically, we're not just building a collaboration platform and hoping scientists use it, we’re actually <em>working with science funders to create incentives that compel its adoption</em>. There are two interesting things we do: we <a href="http://thinklab.com/funding">give scientists grants</a> to lead open research projects on our platform, and we pay other scientists to openly share feedback and insights throughout those projects (paid based on peer assessment of the scientific value of their comments). The business model is to help science funders distribute their money in a way that creates better incentives for scientists and better outcomes for society.</p>
+
+<p>As part of the launch I'm personally putting up <a href="http://thinklab.com/funding/1">$50,000 to support the first projects on the platform</a>. If you’re a scientist interested in leading the scientific community in an open research project, this is your chance! And if you're a philanthropist that wants to help bring scientific research into the Internet age, this is your chance too!</p>
+
+<h1>What’s wrong with scientific research today?</h1>
+
+<p>Many things. Most scientists exist in a hyper competitive environment where having a career in science means dedicating themselves to the singular task of publishing papers. Things that don’t contribute to that goal just can’t get the attention they deserve — they’re seen as a waste of time and not part of the job. So while our journal-based reward system has served us well over the past 300 years, it's now past its useful life — it's no longer creating behavior that's aligned with the best interest of science and society as a whole.</p>
+
+<p>Ask yourself: Why do scientists choose to publish in paywalled journals when open access serves the community better? Why do scientists withhold their data, software, and detailed descriptions of their methods when other scientists need them to review, understand, and build upon the work? Why do negative results go unpublished when publishing them would save others huge amounts of time? Why do scientists have to constantly seek "interesting" results when a simple honest reporting of what they found would clearly be better? And why don't scientists share their work and collaborate with each other openly over the Internet? Surely that would accelerate progress.</p>
+
+<p>The answer is simple. Science has a broken reward system. Science needs new incentives. For more on this see my other post: <a href="http://thinklab.com/blog/10-consequences-of-a-broken-scientific-reward-system/36">10 consequences of a broken scientific reward system</a>.</p>
+
+<h1>New incentives for a new model of research</h1>
+
+<p>I created ThinkLab based on the idea that science funders hold the power to create new incentives and rapidly compel change in our scientific system. ThinkLab helps them do it. Here's how:</p>
+
+<ol><li><p><strong>Scientists receive grants to lead open research projects on our platform.</strong> <br>ThinkLab wants to encourage the most open version of open science. Research grants given through ThinkLab come with an expectation that everything is shared openly, online, and in real-time. But it’s not just a commitment to openness, we actually reward openness through the availability of a peer assessed performance bonus of up to 40% of direct costs. </p></li><li><p><strong>Scientists are paid to openly comment on ThinkLab projects.</strong> <br>Sharing research openly on the web is one thing, but the big payoff comes from real time open collaboration with the global scientific community. Each project funded through ThinkLab comes with $5,000 to $10,000 set aside to compensate contributions from scientists outside the primary research team’s lab. Collaborating scientists <a href="http://thinklab.com/help/rewards">earn money based on peer assessment of the scientific value of their comments</a>.</p></li></ol>
+
+<h1>How ThinkLab accelerates science</h1>
+
+<p>The incentives we're creating serve a purpose: they help science funders accelerate scientific progress and achieve greater impact. And I don’t think we’re talking about a small improvement here. I honestly believe ThinkLab’s model of research will be something like 10X more efficient than that of the current system. Consider the benefits:</p>
+
+<ol><li><p><strong>Proposals are posted openly on the web.</strong> <br>Publishing proposals (a valuable research product in and of themselves) reduces redundancy and helps inform and spur the ideas of other scientists.</p></li><li><p><strong>Data, software, and detailed methods are shared.</strong> <br>Sharing the full research record ensures other scientists have what they need in order to effectively review, reproduce, and build upon research.</p></li><li><p><strong>Results are shared openly, online, and in real time.</strong> <br>This accelerates the research lifecycle by allowing scientists everywhere to <em>immediately</em> begin learning from and building upon the latest work in their field.</p></li><li><p><strong>Negative results are shared.</strong> <br>Sharing negative results eliminates <a href="http://en.wikipedia.org/wiki/Publication_bias">publication bias</a>, and prevents future researchers from having to waste time pursuing the same dead ends again and again.</p></li><li><p><strong>We reward good science not "interesting" results.</strong> <br>This means researchers are free to pursue high risk ideas, and the research process won’t be distorted by the need to generate “interesting” results, even where none exist.</p></li><li><p><strong>We reward scientists for helping each other.</strong> <br>Paying scientists to share feedback and insights leads to greater efficiencies as scientific attention naturally gravitates to where it adds the most value on the network.</p></li><li><p><strong>Studies are better designed from the outset.</strong> <br>Having proposals undergo extensive open peer review improves research plans, and ensures money isn't wasted on research that was flawed from conception.</p></li><li><p><strong>Statistical analysis and conclusions are more robust.</strong> <br>Putting data, results, and conclusions up for open discussion produces conclusions that are more robust, accurate, and impactful.</p></li><li><p><strong>Breakthroughs come more frequently.</strong> <br>Bringing people with diverse backgrounds and perspectives together increases the likelihood of breakthrough ideas coming to light.</p></li></ol>
+
+<h1>$50,000 for ThinkLab pilot projects</h1>
+
+<p>To get things started, I’m personally putting up <a href="http://thinklab.com/funding/1">$50,000 to support the first projects on the platform</a>. For these first pilot projects we won’t be covering your direct costs, but we will be putting up (up to) $10,000 to compensate contributions from scientists outside your lab. For a better idea of how this works, you can check out a project that’s already under way: <a href="http://thinklab.com/p/rephetio">Repurposing Drugs on a Heterogeneous Network</a>, led by Daniel Himmelstein. </p>
+
+<p>For those of you interested, but who need direct cost funding, I encourage you to post an open proposal. When ThinkLab has funding partners, your project will be first in line for funding consideration. And you never know, with an openly posted proposal your project might just catch the eye of a funder.</p>
+
+<p>I’d also like to take this opportunity to invite scientists everywhere to join our community. This isn’t just about creating a profile. We actually want you to share your scientific expertise on active research projects. And we’re going to pay you to do it! Please <a href="http://thinklab.com/signup">signup</a>, add your areas of expertise/interest, and we’ll email you when a project or scientific discussion needs your attention.</p>
+
+<h1>Philanthropists: ThinkLab needs you</h1>
+
+<p>Humanity faces many great challenges as we move forward. I believe science and scientific thinking are our best tools to meet those challenges. But we're not doing ourselves any favors with a system where scientists continue to work offline, in silos, hoarding knowledge for competitive advantage. Wouldn't it be better to have a system that encourages scientists everywhere to work together openly over the Internet?</p>
+
+<p>Our mission is to bring about such a system. But we can't do it alone. We're looking for philanthropists excited about working with us to bring science into the Internet age. People excited an idea that has the potential to dramatically accelerate scientific progress, speed up cures for diseases, reduce suffering for millions of people, and create a better future.</p>
+
+<p>Please email me <a href="/cdn-cgi/l/email-protection#b9d3dccacadcf9cdd1d0d7d2d5d8db97dad6d4"><span class="__cf_email__" data-cfemail="a1cbc4d2d2c4e1d5c9c8cfcacdc0c38fc2cecc">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a> and let's get started.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=756327117748217&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<script>
+window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
+</script>
+
+<script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+
+<div style="padding:5px;background-color:#f0f0f0;margin-top:30px;">
+	<div class="share" style="width:100px;">
+		<a class="twitter-share-button" href="https://twitter.com/share">Tweet</a>
+	</div>
+	<div class="share">
+		<div class="fb-share-button" data-href="" data-layout="button_count"></div>
+	</div>
+	<div class="share">
+		<script type="IN/Share" data-counter="right"></script>
+	</div>
+</div>
+
+
+  </td>
+</tr>
+
+    		
+		</table>
+
+    
+
+    &nbsp;<br>
+    <a class="btn btn-primary btn-lg" href="/signup?next=/blog/introducing-thinklab-a-platform-for-massively-collaborative-open-science/38&suppress_message=1" style>Join to Reply</a>
+
+
+		<table class="references table-td-5" style="display:none;"></table>
+
+    
+    <hr>
+<h1>Public comments</h1>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'think-lab'; // required: replace example with your forum shortname
+  var disqus_identifier = '38';
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    
+
+
+	</td>
+	<td class="thread-sidebar">
+
+
+			
+
+				<!-- <h3>Thinklab Blog</h3> -->
+
+<div class="info-box" style="margin-bottom:30px;">
+
+<h2><strong>About this blog</strong></h2>
+<p><a href="/">Thinklab</a> is a platform for real-time open collaborative science</p>
+
+<!-- <a href="https://twitter.com/thinklab" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @thinklab</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script> -->
+
+
+<h3><strong>Recent posts</strong></h3>
+
+	<a href="/blog/crowdsourcing-a-response-to-an-nih-grant-opportunity/217">Crowdsourcing a response to an NIH grant opportunity</a><hr style="margin: 5px 0px;">
+
+	<a href="/blog/should-scientists-be-paid-to-openly-share-ideas-on-the-internet-thinklab-just-paid-out-2557/208">Should scientists be paid to openly share ideas on the Internet? (Thinklab just paid out $2,557!)</a><hr style="margin: 5px 0px;">
+
+	<a href="/blog/get-crowdsourced-feedback-for-your-open-science-prize-application/135">Get crowdsourced feedback for your Open Science Prize application</a><hr style="margin: 5px 0px;">
+
+	<a href="/blog/thinklab-open-grant-proposal-review-has-arrived/125">Thinklab open grant proposal review has arrived!</a><hr style="margin: 5px 0px;">
+
+	<a href="/blog/a-suggestion-for-yc-research-how-to-create-a-better-bell-labs/116">A suggestion for YC Research: how to create a better Bell Labs</a><hr style="margin: 5px 0px;">
+
+	<a href="/blog/introducing-thinklab-a-platform-for-massively-collaborative-open-science/38">Introducing ThinkLab — A platform for massively collaborative open science</a><hr style="margin: 5px 0px;">
+
+	<a href="/blog/10-consequences-of-a-broken-scientific-reward-system/36">10 Consequences of a broken scientific reward system</a><hr style="margin: 5px 0px;">
+
+
+
+</div>
+
+
+			
+
+      <a class="btn btn-default follow-link btn-follow btn-lg is-following tt-top full-width" title="Follow discussion" data-id="38" data-ctype="thread" data-is-following="false">&nbsp;</a>
+
+      
+
+      
+
+
+				
+
+					<div class="details">Views</div>
+					<span style="font-size:20px;">1688</span>
+
+        
+
+				
+
+
+		
+
+		
+
+		<div class="details">License</div>
+		<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0;width:88px;height:31px;" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></p>
+
+		<div class="details">Share</div>
+		
+			
+				<a class="share-button fb" onclick="javascript:void(window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A//thinklab.com/blog/introducing-thinklab-a-platform-for-massively-collaborative-open-science/38','','width=600,height=460,menubar=no,status=no'));" href="#"></a>
+<a class="share-button twitter" onclick="javascript:void(window.open('https://twitter.com/share?text=Introducing%20ThinkLab%20%E2%80%94%20A%20platform%20for%20massively%20collaborative%20open%20science&url=https%3A//thinklab.com/blog/introducing-thinklab-a-platform-for-massively-collaborative-open-science/38','','width=600,height=300,menubar=no,status=no'));" href="#"></a>
+<a class="share-button google" onclick="javascript:void(window.open('https://plus.google.com/share?url=https%3A//thinklab.com/blog/introducing-thinklab-a-platform-for-massively-collaborative-open-science/38','','width=510,height=460,menubar=no,status=no'));" href="#"></a>
+
+			
+		
+
+	</td>
+</tr></table>
+
+
+		</div>
+
+
+		
+	    	<div class="footer">
+<div style="background:#dedede;">
+	<div class="main-centered-div text-center" style="padding:20px;">
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#0f676a6363604f7b67666164636e6d216c6062"><span class="__cf_email__" data-cfemail="bfd7dad3d3d0ffcbd7d6d1d4d3dedd91dcd0d2">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+	</div>
+</div>
+<div class="main-footer">
+	<div class="main-centered-div">
+
+<table class="full-width"><tr>
+	<td class="footer-nav">
+
+        <div class="foot-head">Explore</div>
+        <a href="/proposals">Proposals</a><br>
+        <a href="/projects">Projects</a><br>
+        <a href="/publications">Article discussion</a><br>
+        <a href="/discussion">All discussion</a><br>
+        <a href="/topics">Topics</a><br>
+        <!-- <a href="/funders">Funders</a><br> -->
+        <a href="/funding">Funding opportunities</a><br>
+
+	</td>
+	<td class="footer-nav">
+
+        <!-- <div class="foot-head">Help &amp; feedback</div>	 -->
+        <!-- <div class="foot-head">Intro</div>
+        <a href="/benefits/for-science">Why</a><br>
+        <a href="/how-it-works">How it works</a><br>
+
+<br> -->
+
+        <div class="foot-head">Community</div>
+        <a href="/leaderboard">Leaderboard</a><br>
+        <a href="/p/meta">Thinklab Meta</a><br>
+				<a href="/help/faq">Help</a><br>
+				<!-- <a href="/new-project">Start a proposal</a><br> -->
+        <!-- <a href="/benefits/proposal">Benefits</a><br> -->
+        <!-- <a href="/funding">Get funded</a><br> -->
+        <!-- <a href="/participate">Become a contributor</a><br> -->
+        <!-- <a href="/for-funders">For science funders</a><br> -->
+        <!-- <a href="/for-institutions">For institutions</a><br> -->
+
+	</td>
+	<td class="footer-nav">
+
+
+
+        <div class="foot-head">About</div>
+        <a href="/about">Overview</a><br>
+        <a href="/benefits">Benefits</a><br>
+        <a href="/how-it-works">How it works</a><br>
+        <a href="/about/story">Our story</a><br>
+        <a href="/blog">Our blog</a><br>
+        <a href="/about/jobs">Join the team</a><br>
+        <br>
+
+        <!-- <div class="foot-head">Help</div>
+        <a href="/help">Help</a><br>
+		 -->
+
+
+	</td>
+	<td class="footer-nav">
+		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
+		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<br><br>
+		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
+
+	</td>
+
+</tr></table>
+
+</div>
+</div>
+</div>
+
+		
+
+	</div>
+
+
+  <script></script>
+  <script>
+  var MEDIA_URL = 'https://think-lab.s3.amazonaws.com/m/';
+  var STATIC_URL = 'https://think-lab.s3.amazonaws.com/s/';
+  var page_is_authenticated = false;
+  var page_page = 'discussion';
+  var page_profile_id = undefined;
+</script>
+
+
+
+	<!-- Note different script type. MUST come before MathJax.js -->
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	        "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"],
+	                        scale: 110, linebreaks: { automatic:true },
+	                        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+	        tex2jax: { inlineMath: [ ["$$", "$$"], ["\\(","\\)"] ],
+	                    displayMath: [ ["$$$","$$$"], ["\\[", "\\]"] ],
+	                    processEscapes: true,}
+	            });
+
+	</script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://think-lab.s3.amazonaws.com/s/dist/main.min.js"></script>
+  
+
+
+
+  
+	
+  
+  
+  
+<script>
+$(function() {
+  recordHit('thread', 38);
+});
+</script>
+
+
+
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>

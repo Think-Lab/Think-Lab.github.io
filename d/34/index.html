@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZgEOC19dW0QCEVtHU1gG","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":700}</script>
+    <title>Using Entrez Gene as our gene vocabulary | Thinklab</title>
+	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
+    <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/highlightjs/github.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/css.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/bootstrap-multiselect.css" />
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
+    
+    
+    
+    
+  
+    <meta name="citation_doi" content="10.15363/thinklab.d34">
+    <meta name="citation_title" content="Using Entrez Gene as our gene vocabulary">
+    <meta name="citation_online_date" content="Feb. 27, 2015">
+    <meta name="citation_author" content="Daniel Himmelstein, Casey Greene, Alexander Pico">
+    <meta name="citation_journal_title" content="Thinklab">
+    <meta name="citation_publisher" content="Thinklab">
+  
+
+    
+
+
+	<!-- GoogleAnalytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-48550230-1', 'thinklab.com');
+	ga('require', 'displayfeatures');
+	
+	ga('send', 'pageview');
+
+	</script>
+
+
+
+
+
+
+</head>
+<body >
+  <form id="form_action" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+</form>
+
+	
+
+	<div class="body-wrapper">
+
+		
+
+
+<!-- <div style="height:5px;background-image:url('https://think-lab.s3.amazonaws.com/s/img/top-bg.gif');"></div> -->
+<div class="gradient">
+	<div class="main-centered-div header-container">
+
+<table class="full-width" style="height:60px;"><tr>
+	<td style="width:200px;vertical-align:middle;padding-bottom:15px;">
+		<a href="/" style="font-weight:normal;color:#212121;"><img src="https://think-lab.s3.amazonaws.com/s/img/logo.png" width="160"></a>
+	</td><td style="vertical-align:middle;text-align:left;padding-top:6px;width:100%;padding-left:40px;">
+		<ul id="not-search-block"  class="main-header">
+
+
+			
+
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/proposals">Proposals</a></li>
+						<li><a href="/projects">Projects</a></li>
+						<li><a href="/publications">Article discussion</a></li>
+						<li><a href="/discussion">All discussion</a></li>
+					</ul>
+				</li>
+				<li><a href="/leaderboard">Leaderboard</a></li>
+
+			
+				<li><a href="/about">About</a></li>
+			
+
+
+		</ul>
+
+    <ul id="search-block" class="main-header" style="display: none; margin-right: 30px;">
+        <li class="full-width">
+            <form method="get" action="/search">
+			<div class="input-group full-width">
+				<input name="q" type="text" class="form-control search-input">
+			</div>
+            </form>
+        </li>
+    </ul>
+
+	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
+		<ul class="main-header pull-right" style="padding-left: 0;">
+    		
+                <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+            
+
+        </ul>
+    </ul>
+	</td>
+</tr></table>
+
+<!-- <div id="global-search-div" class="main-centered-div" style="display:none;">
+	<input type="text" value="" class="thread-search form-control" placeholder="Search" data-action="/discussion">
+</div> -->
+
+	</div>
+</div>
+
+		
+	  
+
+
+
+	  
+
+
+		
+
+		<div class="dark-head"><div class="main-centered-div">
+
+			
+
+		</div></div>
+		
+		<div class="main-centered-div" style="margin-top:40px;padding-bottom:340px">
+	    
+
+<div style="margin-top:-20px; margin-bottom:20px;">
+
+    <a class="side-box" href="/p/rephetio" style="background-color:#ebfdff;"><div class="side-type">Project:</div> <div class="side-title">Rephetio: Repurposing drugs on a hetnet [rephetio]</div></a><br>
+
+
+
+</div>
+
+<table style="margin-top:0px;"><tr>
+	<td class="thread-table-content">
+
+		<table class="full-width">
+			
+<tr class="comment-tr target-hl" id="1" data-comment-id="70">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="70"></a>
+
+    
+
+			<h2 class="page-title" style="margin-bottom:5px;margin-top:0px !important;">Using Entrez Gene as our gene vocabulary</h2>
+
+			<div style="margin-top:5px;color:gray;margin-bottom:20px;font-size:13px;">
+				<a style="font-weight:normal;color:#212121" href="/u/dhimmel"><strong>Daniel Himmelstein</strong></a>
+				<span class="is-researcher">Researcher</span>
+				&nbsp; <a href="#1" class="light">861 days ago</a>
+				
+			</div>
+
+      
+
+          <hr>
+		
+
+    <p>In our previous project to <a href="http://het.io/diease-genes">predict disease-associated</a> genes from a heterogeneous network <span class="citation">[<a href="https://doi.org/10.1371/journal.pcbi.1004259" class="citation" data-key="10.1371/journal.pcbi.1004259">1</a>]</span>, we used the <a href="http://www.genenames.org">HGNC (HUGO Gene Nomenclature Committee) database</a> to encode genes <span class="citation">[<a href="https://doi.org/10.1007/s00439-001-0615-0" class="citation" data-key="10.1007/s00439-001-0615-0">2</a>, <a href="https://doi.org/10.1093/nar/gku1071" class="citation" data-key="10.1093/nar/gku1071">3</a>]</span>. This resource, "based at the European Bioinformatics Institute (EMBL-EBI), assigns unique symbols and names to human genes <span class="citation">[<a href="https://doi.org/10.1093/nar/gku1071" class="citation" data-key="10.1093/nar/gku1071">3</a>]</span>."</p>
+
+<p>For this project, we are considering switching to NCBI's <a href="http://www.ncbi.nlm.nih.gov/gene">Entrez Gene</a> and would like feedback. "The primary goals of Entrez Gene are to provide tracked, unique identifiers for genes and to report information associated with those identifiers for unrestricted public use. The identifier that is assigned (GeneID) is an integer, and is species specific <span class="citation">[<a href="https://doi.org/10.1093/nar/gki031" class="citation" data-key="10.1093/nar/gki031">4</a>]</span>."</p>
+
+<p>The main advantages of Entrez versus HGNC for gene identification include:</p>
+
+<ul><li>more species than human</li><li>GeneIDs which are less error prone than ambiguous gene symbols</li><li>integration with many other NCBI services such as <a href="http://www.ncbi.nlm.nih.gov/homologene">HomoloGene</a>, which can relate orthologous genes across species</li></ul>
+
+<p>The main disadvantage is familiarity, as most biologists conceive human genes in terms of their HGNC symbols. Although symbol information is available in Entrez Gene, there is no guarantee that each Entrez Gene record has a single corresponding, current HGNC symbol.</p>
+
+<p>I am interested in:</p>
+
+<ul><li>the best way to retrieve, store, parse, and map to Entrez Gene records</li><li>how stable Entrez Gene identifiers are for protein-coding genes in humans</li><li>the difficulty of updating to new versions of the Entrez Gene database</li></ul>
+
+<p>Any advice or information would be appreciated!</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="2" data-comment-id="71">
+  <td class="comment-profile-avatar">
+		<a href="/u/caseygreene"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/22_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="71"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/caseygreene">Casey Greene</a>
+				
+				<span class="light">&nbsp;<a href="#2" class="light">860 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>We use Entrez internally in our lab at the moment. We store them in a SQL database with their associated features. We've started using ElasticSearch to perform mapping from sources that use multiple alternative identifiers or that also include aliases, but in general we try to convert to Entrez.</p>
+
+<p>There are some problems with Entrez &lt;-&gt; HGNC, but they are relatively minor — especially for protein coding genes. IMP, GIANT, Tribe, and our other servers use entrez internally and map to symbol for display purposes.</p>
+
+<p>I have talked to people who are discussing more sophisticated systems to generate identifiers that unify the databases through an automated process capable of resolving ambiguities, and I am hopeful that some of those projects will come to fruition.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="3" data-comment-id="207">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="207"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#3" class="light">791 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>We have proceeded with Entrez Gene for gene identification.</p>
+
+<p><a href="/u/caseygreene" class="username">@caseygreene</a>, do you have any advice or information on how to build the SQL database? I found <a href="http://jura.wi.mit.edu/entrez_gene/">this site</a> which provides instructions and Perl scripts. Do you use the same <a href="http://jura.wi.mit.edu/entrez_gene/entrez_gene.pdf">schema</a>?</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="4" data-comment-id="208">
+  <td class="comment-profile-avatar">
+		<a href="/u/caseygreene"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/22_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="208"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/caseygreene">Casey Greene</a>
+				
+				<span class="light">&nbsp;<a href="#4" class="light">791 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>We have done it a couple of ways. Currently we like to We have an EntrezID field that's an index, a systematic name that's an index (if you're human, this is HGNC identifiers), standard name (you won't need this for human only), the gene description, a foreign key to the organism (again, if only human, won't need this), the aliases (space separated list of previous/alternative names — used only for full text search), whether or not the gene is now obsolete (used during updates), and a few other things that we use for search.</p>
+
+<p>For other identifiers, we have a table of cross reference databases, which has a name (index) and a url. URL has characters in it that signify that the ID for the database is supposed to go there.</p>
+
+<p>We then have a table of cross references, which has foreign keys to both the cross reference database and gene, as well as a cross reference id (also db index).</p>
+
+<p>If you want python code to generate this and/or load identifiers using the Django ORM, we can supply it. We might also be able to open source it as part of a pip installable django app on pypi. This is on our to-do list, so we could potentially reprioritize if this is particularly useful to you.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-113" class="inline-note toggle-parent" data-note-id="113">
+	<p><a href="/u/caseygreene">Casey Greene</a>: I should add that the full text search is basically a last ditch effort to find genes w/o any matching identifiers in the structured databases. We use this on the description and alias field, as well as all of the cross reference IDs. We use elasticsearch via django-haystack to power this. It's pretty easy to set this up on AWS or locally. We previously used solr, but the configuration headache didn't outweigh the benefits.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="5" data-comment-id="238">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="238"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#5" class="light">760 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p><a href="/u/caseygreene" class="username">@caseygreene</a>, thanks for the description of your database setup. In the immediate term, I don't need any of the advanced features that your design accommodates such as elastic search and efficient lookup, so I just did a simple <a href="//nbviewer.ipython.org/github/dhimmel/entrez-gene/blob/2208158e9e9691d54d48faf3b6b9c2c8f69d7914/retrieve.ipynb">parsing</a> of the human subset and exported three tsv files (<a href="https://github.com/dhimmel/entrez-gene/blob/2208158e9e9691d54d48faf3b6b9c2c8f69d7914/data/genes-human.tsv">genes</a>, <a href="https://github.com/dhimmel/entrez-gene/blob/2208158e9e9691d54d48faf3b6b9c2c8f69d7914/data/symbols-human.tsv">symbols</a>, <a href="https://github.com/dhimmel/entrez-gene/blob/2208158e9e9691d54d48faf3b6b9c2c8f69d7914/data/xrefs-human.tsv">cross-references</a>).</p>
+
+<p>Therefore, don't reprioritize for me, but I think the pypi package is a great idea. It looks like your <a href="//tribe.greenelab.com/">Tribe</a> API already supports Entrez gene lookup. However, I'm confused about the usage, since the <a href="//tribe.greenelab.com/#/demo/speak">demo code</a> is equivalent to:</p>
+
+<p></p><pre><code class="python">import requests
+payload = {'show_tip': 'true'}
+response = requests.get('http://tribe.greenelab.com/api/v1/geneset/', params=payload)</code></pre>
+
+<p>How do you specify the query string (the gene symbol/name for which you want the GeneID)? It may be the case that your API already provides most of the functionality a user may need. In that case, a local Entrez Gene database may not be needed at all.</p>
+
+<p>Summary: my vote is for a powerful, well-documented API as a primary resource, with an open source codebase.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="6" data-comment-id="241">
+  <td class="comment-profile-avatar">
+		<a href="/u/alexanderpico"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/104_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="241"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/alexanderpico">Alexander Pico</a>
+				
+				<span class="light">&nbsp;<a href="#6" class="light">759 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>For identifier mapping, you might want to check out <a href="http://bridgedb.org/">BridgeDb</a>, which provides both mapping databases and libraries to add identifier mapping functionality to any project. It's 100% free and <a href="https://github.com/bridgedb/BridgeDb">open source</a>.</p>
+
+<p>There are many ways to integrate BridgeDb into your own tool or resource. The easiest is simply to make web service calls, like:</p>
+
+<p><a href="http://webservice.bridgedb.org/Human/xrefs/H/CCR5">http://webservice.bridgedb.org/Human/xrefs/H/CCR5</a><br>(for all mappings connected to HGNC "CCR5"), or</p>
+
+<p><a href="http://webservice.bridgedb.org/Human/xrefs/H/CCR5?dataSource=Entrez%20Gene">http://webservice.bridgedb.org/Human/xrefs/H/CCR5?dataSource=Entrez%20Gene</a><br>(to only retrieve the Entrez Gene for "CCR5")</p>
+
+<p>Here are some docs for additional web service syntax: <a href="http://bridgedb.org/wiki/BridgeWebservice">http://bridgedb.org/wiki/BridgeWebservice</a></p>
+
+<p>If performance is an issue, e.g., you want to query 10,000 times a day, then you can install the databases locally and implement the libs provided by the project into your tool and have complete control over database versions, etc.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="7" data-comment-id="245">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="245"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#7" class="light">758 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p><a href="/u/alexanderpico" class="username">@alexanderpico</a>, thanks for the BridgeDB suggestion. It looks like <a href="http://webservice.bridgedb.org/Human/targetDataSources">several transcript/gene/protein resources</a> are integrated including HGNC, Entrez Gene, Affy, Illumina, WikiGenes, UniGene, UCSC Genome Browser, Uniprot, RefSeq, miRBase, and Ensembl. That's great — we may or may not need these mappings at this point.</p>
+
+<p>One worry I have is that the resource is outdated. The build date for human gene products is 2013-07-01. However, on 2014-11-21 version 2.0.0 was released. Does this mean the database was also rebuilt? In either case, I would like more frequent updates. Do you know the status of the project and whether it is actively maintained?</p>
+
+<p>One final note is that <a href="/u/caseygreene" class="username">@caseygreene</a>'s Tribe service allows free-text gene lookup, through elasticsearch. Currently, we do not need this feature. However, perhaps <a href="/u/alexanderpico" class="username">@alexanderpico</a> Pathways4Life project <span class="citation">[<a href="/p/pathways4life" class="citation" data-key="10.15363/thinklab.8">1</a>]</span> does. Also, perhaps <a href="http://tribe.greenelab.com/#/home">Tribe</a>—a gene set wiki with a private option—would like to autopopulate <a href="//www.wikipathways.org/index.php/WikiPathways">WikiPathways</a>.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="8" data-comment-id="246">
+  <td class="comment-profile-avatar">
+		<a href="/u/alexanderpico"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/104_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="246"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/alexanderpico">Alexander Pico</a>
+				
+				<span class="light">&nbsp;<a href="#8" class="light">758 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Right. The database build system was recently updated from using Ensembl's Perl API to using BioMart. This will allow frequent updates; probably quarterly.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="9" data-comment-id="443">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="443"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#9" class="light">647 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Entrez Gene <em>Homo sapiens</em> gotcha</h1>
+
+<p>The <code>Homo_sapiens.gene_info.gz</code> <a href="ftp://ftp.ncbi.nih.gov/gene/DATA/GENE_INFO/Mammalia/">download</a> from Entrez Gene contains a potential <a href="https://en.wikipedia.org/wiki/Gotcha_%28programming%29">gotcha</a>. A small number of records at the end of the file are for:</p>
+
+<ul><li>Neanderthal (<a href="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&amp;id=63221"><code>tax_id = 63221</code></a>)</li><li>Denisovan (<a href="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&amp;id=741158"><code>tax_id = 741158</code></a>)</li></ul>
+
+<p>We only want genes for non-extinct <em>Homo sapiens</em> (<a href="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&amp;id=9606"><code>tax_id = 9606</code></a>). We've <a href="https://github.com/dhimmel/entrez-gene/commit/1ff24cce1cbabfb7029704426b5dc4b654e484a4">updated</a> our Entrez Gene processing to filter for a 9606 tax_id.</p>
+
+<p>The downstream effects of this update should be minimal, since only 73 genes were removed (all mitochondrial). However, we may rebuild some of our resources if necessary. The inclusion of these genes should only present problems when matching by symbol rather than GeneID. We avoid matching by symbol whenever possible.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="10" data-comment-id="453">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="453"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#10" class="light">642 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Protein-coding Entrez Genes with duplicate symbols</h1>
+
+<p>After <a href="#9">restricting</a> to <em>Homo sapiens</em>, we found four protein-coding genes with duplicate symbols:</p>
+
+<table class="table markdown-table"><thead><tr><th>tax_id</th><th>GeneID</th><th>Symbol</th><th>chromosome</th><th>map_location</th><th>type_of_gene</th><th>description</th></tr></thead><tbody><tr><td>9606</td><td><a href="http://www.ncbi.nlm.nih.gov/gene/?term=266553">266553</a></td><td>OFCC1</td><td>6</td><td>6p24.3</td><td>protein-coding</td><td>orofacial cleft 1 candidate 1</td></tr><tr><td>9606</td><td><a href="http://www.ncbi.nlm.nih.gov/gene/?term=105369145">105369145</a></td><td>OFCC1</td><td>6</td><td></td><td>protein-coding</td><td>orofacial cleft 1 candidate 1</td></tr><tr><td>9606</td><td><a href="http://www.ncbi.nlm.nih.gov/gene/?term=2867">2867</a></td><td>FFAR2</td><td>19</td><td>19q13.1</td><td>protein-coding</td><td>free fatty acid receptor 2</td></tr><tr><td>9606</td><td><a href="http://www.ncbi.nlm.nih.gov/gene/?term=105372382">105372382</a></td><td>FFAR2</td><td>19</td><td></td><td>protein-coding</td><td>free fatty acid receptor 2</td></tr></tbody></table>
+
+<p>We will reach out to Entrez Gene to inquire about this unexpected occurrence.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="11" data-comment-id="458">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="458"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#11" class="light">641 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Resolution of Entrez Genes with duplicate symbols</h1>
+
+<p>Mike Murphy — RefSeq Curator at NCBI\NLM\NIH — responded to our inquiry regarding the <a href="#10">duplicate symbols</a>. With permission, we've copied his response below:</p>
+
+<blockquote><p>Thank you for your notification of two cases where the same symbol is used to represent different human GeneIDs. In each case, one of the symbols is "official" (as determined by the Human Gene Nomenclature Committee) and the other is "unofficial". We consistently use official nomenclature for the gene feature, when available. Unfortunately, situations do arise where the same symbol is used in an official and unofficial capacity on different loci. It is our general policy to retain shared symbols and names on different loci for query and retrieval purposes by various users of our database. However, in both of the cases you pointed out, the two genes with the same symbol really represent the same gene. Therefore, I merged GeneID 105369145 into GeneID 266553, and I merged GeneID 105372382 into GeneID 2867. These updates should be publicly visible within a couple of days.</p></blockquote>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="12" data-comment-id="1469">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1469"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#12" class="light">178 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Entrez Gene Catalog for Project Rephetio</h1>
+
+<p>Sorry that I'm a bit late to posting this. Our final list of 56,352 human Entrez Genes is available in <a href="https://github.com/dhimmel/entrez-gene/blob/a7362748a34211e5df6f2d185bb3246279760546/data/genes-human.tsv"><code>genes-human.tsv</code></a> <span class="citation">[<a href="https://doi.org/10.5281/zenodo.45524" class="citation hm citation-figure" data-key="10.5281/zenodo.45524">1</a>]</span>. The <code>dhimmel/entrez-gene</code> repository also contains several convenient files for doing analyses using Entrez Genes.</p>
+
+<p>In Hetionet v1.0, we only included the 20,945 protein-coding genes.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="13" data-comment-id="1476">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1476"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#13" class="light">162 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>HGNC Gene Families</h1>
+
+<p>HGNC — the authority in charge of human genes — curates a resource of <a href="http://www.genenames.org/cgi-bin/genefamilies/">gene families</a> <span class="citation">[<a href="https://doi.org/10.1186/s40246-016-0062-6" class="citation hm " data-key="10.1186/s40246-016-0062-6">1</a>]</span>. Families are described as follows <span class="citation">[<a href="https://doi.org/10.1093/nar/gkw1033" class="citation hm " data-key="10.1093/nar/gkw1033">2</a>]</span>:</p>
+
+<blockquote><p>Genes are grouped into families based on homology or a shared characteristic such as a common function and/or phenotype, or membership of a complex.</p></blockquote>
+
+<p>These gene families are a helpful resource for grouping genes together. For example, <em>GRIA2</em> (glutamate ionotropic receptor AMPA type subunit 2) and <em>GRIN2C</em> (glutamate ionotropic receptor NMDA type subunit 2C) both belong to the "<a href="http://www.genenames.org/cgi-bin/genefamilies/set/282">Glutamate receptors</a>" family.</p>
+
+<p>I created the <a href="https://github.com/dhimmel/hgnc"><code>dhimmel/hgnc</code></a> repository to annotate Entrez Genes with their corresponding HGNC gene families (<a href="https://github.com/dhimmel/hgnc/tree/fd79a33e8308a419b6c75a0ade0e878620d26ca0">versioned repo link</a>).</p>
+
+<p>Gene families in HGNC are arranged into a hierarchy. I'd venture to call it an ontology, but I haven't seen HGNC use that term. The network of families is a directed acyclic graph. Families can have multiple superfamilies. For example "<a href="http://www.genenames.org/cgi-bin/genefamilies/set/284">Glutamate ionotropic receptors</a>" is a subfamily of "Glutamate receptors" and "Ligand gated ion channels". Note there is no single root family. Instead there are many disconnected family hierarchies, i.e. few families are more general than "Ion channels".</p>
+
+<p>Genes can be directly annotated to multiple families. For example, <em>AAAS</em> (aladin WD repeat nucleoporin) belongs to the "Nucleoporins" and "WD repeat domain containing" families. In addition to direct family annotations, <code>dhimmel/hgnc</code> propagates annotations so that genes belonging to "Glutamate metabotropic receptors" also belong to "Glutamate receptors".</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+    		
+		</table>
+
+    
+
+    &nbsp;<br>
+    <a class="btn btn-primary btn-lg" href="/signup?next=/discussion/using-entrez-gene-as-our-gene-vocabulary/34&suppress_message=1" style>Join to Reply</a>
+
+
+		<table class="references table-td-5" style="display:none;"><tr><td><a href='/doi/10.1371/journal.pcbi.1004259' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.1371/journal.pcbi.1004259'><a href='/doi/10.1371/journal.pcbi.1004259' class='pub-title'>Heterogeneous Network Edge Prediction: A Data Integration Approach to Prioritize Disease-Associated Genes</a><div class='pub-body'>Daniel S. Himmelstein, Sergio E. Baranzini (2015) <i>PLOS Computational Biology</i>. doi:<a class='pub-doi' href='https://doi.org/10.1371/journal.pcbi.1004259'>10.1371/journal.pcbi.1004259</a></div></div></td></tr><tr><td><a href='/doi/10.1007/s00439-001-0615-0' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>2.</div></td><td><div class='doi-body' data-key='10.1007/s00439-001-0615-0'><a href='/doi/10.1007/s00439-001-0615-0' class='pub-title'>The HUGO Gene Nomenclature Committee (HGNC)</a><div class='pub-body'>Sue Povey, Ruth Lovering, Elspeth Bruford, Mathew Wright, Michael Lush, Hester Wain (2001) <i>Human Genetics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1007/s00439-001-0615-0'>10.1007/s00439-001-0615-0</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gku1071' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>3.</div></td><td><div class='doi-body' data-key='10.1093/nar/gku1071'><a href='/doi/10.1093/nar/gku1071' class='pub-title'>Genenames.org: the HGNC resources in 2015</a><div class='pub-body'>K. A. Gray, B. Yates, R. L. Seal, M. W. Wright, E. A. Bruford (2014) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gku1071'>10.1093/nar/gku1071</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gki031' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>4.</div></td><td><div class='doi-body' data-key='10.1093/nar/gki031'><a href='/doi/10.1093/nar/gki031' class='pub-title'>Entrez Gene: gene-centered information at NCBI</a><div class='pub-body'>D. Maglott (2004) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gki031'>10.1093/nar/gki031</a></div></div></td></tr><tr><td><a href='/doi/10.15363/thinklab.8' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>5.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.8'><a href='/p/pathways4life' class='pub-title'>Pathways4Life: Crowdsourcing Pathway Modeling from Published Figures [project]</a><div class='pub-body'>Alexander Pico (2015) <i>Thinklab</i>. doi:<a class='pub-doi' href='https://doi.org/10.15363/thinklab.8'>10.15363/thinklab.8</a></div></div></td></tr><tr><td><a href='/doi/10.5281/zenodo.45524' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>6.</div></td><td><div class='doi-body' data-key='10.5281/zenodo.45524'><a href='/doi/10.5281/zenodo.45524' class='pub-title'>Processed Entrez Gene datasets for humans v1.0</a><div class='pub-body'>Daniel S. Himmelstein (2016) <i>Zenodo</i>. doi:<a class='pub-doi' href='https://doi.org/10.5281/zenodo.45524'>10.5281/zenodo.45524</a></div></div></td></tr><tr><td><a href='/doi/10.1186/s40246-016-0062-6' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>7.</div></td><td><div class='doi-body' data-key='10.1186/s40246-016-0062-6'><a href='/doi/10.1186/s40246-016-0062-6' class='pub-title'>A review of the new HGNC gene family resource</a><div class='pub-body'>Kristian A Gray, Ruth L Seal, Susan Tweedie, Mathew W Wright, Elspeth A Bruford (2016) <i>Human Genomics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1186/s40246-016-0062-6'>10.1186/s40246-016-0062-6</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkw1033' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>8.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkw1033'><a href='/doi/10.1093/nar/gkw1033' class='pub-title'>Genenames.org: the HGNC and VGNC resources in 2017</a><div class='pub-body'>Bethan Yates, Bryony Braschi, Kristian A. Gray, Ruth L. Seal, Susan Tweedie, Elspeth A. Bruford (2016) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkw1033'>10.1093/nar/gkw1033</a></div></div></td></tr></table>
+
+    
+
+
+	</td>
+	<td class="thread-sidebar">
+
+
+			
+
+      <a class="btn btn-default follow-link btn-follow btn-lg is-following tt-top full-width" title="Follow discussion" data-id="34" data-ctype="thread" data-is-following="false">&nbsp;</a>
+
+      
+        <div class="status-box text-center"><span style="">Status:</span> 
+  Completed
+
+</div>
+      
+
+      
+        
+      
+
+
+				
+
+					<div class="details">Views</div>
+					<span style="font-size:20px;">265</span>
+
+        
+
+				
+					<div class="details">Topics</div>
+					<div style="margin-bottom:15px;">
+		            <a href="/topics/entrez-gene" class="tag">Entrez Gene</a><a href="/topics/hgnc" class="tag">HGNC</a><a href="/topics/genes" class="tag">Genes</a><a href="/topics/databases" class="tag">Databases</a>
+					</div>
+				
+
+
+		
+			<div class="details">Referenced by</div>
+			<div style="font-size:12px;"><ul style="padding-left:16px !important;">
+			
+				<li>
+					
+					<a href='/doc/7/review' class='thread-title'><span class='inbox-icon tt-top glyphicon glyphicon-flash'></span>Report Review: Rephetio: Repurposing drugs on a hetnet</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/integrating-resources-with-disparate-licensing-into-an-open-network/107' class='thread-title'>Integrating resources with disparate licensing into an open network</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/brainstorming-future-directions-for-hetionet/227' class='thread-title'>Brainstorming future directions for Hetionet</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/prediction-in-epilepsy/224' class='thread-title'>Prediction in epilepsy</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/stargeo-expression-signatures-for-disease-using-crowdsourced-geo-annotation/96' class='thread-title'>STARGEO: expression signatures for disease using crowdsourced GEO annotation</a>
+				</li>
+			
+				<li>
+					
+					Research report: <a href='/p/rephetio/report'>Rephetio: Repurposing drugs on a hetnet</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/compiling-gene-ontology-annotations-into-an-easy-to-use-format/39' class='thread-title'>Compiling Gene Ontology annotations into an easy-to-use format</a>
+				</li>
+			
+				</ul>
+			</div>
+		
+
+		
+			<div class="details">Cite this as</div>
+			<span style="font-size:12px;">
+				Daniel Himmelstein, Casey Greene, Alexander Pico (2015) Using Entrez Gene as our gene vocabulary. <i>Thinklab.</i> doi:<a href='https://doi.org/10.15363/thinklab.d34'>10.15363/thinklab.d34</a>
+			</span>
+		
+
+		<div class="details">License</div>
+		<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0;width:88px;height:31px;" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></p>
+
+		<div class="details">Share</div>
+		
+			
+				<a class="share-button fb" onclick="javascript:void(window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A//thinklab.com/discussion/using-entrez-gene-as-our-gene-vocabulary/34','','width=600,height=460,menubar=no,status=no'));" href="#"></a>
+<a class="share-button twitter" onclick="javascript:void(window.open('https://twitter.com/share?text=Using%20Entrez%20Gene%20as%20our%20gene%20vocabulary&url=https%3A//thinklab.com/discussion/using-entrez-gene-as-our-gene-vocabulary/34','','width=600,height=300,menubar=no,status=no'));" href="#"></a>
+<a class="share-button google" onclick="javascript:void(window.open('https://plus.google.com/share?url=https%3A//thinklab.com/discussion/using-entrez-gene-as-our-gene-vocabulary/34','','width=510,height=460,menubar=no,status=no'));" href="#"></a>
+
+			
+		
+
+	</td>
+</tr></table>
+
+
+		</div>
+
+
+		
+	    	<div class="footer">
+<div style="background:#dedede;">
+	<div class="main-centered-div text-center" style="padding:20px;">
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#c4aca1a8a8ab84b0acadaaafa8a5a6eaa7aba9"><span class="__cf_email__" data-cfemail="6b030e0707042b1f03020500070a0945080406">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+	</div>
+</div>
+<div class="main-footer">
+	<div class="main-centered-div">
+
+<table class="full-width"><tr>
+	<td class="footer-nav">
+
+        <div class="foot-head">Explore</div>
+        <a href="/proposals">Proposals</a><br>
+        <a href="/projects">Projects</a><br>
+        <a href="/publications">Article discussion</a><br>
+        <a href="/discussion">All discussion</a><br>
+        <a href="/topics">Topics</a><br>
+        <!-- <a href="/funders">Funders</a><br> -->
+        <a href="/funding">Funding opportunities</a><br>
+
+	</td>
+	<td class="footer-nav">
+
+        <!-- <div class="foot-head">Help &amp; feedback</div>	 -->
+        <!-- <div class="foot-head">Intro</div>
+        <a href="/benefits/for-science">Why</a><br>
+        <a href="/how-it-works">How it works</a><br>
+
+<br> -->
+
+        <div class="foot-head">Community</div>
+        <a href="/leaderboard">Leaderboard</a><br>
+        <a href="/p/meta">Thinklab Meta</a><br>
+				<a href="/help/faq">Help</a><br>
+				<!-- <a href="/new-project">Start a proposal</a><br> -->
+        <!-- <a href="/benefits/proposal">Benefits</a><br> -->
+        <!-- <a href="/funding">Get funded</a><br> -->
+        <!-- <a href="/participate">Become a contributor</a><br> -->
+        <!-- <a href="/for-funders">For science funders</a><br> -->
+        <!-- <a href="/for-institutions">For institutions</a><br> -->
+
+	</td>
+	<td class="footer-nav">
+
+
+
+        <div class="foot-head">About</div>
+        <a href="/about">Overview</a><br>
+        <a href="/benefits">Benefits</a><br>
+        <a href="/how-it-works">How it works</a><br>
+        <a href="/about/story">Our story</a><br>
+        <a href="/blog">Our blog</a><br>
+        <a href="/about/jobs">Join the team</a><br>
+        <br>
+
+        <!-- <div class="foot-head">Help</div>
+        <a href="/help">Help</a><br>
+		 -->
+
+
+	</td>
+	<td class="footer-nav">
+		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
+		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<br><br>
+		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
+
+	</td>
+
+</tr></table>
+
+</div>
+</div>
+</div>
+
+		
+
+	</div>
+
+
+  <script></script>
+  <script>
+  var MEDIA_URL = 'https://think-lab.s3.amazonaws.com/m/';
+  var STATIC_URL = 'https://think-lab.s3.amazonaws.com/s/';
+  var page_is_authenticated = false;
+  var page_page = 'discussion';
+  var page_profile_id = undefined;
+</script>
+
+
+
+	<!-- Note different script type. MUST come before MathJax.js -->
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	        "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"],
+	                        scale: 110, linebreaks: { automatic:true },
+	                        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+	        tex2jax: { inlineMath: [ ["$$", "$$"], ["\\(","\\)"] ],
+	                    displayMath: [ ["$$$","$$$"], ["\\[", "\\]"] ],
+	                    processEscapes: true,}
+	            });
+
+	</script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://think-lab.s3.amazonaws.com/s/dist/main.min.js"></script>
+  
+
+
+
+  
+	
+  
+  
+  
+<script>
+$(function() {
+  recordHit('thread', 34);
+});
+</script>
+
+
+
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>

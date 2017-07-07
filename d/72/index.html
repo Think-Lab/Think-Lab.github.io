@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Adding pathway resources to your network | Thinklab</title>
+	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
+    <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/highlightjs/github.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/css.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/bootstrap-multiselect.css" />
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
+    
+    
+    
+    
+  
+    <meta name="citation_doi" content="10.15363/thinklab.d72">
+    <meta name="citation_title" content="Adding pathway resources to your network">
+    <meta name="citation_online_date" content="June 8, 2015">
+    <meta name="citation_author" content="Alexander Pico, Daniel Himmelstein">
+    <meta name="citation_journal_title" content="Thinklab">
+    <meta name="citation_publisher" content="Thinklab">
+  
+
+    
+
+
+	<!-- GoogleAnalytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-48550230-1', 'thinklab.com');
+	ga('require', 'displayfeatures');
+	
+	ga('send', 'pageview');
+
+	</script>
+
+
+
+
+
+
+</head>
+<body >
+  <form id="form_action" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='l7Uj18YzflVv8dlWHhRPsxnSwbbuTCcc' />
+</form>
+
+	
+
+	<div class="body-wrapper">
+
+		
+
+
+<!-- <div style="height:5px;background-image:url('https://think-lab.s3.amazonaws.com/s/img/top-bg.gif');"></div> -->
+<div class="gradient">
+	<div class="main-centered-div header-container">
+
+<table class="full-width" style="height:60px;"><tr>
+	<td style="width:200px;vertical-align:middle;padding-bottom:15px;">
+		<a href="/" style="font-weight:normal;color:#212121;"><img src="https://think-lab.s3.amazonaws.com/s/img/logo.png" width="160"></a>
+	</td><td style="vertical-align:middle;text-align:left;padding-top:6px;width:100%;padding-left:40px;">
+		<ul id="not-search-block"  class="main-header">
+
+
+			
+
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/proposals">Proposals</a></li>
+						<li><a href="/projects">Projects</a></li>
+						<li><a href="/publications">Article discussion</a></li>
+						<li><a href="/discussion">All discussion</a></li>
+					</ul>
+				</li>
+				<li><a href="/leaderboard">Leaderboard</a></li>
+
+			
+				<li><a href="/about">About</a></li>
+			
+
+
+		</ul>
+
+    <ul id="search-block" class="main-header" style="display: none; margin-right: 30px;">
+        <li class="full-width">
+            <form method="get" action="/search">
+			<div class="input-group full-width">
+				<input name="q" type="text" class="form-control search-input">
+			</div>
+            </form>
+        </li>
+    </ul>
+
+	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
+		<ul class="main-header pull-right" style="padding-left: 0;">
+    		
+                <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+            
+
+        </ul>
+    </ul>
+	</td>
+</tr></table>
+
+<!-- <div id="global-search-div" class="main-centered-div" style="display:none;">
+	<input type="text" value="" class="thread-search form-control" placeholder="Search" data-action="/discussion">
+</div> -->
+
+	</div>
+</div>
+
+		
+	  
+
+
+
+	  
+
+
+		
+
+		<div class="dark-head"><div class="main-centered-div">
+
+			
+
+		</div></div>
+		
+		<div class="main-centered-div" style="margin-top:40px;padding-bottom:340px">
+	    
+
+<div style="margin-top:-20px; margin-bottom:20px;">
+
+    <a class="side-box" href="/p/rephetio" style="background-color:#ebfdff;"><div class="side-type">Project:</div> <div class="side-title">Rephetio: Repurposing drugs on a hetnet [rephetio]</div></a><br>
+
+
+
+</div>
+
+<table style="margin-top:0px;"><tr>
+	<td class="thread-table-content">
+
+		<table class="full-width">
+			
+<tr class="comment-tr target-hl" id="1" data-comment-id="242">
+  <td class="comment-profile-avatar">
+		<a href="/u/alexanderpico"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/104_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="242"></a>
+
+    
+
+			<h2 class="page-title" style="margin-bottom:5px;margin-top:0px !important;">Adding pathway resources to your network</h2>
+
+			<div style="margin-top:5px;color:gray;margin-bottom:20px;font-size:13px;">
+				<a style="font-weight:normal;color:#212121" href="/u/alexanderpico"><strong>Alexander Pico</strong></a>
+				
+				&nbsp; <a href="#1" class="light">759 days ago</a>
+				
+			</div>
+
+      
+
+          <hr>
+		
+
+    <p>For Table 1, you might consider adding another Gene Set resource based on curated pathways.  These are analogous to GO-Biological Process terms, but are much more focused and constrained. In fact, they also include small molecules and drugs, so they can serve as more than just <em>gene</em> sets.</p>
+
+<p>Likewise, for Table 2, you could add a number of interaction resources with pathway data.  As co-founder of <a href="http://wikipathways.org">WikiPathways</a>, I have to recommend that one in particular! :)  It's 100% free, open source and open access.  I can also recommend <a href="http://www.reactome.org">Reactome</a> and <a href="http://www.pathwaycommons.org/">Pathway Commons</a>, the latter of which compiles pathway data from multiple sources into BioPAX data format.</p>
+
+<p>Again, these would not only provide high-quality gene-gene interactions for your network, but also direct drug-gene interactions. And in relation to your Figure 1, they would also provide Disease and Tissue associations.</p>
+
+<p>You can download all human pathways from WikiPathways <a href="http://wikipathways.org/index.php/Download_Pathways">in multiple formats</a>, or parse just the Entrez Genes in Human pathways from <a href="http://www.pathvisio.org/data/bots/gmt/wikipathways.gmt">this single dump file</a>. The advantage to the first option are that you are getting the original data, as curated by contributors; the disadvantage is that you have to perform the ID mapping to unify to Entrez and your preferred small molecule system. The advantage of the second option (the dump file) is that the Entrez ID unification has been done for you; the disadvantage is that anything that didn't map to Entrez is simply discarded (including drugs and small molecules!).</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="2" data-comment-id="244">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="244"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#2" class="light">758 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p><a href="/u/alexanderpico" class="username">@alexanderpico</a>, thanks for letting us know about the best current pathway resources.</p>
+
+<h2>MSigDB Canonical Pathways</h2>
+
+<p>In the past, we used the versions of <a href="http://www.reactome.org/">Reactome</a>, <a href="http://www.genome.jp/kegg/pathway.html">KEGG</a>, and <a href="http://www.biocarta.com/">BioCarta</a> provided by MSigDB <span class="citation">[<a href="https://doi.org/10.1073/pnas.0506580102" class="citation" data-key="10.1073/pnas.0506580102">1</a>, <a href="https://doi.org/10.1093/bioinformatics/btr260" class="citation" data-key="10.1093/bioinformatics/btr260">2</a>]</span>. MSigDB version 5.0 was <a href="https://www.broadinstitute.org/cancer/software/gsea/wiki/index.php/MSigDB_v5.0_Release_Notes">released in April</a>, but it's unclear whether the pathway resources were updated. However, the "C2: Canonical Pathways" (CP) collection <a href="https://www.broadinstitute.org/gsea/msigdb/collection_details.jsp#CP">integrates 9</a> pathway resources, so I think we should create a <em>C2: CP</em> metanode with a node for each MSigDB CP gene set.</p>
+
+<h2>WikiPathways</h2>
+
+<p>We can have a separate metanode for <a href="//www.wikipathways.org/">WikiPathways</a> <span class="citation">[<a href="https://doi.org/10.1371/journal.pbio.0060184" class="citation" data-key="10.1371/journal.pbio.0060184">3</a>, <a href="https://doi.org/10.1093/nar/gkr1074" class="citation" data-key="10.1093/nar/gkr1074">4</a>]</span>. The open and crowdsourced nature of WikiPathways is ideal. The inclusion of compounds, tissues, diseases in addition to genes in these pathways could provide a major performance boost for our method. The benefit will depends on how frequently non-gene entities are included in these pathways. What percent of pathways include diseases, tissues, or drugs? Additionally, are non-gene entities identified as free text, or are they structured by a standardized vocabulary?</p>
+
+<h2>Pathway Commons</h2>
+
+<p>I like how Pathway Commons <span class="citation">[<a href="https://doi.org/10.1093/nar/gkq1039" class="citation" data-key="10.1093/nar/gkq1039">5</a>]</span> brings a common format to <a href="http://www.pathwaycommons.org/pc2/datasources">many resources</a>. One worry is that Pathway Commons contains edges, such as those from DrugBank, which will be included elsewhere in the network. One solution would be to <a href="http://www.pathwaycommons.org/pc2/downloads">pick and chose</a> which source databases to integrate from Pathway Commons. After including <em>MSigDB C2: CP</em> and <em>WikiPathways</em>, will Pathway Commons contain much information not already captured? If not, we may just stick with the above resources.</p>
+
+<h2>General Questions</h2>
+
+<ol><li>How much do these pathway resources overlap? Does WikiPathways include pathways directly taken from other databases?</li><li>Do databases differ greatly in quality or type of pathways encoded? If the databases do differ, it may make sense to give each a separate metanode. Otherwise, we will organize all pathways by 1 or 2 metanodes.</li></ol>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-224" class="inline-note toggle-parent" data-note-id="224">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: Noting an updated WikiPathways citation <span class="citation">[<a href="https://doi.org/10.1093/nar/gkv1024" class="citation" data-key="10.1093/nar/gkv1024">1</a>]</span> in 2016 <em>NAR</em> Database Issue.
+		
+	</p>
+	
+	<table style="display:none;"><tr><td><a href='/doi/10.1093/nar/gkv1024' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkv1024'><a href='/doi/10.1093/nar/gkv1024' class='pub-title'>WikiPathways: capturing the full diversity of pathway knowledge</a><div class='pub-body'>Martina Kutmon, Anders Riutta, Nuno Nunes, Kristina Hanspers, Egon L. Willighagen, Anwesha Bohler, Jonathan Mélius, Andra Waagmeester, Sravanthi R. Sinha, Ryan Miller, Susan L. Coort, Elisa Cirillo, Bart Smeets, Chris T. Evelo, Alexander R. Pico (2015) <i>Nucleic Acids Res</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkv1024'>10.1093/nar/gkv1024</a></div></div></td></tr></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="3" data-comment-id="247">
+  <td class="comment-profile-avatar">
+		<a href="/u/alexanderpico"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/104_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="247"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/alexanderpico">Alexander Pico</a>
+				
+				<span class="light">&nbsp;<a href="#3" class="light">758 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Figures 1 and 2 in <a href="http://thinklab.com/p/pathways4life">the Pathways4Life proposal</a> will answer questions about overlap and frequency of updates.  Pathway Commons is not a primary source; their focus is on compiling from as many sources as possible. So, given their restriction to BioPAX, they definitely include more than any single resource.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="4" data-comment-id="252">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="252"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#4" class="light">757 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p><a href="/u/alexanderpico" class="username">@alexanderpico</a>, thanks figures 1 and 2 do help, however I am more interested in <a href="http://thinklab.com/discussion/pathway-novelty-based-on-unique-relationships-rather-than-genes/75">edge-based measures of overlap</a>. Do you have a general sense of whether the same pathways are represented in multiple databases?</p>
+
+<p>My interpretation of Figure 1 is that it provides a lower bound of uniqueness. The fact that there are many genes unique in KEGG, Reactome, and WikiPathways warrants the inclusion of all three resources. However, it doesn't answer whether the common genes are from duplicated pathways or not.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="5" data-comment-id="257">
+  <td class="comment-profile-avatar">
+		<a href="/u/alexanderpico"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/104_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="257"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/alexanderpico">Alexander Pico</a>
+				
+				<span class="light">&nbsp;<a href="#5" class="light">756 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>That measure of overlap is fraught with caveats relating to exactly how edges are modeled. When each of the three resource mentioned here converts to a single exchange format, like BioPAX, for example, we each make a unique set of mapping decisions and compromises. Nevertheless, you're absolutely right that node overlap is a lower bound, but I don't have a good estimate for edge overlap. Just browsing the pathway titles is the most convincing way to see that we cover much of the same ground: metabolism, signaling and gene regulation.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="6" data-comment-id="302">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="302"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#6" class="light">742 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Initial human pathway collection</h1>
+
+<p>We have downloaded, parsing, and combined MSigDB and WikiPathways (<a href="https://github.com/dhimmel/pathways/blob/5eb835b33629ffed4e22978e98a702e30ebd7076/merge-resources.ipynb">notebook</a>, <a href="https://github.com/dhimmel/pathways/blob/5eb835b33629ffed4e22978e98a702e30ebd7076/data/pathways.tsv">tsv results</a>). In total we identified, 1,516 human pathways after removing a single duplicated pathway. Most pathways have below 100 genes but some have up to 1,000.</p>
+
+<h2>WikiPathways Method</h2>
+
+<p>We extracted pathways from the previously-suggested <a href="http://www.pathvisio.org/data/bots/gmt/wikipathways.gmt">dump file</a>. We removed pathways without any human genes. From a total of 669 wikipathways, 187 were human. <a href="/u/alexanderpico" class="username">@alexanderpico</a>, can you confirm that these are the expected numbers?</p>
+
+<p>Above I asked:</p>
+
+<blockquote><p>Additionally, are non-gene entities identified as free text, or are they structured by a standardized vocabulary?</p></blockquote>
+
+<p>It appears that other entities besides genes are unstandardized in WikiPathway models. Therefore, we chose to not connect pathways to diseases, drugs, and tissues.</p>
+
+<h2>MSigDB Method</h2>
+
+<p>We used the <em>C2: CP</em> collection from MSigDB 5.0 which yielded 1,330 pathways. The sources and counts of these pathways are below:</p>
+
+<table class="table markdown-table"><thead><tr><th>MsigDB ID</th><th>Name</th><th>Pathways</th></tr></thead><tbody><tr><td>REACTOME</td><td><a href="http://www.reactome.org/">Reactome</a></td><td>674</td></tr><tr><td>BIOCARTA</td><td><a href="http://www.biocarta.com/">BioCarta</a></td><td>217</td></tr><tr><td>PID</td><td><a href="http://pid.nci.nih.gov/">Pathway Interaction Database</a></td><td>196</td></tr><tr><td>KEGG</td><td><a href="http://www.genome.jp/kegg/">KEGG</a></td><td>186</td></tr><tr><td>ST</td><td><a href="http://stke.sciencemag.org/">Signaling Transduction KE</a></td><td>28</td></tr><tr><td>SA</td><td><a href="http://www.sigmaaldrich.com/life-science.html">SigmaAldrich</a></td><td>10</td></tr><tr><td>NABA</td><td><a href="http://matrisomeproject.mit.edu/">Matrisome</a></td><td>10</td></tr><tr><td>SIG</td><td><a href="http://www.signaling-gateway.org/molecule/">Signaling Gateway</a></td><td>8</td></tr><tr><td>WNT</td><td><a href="http://superarray.com/">SuperArray</a></td><td>1</td></tr></tbody></table>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="7" data-comment-id="303">
+  <td class="comment-profile-avatar">
+		<a href="/u/alexanderpico"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/104_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="303"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/alexanderpico">Alexander Pico</a>
+				
+				<span class="light">&nbsp;<a href="#7" class="light">741 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <blockquote><p>We extracted pathways from the previously-suggested dump file. We removed pathways without any human genes. From a total of 669 wikipathways, 187 were human. <a href="/u/alexanderpico" class="username">@alexanderpico</a>, can you confirm that these are the expected numbers?</p></blockquote>
+
+<p>Hmm... You are correct that the dump file contains 187 human pathways (just did a browser FIND on the page for 'homo sapiens'), but there are ~293 human pathways in the standard collection. You can access these on the <a href="http://wikipathways.org/index.php/Download_Pathways">bulk download page</a> in multiple formats, including plain text lists of (non-unified) datanode identifiers.  This number is climbing as folks continue to add new content. For example, we have over 300 additional human pathways that are in the works at various stages of completion (or disrepair) that are not included in these bulk downloads.</p>
+
+<p>Sorry for suggesting the dump file. I thought that would make it easier since the identifiers are unified to Entrez, but it's apparently incomplete. I'm not sure why...</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="8" data-comment-id="304">
+  <td class="comment-profile-avatar">
+		<a href="/u/alexanderpico"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/104_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="304"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/alexanderpico">Alexander Pico</a>
+				
+				<span class="light">&nbsp;<a href="#8" class="light">739 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>The WikiPathways team found the error, corrected it and updated the dump file, which now contains 290 human pathways with gene identifiers unified to Entrez. Same location: <a href="http://www.pathvisio.org/data/bots/gmt/wikipathways.gmt">http://www.pathvisio.org/data/bots/gmt/wikipathways.gmt</a></p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-136" class="inline-note toggle-parent" data-note-id="136">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: Much appreciated. Thanks!
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="9" data-comment-id="305">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="305"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#9" class="light">739 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Human pathway collection revision</h1>
+
+<p>We updated our pathway resource with the updated WikiPathways data (<a href="https://github.com/dhimmel/pathways/blob/032036f91a8395eabd0dab2d9d1ee3252ba140f8/merge-resources.ipynb">notebook</a>, <a href="https://github.com/dhimmel/pathways/blob/032036f91a8395eabd0dab2d9d1ee3252ba140f8/data/pathways.tsv">tsv results</a>). The new total for human pathways is 1,619 with 289 of those from WikiPathways.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="10" data-comment-id="457">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="457"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#10" class="light">640 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Version 1.0</h1>
+
+<p>Our compilation of pathway gene sets is now <a href="https://github.com/dhimmel/pathways/tree/1dc7c744d0d1a8fa17a079f739195e6d3c15117e">released</a> (version 1.0) <span class="citation">[<a href="https://doi.org/10.5281/zenodo.31834" class="citation" data-key="10.5281/zenodo.31834">1</a>]</span>. Gene sets (<a href="https://github.com/dhimmel/pathways/blob/1dc7c744d0d1a8fa17a079f739195e6d3c15117e/data/pathways.tsv">download</a>) are compiled from WikiPathways and MSigDB. This updated version contains 1,617 pathways.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="11" data-comment-id="1213">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1213"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#11" class="light">461 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Replacing MSigDB with Pathway Commons</h1>
+
+<p>Due to <a href="http://thinklab.com/discussion/msigdb-licensing/108" class="citation thread-citation" data-key="10.15363/thinklab.d108">licensing issues with MSigDB</a>, we've removed MSigDB pathways and switched to Pathway Commons as <a href="/u/alexanderpico" class="username">@alexanderpico</a> <a href="#1">initially suggested</a>. <a href="http://www.pathwaycommons.org/pc2/" title="Pathway Commons 2">Pathway Commons</a> aggregates pathway and binary interaction data from <a href="http://www.pathwaycommons.org/pc2/datasources">many providers</a> <span class="citation">[<a href="https://doi.org/10.1093/nar/gkq1039" class="citation" data-key="10.1093/nar/gkq1039">1</a>]</span>.</p>
+
+<p>Pathway Commons data is <a href="https://github.com/dhimmel/integrate/blob/e0d90e389c017dddacd98189d80ec1ffe3223c9b/licenses/custom/PathwayCommons.md">freely available</a>, but the data is licensed under the terms of each contributing database. For example, Pathway Commons includes KEGG pathways, which have a <a href="https://github.com/dhimmel/integrate/blob/e0d90e389c017dddacd98189d80ec1ffe3223c9b/licenses/custom/KEGG.md">problematic license</a>. Accordingly, we only include pathways from Pathway Commons resources that are openly licensed.</p>
+
+<p>Specifically, I identified only two appropriate resources from the 8 Pathway Commons resources that contribute pathways (see <a href="https://github.com/dhimmel/pathways/blob/1bd2c68853e38297d20f8f885419ff81fc0608a8/merge-resources.ipynb">notebook</a> cell 7). These resources were <a href="http://www.reactome.org/">Reactome</a> <span class="citation">[<a href="https://doi.org/10.1093/nar/gkv1351" class="citation" data-key="10.1093/nar/gkv1351">2</a>]</span> and the <a href="http://pid.nci.nih.gov/">Pathway Interaction Database</a> (PID) <span class="citation">[<a href="https://doi.org/10.1093/nar/gkn653" class="citation" data-key="10.1093/nar/gkn653">3</a>]</span>. Reactome is licensed as CC BY, while I believe PID data is in the public domain since it was created by US Government employees. At least the PID publication states, "All data in PID is freely available, without restriction on use. <span class="citation">[<a href="https://doi.org/10.1093/nar/gkn653" class="citation" data-key="10.1093/nar/gkn653">3</a>]</span>" Since Reactome and PID contributed the <a href="#6">majority of MSigDB pathways</a>, I suspect that we didn't lose much information by abandoning MSigDB.</p>
+
+<p>Ultimately, our updated compilation of human gene sets (<code>dhimmel/pathways v2.0</code> <span class="citation">[<a href="https://doi.org/10.5281/zenodo.48810" class="citation" data-key="10.5281/zenodo.48810">4</a>]</span>) contains 1,862 human pathways of which 1,341 are from Reactome, 298 are from WikiPathways, and 223 are from the PID.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+    		
+		</table>
+
+    
+
+    &nbsp;<br>
+    <a class="btn btn-primary btn-lg" href="/signup?next=/discussion/adding-pathway-resources-to-your-network/72&suppress_message=1" style>Join to Reply</a>
+
+
+		<table class="references table-td-5" style="display:none;"><tr><td><a href='/doi/10.1073/pnas.0506580102' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.1073/pnas.0506580102'><a href='/doi/10.1073/pnas.0506580102' class='pub-title'>Gene set enrichment analysis: A knowledge-based approach for interpreting genome-wide expression profiles</a><div class='pub-body'>A. Subramanian, P. Tamayo, V. K. Mootha, S. Mukherjee, B. L. Ebert, M. A. Gillette, A. Paulovich, S. L. Pomeroy, T. R. Golub, E. S. Lander, J. P. Mesirov (2005) <i>Proceedings of the National Academy of Sciences</i>. doi:<a class='pub-doi' href='https://doi.org/10.1073/pnas.0506580102'>10.1073/pnas.0506580102</a></div></div></td></tr><tr><td><a href='/doi/10.1093/bioinformatics/btr260' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>2.</div></td><td><div class='doi-body' data-key='10.1093/bioinformatics/btr260'><a href='/doi/10.1093/bioinformatics/btr260' class='pub-title'>Molecular signatures database (MSigDB) 3.0</a><div class='pub-body'>A. Liberzon, A. Subramanian, R. Pinchback, H. Thorvaldsdottir, P. Tamayo, J. P. Mesirov (2011) <i>Bioinformatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/bioinformatics/btr260'>10.1093/bioinformatics/btr260</a></div></div></td></tr><tr><td><a href='/doi/10.1371/journal.pbio.0060184' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>3.</div></td><td><div class='doi-body' data-key='10.1371/journal.pbio.0060184'><a href='/doi/10.1371/journal.pbio.0060184' class='pub-title'>WikiPathways: Pathway Editing for the People</a><div class='pub-body'>Alexander R. Pico, Thomas Kelder, Martijn P. van Iersel, Kristina Hanspers, Bruce R. Conklin, Chris Evelo (2008) <i>Plos Biol</i>. doi:<a class='pub-doi' href='https://doi.org/10.1371/journal.pbio.0060184'>10.1371/journal.pbio.0060184</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkr1074' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>4.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkr1074'><a href='/doi/10.1093/nar/gkr1074' class='pub-title'>WikiPathways: building research communities on biological pathways</a><div class='pub-body'>T. Kelder, M. P. van Iersel, K. Hanspers, M. Kutmon, B. R. Conklin, C. T. Evelo, A. R. Pico (2011) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkr1074'>10.1093/nar/gkr1074</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkq1039' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>5.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkq1039'><a href='/doi/10.1093/nar/gkq1039' class='pub-title'>Pathway Commons, a web resource for biological pathway data</a><div class='pub-body'>E. G. Cerami, B. E. Gross, E. Demir, I. Rodchenkov, O. Babur, N. Anwar, N. Schultz, G. D. Bader, C. Sander (2010) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkq1039'>10.1093/nar/gkq1039</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkv1024' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>6.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkv1024'><a href='/doi/10.1093/nar/gkv1024' class='pub-title'>WikiPathways: capturing the full diversity of pathway knowledge</a><div class='pub-body'>Martina Kutmon, Anders Riutta, Nuno Nunes, Kristina Hanspers, Egon L. Willighagen, Anwesha Bohler, Jonathan Mélius, Andra Waagmeester, Sravanthi R. Sinha, Ryan Miller, Susan L. Coort, Elisa Cirillo, Bart Smeets, Chris T. Evelo, Alexander R. Pico (2015) <i>Nucleic Acids Res</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkv1024'>10.1093/nar/gkv1024</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d75' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>7.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d75'><a href='/discussion/pathway-novelty-based-on-unique-relationships-rather-than-genes/75' class='pub-title'>Pathway novelty based on unique relationships rather than genes</a><div class='pub-body'>Daniel Himmelstein, Alexander Pico (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d75'>10.15363/thinklab.d75</a></div></div></td></tr><tr><td><a href='/doi/10.5281/zenodo.31834' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>8.</div></td><td><div class='doi-body' data-key='10.5281/zenodo.31834'><a href='/doi/10.5281/zenodo.31834' class='pub-title'>A compilation of pathway gene sets: pathways v1.0 initial release</a><div class='pub-body'>Daniel Himmelstein, Alexander Pico (2015) <i>Zenodo</i>. doi:<a class='pub-doi' href='https://doi.org/10.5281/zenodo.31834'>10.5281/zenodo.31834</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkq1039' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>9.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkq1039'><a href='/doi/10.1093/nar/gkq1039' class='pub-title'>Pathway Commons, a web resource for biological pathway data</a><div class='pub-body'>E. G. Cerami, B. E. Gross, E. Demir, I. Rodchenkov, O. Babur, N. Anwar, N. Schultz, G. D. Bader, C. Sander (2010) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkq1039'>10.1093/nar/gkq1039</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkv1351' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>10.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkv1351'><a href='/doi/10.1093/nar/gkv1351' class='pub-title'>The Reactome pathway Knowledgebase</a><div class='pub-body'>Antonio Fabregat, Konstantinos Sidiropoulos, Phani Garapati, Marc Gillespie, Kerstin Hausmann, Robin Haw, Bijay Jassal, Steven Jupe, Florian Korninger, Sheldon McKay, Lisa Matthews, Bruce May, Marija Milacic, Karen Rothfels, Veronica Shamovsky, Marissa Webber, Joel Weiser, Mark Williams, Guanming Wu, Lincoln Stein, Henning Hermjakob, Peter D&#39;Eustachio (2015) <i>Nucleic Acids Res</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkv1351'>10.1093/nar/gkv1351</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkn653' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>11.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkn653'><a href='/doi/10.1093/nar/gkn653' class='pub-title'>PID: the Pathway Interaction Database</a><div class='pub-body'>C. F. Schaefer, K. Anthony, S. Krupa, J. Buchoff, M. Day, T. Hannay, K. H. Buetow (2009) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkn653'>10.1093/nar/gkn653</a></div></div></td></tr><tr><td><a href='/doi/10.5281/zenodo.48810' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>12.</div></td><td><div class='doi-body' data-key='10.5281/zenodo.48810'><a href='/doi/10.5281/zenodo.48810' class='pub-title'>dhimmel/pathways v2.0: Compiling human pathway gene sets</a><div class='pub-body'>Daniel S. Himmelstein, Alexander R. Pico (2016) <i>Zenodo</i>. doi:<a class='pub-doi' href='https://doi.org/10.5281/zenodo.48810'>10.5281/zenodo.48810</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d108' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>13.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d108'><a href='/discussion/msigdb-licensing/108' class='pub-title'>MSigDB licensing</a><div class='pub-body'>Daniel Himmelstein (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d108'>10.15363/thinklab.d108</a></div></div></td></tr></table>
+
+    
+
+
+	</td>
+	<td class="thread-sidebar">
+
+
+			
+
+      <a class="btn btn-default follow-link btn-follow btn-lg is-following tt-top full-width" title="Follow discussion" data-id="72" data-ctype="thread" data-is-following="false">&nbsp;</a>
+
+      
+        <div class="status-box text-center"><span style="">Status:</span> 
+  Completed
+
+</div>
+      
+
+      
+        
+
+          <div class="details">
+            
+            Labels
+          </div>
+
+          
+            <a href='/p/rephetio/discussion?q=[resource]' class='pl pl-sidebar ' style='background-color:#6b6b6b'><span class='glyphicon glyphicon-tag'></span>&nbsp; resource</a>
+          
+            <a href='/p/rephetio/discussion?q=[data integration]' class='pl pl-sidebar ' style='background-color:#6b6b6b'><span class='glyphicon glyphicon-tag'></span>&nbsp; data integration</a>
+          
+        
+      
+
+
+				
+
+					<div class="details">Views</div>
+					<span style="font-size:20px;">153</span>
+
+        
+
+				
+					<div class="details">Topics</div>
+					<div style="margin-bottom:15px;">
+		            <a href="/topics/databases" class="tag">Databases</a><a href="/topics/networks" class="tag">Networks</a><a href="/topics/pathways" class="tag">Pathways</a>
+					</div>
+				
+
+
+		
+			<div class="details">Referenced by</div>
+			<div style="font-size:12px;"><ul style="padding-left:16px !important;">
+			
+				<li>
+					
+					<a href='/doc/7/review' class='thread-title'><span class='inbox-icon tt-top glyphicon glyphicon-flash'></span>Report Review: Rephetio: Repurposing drugs on a hetnet</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/integrating-resources-with-disparate-licensing-into-an-open-network/107' class='thread-title'>Integrating resources with disparate licensing into an open network</a>
+				</li>
+			
+				<li>
+					
+					Research report: <a href='/p/rephetio/report'>Rephetio: Repurposing drugs on a hetnet</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/msigdb-licensing/108' class='thread-title'>MSigDB licensing</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/text-as-a-resource-for-network-population/48' class='thread-title'>Text as a resource for network population?</a>
+				</li>
+			
+				</ul>
+			</div>
+		
+
+		
+			<div class="details">Cite this as</div>
+			<span style="font-size:12px;">
+				Alexander Pico, Daniel Himmelstein (2015) Adding pathway resources to your network. <i>Thinklab.</i> doi:<a href='https://doi.org/10.15363/thinklab.d72'>10.15363/thinklab.d72</a>
+			</span>
+		
+
+		<div class="details">License</div>
+		<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0;width:88px;height:31px;" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></p>
+
+		<div class="details">Share</div>
+		
+			
+				<a class="share-button fb" onclick="javascript:void(window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A//thinklab.com/discussion/adding-pathway-resources-to-your-network/72','','width=600,height=460,menubar=no,status=no'));" href="#"></a>
+<a class="share-button twitter" onclick="javascript:void(window.open('https://twitter.com/share?text=Adding%20pathway%20resources%20to%20your%20network&url=https%3A//thinklab.com/discussion/adding-pathway-resources-to-your-network/72','','width=600,height=300,menubar=no,status=no'));" href="#"></a>
+<a class="share-button google" onclick="javascript:void(window.open('https://plus.google.com/share?url=https%3A//thinklab.com/discussion/adding-pathway-resources-to-your-network/72','','width=510,height=460,menubar=no,status=no'));" href="#"></a>
+
+			
+		
+
+	</td>
+</tr></table>
+
+
+		</div>
+
+
+		
+	    	<div class="footer">
+<div style="background:#dedede;">
+	<div class="main-centered-div text-center" style="padding:20px;">
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#f49c9198989bb4809c9d9a9f989596da979b99"><span class="__cf_email__" data-cfemail="375f525b5b5877435f5e595c5b56551954585a">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+	</div>
+</div>
+<div class="main-footer">
+	<div class="main-centered-div">
+
+<table class="full-width"><tr>
+	<td class="footer-nav">
+
+        <div class="foot-head">Explore</div>
+        <a href="/proposals">Proposals</a><br>
+        <a href="/projects">Projects</a><br>
+        <a href="/publications">Article discussion</a><br>
+        <a href="/discussion">All discussion</a><br>
+        <a href="/topics">Topics</a><br>
+        <!-- <a href="/funders">Funders</a><br> -->
+        <a href="/funding">Funding opportunities</a><br>
+
+	</td>
+	<td class="footer-nav">
+
+        <!-- <div class="foot-head">Help &amp; feedback</div>	 -->
+        <!-- <div class="foot-head">Intro</div>
+        <a href="/benefits/for-science">Why</a><br>
+        <a href="/how-it-works">How it works</a><br>
+
+<br> -->
+
+        <div class="foot-head">Community</div>
+        <a href="/leaderboard">Leaderboard</a><br>
+        <a href="/p/meta">Thinklab Meta</a><br>
+				<a href="/help/faq">Help</a><br>
+				<!-- <a href="/new-project">Start a proposal</a><br> -->
+        <!-- <a href="/benefits/proposal">Benefits</a><br> -->
+        <!-- <a href="/funding">Get funded</a><br> -->
+        <!-- <a href="/participate">Become a contributor</a><br> -->
+        <!-- <a href="/for-funders">For science funders</a><br> -->
+        <!-- <a href="/for-institutions">For institutions</a><br> -->
+
+	</td>
+	<td class="footer-nav">
+
+
+
+        <div class="foot-head">About</div>
+        <a href="/about">Overview</a><br>
+        <a href="/benefits">Benefits</a><br>
+        <a href="/how-it-works">How it works</a><br>
+        <a href="/about/story">Our story</a><br>
+        <a href="/blog">Our blog</a><br>
+        <a href="/about/jobs">Join the team</a><br>
+        <br>
+
+        <!-- <div class="foot-head">Help</div>
+        <a href="/help">Help</a><br>
+		 -->
+
+
+	</td>
+	<td class="footer-nav">
+		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
+		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<br><br>
+		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
+
+	</td>
+
+</tr></table>
+
+</div>
+</div>
+</div>
+
+		
+
+	</div>
+
+
+  <script></script>
+  <script>
+  var MEDIA_URL = 'https://think-lab.s3.amazonaws.com/m/';
+  var STATIC_URL = 'https://think-lab.s3.amazonaws.com/s/';
+  var page_is_authenticated = false;
+  var page_page = 'discussion';
+  var page_profile_id = undefined;
+</script>
+
+
+
+	<!-- Note different script type. MUST come before MathJax.js -->
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	        "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"],
+	                        scale: 110, linebreaks: { automatic:true },
+	                        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+	        tex2jax: { inlineMath: [ ["$$", "$$"], ["\\(","\\)"] ],
+	                    displayMath: [ ["$$$","$$$"], ["\\[", "\\]"] ],
+	                    processEscapes: true,}
+	            });
+
+	</script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://think-lab.s3.amazonaws.com/s/dist/main.min.js"></script>
+  
+
+
+
+  
+	
+  
+  
+  
+<script>
+$(function() {
+  recordHit('thread', 72);
+});
+</script>
+
+
+
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>

@@ -1,1 +1,1005 @@
-Hey Mr Himmelstein
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Thinklab - Real-time open collaborative science</title>
+	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
+    <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/highlightjs/github.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/css.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/bootstrap-multiselect.css" />
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
+    
+    
+    
+    
+	<meta name="description" content="Thinklab is a platform for scientists to share and discuss their research openly, online, and in real-time.">
+
+    
+
+
+	<!-- GoogleAnalytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-48550230-1', 'thinklab.com');
+	ga('require', 'displayfeatures');
+	
+	ga('send', 'pageview');
+
+	</script>
+
+
+
+
+
+
+</head>
+<body >
+  <form id="form_action" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+</form>
+
+	
+
+	<div class="body-wrapper">
+
+		
+
+
+<!-- <div style="height:5px;background-image:url('https://think-lab.s3.amazonaws.com/s/img/top-bg.gif');"></div> -->
+<div class="gradient">
+	<div class="main-centered-div header-container">
+
+<table class="full-width" style="height:60px;"><tr>
+	<td style="width:200px;vertical-align:middle;padding-bottom:15px;">
+		<a href="/" style="font-weight:normal;color:#212121;"><img src="https://think-lab.s3.amazonaws.com/s/img/logo.png" width="160"></a>
+	</td><td style="vertical-align:middle;text-align:left;padding-top:6px;width:100%;padding-left:40px;">
+		<ul id="not-search-block"  class="main-header">
+
+
+			
+
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/proposals">Proposals</a></li>
+						<li><a href="/projects">Projects</a></li>
+						<li><a href="/publications">Article discussion</a></li>
+						<li><a href="/discussion">All discussion</a></li>
+					</ul>
+				</li>
+				<li><a href="/leaderboard">Leaderboard</a></li>
+
+			
+				<li><a href="/about">About</a></li>
+			
+
+
+		</ul>
+
+    <ul id="search-block" class="main-header" style="display: none; margin-right: 30px;">
+        <li class="full-width">
+            <form method="get" action="/search">
+			<div class="input-group full-width">
+				<input name="q" type="text" class="form-control search-input">
+			</div>
+            </form>
+        </li>
+    </ul>
+
+	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
+		<ul class="main-header pull-right" style="padding-left: 0;">
+    		
+                <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+            
+
+        </ul>
+    </ul>
+	</td>
+</tr></table>
+
+<!-- <div id="global-search-div" class="main-centered-div" style="display:none;">
+	<input type="text" value="" class="thread-search form-control" placeholder="Search" data-action="/discussion">
+</div> -->
+
+	</div>
+</div>
+
+		
+	  
+
+
+
+	  
+
+
+		
+
+		<div class="dark-head"><div class="main-centered-div">
+
+			
+
+	<div style="padding:45px 0px;min-height:150px;overflow:hidden;position:relative;">
+
+	  <img src="https://think-lab.s3.amazonaws.com/s/img/nm16.png" class="home-img">
+
+	  <div style="width:550px;">
+	    <h1 class="home-title" style="font-size: 38px;margin-bottom:10px !important;">
+
+				<!-- A Community for<br><i>Extremely</i> Open Science -->
+				<!-- A community for real-time open collaborative science -->
+				<!-- Set your science fre -->
+				<!-- Experience freedom with instant scientific publishing -->
+				Experience scientific freedom with real-time publishing
+
+				<!-- A community for <i>open, collaborative, online</i> Science -->
+			</h1>
+			<!-- <p>Publish your work instantly. Get full credit for your work. Reward contribution from others. Maximize your impact.</p> -->
+			<p style="font-size:15px;">
+
+				Thinklab is a platform to publish your research openly, online, and in real-time while collaborating with a worldwide network of your peers.
+			</p>
+
+			<p style="margin-bottom:0px;">
+				
+				<a style="width:180px;" class="btn btn-default btn-lg btn-primary" href="/signup">JOIN</a>
+				
+				&nbsp;
+				<!-- <a style="width:180px;" class="btn btn-default btn-lg btn-default" href="/signup">Benefits</a> -->
+			</p>
+
+	  </div>
+
+	</div>
+
+
+
+
+		</div></div>
+		
+		<div class="main-centered-div" style="margin-top:40px;padding-bottom:340px">
+	    
+
+
+<table class="full-width"><tr>
+    <td style="padding-right:40px;padding-top: 15px;">
+
+			<h1>Open projects</h1>
+					
+
+
+
+
+  <table>
+  
+    <tr>
+      <td><a href="/u/dhimmel"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/17_small.jpg' width='40' height='40'></a></td>
+      <!-- <td style="padding-right:5px !important;"><a title="86 Discussions" class="inbox-comments tt-right" href="/p/rephetio/discussion">86</a></td> -->
+    	<td style="padding-bottom:15px;padding-left:10px;">
+        <a class="list-sm-title" href="/p/rephetio">Rephetio: Repurposing drugs on a hetnet</a>
+        <div class="list-sm-detail">
+        <a href="/u/dhimmel">Daniel Himmelstein</a>
+        &nbsp;Nov. 13, 2016
+        &nbsp;<a href="/p/rephetio/discussion" class="list-sm-comments">86 discussions</a>
+        </div>
+      </td>
+    </tr>
+  
+    <tr>
+      <td><a href="/u/jspauld"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/2_small.jpg' width='40' height='40'></a></td>
+      <!-- <td style="padding-right:5px !important;"><a title="43 Discussions" class="inbox-comments tt-right" href="/p/meta/discussion">43</a></td> -->
+    	<td style="padding-bottom:15px;padding-left:10px;">
+        <a class="list-sm-title" href="/p/meta">Thinklab Meta</a>
+        <div class="list-sm-detail">
+        <a href="/u/jspauld">Jesse Spaulding</a>
+        &nbsp;May 15, 2014
+        &nbsp;<a href="/p/meta/discussion" class="list-sm-comments">43 discussions</a>
+        </div>
+      </td>
+    </tr>
+  
+  </table>
+
+  
+
+
+
+
+					<!-- <a class="btn btn-sm btn-primary" href="/proposals">More &raquo;</a> -->
+
+			<hr>
+
+			<h1>Recent discussion</h1>
+			<table class="table discussions">
+				
+					
+<tr data-thread-status="100" class="list-thread   " id="thread_216" data-thread-id="216">
+  <td style="width:1px;"><div class="inbox-comments tt-top" title="comments">3</div></td>
+  <td>
+    
+    <a href='/discussion/hosting-hetionet-in-the-cloud-creating-a-public-neo4j-instance/216' class='thread-title'>Hosting Hetionet in the cloud: creating a public Neo4j instance</a>
+    <div class="thread-detail">
+      
+        [<a href="/p/rephetio/discussion" class="thread-identifier">rephetio</a>]
+      
+      
+        
+          Last comment by <a href="/u/dhimmel">Daniel Himmelstein</a>
+        
+        51 days ago
+      
+    </div>
+  </td>
+
+
+  
+  
+
+</tr>
+
+				
+					
+<tr data-thread-status="10" class="list-thread   " id="thread_113" data-thread-id="113">
+  <td style="width:1px;"><div class="inbox-comments tt-top" title="comments">15</div></td>
+  <td>
+    
+    <a href='/discussion/tracking-project-reuse-citation-and-publicity/113' class='thread-title'>Tracking project reuse, citation, and publicity</a>
+    <div class="thread-detail">
+      
+        [<a href="/p/rephetio/discussion" class="thread-identifier">rephetio</a>]
+      
+      
+        
+          Last comment by <a href="/u/dhimmel">Daniel Himmelstein</a>
+        
+        66 days ago
+      
+    </div>
+  </td>
+
+
+  
+  
+
+</tr>
+
+				
+					
+<tr data-thread-status="30" class="list-thread   " id="thread_112" data-thread-id="112">
+  <td style="width:1px;"><div class="inbox-comments tt-top" title="comments">9</div></td>
+  <td>
+    
+    <a href='/discussion/using-the-neo4j-graph-database-for-hetnets/112' class='thread-title'>Using the neo4j graph database for hetnets</a>
+    <div class="thread-detail">
+      
+        [<a href="/p/rephetio/discussion" class="thread-identifier">rephetio</a>]
+      
+      
+        
+          Last comment by <a href="/u/dhimmel">Daniel Himmelstein</a>
+        
+        71 days ago
+      
+    </div>
+  </td>
+
+
+  
+  
+
+</tr>
+
+				
+					
+<tr data-thread-status="100" class="list-thread   " id="thread_226" data-thread-id="226">
+  <td style="width:1px;"><div class="inbox-comments tt-top" title="comments">46</div></td>
+  <td>
+    
+    <a href='/doc/7/review' class='thread-title'><span class='inbox-icon tt-top glyphicon glyphicon-flash'></span>Report Review: Rephetio: Repurposing drugs on a hetnet</a>
+    <div class="thread-detail">
+      
+        [<a href="/p/rephetio/discussion" class="thread-identifier">rephetio</a>]
+      
+      
+        
+          Last comment by <a href="/u/dhimmel">Daniel Himmelstein</a>
+        
+        88 days ago
+      
+    </div>
+  </td>
+
+
+  
+  
+
+</tr>
+
+				
+					
+<tr data-thread-status="10" class="list-thread   " id="thread_210" data-thread-id="210">
+  <td style="width:1px;"><div class="inbox-comments tt-top" title="comments">6</div></td>
+  <td>
+    
+    <a href='/discussion/our-hetnet-edge-prediction-methodology-the-modeling-framework-for-project-rephetio/210' class='thread-title'>Our hetnet edge prediction methodology: the modeling framework for Project Rephetio</a>
+    <div class="thread-detail">
+      
+        [<a href="/p/rephetio/discussion" class="thread-identifier">rephetio</a>]
+      
+      
+        
+          Last comment by <a href="/u/dhimmel">Daniel Himmelstein</a>
+        
+        116 days ago
+      
+    </div>
+  </td>
+
+
+  
+  
+
+</tr>
+
+				
+					
+<tr data-thread-status="30" class="list-thread   " id="thread_200" data-thread-id="200">
+  <td style="width:1px;"><div class="inbox-comments tt-top" title="comments">5</div></td>
+  <td>
+    
+    <a href='/discussion/measuring-user-contribution-and-content-creation/200' class='thread-title'>Measuring user contribution and content creation</a>
+    <div class="thread-detail">
+      
+        [<a href="/p/rephetio/discussion" class="thread-identifier">rephetio</a>]
+      
+      
+        
+          Last comment by <a href="/u/dhimmel">Daniel Himmelstein</a>
+        
+        149 days ago
+      
+    </div>
+  </td>
+
+
+  
+  
+
+</tr>
+
+				
+					
+<tr data-thread-status="50" class="list-thread   " id="thread_102" data-thread-id="102">
+  <td style="width:1px;"><div class="inbox-comments tt-top" title="comments">6</div></td>
+  <td>
+    
+    <a href='/discussion/one-network-to-rule-them-all/102' class='thread-title'>One network to rule them all</a>
+    <div class="thread-detail">
+      
+        [<a href="/p/rephetio/discussion" class="thread-identifier">rephetio</a>]
+      
+      
+        
+          Last comment by <a href="/u/dhimmel">Daniel Himmelstein</a>
+        
+        153 days ago
+      
+    </div>
+  </td>
+
+
+  
+  
+
+</tr>
+
+				
+					
+<tr data-thread-status="30" class="list-thread   " id="thread_107" data-thread-id="107">
+  <td style="width:1px;"><div class="inbox-comments tt-top" title="comments">16</div></td>
+  <td>
+    
+    <a href='/discussion/integrating-resources-with-disparate-licensing-into-an-open-network/107' class='thread-title'>Integrating resources with disparate licensing into an open network</a>
+    <div class="thread-detail">
+      
+        [<a href="/p/rephetio/discussion" class="thread-identifier">rephetio</a>]
+      
+      
+        
+          Last comment by <a href="/u/dhimmel">Daniel Himmelstein</a>
+        
+        155 days ago
+      
+    </div>
+  </td>
+
+
+  
+  
+
+</tr>
+
+				
+					
+<tr data-thread-status="100" class="list-thread   " id="thread_231" data-thread-id="231">
+  <td style="width:1px;"><div class="inbox-comments tt-top" title="comments">3</div></td>
+  <td>
+    
+    <a href='/discussion/why-we-predicted-ictogenic-tricyclic-compounds-treat-epilepsy/231' class='thread-title'>Why we predicted ictogenic tricyclic compounds treat epilepsy?</a>
+    <div class="thread-detail">
+      
+        [<a href="/p/rephetio/discussion" class="thread-identifier">rephetio</a>]
+      
+      
+        
+          Last comment by <a href="/u/dhimmel">Daniel Himmelstein</a>
+        
+        119 days ago
+      
+    </div>
+  </td>
+
+
+  
+  
+
+</tr>
+
+				
+					
+<tr data-thread-status="100" class="list-thread   " id="thread_230" data-thread-id="230">
+  <td style="width:1px;"><div class="inbox-comments tt-top" title="comments">14</div></td>
+  <td>
+    
+    <a href='/discussion/visualizing-the-top-epilepsy-predictions-in-cytoscape/230' class='thread-title'>Visualizing the top epilepsy predictions in Cytoscape</a>
+    <div class="thread-detail">
+      
+        [<a href="/p/rephetio/discussion" class="thread-identifier">rephetio</a>]
+      
+      
+        
+          Last comment by <a href="/u/dhimmel">Daniel Himmelstein</a>
+        
+        157 days ago
+      
+    </div>
+  </td>
+
+
+  
+  
+
+</tr>
+
+				
+					
+<tr data-thread-status="50" class="list-thread   " id="thread_34" data-thread-id="34">
+  <td style="width:1px;"><div class="inbox-comments tt-top" title="comments">13</div></td>
+  <td>
+    
+    <a href='/discussion/using-entrez-gene-as-our-gene-vocabulary/34' class='thread-title'>Using Entrez Gene as our gene vocabulary</a>
+    <div class="thread-detail">
+      
+        [<a href="/p/rephetio/discussion" class="thread-identifier">rephetio</a>]
+      
+      
+        
+          Last comment by <a href="/u/dhimmel">Daniel Himmelstein</a>
+        
+        162 days ago
+      
+    </div>
+  </td>
+
+
+  
+  
+
+</tr>
+
+				
+					
+<tr data-thread-status="10" class="list-thread   " id="thread_227" data-thread-id="227">
+  <td style="width:1px;"><div class="inbox-comments tt-top" title="comments">14</div></td>
+  <td>
+    
+    <a href='/discussion/brainstorming-future-directions-for-hetionet/227' class='thread-title'>Brainstorming future directions for Hetionet</a>
+    <div class="thread-detail">
+      
+        [<a href="/p/rephetio/discussion" class="thread-identifier">rephetio</a>]
+      
+      
+        
+          Last comment by <a href="/u/alexratner">Alex Ratner</a>
+        
+        170 days ago
+      
+    </div>
+  </td>
+
+
+  
+  
+
+</tr>
+
+				
+					
+<tr data-thread-status="100" class="list-thread   " id="thread_224" data-thread-id="224">
+  <td style="width:1px;"><div class="inbox-comments tt-top" title="comments">11</div></td>
+  <td>
+    
+    <a href='/discussion/prediction-in-epilepsy/224' class='thread-title'>Prediction in epilepsy</a>
+    <div class="thread-detail">
+      
+        [<a href="/p/rephetio/discussion" class="thread-identifier">rephetio</a>]
+      
+      
+        
+          Last comment by <a href="/u/dhimmel">Daniel Himmelstein</a>
+        
+        178 days ago
+      
+    </div>
+  </td>
+
+
+  
+  
+
+</tr>
+
+				
+					
+<tr data-thread-status="100" class="list-thread   " id="thread_229" data-thread-id="229">
+  <td style="width:1px;"><div class="inbox-comments tt-top" title="comments">3</div></td>
+  <td>
+    
+    <a href='/discussion/decomposing-predictions-into-their-network-support/229' class='thread-title'>Decomposing predictions into their network support</a>
+    <div class="thread-detail">
+      
+        [<a href="/p/rephetio/discussion" class="thread-identifier">rephetio</a>]
+      
+      
+        
+          Last comment by <a href="/u/dhimmel">Daniel Himmelstein</a>
+        
+        196 days ago
+      
+    </div>
+  </td>
+
+
+  
+  
+
+</tr>
+
+				
+					
+<tr data-thread-status="100" class="list-thread   " id="thread_228" data-thread-id="228">
+  <td style="width:1px;"><div class="inbox-comments tt-top" title="comments">3</div></td>
+  <td>
+    
+    <a href='/discussion/decomposing-the-dwpc-to-assess-intermediate-node-or-edge-contributions/228' class='thread-title'>Decomposing the DWPC to assess intermediate node or edge contributions</a>
+    <div class="thread-detail">
+      
+        [<a href="/p/rephetio/discussion" class="thread-identifier">rephetio</a>]
+      
+      
+        
+          Last comment by <a href="/u/dhimmel">Daniel Himmelstein</a>
+        
+        196 days ago
+      
+    </div>
+  </td>
+
+
+  
+  
+
+</tr>
+
+				
+					
+<tr data-thread-status="50" class="list-thread   " id="thread_186" data-thread-id="186">
+  <td style="width:1px;"><div class="inbox-comments tt-top" title="comments">29</div></td>
+  <td>
+    
+    <a href='/discussion/incorporating-drugcentral-data-in-our-network/186' class='thread-title'>Incorporating DrugCentral data in our network</a>
+    <div class="thread-detail">
+      
+        [<a href="/p/rephetio/discussion" class="thread-identifier">rephetio</a>]
+      
+      
+        
+          Last comment by <a href="/u/mkgilson">Mike Gilson</a>
+        
+        212 days ago
+      
+    </div>
+  </td>
+
+
+  
+  
+
+</tr>
+
+				
+					
+<tr data-thread-status="50" class="list-thread   " id="thread_96" data-thread-id="96">
+  <td style="width:1px;"><div class="inbox-comments tt-top" title="comments">11</div></td>
+  <td>
+    
+    <a href='/discussion/stargeo-expression-signatures-for-disease-using-crowdsourced-geo-annotation/96' class='thread-title'>STARGEO: expression signatures for disease using crowdsourced GEO annotation</a>
+    <div class="thread-detail">
+      
+        [<a href="/p/rephetio/discussion" class="thread-identifier">rephetio</a>]
+      
+      
+        
+          Last comment by <a href="/u/dhimmel">Daniel Himmelstein</a>
+        
+        218 days ago
+      
+    </div>
+  </td>
+
+
+  
+  
+
+</tr>
+
+				
+					
+<tr data-thread-status="10" class="list-thread   " id="thread_47" data-thread-id="47">
+  <td style="width:1px;"><div class="inbox-comments tt-top" title="comments">4</div></td>
+  <td>
+    
+    <a href='/discussion/evaluation-framework/47' class='thread-title'>Evaluation framework</a>
+    <div class="thread-detail">
+      
+        [<a href="/p/rephetio/discussion" class="thread-identifier">rephetio</a>]
+      
+      
+        
+          Last comment by <a href="/u/dhimmel">Daniel Himmelstein</a>
+        
+        224 days ago
+      
+    </div>
+  </td>
+
+
+  
+  
+
+</tr>
+
+				
+					
+<tr data-thread-status="50" class="list-thread   " id="thread_67" data-thread-id="67">
+  <td style="width:1px;"><div class="inbox-comments tt-top" title="comments">7</div></td>
+  <td>
+    
+    <a href='/discussion/mining-knowledge-from-medline-articles-and-their-indexed-mesh-terms/67' class='thread-title'>Mining knowledge from MEDLINE articles and their indexed MeSH terms</a>
+    <div class="thread-detail">
+      
+        [<a href="/p/rephetio/discussion" class="thread-identifier">rephetio</a>]
+      
+      
+        
+          Last comment by <a href="/u/dhimmel">Daniel Himmelstein</a>
+        
+        229 days ago
+      
+    </div>
+  </td>
+
+
+  
+  
+
+</tr>
+
+				
+					
+<tr data-thread-status="10" class="list-thread   " id="thread_115" data-thread-id="115">
+  <td style="width:1px;"><div class="inbox-comments tt-top" title="comments">5</div></td>
+  <td>
+    
+    <a href='/discussion/assessing-the-informativeness-of-features/115' class='thread-title'>Assessing the informativeness of features</a>
+    <div class="thread-detail">
+      
+        [<a href="/p/rephetio/discussion" class="thread-identifier">rephetio</a>]
+      
+      
+        
+          Last comment by <a href="/u/dhimmel">Daniel Himmelstein</a>
+        
+        245 days ago
+      
+    </div>
+  </td>
+
+
+  
+  
+
+</tr>
+
+				
+			</table>
+
+
+</td>
+
+	<td style="width:300px;padding-left:0px;padding-top: 15px; border-left: 0px solid #e5e5e5;">
+
+
+		<!-- <div style="font-size:16px;">
+			We believe all science should be shared and discussed openly, online, and in real-time &mdash; not just papers, the entire scientific process.
+			 <a href="/about">Learn more</a> -->
+			<!-- Thinklab is a community platform to bring science into the internet age. -->
+			<!-- Thinklab is a community for sharing and discussing the entire scientific process openly, online, and in real-time.
+			We believe the internet enables a drastically more efficient model of research. -->
+		<!-- </div> -->
+
+
+				<!-- <hr> -->
+
+				<div class="benefits-box">
+					<h3>Benefits for researchers</h3>
+					<ul>
+						<li>Publish instantly for immediate citation and maximum impact</li>
+						<!-- <li>Immediate impact</li> -->
+						<!-- <li>Openly collaborate with peers to ensure full credit for all contributors</li> -->
+						<li>Get full credit for everything you do</li>
+			      <li>Engage and reward contribution from scientific peers</li>
+						<li>Maximize your visibility as a leader in your field</li>
+						<!-- <li>Document all of your work for maximum impact</li> -->
+			      <!-- <li>Maximize the impact of your work</li> -->
+			      <!-- <li>Support open, online, real-time, collaborative science</li> -->
+			    </ul>
+					<a href="/benefits/project" class="btn btn-default" style="">Learn More</a>
+				</div>
+<!-- <br>
+				<div class="benefits-box">
+					<h3>Benefits for science funders</h3>
+					<ul>
+						<li>Get constructive feedback and increase your funding odds</li>
+						<li>Establish provenance over your ideas</li>
+						<li>Increase your citations and impact</li>
+						<li>Find new collaborators</li>
+					</ul>
+					<a href="/benefits/proposal" class="btn btn-default" style="">Learn More</a>
+				</div> -->
+<br>
+
+
+				<h2>Browse</h2>
+				<ul style="font-size:16px;">
+					<li><a href="/proposals">Proposals</a></li>
+					<li><a href="/projects">Projects</a></li>
+					<li><a href="/publications">Article discussion</a></li>
+				</ul>
+
+
+		<h2>Community leaderboard</h2>
+		
+<table class="full-width"><tr>
+		<td style="padding-right:8px;padding-bottom:10px;width:1px;"><a href="/u/dhimmel"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/17_small.jpg' width='40' height='40'></a></td>
+    <td style="padding-bottom:10px;padding-right:7px;">
+      <a class="profile-name" href="/u/dhimmel">Daniel Himmelstein</a>
+      
+				<div style="font-size:11px;">
+					<a href="/institutions/8855" class="grey-text">University of California, San Francisco</a>
+				</div>
+			
+    </td>
+		<td style="text-align:right;"><span class="points">2208</span></td>
+</tr></table>
+
+<table class="full-width"><tr>
+		<td style="padding-right:8px;padding-bottom:10px;width:1px;"><a href="/u/jspauld"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/2_small.jpg' width='40' height='40'></a></td>
+    <td style="padding-bottom:10px;padding-right:7px;">
+      <a class="profile-name" href="/u/jspauld">Jesse Spaulding</a>
+      
+				<div style="font-size:11px;">
+					<a href="/institutions/1" class="grey-text">ThinkLab</a>
+				</div>
+			
+    </td>
+		<td style="text-align:right;"><span class="points">736</span></td>
+</tr></table>
+
+<table class="full-width"><tr>
+		<td style="padding-right:8px;padding-bottom:10px;width:1px;"><a href="/u/larsjuhljensen"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/125_small.jpg' width='40' height='40'></a></td>
+    <td style="padding-bottom:10px;padding-right:7px;">
+      <a class="profile-name" href="/u/larsjuhljensen">Lars Juhl Jensen</a>
+      
+				<div style="font-size:11px;">
+					<a href="/institutions/879" class="grey-text">University of Copenhagen</a>
+				</div>
+			
+    </td>
+		<td style="text-align:right;"><span class="points">561</span></td>
+</tr></table>
+
+<table class="full-width"><tr>
+		<td style="padding-right:8px;padding-bottom:10px;width:1px;"><a href="/u/alizee"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/23_small.jpg' width='40' height='40'></a></td>
+    <td style="padding-bottom:10px;padding-right:7px;">
+      <a class="profile-name" href="/u/alizee">Antoine Lizee</a>
+      
+				<div style="font-size:11px;">
+					<a href="/institutions/8855" class="grey-text">University of California, San Francisco</a>
+				</div>
+			
+    </td>
+		<td style="text-align:right;"><span class="points">554</span></td>
+</tr></table>
+
+<table class="full-width"><tr>
+		<td style="padding-right:8px;padding-bottom:10px;width:1px;"><a href="/u/b_good"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/48_small.jpg' width='40' height='40'></a></td>
+    <td style="padding-bottom:10px;padding-right:7px;">
+      <a class="profile-name" href="/u/b_good">Benjamin Good</a>
+      
+				<div style="font-size:11px;">
+					<a href="/institutions/8768" class="grey-text">The Scripps Research Institute</a>
+				</div>
+			
+    </td>
+		<td style="text-align:right;"><span class="points">338</span></td>
+</tr></table>
+
+		<a href="/leaderboard">View leaderboard</a><br>
+
+</td></tr></table>
+
+
+
+
+
+
+		</div>
+
+
+		
+	    	<div class="footer">
+<div style="background:#dedede;">
+	<div class="main-centered-div text-center" style="padding:20px;">
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#e088858c8c8fa09488898e8b8c8182ce838f8d"><span class="__cf_email__" data-cfemail="1c74797070735c6874757277707d7e327f7371">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+	</div>
+</div>
+<div class="main-footer">
+	<div class="main-centered-div">
+
+<table class="full-width"><tr>
+	<td class="footer-nav">
+
+        <div class="foot-head">Explore</div>
+        <a href="/proposals">Proposals</a><br>
+        <a href="/projects">Projects</a><br>
+        <a href="/publications">Article discussion</a><br>
+        <a href="/discussion">All discussion</a><br>
+        <a href="/topics">Topics</a><br>
+        <!-- <a href="/funders">Funders</a><br> -->
+        <a href="/funding">Funding opportunities</a><br>
+
+	</td>
+	<td class="footer-nav">
+
+        <!-- <div class="foot-head">Help &amp; feedback</div>	 -->
+        <!-- <div class="foot-head">Intro</div>
+        <a href="/benefits/for-science">Why</a><br>
+        <a href="/how-it-works">How it works</a><br>
+
+<br> -->
+
+        <div class="foot-head">Community</div>
+        <a href="/leaderboard">Leaderboard</a><br>
+        <a href="/p/meta">Thinklab Meta</a><br>
+				<a href="/help/faq">Help</a><br>
+				<!-- <a href="/new-project">Start a proposal</a><br> -->
+        <!-- <a href="/benefits/proposal">Benefits</a><br> -->
+        <!-- <a href="/funding">Get funded</a><br> -->
+        <!-- <a href="/participate">Become a contributor</a><br> -->
+        <!-- <a href="/for-funders">For science funders</a><br> -->
+        <!-- <a href="/for-institutions">For institutions</a><br> -->
+
+	</td>
+	<td class="footer-nav">
+
+
+
+        <div class="foot-head">About</div>
+        <a href="/about">Overview</a><br>
+        <a href="/benefits">Benefits</a><br>
+        <a href="/how-it-works">How it works</a><br>
+        <a href="/about/story">Our story</a><br>
+        <a href="/blog">Our blog</a><br>
+        <a href="/about/jobs">Join the team</a><br>
+        <br>
+
+        <!-- <div class="foot-head">Help</div>
+        <a href="/help">Help</a><br>
+		 -->
+
+
+	</td>
+	<td class="footer-nav">
+		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
+		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<br><br>
+		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
+
+	</td>
+
+</tr></table>
+
+</div>
+</div>
+</div>
+
+		
+
+	</div>
+
+
+  <script></script>
+  <script>
+  var MEDIA_URL = 'https://think-lab.s3.amazonaws.com/m/';
+  var STATIC_URL = 'https://think-lab.s3.amazonaws.com/s/';
+  var page_is_authenticated = false;
+  var page_page = 'home';
+  var page_profile_id = undefined;
+</script>
+
+
+
+	<!-- Note different script type. MUST come before MathJax.js -->
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	        "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"],
+	                        scale: 110, linebreaks: { automatic:true },
+	                        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+	        tex2jax: { inlineMath: [ ["$$", "$$"], ["\\(","\\)"] ],
+	                    displayMath: [ ["$$$","$$$"], ["\\[", "\\]"] ],
+	                    processEscapes: true,}
+	            });
+
+	</script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://think-lab.s3.amazonaws.com/s/dist/main.min.js"></script>
+  
+
+
+
+  
+	
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>

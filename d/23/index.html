@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZgEOC19dW0QCEVtHU1gG","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":219}</script>
+    <title>Enabling reproducibility and reuse | Thinklab</title>
+	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
+    <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/highlightjs/github.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/css.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/bootstrap-multiselect.css" />
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
+    
+    
+    
+    
+  
+    <meta name="citation_doi" content="10.15363/thinklab.d23">
+    <meta name="citation_title" content="Enabling reproducibility and reuse">
+    <meta name="citation_online_date" content="Jan. 16, 2015">
+    <meta name="citation_author" content="Jesse Spaulding, Daniel Himmelstein, Casey Greene, Benjamin Good">
+    <meta name="citation_journal_title" content="Thinklab">
+    <meta name="citation_publisher" content="Thinklab">
+  
+
+    
+
+
+	<!-- GoogleAnalytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-48550230-1', 'thinklab.com');
+	ga('require', 'displayfeatures');
+	
+	ga('send', 'pageview');
+
+	</script>
+
+
+
+
+
+
+</head>
+<body >
+  <form id="form_action" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+</form>
+
+	
+
+	<div class="body-wrapper">
+
+		
+
+
+<!-- <div style="height:5px;background-image:url('https://think-lab.s3.amazonaws.com/s/img/top-bg.gif');"></div> -->
+<div class="gradient">
+	<div class="main-centered-div header-container">
+
+<table class="full-width" style="height:60px;"><tr>
+	<td style="width:200px;vertical-align:middle;padding-bottom:15px;">
+		<a href="/" style="font-weight:normal;color:#212121;"><img src="https://think-lab.s3.amazonaws.com/s/img/logo.png" width="160"></a>
+	</td><td style="vertical-align:middle;text-align:left;padding-top:6px;width:100%;padding-left:40px;">
+		<ul id="not-search-block"  class="main-header">
+
+
+			
+
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/proposals">Proposals</a></li>
+						<li><a href="/projects">Projects</a></li>
+						<li><a href="/publications">Article discussion</a></li>
+						<li><a href="/discussion">All discussion</a></li>
+					</ul>
+				</li>
+				<li><a href="/leaderboard">Leaderboard</a></li>
+
+			
+				<li><a href="/about">About</a></li>
+			
+
+
+		</ul>
+
+    <ul id="search-block" class="main-header" style="display: none; margin-right: 30px;">
+        <li class="full-width">
+            <form method="get" action="/search">
+			<div class="input-group full-width">
+				<input name="q" type="text" class="form-control search-input">
+			</div>
+            </form>
+        </li>
+    </ul>
+
+	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
+		<ul class="main-header pull-right" style="padding-left: 0;">
+    		
+                <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+            
+
+        </ul>
+    </ul>
+	</td>
+</tr></table>
+
+<!-- <div id="global-search-div" class="main-centered-div" style="display:none;">
+	<input type="text" value="" class="thread-search form-control" placeholder="Search" data-action="/discussion">
+</div> -->
+
+	</div>
+</div>
+
+		
+	  
+
+
+
+	  
+
+
+		
+
+		<div class="dark-head"><div class="main-centered-div">
+
+			
+
+		</div></div>
+		
+		<div class="main-centered-div" style="margin-top:40px;padding-bottom:340px">
+	    
+
+<div style="margin-top:-20px; margin-bottom:20px;">
+
+    <a class="side-box" href="/p/rephetio" style="background-color:#ebfdff;"><div class="side-type">Project:</div> <div class="side-title">Rephetio: Repurposing drugs on a hetnet [rephetio]</div></a><br>
+
+
+
+</div>
+
+<table style="margin-top:0px;"><tr>
+	<td class="thread-table-content">
+
+		<table class="full-width">
+			
+<tr class="comment-tr target-hl" id="1" data-comment-id="31">
+  <td class="comment-profile-avatar">
+		<a href="/u/jspauld"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/2_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="31"></a>
+
+    
+
+			<h2 class="page-title" style="margin-bottom:5px;margin-top:0px !important;">Enabling reproducibility and reuse</h2>
+
+			<div style="margin-top:5px;color:gray;margin-bottom:20px;font-size:13px;">
+				<a style="font-weight:normal;color:#212121" href="/u/jspauld"><strong>Jesse Spaulding</strong></a>
+				
+				&nbsp; <a href="#1" class="light">903 days ago</a>
+				
+			</div>
+
+      
+
+          <hr>
+		
+
+    <p>Daniel — we talked a bit about how you'll be constructing this resource in a manner that is automated and reproducible. I think it would be good to put these details in the research plan — it will give people more opportunities to make suggestions. And if you'll be using techniques that you've used before it's probably a good idea to link people to that work.</p>
+
+<p>I want people to be able to share their opinion on how you can create the most value from this project. I'm sure you'll agree that enabling reproducibility and reuse is a big part of that.</p>
+
+<p>What do you think?</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="2" data-comment-id="32">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="32"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#2" class="light">903 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <blockquote><p>I think it would be good to put these details in the research plan — it will give people more opportunities to make suggestions.</p></blockquote>
+
+<p>Perhaps, we should discuss here what formats of data and types of services would be most valuable to the community. Then once we reach some consensus, I will update the proposal.</p>
+
+<p>Currently, I was planning on releasing the network in a few file formats:</p>
+
+<ul><li>as a single JSON text file based on a <a href="https://github.com/dhimmel/hetio/blob/master/hetio/readwrite.py">specification we've developed</a>.</li><li>as a <a href="http://wiki.cytoscape.org/Cytoscape_User_Manual/Network_Formats">SIF file</a> which is a text file of all edges. We will also provide an accompanying node table, with node attributes. This format is ideal for <a href="http://www.cytoscape.org/">Cytoscape</a> users.</li><li>as a <a href="https://en.wikipedia.org/wiki/Graph_Modelling_Language">GML file</a> — a poorly documented and varyingly implemented format for storing graphs. Despite it's problems, this format is widely supported.</li><li>as separate files for each metanode and metaedge. This will help users who are only interested in a single part of the network, bypass having to process the rest of the network.</li><li>as matrices for edge types that were constructed from continuous pairwise scores.</li></ul><p>An online tool for browsing the network would also be nice. I will look into options here.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="3" data-comment-id="35">
+  <td class="comment-profile-avatar">
+		<a href="/u/caseygreene"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/22_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="35"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/caseygreene">Casey Greene</a>
+				
+				<span class="light">&nbsp;<a href="#3" class="light">897 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>As a follow-up to this, are you planning to make only the network available, or are you planning to release all of the code necessary to construct the network? If you release that code, will you use some testing and continuous integration process to evaluate regressions? Releasing the code would allow others in the future to assess the role that new experiments or new sources of information play in prediction quality. I agree with Jesse that more details on the overall development process would be great.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="4" data-comment-id="49">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="49"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#4" class="light">893 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>I plan to follow the 10 rules of reproducible computational research <span class="citation">[<a href="https://doi.org/10.1371/journal.pcbi.1003285" class="citation" data-key="10.1371/journal.pcbi.1003285">1</a>]</span>.</p>
+
+<p><a href="/u/caseygreene" class="username">@caseygreene</a>, I would like to release all of the code. I plan on doing a lot of the work in notebooks (of the <a href="http://rmarkdown.rstudio.com/">R</a> and <a href="http://ipython.org/notebook.html">python</a> varieties). However, my current plan lacks the level of automation that you are suggesting.</p>
+
+<p>Testing whether a new source of information has improved prediction should be straightforward. I am not sure exactly what you mean by "continuous integration process".</p>
+
+<p>I would like to provide a single script that performs the entire analysis, but this may be difficult because the computation will be performed in different venues and locations.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-31" class="inline-note toggle-parent" data-note-id="31">
+	<p><a href="/u/jspauld">Jesse Spaulding</a>: It seems appropriate that some of these things be put in the research plan. For example, that you plan to follow the 10 rules of reproducible computational research.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="5" data-comment-id="51">
+  <td class="comment-profile-avatar">
+		<a href="/u/caseygreene"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/22_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="51"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/caseygreene">Casey Greene</a>
+				
+				<span class="light">&nbsp;<a href="#5" class="light">893 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>If you get the entire analysis boiled down a one-step build process, there are services that can monitor your github repository, look for commits, and then kick off a build. You'd need to define test cases that determine that something looks different than you expect. Maybe you have a set of positive controls (known multi-use drugs?) and you evaluate the extent to which they are accurately predicted. Depending on how long the entire process takes, these services might be enough to monitor and identify any commits that produce large changes in your overall results. You could also use some sort of correlation measure to previous runs to look for any commits that produce abnormally large changes in the output.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="6" data-comment-id="57">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="57"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#6" class="light">871 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p><a href="/u/caseygreene" class="username">@caseygreene</a> and <a href="/u/jspauld" class="username">@jspauld</a>, thanks for the suggestions. I've <a href="http://thinklab.com/p/rephetio/plan/compare/0ed4f4242ca776e6460be3f24e9e7e4d3a5c6ad3/2f775f436f7c99413a195f729ae9a20bfc25e6c5">added</a> an <a href="http://thinklab.com/p/rephetio/plan#open-science">open science section</a> to the proposal where I make commitments to:</p>
+
+<ul><li>the 10 simple rules for reproducible research in computational biology <span class="citation">[<a href="https://doi.org/10.1371/journal.pcbi.1003285" class="citation" data-key="10.1371/journal.pcbi.1003285">1</a>]</span></li><li>releasing all code on <a href="https://github.com/dhimmel">GitHub</a></li><li>releasing all data</li><li>CC-BY or CC-0 licensing</li></ul><p>I also mention R Markdown and IPython notebooks, which I've been using extensively thus far — for example, when <a href="http://git.dhimmel.com/SIDER2/">analyzing SIDER 2 data</a>.</p>
+
+<hr><p><a href="/u/caseygreene" class="username">@caseygreene</a>, I think your suggestion of implementing a continuous integration process is fantastic. I am hesitant to commit on this issue for a few reasons:</p>
+
+<ul><li>In the past, the computations have been extreme (requiring cluster usage) and this may be unwieldy to execute after every commit. I hope to optimize the algorithm, which may help in this regard.</li><li>I need to investigate these services more.</li><li>Our heterogeneous network framework and analyses are still rapidly evolving, so I don't want to invest lot's of time in code or methods that will soon be replaced.</li><li>I need to start writing unit tests for my programs. This seems like a more immediate issue that I will prioritize. Once I create proper unit tests, I will enable them as <a href="http://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks#Client-Side-Hooks">pre-commit hooks</a>.</li></ul><p>That being said, your suggestion is in line with the philosophy of ThinkLab and I will keep it in mind.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-38" class="inline-note toggle-parent" data-note-id="38">
+	<p><a href="/u/caseygreene">Casey Greene</a>: Thanks! For things that require significant cluster usage I haven't yet found a cost effective way to do this either outside of a grant from one of the cloud providers. I wonder if you could apply to amazon or google for access to compute instances for this purpose.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="7" data-comment-id="82">
+  <td class="comment-profile-avatar">
+		<a href="/u/b_good"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/48_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="82"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/b_good">Benjamin Good</a>
+				
+				<span class="light">&nbsp;<a href="#7" class="light">842 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Would you consider hosting your knowledge network on WikiData ? <a href="https://www.wikidata.org/" target="_blank">https://www.wikidata.org/</a>.  WikiData is a new freebase-like open knowledge base being constructed by the Wikimedia Foundation.</p>
+
+<p>A couple reasons to think about this:<br>1) Our group has NIH funding to build many of the nodes and edges you need there and we have already started.<br>2) By working in WikiData, your project can benefit from an existing, large user/contributor community and from the WMF computational resources.<br>3) WikiData is fundamentally about open knowledge exchange.  Working in its context will ensure the greatest visibility and re-use for your network.  </p>
+
+<p>You probably wouldn't want to store computed probabilities there, but qualitative relationships would work well I think.  This would be a great use case for our own efforts..</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-57" class="inline-note toggle-parent" data-note-id="57">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: <span><a href="/u/b_good" class="username">@b_good</a>, thanks for the suggestion. I am excited about any venues where we can publish the data to increase its reuse. Once we complete the data integration stage, I will touch base with you — it's still not entirely clear to me what exactly we would upload.</span>
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="8" data-comment-id="83">
+  <td class="comment-profile-avatar">
+		<a href="/u/b_good"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/48_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="83"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/b_good">Benjamin Good</a>
+				
+				<span class="light">&nbsp;<a href="#8" class="light">841 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Daniel,<br>Regarding what to upload.  The figure you presented in your research plan sums this up nicely <a href="https://dl.dropboxusercontent.com/s/yp0gjh1v3329xji/metagraph.png" target="_blank">https://dl.dropboxusercontent.com/s/yp0gjh1v3329xji/metagraph.png</a>Aside from perhaps the MSigDB collection (which could be added), those are exactly the nodes and edges that we hope to see in WikiData.  </p>
+
+<p>To use WikiData to its full power, you would actually use it within your own application in the same way that you would use your own internal relational database.  Rather than thinking of it only as a repository to export to, you could think of it as the central staging area for the data that you (and the rest of the community) want to compute with.  </p>
+
+<p>For more about how we are working with wikidata, you can check out the series of blog posts that describes the funded grant here starting here:  <a href="http://sulab.org/2013/07/the-future-of-the-gene-wiki/" target="_blank">http://sulab.org/2013/07/the-future-of-the-gene-wiki/</a>  </p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-62" class="inline-note toggle-parent" data-note-id="62">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: In support of the semantic web, you should check out ThinkLab's awesome <a href="http://thinklab.com/help/writing-in-markdown">markdown syntax</a>, which includes easy citation and hyperlink capabilities.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="9" data-comment-id="87">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="87"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#9" class="light">840 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Hi <a href="/u/b_good" class="username">@b_good</a>, fascinating work. I was amazed that the <a href="https://en.wikipedia.org/wiki/Gene_Wiki">Gene Wiki</a> <span class="citation">[<a href="https://doi.org/10.1371/journal.pbio.0060175" class="citation" data-key="10.1371/journal.pbio.0060175">1</a>]</span> <a href="http://sulab.org/2013/07/gene-wiki-progress-report/">averages</a> "two page views every single second". This amazing traffic, and return on investement from the perspective of funders, illustrates the potential of open, crowdsourced, and collaborative undertakings.</p>
+
+<p>I think your wiki work capitalizes on a larger trend of computing moving to the web and browser. I recently made my <a href="http://slides.com/dhimmel/elevcan">first html presentation</a>; my coding is now largely browser based thanks to <a href="http://jupyter.org/">Jupyter</a> and <a href="http://www.rstudio.com/">RStudio</a> and <a href="https://github.com/dhimmel">hosted</a> online; API web-queries are now fundamental for information retrieval. It only makes sense that we adopt a information commons like Wikidata to integrate knowledge. The video below really sold me on the concept:</p>
+
+<p><iframe src="https://www.youtube.com/embed/Rww2dA-1Cqc" width="640" height="360" frameborder="0" allowfullscreen="true"></iframe></p>
+
+<p>Since the initial stage of this project is highly prototypical, I am hesitant to immediately switch to Wikidata as our backend. However, I would love to work with you and your team to upload as much content as possible. Then for subsequent analyses, we could potentially pull from Wikidata.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+    		
+		</table>
+
+    
+
+    &nbsp;<br>
+    <a class="btn btn-primary btn-lg" href="/signup?next=/discussion/enabling-reproducibility-and-reuse/23&suppress_message=1" style>Join to Reply</a>
+
+
+		<table class="references table-td-5" style="display:none;"><tr><td><a href='/doi/10.1371/journal.pcbi.1003285' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.1371/journal.pcbi.1003285'><a href='/doi/10.1371/journal.pcbi.1003285' class='pub-title'>Ten Simple Rules for Reproducible Computational Research</a><div class='pub-body'>Geir Kjetil Sandve, Anton Nekrutenko, James Taylor, Eivind Hovig (2013) <i>PLoS Computational Biology</i>. doi:<a class='pub-doi' href='https://doi.org/10.1371/journal.pcbi.1003285'>10.1371/journal.pcbi.1003285</a></div></div></td></tr><tr><td><a href='/doi/10.1371/journal.pcbi.1003285' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>2.</div></td><td><div class='doi-body' data-key='10.1371/journal.pcbi.1003285'><a href='/doi/10.1371/journal.pcbi.1003285' class='pub-title'>Ten Simple Rules for Reproducible Computational Research</a><div class='pub-body'>Geir Kjetil Sandve, Anton Nekrutenko, James Taylor, Eivind Hovig (2013) <i>PLoS Computational Biology</i>. doi:<a class='pub-doi' href='https://doi.org/10.1371/journal.pcbi.1003285'>10.1371/journal.pcbi.1003285</a></div></div></td></tr><tr><td><a href='/doi/10.1371/journal.pbio.0060175' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>3.</div></td><td><div class='doi-body' data-key='10.1371/journal.pbio.0060175'><a href='/doi/10.1371/journal.pbio.0060175' class='pub-title'>A Gene Wiki for Community Annotation of Gene Function</a><div class='pub-body'>Jon W. Huss, Camilo Orozco, James Goodale, Chunlei Wu, Serge Batalov, Tim J. Vickers, Faramarz Valafar, Andrew I. Su (2008) <i>Plos Biol</i>. doi:<a class='pub-doi' href='https://doi.org/10.1371/journal.pbio.0060175'>10.1371/journal.pbio.0060175</a></div></div></td></tr></table>
+
+    
+
+
+	</td>
+	<td class="thread-sidebar">
+
+
+			
+
+      <a class="btn btn-default follow-link btn-follow btn-lg is-following tt-top full-width" title="Follow discussion" data-id="23" data-ctype="thread" data-is-following="false">&nbsp;</a>
+
+      
+        <div class="status-box text-center"><span style="">Status:</span> 
+  Open
+
+</div>
+      
+
+      
+        
+      
+
+
+				
+
+					<div class="details">Views</div>
+					<span style="font-size:20px;">138</span>
+
+        
+
+				
+					<div class="details">Topics</div>
+					<div style="margin-bottom:15px;">
+		            <a href="/topics/reproducibility" class="tag">Reproducibility</a>
+					</div>
+				
+
+
+		
+			<div class="details">Referenced by</div>
+			<div style="font-size:12px;"><ul style="padding-left:16px !important;">
+			
+				<li>
+					
+					<a href='/discussion/integrating-resources-with-disparate-licensing-into-an-open-network/107' class='thread-title'>Integrating resources with disparate licensing into an open network</a>
+				</li>
+			
+				<li>
+					
+					Research report: <a href='/p/rephetio/report'>Rephetio: Repurposing drugs on a hetnet</a>
+				</li>
+			
+				<li>
+					[<a href="/p/meta/discussion" style="color:#333333">meta</a>] 
+					<a href='/discussion/thinklab-editor-and-markdown-suggestions/59' class='thread-title'>ThinkLab editor and markdown suggestions</a>
+				</li>
+			
+				</ul>
+			</div>
+		
+
+		
+			<div class="details">Cite this as</div>
+			<span style="font-size:12px;">
+				Jesse Spaulding, Daniel Himmelstein, Casey Greene, Benjamin Good (2015) Enabling reproducibility and reuse. <i>Thinklab.</i> doi:<a href='https://doi.org/10.15363/thinklab.d23'>10.15363/thinklab.d23</a>
+			</span>
+		
+
+		<div class="details">License</div>
+		<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0;width:88px;height:31px;" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></p>
+
+		<div class="details">Share</div>
+		
+			
+				<a class="share-button fb" onclick="javascript:void(window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A//thinklab.com/discussion/enabling-reproducibility-and-reuse/23','','width=600,height=460,menubar=no,status=no'));" href="#"></a>
+<a class="share-button twitter" onclick="javascript:void(window.open('https://twitter.com/share?text=Enabling%20reproducibility%20and%20reuse&url=https%3A//thinklab.com/discussion/enabling-reproducibility-and-reuse/23','','width=600,height=300,menubar=no,status=no'));" href="#"></a>
+<a class="share-button google" onclick="javascript:void(window.open('https://plus.google.com/share?url=https%3A//thinklab.com/discussion/enabling-reproducibility-and-reuse/23','','width=510,height=460,menubar=no,status=no'));" href="#"></a>
+
+			
+		
+
+	</td>
+</tr></table>
+
+
+		</div>
+
+
+		
+	    	<div class="footer">
+<div style="background:#dedede;">
+	<div class="main-centered-div text-center" style="padding:20px;">
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#224a474e4e4d62564a4b4c494e43400c414d4f"><span class="__cf_email__" data-cfemail="1a727f7676755a6e72737471767b7834797577">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+	</div>
+</div>
+<div class="main-footer">
+	<div class="main-centered-div">
+
+<table class="full-width"><tr>
+	<td class="footer-nav">
+
+        <div class="foot-head">Explore</div>
+        <a href="/proposals">Proposals</a><br>
+        <a href="/projects">Projects</a><br>
+        <a href="/publications">Article discussion</a><br>
+        <a href="/discussion">All discussion</a><br>
+        <a href="/topics">Topics</a><br>
+        <!-- <a href="/funders">Funders</a><br> -->
+        <a href="/funding">Funding opportunities</a><br>
+
+	</td>
+	<td class="footer-nav">
+
+        <!-- <div class="foot-head">Help &amp; feedback</div>	 -->
+        <!-- <div class="foot-head">Intro</div>
+        <a href="/benefits/for-science">Why</a><br>
+        <a href="/how-it-works">How it works</a><br>
+
+<br> -->
+
+        <div class="foot-head">Community</div>
+        <a href="/leaderboard">Leaderboard</a><br>
+        <a href="/p/meta">Thinklab Meta</a><br>
+				<a href="/help/faq">Help</a><br>
+				<!-- <a href="/new-project">Start a proposal</a><br> -->
+        <!-- <a href="/benefits/proposal">Benefits</a><br> -->
+        <!-- <a href="/funding">Get funded</a><br> -->
+        <!-- <a href="/participate">Become a contributor</a><br> -->
+        <!-- <a href="/for-funders">For science funders</a><br> -->
+        <!-- <a href="/for-institutions">For institutions</a><br> -->
+
+	</td>
+	<td class="footer-nav">
+
+
+
+        <div class="foot-head">About</div>
+        <a href="/about">Overview</a><br>
+        <a href="/benefits">Benefits</a><br>
+        <a href="/how-it-works">How it works</a><br>
+        <a href="/about/story">Our story</a><br>
+        <a href="/blog">Our blog</a><br>
+        <a href="/about/jobs">Join the team</a><br>
+        <br>
+
+        <!-- <div class="foot-head">Help</div>
+        <a href="/help">Help</a><br>
+		 -->
+
+
+	</td>
+	<td class="footer-nav">
+		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
+		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<br><br>
+		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
+
+	</td>
+
+</tr></table>
+
+</div>
+</div>
+</div>
+
+		
+
+	</div>
+
+
+  <script></script>
+  <script>
+  var MEDIA_URL = 'https://think-lab.s3.amazonaws.com/m/';
+  var STATIC_URL = 'https://think-lab.s3.amazonaws.com/s/';
+  var page_is_authenticated = false;
+  var page_page = 'discussion';
+  var page_profile_id = undefined;
+</script>
+
+
+
+	<!-- Note different script type. MUST come before MathJax.js -->
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	        "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"],
+	                        scale: 110, linebreaks: { automatic:true },
+	                        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+	        tex2jax: { inlineMath: [ ["$$", "$$"], ["\\(","\\)"] ],
+	                    displayMath: [ ["$$$","$$$"], ["\\[", "\\]"] ],
+	                    processEscapes: true,}
+	            });
+
+	</script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://think-lab.s3.amazonaws.com/s/dist/main.min.js"></script>
+  
+
+
+
+  
+	
+  
+  
+  
+<script>
+$(function() {
+  recordHit('thread', 23);
+});
+</script>
+
+
+
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>

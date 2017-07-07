@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZgEOC19dW0QCEVtHU1gG","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":453}</script>
+    <title>ThinkLab as a vetting system for traditional grants | Thinklab</title>
+	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
+    <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/highlightjs/github.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/css.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/bootstrap-multiselect.css" />
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
+    
+    
+    
+    
+  
+    <meta name="citation_doi" content="10.15363/thinklab.d58">
+    <meta name="citation_title" content="ThinkLab as a vetting system for traditional grants">
+    <meta name="citation_online_date" content="April 22, 2015">
+    <meta name="citation_author" content="Benjamin Good, Jesse Spaulding, Jonathan Eisen, Jack Park, Daniel Mietchen, Jonathan Wren, Casey Greene">
+    <meta name="citation_journal_title" content="Thinklab">
+    <meta name="citation_publisher" content="Thinklab">
+  
+
+    
+
+
+	<!-- GoogleAnalytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-48550230-1', 'thinklab.com');
+	ga('require', 'displayfeatures');
+	
+	ga('send', 'pageview');
+
+	</script>
+
+
+
+
+
+
+</head>
+<body >
+  <form id="form_action" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+</form>
+
+	
+
+	<div class="body-wrapper">
+
+		
+
+
+<!-- <div style="height:5px;background-image:url('https://think-lab.s3.amazonaws.com/s/img/top-bg.gif');"></div> -->
+<div class="gradient">
+	<div class="main-centered-div header-container">
+
+<table class="full-width" style="height:60px;"><tr>
+	<td style="width:200px;vertical-align:middle;padding-bottom:15px;">
+		<a href="/" style="font-weight:normal;color:#212121;"><img src="https://think-lab.s3.amazonaws.com/s/img/logo.png" width="160"></a>
+	</td><td style="vertical-align:middle;text-align:left;padding-top:6px;width:100%;padding-left:40px;">
+		<ul id="not-search-block"  class="main-header">
+
+
+			
+
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/proposals">Proposals</a></li>
+						<li><a href="/projects">Projects</a></li>
+						<li><a href="/publications">Article discussion</a></li>
+						<li><a href="/discussion">All discussion</a></li>
+					</ul>
+				</li>
+				<li><a href="/leaderboard">Leaderboard</a></li>
+
+			
+				<li><a href="/about">About</a></li>
+			
+
+
+		</ul>
+
+    <ul id="search-block" class="main-header" style="display: none; margin-right: 30px;">
+        <li class="full-width">
+            <form method="get" action="/search">
+			<div class="input-group full-width">
+				<input name="q" type="text" class="form-control search-input">
+			</div>
+            </form>
+        </li>
+    </ul>
+
+	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
+		<ul class="main-header pull-right" style="padding-left: 0;">
+    		
+                <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+            
+
+        </ul>
+    </ul>
+	</td>
+</tr></table>
+
+<!-- <div id="global-search-div" class="main-centered-div" style="display:none;">
+	<input type="text" value="" class="thread-search form-control" placeholder="Search" data-action="/discussion">
+</div> -->
+
+	</div>
+</div>
+
+		
+	  
+
+
+
+	  
+
+
+		
+
+		<div class="dark-head"><div class="main-centered-div">
+
+			
+
+		</div></div>
+		
+		<div class="main-centered-div" style="margin-top:40px;padding-bottom:340px">
+	    
+
+<div style="margin-top:-20px; margin-bottom:20px;">
+
+    <a class="side-box" href="/p/meta" style="background-color:#ebfdff;"><div class="side-type">Project:</div> <div class="side-title">Thinklab Meta [meta]</div></a><br>
+
+
+
+</div>
+
+<table style="margin-top:0px;"><tr>
+	<td class="thread-table-content">
+
+		<table class="full-width">
+			
+<tr class="comment-tr target-hl" id="1" data-comment-id="152">
+  <td class="comment-profile-avatar">
+		<a href="/u/b_good"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/48_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="152"></a>
+
+    
+
+			<h2 class="page-title" style="margin-bottom:5px;margin-top:0px !important;">ThinkLab as a vetting system for traditional grants</h2>
+
+			<div style="margin-top:5px;color:gray;margin-bottom:20px;font-size:13px;">
+				<a style="font-weight:normal;color:#212121" href="/u/b_good"><strong>Benjamin Good</strong></a>
+				
+				&nbsp; <a href="#1" class="light">806 days ago</a>
+				
+			</div>
+
+      
+
+          <hr>
+		
+
+    <p>Most (90%) proposals submitted to the NIH and elsewhere are not funded.  This is an enormous waste of time and energy.  Can ThinkLab be used to improve these large grants before they are submitted to increase their chances of getting funded, perhaps to filter out those that have no chance earlier in the process or to redirect the applicant to a more appropriate funder (such as a thinklab sponsor)?  It seems the system as it stands could be used for that, very important, purpose.  What other new mechanisms would be needed to make that specific process more effective?</p>
+
+<p>As an example, here is what a twice-failed R21 NIH grant looks like, along with the rejection letter (called the Summary Statement).  <a href="http://sulab.org/2014/03/nih-grant-proposal-for-sale/" target="_blank">http://sulab.org/2014/03/nih-grant-proposal-for-sale/</a> Could ThinkLab have helped this one?  Is it salvageable?  Would it make sense to resubmit it for this new call?  <a href="http://grants.nih.gov/grants/guide/rfa-files/RFA-CA-15-006.html" target="_blank">http://grants.nih.gov/grants/guide/rfa-files/RFA-CA-15-006.html</a></p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="2" data-comment-id="158">
+  <td class="comment-profile-avatar">
+		<a href="/u/jspauld"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/2_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="158"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/jspauld">Jesse Spaulding</a>
+				
+				<span class="light">&nbsp;<a href="#2" class="light">805 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Thanks for the great idea Ben. This was also suggested to me in an offline conversation with <a href="/u/newyorklenny" class="username">@newyorklenny</a>.</p>
+
+<p>I think this very well could be the idea that can really help ThinkLab turn the corner! It seems like it might really hit a pain point. And the great thing is, anybody who sees the benefit of ThinkLab in improving their proposal can easily just decide to continue their research as an open project like <a href="/u/dhimmel" class="username">@dhimmel</a> is doing.</p>
+
+<p>That's what I'm thinking but I'd really appreciate getting feedback from others here. What do people think? Will researchers openly post their proposals in order to get feedback and increase their odds of getting funded?</p>
+
+<p>Lenny, you're welcome to reiterate what you've said. Would also love to hear from <a href="/u/jonathaneisen" class="username">@jonathaneisen</a> and <a href="/u/hollyganz" class="username">@hollyganz</a> (who I worked with to put up the <a href="http://thinklab.com/p/MicrobeResist">first ThinkLab proposal</a>). What do you guys think?</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="3" data-comment-id="160">
+  <td class="comment-profile-avatar">
+		<a href="/u/jonathaneisen"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/5_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="160"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/jonathaneisen">Jonathan Eisen</a>
+				
+				<span class="light">&nbsp;<a href="#3" class="light">805 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>I think in general it is a good idea.  Though I note - in my experience most people put together grant proposals at the last minute so this might only help after one round of rejection </p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="4" data-comment-id="161">
+  <td class="comment-profile-avatar">
+		<a href="/u/b_good"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/48_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="161"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/b_good">Benjamin Good</a>
+				
+				<span class="light">&nbsp;<a href="#4" class="light">805 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>The last minute point is totally valid.  Actually one of my concerns about putting something up here is that the attention required to develop it and monitor it would take away too much time from meeting the next deadline.  (e.g. the letter of intent for that crowdsourcing call is one week away).  Ideas:</p>
+
+<p>(1) It should be encouraged to post less-than-fully-baked concepts here.  Daniel's proposal was well thought out and pretty complete when I saw it.  Very close to a state that would be ready for a typical grant.  It would be cool if you supported "1 pagers" to gauge community feeling for the idea and to quickly get feedback on major direction changes.  Basically much like the letter of intent process.</p>
+
+<p>(2) If you do this, go whole-hog on a pattern for it.  Support the whole process - idea, opportunity discovery, letter of intent, drafting, letters of support, personal statement...   Get them all out in the open here.   Importantly, add a timeline feature so that people could see deadlines that would need to be met.  </p>
+
+<p>(3) Catalogue success rates..  Follow up with people that try this to see how it impacted them.  Many people will hesitate to share early stage ideas openly.  You will need to get evidence that it really does produce better outcomes for their selfish interests to gain a lot of momentum.  </p>
+
+<p>(4) Phil Bourne (bioinformatics director at NIH) would likely be very supportive of something like this..  It fits his philosophy very well from what I can tell..   </p>
+
+<p>(5) I've had discussions about something like this with Jonathan Wren.  Would be good to get his feedback as well..</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="5" data-comment-id="162">
+  <td class="comment-profile-avatar">
+		<a href="/u/jspauld"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/2_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="162"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/jspauld">Jesse Spaulding</a>
+				
+				<span class="light">&nbsp;<a href="#5" class="light">805 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Thanks Ben, this is great.</p>
+
+<ol><li><p>Very much agree on the "1 pagers". This will be easy to do. Although in the beginning I'm suspecting the primary interest may be from people who have already had a proposal rejected?</p></li><li><p>I don't personally have experience with submitting NIH/NSF proposals so I'll be relying on learning everything I can from others. Would you mind going into more detail here? Are you essentially suggesting that ThinkLab be not just a place to get feedback and improve proposals but basically an entire front-end to the NIH proposal process? </p></li><li><p>Agree</p></li><li><p>I'm in touch with Daniel Mietchen ( <a href="/u/daniel_mietchen" class="username">@daniel_mietchen</a> ) who works with Phil now. I believe Daniel has spent considerable time thinking about this idea of opening up research proposals. In fact, he's put up a <a href="https://www.newschallenge.org/challenge/2014/submissions/opening-up-research-proposals">proposal for exactly that</a>. There's a lot of great ideas in there. And the fact that we can benefit from them now actually demonstrates part of the value of open proposals!</p></li><li><p>Thanks, I've emailed him :)</p></li></ol>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="6" data-comment-id="163">
+  <td class="comment-profile-avatar">
+		<a href="/u/jonathaneisen"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/5_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="163"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/jonathaneisen">Jonathan Eisen</a>
+				
+				<span class="light">&nbsp;<a href="#6" class="light">804 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Another person to contact is Titus Brown at UC Davis, who has been posting his grant proposals on his blog and getting feedback on them there.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="7" data-comment-id="164">
+  <td class="comment-profile-avatar">
+		<a href="/u/jackpark"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/s/img/p_default_medium.png' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="164"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/jackpark">Jack Park</a>
+				
+				<span class="light">&nbsp;<a href="#7" class="light">804 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Titus Brown's blog: <a href="http://ivory.idyll.org/blog/" target="_blank">http://ivory.idyll.org/blog/</a></p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="8" data-comment-id="165">
+  <td class="comment-profile-avatar">
+		<a href="/u/b_good"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/48_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="165"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/b_good">Benjamin Good</a>
+				
+				<span class="light">&nbsp;<a href="#8" class="light">803 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>The key, as usual, is where the money is and this seems to be a problem with the current content on ThinkLab - there is not nearly enough of it.  The "small" award I am looking to apply for right now is $400,000.   That is the underlying reason for the suggestion to orient a ThinkLab process around getting participants access to the large pots of research money that do exist (at the NIH and similar places).  Increasing chances of gaining such funding is definitely a value proposition for ThinkLab participation.  If you achieve a flow of researchers here that way, it should increase your chances of diverting them towards other resources as they arise.</p>
+
+<p>As a very junior grant writer, I find the structures provided by <a href="http://www.amazon.com/Writing-Grant-Proposal-Step-Step/dp/1412975166">this book</a> extremely helpful in preparing my applications.  It goes into great detail about the various kinds of NIH grants and what elements they are composed of.   If you are keen on this direction, its worth a look.  If ThinkLab took something like the process suggested in that book and translated it into software modules imbued with the collaborative features of ThinkLab it would be very interesting.  I would be happy to test it.  Our lab also has a habit of posting our proposals e.g. <a href="http://sulab.org/category/GeneWikiRenewal/" target="_blank">http://sulab.org/category/GeneWikiRenewal/</a> though it does seem time to start opening things up earlier.</p>
+
+<p>Note that you wouldn't need to have things as tightly laid out as they do in that (200+ page) book.  Just having the core structures defined and attached to timelines would be great...  Though the more utility you put in, the more attractive it becomes.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="9" data-comment-id="166">
+  <td class="comment-profile-avatar">
+		<a href="/u/daniel_mietchen"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/25_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="166"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/daniel_mietchen">Daniel Mietchen</a>
+				
+				<span class="light">&nbsp;<a href="#9" class="light">801 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>I agree it would be good to have mechanisms to develop research ideas into grant proposals in the open, and that an iterative approach (perhaps starting with a one-pager or even shorter, as per <a href="http://beta.briefideas.org/" target="_blank">http://beta.briefideas.org/</a> ) seems most promising, especially since feedback is badly broken in many funding schemes. ThinkLab can be of help here, keeping in mind that features like automated generation of PERT and Gantt charts as well as budget overviews are amongst the major reasons why people often resort to dedicated grant-writing environments.</p>
+
+<p>Yes, timing (especially distance to deadlines) is crucial and will likely have a strong influence on the amount of attention people can devote to such open drafting. On the other hand, by drafting in the open, you can get help that would otherwise be hard to get - our H2020 proposal at <a href="http://dx.doi.org/10.5281/zenodo.13906" target="_blank">http://dx.doi.org/10.5281/zenodo.13906</a> was written in five weeks around Christmas, with significant contributions from multiple people outside the consortium (which itself was only formed on the basis of the published idea - with most of the partners, I have had no prior interaction).</p>
+
+<p>As for my work with Phil at NIH, my notes are at <a href="https://github.com/Daniel-Mietchen/datascience" target="_blank">https://github.com/Daniel-Mietchen/datascience</a> , and exploring openness in funding contexts tops the list. I would thus welcome it very much if you (or others) were to step forward to draft NIH proposals in the open and to keep track of any red tape that stands in the way. I will work on trimming the red tape and combine that with creating incentives for sharing proposals. We try to be attentive to demands from the community, so suggestions, pull requests etc. are most welcome.</p>
+
+<p>Independent of these NIH activities, I am pursuing the idea of publishing research proposals and associated materials more formally, as sketched out in the News Challenge proposal that Jesse mentioned above as well as in <a href="http://dx.doi.org/10.1371/journal.pbio.1002027" target="_blank">http://dx.doi.org/10.1371/journal.pbio.1002027</a> . Nothing more specific to show here yet, but I expect this to be operational before the end of the year. Ping me if you would like to be involved.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-106" class="inline-note toggle-parent" data-note-id="106">
+	<p><a href="/u/jspauld">Jesse Spaulding</a>: Thanks for your comments and links Daniel! We will certainly publish any suggestions we have for the NIH as far as removing any red tape or supporting open science. The community is lucky to have you there at NIH! Please keep us posted on any new initiatives!
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="10" data-comment-id="173">
+  <td class="comment-profile-avatar">
+		<a href="/u/jonathanwren"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/86_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="173"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/jonathanwren">Jonathan Wren</a>
+				
+				<span class="light">&nbsp;<a href="#10" class="light">799 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>The idea I proposed to Ben was essentially "gamifying" grant reviews. It would basically work something like this:</p>
+
+<p>1) A grant writer would submit key concepts (overview/aims) for review, fitting it in one page maximum to keep it brief.<br>2) Competitors would try to identify both strong and weak points of the grant by highlighting text and categorizing it as minor/major weak or strong points<br>3) Points are scored by guessing - as accurately as possible - which areas are considered by others as strong and weak points (which likely reflects how the real grant reviewers will feel)<br>4) The more text highlighted, the fewer points a reviewer is likely to get, as the score would be a function of how specifically their own weak points aligned with others, with what frequency and what severity. I haven't worked out the cost function yet, but have a general idea in mind.<br>5) Badges mark specific milestones and leaderboards track people best able to guess points of criticism/praise<br>6) There are 3 points of value in this: <br>      a) Grant writers: Obviously, they get strategic feedback before it actually gets sent to real reviewers<br>      b) For casual reviewers: They will write their own grants and would like to think they can identify strong/weak areas in their own work. If they're not good at it, then the game offers them a way to get better. <br>      c) For serious reviewers: People on the leaderboard become eligible to accept pay-for-review offers to review the entire grant. They can set their price - if it's too high, then they price themselves out of the market and get no offers. An average fee (based on past fees) will display at the top of the leaderboard to guide both writers &amp; reviewers.<br>7) Submitting grants can be done either by pay-to-play or by earning enough points as a reviewer. If you don't want to help the system by reviewing, then you need to ante up some cash.</p>
+
+<p>Surely, there will be kinks to iron out, but what do you guys think of this idea?</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="11" data-comment-id="195">
+  <td class="comment-profile-avatar">
+		<a href="/u/jspauld"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/2_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="195"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/jspauld">Jesse Spaulding</a>
+				
+				<span class="light">&nbsp;<a href="#11" class="light">794 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p><a href="/u/jonathanwren" class="username">@jonathanwren</a> the idea sounds genius to me. Presumably you wouldn't be posting it if you didn't want someone to take it and implement it? Few questions:</p>
+
+<ol><li><p>For an initial one page proposal how useful would it be to see a heat map of the perceived strong and weak points within a proposal? Presumably you would also want to know <em>why</em> something is seen as weak? </p></li><li><p>Do you see a reason to allow free-form highlighting? Why not just do this sentence by sentence? Perhaps free form would be more fun?</p></li><li><p>What percentage of researchers do you think would pay for an open peer review (the serious review)? How much would they pay? Where is the money coming from? And how much time would we expect the average reviewer to spend reviewing?</p></li></ol>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="12" data-comment-id="196">
+  <td class="comment-profile-avatar">
+		<a href="/u/jonathanwren"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/86_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="196"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/jonathanwren">Jonathan Wren</a>
+				
+				<span class="light">&nbsp;<a href="#12" class="light">794 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p><a href="/u/jspauld" class="username">@jspauld</a> ,</p>
+
+<p>1) Although it is definitely what people want to know, I think it will increase the complexity to try to synthesize the "why" of it from multiple responses. Presumably, the sentence itself would tell the writer what people may have a problem with, but I guess allowing (rather than requiring) commentary would be a plus</p>
+
+<p>2) Free-form, yes - people choose whatever they want to highlight. Single word, phrase, sentence, etc.</p>
+
+<p>3) I think that's going to depend on what they get out of it. The nice thing about the proposed system is they can evaluate how many grants the leaders have reviewed and how well they did. In other words, they don't have to guess as to whether or not it would be useful - they have data for that. I don't know how much they would pay. I don't know how much time reviewers would spend, but the leaderboards and badges would distinguish the serious from the casual reviewers.</p>
+
+<p>The more time someone <em>has</em> to spend on the grant review, the less incentivized they will be. The incentive structure has to be set up so that, if they do spend more time, they gain something. Points, status, recognition, ranking, etc. There's no need to worry about individual reviewers - they will come in all forms, sizes, degrees of interest, etc, and the ranking system will segregate them accordingly.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="13" data-comment-id="197">
+  <td class="comment-profile-avatar">
+		<a href="/u/jspauld"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/2_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="197"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/jspauld">Jesse Spaulding</a>
+				
+				<span class="light">&nbsp;<a href="#13" class="light">794 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Working on some copy for the homepage. This wouldn't be specifically for <a href="/u/jonathanwren" class="username">@jonathanwren</a>'s idea, but I wouldn't expect the selling points to be too different anyway.</p>
+
+<hr>
+
+<h1>Crowdsourced feedback for NIH grant proposals</h1>
+
+<p>(and any other research proposal)</p>
+
+<h2>Benefits</h2>
+
+<ul><li>Receive $1000 to support crowdsourced feedback on your proposal</li><li>Improve your odds of NIH/NSF funding</li><li>Establish provenance over your research ideas</li><li>Increase the visibility and impact of your work</li><li>Connect with new potential collaborators</li></ul>
+
+<hr>
+
+<p>This seems pretty compelling to me. What does everyone think? Keep in mind I'm trying to create selling points for a potential proposal poster. (Not necessarily selling the benefits to science/society, of which I believe there are many.) Am I missing anything?</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-105" class="inline-note toggle-parent" data-note-id="105">
+	<p><a href="/u/jonathaneisen">Jonathan Eisen</a>: I thnk it is a bit risky to say "Improve your odds of NIH/NSF funding" ... seems possible but not proven
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-107" class="inline-note toggle-parent" data-note-id="107">
+	<p><a href="/u/jspauld">Jesse Spaulding</a>: I'm thinking this is a big selling point though. Someone who doesn't believe it probably wouldn't post their proposal anyway. So unless this is really a turn off I would think it's worth taking the risk and leaving it in.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="14" data-comment-id="198">
+  <td class="comment-profile-avatar">
+		<a href="/u/jackpark"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/s/img/p_default_medium.png' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="198"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/jackpark">Jack Park</a>
+				
+				<span class="light">&nbsp;<a href="#14" class="light">794 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>NIH is already showing specific interest in such matters:<br><a href="http://grants.nih.gov/grants/guide/rfa-files/RFA-CA-15-006.html" target="_blank">http://grants.nih.gov/grants/guide/rfa-files/RFA-CA-15-006.html</a></p>
+
+<p>I think others following this thread are well aware of that.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-108" class="inline-note toggle-parent" data-note-id="108">
+	<p><a href="/u/jspauld">Jesse Spaulding</a>: Thanks for the link!
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="15" data-comment-id="210">
+  <td class="comment-profile-avatar">
+		<a href="/u/caseygreene"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/22_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="210"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/caseygreene">Casey Greene</a>
+				
+				<span class="light">&nbsp;<a href="#15" class="light">791 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Hypothes.is gives a nice mechanism for markup of individual sentences or parts. I'd also be happy to pilot something like this with an R01(either A0 or A1) at some point if you want a test case for either a new submission or a revision of a larger grant. I'd like a system that is web based but that can output to an NIH style, that shows the grant as it would exist (e.g. with page marks, etc), that allows inline commenting, that works for the component documents that make up a grant.</p>
+
+<p>I've used sharelatex but it didn't previously work with github for version control, though I think that was one of their requested features. Google docs is ok, but I'd like something that has the idea of a "commit" instead of live editing.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="16" data-comment-id="211">
+  <td class="comment-profile-avatar">
+		<a href="/u/jspauld"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/2_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="211"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/jspauld">Jesse Spaulding</a>
+				
+				<span class="light">&nbsp;<a href="#16" class="light">790 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p><a href="/u/caseygreene" class="username">@caseygreene</a> thanks for expressing an interest in this.</p>
+
+<p>We're currently preparing a new version of the site with a focus on crowdsourced feedback for grant proposals so I would love to have you try it out!</p>
+
+<p>I just want to clarify what you see as the primary benefits and the reason for your interest in piloting this. From my perspective the primary benefit is that we are creating an incentive for people to review your proposal. (By having feedback posted publicly and recognizing and <em>paying</em> people based on the value of their feedback.)</p>
+
+<p>Are we on the same page there? Beyond this, what would be the requirements for trying this? You mentioned:</p>
+
+<ul><li>Output to NIH style — You want to be able to output to PDF documents that can be directly attached to your proposal correct? This should be doable. </li><li>Inline commenting — Is your interest in this that you want people to be able to <em>make</em> comments inline or <em>view</em> comments inline? Do you basically want Google docs inline commenting feature reproduced? Making comments inline (by selecting text to quote) should be quite doable and seems like a good idea, however, viewing comments inline could be quite tricky. Consider that this discussion thread (that you're reading) might be a discussion thread on your proposal.</li><li>The idea of a "commit" — Could you describe what you're looking for here and why? Currently, ThinkLab creates a commit with each "save" of the proposal. There's no integration with GitHub but there is a revision history page.</li></ul>
+
+<p>Any further information would be very helpful. Thanks!</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="17" data-comment-id="213">
+  <td class="comment-profile-avatar">
+		<a href="/u/caseygreene"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/22_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="213"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/caseygreene">Casey Greene</a>
+				
+				<span class="light">&nbsp;<a href="#17" class="light">790 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p><a href="/u/jspauld" class="username">@jspauld</a> — here are my current thoughts:</p>
+
+<p>Output: Yes. PDF documents with appropriate margins, size 11 arial, figures + legends that meet the requirements of an NIH grant. It could also just output to plain text that could be incorporated quickly into a word processor template. Accurate length estimates ("~11 formatted pages") are critical though if it doesn't handle the output.</p>
+
+<p>Inline commenting: I'd like to see people be able to make comments inline. On the view front, that could be configured on a proposal by proposal or even comment by comment basis. Something double-opt-in for public comments would be great. (author either pre or post commenting clicks a button to flag a comment as visible, comment contributor can mark as allowing a comment to be made visible). I can definitely imagine cases where someone comments:</p>
+
+<p>CX: Commenter X<br>A: Author</p>
+
+<p>C1: Have you thought about XYZ?<br>A: Yes, due to ABC we didn't talk about them here but we could add Z, would that be more clear?<br>C1: I think you really need X and Y as well.<br>C2: What about Q which shows that Z depends on X and Y?<br>A: <a href="/u/C2" class="username">@C2</a> <a href="/u/C1" class="username">@C1</a> — Thanks! This really helped me clarify this. Take a look at the next commit and let me know if you think it helped.</p>
+
+<p>I like the way that medium does inline comments (essentially on a paragraph by paragraph basis):<br><a href="https://medium.com/@greenescientist/why-do-you-want-to-be-a-scientist-e4a94a93af78" target="_blank">https:<span class="__cf_email__" data-cfemail="f7d8d89a92939e829ad994989ad8b790859292999284949e9299839e8483">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>/why-do-you-want-to-be-a-scientist-e4a94a93af78</a></p>
+
+<p>The idea of a commit: essentially labeled savepoints. More like a tag if you're already essentially versioning each save. I think that by default it'd be nice to have only tagged versions be visible (or even only specific tagged versions). There are times where feedback is helpful, and other times where I'm trying to figure out how to best structure something and feedback at that point can just be more time consuming.</p>
+
+<p>This might be something that I'd have to try, see how it works, and then see how my opinion changes during the process.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="18" data-comment-id="583">
+  <td class="comment-profile-avatar">
+		<a href="/u/jspauld"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/2_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="583"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/jspauld">Jesse Spaulding</a>
+				
+				<span class="light">&nbsp;<a href="#18" class="light">569 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Thanks for your feedback everyone. We've announced this feature here: <a href="http://thinklab.com/blog/thinklab-open-grant-proposal-review-has-arrived/125">Thinklab open grant proposal review has arrived!</a></p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+    		
+		</table>
+
+    
+
+    &nbsp;<br>
+    <a class="btn btn-primary btn-lg" href="/signup?next=/discussion/thinklab-as-a-vetting-system-for-traditional-grants/58&suppress_message=1" style>Join to Reply</a>
+
+
+		<table class="references table-td-5" style="display:none;"></table>
+
+    
+
+
+	</td>
+	<td class="thread-sidebar">
+
+
+			
+
+      <a class="btn btn-default follow-link btn-follow btn-lg is-following tt-top full-width" title="Follow discussion" data-id="58" data-ctype="thread" data-is-following="false">&nbsp;</a>
+
+      
+        <div class="status-box text-center"><span style="">Status:</span> 
+  Completed
+
+</div>
+      
+
+      
+        
+
+          <div class="details">
+            
+            Labels
+          </div>
+
+          
+            <a href='/p/meta/discussion?q=[Biz Dev]' class='pl pl-sidebar pl-black' style='background-color:#e5ffad'><span class='glyphicon glyphicon-tag'></span>&nbsp; Biz Dev</a>
+          
+            <a href='/p/meta/discussion?q=[Feature Suggestion]' class='pl pl-sidebar pl-black' style='background-color:#e0dbff'><span class='glyphicon glyphicon-tag'></span>&nbsp; Feature Suggestion</a>
+          
+        
+      
+
+
+				
+
+					<div class="details">Views</div>
+					<span style="font-size:20px;">212</span>
+
+        
+
+				
+					<div class="details">Topics</div>
+					<div style="margin-bottom:15px;">
+		            <a href="/topics/vetting" class="tag">Vetting</a><a href="/topics/funding" class="tag">Funding</a><a href="/topics/grants" class="tag">Grants</a><a href="/topics/nih" class="tag">NIH</a>
+					</div>
+				
+
+
+		
+			<div class="details">Referenced by</div>
+			<div style="font-size:12px;"><ul style="padding-left:16px !important;">
+			
+				<li>
+					
+					<a href='/discussion/hypothesis-for-alerting-authors-of-writing-errors-in-discussion-posts/167' class='thread-title'>Hypothesis for alerting authors of writing errors in discussion posts</a>
+				</li>
+			
+				<li>
+					[<a href="/blog" style="color:#333333">blog</a>] 
+					<a href='/blog/thinklab-open-grant-proposal-review-has-arrived/125' class='thread-title'>Thinklab open grant proposal review has arrived!</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/reviewers-or-contributors-what-term-should-we-use-for-thinklab-participants/78' class='thread-title'>Reviewers or contributors — what term should we use for ThinkLab participants?</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/should-we-aim-to-keep-discussions-narrowly-focused/64' class='thread-title'>Should we aim to keep discussions narrowly focused?</a>
+				</li>
+			
+				</ul>
+			</div>
+		
+
+		
+			<div class="details">Cite this as</div>
+			<span style="font-size:12px;">
+				Benjamin Good, Jesse Spaulding, Jonathan Eisen, Jack Park, Daniel Mietchen, Jonathan Wren, Casey Greene (2015) ThinkLab as a vetting system for traditional grants. <i>Thinklab.</i> doi:<a href='https://doi.org/10.15363/thinklab.d58'>10.15363/thinklab.d58</a>
+			</span>
+		
+
+		<div class="details">License</div>
+		<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0;width:88px;height:31px;" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></p>
+
+		<div class="details">Share</div>
+		
+			
+				<a class="share-button fb" onclick="javascript:void(window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A//thinklab.com/discussion/thinklab-as-a-vetting-system-for-traditional-grants/58','','width=600,height=460,menubar=no,status=no'));" href="#"></a>
+<a class="share-button twitter" onclick="javascript:void(window.open('https://twitter.com/share?text=ThinkLab%20as%20a%20vetting%20system%20for%20traditional%20grants&url=https%3A//thinklab.com/discussion/thinklab-as-a-vetting-system-for-traditional-grants/58','','width=600,height=300,menubar=no,status=no'));" href="#"></a>
+<a class="share-button google" onclick="javascript:void(window.open('https://plus.google.com/share?url=https%3A//thinklab.com/discussion/thinklab-as-a-vetting-system-for-traditional-grants/58','','width=510,height=460,menubar=no,status=no'));" href="#"></a>
+
+			
+		
+
+	</td>
+</tr></table>
+
+
+		</div>
+
+
+		
+	    	<div class="footer">
+<div style="background:#dedede;">
+	<div class="main-centered-div text-center" style="padding:20px;">
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#056d6069696a45716d6c6b6e6964672b666a68"><span class="__cf_email__" data-cfemail="472f222b2b2807332f2e292c2b26256924282a">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+	</div>
+</div>
+<div class="main-footer">
+	<div class="main-centered-div">
+
+<table class="full-width"><tr>
+	<td class="footer-nav">
+
+        <div class="foot-head">Explore</div>
+        <a href="/proposals">Proposals</a><br>
+        <a href="/projects">Projects</a><br>
+        <a href="/publications">Article discussion</a><br>
+        <a href="/discussion">All discussion</a><br>
+        <a href="/topics">Topics</a><br>
+        <!-- <a href="/funders">Funders</a><br> -->
+        <a href="/funding">Funding opportunities</a><br>
+
+	</td>
+	<td class="footer-nav">
+
+        <!-- <div class="foot-head">Help &amp; feedback</div>	 -->
+        <!-- <div class="foot-head">Intro</div>
+        <a href="/benefits/for-science">Why</a><br>
+        <a href="/how-it-works">How it works</a><br>
+
+<br> -->
+
+        <div class="foot-head">Community</div>
+        <a href="/leaderboard">Leaderboard</a><br>
+        <a href="/p/meta">Thinklab Meta</a><br>
+				<a href="/help/faq">Help</a><br>
+				<!-- <a href="/new-project">Start a proposal</a><br> -->
+        <!-- <a href="/benefits/proposal">Benefits</a><br> -->
+        <!-- <a href="/funding">Get funded</a><br> -->
+        <!-- <a href="/participate">Become a contributor</a><br> -->
+        <!-- <a href="/for-funders">For science funders</a><br> -->
+        <!-- <a href="/for-institutions">For institutions</a><br> -->
+
+	</td>
+	<td class="footer-nav">
+
+
+
+        <div class="foot-head">About</div>
+        <a href="/about">Overview</a><br>
+        <a href="/benefits">Benefits</a><br>
+        <a href="/how-it-works">How it works</a><br>
+        <a href="/about/story">Our story</a><br>
+        <a href="/blog">Our blog</a><br>
+        <a href="/about/jobs">Join the team</a><br>
+        <br>
+
+        <!-- <div class="foot-head">Help</div>
+        <a href="/help">Help</a><br>
+		 -->
+
+
+	</td>
+	<td class="footer-nav">
+		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
+		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<br><br>
+		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
+
+	</td>
+
+</tr></table>
+
+</div>
+</div>
+</div>
+
+		
+
+	</div>
+
+
+  <script></script>
+  <script>
+  var MEDIA_URL = 'https://think-lab.s3.amazonaws.com/m/';
+  var STATIC_URL = 'https://think-lab.s3.amazonaws.com/s/';
+  var page_is_authenticated = false;
+  var page_page = 'discussion';
+  var page_profile_id = undefined;
+</script>
+
+
+
+	<!-- Note different script type. MUST come before MathJax.js -->
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	        "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"],
+	                        scale: 110, linebreaks: { automatic:true },
+	                        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+	        tex2jax: { inlineMath: [ ["$$", "$$"], ["\\(","\\)"] ],
+	                    displayMath: [ ["$$$","$$$"], ["\\[", "\\]"] ],
+	                    processEscapes: true,}
+	            });
+
+	</script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://think-lab.s3.amazonaws.com/s/dist/main.min.js"></script>
+  
+
+
+
+  
+	
+  
+  
+  
+<script>
+$(function() {
+  recordHit('thread', 58);
+});
+</script>
+
+
+
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>

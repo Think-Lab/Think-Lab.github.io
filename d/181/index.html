@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZgEOC19dW0QCEVtHU1gG","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":697}</script>
+    <title>Workshop to analyze LINCS data for the Systems Pharmacology course at UCSF | Thinklab</title>
+	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
+    <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/highlightjs/github.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/css.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/bootstrap-multiselect.css" />
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
+    
+    
+    
+    
+  
+    <meta name="citation_doi" content="10.15363/thinklab.d181">
+    <meta name="citation_title" content="Workshop to analyze LINCS data for the Systems Pharmacology course at UCSF">
+    <meta name="citation_online_date" content="March 8, 2016">
+    <meta name="citation_author" content="Daniel Himmelstein, Kathleen Keough, Misha Vysotskiy, Jeffrey Kim, Beau Norgeot, Julia Cluceru, Marjorie Imperial, Emmalyn Chen, Jasleen Sodhi, Elizabeth Levy">
+    <meta name="citation_journal_title" content="Thinklab">
+    <meta name="citation_publisher" content="Thinklab">
+  
+
+    
+
+
+	<!-- GoogleAnalytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-48550230-1', 'thinklab.com');
+	ga('require', 'displayfeatures');
+	
+	ga('send', 'pageview');
+
+	</script>
+
+
+
+
+
+
+</head>
+<body >
+  <form id="form_action" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+</form>
+
+	
+
+	<div class="body-wrapper">
+
+		
+
+
+<!-- <div style="height:5px;background-image:url('https://think-lab.s3.amazonaws.com/s/img/top-bg.gif');"></div> -->
+<div class="gradient">
+	<div class="main-centered-div header-container">
+
+<table class="full-width" style="height:60px;"><tr>
+	<td style="width:200px;vertical-align:middle;padding-bottom:15px;">
+		<a href="/" style="font-weight:normal;color:#212121;"><img src="https://think-lab.s3.amazonaws.com/s/img/logo.png" width="160"></a>
+	</td><td style="vertical-align:middle;text-align:left;padding-top:6px;width:100%;padding-left:40px;">
+		<ul id="not-search-block"  class="main-header">
+
+
+			
+
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/proposals">Proposals</a></li>
+						<li><a href="/projects">Projects</a></li>
+						<li><a href="/publications">Article discussion</a></li>
+						<li><a href="/discussion">All discussion</a></li>
+					</ul>
+				</li>
+				<li><a href="/leaderboard">Leaderboard</a></li>
+
+			
+				<li><a href="/about">About</a></li>
+			
+
+
+		</ul>
+
+    <ul id="search-block" class="main-header" style="display: none; margin-right: 30px;">
+        <li class="full-width">
+            <form method="get" action="/search">
+			<div class="input-group full-width">
+				<input name="q" type="text" class="form-control search-input">
+			</div>
+            </form>
+        </li>
+    </ul>
+
+	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
+		<ul class="main-header pull-right" style="padding-left: 0;">
+    		
+                <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+            
+
+        </ul>
+    </ul>
+	</td>
+</tr></table>
+
+<!-- <div id="global-search-div" class="main-centered-div" style="display:none;">
+	<input type="text" value="" class="thread-search form-control" placeholder="Search" data-action="/discussion">
+</div> -->
+
+	</div>
+</div>
+
+		
+	  
+
+
+
+	  
+
+
+		
+
+		<div class="dark-head"><div class="main-centered-div">
+
+			
+
+		</div></div>
+		
+		<div class="main-centered-div" style="margin-top:40px;padding-bottom:340px">
+	    
+
+<div style="margin-top:-20px; margin-bottom:20px;">
+
+    <a class="side-box" href="/p/rephetio" style="background-color:#ebfdff;"><div class="side-type">Project:</div> <div class="side-title">Rephetio: Repurposing drugs on a hetnet [rephetio]</div></a><br>
+
+
+
+</div>
+
+<table style="margin-top:0px;"><tr>
+	<td class="thread-table-content">
+
+		<table class="full-width">
+			
+<tr class="comment-tr target-hl" id="1" data-comment-id="1153">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1153"></a>
+
+    
+
+			<h2 class="page-title" style="margin-bottom:5px;margin-top:0px !important;">Workshop to analyze LINCS data for the Systems Pharmacology course at UCSF</h2>
+
+			<div style="margin-top:5px;color:gray;margin-bottom:20px;font-size:13px;">
+				<a style="font-weight:normal;color:#212121" href="/u/dhimmel"><strong>Daniel Himmelstein</strong></a>
+				<span class="is-researcher">Researcher</span>
+				&nbsp; <a href="#1" class="light">486 days ago</a>
+				
+			</div>
+
+      
+
+          <hr>
+		
+
+    <p>Today, I'm teaching a workshop for the <a href="http://coursecatalog.ucsf.edu/course/1266" title="Pharmacogenomics 245B · UCSF Registrar">Systems Pharmacology</a> course at UCSF. The course primarily consists of first year students in the <a href="http://pspg.ucsf.edu/" title="PSPG PhD Program at UCSF">Pharmaceutical Sciences and Pharmacogenomics</a> graduate program.</p>
+
+<p>The topic of my workshop is "Big data". Therefore, I thought a perfect activity would be to analyze the transcriptional perturbation data from <a href="http://www.lincscloud.org/l1000/" title="Gene Expression Data · L1000 · Broad Institute">LINCS L1000</a>. And stars have aligned: first, we've <a href="http://thinklab.com/discussion/computing-consensus-transcriptional-profiles-for-lincs-l1000-perturbations/43#7" class="citation thread-citation" data-key="10.15363/thinklab.d43">just released</a> version 2 of our consensus signatures; second, we recently noticed some <a href="http://thinklab.com/discussion/positive-correlations-between-knockdown-and-overexpression-profiles-from-lincs-l1000/171" class="citation thread-citation" data-key="10.15363/thinklab.d171">counterintuitive occurrences</a> in the genetic perturbation data. </p>
+
+<p>Hence, I've designed a set of questions. Each pupil will be assigned a question. The pupils will then use R to attempt to answer the question. At the end of the three hour workshop, we will encourage pupils to post their findings as a comment on this discussion.</p>
+
+<p>I'm hoping to teach my <a href="http://thinklab.com/discussion/r-best-practices/83" class="citation thread-citation" data-key="10.15363/thinklab.d83">R best practices</a> as well as introduce several packages for modern data science. We will strive for the following workflow in R (not every step is needed for each question):</p>
+
+<ol><li>Read the appropriate file into a dataframe using <a href="https://github.com/hadley/readr"><code>readr</code></a>. The <code>readr::read_tsv()</code> function should come in handy. Datasets are <a href="https://github.com/dhimmel/lincs/tree/abcb12f942f93e3ee839e5e3593f930df2c56845/data/consensi">available on GitHub</a> (<code>readr</code> should be able to read from the raw dataset URL).</li><li>Tidy the dataframe using <a href="https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html"><code>tidyr</code></a>. The <code>tidyr::spread()</code> function will help convert the wide (matrix) format to a long format.</li><li>Manipulate the dataframe using <a href="https://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html"><code>dplyr</code></a>. Common operations here will be <code>dplyr::filter</code> and <code>dplyr::mutate</code>.</li><li>Join dataframes using <code>dplyr::inner_join()</code> or <code>dplyr::left_join()</code>. </li><li>Answer the question, either by using <code>dplyr::group_by()</code> followed by <code>dplyr::summarize()</code> or by using <a href="http://docs.ggplot2.org/"><code>ggplot2</code></a> to visualize the results.</li></ol>
+
+<p>Questions will follow!</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="2" data-comment-id="1155">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1155"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#2" class="light">486 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Questions</h1>
+
+<p>Here are the 13 questions for the workshop. They all focus on understanding the transcriptional response to genetic perturbation.</p>
+
+<ol><li><p>How many knockdowns significantly downregulated their target gene (expected)? How many knockdowns significantly upregulated their target gene (unexpected)?</p></li><li><p>How many overexpressions significantly upregulated their target gene (expected)? How many overexpressions significantly downregulated their target gene (unexpected)?</p></li><li><p>How many genes were never significantly dysregulated by any knockdown perturbation? Report this number for both the measured and inferred gene sets.</p></li><li><p>How many genes were never significantly dysregulated by any knockdown perturbation? Report this number for both the measured and inferred gene sets. (<strong>same as 3 by accident</strong>)</p></li><li><p>Which ten genes were most frequently significantly downregulated by gene knockdowns? How many knockdowns significantly downregulated these genes? How many knockdowns significantly upregulated these genes?</p></li><li><p>Which ten genes were most frequently significantly upregulated by gene knockdowns? How many knockdowns significantly upregulated these genes? How many knockdowns significantly downregulated these genes?</p></li><li><p>Which ten genes were most frequently significantly downregulated by gene overexpression? How many overexpressions significantly downregulated these genes? How many overexpressions significantly upregulated these genes?</p></li><li><p>Which ten genes were most frequently significantly upregulated by gene overexpression? How many overexpressions significantly upregulated these genes? How many overexpressions significantly downregulated these genes?</p></li><li><p>For knockdown perturbations, what is the correlation between number of significantly down and upregulated measured genes.</p></li></ol>
+
+<p>Dataset documentation will follow.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="3" data-comment-id="1154">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1154"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#3" class="light">486 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Datasets</h1>
+
+<p>The <a href="#2">above questions</a> can all be answered using the following three datasets.</p>
+
+<h3>Gene information <a href="https://github.com/dhimmel/lincs/blob/abcb12f942f93e3ee839e5e3593f930df2c56845/data/consensi/genes.tsv"><code>genes.tsv</code></a></h3>
+
+<p>This dataset contains which genes have regulation scores. It also contains whether the gene's expression was directly measured or imputed. The raw dataset is available at:</p>
+
+<pre><code class="no-highlight hljs">https://github.com/dhimmel/lincs/raw/abcb12f942f93e3ee839e5e3593f930df2c56845/data/consensi/genes.tsv</code></pre>
+
+<p>Below is a preview:</p>
+
+<table class="table markdown-table"><thead><tr><th>entrez_gene_id</th><th>status</th><th>symbol</th><th>type_of_gene</th><th>description</th></tr></thead><tbody><tr><td>100</td><td>imputed</td><td>ADA</td><td>protein-coding</td><td>adenosine deaminase</td></tr><tr><td>1000</td><td>imputed</td><td>CDH2</td><td>protein-coding</td><td>cadherin 2, type 1, N-cadherin (neuronal)</td></tr><tr><td>10000</td><td>imputed</td><td>AKT3</td><td>protein-coding</td><td>v-akt murine thymoma viral oncogene homolog 3</td></tr></tbody></table>
+
+<h3>Genes dysregulated by knockdowns <a href="https://github.com/dhimmel/lincs/blob/abcb12f942f93e3ee839e5e3593f930df2c56845/data/consensi/signif/dysreg-knockdown.tsv"><code>dysreg-knockdown.tsv</code></a></h3>
+
+<p>This dataset contains significantly dysregulated genes due to knockdown perturbations. The raw dataset is available at:</p>
+
+<pre><code class="no-highlight hljs">https://github.com/dhimmel/lincs/raw/abcb12f942f93e3ee839e5e3593f930df2c56845/data/consensi/signif/dysreg-knockdown.tsv</code></pre>
+
+<p>Below is a preview:</p>
+
+<table class="table markdown-table"><thead><tr><th>perturbagen</th><th>entrez_gene_id</th><th>z_score</th><th>symbol</th><th>status</th><th>direction</th><th>nlog10_bonferroni_pval</th></tr></thead><tbody><tr><td>2</td><td>133</td><td>-5.495</td><td>ADM</td><td>imputed</td><td>down</td><td>3.596</td></tr><tr><td>2</td><td>501</td><td>-4.317</td><td>ALDH7A1</td><td>measured</td><td>down</td><td>1.811</td></tr><tr><td>2</td><td>9915</td><td>-5.579</td><td>ARNT2</td><td>measured</td><td>down</td><td>4.626</td></tr></tbody></table>
+
+<h3>Genes dysregulated by overexpressions <a href="https://github.com/dhimmel/lincs/blob/abcb12f942f93e3ee839e5e3593f930df2c56845/data/consensi/signif/dysreg-overexpression.tsv"><code>dysreg-overexpression.tsv</code></a></h3>
+
+<p>This dataset contains significantly dysregulated genes due to overexpression perturbations. The raw dataset is available at:</p>
+
+<pre><code class="no-highlight hljs">https://github.com/dhimmel/lincs/raw/abcb12f942f93e3ee839e5e3593f930df2c56845/data/consensi/signif/dysreg-overexpression.tsv</code></pre>
+
+<p>Below is a preview:</p>
+
+<table class="table markdown-table"><thead><tr><th>perturbagen</th><th>entrez_gene_id</th><th>z_score</th><th>symbol</th><th>status</th><th>direction</th><th>nlog10_bonferroni_pval</th></tr></thead><tbody><tr><td>2</td><td>991</td><td>-4.687</td><td>CDC20</td><td>measured</td><td>down</td><td>2.567</td></tr><tr><td>2</td><td>54438</td><td>4.551</td><td>GFOD1</td><td>measured</td><td>up</td><td>2.282</td></tr><tr><td>2</td><td>5950</td><td>4.590</td><td>RBP4</td><td>imputed</td><td>up</td><td>1.541</td></tr></tbody></table>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="4" data-comment-id="1156">
+  <td class="comment-profile-avatar">
+		<a href="/u/kathleenk"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/s/img/p_default_medium.png' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1156"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/kathleenk">Kathleen Keough</a>
+				
+				<span class="light">&nbsp;<a href="#4" class="light">485 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Question 2</h1>
+
+<p>I answered:</p>
+
+<blockquote><p>How many overexpressions significantly upregulated their target gene (expected)? How many overexpressions significantly downregulated their target gene (unexpected)?</p></blockquote>
+
+<p>R code: <br></p>
+
+<pre><code class="no-highlight hljs"># workshop with dan himmelstein
+
+# which genes have regulation scores. It also contains whether the gene's expression was directly measured or imputed
+
+path &lt;- 'https://github.com/dhimmel/lincs/raw/abcb12f942f93e3ee839e5e3593f930df2c56845/data/consensi/genes.tsv'
+gene_df &lt;- readr::read_tsv(path)
+
+# significantly dysregulated genes due to knockdown perturbations
+
+path2 &lt;- 'https://github.com/dhimmel/lincs/raw/abcb12f942f93e3ee839e5e3593f930df2c56845/data/consensi/signif/dysreg-knockdown.tsv'
+kd_df &lt;- readr::read_tsv(path2)
+
+# significantly dysregulated genes due to overexpression perturbations
+
+path3 &lt;- 'https://github.com/dhimmel/lincs/raw/abcb12f942f93e3ee839e5e3593f930df2c56845/data/consensi/signif/dysreg-overexpression.tsv'
+oe_df &lt;- readr::read_tsv(path3)
+
+dat &lt;- filter(oe_df, perturbagen == entrez_gene_id)
+
+dat %&gt;%
+  dplyr::group_by(direction) %&gt;%
+  dplyr::summarize(
+    count = n()
+  )</code></pre>
+
+<p>R output: <br></p>
+
+<pre><code class="no-highlight hljs">Source: local data frame [2 x 2]
+
+  direction count
+      (chr) (int)
+1      down     4
+2        up   124
+/</code></pre>
+
+<p>So, 4 genes were significantly downregulated after being overexpressed (unexpected) and 124 genes were significantly upregulated after being overexpressed (expected). </p>
+
+<p>Thanks Dan!</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="5" data-comment-id="1157">
+  <td class="comment-profile-avatar">
+		<a href="/u/mishavysotskiy"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/s/img/p_default_medium.png' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1157"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/mishavysotskiy">Misha Vysotskiy</a>
+				
+				<span class="light">&nbsp;<a href="#5" class="light">485 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>For question 3,</p>
+
+<blockquote><p>How many genes were never significantly dysregulated by any knockdown perturbation? Report this number for both the measured and inferred gene sets.</p></blockquote>
+
+<p>The elegant dplyr solution (thanks Daniel) looks like:</p>
+
+<pre><code class="r">#how many times are genes disregulated in all?
+count_df = knockdown_df %&gt;%
+  dplyr::group_by(entrez_gene_id) %&gt;%
+  dplyr::summarise(count=n())
+
+#join the table of counts with the full table of genes. the genes that were not present
+#are automatically converted to missing data
+full=gene_df %&gt;% 
+  dplyr::left_join(count_df)
+
+#divide the missing data by imputed vs. measured
+result = full %&gt;% dplyr::filter(is.na(count)) %&gt;% 
+  dplyr::group_by(status) %&gt;% 
+  dplyr::summarise(count=n())</code></pre>
+
+<p>The solution: of all the genes, very few avoid disregulation!</p>
+
+<pre><code class="no-highlight hljs">    status count
+     (chr) (int)
+1  imputed    55
+2 measured     1</code></pre>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="6" data-comment-id="1158">
+  <td class="comment-profile-avatar">
+		<a href="/u/jeffreykim"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/206_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1158"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/jeffreykim">Jeffrey Kim</a>
+				
+				<span class="light">&nbsp;<a href="#6" class="light">485 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Question 1</h1>
+
+<blockquote><p>How many knockdowns significantly downregulated their target gene (expected)? How many knockdowns significantly upregulated their target gene (unexpected)?</p></blockquote>
+
+<p>Here is the Code :)</p>
+
+<pre><code class="r">path = 'https://github.com/dhimmel/lincs/raw/abcb12f942f93e3ee839e5e3593f930df2c56845/data/consensi/signif/dysreg-knockdown.tsv'
+gene_kd = readr::read_tsv(path)
+
+gene_kd %&gt;%
+  dplyr::filter(perturbagen == entrez_gene_id) %&gt;%
+  dplyr::group_by(direction) %&gt;%
+  dplyr::summarize(
+    count = n()
+  )
+
+</code></pre>
+
+<p>Output:</p>
+
+<pre><code class="no-highlight hljs">  direction count
+      (chr) (int)
+1      down   806
+2        up     9</code></pre>
+
+<p><strong>Conclusion:</strong> Of the knockdown genes, 806 significantly downregulated their gene (expected) while 9 upregulated their gene (unexpected)</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="7" data-comment-id="1159">
+  <td class="comment-profile-avatar">
+		<a href="/u/beaunorgeot"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/s/img/p_default_medium.png' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1159"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/beaunorgeot">Beau Norgeot</a>
+				
+				<span class="light">&nbsp;<a href="#7" class="light">485 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h2>Question 6</h2>
+
+<pre><code>knock_down_path =    "https://github.com/dhimmel/lincs/raw/abcb12f942f93e3ee839e5e3593f930df2c56845/data/con    sensi/signif/dysreg-knockdown.tsv"
+kd_genes = readr::read_tsv(knock_down_path)
+kd_genes$direction = as.factor(kd_genes$direction)
+
+kd_genes %&gt;%
+  group_by(symbol, direction) %&gt;%
+  dplyr::summarise(count=n()) %&gt;%
+  tidyr::spread(key = direction, value = count, fill = 0) %&gt;%
+  arrange(desc(up)) %&gt;% top_n(n = 10, wt = desc(up))</code></pre>
+
+<h2>Resulting Table</h2>
+
+<table class="table markdown-table"><thead><tr><th>symbol</th><th>down</th><th>up</th></tr></thead><tbody><tr><td>MCOLN1</td><td>2</td><td>1128</td></tr><tr><td>MAL</td><td>0</td><td>985</td></tr><tr><td>WIF1</td><td>0</td><td>884</td></tr><tr><td>SERPINA3</td><td>0</td><td>873</td></tr><tr><td>SATB1</td><td>0</td><td>862</td></tr><tr><td>CES1</td><td>0</td><td>849</td></tr><tr><td>XIST</td><td>30</td><td>764</td></tr><tr><td>CRIP1</td><td>0</td><td>713</td></tr><tr><td>KLHL21</td><td>2</td><td>602</td></tr><tr><td>COL11A1</td><td>0</td><td>562</td></tr><tr><td>TF</td><td>0</td><td>527</td></tr><tr><td>ERAP2</td><td>0</td><td>512</td></tr><tr><td>ABCC5</td><td>3</td><td>501</td></tr><tr><td>AGR2</td><td>2</td><td>478</td></tr><tr><td>CPVL</td><td>1</td><td>476</td></tr></tbody></table>
+
+<h2>Notes</h2>
+
+<p>These are the top 10 most unregulated genes. These up-regulated genes do not appear to be down-regulated with any significant frequency</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="8" data-comment-id="1160">
+  <td class="comment-profile-avatar">
+		<a href="/u/juliacluceru"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/s/img/p_default_medium.png' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1160"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/juliacluceru">Julia Cluceru</a>
+				
+				<span class="light">&nbsp;<a href="#8" class="light">485 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Question 5</h1>
+
+<blockquote><p>Which ten genes were most frequently significantly downregulated by gene knockdowns? How many knockdowns significantly downregulated these genes? How many knockdowns significantly upregulated these genes?</p></blockquote>
+
+<p>Here's my code:</p>
+
+<pre><code class="r">path="https://raw.githubusercontent.com/dhimmel/lincs/abcb12f942f93e3ee839e5e3593f930df2c56845/data/consensi/genes.tsv"
+path2="https://raw.githubusercontent.com/dhimmel/lincs/abcb12f942f93e3ee839e5e3593f930df2c56845/data/consensi/signif/dysreg-knockdown.tsv"
+path3="https://raw.githubusercontent.com/dhimmel/lincs/abcb12f942f93e3ee839e5e3593f930df2c56845/data/consensi/signif/dysreg-overexpression.tsv"
+gene_df = readr::read_tsv(path)
+kd_gene = readr::read_tsv(path2)
+oexp_gene= readr::read_tsv(path3)
+head(gene_df)
+head(kd_gene)
+View(kd_gene)
+library(dplyr)
+library(tidyr)
+
+gene_df %&gt;%
+  dplyr::group_by(status) %&gt;%
+  dplyr::summarize(
+    count=n()
+  )
+
+gene_df %&gt;% 
+  dplyr::mutate(kind='gene')
+
+#which 10 genes were most frequently dowregulated by KDs
+
+#first, find number of distinct genes downregulated by KDs (7411)
+kd_gene$entrez_gene_id %&gt;% 
+  n_distinct()
+#next, find number of pertubagens (4312)
+kd_gene$perturbagen %&gt;% 
+  n_distinct()
+
+#from the top 10 genes, how many times were they downregulated? 
+#genes most frequently DOWNREGULATED by the KNOCKDOWNS
+
+
+#filter to only downregulated KDs
+downregulated_kds &lt;- kd_gene %&gt;% 
+  filter(direction=="down")
+#sort by count to downregulated KDs
+downreg_kd_sorted &lt;- downregulated_kds %&gt;%
+  dplyr::group_by(symbol) %&gt;%
+  dplyr::summarise(
+    count=n()
+  ) %&gt;%
+  dplyr::arrange(desc(count))
+head(downreg_kd_sorted, 10)
+View(downreg_kd_sorted)
+
+#from the top 10 genes, how many times were they UPREGULATED? 
+#genes most frequently UPREGULATED by the KNOCKDOWNS
+
+#filter to only upregulated KDs
+upregulated_kds &lt;- kd_gene %&gt;% 
+  filter(direction=="up")
+#sort by count to upregulated KDs
+upreg_kd_sorted &lt;- upregulated_kds %&gt;%
+  dplyr::group_by(symbol) %&gt;%
+  dplyr::summarise(
+    count=n()
+  ) %&gt;%
+  dplyr::arrange(desc(count))
+head(upreg_kd_sorted, 10)
+View(upreg_kd_sorted)
+
+
+#How many knockdowns downregulated these genes? 195,786
+#How many knockdowns upregulated these genes? 132,282
+nrow(kd_gene)
+kd_gene %&gt;%
+  dplyr::group_by(direction) %&gt;%
+  dplyr::summarize(
+    count=n()
+  )
+
+upreg_kd_sorted&lt;- upreg_kd_sorted %&gt;% 
+  dplyr::rename(up_count=count)
+dim(upreg_kd_sorted)
+View(upreg_kd_sorted)
+
+downreg_kd_sorted &lt;-downreg_kd_sorted %&gt;%
+  dplyr::rename(down_count=count)
+dim(downreg_kd_sorted)
+
+MYANSWER&lt;- dplyr::full_join(downreg_kd_sorted, upreg_kd_sorted)
+
+MYANSWER[is.na(MYANSWER)] = 0
+MYANSWER</code></pre>
+
+<p>Here's my answer:</p>
+
+<table class="table markdown-table"><thead><tr><th>symbol</th><th>down_count</th><th>up_count</th></tr></thead><tbody><tr><td>RPS4Y1</td><td>1637</td><td>0</td></tr><tr><td>CDC20</td><td>1456</td><td>1</td></tr><tr><td>PCNA</td><td>1360</td><td>0</td></tr><tr><td>NME1</td><td>1182</td><td>0</td></tr><tr><td>MIF</td><td>1052</td><td>0</td></tr><tr><td>CSRP1</td><td>1031</td><td>1</td></tr><tr><td>STUB1</td><td>996</td><td>10</td></tr><tr><td>TIMM9</td><td>989</td><td>4</td></tr><tr><td>TYMS</td><td>881</td><td>0</td></tr><tr><td>GDF15</td><td>866</td><td>0</td></tr></tbody></table>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="9" data-comment-id="1161">
+  <td class="comment-profile-avatar">
+		<a href="/u/marjorieimperial"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/s/img/p_default_medium.png' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1161"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/marjorieimperial">Marjorie Imperial</a>
+				
+				<span class="light">&nbsp;<a href="#9" class="light">485 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Question 7, 8, and 9</h1>
+
+<pre><code class="r">#read in data 
+path_genes = 'https://github.com/dhimmel/lincs/raw/abcb12f942f93e3ee839e5e3593f930df2c56845/data/consensi/genes.tsv'
+gene_df = readr::read_tsv(path_genes)
+
+path_down = 'https://github.com/dhimmel/lincs/raw/abcb12f942f93e3ee839e5e3593f930df2c56845/data/consensi/signif/dysreg-knockdown.tsv'
+down_df = readr::read_tsv(path_down)
+
+path_over = 'https://github.com/dhimmel/lincs/raw/abcb12f942f93e3ee839e5e3593f930df2c56845/data/consensi/signif/dysreg-overexpression.tsv'
+over_df = readr::read_tsv(path_over)</code></pre>
+
+<h2>Question 7- Emmalyn Chen</h2>
+
+<pre><code class="r">q.7 = over_df %&gt;% subset(z_score &lt; 0) %&gt;% group_by(entrez_gene_id) %&gt;% summarize(count=n()) %&gt;% arrange(-count)
+q.7 = q.7[1:10,]</code></pre>
+
+<p>a. Which ten genes were most frequently significantly downregulated by gene overexpression? <br></p>
+
+<pre><code class="no-highlight hljs">entrez_gene_id count
+            (int) (int)
+1            6192   166
+2             991   165
+3            5111   165
+4            5018   122
+5             994   105
+6           26520   102
+7            1738    91
+8            9133    86
+9            7298    84
+10          22827    83
+</code></pre>
+
+<p>b. How many overexpressions significantly downregulated these genes?</p>
+
+<pre><code class="r">q.7.2 = over_df %&gt;% subset(z_score &lt; 0) %&gt;% filter(entrez_gene_id %in% q.7$entrez_gene_id) %&gt;% 
+  group_by(perturbagen) %&gt;% summarize(count = n())</code></pre>
+
+<p>612 overexpressed genes </p>
+
+<p>c. How many overexpressions significantly upregulated these genes?</p>
+
+<pre><code class="r">q.7.3 = over_df %&gt;% subset(z_score &gt; 0) %&gt;% filter(entrez_gene_id %in% q.7$entrez_gene_id) %&gt;% 
+  group_by(perturbagen) %&gt;% summarize(count = n())</code></pre>
+
+<p>4 overexpressed genes</p>
+
+<h2>Question 8 - Liz Levy</h2>
+
+<pre><code class="r">q.8 = over_df %&gt;% subset(z_score &gt; 0) %&gt;% group_by(entrez_gene_id) %&gt;% summarize(count=n()) %&gt;% arrange(-count)
+q.8 = q.8[1:10,]</code></pre>
+
+<p>a. Which ten genes were most frequently significantly upregulated by gene overexpression? <br></p>
+
+<pre><code class="no-highlight hljs">entrez_gene_id count
+            (int) (int)
+1           57192   180
+2            5331   152
+3           25966   140
+4           23378   113
+5            4118   104
+6            9903    99
+7           55008    98
+8            1066    96
+9            5971    94
+10           7503    94</code></pre>
+
+<p>b. How many overexpressions significantly upregulated these genes?<br></p>
+
+<pre><code class="r">q.8.2 = over_df %&gt;% subset(z_score &gt; 0) %&gt;% filter(entrez_gene_id %in% q.8$entrez_gene_id) %&gt;% 
+  group_by(perturbagen) %&gt;% summarize(count = n())</code></pre>
+
+<p>792 overexpressed genes  </p>
+
+<p>c. How many overexpressions significantly downregulated these genes?<br></p>
+
+<pre><code class="r">q.8.3 = over_df %&gt;% subset(z_score &lt; 0) %&gt;% filter(entrez_gene_id %in% q.8$entrez_gene_id) %&gt;% 
+  group_by(perturbagen) %&gt;% summarize(count = n())</code></pre>
+
+<p>14 overexpressed genes </p>
+
+<h2>Question 9 - Marjorie Imperial</h2>
+
+<p>For knockdown perturbations, what is the correlation between number of significantly down and upregulated measured genes.<br></p>
+
+<pre><code class="r">q.9.down.reg = down_df %&gt;% subset(z_score &lt; 0) %&gt;% group_by(perturbagen) %&gt;% summarize(count.down.reg = n())
+q.9.up.reg = down_df %&gt;% subset(z_score &gt; 0) %&gt;% group_by(perturbagen) %&gt;% summarize(count.up.reg = n())
+
+joined_df = dplyr::full_join(q.9.down.reg, q.9.up.reg)
+joined_df[is.na(joined_df)] = 0</code></pre>
+
+<p>Pearson correlation, R =0.9371317<br></p>
+
+<pre><code class="r">cor(joined_df$count.down.reg, joined_df$count.up.reg)</code></pre>
+
+<p>Kendall correlation R = 0.732456 <br></p>
+
+<pre><code class="no-highlight hljs">cor(joined_df$count.down.reg, joined_df$count.up.reg, method = 'kendall')</code></pre>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="10" data-comment-id="1162">
+  <td class="comment-profile-avatar">
+		<a href="/u/emmalynchen"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/s/img/p_default_medium.png' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1162"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/emmalynchen">Emmalyn Chen</a>
+				
+				<span class="light">&nbsp;<a href="#10" class="light">485 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>See Question 7 above. </p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="11" data-comment-id="1163">
+  <td class="comment-profile-avatar">
+		<a href="/u/jasleensodhi"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/s/img/p_default_medium.png' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1163"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/jasleensodhi">Jasleen Sodhi</a>
+				
+				<span class="light">&nbsp;<a href="#11" class="light">485 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Question 4</h1>
+
+<blockquote><p>How many genes were never significantly dysregulated by any knockdown perturbation? </p></blockquote>
+
+<pre><code class="r">library(dplyr)
+install.packages("tidyr")
+library(readr)
+library(ggplot2)
+
+path = 'https://github.com/dhimmel/lincs/raw/abcb12f942f93e3ee839e5e3593f930df2c56845/data/consensi/genes.tsv'
+path_ko = 'https://github.com/dhimmel/lincs/raw/abcb12f942f93e3ee839e5e3593f930df2c56845/data/consensi/signif/dysreg-knockdown.tsv'
+gene_df = readr::read_tsv(path)
+gene_ko_df = readr::read_tsv(path_ko)
+
+ghost_df = gene_df[! (gene_df$entrez_gene_id %in% gene_ko_df$entrez_gene_id), ]
+nrow(ghost_df)
+
+#for a list of these genes
+ghost_df$symbol</code></pre>
+
+<p>The number of genes that were not sig dysregulated by knockdown perturbation (on main list of genes, but not on knockdown list of genes) = 56!</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="12" data-comment-id="1164">
+  <td class="comment-profile-avatar">
+		<a href="/u/elizabethlevy1"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/s/img/p_default_medium.png' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1164"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/elizabethlevy1">Elizabeth Levy</a>
+				
+				<span class="light">&nbsp;<a href="#12" class="light">485 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>See question 8 above.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="13" data-comment-id="1165">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1165"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#13" class="light">485 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Closing remarks</h1>
+
+<p>Impressive work!</p>
+
+<p>Each of the nine pupils in attendance answered their question. Most finished within two hours — despite several having little R experience — after an initial 30 minute tutorial. The workshop succeeded at introducing a broad range of topics: R, the hadleyverse, transcriptomics, LINCS L1000, markdown, <em>Thinklab</em>, and open science.</p>
+
+<p>I enjoyed helping the pupils learn while they performed original and noteworthy analyses. And meanwhile, through the power of realtime open science on <em>Thinklab</em>, we're now coauthors on a citeable work <span class="citation">[<a href="/discussion/workshop-to-analyze-lincs-data-for-the-systems-pharmacology-course-at-ucsf/181" class="citation" data-key="10.15363/thinklab.d181">1</a>]</span>.</p>
+
+<p>The workshop built off of many developments in scientific education: specifically, solving problems <span class="citation">[<a href="https://doi.org/10.1038/523272a" class="citation" data-key="10.1038/523272a">2</a>]</span> in contemporary research <span class="citation">[<a href="https://doi.org/10.1126/science.1216570" class="citation" data-key="10.1126/science.1216570">3</a>]</span> while contributing to the scientific record <span class="citation">[<a href="https://doi.org/10.1038/521263f" class="citation" data-key="10.1038/521263f">4</a>]</span>.</p>
+
+<p>Next, I'll review the answers to see what we have learned.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="14" data-comment-id="1166">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1166"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#14" class="light">485 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Workshop conclusions</h1>
+
+<p>Here's my analysis of the answers from today's workshop. Thanks again to the pupils for their hard work.</p>
+
+<h3>Do target genes of genetic perturbation respond in the expected direction?</h3>
+
+<p>Yes, we established this important control. Knockdown overwhelming downregulated (806 instances) rather than upregulated (9 instances) its target gene (<a href="#6">Q1</a> by <a href="/u/jeffreykim" class="username">@jeffreykim</a>). Overexpression overwhelming upregulated (124 instances) rather than downregulated (4 instances) its target gene (<a href="#4">Q2</a> by <a href="/u/kathleenk" class="username">@kathleenk</a>).</p>
+
+<h3>Are the many genes that never respond to genetic perturbation?</h3>
+
+<p>No, we saw that almost all genes were dysregulated by at least one genetic perturbation. Only 0.7% of genes (56 out of 7,467) were never dysregulated by a knockdown (<a href="#11">Q4</a> by <a href="/u/jasleensodhi" class="username">@jasleensodhi</a>). Only 1 of these genes was measured, while the remaining 55 were imputed (<a href="#5">Q3</a> by <a href="/u/mishavysotskiy" class="username">@mishavysotskiy</a>). This imbalance makes sense since imputed genes were <a href="http://thinklab.com/discussion/computing-consensus-transcriptional-profiles-for-lincs-l1000-perturbations/43#70" class="citation thread-citation" data-key="10.15363/thinklab.d43">subject to</a> a more stringent significance threshold. The low number of never-dysregulated genes is a welcome result from a network perspective, where pervasive connectivity is important.</p>
+
+<h3>Which genes are most frequently dysregulated?</h3>
+
+<p>Next, we identified which genes were most frequently dysregulated due to a knockdown. <em>RPS4Y1</em> was downregulated by 37.8% (1,637 out of 4,326) of knockdowns (<a href="#8">Q5</a> by <a href="/u/juliacluceru" class="username">@juliacluceru</a>). <em>MCOLN1</em> was upregulated by 26.1% (1,128 out of 4,326) of knockdowns (<a href="#7">Q6</a> by <a href="/u/beaunorgeot" class="username">@beaunorgeot</a>). The top-ten-most-frequently-downregulated-by-knockdown genes were rarely upregulated by knockdown. The same consistency in direction of dysregulation applied to the top-ten-most-frequently-upregulated genes as well.</p>
+
+<p>Next, we identified which genes were most frequently dysregulated due to overexpression. <em>RPS4Y1</em> was downregulated by 6.9% (166 out of 2,413) of overepressions (<a href="#12">Q7</a> by <a href="/u/emmalynchen" class="username">@emmalynchen</a>). <em>MCOLN1</em> was upregulated by 7.5% (180 out of 2,413) of overepressions (<a href="#12">Q8</a> by <a href="/u/elizabethlevy1" class="username">@elizabethlevy1</a>). Interestingly, <em>RPS4Y1</em> was the most downregulated gene by both knockdown and overexpression. Conversely, <em>MCOLN1</em> was the most upregulated gene for both perturbation types.</p>
+
+<p>The findings from Q5–8 fit with <a href="/u/larsjuhljensen" class="username">@larsjuhljensen</a>'s <a href="http://thinklab.com/discussion/positive-correlations-between-knockdown-and-overexpression-profiles-from-lincs-l1000/171#3" class="citation thread-citation" data-key="10.15363/thinklab.d171">hypothesis</a> that a general stress response may cause many genes to respond to any genetic perturbation in a consistent direction. Q5–8 also help address <a href="/u/caseygreene" class="username">@caseygreene</a>'s question on <a href="http://thinklab.com/discussion/positive-correlations-between-knockdown-and-overexpression-profiles-from-lincs-l1000/171#2" class="citation thread-citation" data-key="10.15363/thinklab.d171">which genes</a> are driving the signals.</p>
+
+<h3>Does broad downregulation occur in tandem with broad upregulation?</h3>
+
+<p>Finally, there was a strong correlation between the number of downregulated and upregulated genes per knockdown (<a href="#12">Q9</a> by <a href="/u/marjorieimperial" class="username">@marjorieimperial</a>). In other words, a perturbation which downregulates many genes will also likely upregulate many genes.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-211" class="inline-note toggle-parent" data-note-id="211">
+	<p><a href="/u/larsjuhljensen">Lars Juhl Jensen</a>: Reassuring to see that things behave the way I would expect. This should make it fairly easy to derive a scoring scheme that extracts only associations that are specifically associated with a small number of perturbations, as opposed to associated with any perturbation.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-212" class="inline-note toggle-parent" data-note-id="212">
+	<p><a href="/u/larsjuhljensen">Lars Juhl Jensen</a>: The part about broad downregulation occurring in tandem with broad upregulation is almost a given. Even if it is not the case biologically, this will be the case after most normalization methods.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+    		
+		</table>
+
+    
+
+    &nbsp;<br>
+    <a class="btn btn-primary btn-lg" href="/signup?next=/discussion/workshop-to-analyze-lincs-data-for-the-systems-pharmacology-course-at-ucsf/181&suppress_message=1" style>Join to Reply</a>
+
+
+		<table class="references table-td-5" style="display:none;"><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d43' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d43'><a href='/discussion/computing-consensus-transcriptional-profiles-for-lincs-l1000-perturbations/43' class='pub-title'>Computing consensus transcriptional profiles for LINCS L1000 perturbations</a><div class='pub-body'>Daniel Himmelstein, Caty Chung (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d43'>10.15363/thinklab.d43</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d171' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>2.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d171'><a href='/discussion/positive-correlations-between-knockdown-and-overexpression-profiles-from-lincs-l1000/171' class='pub-title'>Positive correlations between knockdown and overexpression profiles from LINCS L1000</a><div class='pub-body'>Daniel Himmelstein, Casey Greene, Lars Juhl Jensen (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d171'>10.15363/thinklab.d171</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d83' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>3.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d83'><a href='/discussion/r-best-practices/83' class='pub-title'>R best practices</a><div class='pub-body'>Daniel Himmelstein (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d83'>10.15363/thinklab.d83</a></div></div></td></tr><tr><td><a href='/doi/10.15363/thinklab.d181' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>4.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d181'><a href='/discussion/workshop-to-analyze-lincs-data-for-the-systems-pharmacology-course-at-ucsf/181' class='pub-title'>Workshop to analyze LINCS data for the Systems Pharmacology course at UCSF</a><div class='pub-body'>Daniel Himmelstein, Kathleen Keough, Misha Vysotskiy, Jeffrey Kim, Beau Norgeot, Julia Cluceru, Marjorie Imperial, Emmalyn Chen, Jasleen Sodhi, Elizabeth Levy (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d181'>10.15363/thinklab.d181</a></div></div></td></tr><tr><td><a href='/doi/10.1038/523272a' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>5.</div></td><td><div class='doi-body' data-key='10.1038/523272a'><a href='/doi/10.1038/523272a' class='pub-title'>Why we are teaching science wrong, and how to make it right</a><div class='pub-body'>M. Mitchell Waldrop (2015) <i>Nature</i>. doi:<a class='pub-doi' href='https://doi.org/10.1038/523272a'>10.1038/523272a</a></div></div></td></tr><tr><td><a href='/doi/10.1126/science.1216570' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>6.</div></td><td><div class='doi-body' data-key='10.1126/science.1216570'><a href='/doi/10.1126/science.1216570' class='pub-title'>Interdisciplinary Graduate Training in Teaching Labs</a><div class='pub-body'>R. D. Vale, J. DeRisi, R. Phillips, R. D. Mullins, C. Waterman, T. J. Mitchison (2012) <i>Science</i>. doi:<a class='pub-doi' href='https://doi.org/10.1126/science.1216570'>10.1126/science.1216570</a></div></div></td></tr><tr><td><a href='/doi/10.1038/521263f' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>7.</div></td><td><div class='doi-body' data-key='10.1038/521263f'><a href='/doi/10.1038/521263f' class='pub-title'>Fruit-fly paper has 1,000 authors</a><div class='pub-body'>Chris Woolston (2015) <i>Nature</i>. doi:<a class='pub-doi' href='https://doi.org/10.1038/521263f'>10.1038/521263f</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d43' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>8.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d43'><a href='/discussion/computing-consensus-transcriptional-profiles-for-lincs-l1000-perturbations/43' class='pub-title'>Computing consensus transcriptional profiles for LINCS L1000 perturbations</a><div class='pub-body'>Daniel Himmelstein, Caty Chung (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d43'>10.15363/thinklab.d43</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d171' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>9.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d171'><a href='/discussion/positive-correlations-between-knockdown-and-overexpression-profiles-from-lincs-l1000/171' class='pub-title'>Positive correlations between knockdown and overexpression profiles from LINCS L1000</a><div class='pub-body'>Daniel Himmelstein, Casey Greene, Lars Juhl Jensen (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d171'>10.15363/thinklab.d171</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d171' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>10.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d171'><a href='/discussion/positive-correlations-between-knockdown-and-overexpression-profiles-from-lincs-l1000/171' class='pub-title'>Positive correlations between knockdown and overexpression profiles from LINCS L1000</a><div class='pub-body'>Daniel Himmelstein, Casey Greene, Lars Juhl Jensen (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d171'>10.15363/thinklab.d171</a></div></div></td></tr></table>
+
+    
+
+
+	</td>
+	<td class="thread-sidebar">
+
+
+			
+
+      <a class="btn btn-default follow-link btn-follow btn-lg is-following tt-top full-width" title="Follow discussion" data-id="181" data-ctype="thread" data-is-following="false">&nbsp;</a>
+
+      
+        <div class="status-box text-center"><span style="">Status:</span> 
+  Completed
+
+</div>
+      
+
+      
+        
+      
+
+
+				
+
+					<div class="details">Views</div>
+					<span style="font-size:20px;">183</span>
+
+        
+
+				
+					<div class="details">Topics</div>
+					<div style="margin-bottom:15px;">
+		            <a href="/topics/systems-pharmacology" class="tag">Systems Pharmacology</a><a href="/topics/l1000" class="tag">L1000</a><a href="/topics/ucsf" class="tag">UCSF</a><a href="/topics/open-education" class="tag">Open Education</a><a href="/topics/lincs" class="tag">LINCS</a>
+					</div>
+				
+
+
+		
+			<div class="details">Referenced by</div>
+			<div style="font-size:12px;"><ul style="padding-left:16px !important;">
+			
+				<li>
+					
+					Research report: <a href='/p/rephetio/report'>Rephetio: Repurposing drugs on a hetnet</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/positive-correlations-between-knockdown-and-overexpression-profiles-from-lincs-l1000/171' class='thread-title'>Positive correlations between knockdown and overexpression profiles from LINCS L1000</a>
+				</li>
+			
+				</ul>
+			</div>
+		
+
+		
+			<div class="details">Cite this as</div>
+			<span style="font-size:12px;">
+				Daniel Himmelstein, Kathleen Keough, Misha Vysotskiy, Jeffrey Kim, Beau Norgeot, Julia Cluceru, Marjorie Imperial, Emmalyn Chen, Jasleen Sodhi, Elizabeth Levy (2016) Workshop to analyze LINCS data for the Systems Pharmacology course at UCSF. <i>Thinklab.</i> doi:<a href='https://doi.org/10.15363/thinklab.d181'>10.15363/thinklab.d181</a>
+			</span>
+		
+
+		<div class="details">License</div>
+		<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0;width:88px;height:31px;" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></p>
+
+		<div class="details">Share</div>
+		
+			
+				<a class="share-button fb" onclick="javascript:void(window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A//thinklab.com/discussion/workshop-to-analyze-lincs-data-for-the-systems-pharmacology-course-at-ucsf/181','','width=600,height=460,menubar=no,status=no'));" href="#"></a>
+<a class="share-button twitter" onclick="javascript:void(window.open('https://twitter.com/share?text=Workshop%20to%20analyze%20LINCS%20data%20for%20the%20Systems%20Pharmacology%20course%20at%20UCSF&url=https%3A//thinklab.com/discussion/workshop-to-analyze-lincs-data-for-the-systems-pharmacology-course-at-ucsf/181','','width=600,height=300,menubar=no,status=no'));" href="#"></a>
+<a class="share-button google" onclick="javascript:void(window.open('https://plus.google.com/share?url=https%3A//thinklab.com/discussion/workshop-to-analyze-lincs-data-for-the-systems-pharmacology-course-at-ucsf/181','','width=510,height=460,menubar=no,status=no'));" href="#"></a>
+
+			
+		
+
+	</td>
+</tr></table>
+
+
+		</div>
+
+
+		
+	    	<div class="footer">
+<div style="background:#dedede;">
+	<div class="main-centered-div text-center" style="padding:20px;">
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#771f121b1b1837031f1e191c1b16155914181a"><span class="__cf_email__" data-cfemail="cba3aea7a7a48bbfa3a2a5a0a7aaa9e5a8a4a6">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+	</div>
+</div>
+<div class="main-footer">
+	<div class="main-centered-div">
+
+<table class="full-width"><tr>
+	<td class="footer-nav">
+
+        <div class="foot-head">Explore</div>
+        <a href="/proposals">Proposals</a><br>
+        <a href="/projects">Projects</a><br>
+        <a href="/publications">Article discussion</a><br>
+        <a href="/discussion">All discussion</a><br>
+        <a href="/topics">Topics</a><br>
+        <!-- <a href="/funders">Funders</a><br> -->
+        <a href="/funding">Funding opportunities</a><br>
+
+	</td>
+	<td class="footer-nav">
+
+        <!-- <div class="foot-head">Help &amp; feedback</div>	 -->
+        <!-- <div class="foot-head">Intro</div>
+        <a href="/benefits/for-science">Why</a><br>
+        <a href="/how-it-works">How it works</a><br>
+
+<br> -->
+
+        <div class="foot-head">Community</div>
+        <a href="/leaderboard">Leaderboard</a><br>
+        <a href="/p/meta">Thinklab Meta</a><br>
+				<a href="/help/faq">Help</a><br>
+				<!-- <a href="/new-project">Start a proposal</a><br> -->
+        <!-- <a href="/benefits/proposal">Benefits</a><br> -->
+        <!-- <a href="/funding">Get funded</a><br> -->
+        <!-- <a href="/participate">Become a contributor</a><br> -->
+        <!-- <a href="/for-funders">For science funders</a><br> -->
+        <!-- <a href="/for-institutions">For institutions</a><br> -->
+
+	</td>
+	<td class="footer-nav">
+
+
+
+        <div class="foot-head">About</div>
+        <a href="/about">Overview</a><br>
+        <a href="/benefits">Benefits</a><br>
+        <a href="/how-it-works">How it works</a><br>
+        <a href="/about/story">Our story</a><br>
+        <a href="/blog">Our blog</a><br>
+        <a href="/about/jobs">Join the team</a><br>
+        <br>
+
+        <!-- <div class="foot-head">Help</div>
+        <a href="/help">Help</a><br>
+		 -->
+
+
+	</td>
+	<td class="footer-nav">
+		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
+		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<br><br>
+		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
+
+	</td>
+
+</tr></table>
+
+</div>
+</div>
+</div>
+
+		
+
+	</div>
+
+
+  <script></script>
+  <script>
+  var MEDIA_URL = 'https://think-lab.s3.amazonaws.com/m/';
+  var STATIC_URL = 'https://think-lab.s3.amazonaws.com/s/';
+  var page_is_authenticated = false;
+  var page_page = 'discussion';
+  var page_profile_id = undefined;
+</script>
+
+
+
+	<!-- Note different script type. MUST come before MathJax.js -->
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	        "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"],
+	                        scale: 110, linebreaks: { automatic:true },
+	                        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+	        tex2jax: { inlineMath: [ ["$$", "$$"], ["\\(","\\)"] ],
+	                    displayMath: [ ["$$$","$$$"], ["\\[", "\\]"] ],
+	                    processEscapes: true,}
+	            });
+
+	</script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://think-lab.s3.amazonaws.com/s/dist/main.min.js"></script>
+  
+
+
+
+  
+	
+  
+  
+  
+<script>
+$(function() {
+  recordHit('thread', 181);
+});
+</script>
+
+
+
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>

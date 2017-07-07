@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08CV1taQlkRXEdFAz0WFFNIRVVcOkVcU049BxNcWw==","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":447}</script>
+    <title>Proposal: Predicting Bcr-Abl targets using a hybrid information extraction system</title>
+	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
+    <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/highlightjs/github.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/css.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/bootstrap-multiselect.css" />
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
+    
+    
+    
+    
+  
+    <meta name="citation_doi" content="10.15363/thinklab.a11">
+    <meta name="citation_title" content="Predicting Bcr-Abl targets using a hybrid information extraction system [proposal]">
+    <meta name="citation_online_date" content="Jan. 18, 2016">
+    <meta name="citation_author" content="Tong Shu Li">
+    <meta name="citation_journal_title" content="Thinklab">
+    <meta name="citation_publisher" content="Thinklab">
+  
+
+    
+
+
+	<!-- GoogleAnalytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-48550230-1', 'thinklab.com');
+	ga('require', 'displayfeatures');
+	
+	ga('send', 'pageview');
+
+	</script>
+
+
+
+
+
+
+</head>
+<body >
+  <form id="form_action" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+</form>
+
+	
+
+	<div class="body-wrapper">
+
+		
+
+
+<!-- <div style="height:5px;background-image:url('https://think-lab.s3.amazonaws.com/s/img/top-bg.gif');"></div> -->
+<div class="gradient">
+	<div class="main-centered-div header-container">
+
+<table class="full-width" style="height:60px;"><tr>
+	<td style="width:200px;vertical-align:middle;padding-bottom:15px;">
+		<a href="/" style="font-weight:normal;color:#212121;"><img src="https://think-lab.s3.amazonaws.com/s/img/logo.png" width="160"></a>
+	</td><td style="vertical-align:middle;text-align:left;padding-top:6px;width:100%;padding-left:40px;">
+		<ul id="not-search-block"  class="main-header">
+
+
+			
+
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/proposals">Proposals</a></li>
+						<li><a href="/projects">Projects</a></li>
+						<li><a href="/publications">Article discussion</a></li>
+						<li><a href="/discussion">All discussion</a></li>
+					</ul>
+				</li>
+				<li><a href="/leaderboard">Leaderboard</a></li>
+
+			
+				<li><a href="/about">About</a></li>
+			
+
+
+		</ul>
+
+    <ul id="search-block" class="main-header" style="display: none; margin-right: 30px;">
+        <li class="full-width">
+            <form method="get" action="/search">
+			<div class="input-group full-width">
+				<input name="q" type="text" class="form-control search-input">
+			</div>
+            </form>
+        </li>
+    </ul>
+
+	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
+		<ul class="main-header pull-right" style="padding-left: 0;">
+    		
+                <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+            
+
+        </ul>
+    </ul>
+	</td>
+</tr></table>
+
+<!-- <div id="global-search-div" class="main-centered-div" style="display:none;">
+	<input type="text" value="" class="thread-search form-control" placeholder="Search" data-action="/discussion">
+</div> -->
+
+	</div>
+</div>
+
+		
+	  
+
+
+
+	  
+
+
+		
+
+		<div class="dark-head"><div class="main-centered-div">
+
+			
+
+	
+
+
+	<div class="header-object-type"></div>
+
+	
+			<a class="btn btn-lg follow-link btn-follow pull-right active tt-top" style="margin-left:20px;" title="Follow project discussion" data-id="17" data-ctype="project" data-is-following="false">&nbsp;</a>
+	
+
+	<h2 class="header-object-name">Predicting Bcr-Abl targets using a hybrid information extraction system</h2>
+
+	
+	<div class="project-team">
+		<a href='/u/tongli'>Tong Shu Li</a>
+		 <!-- &nbsp; &nbsp; doi:<a href="https://doi.org/10.15363/thinklab.17">10.15363/thinklab.17</a> -->
+	</div>
+	
+
+		<!-- <div class="project-team">
+			<b>DOI:</b> <a href="https://doi.org/10.15363/thinklab.17">10.15363/thinklab.17</a>
+		</div> -->
+
+		
+			<div class="project-team">
+			<div class="proj-funding">
+				<b>Funding opportunity:</b>
+				
+					<a href="/funding/5/proposals">International Student Research Fellowships</a>
+				
+			</div>
+			</div>
+		
+
+	<div class="project-team">
+		
+		<div class="proposal-status proposal-status-lg proposal-status-awaiting-funder">Awaiting Funder</div>
+		
+		
+		
+	</div>
+
+
+
+
+	
+
+
+	<!-- <div class="project-team">
+		
+	</div> -->
+
+    <ul class="nav nav-tabs project-nav" style="margin-top:25px;">
+
+		
+
+		
+
+    
+
+		
+	    
+	        <li class="active"><a href="/p/HHMI_Bcr_Abl/proposal">Proposal</a></li>
+	    
+	    
+		
+
+		<li><a href="/p/HHMI_Bcr_Abl/discussion"><span class="nav-fig">5</span>Discussions</a></li>
+
+		
+			<li><a href="/p/HHMI_Bcr_Abl/leaderboard"><span class="nav-fig">6</span>Reviewers</a></li>
+		
+
+		
+
+		
+
+
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown"><span style="opacity:0.5">More <span class="caret"></span></span></a>
+            <ul class="dropdown-menu" style="font-size:13px;background-color:#819ec8">
+
+				
+
+				
+
+            <li><a href="/p/HHMI_Bcr_Abl/followers"><span class="nav-fig">7</span>Followers</a></li>
+            </ul>
+        </li>
+
+			
+
+    </ul>
+
+
+
+		</div></div>
+		
+		<div class="main-centered-div" style="margin-top:40px;padding-bottom:340px">
+	    
+
+	
+
+  
+
+  
+    
+        
+      
+  
+
+<!--  -->
+
+
+  
+
+
+
+
+
+    <table class="project-table"><tr>
+      <td class="main-table-content">
+
+
+        
+            <div class="instructions">
+              <p>I am a second-year graduate student in <a href="http://sulab.org/andrew-i-su-ph-d/">Dr. Andrew Su's</a> lab at <a href="http://scripps.edu">The Scripps Research Institute</a>. My current research focus is on resolving biological problems using literature-based discovery improved by crowdsourcing and machine learning.</p>
+
+<p>I am currently applying for the 2016 Howard Hughes Medical Institute's (HHMI) <a href="http://www.hhmi.org/programs/international-student-research-fellowships">International Student Research Fellowship</a> (<a href="http://www.hhmi.org/sites/default/files/Programs/International/I16_ProgramAnnouncement.pdf">official announcement</a>). The application consists of a one page personal statement and a research proposal, which must:</p>
+
+<ol><li>Be aligned with the research goals of HHMI.</li><li>Be structured similarly to a NIH grant application (e.g. address the significance and innovation, potential pitfalls, alternative strategies, and include a testable hypothesis).</li><li>Be no longer than three (3) pages in length (excluding references).</li></ol>
+
+<p>Thank you for reviewing my proposal. PDFs of the <a href="https://drive.google.com/file/d/0ByxTs7M4ndeJSDc5M1dqbEVlZlU/view?usp=sharing">research proposal</a> and <a href="https://drive.google.com/file/d/0ByxTs7M4ndeJaVFVdl9iY1VOOU0/view?usp=sharing">personal statement</a> are also available. My email is <a href="/cdn-cgi/l/email-protection#03776c6d646f6a437060716a7373702d666776"></a><a href="/cdn-cgi/l/email-protection#03776c6d646f6a437060716a7373702d666776"><span class="__cf_email__" data-cfemail="5d2932333a31341d2e3e2f342d2d2e73383928">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a>.</p>
+              <table class="references table-td-5" style="display:none;"></table>
+            </div>
+        
+
+        
+			     <h1 class="page-title">Proposal</h1>
+        
+
+			  
+
+<div class="document-body">
+
+  <div id="document_body"><p>Chronic myeloid leukemia (CML) is a disorder of uncontrolled leukocyte proliferation caused by a chromosome translocation resulting in Bcr-Abl, a constitutively active tyrosine kinase <span class="citation">[<a href="https://doi.org/10.1002/ajh.24221" class="citation" data-key="10.1002/ajh.24221">1</a>, <a href="https://doi.org/10.1126/science.2406902" class="citation" data-key="10.1126/science.2406902">2</a>]</span>. Over a thousand Americans die from CML each year due to resistance to existing therapies like imatinib <span class="citation">[<a href="http://www.cancer.org/acs/groups/content/@editorial/documents/document/acspc-044552.pdf" class="citation" data-key="cancer_facts">3</a>, <a href="http://www.ncbi.nlm.nih.gov/pubmed/26458439" class="citation" data-key="kimura2015">4</a>, <a href="https://doi.org/10.2174/1568009615666150921141004" class="citation" data-key="10.2174/1568009615666150921141004">5</a>]</span>. Difficulties in selectively inhibiting Bcr-Abl have shifted drug development towards targeting downstream Bcr-Abl interactors, many of which are still unknown <span class="citation">[<a href="http://www.njmonline.nl/getpdf.php?id=1107" class="citation" data-key="thielen2011">6</a>]</span>. Identifying new Bcr-Abl targets would spur drug development and lead to novel CML treatments.</p>
+
+<a name="proposal"></a><div class="figure" figure-id="proposal"><div class="figure-content"><img src="http://think-lab.s3.amazonaws.com/m/figures/16.jpg"></div>
+            <div class="signature-1">
+                <div class="figure-title">Figure 1. Informatics workflow for predicting Bcr-Abl targets.</div>
+                <div class="figure-description"><p>Biomedical publications are converted into a structured knowledge network using a hybrid information extraction system. I hypothesize that such a network can be used to predict novel Bcr-Abl targets.</p></div>
+            </div>
+        </div>
+
+<p>Informatics techniques utilizing knowledge networks built from the biomedical literature have successfully identified novel p53 kinases and prostate cancer drugs <span class="citation">[<a href="https://doi.org/10.4137/CIN.S13889" class="citation" data-key="10.4137/CIN.S13889">7</a>, <a href="https://doi.org/10.1145/2623330.2623667" class="citation" data-key="10.1145/2623330.2623667">8</a>]</span>. By exhaustively processing millions of documents, informatics techniques discover insights previously missed by individual scientists. However, existing computer programs cannot extract a significant portion of important information due to limitations like being able to only process individual sentences <span class="citation">[<a href="https://doi.org/10.1016/j.jbi.2014.05.013" class="citation" data-key="10.1016/j.jbi.2014.05.013">9</a>]</span>. Improvements to processing programs would increase the breadth and depth of extractable information <span class="citation">[<a href="https://doi.org/10.1007/s11390-010-9313-5" class="citation" data-key="10.1007/s11390-010-9313-5">10</a>, <a href="https://doi.org/10.1186/gb-2008-9-s2-s7" class="citation" data-key="10.1186/gb-2008-9-s2-s7">11</a>]</span>. Crowdsourcing, an approach using groups of untrained experts to perform complex tasks, has been applied to predict protein and mRNA structure and mine biomedical text <span class="citation">[<a href="https://doi.org/10.1073/pnas.1313039111" class="citation" data-key="10.1073/pnas.1313039111">12</a>, <a href="https://doi.org/10.1038/nature09304" class="citation" data-key="10.1038/nature09304">13</a>, <a href="https://doi.org/10.1093/bioinformatics/btt333" class="citation" data-key="10.1093/bioinformatics/btt333">14</a>]</span>. Machine learning (ML) is an analytical technique that allows programs, or classifiers, to infer patterns from provided data <span class="citation">[<a href="https://mitpress.mit.edu/books/introduction-machine-learning-0" class="citation" data-key="alpaydin2014">15</a>]</span>.</p>
+
+<p>I propose to identify cytoplasmic Bcr-Abl targets using an informatics technique combining crowdsourcing and automated text mining (<a href="#proposal">Figure 1</a>). I will develop an information extraction workflow using crowdsourcing and integrate machine learning methods for automated pattern recognition. This will allow a higher number of documents to be processed than what is possible with crowdsourcing alone at a quality higher than what is currently possible with automated programs. Applying the hybrid method to the literature surrounding CML and Bcr-Abl will answer the following two questions: 1) What are the limitations of existing automated information extraction programs? 2) What are previously unidentified targets of Bcr-Abl? Researchers in the natural language processing and drug discovery domains have long sought answers to these questions.</p>
+
+<h2 id="specific-aims">Specific Aims</h2>
+
+<h3>Aim 1: Validate non-expert information extraction ability</h3>
+
+<p>The first step to developing a hybrid information extraction technique is to demonstrate that non-experts can read and interpret scientific publications. This step is necessary to ensure that the assertions extracted by the system can be trusted, a common problem in interpreting output of purely automated methods. In preliminary experiments we have determined that the pooled judgments of six non-experts is almost as accurate as domain experts at identifying biological concepts in text (<a href="#proof">Figure 2a</a>). On a more complex task of determining chemical-induced diseases, we found that using as few as four non-experts already gave accuracies of 65% (<a href="#proof">Figure 2b</a>), demonstrating that non-experts can interpret publications with little training. I will expand the difficulty and variety of tasks, and continue to evaluate worker performance by comparing performance to gold standards produced by expert biocurators.</p>
+
+<a name="proof"></a><div class="figure" figure-id="proof"><div class="figure-content"><img src="http://think-lab.s3.amazonaws.com/m/figures/17.png"></div>
+            <div class="signature-1">
+                <div class="figure-title">Figure 2. Non-experts can interpret biomedical text.</div>
+                <div class="figure-description"><p><strong>a)</strong> Non-expert performance on a disease annotation task steadily improves as the number of workers increases, eventually reaching that of a domain expert. <strong>b)</strong> On a more complex chemical-disease relation identification task, non-experts found 56% of relations picked by experts, but 75% of the predictions were correct, leading to a overall performance of 65%.</p></div>
+            </div>
+        </div>
+
+<h3>Aim 2: Integrate machine learning with a crowdsourcing workflow</h3>
+
+<p>Although preliminary studies have shown that ML techniques can be used to resolve judgment disagreements better than majority voting (<a href="#machine_learn">Figure 3a</a>), how the approaches can be used to complement one another is still mostly unknown, as the two approaches have historically been used independently <span class="citation">[<a href="https://doi.org/10.1007/978-3-642-36406-8_1" class="citation" data-key="10.1007/978-3-642-36406-8_1">16</a>]</span>. To address this question, I will perform experiments attempting to fuse the two techniques together in novel ways in order to utilize the strengths of each technique.</p>
+
+<p>For this aim, I will identify areas where predictive classifiers would provide an advantage over currently used methods. Our preliminary experiments show that task allotment and judgment aggregation would benefit from enhanced modelling. I will apply standard classifiers trained on crowd gathered data and compare whether performance or scalability increased. As a control, I will perform the same tasks with no classifiers. I expect that classifier application will enhance performance and increase the number of documents which can be processed, but that these improvements will be partially dependent upon the consistency of the human judgments.</p>
+
+<h3>Aim 3: Identify downstream protein targets of Bcr-Abl</h3>
+
+<p>I will answer the following question: which cytoplasmic proteins in the literature are likely downstream targets of Bcr-Abl? To address this question, I will apply the hybrid information extraction system to documents related to Bcr-Abl to produce a knowledge network centered around the protein.</p>
+
+<a name="machine_learn"></a><div class="figure" figure-id="machine_learn">
+                <table class="full-width" style="table-layout: fixed;"><tr><td style="width:50%">
+                    <div class="figure-content"><img src="http://think-lab.s3.amazonaws.com/m/figures/18.png"></div>
+                </td><td style="width:50%">
+                    
+            <div class="signature-2">
+                <div class="figure-title">Figure 3. Advantages of machine learning.</div>
+                <div class="figure-description"><p><strong>a)</strong> Using machine learning to aggregate votes increases performance by 26% compared to simple majority voting (adapted from <span class="citation">[<a href="https://doi.org/10.1007/978-3-642-36406-8_1" class="citation" data-key="10.1007/978-3-642-36406-8_1">16</a>]</span>). <strong>b)</strong> An example of a prostate cancer drug identified using a network analysis <span class="citation">[<a href="https://doi.org/10.4137/CIN.S13889" class="citation" data-key="10.4137/CIN.S13889">7</a>]</span>.</p></div>
+            </div>
+        
+                </td></tr></table>
+            </div>
+
+<p>I will then overlay known Bcr-Abl targets and known non-targets with the extracted information graph, and use concept similarities and term connectivities to rank potential proteins based on their resemblance to known Bcr-Abl targets. For validation, I will ask a group of blinded clinicians to review the predictions based on the original supporting literature documents and judge for prediction validity. Real and fake targets will be introduced as control items to verify expert consistency. Since a similar network analysis was used to identify prostate cancer drugs (<a href="#machine_learn">Figure 3b</a>), I expect that the method will find at least one novel Bcr-Abl target, and that other proteins like extracellular proteins will rank near the bottom of the predictions <span class="citation">[<a href="https://doi.org/10.4137/CIN.S13889" class="citation" data-key="10.4137/CIN.S13889">7</a>]</span>.</p>
+
+<h3>Pitfalls and Alternatives</h3>
+
+<p>One potential complication is that processing the large set of CML documents using paid online crowdsourcing platforms will be prohibitively expensive. If this were to occur, we would instead re-adapt our crowdsourcing model to instead harness volunteers, large communities of which already exist <span class="citation">[<a href="http://wwwconference.org/proceedings/www2014/companion/p1049.pdf" class="citation" data-key="simpson2014">17</a>]</span>. In addition, the concept similarity method for finding new Bcr-Abl targets may not work for sparsely connected networks, in which case we would use an alternative concept category knowledge-based method instead <span class="citation">[<a href="https://doi.org/10.4137/CIN.S13889" class="citation" data-key="10.4137/CIN.S13889">7</a>]</span>.</p>
+
+<h3>Significance and Innovation</h3>
+
+<p>This proposal represents one of the first studies aiming to solve biological problems using a representation of the literature generated through crowdsourcing. The technique is novel in that it can be adapted to other domain specific problems, and can therefore be reused on different parts of the literature. Exposure of the general public to scientific literature through crowdsourcing also improves scientific literacy and outreach.</p>
+
+<h3>Contributions</h3>
+
+<p>I conceived and devised the specific aims described. My advisor Dr. Su provided high-level feedback and advice regarding the proposal's research direction. Dr. Benjamin Good provided helpful discussion and insight.</p>
+
+<hr>
+
+<h1 id="personal-statement">Personal Statement</h1>
+
+<p>Everyone's path to bioinformatics is different, and mine is no exception. During my early schooling I spent much of my time exploring the physical sciences broadly, trying to find the area where I felt the greatest interest. Although I found physics to be powerful and chemistry to be precise, I discovered that biology fascinated me the most because it has a direct and lasting influence on the people around me. Thanks to two excellent high school teachers who instilled in me an appreciation for both computer science and biology, I proceeded down the path which would eventually lead me to computational biology.</p>
+
+<p>My journey towards bioinformatics began in earnest during high school. I was a member of our school's Programming Enrichment Group, an extracurricular activity focused on problem solving and critical thinking through algorithmic design. We participated in many programming competitions, and I along with other members of our club competed for a chance to represent Canada at the International Olympiad in Informatics at the Canadian Computing Competition. I relished in the logical rigor of informatics, and sought to apply it to other domains.</p>
+
+<p>As an undergraduate I worked in Virginia Cornish's lab at Columbia University on a directed evolution project seeking to evolve protein binders. The project was motivated by a desire to develop protein therapeutics for targets difficult to target specifically with small molecules, such as Bcr-Abl. Under the guidance of my graduate mentor I helped to characterize variants generated by the in vivo protein recombination system. This was my first experience working in a laboratory, and I found science to be a demanding but ultimately fulfilling endeavour. I returned to the Cornish lab the following summer to continue my work, but unfortunately had to leave prior to the project's completion due to a year spent studying abroad at Oxford. The most valuable experience from my time in the lab, other than learning to balance research with my other academic commitments, was the exposure to experimental techniques requiring large scale data interpretation and analysis.</p>
+
+<p>Upon starting my Ph.D. at Scripps after graduation, I quickly sought out Andrew Su's lab so that I could fulfill my interest in computation and biology. In particular the application of computational approaches to generate hypotheses from the existing literature fascinated me because I saw new opportunities to solve old problems like finding Bcr-Abl targets. In order to generate novel hypotheses, it is first necessary to create a computational representation of the literature. I realized that existing methods for generating these representations suffered either from a lack of quality or scalability, and sought to solve both problems by merging human judgments with automated machine learning. While working on this project I have had the opportunity to hone my communication skills through conference presentations, and managed to win a presentation prize.</p>
+
+<p>Following completion of my Ph.D. I hope to broaden my research background by working as a postdoctoral researcher in a laboratory which is both able to make computationally guided hypotheses and able to verify them biologically. My eventual goal is to establish a research group of my own which is able to utilize and verify the predictions of rapidly advancing computational tools in order to produce treatments and results for patients directly. Support from HHMI at this early stage in my career would provide me with the freedom to guide and develop my own research path without having to worry about financial burdens. Thank you for considering my application.</p>
+
+
+
+
+
+
+
+
+
+</div>
+
+  
+
+  
+    <h1 id="references">References</h1>
+    <table class="references table-td-5"><tr><td><a href='/doi/10.1002/ajh.24221' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.1002/ajh.24221'><a href='/doi/10.1002/ajh.24221' class='pub-title'>Myeloproliferative neoplasms: A decade of discoveries and treatment advances</a><div class='pub-body'>Ayalew Tefferi (2015) <i>Am. J. Hematol.</i>. doi:<a class='pub-doi' href='https://doi.org/10.1002/ajh.24221'>10.1002/ajh.24221</a></div></div></td></tr><tr><td><a href='/doi/10.1126/science.2406902' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>2.</div></td><td><div class='doi-body' data-key='10.1126/science.2406902'><a href='/doi/10.1126/science.2406902' class='pub-title'>Induction of chronic myelogenous leukemia in mice by the P210bcr/abl gene of the Philadelphia chromosome</a><div class='pub-body'>G. Daley, R. Van Etten, D Baltimore (1990) <i>Science</i>. doi:<a class='pub-doi' href='https://doi.org/10.1126/science.2406902'>10.1126/science.2406902</a></div></div></td></tr><tr><td></td><td><div class='pub-order'>3.</div></td><td><div class='doi-body' data-key='cancer_facts'><a href='http://www.cancer.org/acs/groups/content/@editorial/documents/document/acspc-044552.pdf' class='pub-title'>American Cancer Society. Cancer Facts &amp; Figures 2015. Atlanta: American Cancer Society; 2015.</a></div></td></tr><tr><td></td><td><div class='pub-order'>4.</div></td><td><div class='doi-body' data-key='kimura2015'><a href='http://www.ncbi.nlm.nih.gov/pubmed/26458439' class='pub-title'>S. Kimura. State-of-the-art management of CML in 2015 and future prospects. The Japanese Journal of Clinical Hematology. 56.10 (2015) 2005-2014.</a></div></td></tr><tr><td><a href='/doi/10.2174/1568009615666150921141004' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>5.</div></td><td><div class='doi-body' data-key='10.2174/1568009615666150921141004'><a href='/doi/10.2174/1568009615666150921141004' class='pub-title'>New insights into the molecular resistance mechanisms of chronic myeloid leukemia</a><div class='pub-body'>Rui Huang, Qian Kang, Huimin Liu, Yuhua Li (2015) <i>Current Cancer Drug Targets</i>. doi:<a class='pub-doi' href='https://doi.org/10.2174/1568009615666150921141004'>10.2174/1568009615666150921141004</a></div></div></td></tr><tr><td></td><td><div class='pub-order'>6.</div></td><td><div class='doi-body' data-key='thielen2011'><a href='http://www.njmonline.nl/getpdf.php?id=1107' class='pub-title'>N. Thielen et al. New insights into the pathogenesis of chronic myeloid leukaemia: towards a path to cure. Netherlands Journal of Medicine 69.10 (2011) 430-440</a></div></td></tr><tr><td><a href='/doi/10.4137/CIN.S13889' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>7.</div></td><td><div class='doi-body' data-key='10.4137/CIN.S13889'><a href='/doi/10.4137/CIN.S13889' class='pub-title'>Exploiting Literature-derived Knowledge and Semantics to Identify Potential Prostate Cancer Drugs</a><div class='pub-body'>Zhang, Rui Zhang, Michael Cairelli, Marcelo Fiszman, Halil Kilicoglu, Thomas Rindflesch, Serguei Pakhomov, Genevieve Melton (2014) <i>CIN</i>. doi:<a class='pub-doi' href='https://doi.org/10.4137/CIN.S13889'>10.4137/CIN.S13889</a></div></div></td></tr><tr><td><a href='/doi/10.1145/2623330.2623667' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>8.</div></td><td><div class='doi-body' data-key='10.1145/2623330.2623667'><a href='/doi/10.1145/2623330.2623667' class='pub-title'>Automated hypothesis generation based on mining scientific literature</a><div class='pub-body'>Scott Spangler, Jeffrey N. Myers, Ioana Stanoi, Linda Kato, Ana Lelescu, Jacques J. Labrie, Neha Parikh, Andreas Martin Lisewski, Lawrence Donehower, Ying Chen, Olivier Lichtarge, Angela D. Wilkins, Benjamin J. Bachman, Meena Nagarajan, Tajhal Dayaram, Peter Haas, Sam Regenbogen, Curtis R. Pickering, Austin Comer (2014) <i>Proceedings of the 20th ACM SIGKDD international conference on Knowledge discovery and data mining - KDD &#39;14</i>. doi:<a class='pub-doi' href='https://doi.org/10.1145/2623330.2623667'>10.1145/2623330.2623667</a></div></div></td></tr><tr><td><a href='/doi/10.1016/j.jbi.2014.05.013' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>9.</div></td><td><div class='doi-body' data-key='10.1016/j.jbi.2014.05.013'><a href='/doi/10.1016/j.jbi.2014.05.013' class='pub-title'>Automatic construction of a large-scale and accurate drug-side-effect association knowledge base from biomedical literature</a><div class='pub-body'>Rong Xu, QuanQiu Wang (2014) <i>Journal of Biomedical Informatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1016/j.jbi.2014.05.013'>10.1016/j.jbi.2014.05.013</a></div></div></td></tr><tr><td><a href='/doi/10.1007/s11390-010-9313-5' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>10.</div></td><td><div class='doi-body' data-key='10.1007/s11390-010-9313-5'><a href='/doi/10.1007/s11390-010-9313-5' class='pub-title'>New Challenges for Biological Text-Mining in the Next Decade</a><div class='pub-body'>Hong-Jie Dai, Yen-Ching Chang, Richard Tzong-Han Tsai, Wen-Lian Hsu (2010) <i>J. Comput. Sci. Technol.</i>. doi:<a class='pub-doi' href='https://doi.org/10.1007/s11390-010-9313-5'>10.1007/s11390-010-9313-5</a></div></div></td></tr><tr><td><a href='/doi/10.1186/gb-2008-9-s2-s7' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>11.</div></td><td><div class='doi-body' data-key='10.1186/gb-2008-9-s2-s7'><a href='/doi/10.1186/gb-2008-9-s2-s7' class='pub-title'>Text mining for biology - the way forward: opinions from leading scientists</a><div class='pub-body'>Russ B Altman, Casey M Bergman, Judith Blake, Christian Blaschke, Aaron Cohen, Frank Gannon, Les Grivell, Udo Hahn, William Hersh, Lynette Hirschman, Lars Jensen, Martin Krallinger, Barend Mons, Seán I O&#39;Donoghue, Manuel C Peitsch, Dietrich Rebholz-Schuhmann, Hagit Shatkay, Alfonso Valencia (2008) <i>Genome Biol</i>. doi:<a class='pub-doi' href='https://doi.org/10.1186/gb-2008-9-s2-s7'>10.1186/gb-2008-9-s2-s7</a></div></div></td></tr><tr><td><a href='/doi/10.1073/pnas.1313039111' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>12.</div></td><td><div class='doi-body' data-key='10.1073/pnas.1313039111'><a href='/doi/10.1073/pnas.1313039111' class='pub-title'>RNA design rules from a massive open laboratory</a><div class='pub-body'>Jeehyung Lee, Wipapat Kladwang, Minjae Lee, Daniel Cantu, Martin Azizyan, Hanjoo Kim, Alex Limpaecher, Snehal Gaikwad, Sungroh Yoon, Adrien Treuille, Rhiju Das (2014) <i>Proceedings of the National Academy of Sciences</i>. doi:<a class='pub-doi' href='https://doi.org/10.1073/pnas.1313039111'>10.1073/pnas.1313039111</a></div></div></td></tr><tr><td><a href='/doi/10.1038/nature09304' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>13.</div></td><td><div class='doi-body' data-key='10.1038/nature09304'><a href='/doi/10.1038/nature09304' class='pub-title'>Predicting protein structures with a multiplayer online game</a><div class='pub-body'>Seth Cooper, Firas Khatib, Adrien Treuille, Janos Barbero, Jeehyung Lee, Michael Beenen, Andrew Leaver-Fay, David Baker, Zoran Popović, Foldit players (2010) <i>Nature</i>. doi:<a class='pub-doi' href='https://doi.org/10.1038/nature09304'>10.1038/nature09304</a></div></div></td></tr><tr><td><a href='/doi/10.1093/bioinformatics/btt333' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>14.</div></td><td><div class='doi-body' data-key='10.1093/bioinformatics/btt333'><a href='/doi/10.1093/bioinformatics/btt333' class='pub-title'>Crowdsourcing for bioinformatics</a><div class='pub-body'>B. M. Good, A. I. Su (2013) <i>Bioinformatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/bioinformatics/btt333'>10.1093/bioinformatics/btt333</a></div></div></td></tr><tr><td></td><td><div class='pub-order'>15.</div></td><td><div class='doi-body' data-key='alpaydin2014'><a href='https://mitpress.mit.edu/books/introduction-machine-learning-0' class='pub-title'>Ethem Alpaydin. Introduction to Machine Learning, Third Edition. MIT press. 2014.</a></div></td></tr><tr><td><a href='/doi/10.1007/978-3-642-36406-8_1' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>16.</div></td><td><div class='doi-body' data-key='10.1007/978-3-642-36406-8_1'><a href='/doi/10.1007/978-3-642-36406-8_1' class='pub-title'>Dynamic Bayesian Combination of Multiple Imperfect Classifiers</a><div class='pub-body'>Edwin Simpson, Stephen Roberts, Ioannis Psorakis, Arfon Smith (2013) <i>Decision Making and Imperfection</i>. doi:<a class='pub-doi' href='https://doi.org/10.1007/978-3-642-36406-8_1'>10.1007/978-3-642-36406-8_1</a></div></div></td></tr><tr><td></td><td><div class='pub-order'>17.</div></td><td><div class='doi-body' data-key='simpson2014'><a href='http://wwwconference.org/proceedings/www2014/companion/p1049.pdf' class='pub-title'>R. Simpson et al. Zooniverse: Observing the World&#39;s Largest Citizen Science Platform. In: Proceedings of the 23rd International Conference on World Wide Web. Seoul. 2014. 1049-1054.</a></div></td></tr></table>
+  
+  
+</div>
+
+
+		  </td>
+	    <td class="sidebar project-sidebar">
+
+  			
+
+
+
+	
+
+
+
+
+
+
+
+
+<div class="review-box">
+
+		
+
+			<h1 style="margin-bottom:10px;"><div class="pull-left" style="font-size:18px;margin-right:5px;"><span class="glyphicon glyphicon-check"></span></div>Peer review</h1>
+
+			
+				<br>
+			
+
+		
+
+
+		
+
+			<p>
+			
+				<a title="Benjamin Good" class="tt-top" href="/u/b_good"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/48_small.jpg' width='40' height='40'></a>
+			
+				<a title="Daniel Himmelstein" class="tt-top" href="/u/dhimmel"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/17_small.jpg' width='40' height='40'></a>
+			
+				<a title="Obi Griffith" class="tt-top" href="/u/obigriffith"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='40' height='40'></a>
+			
+				<a title="Tim Putman" class="tt-top" href="/u/timputman"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/180_small.jpg' width='40' height='40'></a>
+			
+				<a title="Andrew Su" class="tt-top" href="/u/andrewsu"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/181_small.jpg' width='40' height='40'></a>
+			
+			</p>
+
+			<table class="table table-edge table-review">
+				<tr><td>Reviewers</td><td>5</td></tr>
+				<tr><td>Annotations</td><td>121</td></tr>
+				<tr><td>Inline comments</td><td>86</td></tr>
+				<tr><td>Discussions</td><td>2</td></tr>
+			</table>
+
+		
+
+		
+
+		<a href="/doc/11/review" class="btn btn-lg btn-primary full-width" style="margin-bottom:0px;">View Review</a>
+
+	
+
+</div>
+
+
+
+
+
+
+
+	<div class="details">Published</div>
+	
+		Jan. 18, 2016<br>
+	
+	<span style="font-size:12px;">(Last updated Jan. 18, 2016)</span><br>
+
+	<a style="font-size:12px;" href="/doc/11/revisions">Revision history</a>
+
+
+
+
+<div class="details">Views</div>
+<span style="font-size:20px;">346</span>
+
+<div class="details">Topics </div>
+<a class='tag' href='/topics/cancer-biology'>Cancer Biology</a><a class='tag' href='/topics/machine-learning'>Machine learning</a><a class='tag' href='/topics/crowdsourcing'>Crowdsourcing</a><a class='tag' href='/topics/drug-targets'>Drug Targets</a><a class='tag' href='/topics/literature-mining'>Literature Mining</a>
+
+
+<div class="details">Cite this as</div>
+<span style="font-size:12px;">
+Tong Shu Li (2016) Predicting Bcr-Abl targets using a hybrid information extraction system [proposal]. <i>Thinklab.</i> doi:<a href='https://doi.org/10.15363/thinklab.a11'>10.15363/thinklab.a11</a>
+</span>
+
+<div class="details">License</div>
+<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0;width:88px;height:31px;" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></p>
+
+
+<br><br>
+
+<div class="affix-container">
+<div class="affix-box">
+
+
+    <!-- <h3>Contents</h3> -->
+
+	<div id="document_nav">
+    <ul class="nav document-menu">
+        
+            <li class="level-2 active"><a href="#specific-aims">Specific Aims</a></li>
+        
+            <li class="level-1"><a href="#personal-statement">Personal Statement</a></li>
+        
+            <li class="level-"><a href="#references">References</a></li>
+        
+    </ul>
+	</div>
+
+
+
+</div></div>
+
+
+	    </td>
+	  </tr></table>
+
+
+		</div>
+
+
+		
+	    	<div class="footer">
+<div style="background:#dedede;">
+	<div class="main-centered-div text-center" style="padding:20px;">
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#a9c1ccc5c5c6e9ddc1c0c7c2c5c8cb87cac6c4"><span class="__cf_email__" data-cfemail="3159545d5d5e714559585f5a5d50531f525e5c">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+	</div>
+</div>
+<div class="main-footer">
+	<div class="main-centered-div">
+
+<table class="full-width"><tr>
+	<td class="footer-nav">
+
+        <div class="foot-head">Explore</div>
+        <a href="/proposals">Proposals</a><br>
+        <a href="/projects">Projects</a><br>
+        <a href="/publications">Article discussion</a><br>
+        <a href="/discussion">All discussion</a><br>
+        <a href="/topics">Topics</a><br>
+        <!-- <a href="/funders">Funders</a><br> -->
+        <a href="/funding">Funding opportunities</a><br>
+
+	</td>
+	<td class="footer-nav">
+
+        <!-- <div class="foot-head">Help &amp; feedback</div>	 -->
+        <!-- <div class="foot-head">Intro</div>
+        <a href="/benefits/for-science">Why</a><br>
+        <a href="/how-it-works">How it works</a><br>
+
+<br> -->
+
+        <div class="foot-head">Community</div>
+        <a href="/leaderboard">Leaderboard</a><br>
+        <a href="/p/meta">Thinklab Meta</a><br>
+				<a href="/help/faq">Help</a><br>
+				<!-- <a href="/new-project">Start a proposal</a><br> -->
+        <!-- <a href="/benefits/proposal">Benefits</a><br> -->
+        <!-- <a href="/funding">Get funded</a><br> -->
+        <!-- <a href="/participate">Become a contributor</a><br> -->
+        <!-- <a href="/for-funders">For science funders</a><br> -->
+        <!-- <a href="/for-institutions">For institutions</a><br> -->
+
+	</td>
+	<td class="footer-nav">
+
+
+
+        <div class="foot-head">About</div>
+        <a href="/about">Overview</a><br>
+        <a href="/benefits">Benefits</a><br>
+        <a href="/how-it-works">How it works</a><br>
+        <a href="/about/story">Our story</a><br>
+        <a href="/blog">Our blog</a><br>
+        <a href="/about/jobs">Join the team</a><br>
+        <br>
+
+        <!-- <div class="foot-head">Help</div>
+        <a href="/help">Help</a><br>
+		 -->
+
+
+	</td>
+	<td class="footer-nav">
+		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
+		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<br><br>
+		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
+
+	</td>
+
+</tr></table>
+
+</div>
+</div>
+</div>
+
+		
+
+	</div>
+
+
+  <script></script>
+  <script>
+  var MEDIA_URL = 'https://think-lab.s3.amazonaws.com/m/';
+  var STATIC_URL = 'https://think-lab.s3.amazonaws.com/s/';
+  var page_is_authenticated = false;
+  var page_page = 'document_home';
+  var page_profile_id = undefined;
+</script>
+
+
+
+	<!-- Note different script type. MUST come before MathJax.js -->
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	        "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"],
+	                        scale: 110, linebreaks: { automatic:true },
+	                        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+	        tex2jax: { inlineMath: [ ["$$", "$$"], ["\\(","\\)"] ],
+	                    displayMath: [ ["$$$","$$$"], ["\\[", "\\]"] ],
+	                    processEscapes: true,}
+	            });
+
+	</script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://think-lab.s3.amazonaws.com/s/dist/main.min.js"></script>
+  
+
+
+
+  
+	
+
+    
+    
+<script>
+$(function() {
+  recordHit('document', 11);
+});
+</script>
+
+
+    
+
+
+
+    
+
+
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>

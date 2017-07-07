@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZgEOC19dW0QCEVtHU1gG","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":270}</script>
+    <title>Seeking an open source implementation of the Gerstein-Sonnhammer-Chothia Algorithm | Thinklab</title>
+	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
+    <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/highlightjs/github.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/css.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/bootstrap-multiselect.css" />
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
+    
+    
+    
+    
+  
+    <meta name="citation_doi" content="10.15363/thinklab.d25">
+    <meta name="citation_title" content="Seeking an open source implementation of the Gerstein-Sonnhammer-Chothia Algorithm">
+    <meta name="citation_online_date" content="Jan. 22, 2015">
+    <meta name="citation_author" content="Daniel Himmelstein, Antoine Lizee">
+    <meta name="citation_journal_title" content="Thinklab">
+    <meta name="citation_publisher" content="Thinklab">
+  
+
+    
+
+
+	<!-- GoogleAnalytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-48550230-1', 'thinklab.com');
+	ga('require', 'displayfeatures');
+	
+	ga('send', 'pageview');
+
+	</script>
+
+
+
+
+
+
+</head>
+<body >
+  <form id="form_action" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+</form>
+
+	
+
+	<div class="body-wrapper">
+
+		
+
+
+<!-- <div style="height:5px;background-image:url('https://think-lab.s3.amazonaws.com/s/img/top-bg.gif');"></div> -->
+<div class="gradient">
+	<div class="main-centered-div header-container">
+
+<table class="full-width" style="height:60px;"><tr>
+	<td style="width:200px;vertical-align:middle;padding-bottom:15px;">
+		<a href="/" style="font-weight:normal;color:#212121;"><img src="https://think-lab.s3.amazonaws.com/s/img/logo.png" width="160"></a>
+	</td><td style="vertical-align:middle;text-align:left;padding-top:6px;width:100%;padding-left:40px;">
+		<ul id="not-search-block"  class="main-header">
+
+
+			
+
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/proposals">Proposals</a></li>
+						<li><a href="/projects">Projects</a></li>
+						<li><a href="/publications">Article discussion</a></li>
+						<li><a href="/discussion">All discussion</a></li>
+					</ul>
+				</li>
+				<li><a href="/leaderboard">Leaderboard</a></li>
+
+			
+				<li><a href="/about">About</a></li>
+			
+
+
+		</ul>
+
+    <ul id="search-block" class="main-header" style="display: none; margin-right: 30px;">
+        <li class="full-width">
+            <form method="get" action="/search">
+			<div class="input-group full-width">
+				<input name="q" type="text" class="form-control search-input">
+			</div>
+            </form>
+        </li>
+    </ul>
+
+	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
+		<ul class="main-header pull-right" style="padding-left: 0;">
+    		
+                <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+            
+
+        </ul>
+    </ul>
+	</td>
+</tr></table>
+
+<!-- <div id="global-search-div" class="main-centered-div" style="display:none;">
+	<input type="text" value="" class="thread-search form-control" placeholder="Search" data-action="/discussion">
+</div> -->
+
+	</div>
+</div>
+
+		
+	  
+
+
+
+	  
+
+
+		
+
+		<div class="dark-head"><div class="main-centered-div">
+
+			
+
+		</div></div>
+		
+		<div class="main-centered-div" style="margin-top:40px;padding-bottom:340px">
+	    
+
+<div style="margin-top:-20px; margin-bottom:20px;">
+
+    <a class="side-box" href="/p/rephetio" style="background-color:#ebfdff;"><div class="side-type">Project:</div> <div class="side-title">Rephetio: Repurposing drugs on a hetnet [rephetio]</div></a><br>
+
+
+
+</div>
+
+<table style="margin-top:0px;"><tr>
+	<td class="thread-table-content">
+
+		<table class="full-width">
+			
+<tr class="comment-tr target-hl" id="1" data-comment-id="34">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="34"></a>
+
+    
+
+			<h2 class="page-title" style="margin-bottom:5px;margin-top:0px !important;">Seeking an open source implementation of the Gerstein-Sonnhammer-Chothia Algorithm</h2>
+
+			<div style="margin-top:5px;color:gray;margin-bottom:20px;font-size:13px;">
+				<a style="font-weight:normal;color:#212121" href="/u/dhimmel"><strong>Daniel Himmelstein</strong></a>
+				<span class="is-researcher">Researcher</span>
+				&nbsp; <a href="#1" class="light">897 days ago</a>
+				
+			</div>
+
+      
+
+          <hr>
+		
+
+    <p>I am looking for a method to weight features based on their uniqueness: I want to downweight redundant features and upweight distinct features.</p>
+
+<p>The specific problem is weighting side effects when calculating side effect similarity between two drugs. The initial implementation of this analysis <span class="citation">[<a href="https://doi.org/10.1126/science.1158140" class="citation" data-key="10.1126/science.1158140">1</a>]</span> used the Gerstein-Sonnhammer-Chothia Algorithm <span class="citation">[<a href="https://doi.org/10.1016/0022-2836%2894%2990012-4" class="citation" data-key="10.1016/0022-2836(94)90012-4">2</a>]</span>. The initial implementation <a href="http://www.sciencemag.org/content/suppl/2008/07/10/321.5886.263.DC1/Campillos.SOM.pdf">describes their method</a>:</p>
+
+<blockquote><p>Not all side effects are independent of each other; for example, 90% of drugs that cause nausea also cause vomiting. We correct for this redundancy by weighting side effects in a manner analogous to the down-weighting of similar protein sequences within multiple alignments <span class="citation">[<a href="https://doi.org/10.1016/0022-2836%2894%2990012-4" class="citation" data-key="10.1016/0022-2836(94)90012-4">2</a>]</span> (Fig. S1C). In order to determine the correlation weight, the correlation of side effects was determined by clustering all side effects according to their assigned drugs using a Tanimoto/Jacquard score to compute a distance matrix: The distance between two drugs was calculated by dividing the number of drugs that feature both side effects by the number of drugs that have either side effect associated. <strong>The Gerstein–Sonnhammer–Chothia algorithm <span class="citation">[<a href="https://doi.org/10.1016/0022-2836%2894%2990012-4" class="citation" data-key="10.1016/0022-2836(94)90012-4">2</a>]</span> was used to compute weights based on a hierarchal clustering with the aforementioned distance matrix <span class="citation">[<a href="https://doi.org/10.1073/pnas.95.25.14863" class="citation" data-key="10.1073/pnas.95.25.14863">3</a>]</span>.</strong></p></blockquote>
+
+<p>I would like to perform an identical analysis, while making the code and results public. The analysis follows the following steps:</p>
+
+<ol><li>Calculating pairwise side effect correlations.</li><li>Performing hierarchical clustering of side effects to produce a dendrogram</li><li>Inputting the denrogram into the GSC algorithm to calculate side effect weights.</li></ol>
+
+<p>I am looking for an implementation of step 3, that it easy to integrate with implementations of steps 1 and 2. My preferred languages are <em>R</em>, <em>python</em>, and <em>julia</em> (in that order). The author should be willing to post the code publicly under an open source license.</p>
+
+<p>An in detail description of the GSC algorithm can be found in the paper appendix titled, <em><a href="https://pdf.yt/d/Sx3jMbr8vANgxAej/download">A Method to Weight Protein Sequences to Correct for Unequal Representation</a></em>.</p>
+
+<p>Also, if you know of a simpler or superior method for accomplishing this weighting task, please suggest.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="2" data-comment-id="38">
+  <td class="comment-profile-avatar">
+		<a href="/u/alizee"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/23_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="38"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/alizee">Antoine Lizee</a>
+				
+				<span class="light">&nbsp;<a href="#2" class="light">896 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Hey Daniel,</p>
+
+<p>This should do it:<br><a href="https://github.com/antoine-lizee/R-GSC/blob/master/GSC.R" target="_blank">https://github.com/antoine-lizee/R-GSC/blob/master/GSC.R</a></p>
+
+<p>It uses dendrogram objects in R.</p>
+
+<p>Once you get it, the implementation is quite straightforward and short, so it doesn't really justify creating a package. Everything in one file, you can just source it.<br>Have a go at it and tell me what you think.</p>
+
+<p>Best,<br>Antoine</p>
+
+<p>PS: the attached reference that explains the algorithm has its main example wrong because of the low (and surprisingly inconsistent) precision they use to do the maths.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-15" class="inline-note toggle-parent" data-note-id="15">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: I don't see the "attached reference". Can you link to it or add a citation? Check out the <a href="http://thinklab.com/help/writing-in-markdown">markdown syntax</a> offered by ThinkLab.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-21" class="inline-note toggle-parent" data-note-id="21">
+	<p><a href="/u/alizee">Antoine Lizee</a>: I'm talking about the reference you provided, whose <a href="https://pdf.yt/d/Sx3jMbr8vANgxAej/download">link</a> is in the code.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="3" data-comment-id="40">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="40"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#3" class="light">896 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p><a href="/u/alizee" class="username">@alizee</a>, thanks for the <a href="https://github.com/antoine-lizee/R-GSC/">open source implementation</a> — you just spared scientists all over the pain of unnecessary reimplementation.</p>
+
+<p>Here is the code I wrote, which calls your <code>GSC</code> function</p>
+
+<p></p><pre><code class="r">GitHubScript &lt;- function(...) {
+  # Source a script from GitHub
+  library(RCurl)
+  github.url &lt;- file.path('https://raw.githubusercontent.com', ...)
+  script &lt;- RCurl::getURL(github.url)
+  eval(parse(text = script), envir = .GlobalEnv)
+}
+
+UnderrepresentationWeight &lt;- function(mat) {
+  # Returns underrepresentation weight for each column
+  col.dist &lt;- stats::dist(t(mat), method = 'binary')
+  col.clust &lt;- hclust(col.dist, method = 'ward.D2')
+  col.dendro &lt;- as.dendrogram(col.clust)
+  GitHubScript('antoine-lizee', 'R-GSC', 'master', 'GSC.R')
+  GSC(col.dendro)
+}</code></pre>
+
+<p>I have come accross two errors for my use cases</p>
+
+<p>The following code (which computes only the first 100 side effects for time) returns a vector of only <code>NaN</code>:<br></p>
+
+<p></p><pre><code class="r">underrep.ind.vec &lt;- UnderrepresentationWeight(se.mat[, 1:100])</code></pre>
+
+<p>On a slightly larger matrix, I also got a maximum recursion depth error.</p>
+
+<p><code>se.mat</code> is a matrix where rows are compounds and columns are side effects. An element is <code>0</code> for no relationship and <code>1</code> for side effect. You can <a href="http://stat.ethz.ch/R-manual/R-devel/library/base/html/load.html">load</a> <code>se.mat</code> from <a href="https://www.dropbox.com/s/8e12q0gkmxs54b6/se.mat.RData?raw=1">this file</a>.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="4" data-comment-id="45">
+  <td class="comment-profile-avatar">
+		<a href="/u/alizee"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/23_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="45"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/alizee">Antoine Lizee</a>
+				
+				<span class="light">&nbsp;<a href="#4" class="light">894 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Hi Daniel,</p>
+
+<p>Thank you for your feedback. <br>I solved your first "Nan" problem. Below is a short explanation, and on the repository I added a <a href="https://github.com/antoine-lizee/R-GSC/blob/master/dhimmel_bugs_test.R">file</a> in which I investigate the problem.</p>
+
+<p>The problem came from the fact that some of your vectors of features in your original matrix were <strong>exactly the same</strong>, i.e. some of your compounds have the exact same side effects. This resulted in a computed distance of zero between these two objects, and the clustering is putting them at the bottom of the dendrogram, at height 0. The algorithm wasn't designed for such an edge case and a division by 0 was giving you the NaN. I slightly changed the algorithm to work even with this edge case.<br>I quickly tested that the coefficients at this edge case were roughly the limit of the coefficients when the two vectors are getting similar, which shows that the handling of this edge case is appropriate. </p>
+
+<p>I am looking into some profiling and making it work for bigger matrices, so I'll update you regarding your other problem soon.</p>
+
+<p>Best,<br>Antoine</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-26" class="inline-note toggle-parent" data-note-id="26">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: Okay, I made some code organization and documentation changes. My first github fork and <a href="https://github.com/antoine-lizee/R-GSC/pull/1">pull request</a> (:
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-30" class="inline-note toggle-parent" data-note-id="30">
+	<p><a href="/u/alizee">Antoine Lizee</a>: Sorry, I saw your request too late to make a merge efficient, but I implemented your small formal changes that improve readability. Thanks!
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="5" data-comment-id="53">
+  <td class="comment-profile-avatar">
+		<a href="/u/alizee"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/23_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="53"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/alizee">Antoine Lizee</a>
+				
+				<span class="light">&nbsp;<a href="#5" class="light">892 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Hey,</p>
+
+<p>I think the code is ready now. </p>
+
+<p>In addition to the fix above that let the algorithm run on datasets with objects that have the same representation, I added some routine check to increase the maximum recursive depth of R when calling the function. I used a robust adaptive approach to increase this recursion limit based on the estimated number of elements in the dendrogram, see the <a href="https://github.com/antoine-lizee/R-GSC/blob/master/GSC.R#L47">code</a>.</p>
+
+<p>I also did some extensive testing and profiling in the <a href="https://github.com/antoine-lizee/R-GSC/blob/master/dhimmel_bugs_test.R">dhimmel file</a> mentioned earlier. As expected, the algorithm is very cheap: execution time is linear in the number of elements of the dendrogram, with roughly <a href="https://github.com/antoine-lizee/R-GSC/blob/master/test/profiling.pdf">10ms / kElements</a>. I tried to half the stack depth by writing a <a href="https://github.com/antoine-lizee/R-GSC/blob/master/test/GSC2.R">more verbose</a> version of the GSC algorithm, but it didn't change performance, so I kept the first more elegant version.</p>
+
+<p>Enjoy!</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+    		
+		</table>
+
+    
+
+    &nbsp;<br>
+    <a class="btn btn-primary btn-lg" href="/signup?next=/discussion/seeking-an-open-source-implementation-of-the-gerstein-sonnhammer-chothia-algorithm/25&suppress_message=1" style>Join to Reply</a>
+
+
+		<table class="references table-td-5" style="display:none;"><tr><td><a href='/doi/10.1126/science.1158140' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.1126/science.1158140'><a href='/doi/10.1126/science.1158140' class='pub-title'>Drug Target Identification Using Side-Effect Similarity</a><div class='pub-body'>M. Campillos, M. Kuhn, A.-C. Gavin, L. J. Jensen, P. Bork (2008) <i>Science</i>. doi:<a class='pub-doi' href='https://doi.org/10.1126/science.1158140'>10.1126/science.1158140</a></div></div></td></tr><tr><td><a href='/doi/10.1016/0022-2836(94)90012-4' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>2.</div></td><td><div class='doi-body' data-key='10.1016/0022-2836(94)90012-4'><a href='/doi/10.1016/0022-2836(94)90012-4' class='pub-title'>Volume changes in protein evolution</a><div class='pub-body'>Mark Gerstein, Erik L.L. Sonnhammer, Cyrus Chothia (1994) <i>Journal of Molecular Biology</i>. doi:<a class='pub-doi' href='https://doi.org/10.1016/0022-2836(94)90012-4'>10.1016/0022-2836(94)90012-4</a></div></div></td></tr><tr><td><a href='/doi/10.1073/pnas.95.25.14863' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>3.</div></td><td><div class='doi-body' data-key='10.1073/pnas.95.25.14863'><a href='/doi/10.1073/pnas.95.25.14863' class='pub-title'>Cluster analysis and display of genome-wide expression patterns</a><div class='pub-body'>M. B. Eisen, P. T. Spellman, P. O. Brown, D. Botstein (1998) <i>Proceedings of the National Academy of Sciences</i>. doi:<a class='pub-doi' href='https://doi.org/10.1073/pnas.95.25.14863'>10.1073/pnas.95.25.14863</a></div></div></td></tr></table>
+
+    
+
+
+	</td>
+	<td class="thread-sidebar">
+
+
+			
+
+      <a class="btn btn-default follow-link btn-follow btn-lg is-following tt-top full-width" title="Follow discussion" data-id="25" data-ctype="thread" data-is-following="false">&nbsp;</a>
+
+      
+        <div class="status-box text-center"><span style="">Status:</span> 
+  Completed
+
+</div>
+      
+
+      
+        
+      
+
+
+				
+
+					<div class="details">Views</div>
+					<span style="font-size:20px;">183</span>
+
+        
+
+				
+					<div class="details">Topics</div>
+					<div style="margin-bottom:15px;">
+		            <a href="/topics/open-source-software" class="tag">Open Source Software</a><a href="/topics/python" class="tag">Python</a><a href="/topics/gsc-weighting" class="tag">GSC Weighting</a><a href="/topics/gerstein-sonnhammer-chothia" class="tag">Gerstein-Sonnhammer-Chothia</a><a href="/topics/julia" class="tag">Julia</a><a href="/topics/r" class="tag">R</a><a href="/topics/algorithms" class="tag">Algorithms</a><a href="/topics/computer-science" class="tag">Computer Science</a><a href="/topics/sider" class="tag">SIDER</a>
+					</div>
+				
+
+
+		
+
+		
+			<div class="details">Cite this as</div>
+			<span style="font-size:12px;">
+				Daniel Himmelstein, Antoine Lizee (2015) Seeking an open source implementation of the Gerstein-Sonnhammer-Chothia Algorithm. <i>Thinklab.</i> doi:<a href='https://doi.org/10.15363/thinklab.d25'>10.15363/thinklab.d25</a>
+			</span>
+		
+
+		<div class="details">License</div>
+		<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0;width:88px;height:31px;" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></p>
+
+		<div class="details">Share</div>
+		
+			
+				<a class="share-button fb" onclick="javascript:void(window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A//thinklab.com/discussion/seeking-an-open-source-implementation-of-the-gerstein-sonnhammer-chothia-algorithm/25','','width=600,height=460,menubar=no,status=no'));" href="#"></a>
+<a class="share-button twitter" onclick="javascript:void(window.open('https://twitter.com/share?text=Seeking%20an%20open%20source%20implementation%20of%20the%20Gerstein-Sonnhammer-Chothia%20Algorithm&url=https%3A//thinklab.com/discussion/seeking-an-open-source-implementation-of-the-gerstein-sonnhammer-chothia-algorithm/25','','width=600,height=300,menubar=no,status=no'));" href="#"></a>
+<a class="share-button google" onclick="javascript:void(window.open('https://plus.google.com/share?url=https%3A//thinklab.com/discussion/seeking-an-open-source-implementation-of-the-gerstein-sonnhammer-chothia-algorithm/25','','width=510,height=460,menubar=no,status=no'));" href="#"></a>
+
+			
+		
+
+	</td>
+</tr></table>
+
+
+		</div>
+
+
+		
+	    	<div class="footer">
+<div style="background:#dedede;">
+	<div class="main-centered-div text-center" style="padding:20px;">
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#b4dcd1d8d8dbf4c0dcdddadfd8d5d69ad7dbd9"><span class="__cf_email__" data-cfemail="b3dbd6dfdfdcf3c7dbdaddd8dfd2d19dd0dcde">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+	</div>
+</div>
+<div class="main-footer">
+	<div class="main-centered-div">
+
+<table class="full-width"><tr>
+	<td class="footer-nav">
+
+        <div class="foot-head">Explore</div>
+        <a href="/proposals">Proposals</a><br>
+        <a href="/projects">Projects</a><br>
+        <a href="/publications">Article discussion</a><br>
+        <a href="/discussion">All discussion</a><br>
+        <a href="/topics">Topics</a><br>
+        <!-- <a href="/funders">Funders</a><br> -->
+        <a href="/funding">Funding opportunities</a><br>
+
+	</td>
+	<td class="footer-nav">
+
+        <!-- <div class="foot-head">Help &amp; feedback</div>	 -->
+        <!-- <div class="foot-head">Intro</div>
+        <a href="/benefits/for-science">Why</a><br>
+        <a href="/how-it-works">How it works</a><br>
+
+<br> -->
+
+        <div class="foot-head">Community</div>
+        <a href="/leaderboard">Leaderboard</a><br>
+        <a href="/p/meta">Thinklab Meta</a><br>
+				<a href="/help/faq">Help</a><br>
+				<!-- <a href="/new-project">Start a proposal</a><br> -->
+        <!-- <a href="/benefits/proposal">Benefits</a><br> -->
+        <!-- <a href="/funding">Get funded</a><br> -->
+        <!-- <a href="/participate">Become a contributor</a><br> -->
+        <!-- <a href="/for-funders">For science funders</a><br> -->
+        <!-- <a href="/for-institutions">For institutions</a><br> -->
+
+	</td>
+	<td class="footer-nav">
+
+
+
+        <div class="foot-head">About</div>
+        <a href="/about">Overview</a><br>
+        <a href="/benefits">Benefits</a><br>
+        <a href="/how-it-works">How it works</a><br>
+        <a href="/about/story">Our story</a><br>
+        <a href="/blog">Our blog</a><br>
+        <a href="/about/jobs">Join the team</a><br>
+        <br>
+
+        <!-- <div class="foot-head">Help</div>
+        <a href="/help">Help</a><br>
+		 -->
+
+
+	</td>
+	<td class="footer-nav">
+		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
+		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<br><br>
+		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
+
+	</td>
+
+</tr></table>
+
+</div>
+</div>
+</div>
+
+		
+
+	</div>
+
+
+  <script></script>
+  <script>
+  var MEDIA_URL = 'https://think-lab.s3.amazonaws.com/m/';
+  var STATIC_URL = 'https://think-lab.s3.amazonaws.com/s/';
+  var page_is_authenticated = false;
+  var page_page = 'discussion';
+  var page_profile_id = undefined;
+</script>
+
+
+
+	<!-- Note different script type. MUST come before MathJax.js -->
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	        "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"],
+	                        scale: 110, linebreaks: { automatic:true },
+	                        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+	        tex2jax: { inlineMath: [ ["$$", "$$"], ["\\(","\\)"] ],
+	                    displayMath: [ ["$$$","$$$"], ["\\[", "\\]"] ],
+	                    processEscapes: true,}
+	            });
+
+	</script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://think-lab.s3.amazonaws.com/s/dist/main.min.js"></script>
+  
+
+
+
+  
+	
+  
+  
+  
+<script>
+$(function() {
+  recordHit('thread', 25);
+});
+</script>
+
+
+
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>

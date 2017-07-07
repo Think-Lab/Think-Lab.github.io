@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08CV1taQlkRXEdFAz0WFFNIRVVcOkVcU049BxNcWw==","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":724}</script>
+    <title>Proposal: Rephetio: Repurposing drugs on a hetnet</title>
+	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
+    <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/highlightjs/github.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/css.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/bootstrap-multiselect.css" />
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
+    
+    
+    
+    
+  
+    <meta name="citation_doi" content="10.15363/thinklab.a5">
+    <meta name="citation_title" content="Rephetio: Repurposing drugs on a hetnet [proposal]">
+    <meta name="citation_online_date" content="Jan. 12, 2015">
+    <meta name="citation_author" content="Daniel Himmelstein, Antoine Lizee, Chrissy Hessler, Leo Brueggeman, Sabrina Chen, Dexter Hadley, Ari Green, Pouya Khankhanian, Sergio Baranzini">
+    <meta name="citation_journal_title" content="Thinklab">
+    <meta name="citation_publisher" content="Thinklab">
+  
+
+    
+
+
+	<!-- GoogleAnalytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-48550230-1', 'thinklab.com');
+	ga('require', 'displayfeatures');
+	
+	ga('send', 'pageview');
+
+	</script>
+
+
+
+
+
+
+</head>
+<body >
+  <form id="form_action" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+</form>
+
+	
+
+	<div class="body-wrapper">
+
+		
+
+
+<!-- <div style="height:5px;background-image:url('https://think-lab.s3.amazonaws.com/s/img/top-bg.gif');"></div> -->
+<div class="gradient">
+	<div class="main-centered-div header-container">
+
+<table class="full-width" style="height:60px;"><tr>
+	<td style="width:200px;vertical-align:middle;padding-bottom:15px;">
+		<a href="/" style="font-weight:normal;color:#212121;"><img src="https://think-lab.s3.amazonaws.com/s/img/logo.png" width="160"></a>
+	</td><td style="vertical-align:middle;text-align:left;padding-top:6px;width:100%;padding-left:40px;">
+		<ul id="not-search-block"  class="main-header">
+
+
+			
+
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/proposals">Proposals</a></li>
+						<li><a href="/projects">Projects</a></li>
+						<li><a href="/publications">Article discussion</a></li>
+						<li><a href="/discussion">All discussion</a></li>
+					</ul>
+				</li>
+				<li><a href="/leaderboard">Leaderboard</a></li>
+
+			
+				<li><a href="/about">About</a></li>
+			
+
+
+		</ul>
+
+    <ul id="search-block" class="main-header" style="display: none; margin-right: 30px;">
+        <li class="full-width">
+            <form method="get" action="/search">
+			<div class="input-group full-width">
+				<input name="q" type="text" class="form-control search-input">
+			</div>
+            </form>
+        </li>
+    </ul>
+
+	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
+		<ul class="main-header pull-right" style="padding-left: 0;">
+    		
+                <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+            
+
+        </ul>
+    </ul>
+	</td>
+</tr></table>
+
+<!-- <div id="global-search-div" class="main-centered-div" style="display:none;">
+	<input type="text" value="" class="thread-search form-control" placeholder="Search" data-action="/discussion">
+</div> -->
+
+	</div>
+</div>
+
+		
+	  
+
+
+
+	  
+
+
+		
+
+		<div class="dark-head"><div class="main-centered-div">
+
+			
+
+	
+
+
+	<div class="header-object-type"></div>
+
+	
+			<a class="btn btn-lg follow-link btn-follow pull-right active tt-top" style="margin-left:20px;" title="Follow project discussion" data-id="4" data-ctype="project" data-is-following="false">&nbsp;</a>
+	
+
+	<h2 class="header-object-name">Rephetio: Repurposing drugs on a hetnet</h2>
+
+	
+	<div class="project-team">
+		<a href='/u/dhimmel'>Daniel Himmelstein</a>, <a href='/u/alizee'>Antoine Lizee</a>, <a href='/u/chrissyhessler'>Chrissy Hessler</a>, <a href='/u/leobrueggeman'>Leo Brueggeman</a>, <a href='/u/sabrinachen'>Sabrina Chen</a>, <a href='/u/idrdex'>Dexter Hadley</a>, <a href='/u/arigreen'>Ari Green</a>, <a href='/u/pouyakhankhanian'>Pouya Khankhanian</a>, <a href='/u/sergiobaranzini'>Sergio Baranzini</a>
+		 <!-- &nbsp; &nbsp; doi:<a href="https://doi.org/10.15363/thinklab.4">10.15363/thinklab.4</a> -->
+	</div>
+	
+
+		<!-- <div class="project-team">
+			<b>DOI:</b> <a href="https://doi.org/10.15363/thinklab.4">10.15363/thinklab.4</a>
+		</div> -->
+
+		
+
+	<div class="project-team">
+		
+		
+		
+	</div>
+
+
+
+
+	
+
+
+	<!-- <div class="project-team">
+		
+		<div class="progress-box">
+			<span class="glyphicon glyphicon-random"></span>
+		</div>
+		
+	</div> -->
+
+    <ul class="nav nav-tabs project-nav" style="margin-top:25px;">
+
+		
+
+		
+
+    
+        <li><a href="/p/rephetio/report">Report</a></li>
+    
+
+		
+
+		<li><a href="/p/rephetio/discussion"><span class="nav-fig">86</span>Discussions</a></li>
+
+		
+			<li><a href="/p/rephetio/leaderboard"><span class="nav-fig">48</span>Contributors</a></li>
+		
+
+		
+
+		
+			
+			
+		
+
+
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown"><span style="opacity:0.5">More <span class="caret"></span></span></a>
+            <ul class="dropdown-menu" style="font-size:13px;background-color:#819ec8">
+
+				
+
+				
+            <li><a href="/p/rephetio/proposal">Proposal</a></li>
+				
+
+            <li><a href="/p/rephetio/followers"><span class="nav-fig">26</span>Followers</a></li>
+            </ul>
+        </li>
+
+			
+
+    </ul>
+
+
+
+		</div></div>
+		
+		<div class="main-centered-div" style="margin-top:40px;padding-bottom:340px">
+	    
+
+	
+
+  
+
+  
+    
+        
+      
+  
+
+<!--  -->
+
+
+  
+
+
+
+
+
+    <table class="project-table"><tr>
+      <td class="main-table-content">
+
+
+        
+
+        
+			     <h1 class="page-title">Proposal</h1>
+        
+
+			  
+
+<div class="document-body">
+
+  <div id="document_body"><h1 id="abstract">Abstract</h1>
+
+<p>This project aims to predict new therapeutic indications for small molecules. We will focus on repurposing drugs for well-studied complex human diseases, relying on recently-available high-throughput data sources. The approach is integrative, seeking to combine multiple information domains through heterogeneous networks and modern machine learning techniques.</p>
+
+<h1 id="objectives">Objectives</h1>
+
+<ol><li><p><strong>Create an open resource for integrative drug repurposing.</strong> <br>A slew of bioinformatics resources have recently come online. Yet, these resources frequently rely on different vocabularies and require cleaning. We plan to release a network capturing a systems biology perspective of drug efficacy. Standardized vocabularies will form a network template and will be connected by the results of high-throughput experimentation. Structuring the resource as a network ensures the data is processed and reusable. The complete resource will be posted to our <a href="http://het.io">online portal for heterogeneous data integration</a> under a <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY license</a> and will provide a goto dataset for researchers implementing systems/network/computational pharmacology analyses.</p></li><li><p><strong>Compare and identify influential mechanisms of drug efficacy.</strong> <br>The mechanism of action is poorly understood for many prevalent small molecule therapies. Discovering mechanisms through target identification has proven difficult. High-throughput drug and disease signatures offer an alternative approach for investigating a compound's mechanism of action. We plan to identify influential network connections that underlie drug efficacy. Greater insight into how existing drugs work will help us understand current treatments and predict future treatments. More immediately, our results will compare the informativeness of data sources, providing a solid foundation for computational drug repurposing.</p></li><li><p><strong>Predict probabilities for each small molecule's efficacy in treating each complex disease.</strong> <br>Serendipity was responsible for the discovery of many breakthrough small molecule therapies <span class="citation">[<a href="http://www.dialogues-cns.com/publication/the-role-of-serendipity-in-drug-discovery/" class="citation" data-key="Ban06">1</a>]</span>. Additionally, small molecules frequently treat multiple distinct diseases <span class="citation">[<a href="https://doi.org/10.1016/j.drudis.2012.08.005" class="citation" data-key="10.1016/j.drudis.2012.08.005">2</a>]</span>. Rational systems-based drug repurposing overcomes the inefficiency and unreliability of serendipity, while capturing the benefits of polypharmacology and network pharmacology. From the integrative network, we will predict the probability that a given small molecule will treat a given complex disease. Our predictions will provide pharmacologists with evidence-based drug leads, which could develop into novel approved uses for existing drug.</p></li></ol>
+
+
+
+<h1 id="background">Background</h1>
+
+<p>Pharmaceutical companies seeking to bring a novel therapeutic compound to market face a single digit success rate, price tag in the billions, and duration spanning decades <span class="citation">[<a href="https://doi.org/10.1038/nrd1468" class="citation" data-key="10.1038/nrd1468">3</a>]</span>. The trend in research efficiency is equally grim: the cost of developing a new drug has increased exponentially, doubling approximately every nine years since 1950 <span class="citation">[<a href="https://doi.org/10.6084/m9.figshare.937004" class="citation" data-key="10.6084/m9.figshare.937004">4</a>]</span>.</p>
+
+<p>Since the 90&#8217;s, the prevailing model of drug discovery has focused on identifying compounds that target a single protein with maximum specificity. Through a molecular, reductionist approach to understanding disease, a plausible target is selected. Drugs are then designed to modulate the target or small molecules with a strong target affinity are identified using high throughput screens. However, overwhelming evidence suggests that the potential of the 'one drug, one target, one disease' approach is limited. Biological systems are characterized by phenotypic robustness: knockout experiments in model organisms reveal that less than one fifth of genes are essential for survival <span class="citation">[<a href="https://doi.org/10.1038/nchembio.118" class="citation" data-key="10.1038/nchembio.118">5</a>]</span>. Similarly, pathology may represent a resilient homeostatic state, resistant to disruptions of a single protein. Approved small molecules affect on average 2.7 known targets, and when accounting for speculative targets that number jumps to 6.3 <span class="citation">[<a href="https://doi.org/10.1038/nbt0908-983" class="citation" data-key="10.1038/nbt0908-983">6</a>]</span>. This promiscuity can play an important role in drug efficacy as exemplified by clozapine which remains the preeminent anti-psychotic drug over compounds engineered to bind a subset of its dozen-plus targets <span class="citation">[<a href="https://doi.org/10.1038/nrd1346" class="citation" data-key="10.1038/nrd1346">7</a>]</span>.</p>
+
+<p>Uncovering disease therapies that rely on multiple mechanisms, known as <strong>polypharmacology</strong>, requires escaping the limitations of the 'magic bullet' paradigm in favor of a 'magic 00 buckshot' understanding of drug efficacy. An approach called <strong>network pharmacology</strong> seeks to characterize the multitude of corruptions embodying a pathology. With that knowledge, drugs are selected to restore a normal state. Network pharmacology encompasses polypharmacology by evaluating drugs which intervene at multiple points to achieve healthy homeostasis.</p>
+
+<p>Drug <strong>repurposing</strong> &#8212; identifying novel uses for existing therapeutics &#8212; avoids many pitfalls and challenges of designing drugs from scratch. FDA approved drugs have undergone extensive toxicology profiling during development and safety evaluation in Phase III clinical trials. Given ample time on the market, post-marketing trials and adverse event reporting uncover potential flaws that could lead to withdrawal. The wealth of information surrounding approved drugs creates a favorable outcome for repurposed compounds compared to new molecular entities: time to approval is cut in half to as low as three years <span class="citation">[<a href="https://doi.org/10.1038/nrd1468" class="citation" data-key="10.1038/nrd1468">3</a>]</span>; the success rate of advancing from phase II trials to approval increases from 10 to 25 percent <span class="citation">[<a href="http://cen.acs.org/articles/90/i40/Drug-Repurposing.html" class="citation" data-key="Thayer12">8</a>]</span>; and the average development cost for successful drugs plummets from 1.3 billion to as low as 8.4 million dollars <span class="citation">[<a href="http://www.ddw-online.com/media/32/2226/drug-repositioning.pdf" class="citation" data-key="Persidis11">9</a>]</span>.</p>
+
+<p>Between 1999 and 2008, more first-in-class small-molecule drugs were discovered with phenotypic screening than target-centric approaches, despite preferential investment towards the later <span class="citation">[<a href="https://doi.org/10.1038/nrd3480" class="citation" data-key="10.1038/nrd3480">10</a>]</span>. The advent of omics-technologies has enabled the quantification of several intermediate phenotypes between a disease's (or drug's) molecular basis and clinical manifestation. Intermediate phenotypes include transcriptional profiles, biological pathways, and genetic susceptibility markers. Traditional phenotypic approaches have focused on <em>in vivo</em> screening to identify compounds that alter a primary clinical indicator. <em>In silico</em> screening that instead relies on intermediate phenotypes offers a less costly and time-consuming way forward. Such approaches are easily amenable to leveraging repurposing, polypharmacology, and network pharmacology.</p>
+
+<p>We propose an integrative method for repurposing approved small molecules to treat additional complex diseases. The approach relies on characterizing the effect of compounds and diseases using high-throughput resources &#8212; many of which provide intermediate-phenotypic profiles for compounds and diseases &#8212; and, from this information, calculating features that describe specific aspects of a compound-disease relationship. From these features, a machine learning approach identifies the influential mechanisms behind drug efficacy and predicts additional indications for existing drugs.</p>
+
+<p>We chose to focus on complex diseases because they frequently exhibit:</p>
+
+<ul><li>poorly understood molecular bases</li><li>modest efficacy of approved therapies</li><li>multifactorial etiologies that highlight multiple modalities for intervention</li><li>good coverage in high-throughput bioinformatic resources</li></ul>
+
+<p>We chose to focus on small molecules because they exhibit:</p>
+
+<ul><li>known structures</li><li>greater data-availability than biologics</li><li>promiscuous binding, which enables polypharmacology</li><li>incomplete target knowledge, which can be overcome with phenotypic profiling</li></ul>
+
+
+
+
+
+<h1 id="research-plan">Research Plan</h1>
+
+<h2 id="part-1-resource-construction">Part 1. Resource Construction</h2>
+
+<p>First, we will construct a resource that encodes a systems perspective of pathogenesis and pharmacology. We will structure the resource as a network where entities (nodes) are connected by their relationships (edges). Nodes and edges belong to predefined types &#8212; respectively called metanodes (<a href="#metanodes">Table 1</a>) and metaedges (<a href="#metaedges">Table 2</a>). The schematic view showing how types relate is called a metagraph (<a href="#metagraph">Figure 1</a>). </p>
+
+<a name="metanodes"></a><div class="figure" figure-id="metanodes">
+            <div class="signature-3">
+                <div class="figure-title">Table 1. Metanodes</div>
+                <div class="figure-description"><p>The network will consist of the following node types. Domain-specific vocabularies provide standardized terminologies for each node type.</p></div>
+            </div>
+        <div class="figure-content"><table class="table markdown-table"><thead><tr><th>Type</th><th>Resource</th><th>Cite</th></tr></thead><tbody><tr><td>Compound</td><td><a href="http://www.drugbank.ca/">DrugBank</a></td><td><span class="citation">[<a href="https://doi.org/10.1093/nar/gkt1068" class="citation" data-key="10.1093/nar/gkt1068">11</a>]</span></td></tr><tr><td>Disease</td><td><a href="http://disease-ontology.org/">Disease Ontology</a></td><td><span class="citation">[<a href="https://doi.org/10.1093/nar/gkr972" class="citation" data-key="10.1093/nar/gkr972">12</a>]</span></td></tr><tr><td>Gene</td><td><a href="//www.ncbi.nlm.nih.gov/gene">Entrez Gene</a></td><td><span class="citation">[<a href="https://doi.org/10.1093/nar/gki031" class="citation" data-key="10.1093/nar/gki031">13</a>]</span></td></tr><tr><td>Anatomy</td><td><a href="https://uberon.github.io/">Uberon</a></td><td><span class="citation">[<a href="https://doi.org/10.1186/gb-2012-13-1-r5" class="citation" data-key="10.1186/gb-2012-13-1-r5">14</a>]</span></td></tr><tr><td>Cellular Component</td><td><a href="http://geneontology.org/">Gene Ontology</a></td><td><span class="citation">[<a href="https://doi.org/10.1093/nar/gku1179" class="citation" data-key="10.1093/nar/gku1179">15</a>, <a href="https://doi.org/10.1038/75556" class="citation" data-key="10.1038/75556">16</a>]</span></td></tr><tr><td>Molecular Function</td><td><a href="http://geneontology.org/">Gene Ontology</a></td><td><span class="citation">[<a href="https://doi.org/10.1093/nar/gku1179" class="citation" data-key="10.1093/nar/gku1179">15</a>, <a href="https://doi.org/10.1038/75556" class="citation" data-key="10.1038/75556">16</a>]</span></td></tr><tr><td>Biological Process</td><td><a href="http://geneontology.org/">Gene Ontology</a></td><td><span class="citation">[<a href="https://doi.org/10.1093/nar/gku1179" class="citation" data-key="10.1093/nar/gku1179">15</a>, <a href="https://doi.org/10.1038/75556" class="citation" data-key="10.1038/75556">16</a>]</span></td></tr><tr><td>Perturbation Gene Set</td><td><a href="https://www.broadinstitute.org/gsea/msigdb/index.jsp">Molecular Signatures Database</a> (MSigDB 5.0)</td><td><span class="citation">[<a href="https://doi.org/10.1093/bioinformatics/btr260" class="citation" data-key="10.1093/bioinformatics/btr260">17</a>]</span></td></tr><tr><td>Pathway</td><td><a href="https://www.broadinstitute.org/gsea/msigdb/index.jsp">Molecular Signatures Database</a> (MSigDB 5.0)</td><td><span class="citation">[<a href="https://doi.org/10.1093/bioinformatics/btr260" class="citation" data-key="10.1093/bioinformatics/btr260">17</a>]</span></td></tr><tr><td>Pathway</td><td><a href="//www.wikipathways.org/index.php/WikiPathways">WikiPathways</a></td><td><span class="citation">[<a href="https://doi.org/10.1371/journal.pbio.0060184" class="citation" data-key="10.1371/journal.pbio.0060184">18</a>]</span></td></tr><tr><td>Side Effect</td><td><a href="http://www.nlm.nih.gov/pubs/factsheets/umlsmeta.html">UMLS Metathesaurus</a></td><td><span class="citation">[<a href="https://doi.org/10.1093/nar/gkh061" class="citation" data-key="10.1093/nar/gkh061">19</a>]</span></td></tr><tr><td>Symptom</td><td><a href="//www.nlm.nih.gov/mesh/">MeSH</a></td><td><span class="citation">[<a href="https://doi.org/10.1001/jama.1994.03510380059038" class="citation" data-key="10.1001/jama.1994.03510380059038">20</a>]</span></td></tr></tbody></table></div></div>
+
+<a name="metaedges"></a><div class="figure" figure-id="metaedges">
+            <div class="signature-3">
+                <div class="figure-title">Table 2. Metaedges</div>
+                <div class="figure-description"><p>The network will consist of the following edge types. High-throughput bioinformatics resources provide the necessary information for connecting nodes.</p></div>
+            </div>
+        <div class="figure-content"><table class="table markdown-table"><thead><tr><th>Source</th><th>Target</th><th>Type</th><th>Resource</th><th>Cite</th></tr></thead><tbody><tr><td>Compound</td><td>Disease</td><td>Indication</td><td><a href="http://knowledgemap.mc.vanderbilt.edu/research/content/MEDI">MEDI</a></td><td><span class="citation">[<a href="https://doi.org/10.1136/amiajnl-2012-001431" class="citation" data-key="10.1136/amiajnl-2012-001431">21</a>]</span></td></tr><tr><td>Compound</td><td>Disease</td><td>Indication</td><td><a href="http://ftp.ncbi.nlm.nih.gov/pub/lu/LabeledIn/">LabeledIn</a></td><td><span class="citation">[<a href="https://doi.org/10.1016/j.jbi.2014.08.004" class="citation" data-key="10.1016/j.jbi.2014.08.004">22</a>, <a href="https://doi.org/10.1093/database/bav016" class="citation" data-key="10.1093/database/bav016">23</a>]</span></td></tr><tr><td>Compound</td><td>Disease</td><td>Indication</td><td>ehrlink</td><td><span class="citation">[<a href="https://doi.org/10.1136/amiajnl-2012-000852" class="citation" data-key="10.1136/amiajnl-2012-000852">24</a>]</span></td></tr><tr><td>Compound</td><td>Disease</td><td>Indication</td><td>PREDICT</td><td><span class="citation">[<a href="https://doi.org/10.1021/ci100050t" class="citation" data-key="10.1021/ci100050t">25</a>]</span></td></tr><tr><td>Compound</td><td>Compound</td><td>Similarity</td><td>Dice index of ECFPs</td><td><span class="citation">[<a href="https://doi.org/10.1038/msb.2011.26" class="citation" data-key="10.1038/msb.2011.26">26</a>]</span></td></tr><tr><td>Compound</td><td>Gene</td><td>Binding</td><td><a href="//www.bindingdb.org/bind/index.jsp">BindingDB</a></td><td><span class="citation">[<a href="https://doi.org/10.1093/nar/gkl999" class="citation" data-key="10.1093/nar/gkl999">27</a>]</span></td></tr><tr><td>Compound</td><td>Gene</td><td>Target</td><td><a href="http://www.drugbank.ca/">DrugBank</a></td><td><span class="citation">[<a href="https://doi.org/10.1093/nar/gkt1068" class="citation" data-key="10.1093/nar/gkt1068">11</a>]</span></td></tr><tr><td>Compound</td><td>Gene</td><td>Expression</td><td><a href="http://www.lincscloud.org/l1000/">LINCS</a></td><td></td></tr><tr><td>Compound</td><td>Side Effect</td><td>Causation</td><td><a href="https://www.pharmgkb.org/downloads/">OFFSIDES</a></td><td><span class="citation">[<a href="https://doi.org/10.1126/scitranslmed.3003377" class="citation" data-key="10.1126/scitranslmed.3003377">28</a>]</span></td></tr><tr><td>Compound</td><td>Side Effect</td><td>Causation</td><td><a href="http://sideeffects.embl.de/">SIDER 4</a></td><td><span class="citation">[<a href="https://doi.org/10.1038/msb.2009.98" class="citation" data-key="10.1038/msb.2009.98">29</a>]</span></td></tr><tr><td>Disease</td><td>Gene</td><td>Variation</td><td><a href="https://www.ebi.ac.uk/gwas/">GWAS Catalog</a></td><td><span class="citation">[<a href="https://doi.org/10.1093/nar/gkt1229" class="citation" data-key="10.1093/nar/gkt1229">30</a>]</span></td></tr><tr><td>Disease</td><td>Gene</td><td>Association</td><td><a href="http://diseases.jensenlab.org/Search">DISEASES</a></td><td><span class="citation">[<a href="https://doi.org/10.1016/j.ymeth.2014.11.020" class="citation" data-key="10.1016/j.ymeth.2014.11.020">31</a>]</span></td></tr><tr><td>Disease</td><td>Gene</td><td>Association</td><td><a href="http://www.disgenet.org/web/DisGeNET/menu/home">DisGeNET</a></td><td><span class="citation">[<a href="https://doi.org/10.1093/database/bav028" class="citation" data-key="10.1093/database/bav028">32</a>]</span></td></tr><tr><td>Disease</td><td>Gene</td><td>Association</td><td><a href="http://doa.nubic.northwestern.edu/pages/search.php">DOAF</a></td><td><span class="citation">[<a href="https://doi.org/10.1371/journal.pone.0049686" class="citation" data-key="10.1371/journal.pone.0049686">33</a>]</span></td></tr><tr><td>Disease</td><td>Gene</td><td>Expression</td><td><a href="http://dev.stargeo.io/">STAR-GEO</a></td><td><span class="citation">[<a href="https://doi.org/10.1093/nar/30.1.207" class="citation" data-key="10.1093/nar/30.1.207">34</a>]</span></td></tr><tr><td>Disease</td><td>Symptom</td><td>Causation</td><td><a href="//www.nlm.nih.gov/pubs/factsheets/medline.html">MEDLINE</a> Cooccurrence</td><td></td></tr><tr><td>Disease</td><td>Anatomy</td><td>Localization</td><td><a href="//www.nlm.nih.gov/pubs/factsheets/medline.html">MEDLINE</a> Cooccurrence</td><td></td></tr><tr><td>Disease</td><td>Disease</td><td>Similarity</td><td><a href="//www.nlm.nih.gov/pubs/factsheets/medline.html">MEDLINE</a> Cooccurrence</td><td></td></tr><tr><td>Gene</td><td>Gene</td><td>Interaction</td><td><a href="http://interactome.dfci.harvard.edu/H_sapiens/index.php?page=download">Human Interactome Project</a></td><td><span class="citation">[<a href="https://doi.org/10.1016/j.cell.2014.10.050" class="citation" data-key="10.1016/j.cell.2014.10.050">35</a>]</span></td></tr><tr><td>Gene</td><td>Gene</td><td>Interaction</td><td><a href="http://www.sciencemag.org/content/347/6224/1257601/suppl/DC1">The Incomplete Interactome</a></td><td><span class="citation">[<a href="https://doi.org/10.1126/science.1257601" class="citation" data-key="10.1126/science.1257601">36</a>]</span></td></tr><tr><td>Gene</td><td>Gene</td><td>Evolution</td><td><a href="http://csb.pitt.edu/erc_analysis/Methods.php">Evolutionary Rate Covariation</a></td><td><span class="citation">[<a href="https://doi.org/10.1371/journal.pgen.1004967" class="citation" data-key="10.1371/journal.pgen.1004967">37</a>]</span></td></tr><tr><td>Gene</td><td>Pathway</td><td>Membership</td><td><a href="http://www.wikipathways.org/index.php/WikiPathways">WikiPathways</a></td><td><span class="citation">[<a href="https://doi.org/10.1371/journal.pbio.0060184" class="citation" data-key="10.1371/journal.pbio.0060184">18</a>]</span></td></tr><tr><td>Gene</td><td>Pathway</td><td>Membership</td><td><a href="http://www.broadinstitute.org/gsea/msigdb/index.jsp">MSigDB 5.0</a></td><td><span class="citation">[<a href="https://doi.org/10.1093/bioinformatics/btr260" class="citation" data-key="10.1093/bioinformatics/btr260">17</a>]</span></td></tr><tr><td>Gene</td><td>Perturbation Gene Set</td><td>Regulation</td><td><a href="http://www.broadinstitute.org/gsea/msigdb/index.jsp">MSigDB 5.0</a></td><td><span class="citation">[<a href="https://doi.org/10.1093/bioinformatics/btr260" class="citation" data-key="10.1093/bioinformatics/btr260">17</a>]</span></td></tr><tr><td>Gene</td><td>Biological Process</td><td>Membership</td><td><a href="http://geneontology.org/page/download-annotations">Gene Ontology annotations</a></td><td><span class="citation">[<a href="https://doi.org/10.1093/nar/gku1179" class="citation" data-key="10.1093/nar/gku1179">15</a>, <a href="https://doi.org/10.1038/75556" class="citation" data-key="10.1038/75556">16</a>]</span></td></tr><tr><td>Gene</td><td>Molecular Function</td><td>Membership</td><td><a href="http://geneontology.org/page/download-annotations">Gene Ontology annotations</a></td><td><span class="citation">[<a href="https://doi.org/10.1093/nar/gku1179" class="citation" data-key="10.1093/nar/gku1179">15</a>, <a href="https://doi.org/10.1038/75556" class="citation" data-key="10.1038/75556">16</a>]</span></td></tr><tr><td>Gene</td><td>Cellular Component</td><td>Membership</td><td><a href="http://geneontology.org/page/download-annotations">Gene Ontology annotations</a></td><td><span class="citation">[<a href="https://doi.org/10.1093/nar/gku1179" class="citation" data-key="10.1093/nar/gku1179">15</a>, <a href="https://doi.org/10.1038/75556" class="citation" data-key="10.1038/75556">16</a>]</span></td></tr><tr><td>Gene</td><td>Anatomy</td><td>Expression</td><td><a href="http://bgee.unil.ch/">Bgee</a></td><td><span class="citation">[<a href="https://doi.org/10.1007/978-3-540-69828-9_12" class="citation" data-key="10.1007/978-3-540-69828-9_12">38</a>]</span></td></tr><tr><td>Gene</td><td>Anatomy</td><td>Expression</td><td><a href="http://tissues.jensenlab.org/Search">TISSUES</a></td><td><span class="citation">[<a href="https://doi.org/10.7717/peerj.1054" class="citation" data-key="10.7717/peerj.1054">39</a>]</span></td></tr></tbody></table></div></div>
+
+<p>Each node type will be populated using a domain-specific vocabulary (<a href="#metanodes">Table 1</a>). Controlled vocabularies provide a backbone for data integration, ensure entities are conceptually unique, and enable easy annotation for future users. Edges will be extracted from high-throughput bioinformatics resources (<a href="#metaedges">Table 2</a>). We aim to incorporate resources that are high-throughput, high-quality, and publicly-available. When possible, systematic resources that circumvent knowledge biases will be employed.</p>
+
+<a name="metagraph"></a><div class="figure" figure-id="metagraph"><div class="figure-content"><img src="http://think-lab.s3.amazonaws.com/m/figures/3.png"></div>
+            <div class="signature-1">
+                <div class="figure-title">Figure 1. Metagraph of the heterogeneous network</div>
+                <div class="figure-description"><p>A schematic view of the node and edge types composing the network.</p></div>
+            </div>
+        </div>
+
+<p>We are <a href="http://thinklab.org/p/rephetio/how-should-we-construct-a-catalog-of-drug-indications/21">currently exploring</a> various resources to provide a high-throughput catalog of indications. Feedback here would be appreciated.</p>
+
+<h2 id="part-2-discovering-mechanisms-of-drug-efficacy">Part 2. Discovering Mechanisms of Drug Efficacy</h2>
+
+<p>Features describe the relationship between a compound and disease. Each feature measures a certain aspect of a compound-disease relationship: for example, whether the compound targets a susceptibility gene of the disease or whether the compound downregulates genes that are overexpressed in the disease state. Features that distinguish therapeutic from untherapeutic compound-disease pairs represent mechanisms of drug efficacy. We refer to the discriminatory power of each feature as its performance. The performance of each feature indicates its pharmacological importance. And by comparing performance across features, we can contrast the informativeness of orthogonal domains of information. Finally, features describing the same general relationship but based on different data sources can identify the most informative resource or technology out of many.</p>
+
+<p>Features will be computed from the network. Each feature will measure the prevalence of a specific type of path between a compound and disease. This approach was initially developed for social network analysis <span class="citation">[<a href="https://doi.org/10.1109/ASONAM.2011.112" class="citation" data-key="10.1109/ASONAM.2011.112">40</a>]</span>, and later adapted by us for predicting disease-associated genes <span class="citation">[<a href="https://doi.org/10.1371/journal.pcbi.1004259" class="citation" data-key="10.1371/journal.pcbi.1004259">41</a>]</span>. Briefly, the method identifies all paths between a source and target node that follow a specified type of path (metapath). The contribution of each path is weighted by its specificity: paths through high-degree nodes, which are likely to be less informative, are downweighted. The sum of the weighted paths results in a value of 0 or greater, where 0 indicates no connectivity. We plan to use the <a href="http://het.io/hnep"><em>degree-weighted path count</em> metric</a> for computing features <span class="citation">[<a href="https://doi.org/10.1371/journal.pcbi.1004259" class="citation" data-key="10.1371/journal.pcbi.1004259">41</a>]</span>. The interpretation of a specific feature depends on its corresponding metapath. <a href="#metapaths">Table 3</a> provides example metapaths and describes their pharmacological significance.</p>
+
+<a name="metapaths"></a><div class="figure" figure-id="metapaths">
+            <div class="signature-3">
+                <div class="figure-title">Table 3. The interpretation of features for select metapaths</div>
+                <div class="figure-description"><p>Features measure the prevalence of a specific metapath between the source compound and target disease. Metapaths are abbreviated using the first letter of each metanode (uppercase) and metaedge (lowercase). Refer to <a href="#metagraph">Figure 1</a> for metanode and metaedge names.</p></div>
+            </div>
+        <div class="figure-content"><table class="table markdown-table"><thead><tr><th>Metapath</th><th>Measures the extent that ...</th></tr></thead><tbody><tr><td><em>CuGdD</em></td><td>genes downregulated by the disease are upregulated by the compound</td></tr><tr><td><em>CtGaD</em></td><td>the compound targets genes associated with the disease</td></tr><tr><td><em>CtGiGaD</em></td><td>the compound targets genes that interact with genes associated with the disease</td></tr><tr><td><em>CcScCiD</em></td><td>the compound shares side effects with compounds indicated for the disease</td></tr><tr><td><em>CtGeTlD</em></td><td>the compound targets genes that are expressed in tissues affected by the disease</td></tr><tr><td><em>CiDmPmD</em></td><td>the compound is indicated for diseases with the same pathophysiology as the target disease</td></tr></tbody></table></div></div>
+
+<p>Metapath-based approaches have several advantages for predictive data integration including <span class="citation">[<a href="https://doi.org/10.1371/journal.pcbi.1004259" class="citation" data-key="10.1371/journal.pcbi.1004259">41</a>]</span>:</p>
+
+<blockquote><ul><li>versatility (most biological phenomena are decomposable into entities connected by relationships)</li><li>scalability (no theoretical limit to metagraph complexity or graph size)</li><li>efficiency (low marginal cost to including an additional network component)</li></ul></blockquote>
+
+<p>Harnessing these advantages, we hope to evaluate and compare a diverse and broad set of potential mechanisms of efficacy.</p>
+
+<h2 id="part-3-predicting-probabilities-of-efficacy">Part 3. Predicting Probabilities of Efficacy</h2>
+
+<p>We plan to predict probabilities of efficacy for compound-disease pairs using heterogeneous network edge prediction <span class="citation">[<a href="https://doi.org/10.1109/ASONAM.2011.112" class="citation" data-key="10.1109/ASONAM.2011.112">40</a>, <a href="https://doi.org/10.1371/journal.pcbi.1004259" class="citation" data-key="10.1371/journal.pcbi.1004259">41</a>]</span>. This approach trains a model from the network-based features and can return a probability of efficacy for any compound-disease pair. Previously, our implementation relied on regularized logistic regression, but <a href="https://topepo.github.io/caret/index.html">modern software packages</a> will allow us to rigorously evaluate a broad range of machine learning algorithms.</p>
+
+<p><a name="open-science"></a></p>
+
+<h1 id="open-science">Open science</h1>
+
+<p>We are committed to a transparent, freely available, reusable, and reproducible scientific process and believe open science can revolutionize medicine <span class="citation">[<a href="https://doi.org/10.1371/journal.pbio.1002164" class="citation" data-key="10.1371/journal.pbio.1002164">42</a>]</span>. To this end, we will release all project related code on <a href="https://github.com/dhimmel">GitHub</a>. Datasets that are too large for GitHub will be published on <a href="http://figshare.com/authors/Daniel_Himmelstein/523637">figshare</a>. All original materials will be released under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY</a> (requires attribution) or <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC-0</a> (public domain) licences. Derivatives of restrictively-licensed works will be released under the most permissive option available. Our analyses will be made available in real-time using <a href="https://pages.github.com/">GitHub pages</a> to host <a href="http://rmarkdown.rstudio.com/">R Markdown</a> documents and <a href="http://ipython.org/notebook.html">IPython Notebooks</a>. Finally, we plan to follow <a href="http://dx.doi.org/10.1371/journal.pcbi.1003285">10 proposed rules</a> for reproducible research in computational biology <span class="citation">[<a href="https://doi.org/10.1371/journal.pcbi.1003285" class="citation" data-key="10.1371/journal.pcbi.1003285">43</a>]</span>. </p>
+
+<h1 id="thoughts">Thoughts?</h1>
+
+<p>Share your ideas by commenting on an existing discussion or by starting a new thread. Our goal in joining ThinkLab is to generate as much interaction as possible.</p>
+
+<h1 id="team-resources">Team &amp; Resources</h1>
+
+<p><a href="http://dhimmel.com">Daniel Himmelstein</a> is a PhD candidate in the <em>Biological &amp; Medical Informatics</em> program at UCSF. Daniel works in the <a href="http://baranzinilab.ucsf.edu/">Sergio Baranzini Lab</a> whose mission is to apply cutting-edge bioinformatic approaches to genomic data, with a focus on multiple sclerosis. Dr. Baranzini has extensive experience with data integration, genomic profiling, and disease bioinformatics.</p>
+
+<p>UCSF and the surrounding Bay Area are hotspots for drug development and data analytics. The team has access to <a href="http://qb3.org/">QB3</a> resources, which include a <a href="http://qb3.ucsf.edu/computing/cluster.html">computing cluster</a> and <a href="https://smdc.ucsf.edu/">small molecule discovery center</a>.</p>
+
+<p>This material is based upon work supported by the National Science Foundation Graduate Research Fellowship under Grant Number 1144247. We would like to thank <a href="https://www.browserstack.com/">BrowserStack</a> for providing cross browser testing to help us <em>compatibly</em> share our research.</p></div>
+
+  
+
+  
+    <h1 id="references">References</h1>
+    <table class="references table-td-5"><tr><td></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='Ban06'><a href='http://www.dialogues-cns.com/publication/the-role-of-serendipity-in-drug-discovery/' class='pub-title'>Ban TA (2006) The role of serendipity in drug discovery. Dialogues in clinical neuroscience 8.3: 335.</a></div></td></tr><tr><td><a href='/doi/10.1016/j.drudis.2012.08.005' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>2.</div></td><td><div class='doi-body' data-key='10.1016/j.drudis.2012.08.005'><a href='/doi/10.1016/j.drudis.2012.08.005' class='pub-title'>In silico drug repositioning – what we need to know</a><div class='pub-body'>Zhichao Liu, Hong Fang, Kelly Reagan, Xiaowei Xu, Donna L. Mendrick, William Slikker, Weida Tong (2013) <i>Drug Discovery Today</i>. doi:<a class='pub-doi' href='https://doi.org/10.1016/j.drudis.2012.08.005'>10.1016/j.drudis.2012.08.005</a></div></div></td></tr><tr><td><a href='/doi/10.1038/nrd1468' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>3.</div></td><td><div class='doi-body' data-key='10.1038/nrd1468'><a href='/doi/10.1038/nrd1468' class='pub-title'>Drug repositioning: identifying and developing new uses for existing drugs</a><div class='pub-body'>Ted T. Ashburn, Karl B. Thor (2004) <i>Nat Rev Drug Discov</i>. doi:<a class='pub-doi' href='https://doi.org/10.1038/nrd1468'>10.1038/nrd1468</a></div></div></td></tr><tr><td><a href='/doi/10.6084/m9.figshare.937004' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>4.</div></td><td><div class='doi-body' data-key='10.6084/m9.figshare.937004'><a href='/doi/10.6084/m9.figshare.937004' class='pub-title'>Increasing R&amp;D Spending per New Drug Approval</a><div class='pub-body'>Daniel Himmelstein, Sergio Baranzini (2014) <i>Figshare</i>. doi:<a class='pub-doi' href='https://doi.org/10.6084/m9.figshare.937004'>10.6084/m9.figshare.937004</a></div></div></td></tr><tr><td><a href='/doi/10.1038/nchembio.118' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>5.</div></td><td><div class='doi-body' data-key='10.1038/nchembio.118'><a href='/doi/10.1038/nchembio.118' class='pub-title'>Network pharmacology: the next paradigm in drug discovery</a><div class='pub-body'>Andrew L Hopkins (2008) <i>Nature Chemical Biology</i>. doi:<a class='pub-doi' href='https://doi.org/10.1038/nchembio.118'>10.1038/nchembio.118</a></div></div></td></tr><tr><td><a href='/doi/10.1038/nbt0908-983' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>6.</div></td><td><div class='doi-body' data-key='10.1038/nbt0908-983'><a href='/doi/10.1038/nbt0908-983' class='pub-title'>Data completeness—the Achilles heel of drug-target networks</a><div class='pub-body'>Jordi Mestres, Elisabet Gregori-Puigjané, Sergi Valverde, Ricard V Solé (2008) <i>Nat Biotechnol</i>. doi:<a class='pub-doi' href='https://doi.org/10.1038/nbt0908-983'>10.1038/nbt0908-983</a></div></div></td></tr><tr><td><a href='/doi/10.1038/nrd1346' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>7.</div></td><td><div class='doi-body' data-key='10.1038/nrd1346'><a href='/doi/10.1038/nrd1346' class='pub-title'>Magic shotguns versus magic bullets: selectively non-selective drugs for mood disorders and schizophrenia</a><div class='pub-body'>Bryan L. Roth, Douglas J. Sheffler, Wesley K. Kroeze (2004) <i>Nat Rev Drug Discov</i>. doi:<a class='pub-doi' href='https://doi.org/10.1038/nrd1346'>10.1038/nrd1346</a></div></div></td></tr><tr><td></td><td><div class='pub-order'>8.</div></td><td><div class='doi-body' data-key='Thayer12'><a href='http://cen.acs.org/articles/90/i40/Drug-Repurposing.html' class='pub-title'>Thayer AM (2012) Drug Repurposing. Chemical &amp; Engineering News, 90(40), 15-25</a></div></td></tr><tr><td></td><td><div class='pub-order'>9.</div></td><td><div class='doi-body' data-key='Persidis11'><a href='http://www.ddw-online.com/media/32/2226/drug-repositioning.pdf' class='pub-title'>Persidis, A. (2011). The benefits of drug repositioning. Drug Discovery, 9.</a></div></td></tr><tr><td><a href='/doi/10.1038/nrd3480' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>10.</div></td><td><div class='doi-body' data-key='10.1038/nrd3480'><a href='/doi/10.1038/nrd3480' class='pub-title'>How were new medicines discovered?</a><div class='pub-body'>David C. Swinney, Jason Anthony (2011) <i>Nat Rev Drug Discov</i>. doi:<a class='pub-doi' href='https://doi.org/10.1038/nrd3480'>10.1038/nrd3480</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkt1068' class='pub-comments tt-right' title='Article comments'>4</a></td><td><div class='pub-order'>11.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkt1068'><a href='/doi/10.1093/nar/gkt1068' class='pub-title'>DrugBank 4.0: shedding new light on drug metabolism</a><div class='pub-body'>V. Law, C. Knox, Y. Djoumbou, T. Jewison, A. C. Guo, Y. Liu, A. Maciejewski, D. Arndt, M. Wilson, V. Neveu, A. Tang, G. Gabriel, C. Ly, S. Adamjee, Z. T. Dame, B. Han, Y. Zhou, D. S. Wishart (2013) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkt1068'>10.1093/nar/gkt1068</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkr972' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>12.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkr972'><a href='/doi/10.1093/nar/gkr972' class='pub-title'>Disease Ontology: a backbone for disease semantic integration</a><div class='pub-body'>L. M. Schriml, C. Arze, S. Nadendla, Y.-W. W. Chang, M. Mazaitis, V. Felix, G. Feng, W. A. Kibbe (2011) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkr972'>10.1093/nar/gkr972</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gki031' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>13.</div></td><td><div class='doi-body' data-key='10.1093/nar/gki031'><a href='/doi/10.1093/nar/gki031' class='pub-title'>Entrez Gene: gene-centered information at NCBI</a><div class='pub-body'>D. Maglott (2004) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gki031'>10.1093/nar/gki031</a></div></div></td></tr><tr><td><a href='/doi/10.1186/gb-2012-13-1-r5' class='pub-comments tt-right' title='Article comments'>16</a></td><td><div class='pub-order'>14.</div></td><td><div class='doi-body' data-key='10.1186/gb-2012-13-1-r5'><a href='/doi/10.1186/gb-2012-13-1-r5' class='pub-title'>Uberon, an integrative multi-species anatomy ontology</a><div class='pub-body'>Christopher J Mungall, Carlo Torniai, Georgios V Gkoutos, Suzanna E Lewis, Melissa A Haendel (2012) <i>Genome Biol</i>. doi:<a class='pub-doi' href='https://doi.org/10.1186/gb-2012-13-1-r5'>10.1186/gb-2012-13-1-r5</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gku1179' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>15.</div></td><td><div class='doi-body' data-key='10.1093/nar/gku1179'><a href='/doi/10.1093/nar/gku1179' class='pub-title'>Gene Ontology Consortium: going forward</a><div class='pub-body'> (2014) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gku1179'>10.1093/nar/gku1179</a></div></div></td></tr><tr><td><a href='/doi/10.1038/75556' class='pub-comments tt-right' title='Article comments'>8</a></td><td><div class='pub-order'>16.</div></td><td><div class='doi-body' data-key='10.1038/75556'><a href='/doi/10.1038/75556' class='pub-title'>Gene Ontology: tool for the unification of biology</a><div class='pub-body'>Michael Ashburner, Catherine A. Ball, Judith A. Blake, David Botstein, Heather Butler, J. Michael Cherry, Allan P. Davis, Kara Dolinski, Selina S. Dwight, Janan T. Eppig, Midori A. Harris, David P. Hill, Laurie Issel-Tarver, Andrew Kasarskis, Suzanna Lewis, John C. Matese, Joel E. Richardson, Martin Ringwald, Gerald M. Rubin, Gavin Sherlock (2000) <i>Nat Genet</i>. doi:<a class='pub-doi' href='https://doi.org/10.1038/75556'>10.1038/75556</a></div></div></td></tr><tr><td><a href='/doi/10.1093/bioinformatics/btr260' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>17.</div></td><td><div class='doi-body' data-key='10.1093/bioinformatics/btr260'><a href='/doi/10.1093/bioinformatics/btr260' class='pub-title'>Molecular signatures database (MSigDB) 3.0</a><div class='pub-body'>A. Liberzon, A. Subramanian, R. Pinchback, H. Thorvaldsdottir, P. Tamayo, J. P. Mesirov (2011) <i>Bioinformatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/bioinformatics/btr260'>10.1093/bioinformatics/btr260</a></div></div></td></tr><tr><td><a href='/doi/10.1371/journal.pbio.0060184' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>18.</div></td><td><div class='doi-body' data-key='10.1371/journal.pbio.0060184'><a href='/doi/10.1371/journal.pbio.0060184' class='pub-title'>WikiPathways: Pathway Editing for the People</a><div class='pub-body'>Alexander R. Pico, Thomas Kelder, Martijn P. van Iersel, Kristina Hanspers, Bruce R. Conklin, Chris Evelo (2008) <i>Plos Biol</i>. doi:<a class='pub-doi' href='https://doi.org/10.1371/journal.pbio.0060184'>10.1371/journal.pbio.0060184</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkh061' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>19.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkh061'><a href='/doi/10.1093/nar/gkh061' class='pub-title'>The Unified Medical Language System (UMLS): integrating biomedical terminology</a><div class='pub-body'>O. Bodenreider (2004) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkh061'>10.1093/nar/gkh061</a></div></div></td></tr><tr><td><a href='/doi/10.1001/jama.1994.03510380059038' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>20.</div></td><td><div class='doi-body' data-key='10.1001/jama.1994.03510380059038'><a href='/doi/10.1001/jama.1994.03510380059038' class='pub-title'>Understanding and Using the Medical Subject Headings (MeSH) Vocabulary to Perform Literature Searches</a><div class='pub-body'>Henry J. Lowe (1994) <i>JAMA: The Journal of the American Medical Association</i>. doi:<a class='pub-doi' href='https://doi.org/10.1001/jama.1994.03510380059038'>10.1001/jama.1994.03510380059038</a></div></div></td></tr><tr><td><a href='/doi/10.1136/amiajnl-2012-001431' class='pub-comments tt-right' title='Article comments'>2</a></td><td><div class='pub-order'>21.</div></td><td><div class='doi-body' data-key='10.1136/amiajnl-2012-001431'><a href='/doi/10.1136/amiajnl-2012-001431' class='pub-title'>Development and evaluation of an ensemble resource linking medications to their indications</a><div class='pub-body'>W.-Q. Wei, R. M. Cronin, H. Xu, T. A. Lasko, L. Bastarache, J. C. Denny (2013) <i>Journal of the American Medical Informatics Association</i>. doi:<a class='pub-doi' href='https://doi.org/10.1136/amiajnl-2012-001431'>10.1136/amiajnl-2012-001431</a></div></div></td></tr><tr><td><a href='/doi/10.1016/j.jbi.2014.08.004' class='pub-comments tt-right' title='Article comments'>5</a></td><td><div class='pub-order'>22.</div></td><td><div class='doi-body' data-key='10.1016/j.jbi.2014.08.004'><a href='/doi/10.1016/j.jbi.2014.08.004' class='pub-title'>LabeledIn: Cataloging labeled indications for human drugs</a><div class='pub-body'>Ritu Khare, Jiao Li, Zhiyong Lu (2014) <i>Journal of Biomedical Informatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1016/j.jbi.2014.08.004'>10.1016/j.jbi.2014.08.004</a></div></div></td></tr><tr><td><a href='/doi/10.1093/database/bav016' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>23.</div></td><td><div class='doi-body' data-key='10.1093/database/bav016'><a href='/doi/10.1093/database/bav016' class='pub-title'>Scaling drug indication curation through crowdsourcing</a><div class='pub-body'>R. Khare, J. D. Burger, J. S. Aberdeen, D. W. Tresner-Kirsch, T. J. Corrales, L. Hirchman, Z. Lu (2015) <i>Database</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/database/bav016'>10.1093/database/bav016</a></div></div></td></tr><tr><td><a href='/doi/10.1136/amiajnl-2012-000852' class='pub-comments tt-right' title='Article comments'>3</a></td><td><div class='pub-order'>24.</div></td><td><div class='doi-body' data-key='10.1136/amiajnl-2012-000852'><a href='/doi/10.1136/amiajnl-2012-000852' class='pub-title'>Development and evaluation of a crowdsourcing methodology for knowledge base construction: identifying relationships between clinical problems and medications</a><div class='pub-body'>A. B. McCoy, A. Wright, A. Laxmisan, M. J. Ottosen, J. A. McCoy, D. Butten, D. F. Sittig (2012) <i>Journal of the American Medical Informatics Association</i>. doi:<a class='pub-doi' href='https://doi.org/10.1136/amiajnl-2012-000852'>10.1136/amiajnl-2012-000852</a></div></div></td></tr><tr><td><a href='/doi/10.1021/ci100050t' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>25.</div></td><td><div class='doi-body' data-key='10.1021/ci100050t'><a href='/doi/10.1021/ci100050t' class='pub-title'>Extended-Connectivity Fingerprints</a><div class='pub-body'>David Rogers, Mathew Hahn (2010) <i>Journal of Chemical Information and Modeling</i>. doi:<a class='pub-doi' href='https://doi.org/10.1021/ci100050t'>10.1021/ci100050t</a></div></div></td></tr><tr><td><a href='/doi/10.1038/msb.2011.26' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>26.</div></td><td><div class='doi-body' data-key='10.1038/msb.2011.26'><a href='/doi/10.1038/msb.2011.26' class='pub-title'>PREDICT: a method for inferring novel drug indications with application to personalized medicine</a><div class='pub-body'>A. Gottlieb, G. Y. Stein, E. Ruppin, R. Sharan (2011) <i>Molecular Systems Biology</i>. doi:<a class='pub-doi' href='https://doi.org/10.1038/msb.2011.26'>10.1038/msb.2011.26</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkl999' class='pub-comments tt-right' title='Article comments'>6</a></td><td><div class='pub-order'>27.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkl999'><a href='/doi/10.1093/nar/gkl999' class='pub-title'>BindingDB: a web-accessible database of experimentally determined protein-ligand binding affinities</a><div class='pub-body'>T. Liu, Y. Lin, X. Wen, R. N. Jorissen, M. K. Gilson (2007) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkl999'>10.1093/nar/gkl999</a></div></div></td></tr><tr><td><a href='/doi/10.1126/scitranslmed.3003377' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>28.</div></td><td><div class='doi-body' data-key='10.1126/scitranslmed.3003377'><a href='/doi/10.1126/scitranslmed.3003377' class='pub-title'>Data-Driven Prediction of Drug Effects and Interactions</a><div class='pub-body'>N. P. Tatonetti, P. P. Ye, R. Daneshjou, R. B. Altman (2012) <i>Science Translational Medicine</i>. doi:<a class='pub-doi' href='https://doi.org/10.1126/scitranslmed.3003377'>10.1126/scitranslmed.3003377</a></div></div></td></tr><tr><td><a href='/doi/10.1038/msb.2009.98' class='pub-comments tt-right' title='Article comments'>7</a></td><td><div class='pub-order'>29.</div></td><td><div class='doi-body' data-key='10.1038/msb.2009.98'><a href='/doi/10.1038/msb.2009.98' class='pub-title'>A side effect resource to capture phenotypic effects of drugs</a><div class='pub-body'>Michael Kuhn, Monica Campillos, Ivica Letunic, Lars Juhl Jensen, Peer Bork (2010) <i>Mol Syst Biol</i>. doi:<a class='pub-doi' href='https://doi.org/10.1038/msb.2009.98'>10.1038/msb.2009.98</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkt1229' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>30.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkt1229'><a href='/doi/10.1093/nar/gkt1229' class='pub-title'>The NHGRI GWAS Catalog, a curated resource of SNP-trait associations</a><div class='pub-body'>D. Welter, J. MacArthur, J. Morales, T. Burdett, P. Hall, H. Junkins, A. Klemm, P. Flicek, T. Manolio, L. Hindorff, H. Parkinson (2013) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkt1229'>10.1093/nar/gkt1229</a></div></div></td></tr><tr><td><a href='/doi/10.1016/j.ymeth.2014.11.020' class='pub-comments tt-right' title='Article comments'>3</a></td><td><div class='pub-order'>31.</div></td><td><div class='doi-body' data-key='10.1016/j.ymeth.2014.11.020'><a href='/doi/10.1016/j.ymeth.2014.11.020' class='pub-title'>DISEASES: Text mining and data integration of disease–gene associations</a><div class='pub-body'>Sune Pletscher-Frankild, Albert Pallejà, Kalliopi Tsafou, Janos X. Binder, Lars Juhl Jensen (2015) <i>Methods</i>. doi:<a class='pub-doi' href='https://doi.org/10.1016/j.ymeth.2014.11.020'>10.1016/j.ymeth.2014.11.020</a></div></div></td></tr><tr><td><a href='/doi/10.1093/database/bav028' class='pub-comments tt-right' title='Article comments'>8</a></td><td><div class='pub-order'>32.</div></td><td><div class='doi-body' data-key='10.1093/database/bav028'><a href='/doi/10.1093/database/bav028' class='pub-title'>DisGeNET: a discovery platform for the dynamical exploration of human diseases and their genes</a><div class='pub-body'>J. Pinero, N. Queralt-Rosinach, A. Bravo, J. Deu-Pons, A. Bauer-Mehren, M. Baron, F. Sanz, L. I. Furlong (2015) <i>Database</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/database/bav028'>10.1093/database/bav028</a></div></div></td></tr><tr><td><a href='/doi/10.1371/journal.pone.0049686' class='pub-comments tt-right' title='Article comments'>1</a></td><td><div class='pub-order'>33.</div></td><td><div class='doi-body' data-key='10.1371/journal.pone.0049686'><a href='/doi/10.1371/journal.pone.0049686' class='pub-title'>A Framework for Annotating Human Genome in Disease Context</a><div class='pub-body'>Wei Xu, Huisong Wang, Wenqing Cheng, Dong Fu, Tian Xia, Warren A. Kibbe, Simon M. Lin (2012) <i>PLoS ONE</i>. doi:<a class='pub-doi' href='https://doi.org/10.1371/journal.pone.0049686'>10.1371/journal.pone.0049686</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/30.1.207' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>34.</div></td><td><div class='doi-body' data-key='10.1093/nar/30.1.207'><a href='/doi/10.1093/nar/30.1.207' class='pub-title'>Gene Expression Omnibus: NCBI gene expression and hybridization array data repository</a><div class='pub-body'>R. Edgar (2002) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/30.1.207'>10.1093/nar/30.1.207</a></div></div></td></tr><tr><td><a href='/doi/10.1016/j.cell.2014.10.050' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>35.</div></td><td><div class='doi-body' data-key='10.1016/j.cell.2014.10.050'><a href='/doi/10.1016/j.cell.2014.10.050' class='pub-title'>A Proteome-Scale Map of the Human Interactome Network</a><div class='pub-body'>Thomas Rolland, Murat Taşan, Benoit Charloteaux, Samuel J. Pevzner, Quan Zhong, Nidhi Sahni, Song Yi, Irma Lemmens, Celia Fontanillo, Roberto Mosca, Atanas Kamburov, Susan D. Ghiassian, Xinping Yang, Lila Ghamsari, Dawit Balcha, Bridget E. Begg, Pascal Braun, Marc Brehme, Martin P. Broly, Anne-Ruxandra Carvunis, Dan Convery-Zupan, Roser Corominas, Jasmin Coulombe-Huntington, Elizabeth Dann, Matija Dreze, Amélie Dricot, Changyu Fan, Eric Franzosa, Fana Gebreab, Bryan J. Gutierrez, Madeleine F. Hardy, Mike Jin, Shuli Kang, Ruth Kiros, Guan Ning Lin, Katja Luck, Andrew MacWilliams, Jörg Menche, Ryan R. Murray, Alexandre Palagi, Matthew M. Poulin, Xavier Rambout, John Rasla, Patrick Reichert, Viviana Romero, Elien Ruyssinck, Julie M. Sahalie, Annemarie Scholz, Akash A. Shah, Amitabh Sharma, Yun Shen, Kerstin Spirohn, Stanley Tam, Alexander O. Tejeda, Shelly A. Trigg, Jean-Claude Twizere, Kerwin Vega, Jennifer Walsh, Michael E. Cusick, Yu Xia, Albert-László Barabási, Lilia M. Iakoucheva, Patrick Aloy, Javier De Las Rivas, Jan Tavernier, Michael A. Calderwood, David E. Hill, Tong Hao, Frederick P. Roth, Marc Vidal (2014) <i>Cell</i>. doi:<a class='pub-doi' href='https://doi.org/10.1016/j.cell.2014.10.050'>10.1016/j.cell.2014.10.050</a></div></div></td></tr><tr><td><a href='/doi/10.1126/science.1257601' class='pub-comments tt-right' title='Article comments'>5</a></td><td><div class='pub-order'>36.</div></td><td><div class='doi-body' data-key='10.1126/science.1257601'><a href='/doi/10.1126/science.1257601' class='pub-title'>Uncovering disease-disease relationships through the incomplete interactome</a><div class='pub-body'>J. Menche, A. Sharma, M. Kitsak, S. D. Ghiassian, M. Vidal, J. Loscalzo, A.-L. Barabasi (2015) <i>Science</i>. doi:<a class='pub-doi' href='https://doi.org/10.1126/science.1257601'>10.1126/science.1257601</a></div></div></td></tr><tr><td><a href='/doi/10.1371/journal.pgen.1004967' class='pub-comments tt-right' title='Article comments'>3</a></td><td><div class='pub-order'>37.</div></td><td><div class='doi-body' data-key='10.1371/journal.pgen.1004967'><a href='/doi/10.1371/journal.pgen.1004967' class='pub-title'>Evolutionary Signatures amongst Disease Genes Permit Novel Methods for Gene Prioritization and Construction of Informative Gene-Based Networks</a><div class='pub-body'>Nolan Priedigkeit, Nicholas Wolfe, Nathan L. Clark (2015) <i>PLOS Genetics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1371/journal.pgen.1004967'>10.1371/journal.pgen.1004967</a></div></div></td></tr><tr><td><a href='/doi/10.1007/978-3-540-69828-9_12' class='pub-comments tt-right' title='Article comments'>8</a></td><td><div class='pub-order'>38.</div></td><td><div class='doi-body' data-key='10.1007/978-3-540-69828-9_12'><a href='/doi/10.1007/978-3-540-69828-9_12' class='pub-title'>Bgee: Integrating and Comparing Heterogeneous Transcriptome Data Among Species</a><div class='pub-body'>Frederic Bastian, Gilles Parmentier, Julien Roux, Sebastien Moretti, Vincent Laudet, Marc Robinson-Rechavi (2008) <i>Data Integration in the Life Sciences</i>. doi:<a class='pub-doi' href='https://doi.org/10.1007/978-3-540-69828-9_12'>10.1007/978-3-540-69828-9_12</a></div></div></td></tr><tr><td><a href='/doi/10.7717/peerj.1054' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>39.</div></td><td><div class='doi-body' data-key='10.7717/peerj.1054'><a href='/doi/10.7717/peerj.1054' class='pub-title'>Comprehensive comparison of large-scale tissue expression datasets</a><div class='pub-body'>Alberto Santos, Kalliopi Tsafou, Christian Stolte, Sune Pletscher-Frankild, Seán I. O’Donoghue, Lars Juhl Jensen (2015) <i>PeerJ</i>. doi:<a class='pub-doi' href='https://doi.org/10.7717/peerj.1054'>10.7717/peerj.1054</a></div></div></td></tr><tr><td><a href='/doi/10.1109/ASONAM.2011.112' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>40.</div></td><td><div class='doi-body' data-key='10.1109/ASONAM.2011.112'><a href='/doi/10.1109/ASONAM.2011.112' class='pub-title'>Co-author Relationship Prediction in Heterogeneous Bibliographic Networks</a><div class='pub-body'>Yizhou Sun, Rick Barber, Manish Gupta, Charu C. Aggarwal, Jiawei Han (2011) <i>2011 International Conference on Advances in Social Networks Analysis and Mining</i>. doi:<a class='pub-doi' href='https://doi.org/10.1109/ASONAM.2011.112'>10.1109/ASONAM.2011.112</a></div></div></td></tr><tr><td><a href='/doi/10.1371/journal.pcbi.1004259' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>41.</div></td><td><div class='doi-body' data-key='10.1371/journal.pcbi.1004259'><a href='/doi/10.1371/journal.pcbi.1004259' class='pub-title'>Heterogeneous Network Edge Prediction: A Data Integration Approach to Prioritize Disease-Associated Genes</a><div class='pub-body'>Daniel S. Himmelstein, Sergio E. Baranzini (2015) <i>PLOS Computational Biology</i>. doi:<a class='pub-doi' href='https://doi.org/10.1371/journal.pcbi.1004259'>10.1371/journal.pcbi.1004259</a></div></div></td></tr><tr><td><a href='/doi/10.1371/journal.pbio.1002164' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>42.</div></td><td><div class='doi-body' data-key='10.1371/journal.pbio.1002164'><a href='/doi/10.1371/journal.pbio.1002164' class='pub-title'>Open Access Target Validation Is a More Efficient Way to Accelerate Drug Discovery</a><div class='pub-body'>Wen Hwa Lee (2015) <i>PLoS Biol</i>. doi:<a class='pub-doi' href='https://doi.org/10.1371/journal.pbio.1002164'>10.1371/journal.pbio.1002164</a></div></div></td></tr><tr><td><a href='/doi/10.1371/journal.pcbi.1003285' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>43.</div></td><td><div class='doi-body' data-key='10.1371/journal.pcbi.1003285'><a href='/doi/10.1371/journal.pcbi.1003285' class='pub-title'>Ten Simple Rules for Reproducible Computational Research</a><div class='pub-body'>Geir Kjetil Sandve, Anton Nekrutenko, James Taylor, Eivind Hovig (2013) <i>PLoS Computational Biology</i>. doi:<a class='pub-doi' href='https://doi.org/10.1371/journal.pcbi.1003285'>10.1371/journal.pcbi.1003285</a></div></div></td></tr></table>
+  
+  
+</div>
+
+
+		  </td>
+	    <td class="sidebar project-sidebar">
+
+  			
+
+
+
+	
+
+
+
+
+
+
+
+
+	<div class="details">Published</div>
+	
+		Jan. 12, 2015<br>
+	
+	<span style="font-size:12px;">(Last updated Feb. 5, 2016)</span><br>
+
+	<a style="font-size:12px;" href="/doc/5/revisions">Revision history</a>
+
+
+
+
+<div class="details">Views</div>
+<span style="font-size:20px;">1127</span>
+
+<div class="details">Topics </div>
+<a class='tag' href='/topics/bioinformatics'>Bioinformatics</a><a class='tag' href='/topics/complex-disease'>Complex Disease</a><a class='tag' href='/topics/heterogeneous-networks'>Heterogeneous Networks</a><a class='tag' href='/topics/small-molecules'>Small Molecules</a><a class='tag' href='/topics/machine-learning'>Machine learning</a><a class='tag' href='/topics/drug-repurposing'>Drug Repurposing</a><a class='tag' href='/topics/systems-pharmacology'>Systems Pharmacology</a><a class='tag' href='/topics/hnep'>HNEP</a><a class='tag' href='/topics/multipartite-graphs'>Multipartite Graphs</a><a class='tag' href='/topics/hetnets'>Hetnets</a>
+
+
+<div class="details">Cite this as</div>
+<span style="font-size:12px;">
+Daniel Himmelstein, Antoine Lizee, Chrissy Hessler, Leo Brueggeman, Sabrina Chen, Dexter Hadley, Ari Green, Pouya Khankhanian, Sergio Baranzini (2015) Rephetio: Repurposing drugs on a hetnet [proposal]. <i>Thinklab.</i> doi:<a href='https://doi.org/10.15363/thinklab.a5'>10.15363/thinklab.a5</a>
+</span>
+
+<div class="details">License</div>
+<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0;width:88px;height:31px;" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></p>
+
+
+<br><br>
+
+<div class="affix-container">
+<div class="affix-box">
+
+
+    <!-- <h3>Contents</h3> -->
+
+	<div id="document_nav">
+    <ul class="nav document-menu">
+        
+            <li class="level-1 active"><a href="#abstract">Abstract</a></li>
+        
+            <li class="level-1"><a href="#objectives">Objectives</a></li>
+        
+            <li class="level-1"><a href="#background">Background</a></li>
+        
+            <li class="level-1"><a href="#research-plan">Research Plan</a></li>
+        
+            <li class="level-2"><a href="#part-1-resource-construction">Part 1. Resource Construction</a></li>
+        
+            <li class="level-2"><a href="#part-2-discovering-mechanisms-of-drug-efficacy">Part 2. Discovering Mechanisms of Drug Efficacy</a></li>
+        
+            <li class="level-2"><a href="#part-3-predicting-probabilities-of-efficacy">Part 3. Predicting Probabilities of Efficacy</a></li>
+        
+            <li class="level-1"><a href="#open-science">Open science</a></li>
+        
+            <li class="level-1"><a href="#thoughts">Thoughts?</a></li>
+        
+            <li class="level-1"><a href="#team-resources">Team &amp; Resources</a></li>
+        
+            <li class="level-"><a href="#references">References</a></li>
+        
+    </ul>
+	</div>
+
+
+
+</div></div>
+
+
+	    </td>
+	  </tr></table>
+
+
+		</div>
+
+
+		
+	    	<div class="footer">
+<div style="background:#dedede;">
+	<div class="main-centered-div text-center" style="padding:20px;">
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#0d65686161624d7965646366616c6f236e6260"><span class="__cf_email__" data-cfemail="85ede0e9e9eac5f1edecebeee9e4e7abe6eae8">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+	</div>
+</div>
+<div class="main-footer">
+	<div class="main-centered-div">
+
+<table class="full-width"><tr>
+	<td class="footer-nav">
+
+        <div class="foot-head">Explore</div>
+        <a href="/proposals">Proposals</a><br>
+        <a href="/projects">Projects</a><br>
+        <a href="/publications">Article discussion</a><br>
+        <a href="/discussion">All discussion</a><br>
+        <a href="/topics">Topics</a><br>
+        <!-- <a href="/funders">Funders</a><br> -->
+        <a href="/funding">Funding opportunities</a><br>
+
+	</td>
+	<td class="footer-nav">
+
+        <!-- <div class="foot-head">Help &amp; feedback</div>	 -->
+        <!-- <div class="foot-head">Intro</div>
+        <a href="/benefits/for-science">Why</a><br>
+        <a href="/how-it-works">How it works</a><br>
+
+<br> -->
+
+        <div class="foot-head">Community</div>
+        <a href="/leaderboard">Leaderboard</a><br>
+        <a href="/p/meta">Thinklab Meta</a><br>
+				<a href="/help/faq">Help</a><br>
+				<!-- <a href="/new-project">Start a proposal</a><br> -->
+        <!-- <a href="/benefits/proposal">Benefits</a><br> -->
+        <!-- <a href="/funding">Get funded</a><br> -->
+        <!-- <a href="/participate">Become a contributor</a><br> -->
+        <!-- <a href="/for-funders">For science funders</a><br> -->
+        <!-- <a href="/for-institutions">For institutions</a><br> -->
+
+	</td>
+	<td class="footer-nav">
+
+
+
+        <div class="foot-head">About</div>
+        <a href="/about">Overview</a><br>
+        <a href="/benefits">Benefits</a><br>
+        <a href="/how-it-works">How it works</a><br>
+        <a href="/about/story">Our story</a><br>
+        <a href="/blog">Our blog</a><br>
+        <a href="/about/jobs">Join the team</a><br>
+        <br>
+
+        <!-- <div class="foot-head">Help</div>
+        <a href="/help">Help</a><br>
+		 -->
+
+
+	</td>
+	<td class="footer-nav">
+		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
+		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<br><br>
+		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
+
+	</td>
+
+</tr></table>
+
+</div>
+</div>
+</div>
+
+		
+
+	</div>
+
+
+  <script></script>
+  <script>
+  var MEDIA_URL = 'https://think-lab.s3.amazonaws.com/m/';
+  var STATIC_URL = 'https://think-lab.s3.amazonaws.com/s/';
+  var page_is_authenticated = false;
+  var page_page = 'document_home';
+  var page_profile_id = undefined;
+</script>
+
+
+
+	<!-- Note different script type. MUST come before MathJax.js -->
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	        "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"],
+	                        scale: 110, linebreaks: { automatic:true },
+	                        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+	        tex2jax: { inlineMath: [ ["$$", "$$"], ["\\(","\\)"] ],
+	                    displayMath: [ ["$$$","$$$"], ["\\[", "\\]"] ],
+	                    processEscapes: true,}
+	            });
+
+	</script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://think-lab.s3.amazonaws.com/s/dist/main.min.js"></script>
+  
+
+
+
+  
+	
+
+    
+    
+<script>
+$(function() {
+  recordHit('document', 5);
+});
+</script>
+
+
+    
+
+
+
+    
+
+
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>

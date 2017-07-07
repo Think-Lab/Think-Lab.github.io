@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZgEOC19dW0QCEVtHU1gG","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":392}</script>
+    <title>Our hetnet edge prediction methodology: the modeling framework for Project Rephetio | Thinklab</title>
+	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
+    <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/highlightjs/github.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/css.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/bootstrap-multiselect.css" />
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
+    
+    
+    
+    
+  
+    <meta name="citation_doi" content="10.15363/thinklab.d210">
+    <meta name="citation_title" content="Our hetnet edge prediction methodology: the modeling framework for Project Rephetio">
+    <meta name="citation_online_date" content="May 4, 2016">
+    <meta name="citation_author" content="Daniel Himmelstein">
+    <meta name="citation_journal_title" content="Thinklab">
+    <meta name="citation_publisher" content="Thinklab">
+  
+
+    
+
+
+	<!-- GoogleAnalytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-48550230-1', 'thinklab.com');
+	ga('require', 'displayfeatures');
+	
+	ga('send', 'pageview');
+
+	</script>
+
+
+
+
+
+
+</head>
+<body >
+  <form id="form_action" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+</form>
+
+	
+
+	<div class="body-wrapper">
+
+		
+
+
+<!-- <div style="height:5px;background-image:url('https://think-lab.s3.amazonaws.com/s/img/top-bg.gif');"></div> -->
+<div class="gradient">
+	<div class="main-centered-div header-container">
+
+<table class="full-width" style="height:60px;"><tr>
+	<td style="width:200px;vertical-align:middle;padding-bottom:15px;">
+		<a href="/" style="font-weight:normal;color:#212121;"><img src="https://think-lab.s3.amazonaws.com/s/img/logo.png" width="160"></a>
+	</td><td style="vertical-align:middle;text-align:left;padding-top:6px;width:100%;padding-left:40px;">
+		<ul id="not-search-block"  class="main-header">
+
+
+			
+
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/proposals">Proposals</a></li>
+						<li><a href="/projects">Projects</a></li>
+						<li><a href="/publications">Article discussion</a></li>
+						<li><a href="/discussion">All discussion</a></li>
+					</ul>
+				</li>
+				<li><a href="/leaderboard">Leaderboard</a></li>
+
+			
+				<li><a href="/about">About</a></li>
+			
+
+
+		</ul>
+
+    <ul id="search-block" class="main-header" style="display: none; margin-right: 30px;">
+        <li class="full-width">
+            <form method="get" action="/search">
+			<div class="input-group full-width">
+				<input name="q" type="text" class="form-control search-input">
+			</div>
+            </form>
+        </li>
+    </ul>
+
+	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
+		<ul class="main-header pull-right" style="padding-left: 0;">
+    		
+                <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+            
+
+        </ul>
+    </ul>
+	</td>
+</tr></table>
+
+<!-- <div id="global-search-div" class="main-centered-div" style="display:none;">
+	<input type="text" value="" class="thread-search form-control" placeholder="Search" data-action="/discussion">
+</div> -->
+
+	</div>
+</div>
+
+		
+	  
+
+
+
+	  
+
+
+		
+
+		<div class="dark-head"><div class="main-centered-div">
+
+			
+
+		</div></div>
+		
+		<div class="main-centered-div" style="margin-top:40px;padding-bottom:340px">
+	    
+
+<div style="margin-top:-20px; margin-bottom:20px;">
+
+    <a class="side-box" href="/p/rephetio" style="background-color:#ebfdff;"><div class="side-type">Project:</div> <div class="side-title">Rephetio: Repurposing drugs on a hetnet [rephetio]</div></a><br>
+
+
+
+</div>
+
+<table style="margin-top:0px;"><tr>
+	<td class="thread-table-content">
+
+		<table class="full-width">
+			
+<tr class="comment-tr target-hl" id="1" data-comment-id="1293">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1293"></a>
+
+    
+
+			<h2 class="page-title" style="margin-bottom:5px;margin-top:0px !important;">Our hetnet edge prediction methodology: the modeling framework for Project Rephetio</h2>
+
+			<div style="margin-top:5px;color:gray;margin-bottom:20px;font-size:13px;">
+				<a style="font-weight:normal;color:#212121" href="/u/dhimmel"><strong>Daniel Himmelstein</strong></a>
+				<span class="is-researcher">Researcher</span>
+				&nbsp; <a href="#1" class="light">429 days ago</a>
+				
+			</div>
+
+      
+
+          <hr>
+		
+
+    <h1>Background</h1>
+
+<p>This discussion will describe the machine learning pipeline used by Project Rephetio to predict the probability that a compound treats a disease. Our method derives from a 2011 study to predict coauthorship <span class="citation">[<a href="https://doi.org/10.1109/ASONAM.2011.112" class="citation" data-key="10.1109/ASONAM.2011.112">1</a>]</span> and our 2015 study to predict disease–gene associations <span class="citation">[<a href="https://doi.org/10.1371/journal.pcbi.1004259" class="citation" data-key="10.1371/journal.pcbi.1004259">2</a>]</span>. Several months of investigation by <a href="/u/alizee" class="username">@alizee</a>, <a href="/u/sergiobaranzini" class="username">@sergiobaranzini</a>, and I have led to several advances in our algorithm, which we call <em>metapath-based hetnet edge prediction</em> or HNEP for short.</p>
+
+<p>The founding principal behind HNEP is to identify types of paths (metapaths) that can predict whether two nodes are connected. For Project Rephetio, we are modeling whether a compound (source node) treats (prediction edge) a disease (target node). For each compound–disease pair (observation), we extract the prevalence of specific metapaths from the hetnet using a metric called <em>degree-weighted path count</em> (DWPC). The DWPC quantifies the number of paths between a source and target node, while adjusting for network degree along the path <span class="citation">[<a href="https://doi.org/10.1371/journal.pcbi.1004259" class="citation" data-key="10.1371/journal.pcbi.1004259">2</a>]</span>. The degree-weighting downweights paths through high-degree nodes, which by their nature tend to be less informative.</p>
+
+<p>From the hetnet, we extract a feature matrix whose rows represent compound–disease pairs and whose columns represent features (the vast majority of which are DWPCs corresponding to specific metapaths). Some observations are positives (treatments in our case) and some observations are negatives (non-treatments in our case). We fit a logistic regression model that takes features as input and predicts the probability of treatment as output. </p>
+
+<p>Since we have many features, we use regularization when fitting our regression models, which penalizes complexity to prevent overfitting and accommodate correlations between features. We use two specific cases of elastic net regularization <span class="citation">[<a href="https://doi.org/10.1111/j.1467-9868.2005.00503.x" class="citation" data-key="10.1111/j.1467-9868.2005.00503.x">3</a>]</span>: the ridge and the lasso. Both perform coefficient shrinkage but lasso also performs variable selection. We use the glmnet package in R to fit our models, which implements cross-validation to choose an optimal regularization strength <span class="citation">[<a href="https://doi.org/10.18637/jss.v033.i01" class="citation" data-key="10.18637/jss.v033.i01">4</a>]</span>. The logistic regression model is responsible for learning <em>how</em> to predict treatments from the network-based features. </p>
+
+<p>Next, we'll describe the detailed machine learning pipeline used in Project Rephetio.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="2" data-comment-id="1294">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1294"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#2" class="light">421 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Machine learning pipeline</h1>
+
+<p><strong>Observations.</strong> We identified all compounds and diseases that are connected by at least one edge resulting in <a href="https://github.com/dhimmel/learn/blob/5e61aed9789913d5b3525bb83eba80e0fcc060a4/summary/compounds.tsv">1,538 compounds</a> and <a href="https://github.com/dhimmel/learn/blob/5e61aed9789913d5b3525bb83eba80e0fcc060a4/summary/diseases.tsv">136 diseases</a>. Hence, we have 209,168 possible compound–disease pairs. 755 or 0.36% of these pairs are treatments and 390 or 0.19% are palliative (see <a href="https://github.com/dhimmel/learn/blob/5e61aed9789913d5b3525bb83eba80e0fcc060a4/summary/indications.tsv">indications</a>).</p>
+
+<p><strong>Features.</strong> We have three types of features:</p>
+
+<ol><li><strong>The prior</strong> is a single feature equal to the logit-transformed <a href="https://thinklab.com/discussion/network-edge-prediction-estimating-the-prior/201#2" class="citation thread-citation" data-key="10.15363/thinklab.d201">prior probability of treatment</a>. The prior incorporates the probability that a compound treats a disease based only on their treatment degrees.</li><li><strong>Degree features</strong> correspond to each metaedge that connects either a compound or disease. In total we have 16 degree features, 8 for compound degrees and 8 for disease degrees. Degree features count either the compound or disease degree for a given metaedge and thus only depend on either the source or target node. Degree features are <a href="https://thinklab.com/discussion/transforming-dwpcs-for-hetnet-edge-prediction/193#6" class="citation thread-citation" data-key="10.15363/thinklab.d193">IHS transformed</a>.</li><li><strong>DWPCs</strong> make up the vast majority of features. Each DWPC corresponds to a metapath. We consider the 1,206 metapaths that traverse from compound to disease and have lengths 2–4. We use <em>w</em> = 0.4 as the damping exponent when computing DWPCs. DWPCs are <a href="https://thinklab.com/discussion/transforming-dwpcs-for-hetnet-edge-prediction/193#6" class="citation thread-citation" data-key="10.15363/thinklab.d193">mean scaled and IHS transformed</a>.</li></ol>
+
+<p><strong>Stages.</strong> The DWPC features are computed by querying the Neo4j graph database. The queries are computationally intensive. Thus far, our runtime bottleneck has been <a href="https://thinklab.com/discussion/estimating-the-complexity-of-hetnet-traversal/187" class="citation thread-citation" data-key="10.15363/thinklab.d187">network traversal</a>. Computing all 252,256,608 DWPC queries (209,168 observations × 1,206 DWPCs) is impractical. Accordingly, we adopted a shortcut by splitting the machine learning process into two stages: the all-features stage and the all-observations stage.</p>
+
+<h2>Stage 1: all features</h2>
+
+<p>The purpose of the all-features stage is to assess feature performance and perform feature selection. For this stage, we include all 755 positives but randomly select 3,020 negatives (4 × the # of positives).</p>
+
+<p>In addition to the unpermuted hetnet, we compute DWPCs on 5 permuted hetnets. For each permuted hetnet, we compute features for the 755 positives and 3,020 random negatives corresponding to that permutation (referred to as primary observations). We also compute DWPCs for any observations that were assessed on the unpermuted network but were not primary observations for a given permuted hetnet.</p>
+
+<p>In total, we computed 46,867,572 DWPCs for the all-features stage. Computing these DWPCs took 4 days and 11 hours using a multithreading approach to perform up to 12 queries in parallel (<a href="https://github.com/dhimmel/learn/blob/6ffd61f209a182d89c5becd96203850f3c5e13e3/all-features/3-extract.ipynb">notebook</a>).</p>
+
+<p>On the all features dataset, we identified <a href="https://thinklab.com/discussion/transforming-dwpcs-for-hetnet-edge-prediction/193" class="citation thread-citation" data-key="10.15363/thinklab.d193">how to transform DWPCs</a> to address their highly skewed distribution. We also <a href="https://thinklab.com/discussion/network-edge-prediction-how-to-deal-with-self-testing/194" class="citation thread-citation" data-key="10.15363/thinklab.d194">learned how</a> the prior probability of treatment affects model performance. This investigation led us to include the <code>prior_logit</code> feature mentioned above.</p>
+
+<p>For each feature, we computed <a href="https://thinklab.com/discussion/assessing-the-informativeness-of-features/115#3" class="citation thread-citation" data-key="10.15363/thinklab.d115">several measures of performance</a>. These feature-specific performance measures indicate whether the DWPCs for a given metapath reliably discriminate whether a drug treats a disease. We use this information to filter the majority of DWPC features, which are not predictive or suffer from an <a href="https://thinklab.com/discussion/edge-dropout-contamination-in-hetnet-edge-prediction/215" class="citation thread-citation" data-key="10.15363/thinklab.d215">edge-dropout contamination issue</a>. The DWPCs from permuted hetnets are used here as baseline measures to assess the contribution of edge specificity.</p>
+
+<h2>Stage 2: all observations</h2>
+
+<p>Proceeding with the metapaths selected in Stage 1 (see <a href="#3">next comment</a>), we compute DWPCs for all 209,168 observations on the unpermuted hetnet. After transforming the degree and DWPC features, we <a href="https://thinklab.com/discussion/computing-standardized-logistic-regression-coefficients/205" class="citation thread-citation" data-key="10.15363/thinklab.d205">standardize</a> all variables besides the prior. Standardization allows us to decompose the linear predictor to assess each feature's contribution to a prediction compared to its mean.</p>
+
+<p>We fit a logistic regression model with the prior, the degree features, and the selected DWPC features. However, this model is fit only on the 29,799 observations with a non-zero prior. From this model, we predict the probability of treatment for all observations. We enable predictions for zero priors by setting the prior for every observation equal to the mean prevalence of positives. Hence, it's important that the model assigns a coefficient near 1.0 to the <code>prior_logit</code> feature. In essence, we're erasing the effect of how many treatments each compound and disease have, since this knowledge is otherwise overpowering. The end result is a treatment-degree-naive prediction of whether each compound treats each disease.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="3" data-comment-id="1317">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1317"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#3" class="light">416 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Selecting features for Stage 2</h1>
+
+<p>One major goal of <a href="#2">Stage 1</a> is to select a subset of DWPC features to calculate on all observations. We've considered three methods for this selection.</p>
+
+<h2>Method 1</h2>
+
+<p>The first method is to use <a href="https://thinklab.com/discussion/assessing-the-informativeness-of-features/115#3" class="citation thread-citation" data-key="10.15363/thinklab.d115">feature-specific performance measures</a> as selection criteria. This method allows the user to define the characteristics of a promising feature. For example, the user could select only features that will lend themselves to interpretation.</p>
+
+<h2>Method 2</h2>
+
+<p>The second method is to use the lasso to select features <span class="citation">[<a href="https://doi.org/10.1111/j.1467-9868.2011.00771.x" class="citation" data-key="10.1111/j.1467-9868.2011.00771.x">1</a>]</span>. Since we find the optimal regularization strength using cross-validation, each modeling fit will be slightly different. Therefore, we fit many models, each time varying the random seed, and identify features which were selected by at least a given percentage of the models. The advantages of this method are that it considers how features perform in a model rather than alone. Hence, it is adept at identifying features with a unique contribution and can avoid selecting collinear (redundant) features <span class="citation">[<a href="https://doi.org/10.1111/j.1600-0587.2012.07348.x" class="citation" data-key="10.1111/j.1600-0587.2012.07348.x">2</a>]</span>. The downside of this method is that it can select features that are not marginally informative but are helpful covariates. While this improves model goodness of fit, it can lead to difficultly in interpreting the model and understanding why a given prediction was made.</p>
+
+<h2>Method 3</h2>
+
+<p>Method three involves performing Method 1 and then Method 2. This combined approach makes sense if the user-guided selection of Method 1 results in a large number of features. If extra feature selection is warranted by computational constraints, then Method 2 can be applied on top of Method 1.</p>
+
+<h2>Our choice</h2>
+
+<p>We went with Method 1 and defined the following inclusion criteria for a DWPC feature (<a href="https://github.com/dhimmel/learn/blob/a7766ea00da67f5cf03bd77e6e613a262918f1b8/prediction/1-prepare.ipynb">notebook</a>):</p>
+
+<ul><li><code>delta_auroc &gt; 0</code> and <code>fdr_delta_auroc &lt; 0.05</code> to select informative features</li><li><code>pdwpc_primary_auroc &gt; 0.5</code> to guard against <a href="https://thinklab.com/discussion/edge-dropout-contamination-in-hetnet-edge-prediction/215" class="citation thread-citation" data-key="10.15363/thinklab.d215">edge dropout contamination</a></li><li><code>rdwpc_auroc &gt; 0.55</code> to select informative features and guard against edge dropout contamination</li></ul>
+
+<p>These filters reduced our number of DWPC features from 1,206 to 142. Since we could compute 142 features on all observations, we skipped Method 2. The choice to rely on Method 1 was driven by desire to address edge dropout contamination and select features that are insightful.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="4" data-comment-id="1318">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1318"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#4" class="light">416 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Refining our Stage 2 modeling approach</h1>
+
+<p>Here we'll describe how we fit the model on the all observations dataset for Stage 2. Remember that the model is fit only the 29,799 observations with a non-zero prior. We fit an elastic net with α = 0.2 <span class="citation">[<a href="https://doi.org/10.1111/j.1467-9868.2005.00503.x" class="citation" data-key="10.1111/j.1467-9868.2005.00503.x">1</a>]</span>. We chose the elastic net mixing parameter (α) to balance model parsimony (which aids interpretation) and retaining pharmacologically-meaningful features.</p>
+
+<p>Despite our efforts to remove features susceptible to edge dropout contamination during <a href="#3">Stage 1 feature selection</a>, several features were getting incorporated into the Stage 2 model that showed evidence of contamination: features with <em>treats</em> relationships receiving negative coefficients when their marginal association with treatment is positive. Hence, I manually assembled a <a href="https://github.com/dhimmel/learn/blob/a7766ea00da67f5cf03bd77e6e613a262918f1b8/prediction/features/blacklist.tsv">feature blacklist</a>, which I iteratively added features to that were showing evidence of contamination. In total, 22 features were blacklisted.</p>
+
+<p>Ultimately, the model was fit on 138 features and assigned 18 negative and 13 positive feature coefficients (<a href="https://github.com/dhimmel/learn/blob/a7766ea00da67f5cf03bd77e6e613a262918f1b8/prediction/4-predictr.ipynb">notebook</a>, <a href="https://github.com/dhimmel/learn/blob/a7766ea00da67f5cf03bd77e6e613a262918f1b8/prediction/model/coefficient.tsv">coefficient table</a>). The negative coefficients seem to serve as covariates by adjusting for unspecific node degree effects. While we included separate degree features for this purpose, the DWPCs seem to have been preferred by the model.</p>
+
+<p>Such a small number of positive coefficients is a bit disappointing. Our feature assessment (<a href="https://thinklab.com/discussion/assessing-the-informativeness-of-features/115#4" class="citation thread-citation" data-key="10.15363/thinklab.d115">here</a> and in Panel A below) shows that a broad range of metapaths are informative. The origin of our model's selectivity appears to lie with the “one-standard-error” rule <span class="citation">[<a href="https://doi.org/10.18637/jss.v033.i01" class="citation" data-key="10.18637/jss.v033.i01">2</a>]</span> we use to identify the optimal regularization strength (λ). Our model had high cross-validated standard error leading to substantial regularization on top of the deviance minimizing model. While it's tempting to relax our λ selection, I'd rather be more confident in a minimalist model than risk a less coherent but more complex model.</p>
+
+<h2>Visualizing feature contribution</h2>
+
+<p>Panel A below shows the performance of each of the 142 selected DWPC features. Metapaths are organized by their constituent metaedges. Here we see that our <a href="#3">feature selection approach</a> retained features that cover diverse types of information. In fact, the only metaedge that lost all of its features was <em>Gene–participates–Cellular Component</em>.</p>
+
+<p><img src="https://github.com/dhimmel/learn/blob/a7766ea00da67f5cf03bd77e6e613a262918f1b8/prediction/figure/features.png?raw=true" alt="Feature performance and modeling"></p>
+
+<p>Panel B shows the non-zero model coefficients from the Stage 2 model. Note that the invariant term coefficients are not shows (the intercept and the prior).</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="5" data-comment-id="1493">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1493"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#5" class="light">152 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>GitHub Repository</h1>
+
+<p>I just touched up the machine learning repository for Project Rephetio, <a href="https://github.com/dhimmel/learn/tree/e00a61f4ae493dcc95a6264905f0d534494db2d8"><code>dhimmel/learn</code></a> on GitHub <span class="citation">[<a href="https://doi.org/10.5281/zenodo.268654" class="citation hm citation-figure" data-key="10.5281/zenodo.268654">1</a>]</span>. Mainly, I created a lot more documentation. However, since it's quite a complex repo with lot's of notebooks and pieces, users will still likely have questions. So don't hesitate to open <a href="https://github.com/dhimmel/learn/issues" title="GitHub Issues for dhimmel/learn">issues</a> with requests for additional documentation.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="6" data-comment-id="1499">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1499"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#6" class="light">116 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Feature / machine learning diagram</h1>
+
+<p>Here's didactic diagram illustrating the classification problem and features composing Rephetio's machine learning. The diagram is created using real data (<a href="https://github.com/dhimmel/learn/blob/25093893ed53730ab5cfdac49561c4b6bd3376c5/prediction/8-feature-example-viz.ipynb">notebook</a>), but only shows a subset of observations (compound–disease pairs, rows) and features (metapaths, columns). The diagram shows the feature matrix (continuous values, from the "all observations" stage) as well as treatment status (binary values).</p>
+
+<p><img src="https://github.com/dhimmel/learn/raw/25093893ed53730ab5cfdac49561c4b6bd3376c5/prediction/figure/example-feature-matrix.png" alt="Rephetio Machine Learning Diagram" title="Compound–disease pairs versus feature matrix"></p>
+
+<p>The top six compound–disease pairs are not treatments (negatives, gray), while the bottom six are treatments (positives, green). Each column is a feature corresponding to a metapath. Use <a href="http://het.io/repurpose/metapaths.html">this table</a> to lookup metapath abbreviations. For example, <em>CbGiGaD</em> is shorthand for <em>Compound–binds–Gene–interacts–Gene–associates–Disease</em>.</p>
+
+<p>Feature values are transformed and standardized DWPCs, which assess the connectivity along the specified type of path between the specific compound and disease. The maroon colored values indicate above-average connectivity, whereas the blue colored values indicate below average connectivity. In general, positives have greater connectivity for the selected metapaths than negatives.</p>
+
+<p>The logistic regression model predicts whether a compound–disease pair is a treatment based on its features. In essence, the model learns the effect of each type of connectivity (feature) on the likelihood that a compound treats a disease.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+    		
+		</table>
+
+    
+
+    &nbsp;<br>
+    <a class="btn btn-primary btn-lg" href="/signup?next=/discussion/our-hetnet-edge-prediction-methodology-the-modeling-framework-for-project-rephetio/210&suppress_message=1" style>Join to Reply</a>
+
+
+		<table class="references table-td-5" style="display:none;"><tr><td><a href='/doi/10.1109/ASONAM.2011.112' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.1109/ASONAM.2011.112'><a href='/doi/10.1109/ASONAM.2011.112' class='pub-title'>Co-author Relationship Prediction in Heterogeneous Bibliographic Networks</a><div class='pub-body'>Yizhou Sun, Rick Barber, Manish Gupta, Charu C. Aggarwal, Jiawei Han (2011) <i>2011 International Conference on Advances in Social Networks Analysis and Mining</i>. doi:<a class='pub-doi' href='https://doi.org/10.1109/ASONAM.2011.112'>10.1109/ASONAM.2011.112</a></div></div></td></tr><tr><td><a href='/doi/10.1371/journal.pcbi.1004259' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>2.</div></td><td><div class='doi-body' data-key='10.1371/journal.pcbi.1004259'><a href='/doi/10.1371/journal.pcbi.1004259' class='pub-title'>Heterogeneous Network Edge Prediction: A Data Integration Approach to Prioritize Disease-Associated Genes</a><div class='pub-body'>Daniel S. Himmelstein, Sergio E. Baranzini (2015) <i>PLOS Computational Biology</i>. doi:<a class='pub-doi' href='https://doi.org/10.1371/journal.pcbi.1004259'>10.1371/journal.pcbi.1004259</a></div></div></td></tr><tr><td><a href='/doi/10.1111/j.1467-9868.2005.00503.x' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>3.</div></td><td><div class='doi-body' data-key='10.1111/j.1467-9868.2005.00503.x'><a href='/doi/10.1111/j.1467-9868.2005.00503.x' class='pub-title'>Regularization and variable selection via the elastic net</a><div class='pub-body'>Hui Zou, Trevor Hastie (2005) <i>Journal of the Royal Statistical Society: Series B (Statistical Methodology)</i>. doi:<a class='pub-doi' href='https://doi.org/10.1111/j.1467-9868.2005.00503.x'>10.1111/j.1467-9868.2005.00503.x</a></div></div></td></tr><tr><td><a href='/doi/10.18637/jss.v033.i01' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>4.</div></td><td><div class='doi-body' data-key='10.18637/jss.v033.i01'><a href='/doi/10.18637/jss.v033.i01' class='pub-title'>Regularization Paths for Generalized Linear Models via Coordinate Descent</a><div class='pub-body'>Jerome Friedman, Trevor Hastie, Robert Tibshirani (2010) <i>Journal of Statistical Software</i>. doi:<a class='pub-doi' href='https://doi.org/10.18637/jss.v033.i01'>10.18637/jss.v033.i01</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d201' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>5.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d201'><a href='/discussion/network-edge-prediction-estimating-the-prior/201' class='pub-title'>Network Edge Prediction: Estimating the prior</a><div class='pub-body'>Antoine Lizee, Daniel Himmelstein (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d201'>10.15363/thinklab.d201</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d193' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>6.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d193'><a href='/discussion/transforming-dwpcs-for-hetnet-edge-prediction/193' class='pub-title'>Transforming DWPCs for hetnet edge prediction</a><div class='pub-body'>Daniel Himmelstein, Pouya Khankhanian, Antoine Lizee (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d193'>10.15363/thinklab.d193</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d193' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>7.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d193'><a href='/discussion/transforming-dwpcs-for-hetnet-edge-prediction/193' class='pub-title'>Transforming DWPCs for hetnet edge prediction</a><div class='pub-body'>Daniel Himmelstein, Pouya Khankhanian, Antoine Lizee (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d193'>10.15363/thinklab.d193</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d187' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>8.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d187'><a href='/discussion/estimating-the-complexity-of-hetnet-traversal/187' class='pub-title'>Estimating the complexity of hetnet traversal</a><div class='pub-body'>Daniel Himmelstein, Antoine Lizee (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d187'>10.15363/thinklab.d187</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d193' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>9.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d193'><a href='/discussion/transforming-dwpcs-for-hetnet-edge-prediction/193' class='pub-title'>Transforming DWPCs for hetnet edge prediction</a><div class='pub-body'>Daniel Himmelstein, Pouya Khankhanian, Antoine Lizee (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d193'>10.15363/thinklab.d193</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d194' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>10.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d194'><a href='/discussion/network-edge-prediction-how-to-deal-with-self-testing/194' class='pub-title'>Network Edge Prediction: how to deal with self-testing</a><div class='pub-body'>Antoine Lizee, Daniel Himmelstein (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d194'>10.15363/thinklab.d194</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d115' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>11.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d115'><a href='/discussion/assessing-the-informativeness-of-features/115' class='pub-title'>Assessing the informativeness of features</a><div class='pub-body'>Daniel Himmelstein (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d115'>10.15363/thinklab.d115</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d215' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>12.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d215'><a href='/discussion/edge-dropout-contamination-in-hetnet-edge-prediction/215' class='pub-title'>Edge dropout contamination in hetnet edge prediction</a><div class='pub-body'>Daniel Himmelstein (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d215'>10.15363/thinklab.d215</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d205' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>13.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d205'><a href='/discussion/computing-standardized-logistic-regression-coefficients/205' class='pub-title'>Computing standardized logistic regression coefficients</a><div class='pub-body'>Daniel Himmelstein, Antoine Lizee (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d205'>10.15363/thinklab.d205</a></div></div></td></tr><tr><td><a href='/doi/10.1111/j.1467-9868.2011.00771.x' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>14.</div></td><td><div class='doi-body' data-key='10.1111/j.1467-9868.2011.00771.x'><a href='/doi/10.1111/j.1467-9868.2011.00771.x' class='pub-title'>Regression shrinkage and selection via the lasso: a retrospective</a><div class='pub-body'>Robert Tibshirani (2011) <i>Journal of the Royal Statistical Society: Series B (Statistical Methodology)</i>. doi:<a class='pub-doi' href='https://doi.org/10.1111/j.1467-9868.2011.00771.x'>10.1111/j.1467-9868.2011.00771.x</a></div></div></td></tr><tr><td><a href='/doi/10.1111/j.1600-0587.2012.07348.x' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>15.</div></td><td><div class='doi-body' data-key='10.1111/j.1600-0587.2012.07348.x'><a href='/doi/10.1111/j.1600-0587.2012.07348.x' class='pub-title'>Collinearity: a review of methods to deal with it and a simulation study evaluating their performance</a><div class='pub-body'>Carsten F. Dormann, Jane Elith, Sven Bacher, Carsten Buchmann, Gudrun Carl, Gabriel Carré, Jaime R. García Marquéz, Bernd Gruber, Bruno Lafourcade, Pedro J. Leitão, Tamara Münkemüller, Colin McClean, Patrick E. Osborne, Björn Reineking, Boris Schröder, Andrew K. Skidmore, Damaris Zurell, Sven Lautenbach (2012) <i>Ecography</i>. doi:<a class='pub-doi' href='https://doi.org/10.1111/j.1600-0587.2012.07348.x'>10.1111/j.1600-0587.2012.07348.x</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d115' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>16.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d115'><a href='/discussion/assessing-the-informativeness-of-features/115' class='pub-title'>Assessing the informativeness of features</a><div class='pub-body'>Daniel Himmelstein (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d115'>10.15363/thinklab.d115</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d215' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>17.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d215'><a href='/discussion/edge-dropout-contamination-in-hetnet-edge-prediction/215' class='pub-title'>Edge dropout contamination in hetnet edge prediction</a><div class='pub-body'>Daniel Himmelstein (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d215'>10.15363/thinklab.d215</a></div></div></td></tr><tr><td><a href='/doi/10.1111/j.1467-9868.2005.00503.x' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>18.</div></td><td><div class='doi-body' data-key='10.1111/j.1467-9868.2005.00503.x'><a href='/doi/10.1111/j.1467-9868.2005.00503.x' class='pub-title'>Regularization and variable selection via the elastic net</a><div class='pub-body'>Hui Zou, Trevor Hastie (2005) <i>Journal of the Royal Statistical Society: Series B (Statistical Methodology)</i>. doi:<a class='pub-doi' href='https://doi.org/10.1111/j.1467-9868.2005.00503.x'>10.1111/j.1467-9868.2005.00503.x</a></div></div></td></tr><tr><td><a href='/doi/10.18637/jss.v033.i01' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>19.</div></td><td><div class='doi-body' data-key='10.18637/jss.v033.i01'><a href='/doi/10.18637/jss.v033.i01' class='pub-title'>Regularization Paths for Generalized Linear Models via Coordinate Descent</a><div class='pub-body'>Jerome Friedman, Trevor Hastie, Robert Tibshirani (2010) <i>Journal of Statistical Software</i>. doi:<a class='pub-doi' href='https://doi.org/10.18637/jss.v033.i01'>10.18637/jss.v033.i01</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d115' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>20.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d115'><a href='/discussion/assessing-the-informativeness-of-features/115' class='pub-title'>Assessing the informativeness of features</a><div class='pub-body'>Daniel Himmelstein (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d115'>10.15363/thinklab.d115</a></div></div></td></tr><tr><td><a href='/doi/10.5281/zenodo.268654' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>21.</div></td><td><div class='doi-body' data-key='10.5281/zenodo.268654'><a href='/doi/10.5281/zenodo.268654' class='pub-title'>Dhimmel/Learn V1.0: The Machine Learning Repository For Project Rephetio</a><div class='pub-body'>Daniel Himmelstein (2017) <i>Zenodo</i>. doi:<a class='pub-doi' href='https://doi.org/10.5281/zenodo.268654'>10.5281/zenodo.268654</a></div></div></td></tr></table>
+
+    
+
+
+	</td>
+	<td class="thread-sidebar">
+
+
+			
+
+      <a class="btn btn-default follow-link btn-follow btn-lg is-following tt-top full-width" title="Follow discussion" data-id="210" data-ctype="thread" data-is-following="false">&nbsp;</a>
+
+      
+        <div class="status-box text-center"><span style="">Status:</span> 
+  Open
+
+</div>
+      
+
+      
+        
+      
+
+
+				
+
+					<div class="details">Views</div>
+					<span style="font-size:20px;">125</span>
+
+        
+
+				
+					<div class="details">Topics</div>
+					<div style="margin-bottom:15px;">
+		            <a href="/topics/machine-learning" class="tag">Machine learning</a><a href="/topics/hnep" class="tag">HNEP</a>
+					</div>
+				
+
+
+		
+			<div class="details">Referenced by</div>
+			<div style="font-size:12px;"><ul style="padding-left:16px !important;">
+			
+				<li>
+					
+					<a href='/doc/7/review' class='thread-title'><span class='inbox-icon tt-top glyphicon glyphicon-flash'></span>Report Review: Rephetio: Repurposing drugs on a hetnet</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/prediction-in-epilepsy/224' class='thread-title'>Prediction in epilepsy</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/decomposing-predictions-into-their-network-support/229' class='thread-title'>Decomposing predictions into their network support</a>
+				</li>
+			
+				<li>
+					
+					Research report: <a href='/p/rephetio/report'>Rephetio: Repurposing drugs on a hetnet</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/predictions-of-whether-a-compound-treats-a-disease/203' class='thread-title'>Predictions of whether a compound treats a disease</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/introducing-the-residual-degree-weighted-path-count-r-dwpc/214' class='thread-title'>Introducing the Residual Degree Weighted Path Count (R-DWPC)</a>
+				</li>
+			
+				</ul>
+			</div>
+		
+
+		
+			<div class="details">Cite this as</div>
+			<span style="font-size:12px;">
+				Daniel Himmelstein (2016) Our hetnet edge prediction methodology: the modeling framework for Project Rephetio. <i>Thinklab.</i> doi:<a href='https://doi.org/10.15363/thinklab.d210'>10.15363/thinklab.d210</a>
+			</span>
+		
+
+		<div class="details">License</div>
+		<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0;width:88px;height:31px;" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></p>
+
+		<div class="details">Share</div>
+		
+			
+				<a class="share-button fb" onclick="javascript:void(window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A//thinklab.com/discussion/our-hetnet-edge-prediction-methodology-the-modeling-framework-for-project-rephetio/210','','width=600,height=460,menubar=no,status=no'));" href="#"></a>
+<a class="share-button twitter" onclick="javascript:void(window.open('https://twitter.com/share?text=Our%20hetnet%20edge%20prediction%20methodology%3A%20the%20modeling%20framework%20for%20Project%20Rephetio&url=https%3A//thinklab.com/discussion/our-hetnet-edge-prediction-methodology-the-modeling-framework-for-project-rephetio/210','','width=600,height=300,menubar=no,status=no'));" href="#"></a>
+<a class="share-button google" onclick="javascript:void(window.open('https://plus.google.com/share?url=https%3A//thinklab.com/discussion/our-hetnet-edge-prediction-methodology-the-modeling-framework-for-project-rephetio/210','','width=510,height=460,menubar=no,status=no'));" href="#"></a>
+
+			
+		
+
+	</td>
+</tr></table>
+
+
+		</div>
+
+
+		
+	    	<div class="footer">
+<div style="background:#dedede;">
+	<div class="main-centered-div text-center" style="padding:20px;">
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#4d25282121220d3925242326212c2f632e2220"><span class="__cf_email__" data-cfemail="8fe7eae3e3e0cffbe7e6e1e4e3eeeda1ece0e2">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+	</div>
+</div>
+<div class="main-footer">
+	<div class="main-centered-div">
+
+<table class="full-width"><tr>
+	<td class="footer-nav">
+
+        <div class="foot-head">Explore</div>
+        <a href="/proposals">Proposals</a><br>
+        <a href="/projects">Projects</a><br>
+        <a href="/publications">Article discussion</a><br>
+        <a href="/discussion">All discussion</a><br>
+        <a href="/topics">Topics</a><br>
+        <!-- <a href="/funders">Funders</a><br> -->
+        <a href="/funding">Funding opportunities</a><br>
+
+	</td>
+	<td class="footer-nav">
+
+        <!-- <div class="foot-head">Help &amp; feedback</div>	 -->
+        <!-- <div class="foot-head">Intro</div>
+        <a href="/benefits/for-science">Why</a><br>
+        <a href="/how-it-works">How it works</a><br>
+
+<br> -->
+
+        <div class="foot-head">Community</div>
+        <a href="/leaderboard">Leaderboard</a><br>
+        <a href="/p/meta">Thinklab Meta</a><br>
+				<a href="/help/faq">Help</a><br>
+				<!-- <a href="/new-project">Start a proposal</a><br> -->
+        <!-- <a href="/benefits/proposal">Benefits</a><br> -->
+        <!-- <a href="/funding">Get funded</a><br> -->
+        <!-- <a href="/participate">Become a contributor</a><br> -->
+        <!-- <a href="/for-funders">For science funders</a><br> -->
+        <!-- <a href="/for-institutions">For institutions</a><br> -->
+
+	</td>
+	<td class="footer-nav">
+
+
+
+        <div class="foot-head">About</div>
+        <a href="/about">Overview</a><br>
+        <a href="/benefits">Benefits</a><br>
+        <a href="/how-it-works">How it works</a><br>
+        <a href="/about/story">Our story</a><br>
+        <a href="/blog">Our blog</a><br>
+        <a href="/about/jobs">Join the team</a><br>
+        <br>
+
+        <!-- <div class="foot-head">Help</div>
+        <a href="/help">Help</a><br>
+		 -->
+
+
+	</td>
+	<td class="footer-nav">
+		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
+		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<br><br>
+		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
+
+	</td>
+
+</tr></table>
+
+</div>
+</div>
+</div>
+
+		
+
+	</div>
+
+
+  <script></script>
+  <script>
+  var MEDIA_URL = 'https://think-lab.s3.amazonaws.com/m/';
+  var STATIC_URL = 'https://think-lab.s3.amazonaws.com/s/';
+  var page_is_authenticated = false;
+  var page_page = 'discussion';
+  var page_profile_id = undefined;
+</script>
+
+
+
+	<!-- Note different script type. MUST come before MathJax.js -->
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	        "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"],
+	                        scale: 110, linebreaks: { automatic:true },
+	                        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+	        tex2jax: { inlineMath: [ ["$$", "$$"], ["\\(","\\)"] ],
+	                    displayMath: [ ["$$$","$$$"], ["\\[", "\\]"] ],
+	                    processEscapes: true,}
+	            });
+
+	</script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://think-lab.s3.amazonaws.com/s/dist/main.min.js"></script>
+  
+
+
+
+  
+	
+  
+  
+  
+<script>
+$(function() {
+  recordHit('thread', 210);
+});
+</script>
+
+
+
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>

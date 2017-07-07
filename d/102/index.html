@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZgEOC19dW0QCEVtHU1gG","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":1154}</script>
+    <title>One network to rule them all | Thinklab</title>
+	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
+    <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/highlightjs/github.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/css.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/bootstrap-multiselect.css" />
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
+    
+    
+    
+    
+  
+    <meta name="citation_doi" content="10.15363/thinklab.d102">
+    <meta name="citation_title" content="One network to rule them all">
+    <meta name="citation_online_date" content="Aug. 14, 2015">
+    <meta name="citation_author" content="Daniel Himmelstein, Lars Juhl Jensen">
+    <meta name="citation_journal_title" content="Thinklab">
+    <meta name="citation_publisher" content="Thinklab">
+  
+
+    
+
+
+	<!-- GoogleAnalytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-48550230-1', 'thinklab.com');
+	ga('require', 'displayfeatures');
+	
+	ga('send', 'pageview');
+
+	</script>
+
+
+
+
+
+
+</head>
+<body >
+  <form id="form_action" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+</form>
+
+	
+
+	<div class="body-wrapper">
+
+		
+
+
+<!-- <div style="height:5px;background-image:url('https://think-lab.s3.amazonaws.com/s/img/top-bg.gif');"></div> -->
+<div class="gradient">
+	<div class="main-centered-div header-container">
+
+<table class="full-width" style="height:60px;"><tr>
+	<td style="width:200px;vertical-align:middle;padding-bottom:15px;">
+		<a href="/" style="font-weight:normal;color:#212121;"><img src="https://think-lab.s3.amazonaws.com/s/img/logo.png" width="160"></a>
+	</td><td style="vertical-align:middle;text-align:left;padding-top:6px;width:100%;padding-left:40px;">
+		<ul id="not-search-block"  class="main-header">
+
+
+			
+
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/proposals">Proposals</a></li>
+						<li><a href="/projects">Projects</a></li>
+						<li><a href="/publications">Article discussion</a></li>
+						<li><a href="/discussion">All discussion</a></li>
+					</ul>
+				</li>
+				<li><a href="/leaderboard">Leaderboard</a></li>
+
+			
+				<li><a href="/about">About</a></li>
+			
+
+
+		</ul>
+
+    <ul id="search-block" class="main-header" style="display: none; margin-right: 30px;">
+        <li class="full-width">
+            <form method="get" action="/search">
+			<div class="input-group full-width">
+				<input name="q" type="text" class="form-control search-input">
+			</div>
+            </form>
+        </li>
+    </ul>
+
+	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
+		<ul class="main-header pull-right" style="padding-left: 0;">
+    		
+                <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+            
+
+        </ul>
+    </ul>
+	</td>
+</tr></table>
+
+<!-- <div id="global-search-div" class="main-centered-div" style="display:none;">
+	<input type="text" value="" class="thread-search form-control" placeholder="Search" data-action="/discussion">
+</div> -->
+
+	</div>
+</div>
+
+		
+	  
+
+
+
+	  
+
+
+		
+
+		<div class="dark-head"><div class="main-centered-div">
+
+			
+
+		</div></div>
+		
+		<div class="main-centered-div" style="margin-top:40px;padding-bottom:340px">
+	    
+
+<div style="margin-top:-20px; margin-bottom:20px;">
+
+    <a class="side-box" href="/p/rephetio" style="background-color:#ebfdff;"><div class="side-type">Project:</div> <div class="side-title">Rephetio: Repurposing drugs on a hetnet [rephetio]</div></a><br>
+
+
+
+</div>
+
+<table style="margin-top:0px;"><tr>
+	<td class="thread-table-content">
+
+		<table class="full-width">
+			
+<tr class="comment-tr target-hl" id="1" data-comment-id="396">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="396"></a>
+
+    
+
+			<h2 class="page-title" style="margin-bottom:5px;margin-top:0px !important;">One network to rule them all</h2>
+
+			<div style="margin-top:5px;color:gray;margin-bottom:20px;font-size:13px;">
+				<a style="font-weight:normal;color:#212121" href="/u/dhimmel"><strong>Daniel Himmelstein</strong></a>
+				<span class="is-researcher">Researcher</span>
+				&nbsp; <a href="#1" class="light">693 days ago</a>
+				
+			</div>
+
+      
+
+          <hr>
+		
+
+    <h1>Network version 1.0</h1>
+
+<p>We have completed an initial version of our network (<a href="https://github.com/dhimmel/integrate/blob/2256f1d6d01758c8bab59212a68d890ecb42bb7f/integrate.ipynb">notebook</a>, <a href="https://github.com/dhimmel/integrate/blob/2256f1d6d01758c8bab59212a68d890ecb42bb7f/data/graph.json.gz">download</a>) <span class="citation">[<a href="https://doi.org/10.5281/zenodo.28040" class="citation" data-key="10.5281/zenodo.28040">1</a>]</span>.</p>
+
+<p>The network consists of 10 types of nodes (metanodes) and 27 types of edges (metaedges). It contains 49,427 nodes and 2,997,892 edges (1,488,312 of which are <a href="http://thinklab.com/discussion/text-as-a-resource-for-network-population/48#3" class="citation thread-citation" data-key="10.15363/thinklab.d48">unbiased</a>). The network is visualized below, laid out by metanode and colored by metaedge (only a subset of edges are drawn for efficiency):</p>
+
+<p><img src="https://raw.githubusercontent.com/dhimmel/rephetio/eaad6455815c3886a47aeddf76931fcf1779e090/figure/network-v1.0-labeled.png" alt=""></p>
+
+<p>For additional information, see the <a href="https://github.com/dhimmel/integrate/blob/2256f1d6d01758c8bab59212a68d890ecb42bb7f/data/summary/metanodes.tsv">summary of nodes</a>, <a href="https://github.com/dhimmel/integrate/blob/2256f1d6d01758c8bab59212a68d890ecb42bb7f/data/summary/metaedges.tsv">summary of edges</a>, or <a href="https://github.com/dhimmel/integrate/blob/2256f1d6d01758c8bab59212a68d890ecb42bb7f/viz/degrees.pdf">visualization of degree distributions</a>. Network existence (SHA256 checksum for <code>graph.json.gz</code>) is <a href="https://blockchain.info/tx/092f81abd7bb5c59e52e2d8e794de6cee4a1cd701f7a87d2bc11cfefe97d4923?show_adv=true">proven</a> in Bitcoin block 369,898.</p>
+
+<h2>Future changes</h2>
+
+<p>There are a few changes we hope to make in the near future. First, replacing <a href="http://thinklab.com/discussion/the-adeptus-resource-for-expression-signatures-of-disease/101" class="citation thread-citation" data-key="10.15363/thinklab.d101">ADEPTUS</a> with <a href="http://thinklab.com/discussion/stargeo-expression-signatures-for-disease-using-crowdsourced-geo-annotation/96" class="citation thread-citation" data-key="10.15363/thinklab.d96">STARGEO</a> for expression signatures of disease. Second, updating our indications with a <a href="http://thinklab.com/discussion/expert-curation-of-our-indication-catalog-for-disease-modifying-treatments/95" class="citation thread-citation" data-key="10.15363/thinklab.d95">manually curated</a> subset. As always, suggestions for additional information types are <a href="http://thinklab.com/discussion/suggestions-for-additional-information-types/22" class="citation thread-citation" data-key="10.15363/thinklab.d22">welcome here</a>.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-190" class="inline-note toggle-parent" data-note-id="190">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: 2015-09-06: I updated this post to correct edge counts. Previously, I wrote the network contains "5,998,711 edges (2,977,167 of which are unbiased)". The issue was caused by counting single edges multiple times.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-296" class="inline-note toggle-parent" data-note-id="296">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: Here are two references for publishing hashes of academic content to the bitcoin blockchain: a <a href="http://www.bgcarlisle.com/blog/2014/08/25/proof-of-prespecified-endpoints-in-medical-research-with-the-bitcoin-blockchain/" title="Proof of prespecified endpoints in medical research with the bitcoin blockchain">2014 blog post</a> and a <a href="https://doi.org/10.12688/f1000research.8114.2">2016 paper</a> <span class="citation">[<a href="https://doi.org/10.12688/f1000research.8114.2" class="citation" data-key="10.12688/f1000research.8114.2">1</a>]</span>.
+		
+	</p>
+	
+	<table style="display:none;"><tr><td><a href='/doi/10.12688/f1000research.8114.2' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.12688/f1000research.8114.2'><a href='/doi/10.12688/f1000research.8114.2' class='pub-title'>How blockchain-timestamped protocols could improve the trustworthiness of medical science</a><div class='pub-body'>Greg Irving, John Holden (2016) <i>F1000Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.12688/f1000research.8114.2'>10.12688/f1000research.8114.2</a></div></div></td></tr></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="2" data-comment-id="397">
+  <td class="comment-profile-avatar">
+		<a href="/u/larsjuhljensen"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/125_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="397"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/larsjuhljensen">Lars Juhl Jensen</a>
+				
+				<span class="light">&nbsp;<a href="#2" class="light">691 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Nice of you to share this big network with everyone; however, I think you need to take care not to get yourself into legal trouble here.</p>
+
+<p>I looked into the JSON network file and found the following:<br>- Gene membership of all KEGG maps. If you look at the <a href="http://www.kegg.jp/kegg/legal.html">KEGG license</a>, it is questionable if you can do that at all, and very clear that you cannot allow commercial use.<br>- Side effect data from (I assume) SIDER. The SIDER download files are distributed under the <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">CC-BY-NC-SA license</a>, which means that you are only allowed to redistribute if you give attribution and attach the same license to the derived work.</p>
+
+<p>Given earlier posts, I assume that you also import associations from the <a href="http://tissues.jensenlab.org/">TISSUES database</a>. Even though I distribute this resource under the very permissive <a href="http://creativecommons.org/licenses/by/4.0/">CC-BY license</a>, you are still required to give attribution. This could, for example, be done by including relevant linkouts under "data" : { "url" : "..." }.</p>
+
+<p>I am not trying to cause trouble here - just the contrary. When making a meta-resource, licenses and copyright law are not something you can afford to ignore. I regularly leave out certain data sources from my resources for legal reasons. For example, <a href="http://www.omim.org/">OMIM</a> is not included in <a href="http://diseases.jensenlab.org/">DISEASES</a> due to <a href="http://www.omim.org/help/agreement">its restrictive license</a>.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-152" class="inline-note toggle-parent" data-note-id="152">
+	<p><a href="/u/larsjuhljensen">Lars Juhl Jensen</a>: I forgot to mention explicitly that this obviously means that you cannot distribute your network file on GitHub under the CC0 waiver as you currently do.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-153" class="inline-note toggle-parent" data-note-id="153">
+	<p><a href="/u/larsjuhljensen">Lars Juhl Jensen</a>: Redistribution of LINCS data is also problematic, unless you contacted them and got permission to do so (http://www.lincscloud.org/license/).
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-154" class="inline-note toggle-parent" data-note-id="154">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: Okay, I will look into the copyright issues and make any necessary modifications. I like the idea of including source and license fields for each node and edge. My understanding is that CC licenses prior to 4.0 <a href="https://wiki.creativecommons.org/wiki/Data">do not restrict</a> the underlying data when used in the United States. However, I will need to do more reading and solicit the advice of copyright experts.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-155" class="inline-note toggle-parent" data-note-id="155">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: I updated the <a href="https://github.com/dhimmel/integrate/blob/950f26ddff83e17fa6e398e7ae66179d8b2638e3/LICENSE.md">repository license</a> until we clarify these issues.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-156" class="inline-note toggle-parent" data-note-id="156">
+	<p><a href="/u/larsjuhljensen">Lars Juhl Jensen</a>: CC licenses prior to 4.0 were not very well suited for data. I only just noticed that the new SIDER still uses the old license, which I think should be changed. Not to make it more restrictive, but simply because the 4.0 license addresses a problem in the earlier license (i.e. the attribution stacking problem).
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-157" class="inline-note toggle-parent" data-note-id="157">
+	<p><a href="/u/larsjuhljensen">Lars Juhl Jensen</a>: Unfortunately, as far as I know, it is not sufficient to consider US law when you distribute data to the whole world. Although the US does not have sui generis database right, other parts of the world do, including the EU. This means that databases created in the EU are protected by such laws. (Caveat: I am not a lawyer, this does not constitute legal advice, yada yada yada.)
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="3" data-comment-id="398">
+  <td class="comment-profile-avatar">
+		<a href="/u/larsjuhljensen"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/125_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="398"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/larsjuhljensen">Lars Juhl Jensen</a>
+				
+				<span class="light">&nbsp;<a href="#3" class="light">691 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Related to the license issues, it is wise that you solicit advice from legal experts. However, as long as you are dealing with databases created by researchers in academia, the risk of actually getting sued is pretty minimal. The most important question that you should be asking yourself is thus not "what can I technically do without risking to get sued?", but rather "what was the intent of the license?". If you frequently do things that may be technically legal but clearly go against the intent of other researchers, you will quickly make many enemies.</p>
+
+<p>Just friendly words of advise :-)</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="4" data-comment-id="424">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="424"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#4" class="light">671 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Licensing and copyright</h1>
+
+<p>Thanks <a href="/u/larsjuhljensen" class="username">@larsjuhljensen</a> for your helpful advice. We have created a <a href="http://thinklab.com/discussion/integrating-resources-with-disparate-licensing-into-an-open-network/107#4" class="citation thread-citation" data-key="10.15363/thinklab.d107">separate discussion</a> for licensing and copyright to continue the conversation.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="5" data-comment-id="425">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="425"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#5" class="light">671 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Network name</h1>
+
+<p>We've realized it's a major impediment to not have a name for the network. We are tentatively calling the network <code>hetio-ind</code>. However, <code>rephetio</code> — the current Thinklab handle for the project — is also an option. Will update when the name is finalized.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="6" data-comment-id="1492">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1492"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#6" class="light">153 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Hetionet v1.0 released</h1>
+
+<p>Just wanted to update this thread. The final version of the hetnet for Project Rephetio has been released (for a while now). The network is named Hetionet and Project Rephetio is based on version 1.0, which is <a href="https://github.com/dhimmel/hetionet/tree/59c448fd912555f84b9822b4f49b431b696aea15">available on GitHub</a> <span class="citation">[<a href="https://doi.org/10.5281/zenodo.268568" class="citation hm citation-figure" data-key="10.5281/zenodo.268568">1</a>]</span> in JSON, TSV, and Neo4j database formats. We also host a public Neo4j database instance at <a href="https://neo4j.het.io">https://neo4j.het.io</a> <span class="citation">[<a href="https://doi.org/10.15363/thinklab.d216" class="citation hm citation-self" data-key="10.15363/thinklab.d216">2</a>]</span>. </p>
+
+<p>For details on the construction of Hetionet v1.0, see the Methods section of the project report/manuscript <span class="citation">[<a href="https://doi.org/10.15363/thinklab.a7" class="citation hm citation-self" data-key="10.15363/thinklab.a7">3</a>, <a href="https://doi.org/10.1101/087619" class="citation hm " data-key="10.1101/087619">4</a>]</span>. Quoting from the abstract:</p>
+
+<blockquote><p>Hetionet v1.0 consists of 47,031 nodes of 11 types and 2,250,197 relationships of 24 types. Data was integrated from 29 public resources to connect compounds, diseases, genes, anatomies, pathways, biological processes, molecular functions, cellular components, pharmacologic classes, side effects, and symptoms.</p></blockquote>
+
+<p>Here is a <a href="https://thinklab.com/discussion/describing-hetionet-v10-through-visualization-and-statistics/202#8" class="citation thread-citation" data-key="10.15363/thinklab.d202">visualization</a>:</p>
+
+<p><img src="https://raw.githubusercontent.com/dhimmel/rephetio/54ce1bacfe6392c04d6afd164df7718a0d2769b3/figure/hetionet-v1.0-labeled-landscape.png" alt="Hetionet v1.0 landscape labeled"></p>
+
+<p>Just to be clear, Hetionet v1.0 is not the same as the "initial version of our network" mentioned <a href="#1">above</a>. Please use Hetionet v1.0 rather than earlier versions, which had a less developed <a href="https://thinklab.com/discussion/integrating-resources-with-disparate-licensing-into-an-open-network/107#14" class="citation thread-citation" data-key="10.15363/thinklab.d107">licensing solution</a> and should therefore be avoided.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+    		
+		</table>
+
+    
+
+    &nbsp;<br>
+    <a class="btn btn-primary btn-lg" href="/signup?next=/discussion/one-network-to-rule-them-all/102&suppress_message=1" style>Join to Reply</a>
+
+
+		<table class="references table-td-5" style="display:none;"><tr><td><a href='/doi/10.5281/zenodo.28040' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.5281/zenodo.28040'><a href='/doi/10.5281/zenodo.28040' class='pub-title'>Integrating data into a heterogeneous network for drug repurposing</a><div class='pub-body'>Daniel Himmelstein (2015) <i>Zenodo</i>. doi:<a class='pub-doi' href='https://doi.org/10.5281/zenodo.28040'>10.5281/zenodo.28040</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d48' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>2.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d48'><a href='/discussion/text-as-a-resource-for-network-population/48' class='pub-title'>Text as a resource for network population?</a><div class='pub-body'>Benjamin Good, Daniel Himmelstein (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d48'>10.15363/thinklab.d48</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d101' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>3.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d101'><a href='/discussion/the-adeptus-resource-for-expression-signatures-of-disease/101' class='pub-title'>The ADEPTUS resource for expression signatures of disease</a><div class='pub-body'>Daniel Himmelstein (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d101'>10.15363/thinklab.d101</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d96' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>4.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d96'><a href='/discussion/stargeo-expression-signatures-for-disease-using-crowdsourced-geo-annotation/96' class='pub-title'>STARGEO: expression signatures for disease using crowdsourced GEO annotation</a><div class='pub-body'>Daniel Himmelstein, Frederic Bastian, Dexter Hadley, Casey Greene (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d96'>10.15363/thinklab.d96</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d95' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>5.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d95'><a href='/discussion/expert-curation-of-our-indication-catalog-for-disease-modifying-treatments/95' class='pub-title'>Expert curation of our indication catalog for disease-modifying treatments</a><div class='pub-body'>Daniel Himmelstein, Pouya Khankhanian, Chrissy Hessler (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d95'>10.15363/thinklab.d95</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d22' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>6.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d22'><a href='/discussion/suggestions-for-additional-information-types/22' class='pub-title'>Suggestions for additional information types?</a><div class='pub-body'>Daniel Himmelstein, Venkat Malladi, Alessandro Didonna, Alexey Strokach (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d22'>10.15363/thinklab.d22</a></div></div></td></tr><tr><td><a href='/doi/10.12688/f1000research.8114.2' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>7.</div></td><td><div class='doi-body' data-key='10.12688/f1000research.8114.2'><a href='/doi/10.12688/f1000research.8114.2' class='pub-title'>How blockchain-timestamped protocols could improve the trustworthiness of medical science</a><div class='pub-body'>Greg Irving, John Holden (2016) <i>F1000Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.12688/f1000research.8114.2'>10.12688/f1000research.8114.2</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d107' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>8.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d107'><a href='/discussion/integrating-resources-with-disparate-licensing-into-an-open-network/107' class='pub-title'>Integrating resources with disparate licensing into an open network</a><div class='pub-body'>Daniel Himmelstein, Lars Juhl Jensen, MacKenzie Smith, Katie Fortney, Caty Chung (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d107'>10.15363/thinklab.d107</a></div></div></td></tr><tr><td><a href='/doi/10.5281/zenodo.268568' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>9.</div></td><td><div class='doi-body' data-key='10.5281/zenodo.268568'><a href='/doi/10.5281/zenodo.268568' class='pub-title'>Dhimmel/Hetionet V1.0.0: Hetionet V1.0 In Json, Tsv, And Neo4J Formats</a><div class='pub-body'>Daniel Himmelstein (2017) <i>Zenodo</i>. doi:<a class='pub-doi' href='https://doi.org/10.5281/zenodo.268568'>10.5281/zenodo.268568</a></div></div></td></tr><tr><td><a href='/doi/10.15363/thinklab.d216' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>10.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d216'><a href='/discussion/hosting-hetionet-in-the-cloud-creating-a-public-neo4j-instance/216' class='pub-title'>Hosting Hetionet in the cloud: creating a public Neo4j instance</a><div class='pub-body'>Daniel Himmelstein (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d216'>10.15363/thinklab.d216</a></div></div></td></tr><tr><td><a href='/doi/10.15363/thinklab.a7' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>11.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.a7'><a href='/p/rephetio/report' class='pub-title'>Rephetio: Repurposing drugs on a hetnet [report]</a><div class='pub-body'>Daniel Himmelstein, Antoine Lizee, Chrissy Hessler, Leo Brueggeman, Sabrina Chen, Dexter Hadley, Ari Green, Pouya Khankhanian, Sergio Baranzini (2016) <i>Thinklab</i>. doi:<a class='pub-doi' href='https://doi.org/10.15363/thinklab.a7'>10.15363/thinklab.a7</a></div></div></td></tr><tr><td><a href='/doi/10.1101/087619' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>12.</div></td><td><div class='doi-body' data-key='10.1101/087619'><a href='/doi/10.1101/087619' class='pub-title'>Systematic integration of biomedical knowledge prioritizes drugs for repurposing</a><div class='pub-body'>Daniel S Himmelstein, Antoine Lizee, Christine Hessler, Leo Brueggeman, Sabrina L Chen, Dexter Hadley, Ari Green, Pouya Khankhanian, Sergio E Baranzini (2016) <i>Cold Spring Harbor Laboratory Press</i>. doi:<a class='pub-doi' href='https://doi.org/10.1101/087619'>10.1101/087619</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d202' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>13.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d202'><a href='/discussion/describing-hetionet-v10-through-visualization-and-statistics/202' class='pub-title'>Describing Hetionet v1.0 through visualization and statistics</a><div class='pub-body'>Daniel Himmelstein, Sergio Baranzini, Casey Greene (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d202'>10.15363/thinklab.d202</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d107' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>14.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d107'><a href='/discussion/integrating-resources-with-disparate-licensing-into-an-open-network/107' class='pub-title'>Integrating resources with disparate licensing into an open network</a><div class='pub-body'>Daniel Himmelstein, Lars Juhl Jensen, MacKenzie Smith, Katie Fortney, Caty Chung (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d107'>10.15363/thinklab.d107</a></div></div></td></tr></table>
+
+    
+
+
+	</td>
+	<td class="thread-sidebar">
+
+
+			
+
+      <a class="btn btn-default follow-link btn-follow btn-lg is-following tt-top full-width" title="Follow discussion" data-id="102" data-ctype="thread" data-is-following="false">&nbsp;</a>
+
+      
+        <div class="status-box text-center"><span style="">Status:</span> 
+  Completed
+
+</div>
+      
+
+      
+        
+      
+
+
+				
+
+					<div class="details">Views</div>
+					<span style="font-size:20px;">322</span>
+
+        
+
+				
+					<div class="details">Topics</div>
+					<div style="margin-bottom:15px;">
+		            <a href="/topics/networks" class="tag">Networks</a><a href="/topics/network-biology" class="tag">Network Biology</a><a href="/topics/drug-repurposing" class="tag">Drug Repurposing</a><a href="/topics/dataset" class="tag">Dataset</a><a href="/topics/heterogeneous-network" class="tag">Heterogeneous Network</a>
+					</div>
+				
+
+
+		
+			<div class="details">Referenced by</div>
+			<div style="font-size:12px;"><ul style="padding-left:16px !important;">
+			
+				<li>
+					
+					<a href='/discussion/tracking-project-reuse-citation-and-publicity/113' class='thread-title'>Tracking project reuse, citation, and publicity</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/using-the-neo4j-graph-database-for-hetnets/112' class='thread-title'>Using the neo4j graph database for hetnets</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/integrating-resources-with-disparate-licensing-into-an-open-network/107' class='thread-title'>Integrating resources with disparate licensing into an open network</a>
+				</li>
+			
+				<li>
+					
+					Research report: <a href='/p/rephetio/report'>Rephetio: Repurposing drugs on a hetnet</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/data-nomenclature-naming-and-abbreviating-our-network-types/162' class='thread-title'>Data nomenclature: naming and abbreviating our network types</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/processing-bgee-for-tissue-specific-gene-presence-and-overunder-expression/124' class='thread-title'>Processing Bgee for tissue-specific gene presence and over/under-expression</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/licensing-neo4j/130' class='thread-title'>Licensing neo4j</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/lincs-l1000-licensing/110' class='thread-title'>LINCS L1000 licensing</a>
+				</li>
+			
+				</ul>
+			</div>
+		
+
+		
+			<div class="details">Cite this as</div>
+			<span style="font-size:12px;">
+				Daniel Himmelstein, Lars Juhl Jensen (2015) One network to rule them all. <i>Thinklab.</i> doi:<a href='https://doi.org/10.15363/thinklab.d102'>10.15363/thinklab.d102</a>
+			</span>
+		
+
+		<div class="details">License</div>
+		<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0;width:88px;height:31px;" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></p>
+
+		<div class="details">Share</div>
+		
+			
+				<a class="share-button fb" onclick="javascript:void(window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A//thinklab.com/discussion/one-network-to-rule-them-all/102','','width=600,height=460,menubar=no,status=no'));" href="#"></a>
+<a class="share-button twitter" onclick="javascript:void(window.open('https://twitter.com/share?text=One%20network%20to%20rule%20them%20all&url=https%3A//thinklab.com/discussion/one-network-to-rule-them-all/102','','width=600,height=300,menubar=no,status=no'));" href="#"></a>
+<a class="share-button google" onclick="javascript:void(window.open('https://plus.google.com/share?url=https%3A//thinklab.com/discussion/one-network-to-rule-them-all/102','','width=510,height=460,menubar=no,status=no'));" href="#"></a>
+
+			
+		
+
+	</td>
+</tr></table>
+
+
+		</div>
+
+
+		
+	    	<div class="footer">
+<div style="background:#dedede;">
+	<div class="main-centered-div text-center" style="padding:20px;">
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#bad2dfd6d6d5faced2d3d4d1d6dbd894d9d5d7"><span class="__cf_email__" data-cfemail="3c54595050537c4854555257505d5e125f5351">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+	</div>
+</div>
+<div class="main-footer">
+	<div class="main-centered-div">
+
+<table class="full-width"><tr>
+	<td class="footer-nav">
+
+        <div class="foot-head">Explore</div>
+        <a href="/proposals">Proposals</a><br>
+        <a href="/projects">Projects</a><br>
+        <a href="/publications">Article discussion</a><br>
+        <a href="/discussion">All discussion</a><br>
+        <a href="/topics">Topics</a><br>
+        <!-- <a href="/funders">Funders</a><br> -->
+        <a href="/funding">Funding opportunities</a><br>
+
+	</td>
+	<td class="footer-nav">
+
+        <!-- <div class="foot-head">Help &amp; feedback</div>	 -->
+        <!-- <div class="foot-head">Intro</div>
+        <a href="/benefits/for-science">Why</a><br>
+        <a href="/how-it-works">How it works</a><br>
+
+<br> -->
+
+        <div class="foot-head">Community</div>
+        <a href="/leaderboard">Leaderboard</a><br>
+        <a href="/p/meta">Thinklab Meta</a><br>
+				<a href="/help/faq">Help</a><br>
+				<!-- <a href="/new-project">Start a proposal</a><br> -->
+        <!-- <a href="/benefits/proposal">Benefits</a><br> -->
+        <!-- <a href="/funding">Get funded</a><br> -->
+        <!-- <a href="/participate">Become a contributor</a><br> -->
+        <!-- <a href="/for-funders">For science funders</a><br> -->
+        <!-- <a href="/for-institutions">For institutions</a><br> -->
+
+	</td>
+	<td class="footer-nav">
+
+
+
+        <div class="foot-head">About</div>
+        <a href="/about">Overview</a><br>
+        <a href="/benefits">Benefits</a><br>
+        <a href="/how-it-works">How it works</a><br>
+        <a href="/about/story">Our story</a><br>
+        <a href="/blog">Our blog</a><br>
+        <a href="/about/jobs">Join the team</a><br>
+        <br>
+
+        <!-- <div class="foot-head">Help</div>
+        <a href="/help">Help</a><br>
+		 -->
+
+
+	</td>
+	<td class="footer-nav">
+		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
+		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<br><br>
+		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
+
+	</td>
+
+</tr></table>
+
+</div>
+</div>
+</div>
+
+		
+
+	</div>
+
+
+  <script></script>
+  <script>
+  var MEDIA_URL = 'https://think-lab.s3.amazonaws.com/m/';
+  var STATIC_URL = 'https://think-lab.s3.amazonaws.com/s/';
+  var page_is_authenticated = false;
+  var page_page = 'discussion';
+  var page_profile_id = undefined;
+</script>
+
+
+
+	<!-- Note different script type. MUST come before MathJax.js -->
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	        "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"],
+	                        scale: 110, linebreaks: { automatic:true },
+	                        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+	        tex2jax: { inlineMath: [ ["$$", "$$"], ["\\(","\\)"] ],
+	                    displayMath: [ ["$$$","$$$"], ["\\[", "\\]"] ],
+	                    processEscapes: true,}
+	            });
+
+	</script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://think-lab.s3.amazonaws.com/s/dist/main.min.js"></script>
+  
+
+
+
+  
+	
+  
+  
+  
+<script>
+$(function() {
+  recordHit('thread', 102);
+});
+</script>
+
+
+
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>

@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08CV1taQlkRXEdFAz0WFFNIRVVcOkVcU049BxNcWw==","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":380}</script>
+    <title>Proposal: Thinklab: A platform for open review of research grant proposals</title>
+	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
+    <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/highlightjs/github.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/css.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/bootstrap-multiselect.css" />
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
+    
+    
+    
+    
+  
+    <meta name="citation_doi" content="10.15363/thinklab.a12">
+    <meta name="citation_title" content="Thinklab: A platform for open review of research grant proposals [proposal]">
+    <meta name="citation_online_date" content="Feb. 15, 2016">
+    <meta name="citation_author" content="Jesse Spaulding, Gleb Pitsevich">
+    <meta name="citation_journal_title" content="Thinklab">
+    <meta name="citation_publisher" content="Thinklab">
+  
+
+    
+
+
+	<!-- GoogleAnalytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-48550230-1', 'thinklab.com');
+	ga('require', 'displayfeatures');
+	
+	ga('send', 'pageview');
+
+	</script>
+
+
+
+
+
+
+</head>
+<body >
+  <form id="form_action" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+</form>
+
+	
+
+	<div class="body-wrapper">
+
+		
+
+
+<!-- <div style="height:5px;background-image:url('https://think-lab.s3.amazonaws.com/s/img/top-bg.gif');"></div> -->
+<div class="gradient">
+	<div class="main-centered-div header-container">
+
+<table class="full-width" style="height:60px;"><tr>
+	<td style="width:200px;vertical-align:middle;padding-bottom:15px;">
+		<a href="/" style="font-weight:normal;color:#212121;"><img src="https://think-lab.s3.amazonaws.com/s/img/logo.png" width="160"></a>
+	</td><td style="vertical-align:middle;text-align:left;padding-top:6px;width:100%;padding-left:40px;">
+		<ul id="not-search-block"  class="main-header">
+
+
+			
+
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/proposals">Proposals</a></li>
+						<li><a href="/projects">Projects</a></li>
+						<li><a href="/publications">Article discussion</a></li>
+						<li><a href="/discussion">All discussion</a></li>
+					</ul>
+				</li>
+				<li><a href="/leaderboard">Leaderboard</a></li>
+
+			
+				<li><a href="/about">About</a></li>
+			
+
+
+		</ul>
+
+    <ul id="search-block" class="main-header" style="display: none; margin-right: 30px;">
+        <li class="full-width">
+            <form method="get" action="/search">
+			<div class="input-group full-width">
+				<input name="q" type="text" class="form-control search-input">
+			</div>
+            </form>
+        </li>
+    </ul>
+
+	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
+		<ul class="main-header pull-right" style="padding-left: 0;">
+    		
+                <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+            
+
+        </ul>
+    </ul>
+	</td>
+</tr></table>
+
+<!-- <div id="global-search-div" class="main-centered-div" style="display:none;">
+	<input type="text" value="" class="thread-search form-control" placeholder="Search" data-action="/discussion">
+</div> -->
+
+	</div>
+</div>
+
+		
+	  
+
+
+
+	  
+
+
+		
+
+		<div class="dark-head"><div class="main-centered-div">
+
+			
+
+	
+
+
+	<div class="header-object-type"></div>
+
+	
+			<a class="btn btn-lg follow-link btn-follow pull-right active tt-top" style="margin-left:20px;" title="Follow project discussion" data-id="18" data-ctype="project" data-is-following="false">&nbsp;</a>
+	
+
+	<h2 class="header-object-name">Thinklab: A platform for open review of research grant proposals</h2>
+
+	
+	<div class="project-team">
+		<a href='/u/jspauld'>Jesse Spaulding</a>, <a href='/u/glebpitsevich'>Gleb Pitsevich</a>
+		 <!-- &nbsp; &nbsp; doi:<a href="https://doi.org/10.15363/thinklab.18">10.15363/thinklab.18</a> -->
+	</div>
+	
+
+		<!-- <div class="project-team">
+			<b>DOI:</b> <a href="https://doi.org/10.15363/thinklab.18">10.15363/thinklab.18</a>
+		</div> -->
+
+		
+			<div class="project-team">
+			<div class="proj-funding">
+				<b>Funding opportunity:</b>
+				
+					<a href="/funding/7/proposals">The Open Science Prize</a>
+				
+			</div>
+			</div>
+		
+
+	<div class="project-team">
+		
+		<div class="proposal-status proposal-status-lg proposal-status-awaiting-funder">Awaiting Funder</div>
+		
+		
+		
+	</div>
+
+
+
+
+	
+
+
+	<!-- <div class="project-team">
+		
+	</div> -->
+
+    <ul class="nav nav-tabs project-nav" style="margin-top:25px;">
+
+		
+
+		
+
+    
+
+		
+	    
+	        <li class="active"><a href="/p/thinklabOSP/proposal">Proposal</a></li>
+	    
+	    
+		
+
+		<li><a href="/p/thinklabOSP/discussion"><span class="nav-fig">9</span>Discussions</a></li>
+
+		
+			<li><a href="/p/thinklabOSP/leaderboard"><span class="nav-fig">7</span>Reviewers</a></li>
+		
+
+		
+
+		
+
+
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown"><span style="opacity:0.5">More <span class="caret"></span></span></a>
+            <ul class="dropdown-menu" style="font-size:13px;background-color:#819ec8">
+
+				
+
+				
+
+            <li><a href="/p/thinklabOSP/followers"><span class="nav-fig">7</span>Followers</a></li>
+            </ul>
+        </li>
+
+			
+
+    </ul>
+
+
+
+		</div></div>
+		
+		<div class="main-centered-div" style="margin-top:40px;padding-bottom:340px">
+	    
+
+	
+	<div class="alert alert-info"><div class="main-centered-div">This is a revision from Feb. 14, 2016, 12:03 p.m. <b><a href="/p/thinklabOSP/proposal">Current version</a></b></div></div>
+	
+
+  
+
+  
+    
+        
+      
+  
+
+<!--  -->
+
+
+  
+
+
+
+
+
+    <table class="project-table"><tr>
+      <td class="main-table-content">
+
+
+        
+            <div class="instructions">
+              <p>Hello!</p>
+
+<p>We're posting our application for the <a href="https://www.openscienceprize.org">Open Science Prize</a> here (on our own website). We would very much appreciate feedback from the community. </p>
+
+<p>A few notes:</p>
+
+<ul><li><strong>We welcome your <em>honest</em> and <em>critical</em> feedback.</strong> It's important to know what you really think so we can both improve this proposal, and improve our service.</li><li><strong>Judging criteria:</strong> Advancement of open science, impact, innovation, originality, technological viability, and resource feasibility. See the <a href="https://www.openscienceprize.org/res/p/FAQ/">Open Science Prize FAQ</a> for more detail. </li></ul>
+
+<p>Thank you!</p>
+
+<p>– Jesse</p>
+              <table class="references table-td-5" style="display:none;"></table>
+            </div>
+        
+
+        
+			     <h1 class="page-title">Proposal</h1>
+        
+
+			  
+
+<div class="document-body">
+
+  <div id="document_body"><h1 id="what-is-thinklab">What is Thinklab?</h1>
+
+<p>Thinklab is a platform that facilitates two things:</p>
+
+<ol><li>Open review of research grant proposals</li><li>A highly collaborative version of open notebook science</li></ol>
+
+<p>We're creating Thinklab because we believe the interests of science and society are best served if the <em>entire</em> scientific process is open &#8212; not just the software, data, and papers produced at the end. And while we're convinced this kind of openness is in the best interests of science as a whole, we understand many scientists will not feel it's in their <em>personal</em> interests. That's why our goal is not just to <em>facilitate</em> open research, it's to actually <em>create incentives</em> for it.</p>
+
+<p>Thinklab is intended for broad use across all of science, including biomedical research. An early version can be seen at <a href="http://thinklab.com">thinklab.com</a>.</p>
+
+<h1 id="why-grant-proposals-should-be-reviewed-in-the-open">Why grant proposals should be reviewed in the open</h1>
+
+<ol><li><p><strong>Researchers can get feedback when it's most valuable: before a project begins</strong><br>Scientists often work on projects for years at a time. Given this, it's critically important to work on the <em>right thing</em> and have the <em>right approach</em>. Feedback at an early stage &#8212; especially when it comes from a cognitively diverse pool of people &#8212; has the potential to save incredible amounts of time. It may reveal that an entire project was flawed from conception, or it may light the path towards a much more impactful approach.</p></li><li><p><strong>Best practices can spread across science faster</strong> <br>Best practices in science are changing fast. Having proposals reviewed in the open, gives the community a chance to share those best practices &#8212; even across disciplines. This could include sharing ideas on making data reusable, making research reproducible, or just recommending tools and methods.</p></li><li><p><strong>Scientists can learn from and build upon each other's ideas</strong> <br>Research proposals are valuable scientific outputs in and of themselves. They will often contain some of the most cutting edge ideas in science. Having proposals (and the review discussion related to them) published openly on the internet would create a valuable resource that the entire scientific community can learn from and build upon.</p></li><li><p><strong>Openness produces more collaboration and less redundancy</strong> <br>When people know what each other are working on, it creates more possibility for forming collaborations. At the same time, it reduces the redundancy of having multiple research groups working on the same thing in isolation.</p></li></ol>
+
+<p>In conclusion, open review can improve research plans, reduce wasted resources, spread best practices, accelerate the exchange of ideas, and lead to more collaboration with less redundancy. In short, it should significantly accelerate scientific progress. Many of these ideas have been talked about by Daniel Mitchken: <a href="http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002027">The Transformative Nature of Transparency in Research Funding</a> <span class="citation">[<a href="/doi/10.1371/journal.pbio.1002027" class="citation" data-key="10.1371/journal.pbio.1002027">1</a>]</span></p>
+
+<h1 id="but-will-scientists-participate">But will scientists participate?</h1>
+
+<p>While it may be clear that having grant proposals reviewed in the open would be a very good thing for science, the question is: will scientists participate? Won't they be concerned about people stealing their ideas?</p>
+
+<p>The answer is yes, many will be concerned. Scientists currently operate under a system that values the publication of papers in journals above all else. Under this system, keeping ideas secret is seen as a good strategy in the publish-or-perish game &#8212; a game that they're forced to play, but never asked to play. In our view, the solution to this predicament is clear: we need to change the rules of the game! We need to align the incentives of scientists with what's in the best interests of science and society as a whole.</p>
+
+<h2 id="thinklab-as-a-service-for-science-funders">Thinklab as a service for science funders</h2>
+
+<p>If our goal is to open up grant proposal review, we believe science funders are in the best position to do it. Funders can use the power of the purse to create new incentives and compel adoption of new behaviors. In fact, they're already doing it. Many funders have started to <em>require</em> that the results of the research they fund be made publicly available. That changes the game!</p>
+
+<p>Thinklab wants to help funders take the next step. We want to help funders create grant programs that <em>require</em> openly posted proposals. In addition, we want to help them manage an open peer review process where anyone from the scientific community can share ideas and feedback to help improve research plans.</p>
+
+<p>With that said, we recognize that persuading funders to try a different model of funding will be challenging. Fortunately, there's something we can do in the meantime: we can do everything we can to drive adoption by making Thinklab a valuable service for grant writers directly.</p>
+
+<h2 id="thinklab-as-a-service-for-grant-writers">Thinklab as a service for grant writers</h2>
+
+<p>Benjamin Good <a href="http://thinklab.com/discussion/thinklab-as-a-vetting-system-for-traditional-grants/58" class="citation thread-citation" data-key="10.15363/thinklab.d58">suggested</a> <span class="citation">[<a href="/discussion/thinklab-as-a-vetting-system-for-traditional-grants/58" class="citation" data-key="10.15363/thinklab.d58">2</a>]</span> that grant writers could use Thinklab to have their proposals openly reviewed prior to submission for funding. There are a number of benefits to this. In fact, we've used Thinklab to get feedback on the proposal you're reading right now! X reviewers provided feedback through a total of X annotations and X comments. You can take a look at the feedback we received here: <a href="http://thinklab.com/p/thinklab-prize">thinklab.com/p/thinklab-prize</a>.</p>
+
+<h3>Benefits for grant writers</h3>
+
+<ul><li>Open review can help grant writers improve their proposals and increase their odds of funding. Getting an outside perspective can help make sure the value of a proposed project is being communicated effectively. </li><li>Open review can help validate the research plan before work begins. With this validation, the research team can be confident that when results come in, they'll be trusted and valued by the community.</li><li>Engaging the community at such an early stage serves to increase the research team's visibility and connection with the community, leading to more collaboration opportunities.</li><li>Grant writers can feel better about asking for feedback as there's more in it for the reviewer. Reviewer comments are public, and reviewers are publicly acknowledged based on peer assessment of the value of their feedback.</li></ul>
+
+<h1 id="how-thinklab-works">How Thinklab works</h1>
+
+<p>Thinklab is a platform that facilitates open review of grant proposals, and real-time open science. All content and discussion posted to Thinklab is licensed CC-BY. Note that at this point the code that runs Thinklab itself is not open source.</p>
+
+<h2 id="the-proposal-review-system">The proposal review system</h2>
+
+<p><strong>Design goals:</strong></p>
+
+<ol><li>To have reviewers share independently formed opinions initially. </li><li>To enable a real-time discussion between reviewers and proposal authors aimed at improving the proposal.</li><li>To reward reviewers by recognizing them based on the value of their contributions.</li></ol>
+
+<p><strong>The review process:</strong></p>
+
+<ol><li><p><strong>Part 1: Annotate</strong> &#8212; In this step reviewers are asked to read the proposal and make annotations wherever they have feedback (see <a href="#annotation">Figure 1</a>). To ensure an unbiased review we hide annotations and comments from other users in part 1 and 2.</p></li><li><p><strong>Part 2: Summarize</strong> &#8212; Next, reviewers are asked to summarize their most important thoughts and advice. They may also be asked to rate the proposal on various metrics.</p></li><li><p><strong>Part 3: Discuss</strong> &#8212; In this step we reveal the discussion that is already taking place. Reviewers use the inline notes they made in part one to join the discussion. Discussion can take place in inline comments, or on separate pages that link back to the proposal.</p></li><li><p><strong>Part 4: Finalize</strong> &#8212; After discussing the proposal with the authors and other users, reviewers have the option to update their initial review summary and/or review scores.</p></li></ol>
+
+<p>When the review process is complete, the proposal authors (or designated reviewers if the review is on behalf of a funder) will rate the value of each reviewer's contributions. These ratings contribute to an impact points system that allows us to highlight the most impactful reviewers.</p>
+
+<a name="annotation"></a><div class="figure" figure-id="annotation"><div class="figure-content"><img src="http://think-lab.s3.amazonaws.com/m/figures/20.png"></div>
+            <div class="signature-1">
+                <div class="figure-title">Figure 1. Proposal annotation options</div>
+                <div class="figure-description"><p>This menu appears when proposal reviewers select text to make an annotation.</p></div>
+            </div>
+        </div>
+
+<h2 id="real-time-open-science">Real-time open science</h2>
+
+<p>When a proposal on Thinklab gets funded, the research team has the option to continue their work as an open research project. Researchers can engage the community by sharing ideas, project plans, updates, and questions in real-time as the project progresses. Reviewers that made valuable suggestions during the proposal stage can continue to share ideas and give feedback throughout the project.</p>
+
+<p>The big payoff from open research comes not just from being open, it comes from the real-time collaboration that openness enables. It comes from bringing a cognitively diverse set of people together to tackle challenging problems. In support of this Thinklab is building a system that intelligently direct researcher attention to the exact discussions and problems that match their interests and areas of expertise. These ideas are described by Michael Nielsen in his book: <a href="http://www.amazon.com/gp/product/B005OQGZ54/ref=dp-kindle-redirect?ie=UTF8&amp;btkr=1">Reinventing Discovery: The New Era of Networked Science</a> <span class="citation">[<a href="http://press.princeton.edu/quotes/q9517.html" class="citation" data-key="reinventing">3</a>]</span></p>
+
+<p>There's one big problem with this vision: there needs to be incentives for scientists to participate. There needs to be an incentive for researchers to share their work, and their needs to be an incentive for outside scientists to share feedback and insights when they have something valuable to add.</p>
+
+<h2 id="benefits-for-reviewerscontributors">Benefits for reviewers/contributors</h2>
+
+<ul><li><p><strong>Everything is public</strong><br>To highlight the benefits of openness let's consider what will happen to this proposal when it's submitted to The Open Science Prize. We expect it to be discussed <em>in private</em> by three reviewers. Here's a question for those reviewers: wouldn't it be nice if your comments were public and would become part of the scientific record? Wouldn't it be nice if we (and others) could learn from what you said? Thinklab offers reviewers the chance for more impact and more recognition.</p></li><li><p><strong>Users are recognized based on the value of their contributions.</strong><br>Thinklab has an impact points system that allows us to highlight the most impactful reviewers or project contributors. Users gain impact points primarily by conducting review and making comments that the community rates as valuable. Contributions are rated by the research team, by users selected by the sponsoring funder, or by the community at large.</p></li></ul>
+
+<h2 id="monetary-rewards">Monetary rewards</h2>
+
+<p>While we believe our impact points system will help create an incentive, we'd like to point out that it's <em>extremely</em> difficult to get scientists to take time away from <em>their</em> research, and share feedback and ideas on the work of their peers, over the internet <span class="citation">[<a href="http://press.princeton.edu/quotes/q9517.html" class="citation" data-key="reinventing">3</a>]</span>. At the same time, we can all recognize how incredibly valuable it would be if they were to do so. </p>
+
+<p>For these reasons, Thinklab proposes that science funders create an additional incentive. We propose that a portion of project grant money is set aside to reward feedback and ideas from scientists in the community. These monetary rewards could be applied at the proposal stage and/or the research stage. The system would piggy-back on the impact points system we've already discussed.</p>
+
+<h3>Possible concerns</h3>
+
+<ul><li><p><strong>Won't people game the system?</strong><br>It's very likely that some people will attempt to game the system. However, we believe it will be relatively easy to detect and prevent strategies such as voting rings between friends. The only way to game the system should be to actually take the time to write comments that peers find valuable.</p></li><li><p><strong>The <a href="https://en.wikipedia.org/wiki/Overjustification_effect">overjustification effect</a></strong><br>This is where external incentives decrease a person's intrinsic  motivation to do something. It's a fascinating concept. However, this effect is only relevant if people have enough intrinsic motivation to do something in the first place. In the case of getting scientists to share feedback and ideas on the work of their peers over the Internet &#8212; they're simply not doing it at all. And this is despite many platforms built for this purpose <span class="citation">[<a href="http://press.princeton.edu/quotes/q9517.html" class="citation" data-key="reinventing">3</a>]</span>.</p></li><li><p><strong>Money in science is always bad</strong><br>Many scientists seem to have a gut reaction that tells them introducing money into science is always a bad idea. To those people we would say this: money is <em>already</em> in science. Much of what scientists do is driven by the need to secure money to continue doing their work. We are simply proposing that some money is distributed in a way that creates a different set of incentives.</p></li></ul>
+
+<p>Finally, we want to emphasize that we consider monetary rewards to be an experiment, and that we see large value in the Thinklab even without them.</p>
+
+<h1 id="what-will-the-prize-money-be-used-for">What will the prize money be used for?</h1>
+
+<ul><li>Continued development of our open review system. We will be working in close consultation with both grant writers and reviewers to create the most useful and user friendly service possible. </li><li>Development of features to enable a pilot program with a funder. This pilot program will likely involve having proposals openly submitted and reviewed though Thinklab.</li><li>Creation of APIs so our CC-BY content can be more easily accessed.</li></ul>
+
+<h1 id="alternatives-to-thinklab">Alternatives to Thinklab</h1>
+
+<h3>Google Docs for open review of proposals</h3>
+
+<p>If a researcher wants to get feedback on a grant proposal, a common solution is to put it in Google Docs, and send it to colleagues. Here's why Thinklab is better:</p>
+
+<ul><li>Thinklab is designed to have peer review and review comments become a persistent, citable part of the scientific record.</li><li>Thinklab facilitates more substantial discussion by allowing discussions to be posted to a separate page.</li><li>Thinklab is able to draw more people into the conversation by directing people's attention to the discussion when it matches their interests or areas of expertise.</li><li>Thinklab rewards participation through an impact points system that is based on peer assessment.</li></ul>
+
+<h3>GitHub as an electronic lab notebook</h3>
+
+<p>The Open Source Malaria project <a href="https://github.com/OpenSourceMalaria/OSM_To_Do_List">is using</a> GitHub to openly manage their project. There's a lot to like about GitHub. But here's what Thinklab can offer:</p>
+
+<ul><li>Thinklab is designed for science. Adding math is easy. Adding citations by DOI is easy. Each discussion (like a GitHub issue) has a DOI and is citable.</li><li>When leading an open research project the big challenge is actually getting scientists to participate. Thinklab rewards participation through a system that highlights the most impactful contributors. If needed we can add the additional incentive of monetary rewards.</li><li>In the domain of scientific discussion there is tremendous value in having a cognitively diverse set of people participate. Thinklab has a system that intelligently directs researcher attention to discussion that is relevant to their interests or areas of expertise. Such a system is not particularly relevant to software development so we wouldn't expect GitHub to be working on it.</li></ul>
+
+<h1 id="team-and-resources">Team and resources</h1>
+
+<p>Thinklab is founded by Jesse Spaulding. Jesse has a background in the startup world, and has founded and sold several startups. With no formal academic background, Jesse brings a fresh perspective to the challenges facing our scientific system. Jesse has been working with Gleb Pitsevich who has a broad background in mathematics, programming, and web development.</p>
+
+<p>Thinklab is setup as a for-profit and we intend to use this status to attract talented people to help us pursue our mission. In the near term we're looking for a talented individual with a strong academic science or philanthropic background to join the team as a co-founder and lead business and community development.</p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>Thinklab is a bold experiment in open science. We understand there's powerful incentives working against us. But we also understand the future of science is not a world where scientists continue to hoard knowledge and work in silos.</p>
+
+<p>We believe Thinklab has a legitimate shot at opening up grant proposal review, and if we're able to do so, we believe the benefits will be enormous. Perhaps our most compelling argument is this: what we're doing has the potential to affect <em>all of science</em>. Anytime you can make changes that positively affect a <em>system</em> there's potential for massive impact. Given a <a href="http://thinklab.com/blog/10-consequences-of-a-broken-scientific-reward-system/36">wide variety of problems</a> <span class="citation">[<a href="/blog/10-consequences-of-a-broken-scientific-reward-system/36" class="citation" data-key="10.15363/thinklab.d36">4</a>]</span> in our current scientific system, isn't it worth experimenting with ways we might improve it? </p>
+
+</div>
+
+  
+
+  
+    <h1 id="references">References</h1>
+    <table class="references table-td-5"><tr><td><a href='/doi/10.1371/journal.pbio.1002027' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.1371/journal.pbio.1002027'><a href='/doi/10.1371/journal.pbio.1002027' class='pub-title'>The Transformative Nature of Transparency in Research Funding</a><div class='pub-body'>Daniel Mietchen (2014) <i>PLoS Biology</i>. doi:<a class='pub-doi' href='https://doi.org/10.1371/journal.pbio.1002027'>10.1371/journal.pbio.1002027</a></div></div></td></tr><tr><td><a href='/doi/10.15363/thinklab.d58' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>2.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d58'><a href='/discussion/thinklab-as-a-vetting-system-for-traditional-grants/58' class='pub-title'>ThinkLab as a vetting system for traditional grants</a><div class='pub-body'>Benjamin Good, Jesse Spaulding, Jonathan Eisen, Jack Park, Daniel Mietchen, Jonathan Wren, Casey Greene (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d58'>10.15363/thinklab.d58</a></div></div></td></tr><tr><td></td><td><div class='pub-order'>3.</div></td><td><div class='doi-body' data-key='reinventing'><a href='http://press.princeton.edu/quotes/q9517.html' class='pub-title'>Reinventing discovery: the new era of networked science, Michael Nielsen</a></div></td></tr><tr><td><a href='/doi/10.15363/thinklab.d36' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>4.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d36'><a href='/blog/10-consequences-of-a-broken-scientific-reward-system/36' class='pub-title'>10 Consequences of a broken scientific reward system</a><div class='pub-body'>Jesse Spaulding (2015) <i>Thinklab</i>. https://thinklab.com/d/36</div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d58' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>5.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d58'><a href='/discussion/thinklab-as-a-vetting-system-for-traditional-grants/58' class='pub-title'>ThinkLab as a vetting system for traditional grants</a><div class='pub-body'>Benjamin Good, Jesse Spaulding, Jonathan Eisen, Jack Park, Daniel Mietchen, Jonathan Wren, Casey Greene (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d58'>10.15363/thinklab.d58</a></div></div></td></tr></table>
+  
+  
+</div>
+
+
+		  </td>
+	    <td class="sidebar project-sidebar">
+
+  			
+
+
+
+
+
+
+
+
+	<div class="details">Published</div>
+	
+		Feb. 15, 2016<br>
+	
+	<span style="font-size:12px;">(Last updated March 25, 2017)</span><br>
+
+	<a style="font-size:12px;" href="/doc/12/revisions">Revision history</a>
+
+
+
+
+<div class="details">Views</div>
+<span style="font-size:20px;">412</span>
+
+<div class="details">Topics </div>
+<a class='tag' href='/topics/peer-review'>Peer review</a><a class='tag' href='/topics/open-science'>Open science</a><a class='tag' href='/topics/science-funding'>Science Funding</a><a class='tag' href='/topics/open-notebook-science'>Open Notebook Science</a><a class='tag' href='/topics/grantmaking'>Grantmaking</a><a class='tag' href='/topics/grant-writing'>Grant Writing</a>
+
+
+<div class="details">Cite this as</div>
+<span style="font-size:12px;">
+Jesse Spaulding, Gleb Pitsevich (2016) Thinklab: A platform for open review of research grant proposals [proposal]. <i>Thinklab.</i> doi:<a href='https://doi.org/10.15363/thinklab.a12'>10.15363/thinklab.a12</a>
+</span>
+
+<div class="details">License</div>
+<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0;width:88px;height:31px;" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></p>
+
+
+<br><br>
+
+<div class="affix-container">
+<div class="affix-box">
+
+
+    <!-- <h3>Contents</h3> -->
+
+	<div id="document_nav">
+    <ul class="nav document-menu">
+        
+            <li class="level-1 active"><a href="#what-is-thinklab">What is Thinklab?</a></li>
+        
+            <li class="level-1"><a href="#why-grant-proposals-should-be-reviewed-in-the-open">Why grant proposals should be reviewed in the open</a></li>
+        
+            <li class="level-1"><a href="#but-will-scientists-participate">But will scientists participate?</a></li>
+        
+            <li class="level-2"><a href="#thinklab-as-a-service-for-science-funders">Thinklab as a service for science funders</a></li>
+        
+            <li class="level-2"><a href="#thinklab-as-a-service-for-grant-writers">Thinklab as a service for grant writers</a></li>
+        
+            <li class="level-1"><a href="#how-thinklab-works">How Thinklab works</a></li>
+        
+            <li class="level-2"><a href="#the-proposal-review-system">The proposal review system</a></li>
+        
+            <li class="level-2"><a href="#real-time-open-science">Real-time open science</a></li>
+        
+            <li class="level-2"><a href="#benefits-for-reviewerscontributors">Benefits for reviewers/contributors</a></li>
+        
+            <li class="level-2"><a href="#monetary-rewards">Monetary rewards</a></li>
+        
+            <li class="level-1"><a href="#what-will-the-prize-money-be-used-for">What will the prize money be used for?</a></li>
+        
+            <li class="level-1"><a href="#alternatives-to-thinklab">Alternatives to Thinklab</a></li>
+        
+            <li class="level-1"><a href="#team-and-resources">Team and resources</a></li>
+        
+            <li class="level-1"><a href="#conclusion">Conclusion</a></li>
+        
+            <li class="level-"><a href="#references">References</a></li>
+        
+    </ul>
+	</div>
+
+
+
+</div></div>
+
+
+	    </td>
+	  </tr></table>
+
+
+		</div>
+
+
+		
+	    	<div class="footer">
+<div style="background:#dedede;">
+	<div class="main-centered-div text-center" style="padding:20px;">
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#96fef3fafaf9d6e2fefff8fdfaf7f4b8f5f9fb"><span class="__cf_email__" data-cfemail="7d15181111123d0915141316111c1f531e1210">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+	</div>
+</div>
+<div class="main-footer">
+	<div class="main-centered-div">
+
+<table class="full-width"><tr>
+	<td class="footer-nav">
+
+        <div class="foot-head">Explore</div>
+        <a href="/proposals">Proposals</a><br>
+        <a href="/projects">Projects</a><br>
+        <a href="/publications">Article discussion</a><br>
+        <a href="/discussion">All discussion</a><br>
+        <a href="/topics">Topics</a><br>
+        <!-- <a href="/funders">Funders</a><br> -->
+        <a href="/funding">Funding opportunities</a><br>
+
+	</td>
+	<td class="footer-nav">
+
+        <!-- <div class="foot-head">Help &amp; feedback</div>	 -->
+        <!-- <div class="foot-head">Intro</div>
+        <a href="/benefits/for-science">Why</a><br>
+        <a href="/how-it-works">How it works</a><br>
+
+<br> -->
+
+        <div class="foot-head">Community</div>
+        <a href="/leaderboard">Leaderboard</a><br>
+        <a href="/p/meta">Thinklab Meta</a><br>
+				<a href="/help/faq">Help</a><br>
+				<!-- <a href="/new-project">Start a proposal</a><br> -->
+        <!-- <a href="/benefits/proposal">Benefits</a><br> -->
+        <!-- <a href="/funding">Get funded</a><br> -->
+        <!-- <a href="/participate">Become a contributor</a><br> -->
+        <!-- <a href="/for-funders">For science funders</a><br> -->
+        <!-- <a href="/for-institutions">For institutions</a><br> -->
+
+	</td>
+	<td class="footer-nav">
+
+
+
+        <div class="foot-head">About</div>
+        <a href="/about">Overview</a><br>
+        <a href="/benefits">Benefits</a><br>
+        <a href="/how-it-works">How it works</a><br>
+        <a href="/about/story">Our story</a><br>
+        <a href="/blog">Our blog</a><br>
+        <a href="/about/jobs">Join the team</a><br>
+        <br>
+
+        <!-- <div class="foot-head">Help</div>
+        <a href="/help">Help</a><br>
+		 -->
+
+
+	</td>
+	<td class="footer-nav">
+		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
+		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<br><br>
+		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
+
+	</td>
+
+</tr></table>
+
+</div>
+</div>
+</div>
+
+		
+
+	</div>
+
+
+  <script></script>
+  <script>
+  var MEDIA_URL = 'https://think-lab.s3.amazonaws.com/m/';
+  var STATIC_URL = 'https://think-lab.s3.amazonaws.com/s/';
+  var page_is_authenticated = false;
+  var page_page = '';
+  var page_profile_id = undefined;
+</script>
+
+
+
+	<!-- Note different script type. MUST come before MathJax.js -->
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	        "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"],
+	                        scale: 110, linebreaks: { automatic:true },
+	                        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+	        tex2jax: { inlineMath: [ ["$$", "$$"], ["\\(","\\)"] ],
+	                    displayMath: [ ["$$$","$$$"], ["\\[", "\\]"] ],
+	                    processEscapes: true,}
+	            });
+
+	</script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://think-lab.s3.amazonaws.com/s/dist/main.min.js"></script>
+  
+
+
+
+  
+	
+
+    
+    
+<script>
+$(function() {
+  recordHit('document', 12);
+});
+</script>
+
+
+    
+
+
+
+    
+
+
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>

@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08CV1taQlkRXEdFAz0WFFNIRVVcOkVcU049BxNcWw==","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":158}</script>
+    <title>Proposal: Pathways4Life: Crowdsourcing Pathway Modeling from Published Figures</title>
+	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
+    <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/highlightjs/github.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/css.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/bootstrap-multiselect.css" />
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
+    
+    
+    
+    
+  
+    <meta name="citation_doi" content="10.15363/thinklab.a3">
+    <meta name="citation_title" content="Pathways4Life: Crowdsourcing Pathway Modeling from Published Figures [proposal]">
+    <meta name="citation_online_date" content="June 9, 2015">
+    <meta name="citation_author" content="Alexander Pico">
+    <meta name="citation_journal_title" content="Thinklab">
+    <meta name="citation_publisher" content="Thinklab">
+  
+
+    
+
+
+	<!-- GoogleAnalytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-48550230-1', 'thinklab.com');
+	ga('require', 'displayfeatures');
+	
+	ga('send', 'pageview');
+
+	</script>
+
+
+
+
+
+
+</head>
+<body >
+  <form id="form_action" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+</form>
+
+	
+
+	<div class="body-wrapper">
+
+		
+
+
+<!-- <div style="height:5px;background-image:url('https://think-lab.s3.amazonaws.com/s/img/top-bg.gif');"></div> -->
+<div class="gradient">
+	<div class="main-centered-div header-container">
+
+<table class="full-width" style="height:60px;"><tr>
+	<td style="width:200px;vertical-align:middle;padding-bottom:15px;">
+		<a href="/" style="font-weight:normal;color:#212121;"><img src="https://think-lab.s3.amazonaws.com/s/img/logo.png" width="160"></a>
+	</td><td style="vertical-align:middle;text-align:left;padding-top:6px;width:100%;padding-left:40px;">
+		<ul id="not-search-block"  class="main-header">
+
+
+			
+
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/proposals">Proposals</a></li>
+						<li><a href="/projects">Projects</a></li>
+						<li><a href="/publications">Article discussion</a></li>
+						<li><a href="/discussion">All discussion</a></li>
+					</ul>
+				</li>
+				<li><a href="/leaderboard">Leaderboard</a></li>
+
+			
+				<li><a href="/about">About</a></li>
+			
+
+
+		</ul>
+
+    <ul id="search-block" class="main-header" style="display: none; margin-right: 30px;">
+        <li class="full-width">
+            <form method="get" action="/search">
+			<div class="input-group full-width">
+				<input name="q" type="text" class="form-control search-input">
+			</div>
+            </form>
+        </li>
+    </ul>
+
+	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
+		<ul class="main-header pull-right" style="padding-left: 0;">
+    		
+                <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+            
+
+        </ul>
+    </ul>
+	</td>
+</tr></table>
+
+<!-- <div id="global-search-div" class="main-centered-div" style="display:none;">
+	<input type="text" value="" class="thread-search form-control" placeholder="Search" data-action="/discussion">
+</div> -->
+
+	</div>
+</div>
+
+		
+	  
+
+
+
+	  
+
+
+		
+
+		<div class="dark-head"><div class="main-centered-div">
+
+			
+
+	
+
+
+	<div class="header-object-type"></div>
+
+	
+			<a class="btn btn-lg follow-link btn-follow pull-right active tt-top" style="margin-left:20px;" title="Follow project discussion" data-id="8" data-ctype="project" data-is-following="false">&nbsp;</a>
+	
+
+	<h2 class="header-object-name">Pathways4Life: Crowdsourcing Pathway Modeling from Published Figures</h2>
+
+	
+	<div class="project-team">
+		<a href='/u/alexanderpico'>Alexander Pico</a>
+		 <!-- &nbsp; &nbsp; doi:<a href="https://doi.org/10.15363/thinklab.8">10.15363/thinklab.8</a> -->
+	</div>
+	
+
+		<!-- <div class="project-team">
+			<b>DOI:</b> <a href="https://doi.org/10.15363/thinklab.8">10.15363/thinklab.8</a>
+		</div> -->
+
+		
+			<div class="project-team">
+			<div class="proj-funding">
+				<b>Funding opportunity:</b>
+				
+					<a href="/funding/3/proposals">Big Data to Knowledge (BD2K) Advancing Biomedical Science Using Crowdsourcing and Interactive Digital Media (UH2)</a>
+				
+			</div>
+			</div>
+		
+
+	<div class="project-team">
+		
+		<div class="proposal-status proposal-status-lg proposal-status-awaiting-funder">Awaiting Funder</div>
+		
+		
+		
+	</div>
+
+
+
+
+	
+
+
+	<!-- <div class="project-team">
+		
+	</div> -->
+
+    <ul class="nav nav-tabs project-nav" style="margin-top:25px;">
+
+		
+
+		
+
+    
+
+		
+	    
+	        <li class="active"><a href="/p/pathways4life/proposal">Proposal</a></li>
+	    
+	    
+		
+
+		<li><a href="/p/pathways4life/discussion"><span class="nav-fig">10</span>Discussions</a></li>
+
+		
+			<li><a href="/p/pathways4life/leaderboard"><span class="nav-fig">5</span>Reviewers</a></li>
+		
+
+		
+
+		
+
+
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown"><span style="opacity:0.5">More <span class="caret"></span></span></a>
+            <ul class="dropdown-menu" style="font-size:13px;background-color:#819ec8">
+
+				
+
+				
+
+            <li><a href="/p/pathways4life/followers"><span class="nav-fig">5</span>Followers</a></li>
+            </ul>
+        </li>
+
+			
+
+    </ul>
+
+
+
+		</div></div>
+		
+		<div class="main-centered-div" style="margin-top:40px;padding-bottom:340px">
+	    
+
+	
+	<div class="alert alert-info"><div class="main-centered-div">This is a revision from Sept. 8, 2015, 10:15 a.m. <b><a href="/p/pathways4life/proposal">Current version</a></b></div></div>
+	
+
+  
+
+  
+    
+        
+      
+  
+
+<!--  -->
+
+
+  
+
+
+
+
+
+    <table class="project-table"><tr>
+      <td class="main-table-content">
+
+
+        
+
+        
+			     <h1 class="page-title">Proposal</h1>
+        
+
+			  
+
+<div class="document-body">
+
+  <div id="document_body"><h1 id="research-strategy">RESEARCH STRATEGY</h1>
+
+<h2 id="significance">Significance</h2>
+
+<p>Pathway information is immensely useful for analyzing and interpreting large-scale omics data <span class="citation">[<a href="/doi/10.1038/ng1109" class="citation" data-key="10.1038/ng1109">1</a>, <a href="/doi/10.1371/journal.pbio.1000472" class="citation" data-key="10.1371/journal.pbio.1000472">2</a>]</span>. Pathway analysis software for general use was developed to meet the challenge of analyzing and interpreting high-throughput transcriptomics data. After the commercialization of microarrays, pathway analysis tools such as GenMAPP <span class="citation">[<a href="/doi/10.1038/ng0502-19" class="citation" data-key="10.1038/ng0502-19">3</a>]</span>, Pathway Tools <span class="citation">[<a href="/doi/10.1093/bioinformatics/18.suppl_1.s225" class="citation" data-key="10.1093/bioinformatics/18.suppl_1.s225">4</a>]</span>, and Ingenuity (www.qiagen.com/ingenuity) proliferated. These tools ultimately rely on knowledge bases of pathway models. In this grant, we stress the distinction between pathway figures, which are drawn purely for illustration purposes in a graphical file format (e.g., jpg, gif, png) and pathway models, which contain standard identifiers and semantics that can be mapped to external resources in a structured file format (e.g., xml, owl, json). Aligned with the broader BD2K initiative, this proposal sets out to transform the wealth of information currently trapped in countless figure images (big data) into properly modeled pathways amenable to analysis and research (knowledge).</p>
+
+<p>Eight years ago, we conceived of WikiPathways to bring a new approach to the task of collecting, curating and distributing pathway models <span class="citation">[<a href="/doi/10.1371/journal.pbio.0060184" class="citation" data-key="10.1371/journal.pbio.0060184">5</a>, <a href="/doi/10.1093/nar/gkr1074" class="citation" data-key="10.1093/nar/gkr1074">6</a>]</span>. Like other pathway knowledgebases, such as KEGG <span class="citation">[<a href="/doi/10.1093/nar/28.1.27" class="citation" data-key="10.1093/nar/28.1.27">7</a>]</span> and Reactome <span class="citation">[<a href="/doi/10.1093/nar/gkq1018" class="citation" data-key="10.1093/nar/gkq1018">8</a>]</span>, WikiPathways manages a wide range of canonical metabolic, regulatory, and signaling pathways (<a href="#VennHuman">Figure 1</a>). The pathway creation and editing tools we use to centrally curate content, however, are the same ones we embedded into the MediaWiki platform and make available to anyone at wikipathways.org. Crowdsourcing the tasks involved in curation enables WikiPathways to manage more updates, tap into more diverse domain experts, and service specialized research communities (<a href="#CurationActivity">Table 1</a>). WikiPathways hosts any pathway model that is of interest to any individual researcher. </p>
+
+<a name="VennHuman"></a><div class="figure" figure-id="VennHuman">
+                <table><tr><td style="width:50%">
+                    <div class="figure-content"><img src="http://think-lab.s3.amazonaws.com/m/figures/4.png"></div>
+                </td><td style="width:50%">
+                    
+            <div class="signature-2">
+                <div class="figure-title">Figure 1. Proportional Venn Diagram of Human Pathway Resources</div>
+                <div class="figure-description"><p>The overlap of unique human genes (numbers) of the pathway models at WikiPathways (red), Reactome (green) and KEGG (yellow). While each resource maintains some exclusive content, the bulk is represented in a common set of canonical pathways (center, blue). Identifiers from each resource were collected in May 2015 and converted to Ensembl in order to make this comparison.</p></div>
+            </div>
+        
+                </td></tr></table>
+            </div>
+
+<a name="CurationActivity"></a><div class="figure" figure-id="CurationActivity">
+            <div class="signature-3">
+                <div class="figure-title">Table 1. Curation Activity of Pathway Resources</div>
+                <div class="figure-description"><p>Estimates of curation activity for WikiPathways, Reactome and KEGG, including examples of specialized domains captured by crowdsourcing at WikiPathways. Reactome statistics are based on their <a href="http://wiki.reactome.org/index.php/Reactome_Calendar">archive of editorial calendars</a>. KEGG statistics are based on <a href="http://www.kegg.jp/kegg/docs/upd_map.html">their update history</a> and <a href="http://www.kanehisa.jp/en/people.html">Kanehisa lab membership</a>.</p></div>
+            </div>
+        <div class="figure-content"><table class="table markdown-table"><thead><tr><th>Curation Activity</th><th>WikiPathways</th><th>Reactome</th><th>KEGG</th></tr></thead><tbody><tr><td>Updated pathways in past year</td><td>1048 (&gt;3,200 edits)</td><td>62</td><td>16 (peak year was 2009 at 71)</td></tr><tr><td>Unique contributors in past year</td><td>208</td><td>77</td><td>est. ~11 (i.e., half of Kanehisa lab)</td></tr><tr><td>Canonical metabolic, regulatory, signaling, and disease pathways</td><td>&#10004;</td><td>&#10004;</td><td>&#10004;</td></tr><tr><td>Stem cell and tissue differentiation pathways</td><td>&#10004;</td><td></td></tr><tr><td>Extracellular RNA pathways</td><td>&#10004;</td><td></td></tr><tr><td>Micronutrient pathways</td><td>&#10004;</td><td></td></tr><tr><td>Curated (not inferred) pathways for fly, chicken, and Arabidopsis</td><td>&#10004;</td><td>&#10004; third-party sites</td></tr><tr><td>Curated (not inferred) pathways for mouse, cow, zebrafish, yeast, plants, E. coli, tuberculosis, etc.</td><td>&#10004;</td><td></td></tr></tbody></table></div></div>
+
+<p>We are collaborating with Reactome to convert and host their human content for crowdsourced curation and distribution. Thus, despite the yellow portion in <a href="#VennHuman">Figure 1</a> (the KEGG-only content that is not programmatically accessible without a license), WikiPathways is an ideal resource from which to launch a new, ambitious crowdsourcing initiative. Despite our efforts and the tremendous effort by all pathway knowledge bases over the past decade, most pathway information is still published solely as static, arbitrarily drawn images&#8212;isolated, inert representations of knowledge that cannot readily be reused or remixed in future studies.</p>
+
+<p>A survey of ~4000 published pathway figures highlights the challenges we propose to address. A PubMed Central (PMC) image search using the keyword &#8220;signaling pathway&#8221; generates over 40,000 results. Visual inspection of the first 5000 results, from publications spanning 2000&#8211;2015, revealed that 3985 (79.7%) contain a pathway image; the remainder contained only the word &#8220;pathway&#8221; in their captions. We then performed optical character recognition (OCR) using two parallel approaches: Adobe Acrobat Text Recognition (www.adobe.com) and Google&#8217;s Tesseract (code.google.com/p/tesseract-ocr). We cross-referenced the extracted text results against all known HGNC human gene symbols <span class="citation">[<a href="/doi/10.1093/nar/gku1071" class="citation" data-key="10.1093/nar/gku1071">9</a>]</span>, including aliases and prior symbols, to assess the potential of these images to inform the curation of human and orthologous pathways. Acrobat and Tesseract each extracted over ~2300 HGNC symbols; ~730 (~32%) contained new information, human genes, and orthologs not captured in any pathway for any species at WikiPathways. Further, these approaches found significantly different sets of symbols&#8212;each with its own uniquely trained OCR method&#8212;such that the combined results provide greater extraction counts across all categories: 3187 HGNC symbols in total and 1087 (34%) new to WikiPathways (<a href="#HGNC">Figure 2</a>, green).</p>
+
+<a name="HGNC"></a><div class="figure" figure-id="HGNC"><div class="figure-content"><img src="http://think-lab.s3.amazonaws.com/m/figures/6.png"></div>
+            <div class="signature-1">
+                <div class="figure-title">Figure 2. Recognized HGNC Symbols versus WikiPathways Content</div>
+                <div class="figure-description"><p>(A) Of 3187 recognized HGNC symbols extracted from 3985 pathway images, 878 (28%) matched symbols on human pathways at WikiPathways (blue), 1222 (38%) matched symbols on orthologous pathways at WikiPathways (red); 1087 (34%) are completely novel with respect to WikiPathways (green). (B) Individual counts per pathway using Google&#8217;s Tesseract OCR method (Adobe Acrobat results are very similar, not shown). The stacked bar charts are sorted by total and novel counts for all pathways where at least one HGNC symbol was recognized, using the same color coding as panel A. </p></div>
+            </div>
+        </div>
+
+<p>Several caveats to this survey suggest that even more new pathway information can be extracted from published images. (1) Another 38% of extracted symbols (<a href="#HGNC">Figure 2</a>, red) are found only on nonhuman pathways and thus may still represent novel human pathway content. (2) The OCR methods were used &#8220;out-of-the-box&#8221; and not trained on pathway images, and the images were not pre-processed. Thus there is a significant opportunity to increase total extraction counts. (3) Since we considered only 5000 of 40,000 results from only a single pathway-related search term, the search result space is much greater. (4) This survey ignored the interactions shown in the images. Thus, even the 28% of symbols that overlap with current human pathways (<a href="#HGNC">Figure 2</a>, blue) may provide new interaction content. These caveats far outweigh the potential for false positives in this survey. (1) About 5.5% of extracted symbols are dictionary words that might not represent human genes in a pathway (e.g., BIG, CELL, HOOK, MASS). (2) Some occurrences of extracted symbols might be peripheral to the image and not part of the pathway. (3) Each OCR method has an inherent false-positive rate of &lt;5% [@ 10.1109/icdar.2007.4376991], which is only partially mitigated by the narrow focus on HGNC cross-referenced hits.</p>
+
+<p>It is difficult to estimate the total number of new human gene symbols in the entire corpus of published pathway images. The proportion of new genes must plateau&#8212;new results giving diminishing returns&#8212;as the total number of known genes in pathways is approached. But for perspective, even if we were to only consider the first 3985 images and conservatively estimate the average number of genes per pathway image to be 7, and generously estimate the false positive rate to be as high as 20%, then at a proportion of 34% we would expect ~6100 new genes. <strong>This would almost double the count of unique human genes at WikiPathways today&#8212;the equivalent of 6 years of work at current crowdsourcing rates.</strong> The effort would also greatly expand upon the interactions and biological context for practically all the genes in WikiPathways. As detailed in our data sharing plan, all of this new knowledge will be available in multiple formats, including BioPAX and RDF, and distributed to a wide range of independent resources through channels already established by the WikiPathways project, including Pathway Commons <span class="citation">[<a href="/doi/10.1093/nar/gkq1039" class="citation" data-key="10.1093/nar/gkq1039">10</a>]</span>, <a href="www.ncbi.nlm.nih.gov/biosystems">NCBI</a> and Network2Canvas <span class="citation">[<a href="/doi/10.1093/bioinformatics/btt319" class="citation" data-key="10.1093/bioinformatics/btt319">11</a>]</span>, which is a LINCS-BD2K project.</p>
+
+<p>Can the state of current pathway knowledge bases really be so poor that this minor fraction of published pathways images could have such a large effect? Here, again, the survey set of PMC pathway figures is illustrative. Despite the combined efforts of KEGG, Reactome, SBML, SBGN, WikiPathways, and even Ingenuity to provide pathway models as publication-quality images over the past decade, we counted only 230 images from any of these sources in our sample set of 3985 pathway figures. No other modeled formats were seen in appreciable number. Evidently, <strong>the vast majority of pathway images (over 94%) are arbitrarily drawn with illustration software</strong>, with little to no consistency in visual lexicon or layout and without reference to standard identifiers, interaction types, or contextual semantics.</p>
+
+<h2 id="innovation">Innovation</h2>
+
+<p>Clearly, a wealth of novel pathway information is trapped in published figures. The next challenge: how to efficiently extract this information and model it as biological knowledge. Computational approaches alone have failed to fully automate this process, which is no surprise given the wide diversity among the images. Likewise, human efforts have fallen short, both at the level of central curation teams (it&#8217;s a massively distributed problem, after all) and at the level of individual researchers who choose PowerPoint and Illustrator over freely available pathway modeling standards and tools. This challenge is particularly well suited for a computer-assisted, human-crowdsourced solution. We propose to develop the Pathways4Life platform as such an innovative solution. <strong>The Pathways4Life platform combines image processing, text recognition, and cutting-edge pathway modeling software together with scalable infrastructure for content management and tunable game mechanics to facilitate the rapid modeling of pathway images through human crowdsourced tasks.</strong> Each component derives from existing research projects and technologies&#8212;the innovation lies in bringing them together to address an ongoing biomedical challenge at an unprecedented rate.</p>
+
+<p>In Aim 1, we are following in the footsteps of other groups who tackled the problem of parsing and indexing figures from the scientific literature. Yale Image Finder <span class="citation">[<a href="/doi/10.1093/bioinformatics/btn340" class="citation" data-key="10.1093/bioinformatics/btn340">12</a>]</span> indexed over 1.5 million open-access images, but they parsed only the captions and not the text embedded in the images. Michael Baitaluk, et al. fine tuned an OCR method to parse entire pathways to generate BiologicalNetworks.org <span class="citation">[<a href="/doi/10.1093/bioinformatics/bts018" class="citation" data-key="10.1093/bioinformatics/bts018">13</a>]</span>. This work will certainly inform our optimization work in Aim 1. Unfortunately, the models from this project were never released in a community standard format, and are no longer publically available. Regardless, even with optimization, the results were limited to 1012 pathways from ~25,000 images, of which 87% were considered to be high quality. The only human input in this process was a &#8220;like/don&#8217;t like&#8221; button and comment form. So, <strong>the real innovation we propose is to not rely solely on computational OCR, but rather to couple it from the start with a human crowdsourcing component.</strong> The OCR results are intended to lower the barrier to entry for participants, giving them a handful of recognized nodes to build upon and in the process learn how to add the remaining nodes.</p>
+
+<p>The technical innovation in Aims 2, 3, and 4 has less to do with individual technologies (relational databases, Python/Django, JavaScript, etc.) and more to do with the modular, extensible architecture, which will support iterative, agile development. <strong>This approach allows us to roll out early iterations of the platform and enables others to leverage the same framework for a wide range of crowdsourcing challenges.</strong> For example, swap in an indexed set of articles and a text highlighting tool and you would have a platform for crowdsourcing text annotation or semantic knowledge extraction, with tunable game mechanics built-in. The goal of the technology is to streamline the display, aggregation, and valuation of tasks. Embedded in this platform will be a customized version of our pathway modeling software (described in Aim 2) that will simplify the human tasks associated with pathway curation down to the barest minimum. Combined with the assistance of pre-parsed nodes from Aim 1, the curation experience will be made effortless&#8212;even enjoyable&#8212;and will far exceed the capabilities of the current WikiPathways toolset.</p>
+
+<p>The WikiPathways project is already contributing to a paradigm shift in modeling biomedical knowledge. Rather than relying solely on a centralized group of curators, we have engaged a relatively broad spectrum of researchers to contribute pathway information in their areas of expertise. This proposal aims to shift the paradigm even further. By analogy to the limitations of a centralized group that the WikiPathways project overcame by enabling all active researchers, we propose to overcome the limitations of active researchers (e.g., their number and available time) by enabling the general public. The scope and timescale of this approach will have a dramatic impact on the rate and limits of new knowledge in the form of pathway models. By scaling up the pathway image collection to 16,000 and extrapolating the sample set results (4 x 6100 = 24,400), we predict that we will be inside the region of diminishing returns (w.r.t. unique genes because there are only so many), allowing us to prioritize our selection of pathways to crowdsource based on organism, density of novel genes and biological contexts (Aim 1).  <strong>This collection will contain more unique human genes than all current pathway archives combined. The modeling of this collection would thus approach the goal of having at least one representation of every human gene that is in a known pathway context.</strong> This will lead to entirely new metrics for pathway resources, as we go on to target the full diversity of interactions and contexts for genes, as well as splice variants, miRNA, metabolites, drugs, etc. The impact on the number of interactions modeled from this collection will be even greater, as novel interactions are captured even for non-novel nodes in pathway images. More broadly, the platform has the potential to make a lasting impact on how pathway modeling as well as other knowledge extraction is performed, shifting the focus closer and closer to the source, to capture this information in sync with the act of publication.</p>
+
+<h2 id="approach">Approach</h2>
+
+<p>We propose four aims. First, we will collect, process, and classify pathway images from the open-access literature. The classification step will allow us to prioritize images based on curation goals (e.g., novel genes and disease contexts) and difficulty (both human and computational). The second aim will be to develop an engaging interactive digital media platform for presenting these images to human participants with pre-annotated nodes (from OCR results) and simple tasks, such as connecting existing nodes and adding new nodes. The third aim will focus on the crowdsourcing effort, including recruiting participants and &#8220;tuning&#8221; their experience by adjusting for difficulty level, regulating point systems and visual feedback (e.g., animations), as well as by communicating scientific accomplishments. The fourth aim will entail the transformation of data from the crowdsourced tasks into confirmed pathway models. Statistical analyses will automatically feedback to the prior aim of prioritization and experience tuning to drive activity toward completion and accuracy. Community review and curation of the results will lead to their dissemination via multiple open-standard formats and communication channels, including WikiPathways, Pathway Commons (BioPAX), and linked data (RDF). </p>
+
+<h3>Aim 1: Collect, Process, and Classify Pathway Images</h3>
+
+<p>We implemented an efficient process to maximize collection of pathway images from PMC publication figures as part of the sample analysis described above. The process starts with a query into the PMC image search feature. Results are returned as HTML, which is parsed to download the full-size figure image files and generate an annotation file for each image. The annotation file, containing figure caption, author names, article title, and article hyperlink, will allow us to present critical contextual information during the crowdsourcing stage. It will also be used to index images by author and to support focused keyword searches (e.g., for images relating to particular diseases). This process will scale to encompass a broad range of queries to collect diverse and high-value pathway image file sets. We plan to collect a set of 16,000 pathway images in the first iteration of Aim 1, approximately 4x the size of the sample set described above.</p>
+
+<p>Also as part of the sample analysis, we began to explore text-extraction software. We have already scripted the application of Adobe Acrobat and Tesseract to generate extracted text file sets. These are useful for assessing the results in terms of recognizable gene symbol counts. But these programs also provide positional information for each block of extracted text. We will use this information to generate JSON models of nodes, preserving the annotation and position from the original image. This will allow us to overlay an interactive layer of modeled nodes onto the original pathway figures (see Aim 2). We will also improve the out-of-the-box performance of these programs. As an actively developed, open-source effort, Tesseract, in particular has considerable potential for improvement. To both programs, we will add a common image pre-processing step that uses ImageMagick (www.imagemagick.org) to increase contrast, adjust orientation, and remove noise (e.g., other graphics) from a copy of the image. We will also use OpenCV <span class="citation">[<a href="/doi/10.1145/2184319.2184337" class="citation" data-key="10.1145/2184319.2184337">14</a>]</span> to identify and optimize regions of text in the image prior to OCR. Other methods are available to isolate, orient, and filter &#8220;objects&#8221; that may contain recognizable text <span class="citation">[<a href="/doi/10.1093/bioinformatics/bts018" class="citation" data-key="10.1093/bioinformatics/bts018">13</a>, <a href="/doi/10.1093/bioinformatics/btp318" class="citation" data-key="10.1093/bioinformatics/btp318">15</a>, <a href="/doi/10.1109/bsec.2011.5872319" class="citation" data-key="10.1109/bsec.2011.5872319">16</a>, <a href="/doi/10.1186/2041-1480-5-10" class="citation" data-key="10.1186/2041-1480-5-10">17</a>]</span>. This is a worthwhile area to explore, considering the Difficulty Matrix on our sample set of 3985 images (<a href="#DifficultyMatrix">Figure 3</a>). Fortunately, the Easy-Easy corner of the matrix (top left) contains a large proportion of pathway figure images, which can be targeted in early rounds of our crowdsourcing effort. However, half of the images are in the Easy-Hard quadrant (easy for human, hard for computer; top right), meaning that any improvements in automatic text extraction will result in having more pathways that are ready and amenable for human processing. The lower half of the matrix includes such small percentages that we can simply ignore it for the purposes of this proposal. Of course, the difficulty level is not really binary, so we can leverage the gradient of difficulty in the human scale, for example, to rank the pathways for display to a gradient of participants from novice to expert.</p>
+
+<a name="DifficultyMatrix"></a><div class="figure" figure-id="DifficultyMatrix">
+                <table><tr><td style="width:50%">
+                    <div class="figure-content"><img src="http://think-lab.s3.amazonaws.com/m/figures/7.png"></div>
+                </td><td style="width:50%">
+                    
+            <div class="signature-2">
+                <div class="figure-title">Figure 3. Difficulty Matrix for Human and Computer Parsing of Pathway Images</div>
+                <div class="figure-description"><p>Examples of images that are easy for humans (top row), hard for humans (bottom row), easy for computers (left column), and hard for computers (right column). The percentages of pathways in each quadrant were estimated by inspecting the 3985 sample images described in the text. Red highlights the &#8220;Easy-Easy&#8221; corner.</p></div>
+            </div>
+        
+                </td></tr></table>
+            </div>
+
+<p>The independent difficulty levels for humans and computers are just one example of how images will be classified. We will also assess the potential gene content per image based on the automatically extracted text. As we did with the sample set, we will contrast these gene sets with those already captured in properly modeled pathways. Given the set of novel genes, we will classify images based on the proportion and absolute number each pathway represents (<a href="#HGNC">Figure 2</a>B, green). This will allow us to define high-value targets for the crowdsourcing effort&#8212;those images that will add the most new unique genes at the highest rate to pathway knowledge bases. We will also classify pathway images by the overrepresented GO terms and disease associations in their gene sets. Classification by disease, for example, will allow us to prioritize not only generally but also specifically for crowdsourcing efforts that target a single disease or research area. Even in cases where most of the genes are not novel, the interactions and contextual information that will be modeled are just as likely to impact subsequent research.</p>
+
+<p>The product of this aim is an ever-growing database of pathway images, annotated not only with source information but also with extracted gene symbols, multiple dimensions of functional classifications, and a JSON data overlay ready to be rendered and made interactive in Aim 2.</p>
+
+<h4>Strategic Vision</h4>
+
+<p>The FOA points out that this work is expected to be iterative. The work we propose covers the first iteration from conceptual design to established demonstration. Each section of the plan will include a Strategic Vision subsection like this to describe a plan for subsequent iterations on this work.</p>
+
+<p>Beyond scouring html results for published pathway images, the longer-term strategy should be to get closer and closer to the source. The Pathways4Life platform could be extended to allow journal editors to manage inputs. For example, they could directly populate the figures to be processed by the crowd in sync with the publishing process, even as a way of promoting a new article. In this way, they would learn to appreciate the need for providing editorial feedback to authors concerning the legibility of pathway figures, making them more amenable to computational processing. In the final iteration, the authors themselves should find these modeling tools so easy and useful that they will model pathways from the start.</p>
+
+<h3>Aim 2: Develop an Interactive Digital Media Platform</h3>
+
+<p>We began to explore this approach in 2007 with the WikiPathways project <span class="citation">[<a href="/doi/10.1371/journal.pbio.0060184" class="citation" data-key="10.1371/journal.pbio.0060184">5</a>, <a href="/doi/10.1126/science.320.5881.1289b" class="citation" data-key="10.1126/science.320.5881.1289b">18</a>, <a href="/doi/10.1038/455022a" class="citation" data-key="10.1038/455022a">19</a>]</span>. Today, my group is in Year 3 of 5 of the first R01 for WikiPathways development (GM100039). We are currently rolling out a JavaScript replacement of the Java Applet, called pvjs (pathvisiojs), which converts our xml pathway models into a JSON model and renders it as SVG. The user can interact with the rendered view by clicking on nodes (e.g., genes, proteins, metabolites) and interactions to pull up information panels driven by the use of standard identifiers. In edit mode, users can add new identifiers, reposition nodes, and draw new interactions. Beyond these immediate functions, we designed pvjs with a view toward specialization for educational, publishing, and even game possibilities. The first step in our development process for pvjs was to synthesize a set of best practices by reviewing the architectures of 40 relevant libraries and frameworks, including d3.js, Cytoscape.js, AngularJS, SVG-edit, VISIBIOweb, and biographer. The insights we gained led us to a modularized, model-view-controller (MVC) architectural pattern that integrates virtual DOM capabilities for fast performance and easy extensibility. We use an agile development process in which new features are broken into their smallest independently useful components and released frequently to ensure a tight coupling of user and developer goals and expectations. This proposal will be the first realization of this potential for extensibility.</p>
+
+<p>A specialized version of pvjs will be a critical component of the Pathways4Life platform. For this proposal, we will describe the unique requirements, refactoring, and new development that will make up the overall implementation plan for the platform.</p>
+
+<p><strong>Backend database and control logic</strong>&#8212;We will design and host a database to contain image, annotation, and JSON file references, with indexed classification values and various progress-tracking metrics. These entries will map to participant, node, and interaction tables in the database. The schema will support queries to cache specific subsets of content for targeted events (e.g., with a disease focus). Indexed classification values will also be used in dynamic queries to determine the next pathway image to show a given user. The skill level of participants and the point value of nodes and interactions will be updated in their respective tables in rounds of activity (e.g., per pathway, set of pathways, or even per day), depending on performance profiling.</p>
+
+<p>A basic Python/Django web framework will be implemented to form template-based queries and views to serve content to the customized pvjs tool and to update the database with new contributions and calculated activity metrics. For example, as a participant adds nodes and interactions, they will accumulate corresponding points and attain a higher skill level. The next pathway (or set of pathways) shown to this participant will be based on their skill level and the difficulty class of the pathway. Simple calculations based on the participant&#8217;s actions with a given pathway (e.g., accumulation of points) will be done in the client browser and returned to server after each session. On the server side, we will process aggregated data across all sessions to assign confidence scores for each node and interaction, updating their database records. This strategy will allow us to distribute low-CPU, frequent computation at scale with the number of participants while also restricting server-side, moderate-CPU computation to fixed periods that we can adjust according to demand and resources.</p>
+
+<p>We have sufficient infrastructure in place to develop and test the platform. As a modular set of virtualized services, we will deploy them using Amazon Web Services (AWS) to host large-scale beta and production crowdsourcing events toward the end of the funding period. By then we will have demonstrated the viability, scalability, and initial popularity of our approach, which will inform the strategy plan in future iterations.</p>
+
+<p><strong>Customized Pvjs</strong>&#8212;Pvjs will require customization to work as a component of the Pathways4Life platform. The modular architecture of pvjs will readily accommodate customization. The new modules will add support for attribute-value accessory data and an SVG visual feedback layer (<a href="#Interface">Figure 4</a>).</p>
+
+<a name="Interface"></a><div class="figure" figure-id="Interface"><div class="figure-content"><img src="http://think-lab.s3.amazonaws.com/m/figures/8.png"></div>
+            <div class="signature-1">
+                <div class="figure-title">Figure 4. Pathways4Life Interactive Digital Media Interface</div>
+                <div class="figure-description"><p>A series of views during a crowdsourced task. (A) a pathway image and SVG-based modeling layer with OCR-identified nodes (boxed) and indications of available tasks and their point values, (B) the interface mid-task, (C) a completed task with client-side calculated points and visual feedback.</p></div>
+            </div>
+        </div>
+
+<p>The first module will leverage the extensibility of our existing JSON format for pathway information by defining attributes to handle pre-calculated point values and confidence scores for each pathway, node, and interaction. These values will be retrieved from the backend database described above and combined with standard pathway information from the XML model. As part of the JSON model, this information will be available to the SVG layer and the browser. The module will be designed to work with any third-party database and any set of arbitrary attribute-value pairs. Thus, the same module could also be used to represent any accessory data, such as public or user-provided omics datasets, linkouts to custom resources, or metadata from other modeling standards, such as SBML.</p>
+
+<p>The next module will build upon the current SVG rendering and interaction capabilities of pvjs. Currently, it supports only basic representations of nodes and interactions. To make pvjs more engaging and interactive, we will design and implement more visually engaging objects and activity feedback. For example, color and animation effects can be used to indicate the point value of a particular node or interaction, and the act of forming a new or confirmed interaction could be accompanied by a visually rewarding glow, pulse, or burst effect. The module will define the mapping between available JSON attributes and SVG elements. The mapping pattern can be reused to provide custom graphics and animations for any defined set of accessory data, such as gradient-fill colors for omics datasets, hover effects for custom linkouts, and support for other graphical standards, such as SBGN.</p>
+
+<p>A potential challenge that could arise is the performance of SVG for highly complex diagrams. SVG supports dynamic diagrams with up to about 5000 to 10,000 elements, depending on the browser. This limitation is unlikely to present a problem, because the vast majority of pathways are more focused than the average raw network visualization. But if the goals of the project shift such that support is required for additional elements, pvjs is designed so that some or all of the SVG rendering can be replaced with technologies suited for rendering extremely large numbers of elements, such as webGL or canvas. For example, it would be possible to render completed portions of a pathway using SVG, on top of which additional elements, such as a large number of candidate pathway elements generated by automated techniques, could be rendered as a webGL layer. This could be done using an open-source library such as Pixi.js, a performance-focused HTML5 rendering engine that defaults to webGL but falls back to canvas to support older browsers.</p>
+
+<h4>Strategic Vision</h4>
+
+<p>The backend database and control logic elements will be designed to scale with demand and hardware resources. Thus, future iterations will require minimal refactoring as computer, storage, and bandwidth resources are increased. During the initial funding period, we will coordinate with other science crowdsourcing efforts to leverage any common platforms we might contribute to in order to reach these goals faster and more sustainably. For example, during an NIH-hosted informational webinar on this FOA, the potential grantees formed a Google Group for Crowdsourced Science Games that will also be a source of collaborative idea sharing, development, and outreach strategies. In particular, for many years, we have collaborated on open science and crowdsourcing strategies with Drs. Su and Good at Scripps. They are exploring a crowdsourcing platform built around their Mark2Cure effort (mark2cure.org). We will share our requirements and feature ideas with them and other groups to work together wherever possible on a platform that could support our independently developed tools. In the iterations that follow this funding period, we will be in a position to consider longer-term strategies for hosting Pathways4Life. There are already enthusiastic hosting services for science-related games and crowdsourcing efforts, such as Purpose Games, Games for Change, and Zooniverse. Such hosting opportunities will continue to diversify and grow in number.</p>
+
+<p>In terms of pvjs customization, we have outlined a strategy that will meet the immediate goals of this proposal, to produce an engaging interactive digital media experience, while also enabling a wide range of future project ideas. We routinely accept patches and extensions to our open-source projects, especially in areas where we have established a framework for extensions and clear programing patterns. Thus, in addition to our own further customization of JSON attributes and mapped SVG graphics, we anticipate that Pathways4Life will be a popular framework for other groups to extend for their own custom use cases. In particular, we would work with colleagues in the SBGN community to support their standard visual lexicon for pathways through an iteration of this module strategy.</p>
+
+<h3>Aim 3: Crowdsource Tasks and Engage Participation</h3>
+
+<p>Participants will define nodes and interactions. To define an interaction, the participant clicks on an existing node to anchor the source (an active &#8220;rubber band&#8221; line will now track with the mouse position) and then clicks on a second node or another interaction to indicate the target (an interaction arrow will now be drawn). A list of interaction types will appear from which the participant must select to complete the task and move on. To define a node, the participant right-clicks on the image where the node should be added (e.g., on the name or symbol for a gene, protein, or metabolite that OCR failed to recognize), types the name or symbol (which triggers an autocomplete pvjs database lookup), and then selects the correct identity (a new node will then be drawn). Subsequent interactions to and from the newly added nodes can then be drawn. In this way, complete pathway images can be traced and effectively modeled by a series of these two easy-to-learn tasks.</p>
+
+<p>Each task will be associated with an adjustable point value. Tunable point values support the basic game mechanic of balancing the economy of player&#8217;s attention and time investment. For example, rare nodes and interactions will be worth more points than common ones already captured in the current archives of pathway models. This will allow us to tune the prioritization of novel information. The overall difficulty of a given pathway (i.e., per human difficulty scale in <a href="#DifficultyMatrix">Figure 3</a>) can also be a variable in calculating a task&#8217;s value, both to balance challenge and reward and to encourage skill building and return participation. Even the ordinality (1st...Nth) could be used to value nodes and interactions to encourage completion of a given pathway.</p>
+
+<p>To assess quality and confidence (see Aim 4), we will need to collect redundant information from multiple participants on any given task. We will do this in two ways: (1) by showing the same version of a pathway to multiple participants, excluding newly added nodes and interactions that have yet to be confirmed and (2) by allowing participants to right-click on existing nodes and interactions to contest the information, which would contribute to a confirmed rejection and removal of that information in future rounds. This strategy will also help address false-positive OCR results that generate inaccurate nodes. Again, tunable point values will be used to balance confirmation versus pioneering activity (e.g., by increasing the values for successive confirmations). And participants will gain/lose points post hoc based on the long-term confirmation/rejection status of their tasks. This tunable value will balance accuracy against speed. <a href="#TunableVariables">Table 2</a> summarizes the tunable economy of the platform via task point values, as well as when the calculation occurs.</p>
+
+<a name="TunableVariables"></a><div class="figure" figure-id="TunableVariables">
+            <div class="signature-3">
+                <div class="figure-title">Table 2. Tunable Variables</div>
+                <div class="figure-description"><p>Five examples of variables that can be tuned to shift activity with respect to various outcomes. The last column specifies when and where each variable would be evaluated with respect to tasks performed by participants.</p></div>
+            </div>
+        <div class="figure-content"><table class="table markdown-table"><thead><tr><th>Variable</th><th>Outcome</th><th>Computed</th></tr></thead><tbody><tr><td>Pathway difficulty</td><td>Skill building and return play</td><td>Server-side, before task</td></tr><tr><td>Rarity vis-&#224;-vis current models</td><td>Novel information capture</td><td>Server-side, before task</td></tr><tr><td>Ordinality per pathway</td><td>Completed pathways</td><td>Client-side, during task</td></tr><tr><td>Confirmation level</td><td>Confirmed pathways</td><td>Client-side, during task</td></tr><tr><td>Confirmed/Rejected status</td><td>Accurate pathways</td><td>Server-side, after task</td></tr></tbody></table></div></div>
+
+<p>The precise values assigned to each variable will be determined during initial &#8220;play testing&#8221; and periodically adjusted to match our evolving goals and crowd of participants. The tuning and balancing of game economies is standard practice in simulation and massively multiplayer online games, which share these same evolving properties. By building in these mechanisms from the start, we can seamlessly redirect attention to tasks we deem a priority, even as our priorities change. Changes to values will be determined by three mechanisms, each optimized to bring about a specific outcome: statistical analysis, direct feedback, and manual override. The first two are described in Aim 4. The third mechanism can simply be described as us intervening from time to time based on our observations of game play and outcome. Regardless of mechanism, the final key property of our task management strategy will be transparency. At any given time, participants will know the value of each task they perform by means of immediate visual feedback (e.g., a brief animation of the point value). They will also see their current total score and progress toward successive skill levels. At the end of each round (e.g., 10 tasks), we can apply bonus points (or deduct points) according to the ongoing server-side calculation of confirmed/rejected status of prior tasks and then display their current level. This highlighting of bonus points, and anticipation of leveling, will thus be directly associated with the importance of accuracy. Leveling will unlock more difficult pathways with greater point potential, etc. Each participant will progress through training levels as well, where the point systems are highlighted and pre-selected pathway images are used to demonstrate the tasks to be performed on the elements they will encounter. These simple game mechanics will provide sufficient incentive for a large, yet to be fully engaged population of people interested in purposeful games and science and disease-related crowdsourced tasks.</p>
+
+<p>The initial pool of participants and alpha testers will come from the open-source and open-science connections we have established and cultivated over the past decade. These include pathway modeling groups (e.g., BioPAX, SBML/SBGN) and our own WikiPathways, as well as our general network biology communities: NRNB, Cytoscape, and the NetBio COSI. Through WikiPathways, for example, we have designated over 40 external teams, each representing communities of pathway enthusiasts, including funding and advocacy agencies (California Institute for Regenerative Medicine, National Brain Tumor Society), research organizations and consortiums (Progenitor Cell Biology Consortium, Luxembourg Centre for Systems Biomedicine, Extracellular RNA Communication, The Cancer Genome Atlas), and research resources (SGD, WormBase, Science Commons, Sage Bionetworks). Relevant connections also include DREAM Challenges (dreamchallenges.org) and Crowdsourced Science Games (groups.google.com). Each of these efforts has existing communication channels (e.g., Google Groups, Twitter, Facebook, Google+, LinkedIn Groups, blogs, mailing lists, and conferences) that we can leverage to immediately reach tens of thousands of individuals. In the beta testing phase, we will leverage our contacts within educational institutions (high school, university, and post-graduate) to reach a broader audience than we normally would, given our current, specialist-focused toolset. In fact, based on the experience of contemporary science game efforts, we anticipate our audience will largely consist of nonspecialists. So, we will direct most of our attention to the communication channels that readily extend outside the walls of academia, such as popular social networks and general interest blogs. The outreach will focus on disease-focused messaging. The classification of pathways in Aim 1 will allow us to define sets of disease-related pathways and run focused campaigns.</p>
+
+<p>If we cannot engage a sufficiently large volunteer base in this fashion, we will use Amazon Mechanical Turk (AMT) to finish assessing the viability of our platform by the end of the funding period. The basic idea of AMT is to facilitate the distribution of tasks to a ready &#8220;army&#8221; of workers who receive micropayments per completed task. Since the Pathways4Life platform is designed to be deployed on AWS already (as described in Aim 2), we would only need to add a few calls to AMT&#8217;s application programming interface to send and retrieve task data as sets of name-value pairs <span class="citation">[<a href="http://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_ExternalQuestionArticle.html" class="citation" data-key="amazon">20</a>]</span>. The budget for AWS time and bandwidth would thus be shifted to AMT workers, giving us fewer months of hosted time, but guaranteed returns if outreach efforts fall short in this compressed time period.</p>
+
+<h4>Strategic Vision</h4>
+
+<p>In future iterations, we could add support for tasks to draw and identify subcellular compartments based on the provided pathway image, to indicate complexes and paralogs, and to tag pathways with ontology terms based on provided captions, titles, and links to the original paper. These data would greatly increase knowledge extracted from otherwise inert images. Our underlying JSON pathway model already accommodates subcellular compartment information and any ontology terms supported by NCBO&#8217;s BioPortal (bioportal.bioontology.org), including Pathway, Cell Type, and Disease ontologies. We would start with tags for high-priority information (e.g., Organism and Disease) that almost anyone could recognize. The tasks that require more than the most basic understanding of biology would be added later for advanced participants. In this proposal, for simplicity and space limitations, we focus on the two most essential tasks&#8212;nodes and interactions&#8212;but these additional tasks are relatively straightforward to implement and will likely make it into a version of the platform late in Year 2.</p>
+
+<p>We outline a minimal set of game mechanics for this initial iteration of the project, but we envision the potential for rapid iterations in this direction without any changes to the infrastructure or architecture. The visual nature of the source material&#8212;the pathway images that authors, graphic designers, and editors have already taken care in producing&#8212;can be woven together with creative storytelling to make a more engaging and broadly appealing experience. For example, these pathway images can be framed as navigable maps discovered from ancient alien civilizations. The act of tracing and interpreting thus becomes one of exploration and risk/reward adventure. In additional to valuing individual nodes and interactions, we can also calculate points and generate animations based on the extent of connectivity across an entire pathway, thus encouraging activity along extended paths. A progression of simple animations depicting flowing water, marching ants, migrating animals and colonizing humans, for example, could play out over the graph as it grows and gains confirmation status. We can assign landmark names to sets of gene symbols to carry along the story, reserving special categories of landmarks for the rare genes we value most. The confirmation/rejection then translates directly into reward/risk in the adventure of accurately navigating these maps. And the discovery of more advanced landmarks leads to the progression to more difficult pathway maps. Social features, such as teams competing in tournaments or in conquering of new territory, could also be layered onto the tasks, together with compelling storytelling.</p>
+
+<h3>Aim 4: Assemble Results: Transforming Big Data into Knowledge</h3>
+
+<p>The output of the components described so far will be a stream of JSON snippets that represent the individual changes (or &#8220;diffs&#8221;) made per task. Each snippet will be associated with a particular pathway image and participant. As structured data in a predefined JSON format, they can readily and reliably be compared. With the collection periodically indexed by pathway image identifier, for example, we can quickly confirm that a particular snippet is novel or an Nth confirmation of a prior result. The comparison of snippets representing new nodes will require a tolerance factor to account for minor deviations in positioning. But numerical interval comparison is still a trivially fast calculation. These data then feed into a calculated confidence score for the snippet as well as a potential bonus score for the participant. The equation for calculating confidence scores will be the sum of observations (+1 for confirmation, &#8211;1 for rejection, o), weighted by the relative skill level of the participant (0&#8211;1, w). We can include a multiplier for negative observations to convey the extra effort in making a negative call (e.g., 2, m), and assess this sum against a threshold (e.g., 10, T) to ultimately mark a snippet as confirmed (e.g., S&#8805;1).</p>
+
+<p><span class="math">$$S =&#8721;(owm)_i /T $$</span></p>
+
+<p>We will periodically reassess the modifier and threshold values based on manual assessment of confirmed results. When a snippet is confirmed, it will be excluded from the pool of confirmable entities on that particular pathway, unless a rejection observation produces a subthreshold score or the content is reset (e.g., due to a change in thresholding). When all the snippets on a particular pathway are confirmed, the model will be queued for manual review before being added to the WikiPathways archive for distribution. A model might be rejected, for example, if a portion of the image has not been modeled (i.e., missed by both OCR and crowdsourcing). In these cases, we can simply add to back to the pool pending additional confirmed snippets or even initiate a few new nodes ourselves before re-releasing it. We expect each resulting pathway will require some level of editing and final touching-up. The progression from computational OCR, to crowdsourcing of simple tasks, to final assembly will ultimately pass through WikiPathways review stage. However, this type of curation activity is routinely performed by WikiPathways staff and volunteers, and does not pose a significant burden on this grant. Community review and curation of the results will lead to their dissemination via multiple open-standard formats and communication channels, including but not limited to WikiPathways, Pathway Commons (BioPAX), and linked data (RDF).</p>
+
+<p>Aggregate statistics on snippet confidence scores per pathway will also be used to statistically assess the tuning variables described in Aim 3. Ideally, we want to see an average score near 0.5 during the bulk of the crowdsourcing activity for a given pathway, indicating a balance of initiating and confirming activity. While it is less than 0.5, we can increase the point values associated with Confirmation level to encourage confirmation activity; and while it is greater than 0.5, including when it is near completion, we can decrease the value to encourage finding new content in the image. If average alone is not sufficiently sensitive, we can also determine the slope of a sigmoidal fit to a plot of sorted scores per pathway and similarly use it in a function to adjust Confirmation level. This tuning can be completely automated by using confidence scores to calculate point values for each node and interaction in the model before being served to pvjs, where the points will be displayed to the next participant. In the same way, the values associated with Ordinality per pathway can be adjusted by direct feedback to the model and display to the participant based on a simple count of snippets detected thus far. And if the rejection rates are deemed to be too high (another number we can readily count per pathway or across the entire collection), we can increase the penalty assessed per round and use these intermissions to point out mistakes, make suggestions, and even direct participants to repeat training levels. </p>
+
+<p>During this funding period, we plan to complete at least one disease-focused crowdsourcing event using the Pathways4Life platform. Following the precedent set by science competitions and other crowdsourcing events, we will spearhead a publication together with all participants as co-authors, focusing on the characterization of the extracted data and the resource of new knowledge that has been generated. Where possible, we will coordinate with journal editors before these events to incentivize involvement and stress both the attribution and responsibility that comes with Pathways4Life participation.</p>
+
+<h4>Strategic Vision</h4>
+
+<p>Following this first iteration, we will continue to organize events around specific diseases and research areas. We will also continue to feed in new pathway images from more extensive searches and new publications. We will work with publishers to submit pathway images themselves or provide clear author instructions. In this manner, we envision a two-fold solution to the pathway modeling problem: (1) we will get closer and closer to the source of published pathway images while simultaneously capturing prior published work and (2) we will be putting easy-to-use pathway modeling tools in the hands for more and more people. The post hoc modeling tool proposed here is based on the same technology we provide for de novo modeling of original pathways. Thus, our larger strategic goal is for researchers to draw their pathways in modeling tools in the first place and deliver the stylized versions as a byproduct for publication figures.</p>
+
+<p>We also envision an evolution of the digital media platform and tools as the community of participants evolves, both technically (e.g., tablet and mobile support) and interactively (e.g., more layers of gamification and story-based abstraction). These iterations will continue to lower the barrier for broader participation in the curation of biomedically relevant pathway knowledge. </p>
+
+<h2 id="milestones-metrics-and-benchmarks">Milestones, Metrics, and Benchmarks</h2>
+
+<p>The following timeline outlines a set of milestones, including a few key metrics and benchmarks along the way to measure progress on our aims and longer-term goals.  </p>
+
+<ul><li>Feb-Apr 2016:<ul><li>Refine image preprocessing and optimize OCR results</li><li>Amass collection of 16,000 pathway image</li></ul></li><li>May-Jul 2016: <ul><li>Process, OCR and classify 16,000 pathway images. </li><li>Identify novel genes</li><li>Identify at least 3 disease-related subsets</li></ul></li><li>May-Oct 2016: <ul><li>Initial development of database, control logic and web framework to host pathway images and their metadata</li><li>Initial customization of pvjs to work with expanded JSON model, tasks and API development</li></ul></li><li>Nov-Jan 2017:<ul><li>Completed participant registration and account system; added to database schema</li><li>Prototype of Pathways4Life platform hosted on local server for early alpha testing</li></ul></li><li>Feb-Mar 2017:<ul><li>Completed SVG and style designs for tasks, points, animations and round summaries</li><li>Completed client- and server-side calculations for assessing snippet diffs and points; added to database schema</li></ul></li><li>Apr-June 2017:<ul><li>Feature complete beta version hosted on local server for live testing</li><li>Launch official campaign to engage participants for beta testing and upcoming First Event</li></ul></li><li>July-Aug 2017: <ul><li>Testing, debugging, user feedback, initial round of variable tuning</li><li>Deploy to Amazon Web Services</li></ul></li><li>Sept-Nov 2017:<ul><li>Host First Event on carefully selected disease-relevant set of pathways</li><li>Tune variables and collect feedback</li><li>Disseminate new pathway knowledge in multiple formats via WikiPathways</li><li>Publish results with participants as co-authors</li></ul></li><li>Dec-Jan 2018:<ul><li>Host Second Event; or run continuously; or employ Amazon Mechanical Turk</li><li>Continue to tune, collect feedback and disseminate new pathway knowledge</li><li>Assess platform; publish on technology, initial impact, future events and future developments&#8195;</li></ul></li></ul>
+
+<p></p></div>
+
+  
+
+  
+  
+</div>
+
+
+		  </td>
+	    <td class="sidebar project-sidebar">
+
+  			
+
+
+
+
+
+
+
+
+	<div class="details">Published</div>
+	
+		June 9, 2015<br>
+	
+	<span style="font-size:12px;">(Last updated Jan. 13, 2016)</span><br>
+
+	<a style="font-size:12px;" href="/doc/3/revisions">Revision history</a>
+
+
+
+
+<div class="details">Views</div>
+<span style="font-size:20px;">478</span>
+
+<div class="details">Topics </div>
+<a class='tag' href='/topics/crowdsourcing'>Crowdsourcing</a><a class='tag' href='/topics/pathways'>Pathways</a><a class='tag' href='/topics/image-analysis'>Image Analysis</a><a class='tag' href='/topics/game-design'>Game Design</a>
+
+
+<div class="details">Cite this as</div>
+<span style="font-size:12px;">
+Alexander Pico (2015) Pathways4Life: Crowdsourcing Pathway Modeling from Published Figures [proposal]. <i>Thinklab.</i> doi:<a href='https://doi.org/10.15363/thinklab.a3'>10.15363/thinklab.a3</a>
+</span>
+
+<div class="details">License</div>
+<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0;width:88px;height:31px;" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></p>
+
+
+<br><br>
+
+<div class="affix-container">
+<div class="affix-box">
+
+
+</div></div>
+
+
+	    </td>
+	  </tr></table>
+
+
+		</div>
+
+
+		
+	    	<div class="footer">
+<div style="background:#dedede;">
+	<div class="main-centered-div text-center" style="padding:20px;">
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#95fdf0f9f9fad5e1fdfcfbfef9f4f7bbf6faf8"><span class="__cf_email__" data-cfemail="224a474e4e4d62564a4b4c494e43400c414d4f">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+	</div>
+</div>
+<div class="main-footer">
+	<div class="main-centered-div">
+
+<table class="full-width"><tr>
+	<td class="footer-nav">
+
+        <div class="foot-head">Explore</div>
+        <a href="/proposals">Proposals</a><br>
+        <a href="/projects">Projects</a><br>
+        <a href="/publications">Article discussion</a><br>
+        <a href="/discussion">All discussion</a><br>
+        <a href="/topics">Topics</a><br>
+        <!-- <a href="/funders">Funders</a><br> -->
+        <a href="/funding">Funding opportunities</a><br>
+
+	</td>
+	<td class="footer-nav">
+
+        <!-- <div class="foot-head">Help &amp; feedback</div>	 -->
+        <!-- <div class="foot-head">Intro</div>
+        <a href="/benefits/for-science">Why</a><br>
+        <a href="/how-it-works">How it works</a><br>
+
+<br> -->
+
+        <div class="foot-head">Community</div>
+        <a href="/leaderboard">Leaderboard</a><br>
+        <a href="/p/meta">Thinklab Meta</a><br>
+				<a href="/help/faq">Help</a><br>
+				<!-- <a href="/new-project">Start a proposal</a><br> -->
+        <!-- <a href="/benefits/proposal">Benefits</a><br> -->
+        <!-- <a href="/funding">Get funded</a><br> -->
+        <!-- <a href="/participate">Become a contributor</a><br> -->
+        <!-- <a href="/for-funders">For science funders</a><br> -->
+        <!-- <a href="/for-institutions">For institutions</a><br> -->
+
+	</td>
+	<td class="footer-nav">
+
+
+
+        <div class="foot-head">About</div>
+        <a href="/about">Overview</a><br>
+        <a href="/benefits">Benefits</a><br>
+        <a href="/how-it-works">How it works</a><br>
+        <a href="/about/story">Our story</a><br>
+        <a href="/blog">Our blog</a><br>
+        <a href="/about/jobs">Join the team</a><br>
+        <br>
+
+        <!-- <div class="foot-head">Help</div>
+        <a href="/help">Help</a><br>
+		 -->
+
+
+	</td>
+	<td class="footer-nav">
+		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
+		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<br><br>
+		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
+
+	</td>
+
+</tr></table>
+
+</div>
+</div>
+</div>
+
+		
+
+	</div>
+
+
+  <script></script>
+  <script>
+  var MEDIA_URL = 'https://think-lab.s3.amazonaws.com/m/';
+  var STATIC_URL = 'https://think-lab.s3.amazonaws.com/s/';
+  var page_is_authenticated = false;
+  var page_page = '';
+  var page_profile_id = undefined;
+</script>
+
+
+
+	<!-- Note different script type. MUST come before MathJax.js -->
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	        "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"],
+	                        scale: 110, linebreaks: { automatic:true },
+	                        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+	        tex2jax: { inlineMath: [ ["$$", "$$"], ["\\(","\\)"] ],
+	                    displayMath: [ ["$$$","$$$"], ["\\[", "\\]"] ],
+	                    processEscapes: true,}
+	            });
+
+	</script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://think-lab.s3.amazonaws.com/s/dist/main.min.js"></script>
+  
+
+
+
+  
+	
+
+    
+    
+<script>
+$(function() {
+  recordHit('document', 3);
+});
+</script>
+
+
+    
+
+
+
+    
+
+
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>

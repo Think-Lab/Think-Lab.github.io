@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08CV1taQlkRXEdFAz0WFFNIRVVcOkVcU049BxNcWw==","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":281}</script>
+    <title>Proposal: More Inclusive Open Science with Language Workbench Technology</title>
+	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
+    <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/highlightjs/github.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/css.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/bootstrap-multiselect.css" />
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
+    
+    
+    
+    
+  
+    <meta name="citation_doi" content="10.15363/thinklab.a16">
+    <meta name="citation_title" content="More Inclusive Open Science with Language Workbench Technology [proposal]">
+    <meta name="citation_online_date" content="Feb. 29, 2016">
+    <meta name="citation_author" content="Fabien Campagne, Alexander Shatalin">
+    <meta name="citation_journal_title" content="Thinklab">
+    <meta name="citation_publisher" content="Thinklab">
+  
+
+    
+
+
+	<!-- GoogleAnalytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-48550230-1', 'thinklab.com');
+	ga('require', 'displayfeatures');
+	
+	ga('send', 'pageview');
+
+	</script>
+
+
+
+
+
+
+</head>
+<body >
+  <form id="form_action" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+</form>
+
+	
+
+	<div class="body-wrapper">
+
+		
+
+
+<!-- <div style="height:5px;background-image:url('https://think-lab.s3.amazonaws.com/s/img/top-bg.gif');"></div> -->
+<div class="gradient">
+	<div class="main-centered-div header-container">
+
+<table class="full-width" style="height:60px;"><tr>
+	<td style="width:200px;vertical-align:middle;padding-bottom:15px;">
+		<a href="/" style="font-weight:normal;color:#212121;"><img src="https://think-lab.s3.amazonaws.com/s/img/logo.png" width="160"></a>
+	</td><td style="vertical-align:middle;text-align:left;padding-top:6px;width:100%;padding-left:40px;">
+		<ul id="not-search-block"  class="main-header">
+
+
+			
+
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/proposals">Proposals</a></li>
+						<li><a href="/projects">Projects</a></li>
+						<li><a href="/publications">Article discussion</a></li>
+						<li><a href="/discussion">All discussion</a></li>
+					</ul>
+				</li>
+				<li><a href="/leaderboard">Leaderboard</a></li>
+
+			
+				<li><a href="/about">About</a></li>
+			
+
+
+		</ul>
+
+    <ul id="search-block" class="main-header" style="display: none; margin-right: 30px;">
+        <li class="full-width">
+            <form method="get" action="/search">
+			<div class="input-group full-width">
+				<input name="q" type="text" class="form-control search-input">
+			</div>
+            </form>
+        </li>
+    </ul>
+
+	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
+		<ul class="main-header pull-right" style="padding-left: 0;">
+    		
+                <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+            
+
+        </ul>
+    </ul>
+	</td>
+</tr></table>
+
+<!-- <div id="global-search-div" class="main-centered-div" style="display:none;">
+	<input type="text" value="" class="thread-search form-control" placeholder="Search" data-action="/discussion">
+</div> -->
+
+	</div>
+</div>
+
+		
+	  
+
+
+
+	  
+
+
+		
+
+		<div class="dark-head"><div class="main-centered-div">
+
+			
+
+	
+
+
+	<div class="header-object-type"></div>
+
+	
+			<a class="btn btn-lg follow-link btn-follow pull-right active tt-top" style="margin-left:20px;" title="Follow project discussion" data-id="21" data-ctype="project" data-is-following="false">&nbsp;</a>
+	
+
+	<h2 class="header-object-name">More Inclusive Open Science with Language Workbench Technology</h2>
+
+	
+	<div class="project-team">
+		<a href='/u/fac2003'>Fabien Campagne</a>, <a href='/u/alexandershatalin'>Alexander Shatalin</a>
+		 <!-- &nbsp; &nbsp; doi:<a href="https://doi.org/10.15363/thinklab.21">10.15363/thinklab.21</a> -->
+	</div>
+	
+
+		<!-- <div class="project-team">
+			<b>DOI:</b> <a href="https://doi.org/10.15363/thinklab.21">10.15363/thinklab.21</a>
+		</div> -->
+
+		
+			<div class="project-team">
+			<div class="proj-funding">
+				<b>Funding opportunity:</b>
+				
+					<a href="/funding/7/proposals">The Open Science Prize</a>
+				
+			</div>
+			</div>
+		
+
+	<div class="project-team">
+		
+		<div class="proposal-status proposal-status-lg proposal-status-awaiting-funder">Awaiting Funder</div>
+		
+		
+		
+	</div>
+
+
+
+
+	
+
+
+	<!-- <div class="project-team">
+		
+	</div> -->
+
+    <ul class="nav nav-tabs project-nav" style="margin-top:25px;">
+
+		
+
+		
+
+    
+
+		
+	    
+	        <li class="active"><a href="/p/LWT_FOR_OPEN_SCIENCE/proposal">Proposal</a></li>
+	    
+	    
+		
+
+		<li><a href="/p/LWT_FOR_OPEN_SCIENCE/discussion"><span class="nav-fig">1</span>Discussions</a></li>
+
+		
+
+		
+
+		
+
+
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown"><span style="opacity:0.5">More <span class="caret"></span></span></a>
+            <ul class="dropdown-menu" style="font-size:13px;background-color:#819ec8">
+
+				
+
+				
+
+            <li><a href="/p/LWT_FOR_OPEN_SCIENCE/followers"><span class="nav-fig">2</span>Followers</a></li>
+            </ul>
+        </li>
+
+			
+
+    </ul>
+
+
+
+		</div></div>
+		
+		<div class="main-centered-div" style="margin-top:40px;padding-bottom:340px">
+	    
+
+	
+
+  
+
+  
+    
+        
+      
+  
+
+<!--  -->
+
+
+  
+
+
+
+
+
+    <table class="project-table"><tr>
+      <td class="main-table-content">
+
+
+        
+            <div class="instructions">
+              <p>This proposal has been submitted to the <a href="http://openscienceprize.org">Open Science Prize</a>. </p>
+
+<p>We are also posting the proposal on ThinkLab as a test of the platform. We welcome feedback on this proposal.</p>
+              <table class="references table-td-5" style="display:none;"></table>
+            </div>
+        
+
+        
+			     <h1 class="page-title">Proposal</h1>
+        
+
+			  
+
+<div class="document-body">
+
+  <div id="document_body"><p><strong>Executive Summary</strong> <br>While most scientists could benefit from using computational tools in their research, many scientists are not sufficiently computationally savvy to use current advanced tools. An ongoing challenge of Open Science is to enable the broadest community of scientists to use the computational tools necessary to formally document analyses, or manage data, and achieve routine reproducibility of analyses. </p>
+
+<p>Language workbench technology (LWT) was pioneered by JetBrains (https://www.jetbrains.com) to facilitate the in-house development of integrated development environments for programmers. In 2004, JetBrains open-sourced the MPS language workbench (https://www.jetbrains.com/mps/) to encourage the adoption of LWT in other domains.  Our team has recently shown that LWT is effective to help biologists and clinicians who are not computer savvy perform data analysis. For instance, tools developed with LWT make it possible to train most biologists and clinicians, in just a few hours, how to analyze data about the expression of genes. We have so far taught close to 200 biologists with languages designed with LWT.</p>
+
+<p>Our experience strongly suggests that LWT is a methodology that can provide a much needed bridge between non computational scientists and computational experts. LWT can facilitate many activities necessary for a widespread adoption of Open Science, supporting routine and seamless reproducibility of data analysis, as well as allowing more technical freedom to test innovations. Importantly, we believe that with LWT, scientists will find it easier to engage in a more inclusive Open Science.</p>
+
+<p>We propose to (1) apply LWT to test novel ideas to record and credit scientists for contributions of software for data analysis and (2) teach the scientific community about this innovative technology. Our prototype will evaluate alternatives to citing only a few software tools in articles. We anticipate that demonstrating these innovations will inspire the design of future scholarly systems and help promote open-science.</p>
+
+<p><strong><a href="https://www.youtube.com/watch?v=HtN3hwvbR1c">Short introduction video</a></strong> (5 minutes)</p>
+
+<p><strong>Our Team.</strong> Our team is composed of an academic laboratory (Fabien Campagne&#8217;s lab, located at the Weill Cornell Medical College, in NYC, USA) and of the JetBrains MPS team (Alexander Shatalin&#8217;s group, at JetBrains Inc., Prague, Czech Republic). Our team strongly believes in and supports open-source, data sharing, and facilitating the process of Open Science by developing novel tools that empower engineers and scientists. Members of our team have practiced openness and Open Science for many years: JetBrains Inc. has been a strong industry contributor to open-source (JetBrains repositories have received more than 10,000 stars on GitHub). The Campagne laboratory also has a history of developing open-source bioinformatics software  and has embraced open-access journals <span class="citation">[<a href="https://doi.org/10.1371/journal.pone.0079871" class="citation" data-key="10.1371/journal.pone.0079871">1</a>, <a href="https://doi.org/10.7717/peerj.241" class="citation" data-key="10.7717/peerj.241">2</a>]</span> and preprints <span class="citation">[<a href="https://doi.org/10.7287/peerj.preprints.112v2" class="citation" data-key="10.7287/peerj.preprints.112v2">3</a>]</span> several years ago (both as an author and as a peer-reviewer and editor: Fabien Campagne serves as an associate editor for PeerJ). </p>
+
+<p><strong>Open Science.</strong> Open Science is likely to mean different things to different teams. For some, it means practicing science in a completely open way, from early data generation, through data analysis, up to the writing of interpretations for publication in open-access journals, or the deposition of data, and interpretations in  knowledge bases. Some groups, perhaps because they focus on clinical research projects and are cautious about protecting patient populations who do not have scientific or clinical skills, put more insistence on the second half of the scientific process: the publication and data deposition after scientists have built up confidence in their interpretation of the data and summarized the key aspects of the research. For us, Open Science is all these aspects, plus one. We think of Open also as a synonym of Inclusive, and hope for science that is more inclusive of the public, but also more inclusive of scientists across disciplines.</p>
+
+<p><strong>Our Long Term Goal.</strong> We strongly believe that Open Science is the future of scientific enquiry and aim to speed up its adoption by making it easier and more desirable to practice Open Science than it is to continue with the status quo. </p>
+
+<p><strong>The Challenge.</strong> Many scientists who would like to adopt Open Science processes in their labs face considerable difficulties because Open Science practices require a high amount of technical sophistication. While some individuals have mastered the current tools of Open Science, and championed its practice, we believe that many more scientists are finding it difficult to learn the technical skills that are necessary to open one&#8217;s science to the world.  </p>
+
+<p><strong>The Innovation.</strong> We propose to apply language workbench technology (LWT), fully supported by the JetBrains open-source <a href="https://www.jetbrains.com/mps/">Meta Programming System</a> (MPS), to help scientists with the daily practice of Open Science. The Campagne laboratory has recently demonstrated that LWT can be applied to help biologists with limited computational experience perform sophisticated data analyses that would have traditionally required programming or command line skills <span class="citation">[<a href="https://doi.org/10.1101/030254" class="citation" data-key="10.1101/030254">4</a>]</span>. Tools developed with LWT make it possible for biologists to fully participate to data analysis, which promotes inclusive science across disciplines.</p>
+
+<p><strong>Preliminary Results.</strong> We have shown that LWT makes it possible to design languages for data analysis (<a href="#MetaR_Figure">Figure 1</a>) and reproducible bioinformatics workflows/pipelines (<a href="#NextflowWorkbench_Figure">Figure 2</a>) that are easier to teach to biologists and clinicians than traditional approaches (see <span class="citation">[<a href="https://doi.org/10.1101/030254" class="citation" data-key="10.1101/030254">4</a>]</span>). In the <a href="http://metar.campagnelab.org/">MetaR</a> project, we have designed a simple data analysis language that can be taught to biologists with no programming experience in 2 hours and helps trainees call genes differentially expressed and create heatmap visualizations. We are obtaining similar results teaching NextflowWorkbench to biologists and clinicians (see <a href="#NextflowWorkbench_Figure">Figure 2</a>, and <span class="citation">[<a href="https://doi.org/10.1101/041236" class="citation" data-key="10.1101/041236">5</a>]</span>). These short training sessions are enabled by LWT and attention to detail during language design.</p>
+
+<a name="MetaR_Figure"></a><div class="figure" figure-id="MetaR_Figure"><div class="figure-content"><img src="http://think-lab.s3.amazonaws.com/m/figures/22.png"></div>
+            <div class="signature-1">
+                <div class="figure-title">Figure 1. Illustration of the MetaR data analysis language.</div>
+                <div class="figure-description"><p> This screen capture shows a differential expression analysis and creation of a heatmap visualization, two common analysis tasks in bioinformatics. Participants to the MetaR training sessions are taught how to perform this analysis with MetaR in less than 2 hours. This language was constructed with Language Workbench Technology (LWT) and was found to substantially accelerate the teaching of data analysis to beginners (biologists and clinicians). </p></div>
+            </div>
+        </div>
+
+<a name="NextflowWorkbench_Figure"></a><div class="figure" figure-id="NextflowWorkbench_Figure"><div class="figure-content"><img src="http://think-lab.s3.amazonaws.com/m/figures/23.png"></div>
+            <div class="signature-1">
+                <div class="figure-title">Figure 2. Illustration of the NextflowWorkbench pipeline language</div>
+                <div class="figure-description"><p>This screen capture shows an analysis workflow/pipeline that downloads short reads from the <a href="http://www.ncbi.nlm.nih.gov/sra">Short Read Archive at NCBI/NIH</a>, performs quality control on the read files, and estimates counts with <a href="https://pachterlab.github.io/kallisto/about.html">Kallisto</a> before producing a combined matrix of counts. The language to express this workflow was developed with LWT. We have started teaching biologists and clinicians how to develop such pipelines and found that we can teach beginners with no programming or command line experience how to assemble and run the pipeline of the screenshot on their laptop in 2 hrs. This short training time is possible because beginners can use the language as an interactive user-interface, and because we designed the language to seamlessly integrate with docker container technology. Container technology, when coupled with LWT allows beginners to run tools such as fastq-dump or Kallisto without having to know about software compilation and dependency management. We believe that combining these technologies can effectively solve what others have nicknamed the `dependency hell&#8217; (see <a href="https://docs.google.com/forms/d/10P299OB_cfwC7zyTBAdddo1Wh9py_vUGcTy-yczQoTU/viewanalytics">survey</a>). An added advantage of using container technology is that pipelines constructed with LWT and <a href="http://workflow.campagnelab.org/">NextflowWorkbench</a> are reproducible and portable <span class="citation">[<a href="https://doi.org/10.1101/041236" class="citation" data-key="10.1101/041236">5</a>]</span>.</p></div>
+            </div>
+        </div>
+
+<p>The Key Advantages of LWT for Data Analysis. LWT has several advantages for Data Analysis:</p>
+
+<ol><li>It can be used to develop computational languages that are easier to teach to biologists and clinicians than programming languages (see Figs 1&amp; 2). LWT makes science more inclusive across disciplines.</li><li>LWT removes the need for monolithic standardization or common specification. Instead, LWT languages can evolve from small individual contributions that work well together by design.</li><li>Languages can include warning and error messages that warn the analyst about very specific conditions. In contrast to programming languages whose compilers report mostly about low-level syntax errors, LWT errors can be defined in a language to warn the user about high-level semantic problems. Such warnings and errors are extremely useful to guide beginners, or remind expert users about conditions known to cause errors or unreliable results.</li><li>Languages developed with LWT can include graphical and tabular notations, or interactive user interface elements. This is particularly useful in scientific applications, as illustrated in Figure 1 and Supp File 1 &amp; 2.  </li><li>Languages developed with LWT can be tightly integrated with other technologies, as shown in Figure 2 with support for docker in the NextflowWorkbench. Such integrations can be presented in a natural way that makes it straightforward for biologists and clinicians to take advantage of otherwise very technical tools and technologies. Biologists who learn NextflowWorkbench need only a 5-minute introduction to docker before they can take advantage of a docker container to write workflows. </li><li>LWT supports source control systems, such as git, in a seamless manner that helps beginners use these tools (see <span class="citation">[<a href="https://doi.org/10.7287/peerj.preprints.511v2" class="citation" data-key="10.7287/peerj.preprints.511v2">6</a>, <a href="https://doi.org/10.7717/peerj.800" class="citation" data-key="10.7717/peerj.800">7</a>]</span>). Source control is a key component of Open Science. By keeping a trace of source control commits, scientists can document what analysis steps they have taken. They can diagnose and trace back problems while working on a study, retrieve specific versions of an analysis, and can release the commits openly at publication time to enables other scientists and the public to follow and understand how a study has been developed.</li></ol>
+
+<p><strong>LWT for Open Science.</strong> We think that several of the previous points can help scientist open their science because many scientists are struggling with the know-how and minutia required to practice Open Science. As Holly Bik (2015 keynote speaker at the Bioinformatics Open Source Conference) has put it:</p>
+
+<a name="HollyBik_Tweet"></a><div class="figure" figure-id="HollyBik_Tweet">
+                <table class="full-width" style="table-layout: fixed;"><tr><td style="width:50%">
+                    <div class="figure-content"><img src="http://think-lab.s3.amazonaws.com/m/figures/24.png"></div>
+                </td><td style="width:50%">
+                    
+            <div class="signature-2">
+                <div class="figure-title">Figure 3. Holly Bik's Tweet</div>
+                <div class="figure-description"></div>
+            </div>
+        
+                </td></tr></table>
+            </div>
+
+<p>Here, the ability of LWT to integrate many technologies, yet offer a seamless and consistent user interface, may enable completely new ways to develop tools to support Open Science. In this proposal, for instance, we will prototype a new way to record credit and associate it with analysis software. We believe that developing better ways to credit scientists and track contributions automatically could drive an accelerated adoption of Open Science. LWT makes it orders of magnitude faster to prototype such ideas and quickly evaluate their impact than would be possible with other techniques.   </p>
+
+<p><strong>Aims.</strong> In this proposal, we will develop a prototype that (1) pioneer new ways to track contributions and crediting contributors of scientific data analyses. This aim will evaluate new ideas to help crediting data analysts for their contributions to scientific studies. It will make it easier for scientists to share LWT analyses while at the same time helping contributors receive due credit for their work. <br>In aim (2), we will offer training workshops for LWT at other biomedical institutions. This aim will increase the visibility of this new technology and help accelerate its adoption at universities, medical colleges and biotech companies. One day training workshops will combine the MetaR and NextflowWorkbench training sessions currently taught at the Weill Cornell Medical College and extend them to describe the sharing of data analyses.</p>
+
+<p><strong>Originality.</strong> First, this proposal is original because it will use a technology (LWT) that is not widely known, yet is showing promise in addressing some of the pressing challenges of Open Science (e.g., portability, reproducibility, openness and inclusiveness towards the public and scientists in other disciplines). Second, this proposal is original because it aims to advance Open Science by changing how the contributions of individual scientists are recorded, preserved and presented to other scientists and the public.  Our team believes that Open Science will start to become mainstream when a majority of scientists have realized that openness gets them more credit than the alternatives.   </p>
+
+<p><strong>Innovations for recording scientific contributions and credit.</strong> We will start working on this aim in Phase I, and will continue to develop and refine the prototype in Phase II. The goal is to demonstrate new ways to (i) record contributions to data analysis in scientific studies and (ii) facilitate crediting scientists and data analysts who have contributed data analysis programs to a study (iii) help scientists and data analysts showcase their contributions and their impact on other studies. </p>
+
+<p><strong>Need for the innovation.</strong> We believe that the current approach to acknowledging data analysis contributions in scientific publications is not ideal. A first problem is that crediting somebody currently involves judgment calls that PIs make according to their understanding and appreciation of the work of others. A second problem is that credit is often given in the form of authorship or acknowledgement in a publication, and there is no efficient way for a scientist to gather an exhaustive list of all the studies that have used an analysis script or program. Given that various journals limit the maximum number of citations in an article and considering that some analyses require tens of tools, it may not be surprising that references about programs or data analysis tools are frequently dropped from a citation list.<br>Approach: scientific contributions and credit. We will address these problems as follows:</p>
+
+<ul><li>First, we will attach the identity of a data analyst to the programs that they create (analysts will need to opt-in by providing an <a href="http://orcid.org/">ORCID</a> identifier, or email). Once an analyst has enabled this feature, any analysis or program developed by this analyst will be tagged with contributor meta-data. Contrary to the common practice of signing programs in comment at the top of each file, LWT makes it possible to annotate every statement of an analysis. This is useful to preserve meta-data when statements are copied and pasted across analyses and to automatically merge meta-data for distinct contributions. </li><li>Second, we will implement the ability to publish an analysis to the web and to preserve contribution meta-data in the database. The web front-end will support publishing different versions of an analysis.</li><li>Third, to facilitate reuse, we will support downloading analysis programs directly from the web front-end into MPS. </li><li>Fourth, running an analysis on new data will optionally record usage in the web front-end (no details about the data being processed will be shared). This can be done automatically with LWT because we can control what happens when a user wants to execute an analysis. Records of analysis used and successfully completed with be made in the database and reflected on the web front-end immediately. This will make it possible for scientists to determine the popularity and usage of analysis programs developed with LWT and will help data analysts document the reuse of their contributions. </li><li>Fifth, the system will offer a unique DOI for each version of a published analysis. This DOI will make it possible for authors to include an electronic reference to a specific analysis in manuscripts, preprints and publications. We will encourage scientists to record this information in their manuscripts during the training workshops. Including the analysis DOI will clearly specify the details of how the analysis was conducted and provide a de facto mean for reviewers and future audience to know exactly how the analysis was conducted. We will work with NCBI to add this type of DOI in Medline data under the <a href="https://www.nlm.nih.gov/bsd/mms/medlineelements.html#si">Secondary Source ID</a> field. Contributions will be electronically discoverable to enable integration with third-parties (such as <a href="https://impactstory.org/">ImpactStory</a>).</li></ul>
+
+<p><strong>Publishing analyses to the web.</strong> LWT programs will be converted to <a href="https://www.w3.org/TR/SVG/">Scalable Vector Graphics</a> (SVG) format. SVG is an appropriate format to display LWT programs on the web because it supports graphics as well as text, is a vectorial format that can be printed at arbitrary resolutions, and <a href="http://caniuse.com/#search=svg">is well supported by most modern browsers</a>. SVG documents will be written to a database, either maintained by the team (either by JetBrains Inc. or the Campagne laboratory at the Weill Cornell&#8217;s Institute for Computational Biomedicine) or hosted by a cloud provider. A web-front end will be developed to serve the SVG at persistent URLs and provide search functionality over the documents. Deliverables will consist of (i) an MPS plugin that any user of the MPS LW can install. The plugin will support publishing one or more analyses to an SVG repository (in technical terms, we will support publishing arbitrary MPS solutions and languages). (ii) a set of docker containers and deployment instructions to configure a running instance of the public DB and web front-end (this will make it possible for others to host their own repository if they wish to do so). (iii) a running SVG repository, which we will maintain as a demonstration system for a minimum of 5 years.  </p>
+
+<p><strong>Technical feasibility.</strong> Writing text programs is currently a mainstream approach for data analysis. When writing an analysis with LWT, users are effectively assembling a data structure (and seeing parts of it in the MPS user interface). We will use this capability to extend these data structure with meta-data about who created and edited the analysis program. Construction of the web front-end has high feasibility because JetBrains is well versed in working with databases and web technology and because MPS already supports an <a href="https://confluence.jetbrains.com/display/MPSD30/Custom+Persistence+Cookbook">Application Programming Interface (API) for custom persistence</a>. Team members with JetBrains will provide expertise in the internal software architecture of MPS that will speed up the prototype. For web publishing of analyses, SVG documents will be rendered from MPS using code similar to that developed for the <a href="https://github.com/CampagneLaboratory/Editor2PDF">Editor2PDF</a> project (developed by Fabien Campagne to render LWT programs to PDF to inclusion in books and publications). </p>
+
+<p><strong>Training workshops.</strong> If we are recipients of a Phase I prize, we will advertise training workshops on the <a href="http://www.iscb.org/">ISCB</a> mailing list and seek institutions to host workshops. We will also contact directly past trainees who have taken the training at Weill Cornell and have now established their laboratory at other institutions (in the US and Europe). We will give a minimum of 5 one day training workshops (approximately one workshop a month in Phase I). We will aim to offer workshops on a first request basis, but may modify this order to reach a more diverse community in the US and Europe. Training sessions will continue throughout Phase II if we are recipient of the Prize. We will survey trainees post-training to gather feedback about whether the workshops fulfill expectations (see <a href="#Survey_Figure">Figure 4</a> for survey questions).  </p>
+
+<p><strong>Long-term sustainability.</strong> The MPS LW has been developed as an open-source project and maintained by JetBrains Inc. since 2004. The software is used internally by JetBrains to develop languages that make it easier to develop commercial products of JetBrains. For this reason, the MPS LW is a sustainable, industry funded, open-source project.  All software developed in this project will be released under the Apache 2.0 software license. Any publications about the prototype will be submitted to open-access journals (e.g., PeerJ, PLOS or BMC journals). </p>
+
+<a name="Survey_Figure"></a><div class="figure" figure-id="Survey_Figure"><div class="figure-content"><img src="http://think-lab.s3.amazonaws.com/m/figures/25.png"></div>
+            <div class="signature-1">
+                <div class="figure-title">Figure 4. Post-training anonymous survey</div>
+                <div class="figure-description"></div>
+            </div>
+        </div>
+
+<p>Supplementary File 1. <a href="https://www.youtube.com/watch?v=NnqqsqLkwdQ">MetaR and the NextflowWorkbench Video</a></p>
+
+<p>Supplementary File 2. <a href="https://www.youtube.com/watch?v=QHgHezQFKRY">NextflowWorkbench Getting Started Video</a></p>
+
+<p>Supplementary File 3. <a href="https://prezi.com/7boa3gjh7ole/more-inclusive-open-science-with-language-workbench-technology/">Full Prezi: Introduction to Proposal</a></p></div>
+
+  
+
+  
+    <h1 id="references">References</h1>
+    <table class="references table-td-5"><tr><td><a href='/doi/10.1371/journal.pone.0079871' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.1371/journal.pone.0079871'><a href='/doi/10.1371/journal.pone.0079871' class='pub-title'>Compression of Structured High-Throughput Sequencing Data</a><div class='pub-body'>Fabien Campagne, Kevin C. Dorff, Nyasha Chambwe, James T. Robinson, Jill P. Mesirov (2013) <i>PLoS ONE</i>. doi:<a class='pub-doi' href='https://doi.org/10.1371/journal.pone.0079871'>10.1371/journal.pone.0079871</a></div></div></td></tr><tr><td><a href='/doi/10.7717/peerj.241' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>2.</div></td><td><div class='doi-body' data-key='10.7717/peerj.241'><a href='/doi/10.7717/peerj.241' class='pub-title'>Composable languages for bioinformatics: the NYoSh experiment</a><div class='pub-body'>Manuele Simi, Fabien Campagne (2014) <i>PeerJ</i>. doi:<a class='pub-doi' href='https://doi.org/10.7717/peerj.241'>10.7717/peerj.241</a></div></div></td></tr><tr><td><a href='/doi/10.7287/peerj.preprints.112v2' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>3.</div></td><td><div class='doi-body' data-key='10.7287/peerj.preprints.112v2'><a href='/doi/10.7287/peerj.preprints.112v2' class='pub-title'>Composable languages for bioinformatics: the NYoSh experiment</a><div class='pub-body'>Manuele Simi, Fabien Campagne (2013) <i>PeerJ Inc.</i>. doi:<a class='pub-doi' href='https://doi.org/10.7287/peerj.preprints.112v2'>10.7287/peerj.preprints.112v2</a></div></div></td></tr><tr><td><a href='/doi/10.1101/030254' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>4.</div></td><td><div class='doi-body' data-key='10.1101/030254'><a href='/doi/10.1101/030254' class='pub-title'>MetaR: simple, high-level languages for data analysis with the R ecosystem</a><div class='pub-body'>Fabien Campagne, William ER Digan, Manuele Simi (2015) <i>Cold Spring Harbor Laboratory Press</i>. doi:<a class='pub-doi' href='https://doi.org/10.1101/030254'>10.1101/030254</a></div></div></td></tr><tr><td><a href='/doi/10.1101/041236' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>5.</div></td><td><div class='doi-body' data-key='10.1101/041236'><a href='/doi/10.1101/041236' class='pub-title'>NextflowWorkbench: Reproducible and Reusable Workflows for Beginners and Experts</a><div class='pub-body'>Jason P Kurs, Manuele Simi, Fabien Campagne (2016) <i>Cold Spring Harbor Laboratory Press</i>. doi:<a class='pub-doi' href='https://doi.org/10.1101/041236'>10.1101/041236</a></div></div></td></tr><tr><td><a href='/doi/10.7287/peerj.preprints.511v2' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>6.</div></td><td><div class='doi-body' data-key='10.7287/peerj.preprints.511v2'><a href='/doi/10.7287/peerj.preprints.511v2' class='pub-title'>Language workbench user interfaces for data analysis</a><div class='pub-body'>Victoria M Benson, Fabien Campagne (2015) <i>PeerJ PrePrints</i>. doi:<a class='pub-doi' href='https://doi.org/10.7287/peerj.preprints.511v2'>10.7287/peerj.preprints.511v2</a></div></div></td></tr><tr><td><a href='/doi/10.7717/peerj.800' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>7.</div></td><td><div class='doi-body' data-key='10.7717/peerj.800'><a href='/doi/10.7717/peerj.800' class='pub-title'>Language workbench user interfaces for data analysis</a><div class='pub-body'>Victoria M. Benson, Fabien Campagne (2015) <i>PeerJ</i>. doi:<a class='pub-doi' href='https://doi.org/10.7717/peerj.800'>10.7717/peerj.800</a></div></div></td></tr></table>
+  
+  
+</div>
+
+
+		  </td>
+	    <td class="sidebar project-sidebar">
+
+  			
+
+
+
+	
+
+
+
+
+
+
+
+
+<div class="review-box">
+
+		
+
+			<h1 style="margin-bottom:10px;"><div class="pull-left" style="font-size:18px;margin-right:5px;"><span class="glyphicon glyphicon-check"></span></div>Peer review</h1>
+
+			
+				<br>
+			
+
+		
+
+
+		
+
+		
+
+		<a href="/doc/16/review" class="btn btn-lg btn-primary full-width" style="margin-bottom:0px;">View Review</a>
+
+	
+
+</div>
+
+
+
+
+
+
+
+	<div class="details">Published</div>
+	
+		Feb. 29, 2016<br>
+	
+	<span style="font-size:12px;">(Last updated Feb. 27, 2016)</span><br>
+
+	<a style="font-size:12px;" href="/doc/16/revisions">Revision history</a>
+
+
+
+
+<div class="details">Views</div>
+<span style="font-size:20px;">177</span>
+
+<div class="details">Topics </div>
+<a class='tag' href='/topics/reproducibility'>Reproducibility</a><a class='tag' href='/topics/open-science'>Open science</a><a class='tag' href='/topics/open-science-prize'>Open Science Prize</a><a class='tag' href='/topics/data-analysis'>Data Analysis</a><a class='tag' href='/topics/scientific-contributions'>Scientific Contributions</a><a class='tag' href='/topics/workflows'>Workflows</a><a class='tag' href='/topics/language-workbench-technology'>Language Workbench Technology</a>
+
+
+<div class="details">Cite this as</div>
+<span style="font-size:12px;">
+Fabien Campagne, Alexander Shatalin (2016) More Inclusive Open Science with Language Workbench Technology [proposal]. <i>Thinklab.</i> doi:<a href='https://doi.org/10.15363/thinklab.a16'>10.15363/thinklab.a16</a>
+</span>
+
+<div class="details">License</div>
+<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0;width:88px;height:31px;" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></p>
+
+
+<br><br>
+
+<div class="affix-container">
+<div class="affix-box">
+
+
+</div></div>
+
+
+	    </td>
+	  </tr></table>
+
+
+		</div>
+
+
+		
+	    	<div class="footer">
+<div style="background:#dedede;">
+	<div class="main-centered-div text-center" style="padding:20px;">
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#deb6bbb2b2b19eaab6b7b0b5b2bfbcf0bdb1b3"><span class="__cf_email__" data-cfemail="523a373e3e3d12263a3b3c393e33307c313d3f">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+	</div>
+</div>
+<div class="main-footer">
+	<div class="main-centered-div">
+
+<table class="full-width"><tr>
+	<td class="footer-nav">
+
+        <div class="foot-head">Explore</div>
+        <a href="/proposals">Proposals</a><br>
+        <a href="/projects">Projects</a><br>
+        <a href="/publications">Article discussion</a><br>
+        <a href="/discussion">All discussion</a><br>
+        <a href="/topics">Topics</a><br>
+        <!-- <a href="/funders">Funders</a><br> -->
+        <a href="/funding">Funding opportunities</a><br>
+
+	</td>
+	<td class="footer-nav">
+
+        <!-- <div class="foot-head">Help &amp; feedback</div>	 -->
+        <!-- <div class="foot-head">Intro</div>
+        <a href="/benefits/for-science">Why</a><br>
+        <a href="/how-it-works">How it works</a><br>
+
+<br> -->
+
+        <div class="foot-head">Community</div>
+        <a href="/leaderboard">Leaderboard</a><br>
+        <a href="/p/meta">Thinklab Meta</a><br>
+				<a href="/help/faq">Help</a><br>
+				<!-- <a href="/new-project">Start a proposal</a><br> -->
+        <!-- <a href="/benefits/proposal">Benefits</a><br> -->
+        <!-- <a href="/funding">Get funded</a><br> -->
+        <!-- <a href="/participate">Become a contributor</a><br> -->
+        <!-- <a href="/for-funders">For science funders</a><br> -->
+        <!-- <a href="/for-institutions">For institutions</a><br> -->
+
+	</td>
+	<td class="footer-nav">
+
+
+
+        <div class="foot-head">About</div>
+        <a href="/about">Overview</a><br>
+        <a href="/benefits">Benefits</a><br>
+        <a href="/how-it-works">How it works</a><br>
+        <a href="/about/story">Our story</a><br>
+        <a href="/blog">Our blog</a><br>
+        <a href="/about/jobs">Join the team</a><br>
+        <br>
+
+        <!-- <div class="foot-head">Help</div>
+        <a href="/help">Help</a><br>
+		 -->
+
+
+	</td>
+	<td class="footer-nav">
+		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
+		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<br><br>
+		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
+
+	</td>
+
+</tr></table>
+
+</div>
+</div>
+</div>
+
+		
+
+	</div>
+
+
+  <script></script>
+  <script>
+  var MEDIA_URL = 'https://think-lab.s3.amazonaws.com/m/';
+  var STATIC_URL = 'https://think-lab.s3.amazonaws.com/s/';
+  var page_is_authenticated = false;
+  var page_page = 'document_home';
+  var page_profile_id = undefined;
+</script>
+
+
+
+	<!-- Note different script type. MUST come before MathJax.js -->
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	        "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"],
+	                        scale: 110, linebreaks: { automatic:true },
+	                        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+	        tex2jax: { inlineMath: [ ["$$", "$$"], ["\\(","\\)"] ],
+	                    displayMath: [ ["$$$","$$$"], ["\\[", "\\]"] ],
+	                    processEscapes: true,}
+	            });
+
+	</script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://think-lab.s3.amazonaws.com/s/dist/main.min.js"></script>
+  
+
+
+
+  
+	
+
+    
+    
+<script>
+$(function() {
+  recordHit('document', 16);
+});
+</script>
+
+
+    
+
+
+
+    
+
+
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>

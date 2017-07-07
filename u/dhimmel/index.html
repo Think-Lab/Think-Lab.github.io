@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZhITCVRRWVUCFUFaUFAOBA==","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":434}</script>
+    <title>Daniel Himmelstein - Thinklab</title>
+	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
+    <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/highlightjs/github.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/css.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/bootstrap-multiselect.css" />
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
+    
+    
+    
+    
+    
+
+
+	<!-- GoogleAnalytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-48550230-1', 'thinklab.com');
+	ga('require', 'displayfeatures');
+	
+	ga('send', 'pageview');
+
+	</script>
+
+
+
+
+
+
+</head>
+<body >
+  <form id="form_action" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+</form>
+
+	
+
+	<div class="body-wrapper">
+
+		
+
+
+<!-- <div style="height:5px;background-image:url('https://think-lab.s3.amazonaws.com/s/img/top-bg.gif');"></div> -->
+<div class="gradient">
+	<div class="main-centered-div header-container">
+
+<table class="full-width" style="height:60px;"><tr>
+	<td style="width:200px;vertical-align:middle;padding-bottom:15px;">
+		<a href="/" style="font-weight:normal;color:#212121;"><img src="https://think-lab.s3.amazonaws.com/s/img/logo.png" width="160"></a>
+	</td><td style="vertical-align:middle;text-align:left;padding-top:6px;width:100%;padding-left:40px;">
+		<ul id="not-search-block"  class="main-header">
+
+
+			
+
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/proposals">Proposals</a></li>
+						<li><a href="/projects">Projects</a></li>
+						<li><a href="/publications">Article discussion</a></li>
+						<li><a href="/discussion">All discussion</a></li>
+					</ul>
+				</li>
+				<li><a href="/leaderboard">Leaderboard</a></li>
+
+			
+				<li><a href="/about">About</a></li>
+			
+
+
+		</ul>
+
+    <ul id="search-block" class="main-header" style="display: none; margin-right: 30px;">
+        <li class="full-width">
+            <form method="get" action="/search">
+			<div class="input-group full-width">
+				<input name="q" type="text" class="form-control search-input">
+			</div>
+            </form>
+        </li>
+    </ul>
+
+	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
+		<ul class="main-header pull-right" style="padding-left: 0;">
+    		
+                <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+            
+
+        </ul>
+    </ul>
+	</td>
+</tr></table>
+
+<!-- <div id="global-search-div" class="main-centered-div" style="display:none;">
+	<input type="text" value="" class="thread-search form-control" placeholder="Search" data-action="/discussion">
+</div> -->
+
+	</div>
+</div>
+
+		
+	  
+
+
+
+	  
+
+
+		
+
+
+
+
+
+		<div class="dark-head"><div class="main-centered-div">
+
+			
+
+<div style="padding-top:30px;margin-bottom:40px;">
+<table class="full-width"><tr>
+	<td style="padding-right:15px;padding-bottom:15px;width:1px;"><div style=""><img class='profile_image photo-large' src='https://think-lab.s3.amazonaws.com/m/profile/17_large.jpg' width='140' height='140'></div></td>
+	<td style="vertical-align:bottom;">
+
+
+    
+
+        <h1 style="margin-top:0px !important;font-size:30px;margin-bottom:6px;font-weight:bold;">Daniel Himmelstein</h1>
+
+        <div class="" style="margin-bottom:15px;">
+        	<div style="font-size:12px;font-weight:bold;">
+			PhD Candidate &nbsp; 
+			
+				<a href="/institutions/8855">University of California, San Francisco</a> &nbsp;
+				Biological &amp; Medical Informatics
+			
+			</div>
+        </div>
+
+        <ul class="nav nav-tabs project-nav" style="margin-top:20px;">
+            <li class="active"><a href="/u/dhimmel">Profile</a></li>
+            <li><a href="/u/dhimmel/discussion">Discussion &nbsp;135</a></li>
+            <li><a href="/u/dhimmel/projects">Contribution &nbsp;6</a></li>
+			
+            <li><a href="/u/dhimmel/publications">Publications &nbsp;14</a></li>
+			
+            <li><a href="/u/dhimmel/following/proposals">Following</a></li>
+        </ul>
+
+	</td>
+</tr></table>
+</div>
+
+
+
+		</div></div>
+		
+		<div class="main-centered-div" style="margin-top:40px;padding-bottom:340px">
+	    
+
+
+
+
+
+
+<table class="full-width"><tr>
+
+
+
+
+		<td style="vertical-align:top;padding-right:50px;padding-top: 15px;">
+
+
+
+		    
+				<div style="margin-bottom:15px;">
+		        <span id="about-truncated">Digital craftsman of the biodata revolution and pioneer of data integration for human health.
+					</span>
+				<span id="about-full" style="display:none;">Digital craftsman of the biodata revolution and pioneer of data integration for human health. <a href="Javascript:void();" onclick="Javascript:$('#about-truncated').show();$('#about-full').hide()">less</a></span>
+			</div>
+		    
+
+
+
+
+        
+			
+				<h1>Projects</h1>
+			
+	        
+
+
+
+
+  <table class="table table-td-15 table-edge table-proj">
+  
+    <tr class="" id="thread_">
+      
+      <td style="padding-right:15px !important;">
+        <a title="86 Discussions" class="pub-comments tt-right" href="/p/rephetio/discussion">86</a>
+      </td>
+    	<td style="width:100%;padding-left:0px !important;">
+        <a class="list-proj-name" href="/p/rephetio">Rephetio: Repurposing drugs on a hetnet</a><br>
+      	<div class="list-proj-team"> <a href='/u/dhimmel'>Daniel Himmelstein</a>, <a href='/u/alizee'>Antoine Lizee</a>, <a href='/u/chrissyhessler'>Chrissy Hessler</a>, <a href='/u/leobrueggeman'>Leo Brueggeman</a>, <a href='/u/sabrinachen'>Sabrina Chen</a>, <a href='/u/idrdex'>Dexter Hadley</a>, <a href='/u/arigreen'>Ari Green</a>, <a href='/u/pouyakhankhanian'>Pouya Khankhanian</a>, <a href='/u/sergiobaranzini'>Sergio Baranzini</a></div>
+        <div class="list-proj-team">
+          <div class="proposal-status proposal-status-report-published">Report published</div>
+          
+        </div>
+        <div class="list-proj-desc">
+      		
+      		Welcome to project Rephetio. We aim to predict the probability that a given approved small molecule will treat a given complex disease. First, we construct a hetnet for drug repurposing. The network integrates 29 public resources and contains 47 thousand nodes (of 11 types) and 2.3 million edges ...
+    	  </div>
+    	</td>
+    </tr>
+  
+  </table>
+
+  
+
+
+
+
+        
+
+
+        <h1>Discussion participating</h1>
+	    
+      <table class="table discussions">
+        
+    			
+<tr data-thread-status="100" class="list-thread   " id="thread_216" data-thread-id="216">
+  <td style="width:1px;"><div class="inbox-comments tt-top" title="comments">3</div></td>
+  <td>
+    
+    <a href='/discussion/hosting-hetionet-in-the-cloud-creating-a-public-neo4j-instance/216' class='thread-title'>Hosting Hetionet in the cloud: creating a public Neo4j instance</a>
+    <div class="thread-detail">
+      
+        [<a href="/p/rephetio/discussion" class="thread-identifier">rephetio</a>]
+      
+      
+        
+        51 days ago
+      
+    </div>
+  </td>
+
+
+  
+  
+
+</tr>
+
+    		
+    			
+<tr data-thread-status="10" class="list-thread   " id="thread_113" data-thread-id="113">
+  <td style="width:1px;"><div class="inbox-comments tt-top" title="comments">15</div></td>
+  <td>
+    
+    <a href='/discussion/tracking-project-reuse-citation-and-publicity/113' class='thread-title'>Tracking project reuse, citation, and publicity</a>
+    <div class="thread-detail">
+      
+        [<a href="/p/rephetio/discussion" class="thread-identifier">rephetio</a>]
+      
+      
+        
+        66 days ago
+      
+    </div>
+  </td>
+
+
+  
+  
+
+</tr>
+
+    		
+    			
+<tr data-thread-status="30" class="list-thread   " id="thread_112" data-thread-id="112">
+  <td style="width:1px;"><div class="inbox-comments tt-top" title="comments">9</div></td>
+  <td>
+    
+    <a href='/discussion/using-the-neo4j-graph-database-for-hetnets/112' class='thread-title'>Using the neo4j graph database for hetnets</a>
+    <div class="thread-detail">
+      
+        [<a href="/p/rephetio/discussion" class="thread-identifier">rephetio</a>]
+      
+      
+        
+        71 days ago
+      
+    </div>
+  </td>
+
+
+  
+  
+
+</tr>
+
+    		
+    			
+<tr data-thread-status="100" class="list-thread   " id="thread_226" data-thread-id="226">
+  <td style="width:1px;"><div class="inbox-comments tt-top" title="comments">46</div></td>
+  <td>
+    
+    <a href='/doc/7/review' class='thread-title'><span class='inbox-icon tt-top glyphicon glyphicon-flash'></span>Report Review: Rephetio: Repurposing drugs on a hetnet</a>
+    <div class="thread-detail">
+      
+        [<a href="/p/rephetio/discussion" class="thread-identifier">rephetio</a>]
+      
+      
+        
+        88 days ago
+      
+    </div>
+  </td>
+
+
+  
+  
+
+</tr>
+
+    		
+    			
+<tr data-thread-status="10" class="list-thread   " id="thread_210" data-thread-id="210">
+  <td style="width:1px;"><div class="inbox-comments tt-top" title="comments">6</div></td>
+  <td>
+    
+    <a href='/discussion/our-hetnet-edge-prediction-methodology-the-modeling-framework-for-project-rephetio/210' class='thread-title'>Our hetnet edge prediction methodology: the modeling framework for Project Rephetio</a>
+    <div class="thread-detail">
+      
+        [<a href="/p/rephetio/discussion" class="thread-identifier">rephetio</a>]
+      
+      
+        
+        116 days ago
+      
+    </div>
+  </td>
+
+
+  
+  
+
+</tr>
+
+    		
+    			
+<tr data-thread-status="100" class="list-thread   " id="thread_231" data-thread-id="231">
+  <td style="width:1px;"><div class="inbox-comments tt-top" title="comments">3</div></td>
+  <td>
+    
+    <a href='/discussion/why-we-predicted-ictogenic-tricyclic-compounds-treat-epilepsy/231' class='thread-title'>Why we predicted ictogenic tricyclic compounds treat epilepsy?</a>
+    <div class="thread-detail">
+      
+        [<a href="/p/rephetio/discussion" class="thread-identifier">rephetio</a>]
+      
+      
+        
+        119 days ago
+      
+    </div>
+  </td>
+
+
+  
+  
+
+</tr>
+
+    		
+    			
+<tr data-thread-status="30" class="list-thread   " id="thread_200" data-thread-id="200">
+  <td style="width:1px;"><div class="inbox-comments tt-top" title="comments">5</div></td>
+  <td>
+    
+    <a href='/discussion/measuring-user-contribution-and-content-creation/200' class='thread-title'>Measuring user contribution and content creation</a>
+    <div class="thread-detail">
+      
+        [<a href="/p/rephetio/discussion" class="thread-identifier">rephetio</a>]
+      
+      
+        
+        149 days ago
+      
+    </div>
+  </td>
+
+
+  
+  
+
+</tr>
+
+    		
+    			
+<tr data-thread-status="50" class="list-thread   " id="thread_102" data-thread-id="102">
+  <td style="width:1px;"><div class="inbox-comments tt-top" title="comments">6</div></td>
+  <td>
+    
+    <a href='/discussion/one-network-to-rule-them-all/102' class='thread-title'>One network to rule them all</a>
+    <div class="thread-detail">
+      
+        [<a href="/p/rephetio/discussion" class="thread-identifier">rephetio</a>]
+      
+      
+        
+        153 days ago
+      
+    </div>
+  </td>
+
+
+  
+  
+
+</tr>
+
+    		
+    			
+<tr data-thread-status="30" class="list-thread   " id="thread_107" data-thread-id="107">
+  <td style="width:1px;"><div class="inbox-comments tt-top" title="comments">16</div></td>
+  <td>
+    
+    <a href='/discussion/integrating-resources-with-disparate-licensing-into-an-open-network/107' class='thread-title'>Integrating resources with disparate licensing into an open network</a>
+    <div class="thread-detail">
+      
+        [<a href="/p/rephetio/discussion" class="thread-identifier">rephetio</a>]
+      
+      
+        
+        155 days ago
+      
+    </div>
+  </td>
+
+
+  
+  
+
+</tr>
+
+    		
+    			
+<tr data-thread-status="100" class="list-thread   " id="thread_230" data-thread-id="230">
+  <td style="width:1px;"><div class="inbox-comments tt-top" title="comments">14</div></td>
+  <td>
+    
+    <a href='/discussion/visualizing-the-top-epilepsy-predictions-in-cytoscape/230' class='thread-title'>Visualizing the top epilepsy predictions in Cytoscape</a>
+    <div class="thread-detail">
+      
+        [<a href="/p/rephetio/discussion" class="thread-identifier">rephetio</a>]
+      
+      
+        
+        157 days ago
+      
+    </div>
+  </td>
+
+
+  
+  
+
+</tr>
+
+    		
+      </table>
+			<a href="/u/dhimmel/discussion">View all 135 discussions</a>
+		
+
+	    
+			<h1>Publications</h1>
+	        
+
+
+<table class="table small-headers">
+	<thead>
+	<tr>
+		<th style="width:1px;text-align:center;padding-left:0px;">Comments</th>
+		
+		<th style="width:500px;">Title</th>
+		<th style="text-align:center; width:10%;">Year</th>
+		
+	</tr>
+</thead>
+<tbody>
+
+<tr class="list-ref" id="1039">
+
+    <td style="text-align:right;"><a class="pub-comments tt-right" title="Comments" href="/doi/10.1001/jamaneurol.2016.0980">0</a></td>
+	
+	<td><a href="/doi/10.1001/jamaneurol.2016.0980">Association of HLA Genetic Risk Burden With Disease Phenotypes in Multiple Sclerosis</a></td>
+    <td style="text-align: center;">2016</td>
+	
+</tr>
+
+<tr class="list-ref" id="1040">
+
+    <td style="text-align:right;"><a class="pub-comments tt-right" title="Comments" href="/doi/10.1161/circgenetics.115.001181">0</a></td>
+	
+	<td><a href="/doi/10.1161/circgenetics.115.001181">Genetic Association–Guided Analysis of Gene Networks for the Study of Complex Traits</a></td>
+    <td style="text-align: center;">2016</td>
+	
+</tr>
+
+<tr class="list-ref" id="1041">
+
+    <td style="text-align:right;"><a class="pub-comments tt-right" title="Comments" href="/doi/10.1093/ije/dyv364">0</a></td>
+	
+	<td><a href="/doi/10.1093/ije/dyv364">Meta-analysis of genome-wide association studies reveals genetic overlap between Hodgkin lymphoma and multiple sclerosis</a></td>
+    <td style="text-align: center;">2016</td>
+	
+</tr>
+
+<tr class="list-ref" id="1042">
+
+    <td style="text-align:right;"><a class="pub-comments tt-right" title="Comments" href="/doi/10.6084/M9.FIGSHARE.3180142.V1">0</a></td>
+	
+	<td><a href="/doi/10.6084/M9.FIGSHARE.3180142.V1">Qualifying Exam proposal: Drug repurposing on a heterogeneous network of pathogenesis</a></td>
+    <td style="text-align: center;">2016</td>
+	
+</tr>
+
+<tr class="list-ref" id="893">
+
+    <td style="text-align:right;"><a class="pub-comments tt-right" title="Comments" href="/doi/10.12688/f1000research.6836.2">0</a></td>
+	
+	<td><a href="/doi/10.12688/f1000research.6836.2">iCTNet2: integrating heterogeneous biological interactions to understand complex traits</a></td>
+    <td style="text-align: center;">2015</td>
+	
+</tr>
+
+<tr class="list-ref" id="407">
+
+    <td style="text-align:right;"><a class="pub-comments tt-right" title="Comments" href="/doi/10.12688/f1000research.6836.1">0</a></td>
+	
+	<td><a href="/doi/10.12688/f1000research.6836.1">iCTNet2: integrating heterogeneous biological interactions to understand complex traits</a></td>
+    <td style="text-align: center;">2015</td>
+	
+</tr>
+
+<tr class="list-ref" id="355">
+
+    <td style="text-align:right;"><a class="pub-comments tt-right" title="Comments" href="/doi/10.1371/journal.pcbi.1004259">0</a></td>
+	
+	<td><a href="/doi/10.1371/journal.pcbi.1004259">Heterogeneous Network Edge Prediction: A Data Integration Approach to Prioritize Disease-Associated Genes</a></td>
+    <td style="text-align: center;">2015</td>
+	
+</tr>
+
+<tr class="list-ref" id="243">
+
+    <td style="text-align:right;"><a class="pub-comments tt-right" title="Comments" href="/doi/10.1038/ng.3259">0</a></td>
+	
+	<td><a href="/doi/10.1038/ng.3259">Understanding multicellular function and disease with human tissue-specific networks</a></td>
+    <td style="text-align: center;">2015</td>
+	
+</tr>
+
+<tr class="list-ref" id="237">
+
+    <td style="text-align:right;"><a class="pub-comments tt-right" title="Comments" href="/doi/10.7717/peerj.705">0</a></td>
+	
+	<td><a href="/doi/10.7717/peerj.705">Lung cancer incidence decreases with elevation: evidence for oxygen as an inhaled carcinogen</a></td>
+    <td style="text-align: center;">2015</td>
+	
+</tr>
+
+<tr class="list-ref" id="244">
+
+    <td style="text-align:right;"><a class="pub-comments tt-right" title="Comments" href="/doi/10.1186/1756-0381-4-21">0</a></td>
+	
+	<td><a href="/doi/10.1186/1756-0381-4-21">Evolving hard problems: Generating human genetics datasets with a complex etiology</a></td>
+    <td style="text-align: center;">2011</td>
+	
+</tr>
+
+</tbody>
+</table>
+
+
+
+
+			<a href="/u/dhimmel/publications">View all 14 publications</a>
+		
+
+	</td><td style="width:270px;padding-left:40px;padding-top: 15px; border-left: 1px solid #e5e5e5;">
+
+
+
+
+
+				<!-- <table class="full-width"><tr>
+					<td style="width:50%;padding-right:2px;">
+						<div style="background-color:#b9f2ff;padding:5px;text-align:center;border-radius: 5px;">
+						<div style="font-size:22px;">2208</div>
+						<div style="font-size:10px;margin-top:-5px;">Points</div>
+						</div>
+					</td>
+					<td style="width:50%;padding-left:2px;">
+						<div style="background-color:#d9ffa9;padding:5px;text-align:center;border-radius: 5px;">
+						<div style="font-size:22px;">$454</div>
+						<div style="font-size:10px;margin-top:-5px;">Est. Earnings</div>
+						</div>
+					</td>
+				</tr></table>
+				<br> -->
+
+
+
+				   	<h3><strong>Connect with Daniel</strong></h3>
+
+				        <p><a href="/u/dhimmel/messages/send" class="btn btn-default btn-sm pull-right">Send Email</a></p>
+
+							
+				    <p>
+				        
+				            <a href="https://github.com/dhimmel" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/github_com.png" width="40"/></a>
+				        
+				            <a href="https://twitter.com/dhimmel" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+				        
+				        
+				    </p>
+
+				  	 <p><a href="http://dhimmel.com/" style="color:#979797;font-size:12px;font-weight:bold;">dhimmel.com</a></p>
+					 
+
+
+					 			    <div style="clear: both;"></div>
+<hr>
+	<h3><strong>Stats</strong></h3>
+
+		<table class="table table-profile-stats table-edge">
+			<tr><td>Impact points</td><td style="font-size:22px;padding:5px;"><span class="points points-profile">2208</span></td></tr>
+      <tr><td>Est. earnings</td><td>$454</td></tr>
+      <tr><td>Proposals</td><td>1</td></tr>
+      <tr><td>Comments</td><td>518</td></tr>
+			<tr><td>Comments rated</td><td>200</td></tr>
+			<tr><td>Annotations</td><td>69</td></tr>
+		</table>
+
+
+
+
+   	<h3><strong>Interests</strong></h3>
+    <p><a href="/topics/bioinformatics" class="tag">Bioinformatics</a><a href="/topics/biomedical-informatics" class="tag">Biomedical Informatics</a><a href="/topics/computer-science" class="tag">Computer Science</a><a href="/topics/heterogeneous-networks" class="tag">Heterogeneous Networks</a><a href="/topics/statistics" class="tag">Statistics</a><a href="/topics/genomics" class="tag">Genomics</a><a href="/topics/machine-learning" class="tag">Machine learning</a><a href="/topics/networks" class="tag">Networks</a><a href="/topics/algorithms" class="tag">Algorithms</a><a href="/topics/biostatistics" class="tag">Biostatistics</a><a href="/topics/network-biology" class="tag">Network Biology</a><a href="/topics/computational-biology" class="tag">Computational Biology</a><a href="/topics/terminologies" class="tag">Terminologies</a></p>
+	
+
+
+		</td>
+</tr></table>
+
+
+		</div>
+
+
+		
+	    	<div class="footer">
+<div style="background:#dedede;">
+	<div class="main-centered-div text-center" style="padding:20px;">
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#5d35383131321d2935343336313c3f733e3230"><span class="__cf_email__" data-cfemail="f199949d9d9eb18599989f9a9d9093df929e9c">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+	</div>
+</div>
+<div class="main-footer">
+	<div class="main-centered-div">
+
+<table class="full-width"><tr>
+	<td class="footer-nav">
+
+        <div class="foot-head">Explore</div>
+        <a href="/proposals">Proposals</a><br>
+        <a href="/projects">Projects</a><br>
+        <a href="/publications">Article discussion</a><br>
+        <a href="/discussion">All discussion</a><br>
+        <a href="/topics">Topics</a><br>
+        <!-- <a href="/funders">Funders</a><br> -->
+        <a href="/funding">Funding opportunities</a><br>
+
+	</td>
+	<td class="footer-nav">
+
+        <!-- <div class="foot-head">Help &amp; feedback</div>	 -->
+        <!-- <div class="foot-head">Intro</div>
+        <a href="/benefits/for-science">Why</a><br>
+        <a href="/how-it-works">How it works</a><br>
+
+<br> -->
+
+        <div class="foot-head">Community</div>
+        <a href="/leaderboard">Leaderboard</a><br>
+        <a href="/p/meta">Thinklab Meta</a><br>
+				<a href="/help/faq">Help</a><br>
+				<!-- <a href="/new-project">Start a proposal</a><br> -->
+        <!-- <a href="/benefits/proposal">Benefits</a><br> -->
+        <!-- <a href="/funding">Get funded</a><br> -->
+        <!-- <a href="/participate">Become a contributor</a><br> -->
+        <!-- <a href="/for-funders">For science funders</a><br> -->
+        <!-- <a href="/for-institutions">For institutions</a><br> -->
+
+	</td>
+	<td class="footer-nav">
+
+
+
+        <div class="foot-head">About</div>
+        <a href="/about">Overview</a><br>
+        <a href="/benefits">Benefits</a><br>
+        <a href="/how-it-works">How it works</a><br>
+        <a href="/about/story">Our story</a><br>
+        <a href="/blog">Our blog</a><br>
+        <a href="/about/jobs">Join the team</a><br>
+        <br>
+
+        <!-- <div class="foot-head">Help</div>
+        <a href="/help">Help</a><br>
+		 -->
+
+
+	</td>
+	<td class="footer-nav">
+		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
+		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<br><br>
+		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
+
+	</td>
+
+</tr></table>
+
+</div>
+</div>
+</div>
+
+		
+
+	</div>
+
+
+  <script></script>
+  <script>
+  var MEDIA_URL = 'https://think-lab.s3.amazonaws.com/m/';
+  var STATIC_URL = 'https://think-lab.s3.amazonaws.com/s/';
+  var page_is_authenticated = false;
+  var page_page = 'profile';
+  var page_profile_id = undefined;
+</script>
+
+
+
+	<!-- Note different script type. MUST come before MathJax.js -->
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	        "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"],
+	                        scale: 110, linebreaks: { automatic:true },
+	                        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+	        tex2jax: { inlineMath: [ ["$$", "$$"], ["\\(","\\)"] ],
+	                    displayMath: [ ["$$$","$$$"], ["\\[", "\\]"] ],
+	                    processEscapes: true,}
+	            });
+
+	</script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://think-lab.s3.amazonaws.com/s/dist/main.min.js"></script>
+  
+
+
+
+  
+	
+  
+<script>
+$(function() {
+  recordHit('profile', 17);
+});
+</script>
+
+
+
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>

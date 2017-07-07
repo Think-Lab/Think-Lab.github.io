@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZgEOC19dW0QCEVtHU1gG","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":459}</script>
+    <title>Impact points and leaderboard demotivating | Thinklab</title>
+	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
+    <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/highlightjs/github.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/css.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/bootstrap-multiselect.css" />
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
+    
+    
+    
+    
+  
+
+    
+
+
+	<!-- GoogleAnalytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-48550230-1', 'thinklab.com');
+	ga('require', 'displayfeatures');
+	
+	ga('send', 'pageview');
+
+	</script>
+
+
+
+
+
+
+</head>
+<body >
+  <form id="form_action" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+</form>
+
+	
+
+	<div class="body-wrapper">
+
+		
+
+
+<!-- <div style="height:5px;background-image:url('https://think-lab.s3.amazonaws.com/s/img/top-bg.gif');"></div> -->
+<div class="gradient">
+	<div class="main-centered-div header-container">
+
+<table class="full-width" style="height:60px;"><tr>
+	<td style="width:200px;vertical-align:middle;padding-bottom:15px;">
+		<a href="/" style="font-weight:normal;color:#212121;"><img src="https://think-lab.s3.amazonaws.com/s/img/logo.png" width="160"></a>
+	</td><td style="vertical-align:middle;text-align:left;padding-top:6px;width:100%;padding-left:40px;">
+		<ul id="not-search-block"  class="main-header">
+
+
+			
+
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/proposals">Proposals</a></li>
+						<li><a href="/projects">Projects</a></li>
+						<li><a href="/publications">Article discussion</a></li>
+						<li><a href="/discussion">All discussion</a></li>
+					</ul>
+				</li>
+				<li><a href="/leaderboard">Leaderboard</a></li>
+
+			
+				<li><a href="/about">About</a></li>
+			
+
+
+		</ul>
+
+    <ul id="search-block" class="main-header" style="display: none; margin-right: 30px;">
+        <li class="full-width">
+            <form method="get" action="/search">
+			<div class="input-group full-width">
+				<input name="q" type="text" class="form-control search-input">
+			</div>
+            </form>
+        </li>
+    </ul>
+
+	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
+		<ul class="main-header pull-right" style="padding-left: 0;">
+    		
+                <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+            
+
+        </ul>
+    </ul>
+	</td>
+</tr></table>
+
+<!-- <div id="global-search-div" class="main-centered-div" style="display:none;">
+	<input type="text" value="" class="thread-search form-control" placeholder="Search" data-action="/discussion">
+</div> -->
+
+	</div>
+</div>
+
+		
+	  
+
+
+
+	  
+
+
+		
+
+		<div class="dark-head"><div class="main-centered-div">
+
+			
+
+		</div></div>
+		
+		<div class="main-centered-div" style="margin-top:40px;padding-bottom:340px">
+	    
+
+<div style="margin-top:-20px; margin-bottom:20px;">
+
+    <a class="side-box" href="/p/meta" style="background-color:#ebfdff;"><div class="side-type">Project:</div> <div class="side-title">Thinklab Meta [meta]</div></a><br>
+
+
+
+</div>
+
+<table style="margin-top:0px;"><tr>
+	<td class="thread-table-content">
+
+		<table class="full-width">
+			
+<tr class="comment-tr target-hl" id="1" data-comment-id="369">
+  <td class="comment-profile-avatar">
+		<a href="/u/larsjuhljensen"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/125_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="369"></a>
+
+    
+
+			<h2 class="page-title" style="margin-bottom:5px;margin-top:0px !important;">Impact points and leaderboard demotivating</h2>
+
+			<div style="margin-top:5px;color:gray;margin-bottom:20px;font-size:13px;">
+				<a style="font-weight:normal;color:#212121" href="/u/larsjuhljensen"><strong>Lars Juhl Jensen</strong></a>
+				
+				&nbsp; <a href="#1" class="light">698 days ago</a>
+				
+			</div>
+
+      
+
+          <hr>
+		
+
+    <p>The idea of having impact points and a leaderboard is no doubt to gamify the work.</p>
+
+<p>However, for that to work, it has to actually motivate participants. Spending a couple of hours writing multiple comments to give thought-through input to people and seeing your impact points staying at a solid 0, unfortunately achieves the exact opposite.</p>
+
+<p>I am mystified as to what does give impact points, if giving scientific feedback and answers to questions does not.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="2" data-comment-id="370">
+  <td class="comment-profile-avatar">
+		<a href="/u/jspauld"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/2_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="370"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/jspauld">Jesse Spaulding</a>
+				
+				<span class="light">&nbsp;<a href="#2" class="light">698 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Thanks for the feedback Lars. It is really helpful to understand the experience of a new user.</p>
+
+<p>Points are accumulated in relation to to peer ratings of your comments. By giving well thought out, useful comments you're doing exactly the right thing! Your points have stayed at zero because our system only updates them daily. I will try and make this more clear. I assume that if you had have known this, everything would be cool right?</p>
+
+<p>Your comments have been rated and I expect that in a few hours from now that will be reflected on the site. When this occurs, please let me know if things are motivational (as intended).</p>
+
+<p>Thanks for trying out ThinkLab!</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="3" data-comment-id="371">
+  <td class="comment-profile-avatar">
+		<a href="/u/larsjuhljensen"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/125_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="371"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/larsjuhljensen">Lars Juhl Jensen</a>
+				
+				<span class="light">&nbsp;<a href="#3" class="light">698 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>And now I see points - thanks :-)</p>
+
+<p>A few suggestions for improvements:<br>- Update points and leaderboard realtime instead of daily. Successfully gamifying something is all about instant gratification.<br>- Related to this, give maybe 1 impact point before peer rating as immediate reward for doing something. This does not necessarily need to give any money - it is just an immediate pat on the back.<br>- Money and more points can come later as comments get rated.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="4" data-comment-id="373">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="373"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				
+				<span class="light">&nbsp;<a href="#4" class="light">698 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>I agree that realtime updates are desirable for the reward system. Several people who have contributed think they've earned zero, since all their contributions were in a single day and they never saw an update.</p>
+
+<p>Perhaps the mouseover on the impact points could also indicate the user's number of payment eligible unrated comments. This way users know points are on the way, just that rating must happen first.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="5" data-comment-id="377">
+  <td class="comment-profile-avatar">
+		<a href="/u/jspauld"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/2_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="377"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/jspauld">Jesse Spaulding</a>
+				
+				<span class="light">&nbsp;<a href="#5" class="light">698 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>New mechanisms for instant gratification</h1>
+
+<p>Great feedback guys. I agree with you both on the desirability of instant gratification. For this reason I've made the following changes:</p>
+
+<ol><li>Rating a comment will now instantly give you 1 point</li><li>Adding a comment will also instantly give you 1 point. This point will not affect your earnings but it will influence the leaderboard (and hopefully make your life just that much better, lol). Thanks for this idea Lars — I had not even thought of the possibility.</li></ol>
+
+<h1>Arguments against real-time updates of peer assessed points</h1>
+
+<p>A few arguments against this:</p>
+
+<ol><li>I think it's better to have comment scores be secret (or at least hard to guess). If we give real-time updates it would be quite easy to guess who rated your comment and what score they gave you in some scenarios. For example, if you saw that they made a comment in the same discussion at the same time.</li><li>One interesting aspect of the current system is that it's possible for a user's impact points and <em>unconfirmed</em> earnings to go <em>down</em>. This would happen when a rating is given that is lower than the comment's average rating. I suspect from a gamification perspective this is quite bad. One way we can mitigate this is to put a damper on points earned when just one or two people have submitted ratings. So two ratings of 10 would result in more points than just one rating of 10. And a rating of 10 followed by a rating of 5 would result in less of a reduction of points than it would otherwise. Combining this functionality with daily updates should significantly reduce the likelihood of a users's impact points  progressing backwards. The reason is that the effect of any one rating will be averaged in with the effects of all other ratings that occur in that 24 hour period. And any rating should, on average, increase points scored (because of the damper I mentioned).</li><li>Finally, since peer ratings will not provide "instant" gratification anyway, it's probably not that big of a deal to just do the updates daily.</li></ol>
+
+<h1>Inspiring confidence in new users</h1>
+
+<blockquote><p>Several people who have contributed think they've earned zero, since all their contributions were in a single day and they never saw an update.</p></blockquote>
+
+<p>To address the issues brought up by <a href="/u/dhimmel" class="username">@dhimmel</a> I propose the following:</p>
+
+<ol><li>When a user posts a comment we will make it more clear that it is 'payment eligible' (right now it is stated in small gray text), and perhaps provide a link to more information on what that means.</li><li>The first time a user has a payment eligible comment that has been rated positively we will send them an email saying something like "Congratulations, one of your ThinkLab comments has been rated positively and you've begun earning money!" (I feel this is a great idea!)</li><li>I've gone ahead and updated the "<a href="http://thinklab.com/account/your-points">your points</a>" and "<a href="http://thinklab.com/account/your-comments">your comments</a>" pages to try and clarify things and show the user if they have payment eligible comments.</li></ol>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="6" data-comment-id="378">
+  <td class="comment-profile-avatar">
+		<a href="/u/jspauld"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/2_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="378"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/jspauld">Jesse Spaulding</a>
+				
+				<span class="light">&nbsp;<a href="#6" class="light">697 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p><a href="/u/larsjuhljensen" class="username">@larsjuhljensen</a> I was just thinking — it seems you were particularly put off by the fact that your score remained at zero despite the fact that you took the time to make some thoughtful comments. Well, let's just say you spent 30 minutes making your first comment — would it really be that much better if your impact score said just "1"? Maybe a little better, but I'm thinking we should detect this situation and put something like "Updating.." instead of "1", and if the user hovers over it it will say something like "This user's impact score will display after their first comments have been rated". What do you think? I think it is worth optimizing for first impressions</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="7" data-comment-id="379">
+  <td class="comment-profile-avatar">
+		<a href="/u/larsjuhljensen"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/125_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="379"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/larsjuhljensen">Lars Juhl Jensen</a>
+				
+				<span class="light">&nbsp;<a href="#7" class="light">697 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Thanks <a href="/u/jspauld" class="username">@jspauld</a> - I think your ideas are very good. I especially like the idea about putting a damper on the rating.</p>
+
+<p>Having your earnings possibly go down due to later ratings that lower the average, would indeed seem bad from a gamification viewpoint. Viewing ratings a bit more like votes on stackoverflow makes sense to me: one person liking something a lot and nobody else bothering to even rate it is clearly not as good as several people liking it a lot. So calculating the simple average seems suboptimal.</p>
+
+<p>Regarding getting 1 point versus staying at 0, I think it makes a big difference. If nothing else, it makes it clear to the user that making comments is indeed how you earn points. This is also why I think real-time updating is important: the first day I was baffled and beginning to wonder how one even earns points in this place. Because it was apparently not by making comments, since I had made several and still had 0 points.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="8" data-comment-id="380">
+  <td class="comment-profile-avatar">
+		<a href="/u/jspauld"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/2_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="380"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/jspauld">Jesse Spaulding</a>
+				
+				<span class="light">&nbsp;<a href="#8" class="light">697 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <blockquote><p>one person liking something a lot and nobody else bothering to even rate it is clearly not as good as several people liking it a lot</p></blockquote>
+
+<p>Agree. I think a simple average is suboptimal, and I also think a simple sum (like stack overflow) is suboptimal — so somewhere in the middle.</p>
+
+<p>I'm thinking that with only 1 vote there is a damper that results in the user receiving just 30-50% of the points scored, while if there were 5 votes it might be 90%. The difference between 5 votes and say 50 votes would then be quite small. But this is just one way of doing it. We could make it so there is a substantial difference between 5 and 50. I think the effect would be to reward participation in "popular" discussion threads and my current thinking this is not a particularly good idea. But I'm open to arguments for it.</p>
+
+<p>Of course, we don't have any comments that have been voted on 50 times yet so it's a little premature to be thinking too much about this!</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="9" data-comment-id="383">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="383"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				
+				<span class="light">&nbsp;<a href="#9" class="light">696 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>While I understand that a decrease in unconfirmed earnings may pester users, I am worried about the flip side. Currently, posts receive very few ratings and it's unclear when a cultural shift will occur towards more widespread rating. When a new user contributes, I lean on the generous side to reward them for their sunk time investment in setting up an account and learning how to use Thinklab. I think it's important for users to see that their work is being valued highly. Therefore, I think whatever downweighting scheme is adopted, the full rating of their contributions should also be made apparent.</p>
+
+<p>Overall, I am not convinced a dampening scheme is needed. This seems more like an education issue. For example, I personally am not bothered by diminishing unconfirmed earnings because I understand the mechanism and believe it to be fair. However, I am far from the target audience, which at this point is new users, so take my opinion with a grain of salt.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-144" class="inline-note toggle-parent" data-note-id="144">
+	<p><a href="/u/larsjuhljensen">Lars Juhl Jensen</a>: I think that seeing your score decrease over time is demotivating to most people, and I think that this is human nature. Describing it as an education issue comes across as condescending, especially to new users. (Just to be clear: I am not offended in any way - I just fear this will drive users away in busloads.)
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-149" class="inline-note toggle-parent" data-note-id="149">
+	<p><a href="/u/jspauld">Jesse Spaulding</a>: Yes, I basically agree with Lars. I think the expectation for these kinds of things is that points are earned and they only go up. I think it will surely help if people understand the mechanics — but even so I agree seeing points go down should be avoided as best as possible.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="10" data-comment-id="385">
+  <td class="comment-profile-avatar">
+		<a href="/u/larsjuhljensen"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/125_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="385"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/larsjuhljensen">Lars Juhl Jensen</a>
+				
+				<span class="light">&nbsp;<a href="#10" class="light">696 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>I think the big issue with averaging is that different users will use the scoring schemes completely differently.</p>
+
+<p>Some will only vote if they think a comment actually contributes something substantial (as opposed to, e.g., stating the obvious). Others, like myself, try to remember to rate everything that I've read. The vast majority of comments was in my opinion not worth $5, and I thus rated them $0.</p>
+
+<p>The problem here is that numerically it makes a huge difference if I rate something $0 or if I do not rate it. However, to me it means exactly the same thing.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-145" class="inline-note toggle-parent" data-note-id="145">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: There is a custom amount option under the downward arrow. For further discussion of the rating bar <a href="http://thinklab.com/discussion/contribution-valuation-options/49" class="citation thread-citation" data-key="10.15363/thinklab.d49">see this thread</a>.
+		
+	</p>
+	
+	<table style="display:none;"><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d49' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d49'><a href='/discussion/contribution-valuation-options/49' class='pub-title'>Contribution valuation options</a><div class='pub-body'>Daniel Himmelstein, Jesse Spaulding (2015) <i>Thinklab</i>. https://thinklab.com/d/49</div></div></td></tr></table>
+</li>
+
+<li id="note-146" class="inline-note toggle-parent" data-note-id="146">
+	<p><a href="/u/larsjuhljensen">Lars Juhl Jensen</a>: I do not see how having the custom amount option addresses the problem. Sure it means that I could vote $1. But whether I vote $1 or $0, it will pull down the average, whereas not voting will not. To me not bothering to vote and voting low is the same, which is why I find averaging fundamentally flawed.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-148" class="inline-note toggle-parent" data-note-id="148">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: Was just making sure you were aware of options between 0 and 5. The <a href="http://thinklab.com/how-it-works/earnings">participation score</a> should incentivize all ratings regardless of amount, but it is helpful to know that intuitively no rating seems equivalent to a low rating.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="11" data-comment-id="388">
+  <td class="comment-profile-avatar">
+		<a href="/u/jspauld"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/2_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="388"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/jspauld">Jesse Spaulding</a>
+				
+				<span class="light">&nbsp;<a href="#11" class="light">696 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <blockquote><p>While I understand that a decrease in unconfirmed earnings may pester users, I am worried about the flip side.</p></blockquote>
+
+<p><a href="/u/dhimmel" class="username">@dhimmel</a> I just want to clarify that this down weighting will NOT mean that everyone in your project will suddenly be receiving 50% less payment. If I implement this (which I was always planning to do), I'll do it in such a way that considers the relative amount of voting that is occurring in the project, and perhaps instead of just dampening scores when there's less votes it can actually increase scores with more votes.</p>
+
+<p>Having said that — you probably shouldn't think about the exact rating you give as some kind of "full rating" that should be exposed. The reason is there will be many things that can affect the actual number of points given. For example, one of them will be the relative stinginess/generousness of whoever is doing the rating. There's also factors that affect the weight of each rating, such as if the rater is on the project research team (weighted higher) or if the rater is from the same institution (weighted lower).</p>
+
+<blockquote><p>I think the big issue with averaging is that different users will use the scoring schemes completely differently.</p></blockquote>
+
+<p><a href="/u/larsjuhljensen" class="username">@larsjuhljensen</a> I take your point that some people may simply not rate a comment rather than rate it at $0 and that these same people when they encounter a more valuable comment may take the time to score it. </p>
+
+<p>I'm not terribly concerned about this. Firstly, it will be a consistent phenomenon that will affect all users equally. So the question is — does it create any bad incentives? And you could say it would encourage shorter less well thought out comments because they're more likely to get paid out $3-5 instead of the $1-3 they might deserve. This is a fair concern. But the reality is there will be ways we can tackle this. The dampening will help. But as <a href="/u/dhimmel" class="username">@dhimmel</a> mentioned — we can explicitly state that a requirement for a good <a href="http://thinklab.com/how-it-works/earnings">participation score</a> is that you rate comments 0 when appropriate. Theoretically we could also detect such cases of scrolling past comments without bothering to vote on them.</p>
+
+<p>And I'll just mention an idea I've had. We could give comment posters the option to click a button that says "This comment is not a significant contribution". And for these comments we wouldn't even ask people to rate them. Would save people the trouble of having to rate every single comment. And when there is a trivial comment that someone failed to click the checkbox for — well people will feel more motivation to click 0.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+    		
+		</table>
+
+    
+
+    &nbsp;<br>
+    <a class="btn btn-primary btn-lg" href="/signup?next=/discussion/impact-points-and-leaderboard-demotivating/98&suppress_message=1" style>Join to Reply</a>
+
+
+		<table class="references table-td-5" style="display:none;"><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d49' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d49'><a href='/discussion/contribution-valuation-options/49' class='pub-title'>Contribution valuation options</a><div class='pub-body'>Daniel Himmelstein, Jesse Spaulding (2015) <i>Thinklab</i>. https://thinklab.com/d/49</div></div></td></tr></table>
+
+    
+
+
+	</td>
+	<td class="thread-sidebar">
+
+
+			
+
+      <a class="btn btn-default follow-link btn-follow btn-lg is-following tt-top full-width" title="Follow discussion" data-id="98" data-ctype="thread" data-is-following="false">&nbsp;</a>
+
+      
+        <div class="status-box text-center"><span style="">Status:</span> 
+  Deferred
+
+</div>
+      
+
+      
+        
+
+          <div class="details">
+            
+            Labels
+          </div>
+
+          
+            <a href='/p/meta/discussion?q=[Issue]' class='pl pl-sidebar pl-black' style='background-color:#ffd66b'><span class='glyphicon glyphicon-tag'></span>&nbsp; Issue</a>
+          
+        
+      
+
+
+				
+
+					<div class="details">Views</div>
+					<span style="font-size:20px;">78</span>
+
+        
+
+				
+					<div class="details">Topics</div>
+					<div style="margin-bottom:15px;">
+		            <a href="/topics/impact-points" class="tag">Impact points</a><a href="/topics/leaderboard" class="tag">Leaderboard</a><a href="/topics/motivation" class="tag">Motivation</a>
+					</div>
+				
+
+
+		
+			<div class="details">Referenced by</div>
+			<div style="font-size:12px;"><ul style="padding-left:16px !important;">
+			
+				<li>
+					
+					<a href='/discussion/optional-transparency-to-enable-rating-analytics/100' class='thread-title'>Optional transparency to enable rating analytics</a>
+				</li>
+			
+				</ul>
+			</div>
+		
+
+		
+			<div class="details">Cite this as</div>
+			<span style="font-size:12px;">
+				Lars Juhl Jensen, Jesse Spaulding, Daniel Himmelstein (2015) Impact points and leaderboard demotivating. <i>Thinklab.</i> https://thinklab.com/d/98
+			</span>
+		
+
+		<div class="details">License</div>
+		<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0;width:88px;height:31px;" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></p>
+
+		<div class="details">Share</div>
+		
+			
+				<a class="share-button fb" onclick="javascript:void(window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A//thinklab.com/discussion/impact-points-and-leaderboard-demotivating/98','','width=600,height=460,menubar=no,status=no'));" href="#"></a>
+<a class="share-button twitter" onclick="javascript:void(window.open('https://twitter.com/share?text=Impact%20points%20and%20leaderboard%20demotivating&url=https%3A//thinklab.com/discussion/impact-points-and-leaderboard-demotivating/98','','width=600,height=300,menubar=no,status=no'));" href="#"></a>
+<a class="share-button google" onclick="javascript:void(window.open('https://plus.google.com/share?url=https%3A//thinklab.com/discussion/impact-points-and-leaderboard-demotivating/98','','width=510,height=460,menubar=no,status=no'));" href="#"></a>
+
+			
+		
+
+	</td>
+</tr></table>
+
+
+		</div>
+
+
+		
+	    	<div class="footer">
+<div style="background:#dedede;">
+	<div class="main-centered-div text-center" style="padding:20px;">
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#83ebe6efefecc3f7ebeaede8efe2e1ade0ecee"><span class="__cf_email__" data-cfemail="7b131e1717143b0f13121510171a1955181416">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+	</div>
+</div>
+<div class="main-footer">
+	<div class="main-centered-div">
+
+<table class="full-width"><tr>
+	<td class="footer-nav">
+
+        <div class="foot-head">Explore</div>
+        <a href="/proposals">Proposals</a><br>
+        <a href="/projects">Projects</a><br>
+        <a href="/publications">Article discussion</a><br>
+        <a href="/discussion">All discussion</a><br>
+        <a href="/topics">Topics</a><br>
+        <!-- <a href="/funders">Funders</a><br> -->
+        <a href="/funding">Funding opportunities</a><br>
+
+	</td>
+	<td class="footer-nav">
+
+        <!-- <div class="foot-head">Help &amp; feedback</div>	 -->
+        <!-- <div class="foot-head">Intro</div>
+        <a href="/benefits/for-science">Why</a><br>
+        <a href="/how-it-works">How it works</a><br>
+
+<br> -->
+
+        <div class="foot-head">Community</div>
+        <a href="/leaderboard">Leaderboard</a><br>
+        <a href="/p/meta">Thinklab Meta</a><br>
+				<a href="/help/faq">Help</a><br>
+				<!-- <a href="/new-project">Start a proposal</a><br> -->
+        <!-- <a href="/benefits/proposal">Benefits</a><br> -->
+        <!-- <a href="/funding">Get funded</a><br> -->
+        <!-- <a href="/participate">Become a contributor</a><br> -->
+        <!-- <a href="/for-funders">For science funders</a><br> -->
+        <!-- <a href="/for-institutions">For institutions</a><br> -->
+
+	</td>
+	<td class="footer-nav">
+
+
+
+        <div class="foot-head">About</div>
+        <a href="/about">Overview</a><br>
+        <a href="/benefits">Benefits</a><br>
+        <a href="/how-it-works">How it works</a><br>
+        <a href="/about/story">Our story</a><br>
+        <a href="/blog">Our blog</a><br>
+        <a href="/about/jobs">Join the team</a><br>
+        <br>
+
+        <!-- <div class="foot-head">Help</div>
+        <a href="/help">Help</a><br>
+		 -->
+
+
+	</td>
+	<td class="footer-nav">
+		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
+		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<br><br>
+		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
+
+	</td>
+
+</tr></table>
+
+</div>
+</div>
+</div>
+
+		
+
+	</div>
+
+
+  <script></script>
+  <script>
+  var MEDIA_URL = 'https://think-lab.s3.amazonaws.com/m/';
+  var STATIC_URL = 'https://think-lab.s3.amazonaws.com/s/';
+  var page_is_authenticated = false;
+  var page_page = 'discussion';
+  var page_profile_id = undefined;
+</script>
+
+
+
+	<!-- Note different script type. MUST come before MathJax.js -->
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	        "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"],
+	                        scale: 110, linebreaks: { automatic:true },
+	                        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+	        tex2jax: { inlineMath: [ ["$$", "$$"], ["\\(","\\)"] ],
+	                    displayMath: [ ["$$$","$$$"], ["\\[", "\\]"] ],
+	                    processEscapes: true,}
+	            });
+
+	</script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://think-lab.s3.amazonaws.com/s/dist/main.min.js"></script>
+  
+
+
+
+  
+	
+  
+  
+  
+<script>
+$(function() {
+  recordHit('thread', 98);
+});
+</script>
+
+
+
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>

@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZgEOC19dW0QCEVtHU1gG","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":329}</script>
+    <title>Estimating the complexity of hetnet traversal | Thinklab</title>
+	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
+    <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/highlightjs/github.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/css.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/bootstrap-multiselect.css" />
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
+    
+    
+    
+    
+  
+    <meta name="citation_doi" content="10.15363/thinklab.d187">
+    <meta name="citation_title" content="Estimating the complexity of hetnet traversal">
+    <meta name="citation_online_date" content="March 22, 2016">
+    <meta name="citation_author" content="Daniel Himmelstein, Antoine Lizee">
+    <meta name="citation_journal_title" content="Thinklab">
+    <meta name="citation_publisher" content="Thinklab">
+  
+
+    
+
+
+	<!-- GoogleAnalytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-48550230-1', 'thinklab.com');
+	ga('require', 'displayfeatures');
+	
+	ga('send', 'pageview');
+
+	</script>
+
+
+
+
+
+
+</head>
+<body >
+  <form id="form_action" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+</form>
+
+	
+
+	<div class="body-wrapper">
+
+		
+
+
+<!-- <div style="height:5px;background-image:url('https://think-lab.s3.amazonaws.com/s/img/top-bg.gif');"></div> -->
+<div class="gradient">
+	<div class="main-centered-div header-container">
+
+<table class="full-width" style="height:60px;"><tr>
+	<td style="width:200px;vertical-align:middle;padding-bottom:15px;">
+		<a href="/" style="font-weight:normal;color:#212121;"><img src="https://think-lab.s3.amazonaws.com/s/img/logo.png" width="160"></a>
+	</td><td style="vertical-align:middle;text-align:left;padding-top:6px;width:100%;padding-left:40px;">
+		<ul id="not-search-block"  class="main-header">
+
+
+			
+
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/proposals">Proposals</a></li>
+						<li><a href="/projects">Projects</a></li>
+						<li><a href="/publications">Article discussion</a></li>
+						<li><a href="/discussion">All discussion</a></li>
+					</ul>
+				</li>
+				<li><a href="/leaderboard">Leaderboard</a></li>
+
+			
+				<li><a href="/about">About</a></li>
+			
+
+
+		</ul>
+
+    <ul id="search-block" class="main-header" style="display: none; margin-right: 30px;">
+        <li class="full-width">
+            <form method="get" action="/search">
+			<div class="input-group full-width">
+				<input name="q" type="text" class="form-control search-input">
+			</div>
+            </form>
+        </li>
+    </ul>
+
+	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
+		<ul class="main-header pull-right" style="padding-left: 0;">
+    		
+                <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+            
+
+        </ul>
+    </ul>
+	</td>
+</tr></table>
+
+<!-- <div id="global-search-div" class="main-centered-div" style="display:none;">
+	<input type="text" value="" class="thread-search form-control" placeholder="Search" data-action="/discussion">
+</div> -->
+
+	</div>
+</div>
+
+		
+	  
+
+
+
+	  
+
+
+		
+
+		<div class="dark-head"><div class="main-centered-div">
+
+			
+
+		</div></div>
+		
+		<div class="main-centered-div" style="margin-top:40px;padding-bottom:340px">
+	    
+
+<div style="margin-top:-20px; margin-bottom:20px;">
+
+    <a class="side-box" href="/p/rephetio" style="background-color:#ebfdff;"><div class="side-type">Project:</div> <div class="side-title">Rephetio: Repurposing drugs on a hetnet [rephetio]</div></a><br>
+
+
+
+</div>
+
+<table style="margin-top:0px;"><tr>
+	<td class="thread-table-content">
+
+		<table class="full-width">
+			
+<tr class="comment-tr target-hl" id="1" data-comment-id="1186">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1186"></a>
+
+    
+
+			<h2 class="page-title" style="margin-bottom:5px;margin-top:0px !important;">Estimating the complexity of hetnet traversal</h2>
+
+			<div style="margin-top:5px;color:gray;margin-bottom:20px;font-size:13px;">
+				<a style="font-weight:normal;color:#212121" href="/u/dhimmel"><strong>Daniel Himmelstein</strong></a>
+				<span class="is-researcher">Researcher</span>
+				&nbsp; <a href="#1" class="light">472 days ago</a>
+				
+			</div>
+
+      
+
+          <hr>
+		
+
+    <p>Our approach quantifies the hetnet topology between compound–disease pairs by calculating the prevalence of different path types (metapaths) <span class="citation">[<a href="https://doi.org/10.1371/journal.pcbi.1004259" class="citation" data-key="10.1371/journal.pcbi.1004259">1</a>]</span>. We would like to be able to estimate the complexity of a metapath, given the graph. We'll define complexity as the number of Neo4j database hits (<code>dbhits</code>) needed to execute a query. Specifically, we're interested in  assessing the runtime of queries for a given metapath, without having to run the queries. </p>
+
+<p>If we can accurately predict runtime using estimated complexity, we can selectively avoid computing features for overly complex metapaths. Since the number of potential metapaths (as well as paths per metapath) scales combinatorially with increasing path length, our method will be always run into computational limits. We're hoping to use complexity estimates to help choose a tractable set of metpaths.</p>
+
+<h2>Metapath runtime on a trial feature extraction</h2>
+
+<p>In the past, we've used a length cutoff for metapaths. In a trial run of our feature extraction, I computed features for all metapaths with lengths 2–4. However, I terminated the process midway because progress was too slow. What we saw was that a few metapaths took a disproportionate amount of time to query.</p>
+
+<p>See <a href="http://nbviewer.jupyter.org/github/dhimmel/learn/blob/5c94a0b53d71f2ac0a2f48133a8e1d4e4e0ee26c/all-features-pyviz.ipynb#Time-per-query">cells 11–12 in this notebook</a>, noting that ~half of metapaths with lengths 2–4 are missing and that paths with duplicate nodes were not excluded as they <a href="http://thinklab.com/discussion/path-exclusion-conditions/134#4" class="citation thread-citation" data-key="10.15363/thinklab.d134">should have been</a>. Nonetheless, the results are clear: the metapaths with long runtimes were only mildly predictive (<code>auroc</code>), did not decline in predictiveness due to <a href="http://thinklab.com/discussion/assessing-the-effectiveness-of-our-hetnet-permutations/178" class="citation thread-citation" data-key="10.15363/thinklab.d178">network permutation</a> (<code>delta_auroc</code>).</p>
+
+<p>The worst metapath was <em>CdGeAeGuD</em>, taking on average 37 seconds per query (compound–disease pair).  This metapath combines four gene-expression-based edges, which can be terribly high degree on their non-gene terminus.</p>
+
+<p>Hence, we will look into estimating metapath complexity to exclude such runtime outliers.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="2" data-comment-id="1187">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1187"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#2" class="light">472 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Estimating the complexity of a sequential traversal</h1>
+
+<p>In sequential traversal, the query begins on a single node and expands to create a tree of paths conforming to the specified metapath. Once the tree has been fully expanded, only paths whose leaves match the desired ending node are retained.</p>
+
+<p>To estimate the sequential complexity of a metapath on a given graph, I first calculated the average degree of each metaedge based on our specific hetnet. Then, I took the log10 of the product of the average degrees along the path. Each metaedge contributes one degree: the average degree of whichever metanode is traversed first by the path. Since you can start a sequential traversal from either end of a path, we'll refer to forward versus backward sequential traversal.</p>
+
+<p><a href="/u/alizee" class="username">@alizee</a> proved to me in whiteboard discussion, that there is always a constant difference between the complexity of a forward and reverse sequential traversal, which is based only on the number of nodes of the source and target metanodes. The estimated complexity of a sequential traversal is less when starting on the node whose type is more abundant. I'll let <a href="/u/alizee" class="username">@alizee</a> explain the details.</p>
+
+<p>On the trial feature extraction, forward sequential complexity was a good estimator of runtime (<a href="http://nbviewer.jupyter.org/github/dhimmel/learn/blob/5c94a0b53d71f2ac0a2f48133a8e1d4e4e0ee26c/time.ipynb#sequential_complexity" title="Disregard cells 14--15, which use a flawed method for computing join complexity">notebook cell 13</a>). However, it's important to note that our Neo4j queries were not performed sequentially. Instead, traversal began from both termini and met in the middle where the results were joined. Even so, estimated sequential complexity may be a good metric to use for metapath selection.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="3" data-comment-id="1191">
+  <td class="comment-profile-avatar">
+		<a href="/u/alizee"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/23_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1191"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/alizee">Antoine Lizee</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#3" class="light">471 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>A note on traversal complexity</h1>
+
+<h2>Intro</h2>
+
+<p>The question here is to estimate the complexity of graph traversal when following a 'metapath': a specification for which kind of nodes we need to traverse, in which order. This complexity will be useful to get a proxy for computation time when create the features we currently use in <em>rephetio</em> for prediction problems, the DWPC. We mainly look at sequential complexity, which is estimating complexity of traversal from one point to another, in only one direction, without joining two partial traversals in the middle. (even though the latter is almost always a better option)</p>
+
+<p>We can reasonably make the hypothesis that sequential complexity is equal to the number of possible paths that must be traversed. You propose above, and I would agree, that we use something along the <a href="https://en.wikipedia.org/wiki/Mean_field_theory">mean-field approximation</a> and consider that the average number of paths to be traversed when following a Metapath is equal to the multiplication of the average degrees (outward connections) of all node types along the metapath. Doing so, we intrinsically base our analysis on the number of edges in the networks, which gives us some simple, neat properties.</p>
+
+<h2>Formal definition</h2>
+
+<p>We consider as an example 4 types of Nodes in our Network, <span class="math">$$A, B, C, D$$</span>, linked with symmetrical edges, and the Metapath joining them <span class="math">$$A-B-C-D$$</span>. We consider these nodes in order, since the difference between 'forward' (starting from <span class="math">$$A$$</span>) and 'backward' (starting from <span class="math">$$D$$</span>) traversal matters - as defined by <a href="/u/dhimmel" class="username">@dhimmel</a> above. Each node type has respectively <span class="math">$$N_A, N_B, N_C, N_D$$</span> nodes, noted  <span class="math">$$A_i, B_j,$$</span>... Each of these single nodes has a forward degree, noted <span class="math">$$a_i$$</span> for instance, and a backward degree, noted with a prime, eg <span class="math">$$b_i'$$</span>. These degrees represent the number of edges that connect the node at stake (<span class="math">$$A_i$$</span> and <span class="math">$$B_i$$</span> in our examples) to the nodes of the next (<span class="math">$$B$$</span>) or previous (<span class="math">$$A$$</span>) types respectively.</p>
+
+<p>[remark: we use the actual types instead of a notation "<span class="math">$$K$$</span>" for simplicity. The results that are written below for nodes of type <span class="math">$$A$$</span> or <span class="math">$$B$$</span> stand general]</p>
+
+<h2>Proof of the equivalence between forward and backward complexities</h2>
+
+<p>The average of node degree is written <span class="math">$$E[a_i]$$</span> such as:</p>
+
+<div class="math">$$$
+\begin{align}
+E_{i\in1,...,N_A}[a_i]=\frac{1}{N_A}\sum_{i\in1,...,N_A}{a_i}
+\end{align}
+$$$</div>
+
+<p>Then, we have</p>
+
+<div class="math">$$$
+\begin{align}
+E_{i\in1,...,N_A}[a_i] \cdot N_A = N_{A-B} = E_{i\in1,...,N_B}[b_i'] \cdot N_B 
+\end{align}
+$$$</div>
+
+<p>where <span class="math">$$N_{A-B}$$</span> is the number of edges from the nodes <span class="math">$$A$$</span> to <span class="math">$$B$$</span>. Follows, in short notation: </p>
+
+<div class="math">$$$
+\begin{align}
+E[a_i] = E[b_i'] \cdot \frac{N_B} {N_A} 
+\quad or \quad
+E[b_i'] = E[a_i] \cdot \frac{N_A} {N_B} 
+\end{align}
+$$$</div>
+
+<p>The estimation of 'forward complexity' outlined above, for discovering the paths that correspond to the metapath <span class="math">$$A-B-C-D$$</span> is written as:</p>
+
+<div class="math">$$$
+\begin{equation}
+FC_{A-B-C-D} = E[a_i] \cdot E[b_i] \cdot E[c_i]
+\end{equation}
+$$$</div>
+
+<p>The estimated backward complexity can be written as:</p>
+
+<div class="math">$$$
+\begin{align}
+BC_{A-B-C-D} = FC_{D-C-B-A} = E[b_i'] \cdot E[c_i'] \cdot E[d_i']
+\end{align}
+$$$</div>
+
+<p>Follows:</p>
+
+<div class="math">$$$
+\begin{align}
+BC_{A-B-C-D} &amp;= E[b_i'] \cdot E[c_i'] \cdot E[d_i']\\
+ &amp;= E[a_i]\frac{N_A}{N_B} \cdot E[b_i]\frac{N_B}{N_C} \cdot E[c_i]\frac{N_C}{N_D}\\
+ &amp;= E[a_i] \cdot E[b_i]\ \cdot E[c_i] \cdot \frac{N_A}{N_D}\\
+BC_{A-B-C-D} &amp;= FC_{A-B-C-D} \cdot \frac{N_A}{N_D}
+\end{align}
+$$$</div>
+
+<p>More generally:</p>
+
+<div class="math">$$$
+\begin{equation}
+\boxed{BC = FC \cdot \frac{N_{START}}{N_{END}}}
+\end{equation}
+$$$</div>
+
+<h2>All sequential complexities are made equal</h2>
+
+<p>Thus, forward and backward complexities are trivially related by the formula above. </p>
+
+<p><em>Nevertheless</em>, we need to keep in mind that the forward and backward complexity estimates above stand only for a single traversal, starting either from one Node <span class="math">$$A_i$$</span> or <span class="math">$$D_i$$</span> respectively. Thus, if you plan to do these traversals for all the <span class="math">$$N_A \cdot N_D $$</span> possible pairs (or a randomly selected subset of those) you need to multiply these complexities by the number of starting nodes, <span class="math">$$N_A$$</span> or <span class="math">$$N_D$$</span> in order to get a relevant time estimate. As a result of this computation and under these hypotheses, there is no difference between forward and backward traversal - which is reassuring.</p>
+
+<h2>Conclusion</h2>
+
+<ul><li>Forward and Backward Complexity estimates are trivially related through the formula above.</li><li>Time estimates should take into account the number of starting nodes, resulting in no difference between both directions of traversal.</li><li>About join complexity: I believe that the sequential complexity estimates discussed here are good proxies for the process of "joint" traversal, when two semi-traversals are joined in the middle in order to reduce computation time.</li></ul>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-222" class="inline-note toggle-parent" data-note-id="222">
+	<p><a href="/u/larsjuhljensen">Lars Juhl Jensen</a>: I know it's dangerous to make pre-morning coffee comments on a mathematical proof, but didn't you get N_START and N_END swapped in the last formula? In the formula just above, I thought N_A was the number of start nodes and N_D the number of end nodes.</p>
+
+<p>It would also make more sense intuitively, since it implies that N_START⋅FC = N_END⋅BC. In other words, it doesn't matter whether you start from every start node and do forward traversal or start from every end node and do backward traversal. Both involve that you traverse all possible paths between all start nodes and all end nodes and have the same complexity.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-226" class="inline-note toggle-parent" data-note-id="226">
+	<p><a href="/u/alizee">Antoine Lizee</a>: <a href="/u/larsjuhljensen" class="username">@larsjuhljensen</a>: I wish I could say I let this one slip to test readership's attention, but it just seems that your pre-morning coffee brain is more awake than my post-lunch one. Well spotted - thank you.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="4" data-comment-id="1203">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1203"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#4" class="light">463 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>The <a href="/u/alizee" class="username">@alizee</a> theorem of sequential complexity</h1>
+
+<p><a href="/u/alizee" class="username">@alizee</a>, fantastic proof! The takeaway for me is that if you're doing a sequential traversal from one source to one target, start from the end where there are a greater number of nodes. In situations where we are using sequential complexity to estimate runtime, we only have be consistent on reporting either forward or backward complexity.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-227" class="inline-note toggle-parent" data-note-id="227">
+	<p><a href="/u/alizee">Antoine Lizee</a>: Correct
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="5" data-comment-id="1204">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1204"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#5" class="light">463 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>A formula for estimating joint traversal complexity</h1>
+
+<p>Rather than perform traversals sequentially, both <a href="http://neo4j.com/docs/2.3.3/execution-plans-combining.html#query-plan-node-hash-join" title="Node Hash Join in Neo4j">Neo4j</a> and <a href="https://github.com/dhimmel/hetio/blob/2c135fcd32616d6979972105ba60b003d65c98bd/hetio/pathtools.py#L96" title="hetio.pathtools.paths_between()">hetio</a> support joint traversal. In joint traversal, paths are expanded upon from both endpoints until meeting at an interior node, where they are joined.</p>
+
+<p>Using <a href="/u/alizee" class="username">@alizee</a>'s notation <a href="#3">above</a>, we'll consider metapath <span class="math">$$A-B-C-D$$</span>. If we adopt a join index of 2 (joining on <em>C</em>), we compute joint complexity (<em>JC</em>) as:</p>
+
+<div class="math">$$$
+JC_{A-B-C_{join}-D} = \log _{10} (E[a_i] \cdot E[b_i] + E[d_i'])
+$$$</div>
+
+<p>Note that <a href="/u/alizee" class="username">@alizee</a> didn't include the log, but for consistency with our reported complexity values, I'm including it. This proposed formula for complexity assumes that joining the traversals is a free operation. In Neo4j a <a href="(http://neo4j.com/docs/2.3.3/execution-plans-combining.html#query-plan-node-hash-join" title="Node Hash Join in Neo4j"><code>NodeHashJoin</code></a> doesn't require any dbhits, but could still add to runtime.</p>
+
+<p>When the join index is 0, the joint traversal becomes equivalent to backward traversal. When the join index is the target node, the joint traversal becomes equivalent to forward traversal.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="6" data-comment-id="1205">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1205"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#6" class="light">463 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Choosing the best join index for Neo4j queries</h1>
+
+<p>If you don't give Neo4j 2.3.2 any hints where to join, the planner decides for itself. The planner is capable of sequential or join traversal. However, which query plan to use is determined prior to query execution (see <a href="https://github.com/neo4j/neo4j/issues/6030" title="GitHub Issue on whether the join index could be adaptively determined during Neo4j query execution">my issue</a>). You can tell Neo4j which node to join on using a join hint (<code>USING JOIN ON</code> in Cypher). If you specify a terminal node to join on in 2.3.2, a sequential query will be executed, but Neo4j will decide for itself whether to do a forward or backward sequential join.</p>
+
+<p>Therefore, we wanted to see whether we could use our <a href="#5">estimated join complexities</a> to optimize our Neo4j queries. Therefore we did a parameter sweep where we evaluated all possible join indexes when computing features (<em>DWPCs</em>) for 75 metapaths × 150 compound–disease pairs (<a href="https://github.com/dhimmel/learn/blob/92d89c9eaf54704968f7397fac38d3e7a2074ca5/optimize/join-index/sweep.ipynb">notebook</a>). In total, we performed 66,600 queries.</p>
+
+<p>We consider three options for specifying the join index:</p>
+
+<ul><li><strong>midpoint index</strong> — the floor of the metapath length divided by two. Note if there were more diseases than compounds, then <a href="#3">we expect</a> the ceiling would outperform the floor.</li><li><strong>optimal index</strong> — the least complex join index based on <a href="#5">our formula</a> for estimating join complexity.</li><li><strong>no hint</strong> — where we let Neo4j choose the join index. The query planner will choose a join index, although we do not know which index was used.</li></ul>
+
+<p>For each metapath, we identified the average runtime of the three options (<a href="https://github.com/dhimmel/learn/blob/92d89c9eaf54704968f7397fac38d3e7a2074ca5/optimize/join-index/data/index-choice-by-metapath.tsv">table</a>). While no option was universally fastest for all metapaths, on average the midpoint index was best (0.229 seconds), followed by the optimal index (0.339), and last no hint (0.656). In other words, specifying the midpoint as the join index cut runtime in third compared to not providing any join hint. Interestingly, our optimal complexity estimate performed ~50% worse than the midpoint overall.</p>
+
+<p>On an individual query level, the midpoint index was the fastest index for 40% of queries, while the optimal index was the fastest index for 29% of the queries. The average rank of the fastest join index according to our complexity estimate was 2.5.</p>
+
+<p>In conclusion, the optimal join index for a specific query is highly variable. For a given metapath, different compound–disease pairs will prefer different join indexes. However, since we plan to select a join index at the metapath level, the midpoint is the best option thus far.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="7" data-comment-id="1206">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1206"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#7" class="light">463 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Complexity poorly estimates runtime</h1>
+
+<p>We recently performed 22,933,125 <em>DWPC</em> queries (3,775 compound–disease pairs × 1,215 metapaths × 5 hetnets). For these queries, I specified the optimal join index according to our <a href="#5">formula for join complexity</a>. In the future, we will switch to the midpoint join index.</p>
+
+<p>Both sequential complexity and optimal index join complexity poorly predicted runtime (<a href="http://nbviewer.jupyter.org/github/dhimmel/learn/blob/edb3cb68cb62e37ac426e39dc9196cfb279db2e7/optimize/time.ipynb">notebook</a>). Many of the outlier metapaths appear to contain a <em>Gene→regulates→Gene</em> edge. Since, the target genes for these edges will largely <a href="http://thinklab.com/discussion/computing-consensus-transcriptional-profiles-for-lincs-l1000-perturbations/43#7" class="citation thread-citation" data-key="10.15363/thinklab.d43">be restricted</a> to the 978 landmark L1000 genes, I suspect mean degree is a underestimating complexity. One idea I've had is to weight the average degree calculation by degree to address this issue. In other words, should we account for the fact that queries are more likely to traverse high degree nodes when estimating complexity?</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-233" class="inline-note toggle-parent" data-note-id="233">
+	<p><a href="/u/alizee">Antoine Lizee</a>: I would love to see how sequential complexity predicts midpoint runtime when these results will be ready.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="8" data-comment-id="1269">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1269"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#8" class="light">447 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>The relationship between midpoint-join runtime and complexity</h1>
+
+<p>We performed a similar <em>DWPC</em> computation to <a href="#7">before</a> but switched to specifying midpoint join indexes rather than our "optimal" join indexes. This time we computed 27,308,958 <em>DWPCs</em> for 3,775 compound–disease pairs × 1,206 metapaths × 6 hetnets. However, a <a href="https://github.com/dhimmel/learn/issues/1" title="Failing feature extraction queries due to py2neo's socket timeout">bug was introduced</a> which made queries taking over 30 seconds fail silently. Therefore, the following features are incomplete and will be prone to runtime underestimation: <em>CbGeAeGaD</em>, <em>CdG&lt;rGeAlD</em>, <em>CdGeAeGaD</em>, <em>CdGeAeGdD</em>, <em>CdGeAeGuD</em>, <em>CuG&lt;rGeAlD</em>, <em>CuGeAeGaD</em>, <em>CuGeAeGdD</em>, <em>CuGeAeGuD</em>, <em>CuGeAuGaD</em>.</p>
+
+<p><a href="/u/alizee" class="username">@alizee</a>: the switch to midpoint join led to a stronger association between sequential complexity and runtime (<a href="http://nbviewer.jupyter.org/github/dhimmel/learn/blob/6775c34768b5d4aaa0f386351a3ffec115548b2f/optimize/time.ipynb">notebook</a>). Interestingly, switch also improved the fit between optimal complexity and runtime.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-247" class="inline-note toggle-parent" data-note-id="247">
+	<p><a href="/u/alizee">Antoine Lizee</a>: EDIT: removed because unnecessarily complicated while wrong.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-248" class="inline-note toggle-parent" data-note-id="248">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: EDIT: removed in response to the removal of <a href="/u/alizee" class="username">@alizee</a>'s preceding note.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-255" class="inline-note toggle-parent" data-note-id="255">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: See the <a href="http://nbviewer.jupyter.org/github/dhimmel/learn/blob/f8f41e7e024733f443817c2a0353bc711bfa879e/optimize/time.ipynb">updated notebook</a> where the silent timeout issue has been fixed. Now all queries count towards average time.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+    		
+		</table>
+
+    
+
+    &nbsp;<br>
+    <a class="btn btn-primary btn-lg" href="/signup?next=/discussion/estimating-the-complexity-of-hetnet-traversal/187&suppress_message=1" style>Join to Reply</a>
+
+
+		<table class="references table-td-5" style="display:none;"><tr><td><a href='/doi/10.1371/journal.pcbi.1004259' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.1371/journal.pcbi.1004259'><a href='/doi/10.1371/journal.pcbi.1004259' class='pub-title'>Heterogeneous Network Edge Prediction: A Data Integration Approach to Prioritize Disease-Associated Genes</a><div class='pub-body'>Daniel S. Himmelstein, Sergio E. Baranzini (2015) <i>PLOS Computational Biology</i>. doi:<a class='pub-doi' href='https://doi.org/10.1371/journal.pcbi.1004259'>10.1371/journal.pcbi.1004259</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d134' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>2.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d134'><a href='/discussion/path-exclusion-conditions/134' class='pub-title'>Path exclusion conditions</a><div class='pub-body'>Daniel Himmelstein (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d134'>10.15363/thinklab.d134</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d178' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>3.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d178'><a href='/discussion/assessing-the-effectiveness-of-our-hetnet-permutations/178' class='pub-title'>Assessing the effectiveness of our hetnet permutations</a><div class='pub-body'>Daniel Himmelstein (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d178'>10.15363/thinklab.d178</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d43' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>4.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d43'><a href='/discussion/computing-consensus-transcriptional-profiles-for-lincs-l1000-perturbations/43' class='pub-title'>Computing consensus transcriptional profiles for LINCS L1000 perturbations</a><div class='pub-body'>Daniel Himmelstein, Caty Chung (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d43'>10.15363/thinklab.d43</a></div></div></td></tr></table>
+
+    
+
+
+	</td>
+	<td class="thread-sidebar">
+
+
+			
+
+      <a class="btn btn-default follow-link btn-follow btn-lg is-following tt-top full-width" title="Follow discussion" data-id="187" data-ctype="thread" data-is-following="false">&nbsp;</a>
+
+      
+        <div class="status-box text-center"><span style="">Status:</span> 
+  Completed
+
+</div>
+      
+
+      
+        
+      
+
+
+				
+
+					<div class="details">Views</div>
+					<span style="font-size:20px;">72</span>
+
+        
+
+				
+					<div class="details">Topics</div>
+					<div style="margin-bottom:15px;">
+		            <a href="/topics/join-hints" class="tag">Join Hints</a><a href="/topics/runtime" class="tag">Runtime</a><a href="/topics/optimization" class="tag">Optimization</a><a href="/topics/neo4j" class="tag">Neo4J</a><a href="/topics/complexity" class="tag">Complexity</a>
+					</div>
+				
+
+
+		
+			<div class="details">Referenced by</div>
+			<div style="font-size:12px;"><ul style="padding-left:16px !important;">
+			
+				<li>
+					
+					<a href='/doc/7/review' class='thread-title'><span class='inbox-icon tt-top glyphicon glyphicon-flash'></span>Report Review: Rephetio: Repurposing drugs on a hetnet</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/our-hetnet-edge-prediction-methodology-the-modeling-framework-for-project-rephetio/210' class='thread-title'>Our hetnet edge prediction methodology: the modeling framework for Project Rephetio</a>
+				</li>
+			
+				</ul>
+			</div>
+		
+
+		
+			<div class="details">Cite this as</div>
+			<span style="font-size:12px;">
+				Daniel Himmelstein, Antoine Lizee (2016) Estimating the complexity of hetnet traversal. <i>Thinklab.</i> doi:<a href='https://doi.org/10.15363/thinklab.d187'>10.15363/thinklab.d187</a>
+			</span>
+		
+
+		<div class="details">License</div>
+		<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0;width:88px;height:31px;" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></p>
+
+		<div class="details">Share</div>
+		
+			
+				<a class="share-button fb" onclick="javascript:void(window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A//thinklab.com/discussion/estimating-the-complexity-of-hetnet-traversal/187','','width=600,height=460,menubar=no,status=no'));" href="#"></a>
+<a class="share-button twitter" onclick="javascript:void(window.open('https://twitter.com/share?text=Estimating%20the%20complexity%20of%20hetnet%20traversal&url=https%3A//thinklab.com/discussion/estimating-the-complexity-of-hetnet-traversal/187','','width=600,height=300,menubar=no,status=no'));" href="#"></a>
+<a class="share-button google" onclick="javascript:void(window.open('https://plus.google.com/share?url=https%3A//thinklab.com/discussion/estimating-the-complexity-of-hetnet-traversal/187','','width=510,height=460,menubar=no,status=no'));" href="#"></a>
+
+			
+		
+
+	</td>
+</tr></table>
+
+
+		</div>
+
+
+		
+	    	<div class="footer">
+<div style="background:#dedede;">
+	<div class="main-centered-div text-center" style="padding:20px;">
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#e68e838a8a89a6928e8f888d8a8784c885898b"><span class="__cf_email__" data-cfemail="94fcf1f8f8fbd4e0fcfdfafff8f5f6baf7fbf9">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+	</div>
+</div>
+<div class="main-footer">
+	<div class="main-centered-div">
+
+<table class="full-width"><tr>
+	<td class="footer-nav">
+
+        <div class="foot-head">Explore</div>
+        <a href="/proposals">Proposals</a><br>
+        <a href="/projects">Projects</a><br>
+        <a href="/publications">Article discussion</a><br>
+        <a href="/discussion">All discussion</a><br>
+        <a href="/topics">Topics</a><br>
+        <!-- <a href="/funders">Funders</a><br> -->
+        <a href="/funding">Funding opportunities</a><br>
+
+	</td>
+	<td class="footer-nav">
+
+        <!-- <div class="foot-head">Help &amp; feedback</div>	 -->
+        <!-- <div class="foot-head">Intro</div>
+        <a href="/benefits/for-science">Why</a><br>
+        <a href="/how-it-works">How it works</a><br>
+
+<br> -->
+
+        <div class="foot-head">Community</div>
+        <a href="/leaderboard">Leaderboard</a><br>
+        <a href="/p/meta">Thinklab Meta</a><br>
+				<a href="/help/faq">Help</a><br>
+				<!-- <a href="/new-project">Start a proposal</a><br> -->
+        <!-- <a href="/benefits/proposal">Benefits</a><br> -->
+        <!-- <a href="/funding">Get funded</a><br> -->
+        <!-- <a href="/participate">Become a contributor</a><br> -->
+        <!-- <a href="/for-funders">For science funders</a><br> -->
+        <!-- <a href="/for-institutions">For institutions</a><br> -->
+
+	</td>
+	<td class="footer-nav">
+
+
+
+        <div class="foot-head">About</div>
+        <a href="/about">Overview</a><br>
+        <a href="/benefits">Benefits</a><br>
+        <a href="/how-it-works">How it works</a><br>
+        <a href="/about/story">Our story</a><br>
+        <a href="/blog">Our blog</a><br>
+        <a href="/about/jobs">Join the team</a><br>
+        <br>
+
+        <!-- <div class="foot-head">Help</div>
+        <a href="/help">Help</a><br>
+		 -->
+
+
+	</td>
+	<td class="footer-nav">
+		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
+		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<br><br>
+		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
+
+	</td>
+
+</tr></table>
+
+</div>
+</div>
+</div>
+
+		
+
+	</div>
+
+
+  <script></script>
+  <script>
+  var MEDIA_URL = 'https://think-lab.s3.amazonaws.com/m/';
+  var STATIC_URL = 'https://think-lab.s3.amazonaws.com/s/';
+  var page_is_authenticated = false;
+  var page_page = 'discussion';
+  var page_profile_id = undefined;
+</script>
+
+
+
+	<!-- Note different script type. MUST come before MathJax.js -->
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	        "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"],
+	                        scale: 110, linebreaks: { automatic:true },
+	                        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+	        tex2jax: { inlineMath: [ ["$$", "$$"], ["\\(","\\)"] ],
+	                    displayMath: [ ["$$$","$$$"], ["\\[", "\\]"] ],
+	                    processEscapes: true,}
+	            });
+
+	</script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://think-lab.s3.amazonaws.com/s/dist/main.min.js"></script>
+  
+
+
+
+  
+	
+  
+  
+  
+<script>
+$(function() {
+  recordHit('thread', 187);
+});
+</script>
+
+
+
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>

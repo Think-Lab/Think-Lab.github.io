@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08CV1taQlkRXEdFAz0WFFNIRVVcOkVcU049BxNcWw==","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":423}</script>
+    <title>Thinklab: A platform for open review of research grant proposals | Thinklab</title>
+	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
+    <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/highlightjs/github.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/css.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/bootstrap-multiselect.css" />
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
+    
+    
+    
+    
+    
+
+
+	<!-- GoogleAnalytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-48550230-1', 'thinklab.com');
+	ga('require', 'displayfeatures');
+	
+	ga('send', 'pageview');
+
+	</script>
+
+
+
+
+
+
+</head>
+<body >
+  <form id="form_action" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+</form>
+
+	
+
+	<div class="body-wrapper">
+
+		
+
+
+<!-- <div style="height:5px;background-image:url('https://think-lab.s3.amazonaws.com/s/img/top-bg.gif');"></div> -->
+<div class="gradient">
+	<div class="main-centered-div header-container">
+
+<table class="full-width" style="height:60px;"><tr>
+	<td style="width:200px;vertical-align:middle;padding-bottom:15px;">
+		<a href="/" style="font-weight:normal;color:#212121;"><img src="https://think-lab.s3.amazonaws.com/s/img/logo.png" width="160"></a>
+	</td><td style="vertical-align:middle;text-align:left;padding-top:6px;width:100%;padding-left:40px;">
+		<ul id="not-search-block"  class="main-header">
+
+
+			
+
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/proposals">Proposals</a></li>
+						<li><a href="/projects">Projects</a></li>
+						<li><a href="/publications">Article discussion</a></li>
+						<li><a href="/discussion">All discussion</a></li>
+					</ul>
+				</li>
+				<li><a href="/leaderboard">Leaderboard</a></li>
+
+			
+				<li><a href="/about">About</a></li>
+			
+
+
+		</ul>
+
+    <ul id="search-block" class="main-header" style="display: none; margin-right: 30px;">
+        <li class="full-width">
+            <form method="get" action="/search">
+			<div class="input-group full-width">
+				<input name="q" type="text" class="form-control search-input">
+			</div>
+            </form>
+        </li>
+    </ul>
+
+	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
+		<ul class="main-header pull-right" style="padding-left: 0;">
+    		
+                <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+            
+
+        </ul>
+    </ul>
+	</td>
+</tr></table>
+
+<!-- <div id="global-search-div" class="main-centered-div" style="display:none;">
+	<input type="text" value="" class="thread-search form-control" placeholder="Search" data-action="/discussion">
+</div> -->
+
+	</div>
+</div>
+
+		
+	  
+
+
+
+	  
+
+
+		
+
+		<div class="dark-head"><div class="main-centered-div">
+
+			
+
+	
+
+
+	<div class="header-object-type"></div>
+
+	
+			<a class="btn btn-lg follow-link btn-follow pull-right active tt-top" style="margin-left:20px;" title="Follow project discussion" data-id="18" data-ctype="project" data-is-following="false">&nbsp;</a>
+	
+
+	<h2 class="header-object-name">Thinklab: A platform for open review of research grant proposals</h2>
+
+	
+	<div class="project-team">
+		<a href='/u/jspauld'>Jesse Spaulding</a>, <a href='/u/glebpitsevich'>Gleb Pitsevich</a>
+		 <!-- &nbsp; &nbsp; doi:<a href="https://doi.org/10.15363/thinklab.18">10.15363/thinklab.18</a> -->
+	</div>
+	
+
+		<!-- <div class="project-team">
+			<b>DOI:</b> <a href="https://doi.org/10.15363/thinklab.18">10.15363/thinklab.18</a>
+		</div> -->
+
+		
+			<div class="project-team">
+			<div class="proj-funding">
+				<b>Funding opportunity:</b>
+				
+					<a href="/funding/7/proposals">The Open Science Prize</a>
+				
+			</div>
+			</div>
+		
+
+	<div class="project-team">
+		
+		<div class="proposal-status proposal-status-lg proposal-status-awaiting-funder">Awaiting Funder</div>
+		
+		
+		
+	</div>
+
+
+
+
+	
+
+
+	<!-- <div class="project-team">
+		
+	</div> -->
+
+    <ul class="nav nav-tabs project-nav" style="margin-top:25px;">
+
+		
+
+		
+
+    
+
+		
+	    
+	        <li class="active"><a href="/p/thinklabOSP/proposal">Proposal</a></li>
+	    
+	    
+		
+
+		<li><a href="/p/thinklabOSP/discussion"><span class="nav-fig">9</span>Discussions</a></li>
+
+		
+			<li><a href="/p/thinklabOSP/leaderboard"><span class="nav-fig">7</span>Reviewers</a></li>
+		
+
+		
+
+		
+
+
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown"><span style="opacity:0.5">More <span class="caret"></span></span></a>
+            <ul class="dropdown-menu" style="font-size:13px;background-color:#819ec8">
+
+				
+
+				
+
+            <li><a href="/p/thinklabOSP/followers"><span class="nav-fig">7</span>Followers</a></li>
+            </ul>
+        </li>
+
+			
+
+    </ul>
+
+
+
+		</div></div>
+		
+		<div class="main-centered-div" style="margin-top:40px;padding-bottom:340px">
+	    
+
+<h2 class="page-title">Proposal revision history</h2>
+
+<p><a id="diff-btn" class="btn btn-sm btn-default" href="javascript:void(0)">Compare Selected Revisions</a></p>
+
+<table class="table small-headers">
+<thead>
+	<tr>
+        <th colspan="2" style="width:6%">Compare</th>
+		<th style="width:30%">Date</th>
+		<th style="width:70%">Author</th>
+		<!-- <th style="width:22%">Section edited</th> -->
+		<!-- <th style="width:35%">Project stage</th> -->
+	</tr>
+</thead>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="295b0daab486296659e5b84e0e702747bdbe5d8a" style="visibility: hidden">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="295b0daab486296659e5b84e0e702747bdbe5d8a" checked>
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/295b0daab486296659e5b84e0e702747bdbe5d8a">March 31, 2017, 1:20 a.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="1578ba9ab28339b35dd17177f16817eafd4a38b6">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="1578ba9ab28339b35dd17177f16817eafd4a38b6">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/1578ba9ab28339b35dd17177f16817eafd4a38b6">June 3, 2016, 4:47 p.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="da3bd30d801993aac1bb52828e43bd543a29366c">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="da3bd30d801993aac1bb52828e43bd543a29366c">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/da3bd30d801993aac1bb52828e43bd543a29366c">Feb. 29, 2016, 5:06 a.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="ad1f59f85a03c9bf05cca2d0ceeb8c5e57f724cc">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="ad1f59f85a03c9bf05cca2d0ceeb8c5e57f724cc">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/ad1f59f85a03c9bf05cca2d0ceeb8c5e57f724cc">Feb. 29, 2016, 5:06 a.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="8e0a4992f3d6c08b07eb45e27345b91a57fcff0d">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="8e0a4992f3d6c08b07eb45e27345b91a57fcff0d">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/8e0a4992f3d6c08b07eb45e27345b91a57fcff0d">Feb. 29, 2016, 3:43 a.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="1d3e1010cedcd140712f53da6f3fc5d8ffe629f2">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="1d3e1010cedcd140712f53da6f3fc5d8ffe629f2">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/1d3e1010cedcd140712f53da6f3fc5d8ffe629f2">Feb. 29, 2016, 3:13 a.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="cba50ffe32be87b36a84f4bffc15bed6416122a5">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="cba50ffe32be87b36a84f4bffc15bed6416122a5">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/cba50ffe32be87b36a84f4bffc15bed6416122a5">Feb. 29, 2016, 3:05 a.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="cad353bb5b77b7f09cf526c21a9eb7009aefacda">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="cad353bb5b77b7f09cf526c21a9eb7009aefacda">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/cad353bb5b77b7f09cf526c21a9eb7009aefacda">Feb. 29, 2016, 2:58 a.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="629083cdef554f2c0ddc55966c6b7b2f2c65a009">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="629083cdef554f2c0ddc55966c6b7b2f2c65a009">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/629083cdef554f2c0ddc55966c6b7b2f2c65a009">Feb. 28, 2016, 7:42 p.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="a7201f378200004ae88a9b2e9023519c4809ffa4">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="a7201f378200004ae88a9b2e9023519c4809ffa4">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/a7201f378200004ae88a9b2e9023519c4809ffa4">Feb. 24, 2016, 5:54 p.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="089c203a05c3043245b93b04bedc8a5e19f65cf2">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="089c203a05c3043245b93b04bedc8a5e19f65cf2">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/089c203a05c3043245b93b04bedc8a5e19f65cf2">Feb. 14, 2016, 12:03 p.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="63f8389c133c976044430cc521333521210c1ab8">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="63f8389c133c976044430cc521333521210c1ab8">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/63f8389c133c976044430cc521333521210c1ab8">Feb. 13, 2016, 11:17 p.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="df18caad180f9fe5a9b193a53c470e6ad58c7f77">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="df18caad180f9fe5a9b193a53c470e6ad58c7f77">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/df18caad180f9fe5a9b193a53c470e6ad58c7f77">Feb. 13, 2016, 11:15 p.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="da510e2c04568b292ed3f39ab024fdcfa99d2921">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="da510e2c04568b292ed3f39ab024fdcfa99d2921">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/da510e2c04568b292ed3f39ab024fdcfa99d2921">Feb. 13, 2016, 9:46 p.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="997a5ac7d67e44147e518ac74d170e2f00860968">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="997a5ac7d67e44147e518ac74d170e2f00860968">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/997a5ac7d67e44147e518ac74d170e2f00860968">Feb. 13, 2016, 8:59 p.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="ad35232a432c2ee5692e3fafdabc709d743a68fa">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="ad35232a432c2ee5692e3fafdabc709d743a68fa">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/ad35232a432c2ee5692e3fafdabc709d743a68fa">Feb. 13, 2016, 8:56 p.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="d65abca188dabd6e291cc34f00c3520801510c3d">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="d65abca188dabd6e291cc34f00c3520801510c3d">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/d65abca188dabd6e291cc34f00c3520801510c3d">Feb. 13, 2016, 8:55 p.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="ac8bbad884819a44de4f2b8d4cecb408fdf36749">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="ac8bbad884819a44de4f2b8d4cecb408fdf36749">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/ac8bbad884819a44de4f2b8d4cecb408fdf36749">Feb. 13, 2016, 8:54 p.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="e16e75f1982fcccefaf157a3775ebb4ba8cb7766">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="e16e75f1982fcccefaf157a3775ebb4ba8cb7766">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/e16e75f1982fcccefaf157a3775ebb4ba8cb7766">Feb. 13, 2016, 2:36 p.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="e587dbaf1ee614e8743744ba9e032548f49aa115">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="e587dbaf1ee614e8743744ba9e032548f49aa115">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/e587dbaf1ee614e8743744ba9e032548f49aa115">Feb. 12, 2016, 4:28 p.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="91e89421b481442ef6fb79645e2b81ce811b7bb0">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="91e89421b481442ef6fb79645e2b81ce811b7bb0">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/91e89421b481442ef6fb79645e2b81ce811b7bb0">Feb. 12, 2016, 4:25 p.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="c8f13332323ac1e33b02991a1ad1125202e6f4fe">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="c8f13332323ac1e33b02991a1ad1125202e6f4fe">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/c8f13332323ac1e33b02991a1ad1125202e6f4fe">Feb. 11, 2016, 3:20 p.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="fd99213d839bd4698992c4f94bb2bf6fd71d93f5">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="fd99213d839bd4698992c4f94bb2bf6fd71d93f5">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/fd99213d839bd4698992c4f94bb2bf6fd71d93f5">Feb. 11, 2016, 1:36 p.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="d46271f03193a52ffe4ff3f0c80bbe125173fb61">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="d46271f03193a52ffe4ff3f0c80bbe125173fb61">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/d46271f03193a52ffe4ff3f0c80bbe125173fb61">Feb. 10, 2016, 2:27 p.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="77edae0629a0b39ed975482c6b71a1a21f4abbaf">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="77edae0629a0b39ed975482c6b71a1a21f4abbaf">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/77edae0629a0b39ed975482c6b71a1a21f4abbaf">Feb. 10, 2016, 11:21 a.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="1da07519f89cfc9281da88152dbd175ea99ebe1e">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="1da07519f89cfc9281da88152dbd175ea99ebe1e">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/1da07519f89cfc9281da88152dbd175ea99ebe1e">Feb. 9, 2016, 7:09 p.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="94502f956c419d4c659bc8169ec625dd074f26a7">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="94502f956c419d4c659bc8169ec625dd074f26a7">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/94502f956c419d4c659bc8169ec625dd074f26a7">Feb. 9, 2016, 11:19 a.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="a66da0628f8c09fab4a8c280735cc1222ba94e12">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="a66da0628f8c09fab4a8c280735cc1222ba94e12">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/a66da0628f8c09fab4a8c280735cc1222ba94e12">Feb. 8, 2016, 7:35 p.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="f92ee3c5ebd5b61c75c9e8e5d0b81b04e576b5c9">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="f92ee3c5ebd5b61c75c9e8e5d0b81b04e576b5c9">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/f92ee3c5ebd5b61c75c9e8e5d0b81b04e576b5c9">Feb. 8, 2016, 7:34 p.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="e36e66ef4828f1637ced39126cfd90196f717348">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="e36e66ef4828f1637ced39126cfd90196f717348">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/e36e66ef4828f1637ced39126cfd90196f717348">Feb. 8, 2016, 7:32 p.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="5a9a3783272baf976d102bc1bbbb2d010ceede93">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="5a9a3783272baf976d102bc1bbbb2d010ceede93">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/5a9a3783272baf976d102bc1bbbb2d010ceede93">Feb. 8, 2016, 7:27 p.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="d91d61aa3ee172a1dddcdafe8e6ee3ed628b9749">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="d91d61aa3ee172a1dddcdafe8e6ee3ed628b9749">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/d91d61aa3ee172a1dddcdafe8e6ee3ed628b9749">Feb. 8, 2016, 7:20 p.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="6e1c5dc40e92c033f96ca06daf9f403fa7814ba7">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="6e1c5dc40e92c033f96ca06daf9f403fa7814ba7">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/6e1c5dc40e92c033f96ca06daf9f403fa7814ba7">Feb. 8, 2016, 7:16 p.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="02ff0ff343087b55399d5796a4959605dfe7739b">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="02ff0ff343087b55399d5796a4959605dfe7739b">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/02ff0ff343087b55399d5796a4959605dfe7739b">Feb. 8, 2016, 6:44 p.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="db7b99179edf459f22c715c989982d2d940d279e">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="db7b99179edf459f22c715c989982d2d940d279e">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/db7b99179edf459f22c715c989982d2d940d279e">Feb. 8, 2016, 6:42 p.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="6d19335890f6b75c251b0a18b5cd1260ab449c01">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="6d19335890f6b75c251b0a18b5cd1260ab449c01">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/6d19335890f6b75c251b0a18b5cd1260ab449c01">Feb. 8, 2016, 6:22 p.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="9e0f8c15f776d1bd7da6bfdc78d85fc6fbbaf22c">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="9e0f8c15f776d1bd7da6bfdc78d85fc6fbbaf22c">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/9e0f8c15f776d1bd7da6bfdc78d85fc6fbbaf22c">Feb. 8, 2016, 2:14 p.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="6f046f064e4aa9bdac83f556b9eaac4fce3eaf46">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="6f046f064e4aa9bdac83f556b9eaac4fce3eaf46">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/6f046f064e4aa9bdac83f556b9eaac4fce3eaf46">Feb. 8, 2016, 2:05 p.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="092e410a551bd2a8eee84dddd2b2bd4e4159bd9a">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="092e410a551bd2a8eee84dddd2b2bd4e4159bd9a">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/092e410a551bd2a8eee84dddd2b2bd4e4159bd9a">Feb. 8, 2016, 2:03 p.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="3934d9f953b02da3dce8124cab80b06abcce0ae1">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="3934d9f953b02da3dce8124cab80b06abcce0ae1">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/3934d9f953b02da3dce8124cab80b06abcce0ae1">Feb. 8, 2016, 1:54 p.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="9190abc87dec1411a702bffbe5b63bb14b4243f7">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="9190abc87dec1411a702bffbe5b63bb14b4243f7">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/9190abc87dec1411a702bffbe5b63bb14b4243f7">Feb. 8, 2016, 1:53 p.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="e5a2d0161473cd2c5d32851b020e0a3608ca37b5">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="e5a2d0161473cd2c5d32851b020e0a3608ca37b5">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/e5a2d0161473cd2c5d32851b020e0a3608ca37b5">Feb. 8, 2016, 1:50 p.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="8b2ad8ce1e53d04c209fa1ae01655afb2b6559b5">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="8b2ad8ce1e53d04c209fa1ae01655afb2b6559b5">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/8b2ad8ce1e53d04c209fa1ae01655afb2b6559b5">Feb. 8, 2016, 1:33 p.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="8ccb152155e277e20ec63837d904958d7f4a2bb2">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="8ccb152155e277e20ec63837d904958d7f4a2bb2">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/8ccb152155e277e20ec63837d904958d7f4a2bb2">Feb. 8, 2016, 1:30 p.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="4675c3ff82ddab22ee48066baede52e11aa28863">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="4675c3ff82ddab22ee48066baede52e11aa28863">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/4675c3ff82ddab22ee48066baede52e11aa28863">Feb. 8, 2016, 1:27 p.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="a509570b85106135c8e7984ceec5a16810dccdfc">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="a509570b85106135c8e7984ceec5a16810dccdfc">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/a509570b85106135c8e7984ceec5a16810dccdfc">Feb. 8, 2016, 1:25 p.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="4e41455dc0d55ef71fc961e32e894bc0b462ee61">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="4e41455dc0d55ef71fc961e32e894bc0b462ee61">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/4e41455dc0d55ef71fc961e32e894bc0b462ee61">Feb. 8, 2016, 1:22 p.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="a46ed31d5632ca2ee505343ae81a0b8d7ec81722">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="a46ed31d5632ca2ee505343ae81a0b8d7ec81722">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/a46ed31d5632ca2ee505343ae81a0b8d7ec81722">Feb. 8, 2016, 1:06 p.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="f7885f0f1e9a4a4d9fb2b90e70b2160fa4d7df3e">&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="f7885f0f1e9a4a4d9fb2b90e70b2160fa4d7df3e">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/f7885f0f1e9a4a4d9fb2b90e70b2160fa4d7df3e">Feb. 8, 2016, 12:48 p.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+    <tr>
+        
+		<td>
+            <input class="old-diff-radio" name="old-diff-radio" type="radio" value="85d9c6229a38b67cee8b9844829e11e40b660b33" checked>&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+            <td>
+            <input class="new-diff-radio" name="new-diff-radio" type="radio" value="85d9c6229a38b67cee8b9844829e11e40b660b33" style="visibility: hidden">
+        </td>
+		
+        <td><a href="https://thinklab.com/doc/12/revisions/85d9c6229a38b67cee8b9844829e11e40b660b33">Feb. 8, 2016, 12:42 p.m.</a></td>
+        <td><a href="/u/jspauld">Jesse Spaulding</a></td>
+        <!-- <td>-</td> -->
+		<!-- <td></td> -->
+    </tr>
+
+</table>
+
+    <ul class="pagination">
+        <li class="disabled"><a class="prev-page-url" href="#">&laquo;</a></li>
+        <li><a style="color:gray;" href="#">Page 1 of 3</a></li>
+        <li><a class="next-page-url" href="?page=2">&raquo;</a></li>
+    </ul>
+
+
+
+		</div>
+
+
+		
+	    	<div class="footer">
+<div style="background:#dedede;">
+	<div class="main-centered-div text-center" style="padding:20px;">
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#dfb7bab3b3b09fabb7b6b1b4b3bebdf1bcb0b2"><span class="__cf_email__" data-cfemail="b4dcd1d8d8dbf4c0dcdddadfd8d5d69ad7dbd9">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+	</div>
+</div>
+<div class="main-footer">
+	<div class="main-centered-div">
+
+<table class="full-width"><tr>
+	<td class="footer-nav">
+
+        <div class="foot-head">Explore</div>
+        <a href="/proposals">Proposals</a><br>
+        <a href="/projects">Projects</a><br>
+        <a href="/publications">Article discussion</a><br>
+        <a href="/discussion">All discussion</a><br>
+        <a href="/topics">Topics</a><br>
+        <!-- <a href="/funders">Funders</a><br> -->
+        <a href="/funding">Funding opportunities</a><br>
+
+	</td>
+	<td class="footer-nav">
+
+        <!-- <div class="foot-head">Help &amp; feedback</div>	 -->
+        <!-- <div class="foot-head">Intro</div>
+        <a href="/benefits/for-science">Why</a><br>
+        <a href="/how-it-works">How it works</a><br>
+
+<br> -->
+
+        <div class="foot-head">Community</div>
+        <a href="/leaderboard">Leaderboard</a><br>
+        <a href="/p/meta">Thinklab Meta</a><br>
+				<a href="/help/faq">Help</a><br>
+				<!-- <a href="/new-project">Start a proposal</a><br> -->
+        <!-- <a href="/benefits/proposal">Benefits</a><br> -->
+        <!-- <a href="/funding">Get funded</a><br> -->
+        <!-- <a href="/participate">Become a contributor</a><br> -->
+        <!-- <a href="/for-funders">For science funders</a><br> -->
+        <!-- <a href="/for-institutions">For institutions</a><br> -->
+
+	</td>
+	<td class="footer-nav">
+
+
+
+        <div class="foot-head">About</div>
+        <a href="/about">Overview</a><br>
+        <a href="/benefits">Benefits</a><br>
+        <a href="/how-it-works">How it works</a><br>
+        <a href="/about/story">Our story</a><br>
+        <a href="/blog">Our blog</a><br>
+        <a href="/about/jobs">Join the team</a><br>
+        <br>
+
+        <!-- <div class="foot-head">Help</div>
+        <a href="/help">Help</a><br>
+		 -->
+
+
+	</td>
+	<td class="footer-nav">
+		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
+		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<br><br>
+		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
+
+	</td>
+
+</tr></table>
+
+</div>
+</div>
+</div>
+
+		
+
+	</div>
+
+
+  <script></script>
+  <script>
+  var MEDIA_URL = 'https://think-lab.s3.amazonaws.com/m/';
+  var STATIC_URL = 'https://think-lab.s3.amazonaws.com/s/';
+  var page_is_authenticated = false;
+  var page_page = '';
+  var page_profile_id = undefined;
+</script>
+
+
+
+	<!-- Note different script type. MUST come before MathJax.js -->
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	        "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"],
+	                        scale: 110, linebreaks: { automatic:true },
+	                        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+	        tex2jax: { inlineMath: [ ["$$", "$$"], ["\\(","\\)"] ],
+	                    displayMath: [ ["$$$","$$$"], ["\\[", "\\]"] ],
+	                    processEscapes: true,}
+	            });
+
+	</script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://think-lab.s3.amazonaws.com/s/dist/main.min.js"></script>
+  
+
+
+
+  
+	
+<script>
+
+    $('#diff-btn').click(function(){
+        var old_commit_id = $('.old-diff-radio:checked').val();
+        var new_commit_id = $('.new-diff-radio:checked').val();
+        var url = '/doc/12/compare/old_commit_id/new_commit_id';
+        url = url.replace('old_commit_id', old_commit_id);
+        url = url.replace('new_commit_id', new_commit_id);
+        window.location.href = url;
+    });
+
+    function hide_new(){
+        var i = $('.old-diff-radio').index($('.old-diff-radio:checked'));
+        $('.new-diff-radio:lt('+i+')').css('visibility', 'visible');
+        $('.new-diff-radio:gt('+(i-1)+')').css('visibility', 'hidden');
+    };
+
+    function hide_old(){
+        var i = $('.new-diff-radio').index($('.new-diff-radio:checked'));
+        $('.old-diff-radio:gt('+i+')').css('visibility', 'visible');
+        $('.old-diff-radio:lt('+(i+1)+')').css('visibility', 'hidden');
+    };
+
+    $('.old-diff-radio').change(hide_new);
+    $('.new-diff-radio').change(hide_old);
+
+    hide_new();
+    hide_old();
+
+</script>
+
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>

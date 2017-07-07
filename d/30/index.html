@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZgEOC19dW0QCEVtHU1gG","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":615}</script>
+    <title>Assessing the quality and applicability of the SIDER 2 resource | Thinklab</title>
+	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
+    <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/highlightjs/github.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/css.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/bootstrap-multiselect.css" />
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
+    
+    
+    
+    
+  
+    <meta name="citation_doi" content="10.15363/thinklab.d30">
+    <meta name="citation_title" content="Assessing the quality and applicability of the SIDER 2 resource">
+    <meta name="citation_online_date" content="Feb. 12, 2015">
+    <meta name="citation_author" content="Daniel Himmelstein, Leo Brueggeman, Sabrina Chen, Lars Juhl Jensen">
+    <meta name="citation_journal_title" content="Thinklab">
+    <meta name="citation_publisher" content="Thinklab">
+  
+
+    
+
+
+	<!-- GoogleAnalytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-48550230-1', 'thinklab.com');
+	ga('require', 'displayfeatures');
+	
+	ga('send', 'pageview');
+
+	</script>
+
+
+
+
+
+
+</head>
+<body >
+  <form id="form_action" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+</form>
+
+	
+
+	<div class="body-wrapper">
+
+		
+
+
+<!-- <div style="height:5px;background-image:url('https://think-lab.s3.amazonaws.com/s/img/top-bg.gif');"></div> -->
+<div class="gradient">
+	<div class="main-centered-div header-container">
+
+<table class="full-width" style="height:60px;"><tr>
+	<td style="width:200px;vertical-align:middle;padding-bottom:15px;">
+		<a href="/" style="font-weight:normal;color:#212121;"><img src="https://think-lab.s3.amazonaws.com/s/img/logo.png" width="160"></a>
+	</td><td style="vertical-align:middle;text-align:left;padding-top:6px;width:100%;padding-left:40px;">
+		<ul id="not-search-block"  class="main-header">
+
+
+			
+
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/proposals">Proposals</a></li>
+						<li><a href="/projects">Projects</a></li>
+						<li><a href="/publications">Article discussion</a></li>
+						<li><a href="/discussion">All discussion</a></li>
+					</ul>
+				</li>
+				<li><a href="/leaderboard">Leaderboard</a></li>
+
+			
+				<li><a href="/about">About</a></li>
+			
+
+
+		</ul>
+
+    <ul id="search-block" class="main-header" style="display: none; margin-right: 30px;">
+        <li class="full-width">
+            <form method="get" action="/search">
+			<div class="input-group full-width">
+				<input name="q" type="text" class="form-control search-input">
+			</div>
+            </form>
+        </li>
+    </ul>
+
+	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
+		<ul class="main-header pull-right" style="padding-left: 0;">
+    		
+                <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+            
+
+        </ul>
+    </ul>
+	</td>
+</tr></table>
+
+<!-- <div id="global-search-div" class="main-centered-div" style="display:none;">
+	<input type="text" value="" class="thread-search form-control" placeholder="Search" data-action="/discussion">
+</div> -->
+
+	</div>
+</div>
+
+		
+	  
+
+
+
+	  
+
+
+		
+
+		<div class="dark-head"><div class="main-centered-div">
+
+			
+
+		</div></div>
+		
+		<div class="main-centered-div" style="margin-top:40px;padding-bottom:340px">
+	    
+
+<div style="margin-top:-20px; margin-bottom:20px;">
+
+    <a class="side-box" href="/p/rephetio" style="background-color:#ebfdff;"><div class="side-type">Project:</div> <div class="side-title">Rephetio: Repurposing drugs on a hetnet [rephetio]</div></a><br>
+
+
+
+    <a class="side-box" href="/doi/10.1038/msb.2009.98" style="background-color:#f0ffec;"><div class="side-type">Publication:</div> <div class="side-title">A side effect resource to capture phenotypic effects of drugs</div></a><br>
+
+</div>
+
+<table style="margin-top:0px;"><tr>
+	<td class="thread-table-content">
+
+		<table class="full-width">
+			
+<tr class="comment-tr target-hl" id="1" data-comment-id="56">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="56"></a>
+
+    
+
+			<h2 class="page-title" style="margin-bottom:5px;margin-top:0px !important;">Assessing the quality and applicability of the SIDER 2 resource</h2>
+
+			<div style="margin-top:5px;color:gray;margin-bottom:20px;font-size:13px;">
+				<a style="font-weight:normal;color:#212121" href="/u/dhimmel"><strong>Daniel Himmelstein</strong></a>
+				<span class="is-researcher">Researcher</span>
+				&nbsp; <a href="#1" class="light">875 days ago</a>
+				
+			</div>
+
+      
+
+          <hr>
+		
+
+    <p>SIDER is a <a href="http://sideeffects.embl.de/">resource</a> which automatically parsed labels for approved drugs and annotated side effects and indications <span class="citation">[<a href="https://doi.org/10.1038/msb.2009.98" class="citation" data-key="10.1038/msb.2009.98">1</a>]</span>.</p>
+
+<p>We <a href="http://git.dhimmel.com/SIDER2/">performed an analysis</a> using the <a href="http://sideeffects.embl.de/download/">raw SIDER data</a>, to evaluate the accuracy, quality, and usefulness of this resource. In addition to using the indications, we are interested in adding side effects as a separate node and edge type in our network.</p>
+
+<p>After quality control to resolve conflicts (cases where a concept was annotated to a compound as both a side effect and indication), we found indications for 1005 drugs. <a href="/u/leobrueggeman" class="username">@leobrueggeman</a>, manually classified 101 random indications and found a precision of 63.4% [95% CI: 53.1–72.6%]. We browsed the indications for multiple sclerosis and found that many symptomatic treatments were included while many of the disease-modifying small molecules were absent. Overall the SIDER indications alone will be a rather <em>poor</em> resource. One possibility is combining <a href="http://git.dhimmel.com/SIDER2/data/sider2-processed.txt">SIDER indications</a> with orthogonal methods.</p>
+
+<p>The precision of side effects was considerably better at 92.0% [95% CI: 84.4–96.2%]. However, despite being largely accurate, not all side effects are of the same relevance (frequencies vary and placebo levels of occurrence are frequently lacking). <a href="/u/leobrueggeman" class="username">@leobrueggeman</a>, could you provide some additional information on the deficiencies or strengths of the SIDER approach?</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="2" data-comment-id="65">
+  <td class="comment-profile-avatar">
+		<a href="/u/leobrueggeman"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/21_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="65"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/leobrueggeman">Leo Brueggeman</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#2" class="light">871 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p><a href="/u/dhimmel" class="username">@dhimmel</a> <br>From what I observed it seems that there are a few types of mistakes which, when combined, lead to a significant drop in the precision of indications. The biggest problem I saw in the SIDER data, and perhaps the easiest to fix, was that there were several "indications" which were not actually diseases (e.g. "progression", "adverse reactions", "interactions"). It should be possible to filter out these artifacts of text mining via reference to a disease ontology.</p>
+
+<p>The second repeated mistake I saw was that SIDER would on occasion mark a symptom of a real indication as an indication (e.g. agoraphobia, which sometimes accompanies panic disorder, was marked as an indication).</p>
+
+<p>Probably the hardest problem to sort out would be the cases where a disease is mentioned in the "Indications and Usage" section of a label, but is not actually treated by the drug (e.g. drug x treats disease y, in the case that patient has disease z, administer drug x at a slower rate). This is less common, but happened a few times in the random sample of 100 indications I analyzed.</p>
+
+<p>Lastly, an update to the drug list would be appropriate. There are only 888 drugs listed for SIDER, while the total number of FDA approved drugs is significantly higher. This difference could explain some of the gaps for indications.</p>
+
+<p>Hope this helps give context to some of the issues within the indications.<br>Leo</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="3" data-comment-id="353">
+  <td class="comment-profile-avatar">
+		<a href="/u/sabrinachen"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/112_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="353"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/sabrinachen">Sabrina Chen</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#3" class="light">703 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Chemical similarity association with side effect and indication similarity</h1>
+
+<p><a href="https://github.com/sabrinalchen/drugbank-similarity/blob/master/side-effect.ipynb">Notebook</a></p>
+
+<h2>Objective:</h2>
+
+<p>To determine the relationship between side effect similarity and chemical similarity as well as drug indication and chemical similarity</p>
+
+<h2>Data:</h2>
+
+<p>We extracted <a href="https://github.com/dhimmel/SIDER2/blob/9d585685dbeaba3bbac58024c814ac87521122ad/data/similarities.txt.gz">side effect and indication similarity data</a> which lists drug pairs (pubchem ID,) and their associated side effect similarity and indication similarity. Side effect similarity deals with the similarity of the side effect when a drug is used to treat a protein. Indication is the term doctors use when a drug treats a disease.In addition, <a href="https://github.com/dhimmel/drugbank/blob/e8567eed2dd48ae0694a0960c518763a777845ff/data/mapping/pubchem.tsv">drugbank data</a> was extracted to convert pubchem ID into drugbank ID. Finally, we extracted <a href="http://nbviewer.ipython.org/github/dhimmel/drugbank/blob/9eb1e15ada5e6579e5aea1cae784c10602037b05/similarity.ipynb">chemical similarity data</a> which gives a value between zero and one based on the chemical similarity of a pair of drugs. </p>
+
+<h2>Chemical similarity vs substructure jointplot</h2>
+
+<p>As predicted, a positive correlation was found between these two variables. It seemed from the graph that the two were strongly correlated, especially since the p-value was zero. An interesting trend to note was that the data seemed to be banded and centered around certain values. The smaller bands could be due to the fact that substructure data was rounded off to the nearest hundredth place. However, we are not sure of what the large horizontal bands indicate. </p>
+
+<p><img src="https://raw.githubusercontent.com/sabrinalchen/drugbank-similarity/master/figure/substructure.png" alt=""></p>
+
+<h5>Figure 1: Compares chemical similarity to substructure and demonstrates a positive correlation</h5>
+
+<h2>Chemical similarity vs side effect similarity jointplot</h2>
+
+<p>The graph demonstrated a positive correlation between chemical compound similarity and side effect similarity. To make it easier to read, we took the square root of side effect similarity values and also used logarithmic bins. With the data transformed this way, the correlation was clearer.  Though the correlation coefficient was less than that of the previous comparison, the p-value was zero. </p>
+
+<p><img src="https://raw.githubusercontent.com/sabrinalchen/drugbank-similarity/master/figure/side_effect.png" alt=""></p>
+
+<h5>Figure 2: Compares chemical similarity to side effect similarity</h5>
+
+<h2>Chemical similarity vs indication similarity jointplot</h2>
+
+<p>Though this graph was slightly harder to read than the previous two because of the skewed indication similarity data, the zero p-value showed some degree of significance. Most of the indication values were zero, so even by taking the square root of the values, it was difficult to visualize the positive correlation. We decided to use a different visualization for clearer analysis (see pointplot below.)</p>
+
+<p><img src="https://raw.githubusercontent.com/sabrinalchen/drugbank-similarity/master/figure/indication.png" alt=""></p>
+
+<h5>Figure 3: Compares chemical similarity to indication similarity</h5>
+
+<h2>Pointplot</h2>
+
+<p>Because the correlation was a bit difficult to read in previous graphs (especially in the indication jointplot,) we used a pointplot for a different visualization. The chemical similarity data was rounded off to the nearest tenth and the mean values for both side effect similarity and indication similarity was found for each subset. This data was graphed on a pointplot which demonstrated a clear positive correlation, especially when the chemical similarity passed 0.4. For the side effect similarity, it was easy to see a steady positive correlation, apart from the fall between 0.9 and 1.0 on the chemical similarity axis. This could be attributed to the small number of data points, however. For the indication similarity, the graph showed no real correlation between 0.0 and 0.3, but a steady upward trend began starting from 0.4. From our graphs we concluded that increased chemical compound similarity did indeed indicate an increase for side effect similarity and indication similarity.</p>
+
+<p><img src="https://raw.githubusercontent.com/sabrinalchen/drugbank-similarity/master/figure/combined_similarity_mean.png" alt=""></p>
+
+<h5>Figure 4: A clearer representation of the association between chemical compound similarity and side effect and indication similarity</h5>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="4" data-comment-id="356">
+  <td class="comment-profile-avatar">
+		<a href="/u/larsjuhljensen"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/125_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="356"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/larsjuhljensen">Lars Juhl Jensen</a>
+				
+				<span class="light">&nbsp;<a href="#4" class="light">699 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Please note that <a href="http://sider-beta.embl.de/">SIDER 4</a> has just been released.</p>
+
+<p>Before anyone asks: no there has never been a SIDER 3. We decided to jump to version 4 to make SIDER version numbers consistent with STITCH. This means that compound IDs of SIDER 4 are consistent with those of STITCH 4, and that SIDER 5 will be consistent with STITCH 5 etc.</p>
+
+<p>I am a bit surprised to see that you use SIDER as a source of drug indications. As is hopefully clear, the focus of SIDER is very much on side effect information. It should thus be no surprise that the quality of the drug indication information is presumably lower than the side effect information.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="5" data-comment-id="357">
+  <td class="comment-profile-avatar">
+		<a href="/u/larsjuhljensen"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/125_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="357"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/larsjuhljensen">Lars Juhl Jensen</a>
+				
+				<span class="light">&nbsp;<a href="#5" class="light">699 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>It may be worth noting that the work on SIDER actually started as part of a drug-repurposing / off-target-prediction project at EMBL <span class="citation">[<a href="https://doi.org/10.1126/science.1158140" class="citation" data-key="10.1126/science.1158140">1</a>]</span>.</p>
+
+<p>I do not want to be overly negative, but there is a reason why we only made use of side effects and not indications to calculate drug similarity: it seems very unlikely to me that you would be able to make non-obvious predictions based on the known indications. If drug X is approved for indications A, B, C and D, and drug Y is approved for indications A, B and C, I would consider the prediction that drug Y might also work for indication D to be trivial. Especially if drugs X and Y are similar chemical compounds.</p>
+
+<p>I believe this is the biggest challenge in computational drug repurposing: how do you predict something that is correct and not obvious? In my experience, this turns out to be much, much harder than to predict something that is just correct.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="6" data-comment-id="360">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="360"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#6" class="light">699 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p><a href="/u/larsjuhljensen" class="username">@larsjuhljensen</a>, great timing and thanks for the heads up!</p>
+
+<blockquote><p>I am a bit surprised to see that you use SIDER as a source of drug indications.</p></blockquote>
+
+<p>SIDER was one of the first resources we played with for this project. At the time, we decided to investigate the indications because 1) they were there and 2) we were unaware of other indication databases.</p>
+
+<p>Since then we've spent considerable time on <a href="http://thinklab.com/discussion/how-should-we-construct-a-catalog-of-drug-indications/21" class="citation thread-citation" data-key="10.15363/thinklab.d21">creating a catalog of indications</a>. We ended up combining four indication databases, one of which (<a href="http://knowledgemap.mc.vanderbilt.edu/research/content/MEDI">MEDI</a> <span class="citation">[<a href="https://doi.org/10.1136/amiajnl-2014-002954" class="citation" data-key="10.1136/amiajnl-2014-002954">1</a>]</span>) uses SIDER 2 as an input. We have now moved on to a final stage of <a href="http://thinklab.com/discussion/expert-curation-of-our-indication-catalog-for-disease-modifying-treatments/95" class="citation thread-citation" data-key="10.15363/thinklab.d95">expert curation</a>.</p>
+
+<blockquote><p>it seems very unlikely to me that you would be able to make non-obvious predictions based on the known indications.</p></blockquote>
+
+<p>Our heterogeneous network edge prediction <a href="http://het.io/hnep/">method</a> is a supervised method. Therefore, we need efficacious indications to train our model. However, I do have hope for some metapaths containing an indication metaedge to produce non-obvious predictions. For example, </p>
+
+<ul><li>disease A has 3 indicated drugs (X, Y, Z)</li><li>X, Y, Z elicit similar transcriptional responses (in <a href="http://thinklab.com/discussion/computing-consensus-transcriptional-profiles-for-compounds-using-lincs/43" class="citation thread-citation" data-key="10.15363/thinklab.d43">LINCS L1000 data</a>)</li><li>W elicits a similar transcriptional response to X, Y, and Z</li><li>drug W may treat disease A</li></ul>
+
+<p>I agree that repurposing using only the bipartite indication network will produce mostly obvious predictions. However, our approach is capable of much more!</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="7" data-comment-id="382">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="382"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#7" class="light">697 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>SIDER 4</h1>
+
+<p>We have begun working with SIDER 4. See <a href="http://thinklab.com/discussion/extracting-side-effects-from-sider4/97" class="citation thread-citation" data-key="10.15363/thinklab.d97">the dedicated discussion</a> for more information.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+    		
+		</table>
+
+    
+
+    &nbsp;<br>
+    <a class="btn btn-primary btn-lg" href="/signup?next=/discussion/assessing-the-quality-and-applicability-of-the-sider-2-resource/30&suppress_message=1" style>Join to Reply</a>
+
+
+		<table class="references table-td-5" style="display:none;"><tr><td><a href='/doi/10.1038/msb.2009.98' class='pub-comments tt-right' title='Article comments'>7</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.1038/msb.2009.98'><a href='/doi/10.1038/msb.2009.98' class='pub-title'>A side effect resource to capture phenotypic effects of drugs</a><div class='pub-body'>Michael Kuhn, Monica Campillos, Ivica Letunic, Lars Juhl Jensen, Peer Bork (2010) <i>Mol Syst Biol</i>. doi:<a class='pub-doi' href='https://doi.org/10.1038/msb.2009.98'>10.1038/msb.2009.98</a></div></div></td></tr><tr><td><a href='/doi/10.1126/science.1158140' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>2.</div></td><td><div class='doi-body' data-key='10.1126/science.1158140'><a href='/doi/10.1126/science.1158140' class='pub-title'>Drug Target Identification Using Side-Effect Similarity</a><div class='pub-body'>M. Campillos, M. Kuhn, A.-C. Gavin, L. J. Jensen, P. Bork (2008) <i>Science</i>. doi:<a class='pub-doi' href='https://doi.org/10.1126/science.1158140'>10.1126/science.1158140</a></div></div></td></tr><tr><td><a href='/doi/10.1136/amiajnl-2014-002954' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>3.</div></td><td><div class='doi-body' data-key='10.1136/amiajnl-2014-002954'><a href='/doi/10.1136/amiajnl-2014-002954' class='pub-title'>Assessing the role of a medication-indication resource in the treatment relation extraction from clinical text</a><div class='pub-body'>C. A. Bejan, W.-Q. Wei, J. C. Denny (2014) <i>Journal of the American Medical Informatics Association</i>. doi:<a class='pub-doi' href='https://doi.org/10.1136/amiajnl-2014-002954'>10.1136/amiajnl-2014-002954</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d21' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>4.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d21'><a href='/discussion/how-should-we-construct-a-catalog-of-drug-indications/21' class='pub-title'>How should we construct a catalog of drug indications?</a><div class='pub-body'>Daniel Himmelstein, Benjamin Good, Tudor Oprea, Allison McCoy, Antoine Lizee (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d21'>10.15363/thinklab.d21</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d95' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>5.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d95'><a href='/discussion/expert-curation-of-our-indication-catalog-for-disease-modifying-treatments/95' class='pub-title'>Expert curation of our indication catalog for disease-modifying treatments</a><div class='pub-body'>Daniel Himmelstein, Pouya Khankhanian, Chrissy Hessler (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d95'>10.15363/thinklab.d95</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d43' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>6.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d43'><a href='/discussion/computing-consensus-transcriptional-profiles-for-lincs-l1000-perturbations/43' class='pub-title'>Computing consensus transcriptional profiles for LINCS L1000 perturbations</a><div class='pub-body'>Daniel Himmelstein, Caty Chung (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d43'>10.15363/thinklab.d43</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d97' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>7.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d97'><a href='/discussion/extracting-side-effects-from-sider-4/97' class='pub-title'>Extracting side effects from SIDER 4</a><div class='pub-body'>Daniel Himmelstein (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d97'>10.15363/thinklab.d97</a></div></div></td></tr></table>
+
+    
+
+
+	</td>
+	<td class="thread-sidebar">
+
+
+			
+
+      <a class="btn btn-default follow-link btn-follow btn-lg is-following tt-top full-width" title="Follow discussion" data-id="30" data-ctype="thread" data-is-following="false">&nbsp;</a>
+
+      
+        <div class="status-box text-center"><span style="">Status:</span> 
+  Completed
+
+</div>
+      
+
+      
+        
+      
+
+
+				
+
+					<div class="details">Views</div>
+					<span style="font-size:20px;">177</span>
+
+        
+
+				
+					<div class="details">Topics</div>
+					<div style="margin-bottom:15px;">
+		            <a href="/topics/sider" class="tag">SIDER</a><a href="/topics/indications" class="tag">Indications</a><a href="/topics/nlp" class="tag">NLP</a><a href="/topics/drugs" class="tag">Drugs</a><a href="/topics/side-effects" class="tag">Side Effects</a><a href="/topics/drug-labels" class="tag">Drug Labels</a>
+					</div>
+				
+
+
+		
+			<div class="details">Referenced by</div>
+			<div style="font-size:12px;"><ul style="padding-left:16px !important;">
+			
+				<li>
+					
+					<a href='/discussion/extracting-side-effects-from-sider-4/97' class='thread-title'>Extracting side effects from SIDER 4</a>
+				</li>
+			
+				</ul>
+			</div>
+		
+
+		
+			<div class="details">Cite this as</div>
+			<span style="font-size:12px;">
+				Daniel Himmelstein, Leo Brueggeman, Sabrina Chen, Lars Juhl Jensen (2015) Assessing the quality and applicability of the SIDER 2 resource. <i>Thinklab.</i> doi:<a href='https://doi.org/10.15363/thinklab.d30'>10.15363/thinklab.d30</a>
+			</span>
+		
+
+		<div class="details">License</div>
+		<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0;width:88px;height:31px;" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></p>
+
+		<div class="details">Share</div>
+		
+			
+				<a class="share-button fb" onclick="javascript:void(window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A//thinklab.com/discussion/assessing-the-quality-and-applicability-of-the-sider-2-resource/30','','width=600,height=460,menubar=no,status=no'));" href="#"></a>
+<a class="share-button twitter" onclick="javascript:void(window.open('https://twitter.com/share?text=Assessing%20the%20quality%20and%20applicability%20of%20the%20SIDER%202%20resource&url=https%3A//thinklab.com/discussion/assessing-the-quality-and-applicability-of-the-sider-2-resource/30','','width=600,height=300,menubar=no,status=no'));" href="#"></a>
+<a class="share-button google" onclick="javascript:void(window.open('https://plus.google.com/share?url=https%3A//thinklab.com/discussion/assessing-the-quality-and-applicability-of-the-sider-2-resource/30','','width=510,height=460,menubar=no,status=no'));" href="#"></a>
+
+			
+		
+
+	</td>
+</tr></table>
+
+
+		</div>
+
+
+		
+	    	<div class="footer">
+<div style="background:#dedede;">
+	<div class="main-centered-div text-center" style="padding:20px;">
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#dcb4b9b0b0b39ca8b4b5b2b7b0bdbef2bfb3b1"><span class="__cf_email__" data-cfemail="c2aaa7aeaead82b6aaabaca9aea3a0eca1adaf">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+	</div>
+</div>
+<div class="main-footer">
+	<div class="main-centered-div">
+
+<table class="full-width"><tr>
+	<td class="footer-nav">
+
+        <div class="foot-head">Explore</div>
+        <a href="/proposals">Proposals</a><br>
+        <a href="/projects">Projects</a><br>
+        <a href="/publications">Article discussion</a><br>
+        <a href="/discussion">All discussion</a><br>
+        <a href="/topics">Topics</a><br>
+        <!-- <a href="/funders">Funders</a><br> -->
+        <a href="/funding">Funding opportunities</a><br>
+
+	</td>
+	<td class="footer-nav">
+
+        <!-- <div class="foot-head">Help &amp; feedback</div>	 -->
+        <!-- <div class="foot-head">Intro</div>
+        <a href="/benefits/for-science">Why</a><br>
+        <a href="/how-it-works">How it works</a><br>
+
+<br> -->
+
+        <div class="foot-head">Community</div>
+        <a href="/leaderboard">Leaderboard</a><br>
+        <a href="/p/meta">Thinklab Meta</a><br>
+				<a href="/help/faq">Help</a><br>
+				<!-- <a href="/new-project">Start a proposal</a><br> -->
+        <!-- <a href="/benefits/proposal">Benefits</a><br> -->
+        <!-- <a href="/funding">Get funded</a><br> -->
+        <!-- <a href="/participate">Become a contributor</a><br> -->
+        <!-- <a href="/for-funders">For science funders</a><br> -->
+        <!-- <a href="/for-institutions">For institutions</a><br> -->
+
+	</td>
+	<td class="footer-nav">
+
+
+
+        <div class="foot-head">About</div>
+        <a href="/about">Overview</a><br>
+        <a href="/benefits">Benefits</a><br>
+        <a href="/how-it-works">How it works</a><br>
+        <a href="/about/story">Our story</a><br>
+        <a href="/blog">Our blog</a><br>
+        <a href="/about/jobs">Join the team</a><br>
+        <br>
+
+        <!-- <div class="foot-head">Help</div>
+        <a href="/help">Help</a><br>
+		 -->
+
+
+	</td>
+	<td class="footer-nav">
+		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
+		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<br><br>
+		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
+
+	</td>
+
+</tr></table>
+
+</div>
+</div>
+</div>
+
+		
+
+	</div>
+
+
+  <script></script>
+  <script>
+  var MEDIA_URL = 'https://think-lab.s3.amazonaws.com/m/';
+  var STATIC_URL = 'https://think-lab.s3.amazonaws.com/s/';
+  var page_is_authenticated = false;
+  var page_page = 'discussion';
+  var page_profile_id = undefined;
+</script>
+
+
+
+	<!-- Note different script type. MUST come before MathJax.js -->
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	        "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"],
+	                        scale: 110, linebreaks: { automatic:true },
+	                        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+	        tex2jax: { inlineMath: [ ["$$", "$$"], ["\\(","\\)"] ],
+	                    displayMath: [ ["$$$","$$$"], ["\\[", "\\]"] ],
+	                    processEscapes: true,}
+	            });
+
+	</script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://think-lab.s3.amazonaws.com/s/dist/main.min.js"></script>
+  
+
+
+
+  
+	
+  
+  
+  
+<script>
+$(function() {
+  recordHit('thread', 30);
+});
+</script>
+
+
+
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>

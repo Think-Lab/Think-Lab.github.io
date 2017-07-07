@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZgEOC19dW0QCEVtHU1gG","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":300}</script>
+    <title>Python for the modern biodata scientist | Thinklab</title>
+	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
+    <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/highlightjs/github.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/css.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/bootstrap-multiselect.css" />
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
+    
+    
+    
+    
+  
+    <meta name="citation_doi" content="10.15363/thinklab.d84">
+    <meta name="citation_title" content="Python for the modern biodata scientist">
+    <meta name="citation_online_date" content="June 24, 2015">
+    <meta name="citation_author" content="Daniel Himmelstein, Ola O, Venkat Malladi">
+    <meta name="citation_journal_title" content="Thinklab">
+    <meta name="citation_publisher" content="Thinklab">
+  
+
+    
+
+
+	<!-- GoogleAnalytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-48550230-1', 'thinklab.com');
+	ga('require', 'displayfeatures');
+	
+	ga('send', 'pageview');
+
+	</script>
+
+
+
+
+
+
+</head>
+<body >
+  <form id="form_action" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+</form>
+
+	
+
+	<div class="body-wrapper">
+
+		
+
+
+<!-- <div style="height:5px;background-image:url('https://think-lab.s3.amazonaws.com/s/img/top-bg.gif');"></div> -->
+<div class="gradient">
+	<div class="main-centered-div header-container">
+
+<table class="full-width" style="height:60px;"><tr>
+	<td style="width:200px;vertical-align:middle;padding-bottom:15px;">
+		<a href="/" style="font-weight:normal;color:#212121;"><img src="https://think-lab.s3.amazonaws.com/s/img/logo.png" width="160"></a>
+	</td><td style="vertical-align:middle;text-align:left;padding-top:6px;width:100%;padding-left:40px;">
+		<ul id="not-search-block"  class="main-header">
+
+
+			
+
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/proposals">Proposals</a></li>
+						<li><a href="/projects">Projects</a></li>
+						<li><a href="/publications">Article discussion</a></li>
+						<li><a href="/discussion">All discussion</a></li>
+					</ul>
+				</li>
+				<li><a href="/leaderboard">Leaderboard</a></li>
+
+			
+				<li><a href="/about">About</a></li>
+			
+
+
+		</ul>
+
+    <ul id="search-block" class="main-header" style="display: none; margin-right: 30px;">
+        <li class="full-width">
+            <form method="get" action="/search">
+			<div class="input-group full-width">
+				<input name="q" type="text" class="form-control search-input">
+			</div>
+            </form>
+        </li>
+    </ul>
+
+	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
+		<ul class="main-header pull-right" style="padding-left: 0;">
+    		
+                <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+            
+
+        </ul>
+    </ul>
+	</td>
+</tr></table>
+
+<!-- <div id="global-search-div" class="main-centered-div" style="display:none;">
+	<input type="text" value="" class="thread-search form-control" placeholder="Search" data-action="/discussion">
+</div> -->
+
+	</div>
+</div>
+
+		
+	  
+
+
+
+	  
+
+
+		
+
+		<div class="dark-head"><div class="main-centered-div">
+
+			
+
+		</div></div>
+		
+		<div class="main-centered-div" style="margin-top:40px;padding-bottom:340px">
+	    
+
+<div style="margin-top:-20px; margin-bottom:20px;">
+
+    <a class="side-box" href="/p/rephetio" style="background-color:#ebfdff;"><div class="side-type">Project:</div> <div class="side-title">Rephetio: Repurposing drugs on a hetnet [rephetio]</div></a><br>
+
+
+
+</div>
+
+<table style="margin-top:0px;"><tr>
+	<td class="thread-table-content">
+
+		<table class="full-width">
+			
+<tr class="comment-tr target-hl" id="1" data-comment-id="300">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="300"></a>
+
+    
+
+			<h2 class="page-title" style="margin-bottom:5px;margin-top:0px !important;">Python for the modern biodata scientist</h2>
+
+			<div style="margin-top:5px;color:gray;margin-bottom:20px;font-size:13px;">
+				<a style="font-weight:normal;color:#212121" href="/u/dhimmel"><strong>Daniel Himmelstein</strong></a>
+				<span class="is-researcher">Researcher</span>
+				&nbsp; <a href="#1" class="light">744 days ago</a>
+				
+			</div>
+
+      
+
+          <hr>
+		
+
+    <p>Python is our first-line language because it is powerful, elegant, and widely adopted. In combination with <a href="https://jupyter.org/">Jupyter notebooks</a>, python is a data science jackhammer, while also being general purpose.</p>
+
+<p>Python 3 was released in 2008 and contains small incompatibilities with Python 2. 3 is <a href="https://youtu.be/f_6vDi7ywuA">superior</a> to 2. Many training resources and codebases are still in 2, but new users should begin with 3.</p>
+
+<h2>Installation</h2>
+
+<p>We will use Anaconda for package management. Anaconda makes installing packages easier and includes most important ones by default. It also supports environments — distinct and independent installations — which allow specific installations for specific purposes. Anaconda creates a default environment (root) that becomes your primary python distribution. Here, we create a root python 3 environment and an elective python 2 environment that can be activated when needed. </p>
+
+<p>Download <a href="http://continuum.io/downloads">anaconda for python 3</a>. Avoid the graphical installer which installs unneeded GUI programs. Install according to the defaults. Once installed run the following terminal command for updates:</p>
+
+<pre><code class="no-highlight hljs">conda update --all</code></pre>
+
+<p>When needed, additional packages should be installed like <code>conda install seaborn</code>, which installs the <a href="https://web.stanford.edu/~mwaskom/software/seaborn/">seaborn</a> visualization package.</p>
+
+<p>To install python 2.7, we will create a new environment called <code>py27</code> with the following command:</p>
+
+<pre><code class="no-highlight hljs">conda create -n py27 python=2.7 anaconda</code></pre>
+
+<p>Activate the python 2 environment with <code>source activate py27</code> on linux or mac and <code>activate py27</code> on windows. Once activated, run <code>conda update --all</code> to update packages and <code>jupyter kernelspec install-self --user</code> to make the Python 2 kernel available in Jupyter. Then run <code>source deactivate</code> (or <code>deactivate</code> on windows) to return to the default python 3 environment.</p>
+
+<p>Python 2 should only be used when necessitated by legacy codebases. Otherwise, we use Python 3.</p>
+
+<p>If you need <a href="http://www.rdkit.org/">rdkit</a> for chemoinformatics, you should follow the installation <a href="https://github.com/rdkit/conda-rdkit">instructions here</a>, which creates a dedicated rdkit environment with InChI support.</p>
+
+<h2>Usage</h2>
+
+<p>We recommend using Jupyter notebooks for most analyses. Launch jupyter by running <code>jupyter notebook</code> in the terminal. Dedicated .py files can be edited using the Jupyter text editor or <a href="https://atom.io/">atom</a>.</p>
+
+<p>Familiarize yourself with the <a href="https://www.python.org/dev/peps/pep-0008/">PEP 0008</a> style guide.</p>
+
+<h2>Local development</h2>
+
+<p>When developing a package locally, run <code>pip install -e .</code> from the package's root directory. The package will then be importable from within your conda environment. The <code>-e</code> flag specifies editable mode and makes the package automatically update when you modify the source.</p>
+
+<h2>Packages</h2>
+
+<ul><li><p><a href="http://pandas.pydata.org/"><code>pandas</code></a> for dataframes — important functions include <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.merge.html"><code>DataFrame.merge</code></a>, <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.melt.html"><code>melt</code></a>, <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.pivot_table.html"><code>DataFrame.pivot_table</code></a>, <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.groupby.html"><code>DataFrame.groupby</code></a>, <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_table.html"><code>pandas.read_table</code></a>, <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.to_csv.html"><code>DataFrame.to_csv(path, sep='\t', index=False)</code></a>, <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.isnull.html"><code>pandas.isnull</code></a>, and <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.head.html"><code>DataFrame.head</code></a>. Be forewarned of <a href="http://pandas.pydata.org/pandas-docs/stable/gotchas.html#support-for-integer-na">the horrors</a> of int to float conversion when missing values are present.</p></li><li><p><a href="https://web.stanford.edu/~mwaskom/software/seaborn/"><code>seaborn</code></a> for data visualization.</p></li><li><p><a href="http://www.numpy.org/"><code>numpy</code></a> for arrays and linear algebra.</p></li><li><p><a href="http://docs.python-requests.org/en/latest/"><code>requests</code></a> for http calls.</p></li><li><p><a href="http://scikit-learn.org/stable/"><code>sklearn</code></a> for machine learning and classification.</p></li></ul>
+
+<p>For example code, <a href="https://github.com/search?l=&amp;o=desc&amp;q=user%3Adhimmel+extension%3Aipynb&amp;ref=advsearch&amp;s=indexed&amp;type=Code&amp;utf8=%E2%9C%93">check out</a> my notebooks.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="2" data-comment-id="301">
+  <td class="comment-profile-avatar">
+		<a href="/u/akolow"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/s/img/p_default_medium.png' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="301"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/akolow">Ola O</a>
+				
+				<span class="light">&nbsp;<a href="#2" class="light">743 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Thank you. This is very helpful.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-135" class="inline-note toggle-parent" data-note-id="135">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: Thanks <a href="/u/akolow" class="username">@akolow</a>! Let us know if you experience any problems or have suggestions.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="3" data-comment-id="307">
+  <td class="comment-profile-avatar">
+		<a href="/u/vsmalladi"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/s/img/p_default_medium.png' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="307"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/vsmalladi">Venkat Malladi</a>
+				
+				<span class="light">&nbsp;<a href="#3" class="light">738 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>This is very helpful and something I can use to improve my python workflow. </p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="4" data-comment-id="319">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="319"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#4" class="light">728 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>SciPy 2015</h1>
+
+<p>Some incredible presentations and materials are being unleashed at the <a href="http://scipy2015.scipy.org/">SciPy 2015 conference</a> as I type. The full <a href="https://www.youtube.com/playlist?list=PLYx7XA2nY5Gcpabmu61kKcToLz0FapmHu">playlist of presentations</a> is on YouTube.</p>
+
+<p>One excellent presentation is <em>State of the Stack</em> (<a href="https://youtu.be/5GlNDD7qbP4">video</a>, <a href="https://speakerdeck.com/jakevdp/the-state-of-the-stack-scipy-2015-keynote">slides</a>) by Jake Vanderplas, which details the latest developments in python tools for data science.</p>
+
+<p>Some additional projects of interest are:</p>
+
+<ul><li><a href="https://youtu.be/X0pAhJgySxk">xray</a></li><li><a href="https://youtu.be/iMPfLz6kKv8">beaker notebook</a></li></ul>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="5" data-comment-id="393">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="393"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#5" class="light">690 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Jupyter 1.0.0 released</h1>
+
+<p>Last Wednesday <a href="http://blog.jupyter.org/2015/08/12/first-release-of-jupyter/">marked a historic day</a> for biodata science. The language agnostic parts of IPython, including the notebook, have been <a href="https://blog.jupyter.org/2015/04/15/the-big-split/">repackaged</a> as Jupyter. The big split was necessary because the project now supports <a href="https://github.com/ipython/ipython/wiki/IPython-kernels-for-other-languages">many languages</a> not just python.</p>
+
+<p>I am updating the <a href="#1">above</a> guide, by replacing <code>ipython</code> with <code>jupyter</code> in code snippets. The revised guidance will apply to new installations. If you have an existing Anaconda installation, you can <a href="http://jupyter.readthedocs.org/en/latest/install.html">install Jupyter</a> with <code>conda install jupyter</code>.</p>
+
+<p>Now who is excited for <a href="https://www.python.org/dev/peps/pep-0478/">September 13th</a> and the <a href="https://github.com/takluyver/talks/blob/master/Python%203.5%20lightning%20talk.ipynb">features</a> this day will bring!</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="6" data-comment-id="566">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="566"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#6" class="light">582 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Concurrency for data science</h1>
+
+<p>Processors are now multicore and our code should take advantage of this opportunity. If execution time is not an issue, don't waste time optimizing. But if you find yourself waiting for your program to finish and your computation can be parallelized, look no further than <code>concurrent.futures</code>.</p>
+
+<p><code>concurrent.futures</code> gives you easy, no <a href="https://en.wikipedia.org/wiki/Boilerplate_code">boilerplate</a>, access to the two methods of concurrency in python. The methods are:</p>
+
+<h2><a href="https://docs.python.org/3/library/threading.html"><code>threading</code></a></h2>
+
+<p>Threads allow multiple paths of execution within a single program. Each thread has access to the global data space, which makes threads convenient for programming. However, proceed with caution: since a single object can be altered by multiple threads simultaneously, there is danger. Avoid the danger by using <a href="https://docs.python.org/3/library/threading.html#lock-objects">locks</a> (via <a href="https://docs.python.org/3/library/threading.html#using-locks-conditions-and-semaphores-in-the-with-statement"><code>with</code></a> for convenience) whenever a thread writes to a communal resource.</p>
+
+<p>The main drawback of threading is the global interpreter lock (<a href="https://docs.python.org/3/glossary.html#term-global-interpreter-lock">GIL</a>) meaning that "only one thread can execute Python code at once." Therefore, if you want to reap the benefits of multiple cores, you need to make sure your code isn't limited by the GIL. You can escape the GIL by moving the time intensive computations outside of python by:</p>
+
+<ol><li>Using code written in other languages such as C. Many functions implement their core features outside of python. Additionally, many operations rely on external resources such as database or web queries.</li><li>Using <a href="http://numba.pydata.org/"><code>numba</code></a> to automatically compile your code with the <a href="http://numba.pydata.org/numba-doc/0.21.0/user/jit.html#nogil"><code>@numba.jit(nogil=True)</code></a> decorator.</li></ol>
+
+<h2><a href="https://docs.python.org/3/library/multiprocessing.html"><code>multiprocessing</code></a></h2>
+
+<p>When your code isn't amenable to releasing the GIL, try multiprocessing. Multiprocessing spawns new python instances for each task. Therefore, any needed data must be serialized via pickling and dispatched to the subprocess. This creates large overhead. Try to send the minimum amount of data required for your application to each process to reduce this overhead.</p>
+
+<h2><a href="https://docs.python.org/3/library/concurrent.futures.html"><code>concurrent.futures</code></a></h2>
+
+<p><code>concurrent.futures</code> provides a queue-based system for executing functions in parallel. To use, first initiate an Executor using <code>concurrent.futures.ThreadPoolExecutor()</code> for threading or <code>concurrent.futures.ProcessPoolExecutor()</code> for multiprocessing. Both constructors accept a <code>max_workers</code> argument for the maximum number of threads/processes you would like to devote to the task.</p>
+
+<p>You can interact with the Executor in the following ways:</p>
+
+<ul><li><code>Executor.submit()</code> which submits a <em>single</em> job to the queue</li><li><code>Executor.map()</code> which submits <em>many</em> jobs to the queue</li><li><code>Executor.shutdown()</code> which shuts down the executor. The default parameter <code>wait=True</code> means this method will wait for all jobs to finish before returning.</li></ul>
+
+<p>Cheers to a concurrent future!</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+    		
+		</table>
+
+    
+
+    &nbsp;<br>
+    <a class="btn btn-primary btn-lg" href="/signup?next=/discussion/python-for-the-modern-biodata-scientist/84&suppress_message=1" style>Join to Reply</a>
+
+
+		<table class="references table-td-5" style="display:none;"></table>
+
+    
+
+
+	</td>
+	<td class="thread-sidebar">
+
+
+			
+
+      <a class="btn btn-default follow-link btn-follow btn-lg is-following tt-top full-width" title="Follow discussion" data-id="84" data-ctype="thread" data-is-following="false">&nbsp;</a>
+
+      
+        <div class="status-box text-center"><span style="">Status:</span> 
+  Open
+
+</div>
+      
+
+      
+        
+      
+
+
+				
+
+					<div class="details">Views</div>
+					<span style="font-size:20px;">985</span>
+
+        
+
+				
+					<div class="details">Topics</div>
+					<div style="margin-bottom:15px;">
+		            <a href="/topics/programming" class="tag">Programming</a><a href="/topics/jupyter" class="tag">Jupyter</a><a href="/topics/coding" class="tag">Coding</a><a href="/topics/computer-science" class="tag">Computer Science</a><a href="/topics/python" class="tag">Python</a><a href="/topics/notebooks" class="tag">Notebooks</a><a href="/topics/ipython" class="tag">IPython</a>
+					</div>
+				
+
+
+		
+			<div class="details">Referenced by</div>
+			<div style="font-size:12px;"><ul style="padding-left:16px !important;">
+			
+				<li>
+					
+					<a href='/discussion/tracking-project-reuse-citation-and-publicity/113' class='thread-title'>Tracking project reuse, citation, and publicity</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/r-best-practices/83' class='thread-title'>R best practices</a>
+				</li>
+			
+				</ul>
+			</div>
+		
+
+		
+			<div class="details">Cite this as</div>
+			<span style="font-size:12px;">
+				Daniel Himmelstein, Ola O, Venkat Malladi (2015) Python for the modern biodata scientist. <i>Thinklab.</i> doi:<a href='https://doi.org/10.15363/thinklab.d84'>10.15363/thinklab.d84</a>
+			</span>
+		
+
+		<div class="details">License</div>
+		<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0;width:88px;height:31px;" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></p>
+
+		<div class="details">Share</div>
+		
+			
+				<a class="share-button fb" onclick="javascript:void(window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A//thinklab.com/discussion/python-for-the-modern-biodata-scientist/84','','width=600,height=460,menubar=no,status=no'));" href="#"></a>
+<a class="share-button twitter" onclick="javascript:void(window.open('https://twitter.com/share?text=Python%20for%20the%20modern%20biodata%20scientist&url=https%3A//thinklab.com/discussion/python-for-the-modern-biodata-scientist/84','','width=600,height=300,menubar=no,status=no'));" href="#"></a>
+<a class="share-button google" onclick="javascript:void(window.open('https://plus.google.com/share?url=https%3A//thinklab.com/discussion/python-for-the-modern-biodata-scientist/84','','width=510,height=460,menubar=no,status=no'));" href="#"></a>
+
+			
+		
+
+	</td>
+</tr></table>
+
+
+		</div>
+
+
+		
+	    	<div class="footer">
+<div style="background:#dedede;">
+	<div class="main-centered-div text-center" style="padding:20px;">
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#2e464b4242416e5a46474045424f4c004d4143"><span class="__cf_email__" data-cfemail="bdd5d8d1d1d2fdc9d5d4d3d6d1dcdf93ded2d0">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+	</div>
+</div>
+<div class="main-footer">
+	<div class="main-centered-div">
+
+<table class="full-width"><tr>
+	<td class="footer-nav">
+
+        <div class="foot-head">Explore</div>
+        <a href="/proposals">Proposals</a><br>
+        <a href="/projects">Projects</a><br>
+        <a href="/publications">Article discussion</a><br>
+        <a href="/discussion">All discussion</a><br>
+        <a href="/topics">Topics</a><br>
+        <!-- <a href="/funders">Funders</a><br> -->
+        <a href="/funding">Funding opportunities</a><br>
+
+	</td>
+	<td class="footer-nav">
+
+        <!-- <div class="foot-head">Help &amp; feedback</div>	 -->
+        <!-- <div class="foot-head">Intro</div>
+        <a href="/benefits/for-science">Why</a><br>
+        <a href="/how-it-works">How it works</a><br>
+
+<br> -->
+
+        <div class="foot-head">Community</div>
+        <a href="/leaderboard">Leaderboard</a><br>
+        <a href="/p/meta">Thinklab Meta</a><br>
+				<a href="/help/faq">Help</a><br>
+				<!-- <a href="/new-project">Start a proposal</a><br> -->
+        <!-- <a href="/benefits/proposal">Benefits</a><br> -->
+        <!-- <a href="/funding">Get funded</a><br> -->
+        <!-- <a href="/participate">Become a contributor</a><br> -->
+        <!-- <a href="/for-funders">For science funders</a><br> -->
+        <!-- <a href="/for-institutions">For institutions</a><br> -->
+
+	</td>
+	<td class="footer-nav">
+
+
+
+        <div class="foot-head">About</div>
+        <a href="/about">Overview</a><br>
+        <a href="/benefits">Benefits</a><br>
+        <a href="/how-it-works">How it works</a><br>
+        <a href="/about/story">Our story</a><br>
+        <a href="/blog">Our blog</a><br>
+        <a href="/about/jobs">Join the team</a><br>
+        <br>
+
+        <!-- <div class="foot-head">Help</div>
+        <a href="/help">Help</a><br>
+		 -->
+
+
+	</td>
+	<td class="footer-nav">
+		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
+		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<br><br>
+		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
+
+	</td>
+
+</tr></table>
+
+</div>
+</div>
+</div>
+
+		
+
+	</div>
+
+
+  <script></script>
+  <script>
+  var MEDIA_URL = 'https://think-lab.s3.amazonaws.com/m/';
+  var STATIC_URL = 'https://think-lab.s3.amazonaws.com/s/';
+  var page_is_authenticated = false;
+  var page_page = 'discussion';
+  var page_profile_id = undefined;
+</script>
+
+
+
+	<!-- Note different script type. MUST come before MathJax.js -->
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	        "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"],
+	                        scale: 110, linebreaks: { automatic:true },
+	                        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+	        tex2jax: { inlineMath: [ ["$$", "$$"], ["\\(","\\)"] ],
+	                    displayMath: [ ["$$$","$$$"], ["\\[", "\\]"] ],
+	                    processEscapes: true,}
+	            });
+
+	</script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://think-lab.s3.amazonaws.com/s/dist/main.min.js"></script>
+  
+
+
+
+  
+	
+  
+  
+  
+<script>
+$(function() {
+  recordHit('thread', 84);
+});
+</script>
+
+
+
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>

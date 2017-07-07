@@ -1,0 +1,1754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZgEOC19dW0QCEVtHU1gG","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":1142}</script>
+    <title>How should we construct a catalog of drug indications? | Thinklab</title>
+	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
+    <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/highlightjs/github.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/css.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/bootstrap-multiselect.css" />
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
+    
+    
+    
+    
+  
+    <meta name="citation_doi" content="10.15363/thinklab.d21">
+    <meta name="citation_title" content="How should we construct a catalog of drug indications?">
+    <meta name="citation_online_date" content="Jan. 13, 2015">
+    <meta name="citation_author" content="Daniel Himmelstein, Benjamin Good, Tudor Oprea, Allison McCoy, Antoine Lizee">
+    <meta name="citation_journal_title" content="Thinklab">
+    <meta name="citation_publisher" content="Thinklab">
+  
+
+    
+
+
+	<!-- GoogleAnalytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-48550230-1', 'thinklab.com');
+	ga('require', 'displayfeatures');
+	
+	ga('send', 'pageview');
+
+	</script>
+
+
+
+
+
+
+</head>
+<body >
+  <form id="form_action" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+</form>
+
+	
+
+	<div class="body-wrapper">
+
+		
+
+
+<!-- <div style="height:5px;background-image:url('https://think-lab.s3.amazonaws.com/s/img/top-bg.gif');"></div> -->
+<div class="gradient">
+	<div class="main-centered-div header-container">
+
+<table class="full-width" style="height:60px;"><tr>
+	<td style="width:200px;vertical-align:middle;padding-bottom:15px;">
+		<a href="/" style="font-weight:normal;color:#212121;"><img src="https://think-lab.s3.amazonaws.com/s/img/logo.png" width="160"></a>
+	</td><td style="vertical-align:middle;text-align:left;padding-top:6px;width:100%;padding-left:40px;">
+		<ul id="not-search-block"  class="main-header">
+
+
+			
+
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/proposals">Proposals</a></li>
+						<li><a href="/projects">Projects</a></li>
+						<li><a href="/publications">Article discussion</a></li>
+						<li><a href="/discussion">All discussion</a></li>
+					</ul>
+				</li>
+				<li><a href="/leaderboard">Leaderboard</a></li>
+
+			
+				<li><a href="/about">About</a></li>
+			
+
+
+		</ul>
+
+    <ul id="search-block" class="main-header" style="display: none; margin-right: 30px;">
+        <li class="full-width">
+            <form method="get" action="/search">
+			<div class="input-group full-width">
+				<input name="q" type="text" class="form-control search-input">
+			</div>
+            </form>
+        </li>
+    </ul>
+
+	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
+		<ul class="main-header pull-right" style="padding-left: 0;">
+    		
+                <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+            
+
+        </ul>
+    </ul>
+	</td>
+</tr></table>
+
+<!-- <div id="global-search-div" class="main-centered-div" style="display:none;">
+	<input type="text" value="" class="thread-search form-control" placeholder="Search" data-action="/discussion">
+</div> -->
+
+	</div>
+</div>
+
+		
+	  
+
+
+
+	  
+
+
+		
+
+		<div class="dark-head"><div class="main-centered-div">
+
+			
+
+		</div></div>
+		
+		<div class="main-centered-div" style="margin-top:40px;padding-bottom:340px">
+	    
+
+<div style="margin-top:-20px; margin-bottom:20px;">
+
+    <a class="side-box" href="/p/rephetio" style="background-color:#ebfdff;"><div class="side-type">Project:</div> <div class="side-title">Rephetio: Repurposing drugs on a hetnet [rephetio]</div></a><br>
+
+
+
+</div>
+
+<table style="margin-top:0px;"><tr>
+	<td class="thread-table-content">
+
+		<table class="full-width">
+			
+<tr class="comment-tr target-hl" id="1" data-comment-id="29">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="29"></a>
+
+    
+
+			<h2 class="page-title" style="margin-bottom:5px;margin-top:0px !important;">How should we construct a catalog of drug indications?</h2>
+
+			<div style="margin-top:5px;color:gray;margin-bottom:20px;font-size:13px;">
+				<a style="font-weight:normal;color:#212121" href="/u/dhimmel"><strong>Daniel Himmelstein</strong></a>
+				<span class="is-researcher">Researcher</span>
+				&nbsp; <a href="#1" class="light">905 days ago</a>
+				
+			</div>
+
+      
+
+          <hr>
+		
+
+    <p>We are looking to construct a catalog of <a href="https://en.wikipedia.org/wiki/Indication_%28medicine%29">indications</a> (efficacious drug-disease pairs) with the following attributes (ordered by importance):</p>
+
+<ol><li>automated and high-throughput construction</li><li>high-quality, or varying levels of quality as long as quality level is annotated</li><li>comprehensive</li><li>disease modifying rather than symptomatic</li><li>compounds which map to pubchem</li><li><a href="https://en.wikipedia.org/wiki/Contraindication">contraindications</a> and adverse effects are excluded and cataloged separately</li><li>diseases which map to the disease ontology</li><li>source is retrievable</li></ol>
+
+<p>A few options we can consider:</p>
+
+<ul><li><a href="http://ftp.ncbi.nlm.nih.gov/pub/lu/LabeledIn/"><strong>LabeledIn</strong></a> — Curators manually identified indications from drug labels for 250 human prescription ingredients (drugs) <span class="citation">[<a href="https://doi.org/10.1016/j.jbi.2014.08.004" class="citation" data-key="10.1016/j.jbi.2014.08.004">1</a>]</span>.</li><li><a href="http://knowledgemap.mc.vanderbilt.edu/research/content/MEDI"><strong>MEDI</strong></a> — Indications extracted from RxNorm, SIDER 2, MedlinePlus, and Wikipedia were integrated into a single resource. The high-precision subset (indications in RxNorm or two other resources) includes 13,304 unique indications for 2,136 medications <span class="citation">[<a href="https://doi.org/10.1136/amiajnl-2012-001431" class="citation" data-key="10.1136/amiajnl-2012-001431">2</a>]</span>. Further work added indication prevalence information <span class="citation">[<a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3900157/" class="citation" data-key="MediPrev">3</a>]</span>. MEDI compares favorably to SemRep for extracting indications from clinical text <span class="citation">[<a href="https://doi.org/10.1136/amiajnl-2014-002954" class="citation" data-key="10.1136/amiajnl-2014-002954">4</a>]</span>.</li><li><strong>SemRep</strong> — "<a href="http://semrep.nlm.nih.gov/">SemRep</a> is a program that extracts semantic predications (subject-relation-object triples) from biomedical free text" <span class="citation">[<a href="https://doi.org/10.1016/j.jbi.2003.11.003" class="citation" data-key="10.1016/j.jbi.2003.11.003">5</a>]</span>. SemRep has been used to extract <em>TREAT</em> relations from MeSH scope notes, Daily Med, DrugBank, and <a href="http://www.ahfsdruginformation.com/product-consumer-info.aspx">AHFS Consumer Medication Information</a> <span class="citation">[<a href="https://doi.org/10.1145/1882992.1883096" class="citation" data-key="10.1145/1882992.1883096">6</a>]</span>. SemRep has also been used to identify <em>TREAT</em> relations from Medline abstracts <span class="citation">[<a href="http://www.d.umn.edu/~tpederse/Pubs/amia2012-liu.pdf" class="citation" data-key="LiuSemRep">7</a>]</span>. A project called <a href="//skr3.nlm.nih.gov/SemMedDB/">SemMedDB</a> provides the SemRep results from mining PubMed <span class="citation">[<a href="https://doi.org/10.1093/bioinformatics/bts591" class="citation" data-key="10.1093/bioinformatics/bts591">8</a>]</span>. </li><li><strong>SPL-X</strong> — <strong>S</strong>tructured <strong>P</strong>roduct <strong>L</strong>abels e<strong>X</strong>tractor — Using MetaMap, this project extracted indications from DailyMed drug labels that were available as XML <span class="citation">[<a href="https://doi.org/10.1136/amiajnl-2012-001291" class="citation" data-key="10.1136/amiajnl-2012-001291">9</a>]</span>. Data does not appear to be available.</li><li><strong><a href="http://ctdbase.org/">Comparative Toxicogenomics Database</a></strong> <span class="citation">[<a href="https://doi.org/10.1093/nar/gku935" class="citation" data-key="10.1093/nar/gku935">10</a>]</span> — Manual literature curators annotated drug-disease pairs as 'therapeutic'. The resource is extensive (the 'therapeutic' threshold was low) but incomplete.</li><li><strong><a href="http://sideeffects.embl.de/">SIDER 2</a></strong> — In addition to extracting side effects from drug labels, SIDER also extracts indications <span class="citation">[<a href="https://doi.org/10.1038/msb.2009.98" class="citation" data-key="10.1038/msb.2009.98">11</a>]</span>. Since the approach is automated, some side effects may be extracted as indications and <em>vice versa</em>. This approach would only provide information for drugs with labels from the US FDA or Canada.</li></ul>
+
+<p>Any additional resources or suggestions?</p>
+
+<p></p>
+
+<p></p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-32" class="inline-note toggle-parent" data-note-id="32">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: <span><strong>markdown error</strong>: <a href="/u/jspauld" class="username">@jspauld</a>, give me my bold! See SPL-X bullet.</span>
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-33" class="inline-note toggle-parent" data-note-id="33">
+	<p><a href="/u/jspauld">Jesse Spaulding</a>: Yep, will fix.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-71" class="inline-note toggle-parent" data-note-id="71">
+	<p><a href="/u/jspauld">Jesse Spaulding</a>: The markdown error has been fixed.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="2" data-comment-id="96">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="96"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#2" class="light">828 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>The initial LabeledIn <span class="citation">[<a href="https://doi.org/10.1016/j.jbi.2014.08.004" class="citation" data-key="10.1016/j.jbi.2014.08.004">1</a>]</span> resource used expert curators. The team behind this project tested crowdsourced curation using Amazon Mechanical Turk workers <span class="citation">[<a href="https://doi.org/10.1093/database/bav016" class="citation" data-key="10.1093/database/bav016">2</a>]</span>. They found the majority vote of workers on whether a disease within a label was an indication had a high accuracy (96%).</p>
+
+<p>They <a href="ftp://ftp.ncbi.nlm.nih.gov/pub/lu/LabeledIn/Crowdsourcing/">assessed</a> 3004 indications not already in LabeledIn corresponding to 706 new drug labels. We are looking to increase the coverage of the initial LabeledIn dataset by adding these crowdsourced indications.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="3" data-comment-id="101">
+  <td class="comment-profile-avatar">
+		<a href="/u/b_good"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/48_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="101"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/b_good">Benjamin Good</a>
+				
+				<span class="light">&nbsp;<a href="#3" class="light">826 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>This dataset might be worth looking into.  Drug-indication links captured from physicians in an EHR system <span class="citation">[<a href="https://doi.org/10.1136/amiajnl-2012-000852" class="citation" data-key="10.1136/amiajnl-2012-000852">1</a>]</span> .  Data appears to be available - though its in a 200+ page PDF!  <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3422843/bin/amiajnl-2012-000852-s1.pdf" target="_blank">http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3422843/bin/amiajnl-2012-000852-s1.pdf</a>(I'm sure that was a journal requirement).</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="4" data-comment-id="104">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="104"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#4" class="light">826 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Hey <a href="/u/b_good" class="username">@b_good</a>, thanks for the suggestion <span class="citation">[<a href="https://doi.org/10.1136/amiajnl-2012-000852" class="citation" data-key="10.1136/amiajnl-2012-000852">1</a>]</span> and tracking down the data supplement, which I cannot find on the <a href="http://dx.doi.org/10.1136/amiajnl-2012-000852">article's JAMIA page</a>. Hereon, I will refer to this resource as <code>ehrlink</code>, unless anyone can find a previously-used or author-preferred nickname.</p>
+
+<p>This resource is noteworthy because it will capture off-label usages better than LabeledIn (which is explicitly on-label) and MEDI (whose inclusion criteria likely favor on-label indications)</p>
+
+<p>I <a href="http://nbviewer.ipython.org/github/dhimmel/indications/blob/gh-pages/ehrlink/convert-to-text.ipynb">converted the pdf file into a tsv file</a>, which can be downloaded <a href="//git.dhimmel.com/indications/ehrlink/download/amiajnl-2012-000852-s1.tsv">here</a>.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="5" data-comment-id="110">
+  <td class="comment-profile-avatar">
+		<a href="/u/b_good"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/48_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="110"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/b_good">Benjamin Good</a>
+				
+				<span class="light">&nbsp;<a href="#5" class="light">822 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>You can access SemRep extracted semantic relations (e.g. treats, causes) based on all PubMed abstracts (updated bi-annually) via the semantic medline database.  With a UMLS login, you can get the complete MySQL dump via <a href="http://skr3.nlm.nih.gov/SemMedDB/" target="_blank">http://skr3.nlm.nih.gov/SemMedDB/</a> .  Main challenge here is in ensuring quality (as with any NLP output).</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-82" class="inline-note toggle-parent" data-note-id="82">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: Added the reference to my initial post. Given the quality issues, I do not plan to include this resource in our gold standard set of indications. It could be helpful later as a literature-derived set of <em>potential</em> indications.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="6" data-comment-id="111">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="111"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#6" class="light">821 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>ehrlink problem and medication vocabularies</h1>
+
+<p>We have extracted the ehrlink <span class="citation">[<a href="https://doi.org/10.1136/amiajnl-2012-000852" class="citation" data-key="10.1136/amiajnl-2012-000852">1</a>]</span> indication data (<a href="#104">see above</a>). Unfortunately, I am unfamiliar with the identifiers used for problems (diseases) and medications (drugs). I've posted a sampling below in case anyone can figure out.</p>
+
+<table class="table markdown-table"><thead><tr><th>problem_definition_id</th><th>problem</th></tr></thead><tbody><tr><td>63645</td><td>Complete D-transposition Of The Great Vessels</td></tr><tr><td>258894</td><td>Acromegaly</td></tr><tr><td>275590</td><td>Organic REM Sleep Behavior Disorder</td></tr><tr><td>62983</td><td>Arteriosclerotic Cardiovascular Disease (ASCVD)</td></tr><tr><td>75090</td><td>Cerebral Palsy</td></tr></tbody></table>
+
+<table class="table markdown-table"><thead><tr><th>medication_definition_id</th><th>medication</th></tr></thead><tbody><tr><td>17938</td><td>Sodium Polystyrene Sulfonate Oral Powder</td></tr><tr><td>21707</td><td>Clotrimazole Anti-Fungal 1 % External Cream</td></tr><tr><td>18805</td><td>Niacin CR 1000 MG Oral Tablet Extended Release</td></tr><tr><td>19598</td><td>ClonazePAM 0.5 MG Oral Tablet</td></tr><tr><td>136143</td><td>AmLODIPine Besylate 2.5 MG Oral Tablet</td></tr></tbody></table>
+
+<p>My worry is that these identifiers may not correspond to a standardized vocabulary that we can access and easily map to. I will contact the authors for clarification.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="7" data-comment-id="115">
+  <td class="comment-profile-avatar">
+		<a href="/u/TIOprea"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/75_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="115"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/TIOprea">Tudor Oprea</a>
+				
+				<span class="light">&nbsp;<a href="#7" class="light">821 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Just to let you guys know that, at UNM, Oleg Ursu and I have been constructing such a catalog for nearly eight years. <br>Unfortunately, nobody funds this type of activity - or at least nobody has funded it so far - thus resources are somewhat limited.<br>Briefly, we manually curated all the active pharmaceutical ingredients APIs (over 4400; includes biologics), and mapped them to FDA approved drug labels (over 50000 ADLs). <br>From the ADLs one can extract/map indications, contra-indications, off-label indications... and to each API we mapped RxNorm [CUI], NPC, ATC, INN, plus targets, including numeric bioactivity &amp; type [MoA related; non-MoA assigned; as well as non-human targets]. We also mapped all our diseases to DOIDs - however, there are about 800 or so left that will take us a while to map.<br>A few pointers: <br>1) if you want to extract the data yourselves, you're in for a treat. There are diseases in "indications" that do NOT exist anywhere else [e.g., cancer XYZ with mutation A3999B, in other words it's not enough to have the disease, you need the right genotype!]; <br>2) you also have to deal with indications that are "fringe" (pregnancy is not a disease; neither is contraception)<br>3) indications etc. are not from PubMed - so please pay attention to approved labels<br>4) disease modifying is far from trivial - you need epi to show you that, X years after the Dx/Rx event, there was no recurrence [are steroids in anti-allergy disease modifying? probably not; are antibiotics in sinusitis disease-modifying? yes and no link_ref,[object Object],if it's chronic!</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-83" class="inline-note toggle-parent" data-note-id="83">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: +1 for grant agencies to fund this type of activity
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="8" data-comment-id="116">
+  <td class="comment-profile-avatar">
+		<a href="/u/allisonmccoy"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/77_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="116"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/allisonmccoy">Allison McCoy</a>
+				
+				<span class="light">&nbsp;<a href="#8" class="light">821 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>My colleagues and I have worked on multiple approaches to create this knowledge in the papers below:</p>
+
+<ol><li>Wright A, Chen ES, Maloney FL. An automated technique for identifying associations between medications, laboratory results and problems. J Biomed Inform. 2010 Dec;43(6):891–901. <a href="http://www.ncbi.nlm.nih.gov/pubmed/20884377" target="_blank">http://www.ncbi.nlm.nih.gov/pubmed/20884377</a></li><li>McCoy AB, Wright A, Laxmisan A, Singh H, Sittig DF. A prototype knowledge base and SMART app to facilitate organization of patient medications by clinical problems. AMIA Annu Symp Proc. 2011;2011:888–94. <a href="http://www.ncbi.nlm.nih.gov/pubmed/22195147" target="_blank">http://www.ncbi.nlm.nih.gov/pubmed/22195147</a></li><li>McCoy AB, Wright A, Laxmisan A, Ottosen MJ, McCoy JA, Butten D, et al. Development and evaluation of a crowdsourcing methodology for knowledge base construction: identifying relationships between clinical problems and medications. J Am Med Inform Assoc. 2012 Oct;19(5):713–8. <a href="http://www.ncbi.nlm.nih.gov/pubmed/22582202" target="_blank">http://www.ncbi.nlm.nih.gov/pubmed/22582202</a></li><li>McCoy AB, Wright A, Rogith D, Fathiamini S, Ottenbacher AJ, Sittig DF. Development of a clinician reputation metric to identify appropriate problem-medication pairs in a crowdsourced knowledge base. J Biomed Inform. 2014 Apr;48:66–72. <a href="http://www.ncbi.nlm.nih.gov/pubmed/24321170" target="_blank">http://www.ncbi.nlm.nih.gov/pubmed/24321170</a></li></ol>
+
+<p>In the JAMIA paper mentioned above, we used what we called a crowdsourcing approach to get this data. We have recently validated that approach at another site, and that publication is coming out in ACI soon. Unfortunately, in the original version, as you suspected, our medications and problems not mapped to any standardized terminology. The identifiers are local to the EHR, and while we have made some attempts to map them to RxNorm and SNOMED-CT, we were never able to get a really accurate set. However, the validation uses data from a different EHR, which I believe can be more easily mapped. Once the paper is out, I'll see if I can share that data.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="9" data-comment-id="117">
+  <td class="comment-profile-avatar">
+		<a href="/u/TIOprea"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/75_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="117"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/TIOprea">Tudor Oprea</a>
+				
+				<span class="light">&nbsp;<a href="#9" class="light">821 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>I find crowdsourcing useful when you use a team of experts. So, for example, a carefully selected team of experts, when working on the same problem, can give surprisingly interesting feedback on an otherwise difficult problem.<br><a href="http://www.nature.com/nchembio/journal/v5/n7/abs/nchembio0709-441.html" target="_blank">http://www.nature.com/nchembio/journal/v5/n7/abs/nchembio0709-441.html</a>Please note that this paper is not about data entry, but about polling experts for their opinion.</p>
+
+<p>I professionally supervised data entry for chemical structures, chemical bioactivities, as well as controlled vocabulary descriptions for assays, indexing medicinal chemistry literature. The average <em>trained</em> person loading data had an error rate of 5-10% - errors varied with period (e.g., the closer to the deadline, usually Christmas, the worse the quality). We used a 3-layer quality control system. And even so, we had a 1-2% error in our database, as revealed by comparison with two other systems. <br>See this paper <a href="http://pubs.acs.org/doi/abs/10.1021/ci400099q" target="_blank">http://pubs.acs.org/doi/abs/10.1021/ci400099q</a> for details (mine is the WOMBAT database).</p>
+
+<p>With this in mid, I want to point out that crowdsourcing problem medication pairs by clinicians is an intriguing effort, and if the data is publicly available I would like to learn more. There are risks because a) verification of data entry was probably not done at the entry level (was the clinician familiar with both the drug and the disease?); b) the person determining the problem would require training in pharmacovigilance, understanding of known side-effects, etc. I assume you have done that, and that you compared the sets? I apologize that I do not have time to access your papers right now. </p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="10" data-comment-id="118">
+  <td class="comment-profile-avatar">
+		<a href="/u/allisonmccoy"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/77_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="118"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/allisonmccoy">Allison McCoy</a>
+				
+				<span class="light">&nbsp;<a href="#10" class="light">821 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>To clarify the crowdsourcing approach, in our study the clinicians are completing the task because it is required during routine care, not solely for the purpose of creating a knowledge base. They are entering the data into the EHR because they are prescribing a medication to a patient and are often required to link it to one or more of the patient's problems for billing purposes. We did not ask them to do any additional work outside of their own routine clinical practice.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="11" data-comment-id="119">
+  <td class="comment-profile-avatar">
+		<a href="/u/TIOprea"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/75_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="119"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/TIOprea">Tudor Oprea</a>
+				
+				<span class="light">&nbsp;<a href="#11" class="light">821 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>thank you - was wondering about that. this does make their work more reliable.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="12" data-comment-id="124">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="124"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#12" class="light">820 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <blockquote><p>My colleagues and I have worked on multiple approaches to create this knowledge in the papers <span class="citation">[<a href="https://doi.org/10.1016/j.jbi.2010.09.009" class="citation" data-key="10.1016/j.jbi.2010.09.009">1</a>, <a href="https://doi.org/10.1136/amiajnl-2012-000852" class="citation" data-key="10.1136/amiajnl-2012-000852">2</a>, <a href="https://doi.org/10.1016/j.jbi.2013.11.010" class="citation" data-key="10.1016/j.jbi.2013.11.010">3</a>]</span></p></blockquote>
+
+<p><a href="/u/allisonmccoy" class="username">@allisonmccoy</a>, thanks for the references. I like your approach because it captures what clinicians are actually using to treat diseases (and can provide indication prevalence — what percent of patients with problem X receive medication X). Too bad that the identifiers are local. We would definitely appreciate the validation data when available, especially if it can be mapped to standard terminologies.</p>
+
+<p>In terms of the mappings from the <a href="#104">aforementioned</a> study <span class="citation">[<a href="https://doi.org/10.1136/amiajnl-2012-000852" class="citation" data-key="10.1136/amiajnl-2012-000852">2</a>]</span>, we still may be able to extract some utility: for example, we could manually map indications for diseases where our indications were lacking. <a href="/u/allisonmccoy" class="username">@allisonmccoy</a>, did any of the other papers you highlighted release data that could add value here?</p>
+
+<p><a href="/u/TIOprea" class="username">@TIOprea</a> mentioned the difficulty of identifying disease-modifying indications, even in a carefully hand-curated database. <a href="/u/allisonmccoy" class="username">@allisonmccoy</a>, does your method favor disease-modifying links? For example, if modafinil were prescribed to treat MS-induced fatigue, would the clinicians link modafinil to multiple sclerosis or fatigue?</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="13" data-comment-id="125">
+  <td class="comment-profile-avatar">
+		<a href="/u/allisonmccoy"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/77_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="125"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/allisonmccoy">Allison McCoy</a>
+				
+				<span class="light">&nbsp;<a href="#13" class="light">820 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <blockquote><p>Did any of the other papers you highlighted release data that could add value here?</p></blockquote>
+
+<p>I don't believe so. I also omitted one more paper that validated the approach in Wright, et al.:</p>
+
+<ol><li>Wright A, McCoy A, Henkin S, Flaherty M, Sittig D. Validation of an association rule mining-based method to infer associations between medications and problems. Appl Clin Inform. 2013;4(1):100–9. </li></ol>
+
+<p>The 2nd reference uses RxNorm, SNOMED-CT, and NDF-RT, all of which is freely available, so that knowledge base could easily be regenerated by another party.</p>
+
+<blockquote><p>Does your method favor disease-modifying links? For example, if modafinil were prescribed to treat MS-induced fatigue, would the clinicians link modafinil to multiple sclerosis or fatigue?</p></blockquote>
+
+<p>It could be either, but more than likely it would be linked to MS, because that's what would be on the problem list already and easily linked during e-prescribing, but in our evaluation, we would have counted either as correct. We actually had a lot of discussion about this while doing the evaluations, because it did occur frequently.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="14" data-comment-id="126">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="126"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#14" class="light">820 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p><a href="/u/TIOprea" class="username">@TIOprea</a>, thanks for your insights. You touch on important points. In general our method may not require a perfect indication catalog to succeed, so I am hopeful despite the difficulties you mention. Specifically,</p>
+
+<blockquote><p>There are diseases in "indications" that do NOT exist anywhere else [e.g., cancer XYZ with mutation A3999B, in other words it's not enough to have the disease, you need the right genotype!]</p></blockquote>
+
+<p>In this case, "cancer XYZ with mutation A3999B" would likely not be in the Disease Ontology and if it were would probably lack cross-references. However, if the disease did map to the DO, we would <a href="http://thinklab.com/discussion/unifying-disease-vocabularies/44#121">propagate the indication</a> to "cancer XYZ".</p>
+
+<blockquote><p>you also have to deal with indications that are "fringe" (pregnancy is not a disease; neither is contraception)</p></blockquote>
+
+<p>These indications would not make it into the network because they do not relate to an included disease term. Information loss is ); but we'll get over it (;</p>
+
+<blockquote><p>indications etc. are not from PubMed - so please pay attention to approved labels</p></blockquote>
+
+<p>Thanks for the perspective. We won't include these as part of our gold standard.</p>
+
+<blockquote><p>disease modifying is far from trivial - you need epi to show you that</p></blockquote>
+
+<p>This I think will be the biggest difficulty. One option could be to exclude drugs that mostly treat symptoms. We noticed that drugs with many indications tended to be of this category. For multiple sclerosis, disease modifying is an <a href="http://www.nationalmssociety.org/Treating-MS/Medications">established concept with currently 12 drugs</a>. Unfortunately, the MS indications we've <a href="http://git.dhimmel.com/indications/medi/">extracted from MEDI</a> and <a href="http://git.dhimmel.com/indications/labeledin/">LabeledIn</a> are predominantly symptomatic. And to make matters worse, for most other diseases the DM status seems much more poorly defined.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="15" data-comment-id="127">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="127"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#15" class="light">820 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <blockquote><p>The 2nd reference <span class="citation">[<a href="http://www.ncbi.nlm.nih.gov/pubmed/22195147" class="citation" data-key="McCoy_2011">1</a>]</span> uses RxNorm, SNOMED-CT, and NDF-RT, all of which is freely available, so that knowledge base could easily be regenerated by another party.</p></blockquote>
+
+<p><a href="/u/allisonmccoy" class="username">@allisonmccoy</a>, I believe when MEDI <span class="citation">[<a href="https://doi.org/10.1136/amiajnl-2012-001431" class="citation" data-key="10.1136/amiajnl-2012-001431">2</a>]</span> extracts RxNorm indications, they are taking information from the NDF-RT. My belief is based on that in the introduction they state:</p>
+
+<blockquote><p>The integration of RxNorm with the National Drug File–Reference Terminology (NDF-RT) from the Veterans Health Administration has added significant indication information between single-ingredient medications and diseases through ‘may_treat’ and ‘may_prevent’ therapeutic relationships. NDF-RT includes both on-label and off-label indications, but its performance on indications has not been previously reported. Preliminary work with earlier versions of RxNorm and NDF-RT demonstrated that a number of medications were lacking indications.</p></blockquote>
+
+<p>Then in the methods they state:</p>
+
+<blockquote><p>To obtain indications of a medication from RxNorm, we retrieved all diseases that connect with the medication through either ‘may_be_treated_by’ or ‘may_be_prevented_by’ relationships.</p></blockquote>
+
+<p>Do you know whether the RxNorm portion of MEDI relied on the same underlying NDF-RT data that you collected for the 2011 AMIA Proceedings Paper <span class="citation">[<a href="http://www.ncbi.nlm.nih.gov/pubmed/22195147" class="citation" data-key="McCoy_2011">1</a>]</span>? </p>
+
+<p></p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="16" data-comment-id="128">
+  <td class="comment-profile-avatar">
+		<a href="/u/allisonmccoy"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/77_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="128"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/allisonmccoy">Allison McCoy</a>
+				
+				<span class="light">&nbsp;<a href="#16" class="light">820 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <blockquote><p>Do you know whether the RxNorm portion of MEDI relied on the same underlying NDF-RT data that you collected for the 2011 AMIA Proceedings Paper [1]?</p></blockquote>
+
+<p><a href="/u/dhimmel" class="username">@dhimmel</a> We only used the may_treat relationship, but we also took advantage of the is_a hierarchy for problems and ingredient_of relationships between medications and expanded the original set of pairs. So there is some overlap between the two, but likely some pairs that exist in only one or the other.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-84" class="inline-note toggle-parent" data-note-id="84">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: Thanks for the clarification. We also plan to perform some indication propagation on the Disease Ontology hierarchy.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="17" data-comment-id="148">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="148"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#17" class="light">808 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>PREDICT Indications</h1>
+
+<p>An existing computational repurposing approach called PREDICT <span class="citation">[<a href="https://doi.org/10.1038/msb.2011.26" class="citation" data-key="10.1038/msb.2011.26">1</a>]</span>, compiled indications for their analysis. They describe their approach as:</p>
+
+<blockquote><p>The associations between drugs and UMLS disease concepts were integrated from four different sources using three different methods: (i) direct mapping to drugs, exploiting embedded UMLS links between concepts and drugs; (ii) drug–condition associations downloaded from <a href="http://drugs.com" target="_blank">http://drugs.com</a>, where conditions were mapped to UMLS concepts using MetaMap; and (iii) indication‐based mapping. For the latter, we extracted UMLS concepts using the MetaMap tool from textual drug indications downloaded from FDA package inserts (available in the DailyMed website, <a href="http://dailymed.nlm.nih.gov" target="_blank">http://dailymed.nlm.nih.gov</a>) and DrugBank. In addition, we manually added 44 associations occurring in phase IV (post‐marketing) clinical trials.</p><p>... Finally, performing a manual curation of the extracted UMLS concepts from textual description of drug indications, we observed that they are more prone to false positives. We thus required that associations extracted from drug indications appear also in at least one more source.</p></blockquote>
+
+<p>Compounds are from DrugBank and diseases are from OMIM and the UMLS, which are both cross-referenced by the DO. The study does not report the precision of their indications making it difficult to assess how the quality compares with MEDI-HPS and LabeledIn.</p>
+
+<p>We combined the supplementary datasets from the study to create a table of PREDICT indications (<a href="http://git.dhimmel.com/indications/msb-predict/">notebook</a>, <a href="http://git.dhimmel.com/indications/msb-predict/data/indications-umls.tsv">download</a>). We will further investigate including these indications.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-87" class="inline-note toggle-parent" data-note-id="87">
+	<p><a href="/u/jspauld">Jesse Spaulding</a>: The 'notebook' link is broken here
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-88" class="inline-note toggle-parent" data-note-id="88">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: Fixed, thanks
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="18" data-comment-id="149">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="149"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#18" class="light">808 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Indication Set</h1>
+
+<p>Now that we have decided which <a href="http://thinklab.com/discussion/unifying-disease-vocabularies/44#144">diseases</a> and <a href="http://thinklab.com/discussion/unifying-drug-vocabularies/40">compounds</a> to include in the network, we can map indications onto these nodes.</p>
+
+<p>Our indication set contains four indication resources:</p>
+
+<ol><li>MEDI-HPS — indications from the MEDI's high precision subset</li><li>MEDI-LPS — indications from the MEDI's low precision subset</li><li>LabeledIn — drug label indications extracted by experts or Mechanical Turks</li><li>PREDICT — indications compiled by the PREDICT study</li></ol>
+
+<p>We anticipate constructing our gold standard of indications from MEDI-HPS, LabeledIn, and PREDICT while omitting MEDI-LPS, which has a lower precision. We did not include ehrlink <span class="citation">[<a href="https://doi.org/10.1136/amiajnl-2012-000852" class="citation" data-key="10.1136/amiajnl-2012-000852">1</a>]</span> because the vocabularies were not mapped. However, we would happily reward anyone who contributes a mapping of <a href="https://raw.githubusercontent.com/dhimmel/indications/f7ea9f9d932cf083c68cdb0395b474b215013280/ehrlink/data/problems.tsv">the problems</a> to the DO and <a href="https://raw.githubusercontent.com/dhimmel/indications/f7ea9f9d932cf083c68cdb0395b474b215013280/ehrlink/data/medications.tsv">the medications</a> to DrugBank.</p>
+
+<h3>Indication Links</h3>
+
+<ul><li><a href="https://cdn.rawgit.com/dhimmel/indications/f7ea9f9d932cf083c68cdb0395b474b215013280/merge.html">analysis notebook</a> — includes a searchable table</li><li><a href="https://raw.githubusercontent.com/dhimmel/indications/f7ea9f9d932cf083c68cdb0395b474b215013280/data/indications.tsv">data download</a> — tsv file</li></ul>
+
+<p>We would still like a way to differentiate disease-modifying from symptomatic indications and will explore manually classifying a subset of indications and training a model.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="19" data-comment-id="169">
+  <td class="comment-profile-avatar">
+		<a href="/u/alizee"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/23_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="169"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/alizee">Antoine Lizee</a>
+				
+				<span class="light">&nbsp;<a href="#19" class="light">800 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Hi Daniel,</p>
+
+<p>I spend some time solving your problem about mapping the drug names from one arbitrary system to a known ontology. As a matter of fact RxNorm proposes an <a href="http://rxnav.nlm.nih.gov/RxNormAPIs.html#">API</a> which has an <a href="http://rxnav.nlm.nih.gov/RxNormAPIs.html#uLink=RxNorm_REST_getApproximateMatch">endpoint</a> that can directly be queried for fuzzy matching - so that's useful. It will be helpful to look into the different endpoints of the API down the road, they provide many useful features (though poorly documented).</p>
+
+<p>I <a href="https://github.com/antoine-lizee/RRxNorm">wrote a script (in R)</a> to match all the medication names in your file and get the related properties of the retrieved Rx concepts. It took an hour + to run because of stalling to avoid going over API quotas. The fuzzy-matching API returns several rxcui matches for <em>each medication</em>. A score, ranging from 0 to 100, is attached to every match.</p>
+
+<p>The main output file can have several concepts per medication names if (i) there is <strong>ambiguity</strong>, i.e. there is more than one best match for a medication or (ii) the best match is <strong>imperfect</strong>, i.e. the best score is not 100 (then the first three are reported).<br>The <a href="https://raw.githubusercontent.com/antoine-lizee/RRxNorm/master/Output/unambiguousMatches.csv">final output</a> is a subset of this file with only the huge majority of unambiguous hits (and we thus have one concept per medication string).</p>
+
+<p>Here are some numbers:<br> 1. Only 2353 medications got matched with a valid concept, out of 2537 initially. Some names don't correspond to any medication and are filtered out.<br> 2. From these 2353 matched medications, 2281 (97%) have an unambiguous first match. These are in the final output.<br> 3. These 2281 unambiguous hits match to a total of 2148 different rxcuis.<br> 4. 1490 (63%) medications have at least one perfect match, with 1471 (63%) being unambiguous.<br> 5. These 1471 unambiguous perfect hits match to a total of 1442 different rxcuis.</p>
+
+<p><strong>QC</strong> is straightforward by <a href="https://github.com/antoine-lizee/RRxNorm/blob/master/Output/unambiguousMatchesForQC.csv">comparing</a> the original medication names and the retrieved name of each matched rxcui. I quickly checked and even the non-perfect matches (with a score different than 100) seems on point, at the exception of the "therapies" that have very few equivalents in RxNorm and definitely match to the wrong concept.</p>
+
+<p>Potential future directions:<br>1. Assess the quality of the matches through a systematic check based on the <a href="https://github.com/antoine-lizee/RRxNorm/blob/master/Output/unambiguousMatchesForQC.csv">QC file</a> mentioned above. <br>2. Enrich the final dataset by resolving ambiguity from the term types reported in the rxcui properties.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-97" class="inline-note toggle-parent" data-note-id="97">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: Awesome, you have set the train in motion for us to include ehrlink indications. Let's move discussion to <a href="http://thinklab.com/discussion/extracting-indications-from-the-ehrlink-resource/62">this new thread specifically for ehrlink analysis</a>.
+		
+	</p>
+	
+	<table style="display:none;"><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d62' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d62'><a href='/discussion/extracting-indications-from-the-ehrlink-resource/62' class='pub-title'>Extracting indications from the ehrlink resource</a><div class='pub-body'>Daniel Himmelstein (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d62'>10.15363/thinklab.d62</a></div></div></td></tr></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="20" data-comment-id="185">
+  <td class="comment-profile-avatar">
+		<a href="/u/alizee"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/23_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="185"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/alizee">Antoine Lizee</a>
+				
+				<span class="light">&nbsp;<a href="#20" class="light">796 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>UPDATE:<br>I went forward on resolving the ambiguity, using the term source in type, and then the number of "atoms" that matches each medication name. </p>
+
+<p>This brings down the number of remaining ambiguity from 72 to 11 medications (0.5%).</p>
+
+<p>I understand you want to extract the ingredients from these concepts, so it doesn't necessarily matter that there are two "top" matches for one medication after trying to resolve ambiguity (both will likely lead to the same components). As a result I created both the file for the <a href="https://raw.githubusercontent.com/antoine-lizee/RRxNorm/master/Output/resolvedMatches.csv">successfully resolved matches</a>, and the <a href="https://raw.githubusercontent.com/antoine-lizee/RRxNorm/master/Output/allResolvedMatches.csv">file for all the best matches after trying to resolve them</a>. The latter has 100% of the medications, including the 11 ambiguous, for which I took arbitrarily one of the top concepts. This is the file you'll want to work off in the future.</p>
+
+<p>I also created the <a href="https://github.com/antoine-lizee/RRxNorm/blob/master/Output/resolvedMatchesForQC.csv">QC file</a> for the ambiguity resolution step.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-99" class="inline-note toggle-parent" data-note-id="99">
+	<p><a href="/u/alizee">Antoine Lizee</a>: As a side-note, I removed all the row name columns in the csvs, because it was annoying for display in github. You might have to change slightly your code to understand the new format.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-103" class="inline-note toggle-parent" data-note-id="103">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: For reference, <a href="/u/alizee" class="username">@alizee</a> <a href="https://github.com/antoine-lizee/RRxNorm/blob/master/RxNorm2.R#L67">used</a> the following term type priority list (high to low):</p>
+
+<p><code>SCD</code>, <code>SBD</code>, <code>SCDF</code>, <code>SBDF</code>, <code>BN</code>, <code>SCDC</code>, <code>SBDC</code>, <code>IN</code>, <code>MIN</code>, <code>PIN</code>, <code>GPCK</code>, <code>BPCK</code>, <code>SCDG</code>, <code>SBDG</code>, <code>DF</code>, <code>DFG</code>
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="21" data-comment-id="191">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="191"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#21" class="light">794 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Revised indications which include ehrlink</h1>
+
+<p>We were able to <a href="//thinklab.com/discussion/extracting-indications-from-the-ehrlink-resource/62#190">collaboratively map</a> ehrlink to RxNorm and the DO.</p>
+
+<p>Our indication catalog, which only includes DO slim diseases and approved small molecules in DrugBank, now contains:</p>
+
+<ul><li>1,386 high-confidence indications retrieved from MEDI-HPS <span class="citation">[<a href="https://doi.org/10.1136/amiajnl-2012-001431" class="citation" data-key="10.1136/amiajnl-2012-001431">1</a>]</span>, LabeledIn <span class="citation">[<a href="https://doi.org/10.1016/j.jbi.2014.08.004" class="citation" data-key="10.1016/j.jbi.2014.08.004">2</a>, <a href="https://doi.org/10.1093/database/bav016" class="citation" data-key="10.1093/database/bav016">3</a>]</span>, PREDICT <span class="citation">[<a href="https://doi.org/10.1038/msb.2011.26" class="citation" data-key="10.1038/msb.2011.26">4</a>]</span>, and ehrlink <span class="citation">[<a href="https://doi.org/10.1136/amiajnl-2012-000852" class="citation" data-key="10.1136/amiajnl-2012-000852">5</a>]</span> covering 96 diseases and 602 compounds</li><li>1,113 low-confidence indications retrieved from MEDI-LPS <span class="citation">[<a href="https://doi.org/10.1136/amiajnl-2012-001431" class="citation" data-key="10.1136/amiajnl-2012-001431">1</a>]</span></li></ul>
+
+<p>The combined high and low-confidence indication set covers 107 diseases and 744 compounds. For more information see the <a href="https://cdn.rawgit.com/dhimmel/indications/36f0c5f143618abbbf8c9eb94b7318cb5936fd61/merge.html">notebook</a>, table of <a href="https://github.com/dhimmel/indications/blob/36f0c5f143618abbbf8c9eb94b7318cb5936fd61/data/indications-with-source.tsv">indications with resource info</a>, or table of <a href="https://github.com/dhimmel/indications/blob/36f0c5f143618abbbf8c9eb94b7318cb5936fd61/data/indications.tsv">collapsed indications</a>.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="22" data-comment-id="236">
+  <td class="comment-profile-avatar">
+		<a href="/u/allisonmccoy"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/77_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="236"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/allisonmccoy">Allison McCoy</a>
+				
+				<span class="light">&nbsp;<a href="#22" class="light">772 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Our validation manuscript has been published, <a href="/u/dhimmel" class="username">@dhimmel</a>: <a href="http://aci.schattauer.de/en/contents/current-issue/issue/special/manuscript/24377/show.html" target="_blank">http://aci.schattauer.de/en/contents/current-issue/issue/special/manuscript/24377/show.html</a></p>
+
+<p>I'll see what I can do about sharing the data, but unfortunately I've got travel coming up along with several deadlines, so it may be a little while longer before I'm able to do that.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-124" class="inline-note toggle-parent" data-note-id="124">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: <a href="/u/allisonmccoy" class="username">@allisonmccoy</a>, thanks for following up and congratulations on your paper <span class="citation">[<a href="https://doi.org/10.4338/ACI-2015-01-RA-0010" class="citation" data-key="10.4338/ACI-2015-01-RA-0010">1</a>]</span>. I read the abstract, but could you <a href="/cdn-cgi/l/email-protection#5a3e3b34333f3674323337373f36292e3f33341a3d373b333674393537">email me</a> the pdf?
+
+<p>Enjoy the travels, we would definitely appreciate the data!</p>
+		
+	</p>
+	
+	<table style="display:none;"><tr><td><a href='/doi/10.4338/ACI-2015-01-RA-0010' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.4338/ACI-2015-01-RA-0010'><a href='/doi/10.4338/ACI-2015-01-RA-0010' class='pub-title'>Validation of a Crowdsourcing Methodology for Developing a Knowledge Base of Related Problem-Medication Pairs</a><div class='pub-body'>A. B. McCoy, A. Wright, M. Krousel-Wood, E. J. Thomas, J. A. McCoy, D. F. Sittig (2015) <i>Appl Clin Inform</i>. doi:<a class='pub-doi' href='https://doi.org/10.4338/ACI-2015-01-RA-0010'>10.4338/ACI-2015-01-RA-0010</a></div></div></td></tr></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="23" data-comment-id="329">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="329"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#23" class="light">724 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Expert curation of the indication catalog</h1>
+
+<p>We have decided to filter our catalog for disease-modifying indications and are seeking an expert curator to assist with this task. We <a href="http://thinklab.com/discussion/expert-curation-of-our-indication-catalog-for-disease-modifying-treatments/95" class="citation thread-citation" data-key="10.15363/thinklab.d95">started a new discussion</a> for this next step.</p>
+
+<p><a href="/u/allisonmccoy" class="username">@allisonmccoy</a>, have you thought more about releasing the data from your recent publication <span class="citation">[<a href="https://doi.org/10.4338/ACI-2015-01-RA-0010" class="citation" data-key="10.4338/ACI-2015-01-RA-0010">1</a>]</span>? If you can do this in the next week or two, we would be thrilled to include this data. Otherwise we will have to move ahead with only the <a href="http://thinklab.com/discussion/extracting-indications-from-the-ehrlink-resource/62" class="citation thread-citation" data-key="10.15363/thinklab.d62">ehrlink data</a> from your initial study <span class="citation">[<a href="https://doi.org/10.1136/amiajnl-2012-000852" class="citation" data-key="10.1136/amiajnl-2012-000852">2</a>]</span>.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="24" data-comment-id="1179">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1179"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#24" class="light">478 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>PharmacotherapyDB Version 1.0</h1>
+
+<p>We <a href="http://thinklab.com/discussion/expert-curation-of-our-indication-catalog-for-disease-modifying-treatments/95#15" class="citation thread-citation" data-key="10.15363/thinklab.d95">completed physician curation</a> for the time being and <a href="http://thinklab.com/discussion/announcing-pharmacotherapydb-the-open-catalog-of-drug-therapies-for-disease/182" class="citation thread-citation" data-key="10.15363/thinklab.d182">released the first version</a> of our indications catalog called PharmacotherapyDB.</p>
+
+<p>Thanks <a href="/u/b_good" class="username">@b_good</a>, <a href="/u/TIOprea" class="username">@TIOprea</a>, <a href="/u/allisonmccoy" class="username">@allisonmccoy</a>, <a href="/u/ritukhare" class="username">@ritukhare</a>, and <a href="/u/alizee" class="username">@alizee</a> — your suggestions and feedback were immensely helpful!</p>
+
+<p>We'll keep this discussion alive for any suggestions of new resources or methods to improve future versions of PharmacotherapyDB.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="25" data-comment-id="1180">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1180"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#25" class="light">478 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Therapeutic Target Database</h1>
+
+<p>The Therapeutic Target Database (<a href="http://bidd.nus.edu.sg/group/cjttd/" title="Therapeutic Target Database Homepage">TTD</a>) is a target focused resource with pharmacological relationships. <a href="/u/janispi" class="username">@janispi</a> <a href="https://twitter.com/Janis3_14159/status/709844572600475648" title="Twitter">suggested</a> we check out TTD as a source of drug–disease therapies.</p>
+
+<p>Specifically, TTD has a dataset of indications, which range from approved to investigational, available online (<a href="http://database.idrb.cqu.edu.cn/TTD/download/drug-disease_TTD2016.txt"><code>drug-disease_TTD2016.txt</code></a>). I couldn't find how these indications were constructed from their publications <span class="citation">[<a href="https://doi.org/10.1093/nar/30.1.412" class="citation" data-key="10.1093/nar/30.1.412">1</a>, <a href="https://doi.org/10.1093/nar/gkp1014" class="citation" data-key="10.1093/nar/gkp1014">2</a>, <a href="https://doi.org/10.1093/nar/gkr797" class="citation" data-key="10.1093/nar/gkr797">3</a>, <a href="https://doi.org/10.1093/nar/gkt1129" class="citation" data-key="10.1093/nar/gkt1129">4</a>, <a href="https://doi.org/10.1093/nar/gkv1230" class="citation" data-key="10.1093/nar/gkv1230">5</a>]</span>, although I may have missed it. I emailed Professor Yu Zong (<code><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="f4978797978d8eb49a8187da919081da8793">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></code>), who indicated their drug-disease relationships were human curated.</p>
+
+<p>Just wanted to note this information, so we remember to keep TTD in mind.</p>
+
+<p><strong>Update July 16, 2016</strong>: Qin Chu provided me the following additional information via email: </p>
+
+<blockquote><p>The mapping between diseases and drugs were done manually. We searched different sources of literature such as pharmacology textbooks, review articles and research papers. The methods to extract the related drug target and disease information from literature were described in the 2012 version of TTD update paper <span class="citation">[<a href="https://doi.org/10.1093/nar/gkr797" class="citation" data-key="10.1093/nar/gkr797">3</a>]</span>. We mapped the disease information to ICD code in the 2014 update of TTD <span class="citation">[<a href="https://doi.org/10.1093/nar/gkt1129" class="citation" data-key="10.1093/nar/gkt1129">4</a>]</span>.</p></blockquote>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="26" data-comment-id="1238">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1238"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#26" class="light">453 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Cheng et al 2014</h1>
+
+<p>A 2014 study titled "Systematic evaluation of connectivity map for disease indications" compiled 890 indications between 152 drugs and 145 diseases <span class="citation">[<a href="https://doi.org/10.1186/s13073-014-0095-1" class="citation" data-key="10.1186/s13073-014-0095-1">1</a>]</span>. They compiled the indications from FAERS and <a href="http://citeline.com/products/pharmaprojects/">Pharmaprojects</a>. The indications are available as free text in Table S2 of the supplementary word document. I copied Table S2 into a TSV <a href="https://gist.github.com/dhimmel/4977c3f538fb215d9c49c9ccd66a41d4" title="GitHub Gist: Catalog of treatments from Table S2 of Cheng et al 2014">available here</a>.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+    		
+		</table>
+
+    
+
+    &nbsp;<br>
+    <a class="btn btn-primary btn-lg" href="/signup?next=/discussion/how-should-we-construct-a-catalog-of-drug-indications/21&suppress_message=1" style>Join to Reply</a>
+
+
+		<table class="references table-td-5" style="display:none;"><tr><td><a href='/doi/10.1016/j.jbi.2014.08.004' class='pub-comments tt-right' title='Article comments'>5</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.1016/j.jbi.2014.08.004'><a href='/doi/10.1016/j.jbi.2014.08.004' class='pub-title'>LabeledIn: Cataloging labeled indications for human drugs</a><div class='pub-body'>Ritu Khare, Jiao Li, Zhiyong Lu (2014) <i>Journal of Biomedical Informatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1016/j.jbi.2014.08.004'>10.1016/j.jbi.2014.08.004</a></div></div></td></tr><tr><td><a href='/doi/10.1136/amiajnl-2012-001431' class='pub-comments tt-right' title='Article comments'>2</a></td><td><div class='pub-order'>2.</div></td><td><div class='doi-body' data-key='10.1136/amiajnl-2012-001431'><a href='/doi/10.1136/amiajnl-2012-001431' class='pub-title'>Development and evaluation of an ensemble resource linking medications to their indications</a><div class='pub-body'>W.-Q. Wei, R. M. Cronin, H. Xu, T. A. Lasko, L. Bastarache, J. C. Denny (2013) <i>Journal of the American Medical Informatics Association</i>. doi:<a class='pub-doi' href='https://doi.org/10.1136/amiajnl-2012-001431'>10.1136/amiajnl-2012-001431</a></div></div></td></tr><tr><td></td><td><div class='pub-order'>3.</div></td><td><div class='doi-body' data-key='MediPrev'><a href='http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3900157/' class='pub-title'>Wei W-Q, Mosley JD, Bastarache L, Denny JC (2013) Validation and enhancement of a Computable Medication Indication Resource (MEDI) using a large practice-based dataset. AMIA Annual Symposium Proceedings.</a></div></td></tr><tr><td><a href='/doi/10.1136/amiajnl-2014-002954' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>4.</div></td><td><div class='doi-body' data-key='10.1136/amiajnl-2014-002954'><a href='/doi/10.1136/amiajnl-2014-002954' class='pub-title'>Assessing the role of a medication-indication resource in the treatment relation extraction from clinical text</a><div class='pub-body'>C. A. Bejan, W.-Q. Wei, J. C. Denny (2014) <i>Journal of the American Medical Informatics Association</i>. doi:<a class='pub-doi' href='https://doi.org/10.1136/amiajnl-2014-002954'>10.1136/amiajnl-2014-002954</a></div></div></td></tr><tr><td><a href='/doi/10.1016/j.jbi.2003.11.003' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>5.</div></td><td><div class='doi-body' data-key='10.1016/j.jbi.2003.11.003'><a href='/doi/10.1016/j.jbi.2003.11.003' class='pub-title'>The interaction of domain knowledge and linguistic structure in natural language processing: interpreting hypernymic propositions in biomedical text</a><div class='pub-body'>Thomas C Rindflesch, Marcelo Fiszman (2003) <i>Journal of Biomedical Informatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1016/j.jbi.2003.11.003'>10.1016/j.jbi.2003.11.003</a></div></div></td></tr><tr><td><a href='/doi/10.1145/1882992.1883096' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>6.</div></td><td><div class='doi-body' data-key='10.1145/1882992.1883096'><a href='/doi/10.1145/1882992.1883096' class='pub-title'>Automatic integration of drug indications from multiple health resources</a><div class='pub-body'>Aurélie Névéol, Zhiyong Lu (2010) <i>Proceedings of the ACM international conference on Health informatics - IHI &#39;10</i>. doi:<a class='pub-doi' href='https://doi.org/10.1145/1882992.1883096'>10.1145/1882992.1883096</a></div></div></td></tr><tr><td></td><td><div class='pub-order'>7.</div></td><td><div class='doi-body' data-key='LiuSemRep'><a href='http://www.d.umn.edu/~tpederse/Pubs/amia2012-liu.pdf' class='pub-title'>Liu, Ying, et al. &#39;Using SemRep to label semantic relations extracted from clinical text.&#39; AMIA annual symposium proceedings. Vol. 2012. American Medical Informatics Association, 2012.</a></div></td></tr><tr><td><a href='/doi/10.1093/bioinformatics/bts591' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>8.</div></td><td><div class='doi-body' data-key='10.1093/bioinformatics/bts591'><a href='/doi/10.1093/bioinformatics/bts591' class='pub-title'>SemMedDB: a PubMed-scale repository of biomedical semantic predications</a><div class='pub-body'>H. Kilicoglu, D. Shin, M. Fiszman, G. Rosemblat, T. C. Rindflesch (2012) <i>Bioinformatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/bioinformatics/bts591'>10.1093/bioinformatics/bts591</a></div></div></td></tr><tr><td><a href='/doi/10.1136/amiajnl-2012-001291' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>9.</div></td><td><div class='doi-body' data-key='10.1136/amiajnl-2012-001291'><a href='/doi/10.1136/amiajnl-2012-001291' class='pub-title'>Extracting drug indication information from structured product labels using natural language processing</a><div class='pub-body'>K. W. Fung, C. S. Jao, D. Demner-Fushman (2013) <i>Journal of the American Medical Informatics Association</i>. doi:<a class='pub-doi' href='https://doi.org/10.1136/amiajnl-2012-001291'>10.1136/amiajnl-2012-001291</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gku935' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>10.</div></td><td><div class='doi-body' data-key='10.1093/nar/gku935'><a href='/doi/10.1093/nar/gku935' class='pub-title'>The Comparative Toxicogenomics Database&#39;s 10th year anniversary: update 2015</a><div class='pub-body'>A. P. Davis, C. J. Grondin, K. Lennon-Hopkins, C. Saraceni-Richards, D. Sciaky, B. L. King, T. C. Wiegers, C. J. Mattingly (2014) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gku935'>10.1093/nar/gku935</a></div></div></td></tr><tr><td><a href='/doi/10.1038/msb.2009.98' class='pub-comments tt-right' title='Article comments'>7</a></td><td><div class='pub-order'>11.</div></td><td><div class='doi-body' data-key='10.1038/msb.2009.98'><a href='/doi/10.1038/msb.2009.98' class='pub-title'>A side effect resource to capture phenotypic effects of drugs</a><div class='pub-body'>Michael Kuhn, Monica Campillos, Ivica Letunic, Lars Juhl Jensen, Peer Bork (2010) <i>Mol Syst Biol</i>. doi:<a class='pub-doi' href='https://doi.org/10.1038/msb.2009.98'>10.1038/msb.2009.98</a></div></div></td></tr><tr><td><a href='/doi/10.1016/j.jbi.2014.08.004' class='pub-comments tt-right' title='Article comments'>5</a></td><td><div class='pub-order'>12.</div></td><td><div class='doi-body' data-key='10.1016/j.jbi.2014.08.004'><a href='/doi/10.1016/j.jbi.2014.08.004' class='pub-title'>LabeledIn: Cataloging labeled indications for human drugs</a><div class='pub-body'>Ritu Khare, Jiao Li, Zhiyong Lu (2014) <i>Journal of Biomedical Informatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1016/j.jbi.2014.08.004'>10.1016/j.jbi.2014.08.004</a></div></div></td></tr><tr><td><a href='/doi/10.1093/database/bav016' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>13.</div></td><td><div class='doi-body' data-key='10.1093/database/bav016'><a href='/doi/10.1093/database/bav016' class='pub-title'>Scaling drug indication curation through crowdsourcing</a><div class='pub-body'>R. Khare, J. D. Burger, J. S. Aberdeen, D. W. Tresner-Kirsch, T. J. Corrales, L. Hirchman, Z. Lu (2015) <i>Database</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/database/bav016'>10.1093/database/bav016</a></div></div></td></tr><tr><td><a href='/doi/10.1136/amiajnl-2012-000852' class='pub-comments tt-right' title='Article comments'>3</a></td><td><div class='pub-order'>14.</div></td><td><div class='doi-body' data-key='10.1136/amiajnl-2012-000852'><a href='/doi/10.1136/amiajnl-2012-000852' class='pub-title'>Development and evaluation of a crowdsourcing methodology for knowledge base construction: identifying relationships between clinical problems and medications</a><div class='pub-body'>A. B. McCoy, A. Wright, A. Laxmisan, M. J. Ottosen, J. A. McCoy, D. Butten, D. F. Sittig (2012) <i>Journal of the American Medical Informatics Association</i>. doi:<a class='pub-doi' href='https://doi.org/10.1136/amiajnl-2012-000852'>10.1136/amiajnl-2012-000852</a></div></div></td></tr><tr><td><a href='/doi/10.1136/amiajnl-2012-000852' class='pub-comments tt-right' title='Article comments'>3</a></td><td><div class='pub-order'>15.</div></td><td><div class='doi-body' data-key='10.1136/amiajnl-2012-000852'><a href='/doi/10.1136/amiajnl-2012-000852' class='pub-title'>Development and evaluation of a crowdsourcing methodology for knowledge base construction: identifying relationships between clinical problems and medications</a><div class='pub-body'>A. B. McCoy, A. Wright, A. Laxmisan, M. J. Ottosen, J. A. McCoy, D. Butten, D. F. Sittig (2012) <i>Journal of the American Medical Informatics Association</i>. doi:<a class='pub-doi' href='https://doi.org/10.1136/amiajnl-2012-000852'>10.1136/amiajnl-2012-000852</a></div></div></td></tr><tr><td><a href='/doi/10.1136/amiajnl-2012-000852' class='pub-comments tt-right' title='Article comments'>3</a></td><td><div class='pub-order'>16.</div></td><td><div class='doi-body' data-key='10.1136/amiajnl-2012-000852'><a href='/doi/10.1136/amiajnl-2012-000852' class='pub-title'>Development and evaluation of a crowdsourcing methodology for knowledge base construction: identifying relationships between clinical problems and medications</a><div class='pub-body'>A. B. McCoy, A. Wright, A. Laxmisan, M. J. Ottosen, J. A. McCoy, D. Butten, D. F. Sittig (2012) <i>Journal of the American Medical Informatics Association</i>. doi:<a class='pub-doi' href='https://doi.org/10.1136/amiajnl-2012-000852'>10.1136/amiajnl-2012-000852</a></div></div></td></tr><tr><td><a href='/doi/10.1016/j.jbi.2010.09.009' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>17.</div></td><td><div class='doi-body' data-key='10.1016/j.jbi.2010.09.009'><a href='/doi/10.1016/j.jbi.2010.09.009' class='pub-title'>An automated technique for identifying associations between medications, laboratory results and problems</a><div class='pub-body'>Adam Wright, Elizabeth S. Chen, Francine L. Maloney (2010) <i>Journal of Biomedical Informatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1016/j.jbi.2010.09.009'>10.1016/j.jbi.2010.09.009</a></div></div></td></tr><tr><td><a href='/doi/10.1136/amiajnl-2012-000852' class='pub-comments tt-right' title='Article comments'>3</a></td><td><div class='pub-order'>18.</div></td><td><div class='doi-body' data-key='10.1136/amiajnl-2012-000852'><a href='/doi/10.1136/amiajnl-2012-000852' class='pub-title'>Development and evaluation of a crowdsourcing methodology for knowledge base construction: identifying relationships between clinical problems and medications</a><div class='pub-body'>A. B. McCoy, A. Wright, A. Laxmisan, M. J. Ottosen, J. A. McCoy, D. Butten, D. F. Sittig (2012) <i>Journal of the American Medical Informatics Association</i>. doi:<a class='pub-doi' href='https://doi.org/10.1136/amiajnl-2012-000852'>10.1136/amiajnl-2012-000852</a></div></div></td></tr><tr><td><a href='/doi/10.1016/j.jbi.2013.11.010' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>19.</div></td><td><div class='doi-body' data-key='10.1016/j.jbi.2013.11.010'><a href='/doi/10.1016/j.jbi.2013.11.010' class='pub-title'>Development of a clinician reputation metric to identify appropriate problem-medication pairs in a crowdsourced knowledge base</a><div class='pub-body'>Allison B. McCoy, Adam Wright, Deevakar Rogith, Safa Fathiamini, Allison J. Ottenbacher, Dean F. Sittig (2014) <i>Journal of Biomedical Informatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1016/j.jbi.2013.11.010'>10.1016/j.jbi.2013.11.010</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d44' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>20.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d44'><a href='/discussion/unifying-disease-vocabularies/44' class='pub-title'>Unifying disease vocabularies</a><div class='pub-body'>Daniel Himmelstein, Tong Shu Li (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d44'>10.15363/thinklab.d44</a></div></div></td></tr><tr><td></td><td><div class='pub-order'>21.</div></td><td><div class='doi-body' data-key='McCoy_2011'><a href='http://www.ncbi.nlm.nih.gov/pubmed/22195147' class='pub-title'>McCoy AB, Wright A, Laxmisan A, Singh H, Sittig DF. A prototype knowledge base and SMART app to facilitate organization of patient medications by clinical problems. AMIA Annu Symp Proc. 2011;2011:888–94.</a></div></td></tr><tr><td><a href='/doi/10.1136/amiajnl-2012-001431' class='pub-comments tt-right' title='Article comments'>2</a></td><td><div class='pub-order'>22.</div></td><td><div class='doi-body' data-key='10.1136/amiajnl-2012-001431'><a href='/doi/10.1136/amiajnl-2012-001431' class='pub-title'>Development and evaluation of an ensemble resource linking medications to their indications</a><div class='pub-body'>W.-Q. Wei, R. M. Cronin, H. Xu, T. A. Lasko, L. Bastarache, J. C. Denny (2013) <i>Journal of the American Medical Informatics Association</i>. doi:<a class='pub-doi' href='https://doi.org/10.1136/amiajnl-2012-001431'>10.1136/amiajnl-2012-001431</a></div></div></td></tr><tr><td><a href='/doi/10.1038/msb.2011.26' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>23.</div></td><td><div class='doi-body' data-key='10.1038/msb.2011.26'><a href='/doi/10.1038/msb.2011.26' class='pub-title'>PREDICT: a method for inferring novel drug indications with application to personalized medicine</a><div class='pub-body'>A. Gottlieb, G. Y. Stein, E. Ruppin, R. Sharan (2011) <i>Molecular Systems Biology</i>. doi:<a class='pub-doi' href='https://doi.org/10.1038/msb.2011.26'>10.1038/msb.2011.26</a></div></div></td></tr><tr><td><a href='/doi/10.1136/amiajnl-2012-000852' class='pub-comments tt-right' title='Article comments'>3</a></td><td><div class='pub-order'>24.</div></td><td><div class='doi-body' data-key='10.1136/amiajnl-2012-000852'><a href='/doi/10.1136/amiajnl-2012-000852' class='pub-title'>Development and evaluation of a crowdsourcing methodology for knowledge base construction: identifying relationships between clinical problems and medications</a><div class='pub-body'>A. B. McCoy, A. Wright, A. Laxmisan, M. J. Ottosen, J. A. McCoy, D. Butten, D. F. Sittig (2012) <i>Journal of the American Medical Informatics Association</i>. doi:<a class='pub-doi' href='https://doi.org/10.1136/amiajnl-2012-000852'>10.1136/amiajnl-2012-000852</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d44' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>25.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d44'><a href='/discussion/unifying-disease-vocabularies/44' class='pub-title'>Unifying disease vocabularies</a><div class='pub-body'>Daniel Himmelstein, Tong Shu Li (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d44'>10.15363/thinklab.d44</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d40' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>26.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d40'><a href='/discussion/unifying-drug-vocabularies/40' class='pub-title'>Unifying drug vocabularies</a><div class='pub-body'>Daniel Himmelstein (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d40'>10.15363/thinklab.d40</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d62' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>27.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d62'><a href='/discussion/extracting-indications-from-the-ehrlink-resource/62' class='pub-title'>Extracting indications from the ehrlink resource</a><div class='pub-body'>Daniel Himmelstein (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d62'>10.15363/thinklab.d62</a></div></div></td></tr><tr><td><a href='/doi/10.1136/amiajnl-2012-001431' class='pub-comments tt-right' title='Article comments'>2</a></td><td><div class='pub-order'>28.</div></td><td><div class='doi-body' data-key='10.1136/amiajnl-2012-001431'><a href='/doi/10.1136/amiajnl-2012-001431' class='pub-title'>Development and evaluation of an ensemble resource linking medications to their indications</a><div class='pub-body'>W.-Q. Wei, R. M. Cronin, H. Xu, T. A. Lasko, L. Bastarache, J. C. Denny (2013) <i>Journal of the American Medical Informatics Association</i>. doi:<a class='pub-doi' href='https://doi.org/10.1136/amiajnl-2012-001431'>10.1136/amiajnl-2012-001431</a></div></div></td></tr><tr><td><a href='/doi/10.1016/j.jbi.2014.08.004' class='pub-comments tt-right' title='Article comments'>5</a></td><td><div class='pub-order'>29.</div></td><td><div class='doi-body' data-key='10.1016/j.jbi.2014.08.004'><a href='/doi/10.1016/j.jbi.2014.08.004' class='pub-title'>LabeledIn: Cataloging labeled indications for human drugs</a><div class='pub-body'>Ritu Khare, Jiao Li, Zhiyong Lu (2014) <i>Journal of Biomedical Informatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1016/j.jbi.2014.08.004'>10.1016/j.jbi.2014.08.004</a></div></div></td></tr><tr><td><a href='/doi/10.1093/database/bav016' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>30.</div></td><td><div class='doi-body' data-key='10.1093/database/bav016'><a href='/doi/10.1093/database/bav016' class='pub-title'>Scaling drug indication curation through crowdsourcing</a><div class='pub-body'>R. Khare, J. D. Burger, J. S. Aberdeen, D. W. Tresner-Kirsch, T. J. Corrales, L. Hirchman, Z. Lu (2015) <i>Database</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/database/bav016'>10.1093/database/bav016</a></div></div></td></tr><tr><td><a href='/doi/10.1038/msb.2011.26' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>31.</div></td><td><div class='doi-body' data-key='10.1038/msb.2011.26'><a href='/doi/10.1038/msb.2011.26' class='pub-title'>PREDICT: a method for inferring novel drug indications with application to personalized medicine</a><div class='pub-body'>A. Gottlieb, G. Y. Stein, E. Ruppin, R. Sharan (2011) <i>Molecular Systems Biology</i>. doi:<a class='pub-doi' href='https://doi.org/10.1038/msb.2011.26'>10.1038/msb.2011.26</a></div></div></td></tr><tr><td><a href='/doi/10.1136/amiajnl-2012-000852' class='pub-comments tt-right' title='Article comments'>3</a></td><td><div class='pub-order'>32.</div></td><td><div class='doi-body' data-key='10.1136/amiajnl-2012-000852'><a href='/doi/10.1136/amiajnl-2012-000852' class='pub-title'>Development and evaluation of a crowdsourcing methodology for knowledge base construction: identifying relationships between clinical problems and medications</a><div class='pub-body'>A. B. McCoy, A. Wright, A. Laxmisan, M. J. Ottosen, J. A. McCoy, D. Butten, D. F. Sittig (2012) <i>Journal of the American Medical Informatics Association</i>. doi:<a class='pub-doi' href='https://doi.org/10.1136/amiajnl-2012-000852'>10.1136/amiajnl-2012-000852</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d62' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>33.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d62'><a href='/discussion/extracting-indications-from-the-ehrlink-resource/62' class='pub-title'>Extracting indications from the ehrlink resource</a><div class='pub-body'>Daniel Himmelstein (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d62'>10.15363/thinklab.d62</a></div></div></td></tr><tr><td><a href='/doi/10.4338/ACI-2015-01-RA-0010' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>34.</div></td><td><div class='doi-body' data-key='10.4338/ACI-2015-01-RA-0010'><a href='/doi/10.4338/ACI-2015-01-RA-0010' class='pub-title'>Validation of a Crowdsourcing Methodology for Developing a Knowledge Base of Related Problem-Medication Pairs</a><div class='pub-body'>A. B. McCoy, A. Wright, M. Krousel-Wood, E. J. Thomas, J. A. McCoy, D. F. Sittig (2015) <i>Appl Clin Inform</i>. doi:<a class='pub-doi' href='https://doi.org/10.4338/ACI-2015-01-RA-0010'>10.4338/ACI-2015-01-RA-0010</a></div></div></td></tr><tr><td><a href='/doi/10.4338/ACI-2015-01-RA-0010' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>35.</div></td><td><div class='doi-body' data-key='10.4338/ACI-2015-01-RA-0010'><a href='/doi/10.4338/ACI-2015-01-RA-0010' class='pub-title'>Validation of a Crowdsourcing Methodology for Developing a Knowledge Base of Related Problem-Medication Pairs</a><div class='pub-body'>A. B. McCoy, A. Wright, M. Krousel-Wood, E. J. Thomas, J. A. McCoy, D. F. Sittig (2015) <i>Appl Clin Inform</i>. doi:<a class='pub-doi' href='https://doi.org/10.4338/ACI-2015-01-RA-0010'>10.4338/ACI-2015-01-RA-0010</a></div></div></td></tr><tr><td><a href='/doi/10.1136/amiajnl-2012-000852' class='pub-comments tt-right' title='Article comments'>3</a></td><td><div class='pub-order'>36.</div></td><td><div class='doi-body' data-key='10.1136/amiajnl-2012-000852'><a href='/doi/10.1136/amiajnl-2012-000852' class='pub-title'>Development and evaluation of a crowdsourcing methodology for knowledge base construction: identifying relationships between clinical problems and medications</a><div class='pub-body'>A. B. McCoy, A. Wright, A. Laxmisan, M. J. Ottosen, J. A. McCoy, D. Butten, D. F. Sittig (2012) <i>Journal of the American Medical Informatics Association</i>. doi:<a class='pub-doi' href='https://doi.org/10.1136/amiajnl-2012-000852'>10.1136/amiajnl-2012-000852</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d95' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>37.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d95'><a href='/discussion/expert-curation-of-our-indication-catalog-for-disease-modifying-treatments/95' class='pub-title'>Expert curation of our indication catalog for disease-modifying treatments</a><div class='pub-body'>Daniel Himmelstein, Pouya Khankhanian, Chrissy Hessler (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d95'>10.15363/thinklab.d95</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d62' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>38.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d62'><a href='/discussion/extracting-indications-from-the-ehrlink-resource/62' class='pub-title'>Extracting indications from the ehrlink resource</a><div class='pub-body'>Daniel Himmelstein (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d62'>10.15363/thinklab.d62</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d95' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>39.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d95'><a href='/discussion/expert-curation-of-our-indication-catalog-for-disease-modifying-treatments/95' class='pub-title'>Expert curation of our indication catalog for disease-modifying treatments</a><div class='pub-body'>Daniel Himmelstein, Pouya Khankhanian, Chrissy Hessler (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d95'>10.15363/thinklab.d95</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d182' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>40.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d182'><a href='/discussion/announcing-pharmacotherapydb-the-open-catalog-of-drug-therapies-for-disease/182' class='pub-title'>Announcing PharmacotherapyDB: the Open Catalog of Drug Therapies for Disease</a><div class='pub-body'>Daniel Himmelstein (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d182'>10.15363/thinklab.d182</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/30.1.412' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>41.</div></td><td><div class='doi-body' data-key='10.1093/nar/30.1.412'><a href='/doi/10.1093/nar/30.1.412' class='pub-title'>TTD: Therapeutic Target Database</a><div class='pub-body'>X. Chen (2002) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/30.1.412'>10.1093/nar/30.1.412</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkp1014' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>42.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkp1014'><a href='/doi/10.1093/nar/gkp1014' class='pub-title'>Update of TTD: Therapeutic Target Database</a><div class='pub-body'>F. Zhu, B. Han, P. Kumar, X. Liu, X. Ma, X. Wei, L. Huang, Y. Guo, L. Han, C. Zheng, Y. Chen (2009) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkp1014'>10.1093/nar/gkp1014</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkr797' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>43.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkr797'><a href='/doi/10.1093/nar/gkr797' class='pub-title'>Therapeutic target database update 2012: a resource for facilitating target-oriented drug discovery</a><div class='pub-body'>F. Zhu, Z. Shi, C. Qin, L. Tao, X. Liu, F. Xu, L. Zhang, Y. Song, X. Liu, J. Zhang, B. Han, P. Zhang, Y. Chen (2011) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkr797'>10.1093/nar/gkr797</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkt1129' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>44.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkt1129'><a href='/doi/10.1093/nar/gkt1129' class='pub-title'>Therapeutic target database update 2014: a resource for targeted therapeutics</a><div class='pub-body'>Chu Qin, Cheng Zhang, Feng Zhu, Feng Xu, Shang Ying Chen, Peng Zhang, Ying Hong Li, Sheng Yong Yang, Yu Quan Wei, Lin Tao, Yu Zong Chen (2013) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkt1129'>10.1093/nar/gkt1129</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkv1230' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>45.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkv1230'><a href='/doi/10.1093/nar/gkv1230' class='pub-title'>Therapeutic target database update 2016: enriched resource for bench to clinical drug target and targeted pathway information</a><div class='pub-body'>Hong Yang, Chu Qin, Ying Hong Li, Lin Tao, Jin Zhou, Chun Yan Yu, Feng Xu, Zhe Chen, Feng Zhu, Yu Zong Chen (2015) <i>Nucleic Acids Res</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkv1230'>10.1093/nar/gkv1230</a></div></div></td></tr><tr><td><a href='/doi/10.1186/s13073-014-0095-1' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>46.</div></td><td><div class='doi-body' data-key='10.1186/s13073-014-0095-1'><a href='/doi/10.1186/s13073-014-0095-1' class='pub-title'>Systematic evaluation of connectivity map for disease indications</a><div class='pub-body'>Jie Cheng, Lun Yang, Vinod Kumar, Pankaj Agarwal (2014) <i>Genome Medicine</i>. doi:<a class='pub-doi' href='https://doi.org/10.1186/s13073-014-0095-1'>10.1186/s13073-014-0095-1</a></div></div></td></tr></table>
+
+    
+
+
+	</td>
+	<td class="thread-sidebar">
+
+
+			
+
+      <a class="btn btn-default follow-link btn-follow btn-lg is-following tt-top full-width" title="Follow discussion" data-id="21" data-ctype="thread" data-is-following="false">&nbsp;</a>
+
+      
+        <div class="status-box text-center"><span style="">Status:</span> 
+  Completed
+
+</div>
+      
+
+      
+        
+      
+
+
+				
+
+					<div class="details">Views</div>
+					<span style="font-size:20px;">893</span>
+
+        
+
+				
+					<div class="details">Topics</div>
+					<div style="margin-bottom:15px;">
+		            <a href="/topics/bioinformatics" class="tag">Bioinformatics</a><a href="/topics/text-mining" class="tag">Text Mining</a><a href="/topics/informatics" class="tag">Informatics</a><a href="/topics/pubchem" class="tag">Pubchem</a><a href="/topics/indications" class="tag">Indications</a><a href="/topics/natural-language-processing" class="tag">Natural Language Processing</a><a href="/topics/pharmacology" class="tag">Pharmacology</a><a href="/topics/disease-ontology" class="tag">Disease Ontology</a>
+					</div>
+				
+
+
+		
+			<div class="details">Referenced by</div>
+			<div style="font-size:12px;"><ul style="padding-left:16px !important;">
+			
+				<li>
+					
+					<a href='/discussion/tracking-project-reuse-citation-and-publicity/113' class='thread-title'>Tracking project reuse, citation, and publicity</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/incorporating-drugcentral-data-in-our-network/186' class='thread-title'>Incorporating DrugCentral data in our network</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/evaluation-framework/47' class='thread-title'>Evaluation framework</a>
+				</li>
+			
+				<li>
+					
+					Research report: <a href='/p/rephetio/report'>Rephetio: Repurposing drugs on a hetnet</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/assessing-the-informativeness-of-features/115' class='thread-title'>Assessing the informativeness of features</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/announcing-pharmacotherapydb-the-open-catalog-of-drug-therapies-for-disease/182' class='thread-title'>Announcing PharmacotherapyDB: the Open Catalog of Drug Therapies for Disease</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/expert-curation-of-our-indication-catalog-for-disease-modifying-treatments/95' class='thread-title'>Expert curation of our indication catalog for disease-modifying treatments</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/assessing-the-quality-and-applicability-of-the-sider-2-resource/30' class='thread-title'>Assessing the quality and applicability of the SIDER 2 resource</a>
+				</li>
+			
+				<li>
+					[<a href="/p/meta/discussion" style="color:#333333">meta</a>] 
+					<a href='/discussion/should-we-aim-to-keep-discussions-narrowly-focused/64' class='thread-title'>Should we aim to keep discussions narrowly focused?</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/extracting-indications-from-the-ehrlink-resource/62' class='thread-title'>Extracting indications from the ehrlink resource</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/retrieving-the-ingredients-in-rxnorm-concepts/61' class='thread-title'>Retrieving the ingredients in RxNorm concepts</a>
+				</li>
+			
+				</ul>
+			</div>
+		
+
+		
+			<div class="details">Cite this as</div>
+			<span style="font-size:12px;">
+				Daniel Himmelstein, Benjamin Good, Tudor Oprea, Allison McCoy, Antoine Lizee (2015) How should we construct a catalog of drug indications?. <i>Thinklab.</i> doi:<a href='https://doi.org/10.15363/thinklab.d21'>10.15363/thinklab.d21</a>
+			</span>
+		
+
+		<div class="details">License</div>
+		<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0;width:88px;height:31px;" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></p>
+
+		<div class="details">Share</div>
+		
+			
+				<a class="share-button fb" onclick="javascript:void(window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A//thinklab.com/discussion/how-should-we-construct-a-catalog-of-drug-indications/21','','width=600,height=460,menubar=no,status=no'));" href="#"></a>
+<a class="share-button twitter" onclick="javascript:void(window.open('https://twitter.com/share?text=How%20should%20we%20construct%20a%20catalog%20of%20drug%20indications%3F&url=https%3A//thinklab.com/discussion/how-should-we-construct-a-catalog-of-drug-indications/21','','width=600,height=300,menubar=no,status=no'));" href="#"></a>
+<a class="share-button google" onclick="javascript:void(window.open('https://plus.google.com/share?url=https%3A//thinklab.com/discussion/how-should-we-construct-a-catalog-of-drug-indications/21','','width=510,height=460,menubar=no,status=no'));" href="#"></a>
+
+			
+		
+
+	</td>
+</tr></table>
+
+
+		</div>
+
+
+		
+	    	<div class="footer">
+<div style="background:#dedede;">
+	<div class="main-centered-div text-center" style="padding:20px;">
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#acc4c9c0c0c3ecd8c4c5c2c7c0cdce82cfc3c1"><span class="__cf_email__" data-cfemail="fc9499909093bc8894959297909d9ed29f9391">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+	</div>
+</div>
+<div class="main-footer">
+	<div class="main-centered-div">
+
+<table class="full-width"><tr>
+	<td class="footer-nav">
+
+        <div class="foot-head">Explore</div>
+        <a href="/proposals">Proposals</a><br>
+        <a href="/projects">Projects</a><br>
+        <a href="/publications">Article discussion</a><br>
+        <a href="/discussion">All discussion</a><br>
+        <a href="/topics">Topics</a><br>
+        <!-- <a href="/funders">Funders</a><br> -->
+        <a href="/funding">Funding opportunities</a><br>
+
+	</td>
+	<td class="footer-nav">
+
+        <!-- <div class="foot-head">Help &amp; feedback</div>	 -->
+        <!-- <div class="foot-head">Intro</div>
+        <a href="/benefits/for-science">Why</a><br>
+        <a href="/how-it-works">How it works</a><br>
+
+<br> -->
+
+        <div class="foot-head">Community</div>
+        <a href="/leaderboard">Leaderboard</a><br>
+        <a href="/p/meta">Thinklab Meta</a><br>
+				<a href="/help/faq">Help</a><br>
+				<!-- <a href="/new-project">Start a proposal</a><br> -->
+        <!-- <a href="/benefits/proposal">Benefits</a><br> -->
+        <!-- <a href="/funding">Get funded</a><br> -->
+        <!-- <a href="/participate">Become a contributor</a><br> -->
+        <!-- <a href="/for-funders">For science funders</a><br> -->
+        <!-- <a href="/for-institutions">For institutions</a><br> -->
+
+	</td>
+	<td class="footer-nav">
+
+
+
+        <div class="foot-head">About</div>
+        <a href="/about">Overview</a><br>
+        <a href="/benefits">Benefits</a><br>
+        <a href="/how-it-works">How it works</a><br>
+        <a href="/about/story">Our story</a><br>
+        <a href="/blog">Our blog</a><br>
+        <a href="/about/jobs">Join the team</a><br>
+        <br>
+
+        <!-- <div class="foot-head">Help</div>
+        <a href="/help">Help</a><br>
+		 -->
+
+
+	</td>
+	<td class="footer-nav">
+		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
+		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<br><br>
+		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
+
+	</td>
+
+</tr></table>
+
+</div>
+</div>
+</div>
+
+		
+
+	</div>
+
+
+  <script></script>
+  <script>
+  var MEDIA_URL = 'https://think-lab.s3.amazonaws.com/m/';
+  var STATIC_URL = 'https://think-lab.s3.amazonaws.com/s/';
+  var page_is_authenticated = false;
+  var page_page = 'discussion';
+  var page_profile_id = undefined;
+</script>
+
+
+
+	<!-- Note different script type. MUST come before MathJax.js -->
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	        "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"],
+	                        scale: 110, linebreaks: { automatic:true },
+	                        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+	        tex2jax: { inlineMath: [ ["$$", "$$"], ["\\(","\\)"] ],
+	                    displayMath: [ ["$$$","$$$"], ["\\[", "\\]"] ],
+	                    processEscapes: true,}
+	            });
+
+	</script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://think-lab.s3.amazonaws.com/s/dist/main.min.js"></script>
+  
+
+
+
+  
+	
+  
+  
+  
+<script>
+$(function() {
+  recordHit('thread', 21);
+});
+</script>
+
+
+
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>

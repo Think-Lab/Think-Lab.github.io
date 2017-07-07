@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZgEOC19dW0QCEVtHU1gG","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":541}</script>
+    <title>The TISSUES resource for the tissue-specificity of genes | Thinklab</title>
+	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
+    <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/highlightjs/github.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/css.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/bootstrap-multiselect.css" />
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
+    
+    
+    
+    
+  
+    <meta name="citation_doi" content="10.15363/thinklab.d91">
+    <meta name="citation_title" content="The TISSUES resource for the tissue-specificity of genes">
+    <meta name="citation_online_date" content="July 10, 2015">
+    <meta name="citation_author" content="Daniel Himmelstein, Lars Juhl Jensen">
+    <meta name="citation_journal_title" content="Thinklab">
+    <meta name="citation_publisher" content="Thinklab">
+  
+
+    
+
+
+	<!-- GoogleAnalytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-48550230-1', 'thinklab.com');
+	ga('require', 'displayfeatures');
+	
+	ga('send', 'pageview');
+
+	</script>
+
+
+
+
+
+
+</head>
+<body >
+  <form id="form_action" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+</form>
+
+	
+
+	<div class="body-wrapper">
+
+		
+
+
+<!-- <div style="height:5px;background-image:url('https://think-lab.s3.amazonaws.com/s/img/top-bg.gif');"></div> -->
+<div class="gradient">
+	<div class="main-centered-div header-container">
+
+<table class="full-width" style="height:60px;"><tr>
+	<td style="width:200px;vertical-align:middle;padding-bottom:15px;">
+		<a href="/" style="font-weight:normal;color:#212121;"><img src="https://think-lab.s3.amazonaws.com/s/img/logo.png" width="160"></a>
+	</td><td style="vertical-align:middle;text-align:left;padding-top:6px;width:100%;padding-left:40px;">
+		<ul id="not-search-block"  class="main-header">
+
+
+			
+
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/proposals">Proposals</a></li>
+						<li><a href="/projects">Projects</a></li>
+						<li><a href="/publications">Article discussion</a></li>
+						<li><a href="/discussion">All discussion</a></li>
+					</ul>
+				</li>
+				<li><a href="/leaderboard">Leaderboard</a></li>
+
+			
+				<li><a href="/about">About</a></li>
+			
+
+
+		</ul>
+
+    <ul id="search-block" class="main-header" style="display: none; margin-right: 30px;">
+        <li class="full-width">
+            <form method="get" action="/search">
+			<div class="input-group full-width">
+				<input name="q" type="text" class="form-control search-input">
+			</div>
+            </form>
+        </li>
+    </ul>
+
+	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
+		<ul class="main-header pull-right" style="padding-left: 0;">
+    		
+                <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+            
+
+        </ul>
+    </ul>
+	</td>
+</tr></table>
+
+<!-- <div id="global-search-div" class="main-centered-div" style="display:none;">
+	<input type="text" value="" class="thread-search form-control" placeholder="Search" data-action="/discussion">
+</div> -->
+
+	</div>
+</div>
+
+		
+	  
+
+
+
+	  
+
+
+		
+
+		<div class="dark-head"><div class="main-centered-div">
+
+			
+
+		</div></div>
+		
+		<div class="main-centered-div" style="margin-top:40px;padding-bottom:340px">
+	    
+
+<div style="margin-top:-20px; margin-bottom:20px;">
+
+    <a class="side-box" href="/p/rephetio" style="background-color:#ebfdff;"><div class="side-type">Project:</div> <div class="side-title">Rephetio: Repurposing drugs on a hetnet [rephetio]</div></a><br>
+
+
+
+</div>
+
+<table style="margin-top:0px;"><tr>
+	<td class="thread-table-content">
+
+		<table class="full-width">
+			
+<tr class="comment-tr target-hl" id="1" data-comment-id="318">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="318"></a>
+
+    
+
+			<h2 class="page-title" style="margin-bottom:5px;margin-top:0px !important;">The TISSUES resource for the tissue-specificity of genes</h2>
+
+			<div style="margin-top:5px;color:gray;margin-bottom:20px;font-size:13px;">
+				<a style="font-weight:normal;color:#212121" href="/u/dhimmel"><strong>Daniel Himmelstein</strong></a>
+				<span class="is-researcher">Researcher</span>
+				&nbsp; <a href="#1" class="light">728 days ago</a>
+				
+			</div>
+
+      
+
+          <hr>
+		
+
+    <p>Last week a seminal paper on tissue-specificity of the transciptome, proteome, knowledgeome, and literome was published <span class="citation">[<a href="https://doi.org/10.7717/peerj.1054" class="citation" data-key="10.7717/peerj.1054">1</a>]</span>, along with an <a href="http://tissues.jensenlab.org/">accompanying webapp</a>. This study is notable for intelligently merging expression studies and performing informative comparisons between studies and data types.</p>
+
+<p>We have already <a href="http://thinklab.com/discussion/tissue-specific-gene-expression-resources/81#8" class="citation thread-citation" data-key="10.15363/thinklab.d81">processed Bgee</a> for anatomy-specific transcription. Compared to Bgee, the anatomical coverage of TISSUES is much lower, but edges are likely of higher quality. Therefore I think Bgee and TISSUES will be complimentary. Additionally, TISSUES contains other measures of tissue-specific gene expression such as UniProtKB, proteomics, and literature mining. We are particularly interested in including these data sources.</p>
+
+<p>Our first step is to retrieve the data for each of the four methods. We want entities encoded using identifiers rather than names or symbols. We will need to pick a confidence threshold. And for each method, we would like the broadest tissue coverage permitted by that method. Advice appreciated!</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="2" data-comment-id="358">
+  <td class="comment-profile-avatar">
+		<a href="/u/larsjuhljensen"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/125_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="358"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/larsjuhljensen">Lars Juhl Jensen</a>
+				
+				<span class="light">&nbsp;<a href="#2" class="light">699 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>The TISSUES resource uses the proteins in the latest version of <a href="http://string-db.org/">STRING</a> as baseline. If you need to map the <a href="http://www.ensembl.org/">Ensembl</a> protein identifiers to other database identifiers, the best thing to do is thus to use either the <a href="http://string-db.org/newstring_download/protein.aliases.v10.txt.gz">STRING alias file</a> or one of the specific mapping files available <a href="ftp://string-db.org/STRING/10.0/mapping_files/">here</a>.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="3" data-comment-id="359">
+  <td class="comment-profile-avatar">
+		<a href="/u/larsjuhljensen"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/125_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="359"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/larsjuhljensen">Lars Juhl Jensen</a>
+				
+				<span class="light">&nbsp;<a href="#3" class="light">699 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Introducing a score cutoff does not sound like the right way to go about it to me. The problem is that there is no right cutoff; wherever you put it, what scores just above the cutoff is almost exactly as reliable as what scores just below the cutoff.</p>
+
+<p>I know that life is much simpler if you do not have to deal with confidence scores. However, the moment you take associations with confidence scores and make them binary by applying an arbitrary cutoff, you are throwing away information. For this reason, you will almost always be better off having a method that can deal with confidence scores in a sensible manner and only apply a cutoff on your predictions in the very end after all available evidence has been combined.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="4" data-comment-id="361">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="361"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#4" class="light">699 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <blockquote><p>Introducing a score cutoff does not sound like the right way to go about it to me.</p></blockquote>
+
+<p>I totally agree that cutoffs are suboptimal because they require arbitrary decision-making, conflate levels of confidence, and throw away information. In the long term, we hope to modify our method to enable weighted edge and to investigate other methods that allow weights (such as data fusion <span class="citation">[<a href="https://doi.org/10.1109/TPAMI.2014.2343973" class="citation" data-key="10.1109/TPAMI.2014.2343973">1</a>, <a href="https://doi.org/10.1038/srep03202" class="citation" data-key="10.1038/srep03202">2</a>]</span>). However, in the short term, I want to proceed with unweighted edges and understand the sacrifice.</p>
+
+<p><a href="/u/larsjuhljensen" class="username">@larsjuhljensen</a>, you may disagree with implementing cutoffs, but by providing "confidence scores that are comparable between datasets" <span class="citation">[<a href="https://doi.org/10.7717/peerj.1054" class="citation" data-key="10.7717/peerj.1054">3</a>]</span>, you have made the life of binners like me much more pleasant (:</p>
+
+<p>For the experimental dataset from TISSUES, one cutoff I envision is 2 or more sources reporting scores ≥ 3 per gene–tissue relation. Does this sound reasonable?</p>
+
+<blockquote><p>The TISSUES resource uses the proteins in the latest version of STRING as baseline.</p></blockquote>
+
+<p>We have begun processing the TISSUES datasets (<a href="https://github.com/dhimmel/tissues/blob/b7711d18e51ff1a8e91837354415d271bf975907/tissues.ipynb">notebook</a>). I was mapping Ensembl proteins using <a href="https://github.com/hammerlab/pyensembl"><code>pyensembl</code></a>, but will switch to the <a href="ftp://string-db.org/STRING/10.0/mapping_files/entrez_mappings/">mapping</a> suggested by <a href="/u/larsjuhljensen" class="username">@larsjuhljensen</a>.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="5" data-comment-id="362">
+  <td class="comment-profile-avatar">
+		<a href="/u/larsjuhljensen"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/125_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="362"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/larsjuhljensen">Lars Juhl Jensen</a>
+				
+				<span class="light">&nbsp;<a href="#5" class="light">699 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>My gut feeling is that your cutoff is too stringent. If you want support from at least two different experimental datasets, I would not put the cutoff at 3. I would at most put it at 2.</p>
+
+<p>However, I think there are more fundamental problems with that approach than just the numeric cutoff. Not all tissues were included in all datasets. This means that some tissues will be entirely lost if you require support from two datasets. Also, I do not understand why you would want to exclude the other channels (knowledge and text mining). Having, for example, text mining to support something that would otherwise be based on only a single dataset is very valuable.</p>
+
+<p>If you want to enforce a hard cutoff to make things binary, I would urge you to at least take the integrated scores that takes everything into account and apply the cutoff to that. In this case a score of 3 might be appropriate. Applying cutoffs to the scores of individual datasets before combining them is in my opinion a fundamentally bad idea.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="6" data-comment-id="366">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="366"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#6" class="light">698 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p><a href="/u/larsjuhljensen" class="username">@larsjuhljensen</a>, we will use the integrated dataset as the primary resource. However, the integrated dataset is subject to knowledge biases (stemming from text mining and UniProtKB). Since we <a href="http://thinklab.com/discussion/text-as-a-resource-for-network-population/48#3">want the option</a> to subset the network to only include knowledge-unbaised edges, we would also like a consolidated score using only the experimental dataset.</p>
+
+<p>In other words, if a gene–tissue edge scores above the cutoff in the consolidated experimental dataset, it's considered unbiased. However, if it only passes the cutoff in the integrated dataset, it's considered biased.</p>
+
+<p>So that leaves one remaining question: <strong>how to create an integrated score using only experimental evidence?</strong></p>
+
+<blockquote><p>some tissues will be entirely lost if you require support from two datasets.</p></blockquote>
+
+<p>Let's not worry to much about uniform coverage of tissues. Our approach can handle nonuniform network sparsity and uniform coverage is unfeasible in most cases.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-141" class="inline-note toggle-parent" data-note-id="141">
+	<p><a href="/u/larsjuhljensen">Lars Juhl Jensen</a>: Please note that using only the experiments channel will not eliminate knowledge biases. In particular, the immunohistochemical staining data from the Human Protein Atlas are heavily biased, since it depends strongly on the number and quality of antibodies available for each protein. 
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="7" data-comment-id="372">
+  <td class="comment-profile-avatar">
+		<a href="/u/larsjuhljensen"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/125_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="372"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/larsjuhljensen">Lars Juhl Jensen</a>
+				
+				<span class="light">&nbsp;<a href="#7" class="light">698 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>The way we currently calculate the integrated score can obviously be applied to any subset of evidence channels and sources (e.g. all sources in the experiments channel, or all sources in the experiments channel except HPA-IHC).</p>
+
+<p>First, we convert all the confidence scores (<span class="math">$$s_{ijk}$$</span>) between 0 and 5 to pseudo-probabilities (<span class="math">$$p_{ijk}$$</span>) between 0 and 1 by simply dividing with 5. Here <span class="math">$$i$$</span> and <span class="math">$$j$$</span> are the two entities (proteins, tissues, diseases, etc.) and <span class="math">$$k$$</span> is the channel or source. Next, assuming independence between the different types of evidence, we define the combined pseudo-probability for two entities as:</p>
+
+<div class="math">$$$p_{ij} = 1-\prod_{k}{(1-p_{ijk})}$$$</div>
+
+<p>Finally, we convert <span class="math">$$p_{ij}$$</span> back to <span class="math">$$s_{ij}$$</span> by simply multiplying with 5.</p>
+
+<p>This is admitted <em>ad hoc</em> and has not yet been benchmarked or otherwise compared to other alternatives. The major assumption here is that you can convert confidence scores to some sort of probabilities by simply dividing with 5, which is obviously an oversimplification. There is also the assumption of independence, but I believe this is less of a problem. The formula for combining probabilities is very similar to the <a href="http://string-db.org/">STRING</a> scoring scheme, which has been extensively tested.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-142" class="inline-note toggle-parent" data-note-id="142">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: In <code>human_tissue_integrated_full.tsv</code> I treated <code>HPA</code> as referring to HPA-IHC. Is this correct?
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-143" class="inline-note toggle-parent" data-note-id="143">
+	<p><a href="/u/larsjuhljensen">Lars Juhl Jensen</a>: If you meant experiments instead of integrated in that filename, then yes.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-150" class="inline-note toggle-parent" data-note-id="150">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: Yes, I meant <code>human_tissue_experiments_full.tsv.gz</code>.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="8" data-comment-id="375">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="375"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#8" class="light">698 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Initial release of processed TISSUES data</h1>
+
+<p>We have completed an initial processing of the TISSUES data (<a href="https://github.com/dhimmel/tissues/tree/93cd71464ee9673661bc4ddadfc6a8e0e219cd7b">repository</a>, <a href="https://github.com/dhimmel/tissues/blob/93cd71464ee9673661bc4ddadfc6a8e0e219cd7b/tissues.ipynb">notebook</a>) <span class="citation">[<a href="https://doi.org/10.5281/zenodo.27244" class="citation" data-key="10.5281/zenodo.27244">1</a>]</span>. The main output of our analysis is <a href="https://github.com/dhimmel/tissues/blob/93cd71464ee9673661bc4ddadfc6a8e0e219cd7b/data/merged.tsv.gz"><code>merged.tsv.gz</code></a>, a table where each row is a tissue (Uberon)–gene (Entrez) pair. For each pair, we provide 5 scores:</p>
+
+<ul><li><code>score_text</code>: score from the text mining channel</li><li><code>score_knowledge</code>: score from the UniProtKB/knowledge channel</li><li><code>score_experiment</code>: integrated score from the experimental channel</li><li><code>score_experiment_unbiased</code>: integrated score from the experimental channel without immunohistochemical staining data from the Human Protein Atlas</li><li><code>score_integrated</code>:  integrated score combining everything</li></ul>
+
+<p>Integrations (<code>score_experiment</code> and <code>score_experiment_unbiased</code>) were calculated using the <a href="#7">above formula</a>.</p>
+
+<h2>Visualizing channel concordance</h2>
+
+<p>We visualized the relationships between scores. The off-diagonal plots show a 2D histogram, using hexagonal bins. The diagonal of the grid contains 1D histograms for the x-variable. Bin counts for all panels are log-transformed.</p>
+
+<p><img src="https://raw.githubusercontent.com/dhimmel/tissues/93cd71464ee9673661bc4ddadfc6a8e0e219cd7b/figure/channel-histograms.png" alt=""></p>
+
+<p>You may be surprised to see points where <code>y &lt; x</code> for the integrated 2D histograms. This occurs because Uberon and Entrez Gene mappings are not always one-to-one.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+    		
+		</table>
+
+    
+
+    &nbsp;<br>
+    <a class="btn btn-primary btn-lg" href="/signup?next=/discussion/the-tissues-resource-for-the-tissue-specificity-of-genes/91&suppress_message=1" style>Join to Reply</a>
+
+
+		<table class="references table-td-5" style="display:none;"><tr><td><a href='/doi/10.7717/peerj.1054' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.7717/peerj.1054'><a href='/doi/10.7717/peerj.1054' class='pub-title'>Comprehensive comparison of large-scale tissue expression datasets</a><div class='pub-body'>Alberto Santos, Kalliopi Tsafou, Christian Stolte, Sune Pletscher-Frankild, Seán I. O’Donoghue, Lars Juhl Jensen (2015) <i>PeerJ</i>. doi:<a class='pub-doi' href='https://doi.org/10.7717/peerj.1054'>10.7717/peerj.1054</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d81' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>2.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d81'><a href='/discussion/tissue-specific-gene-expression-resources/81' class='pub-title'>Tissue-specific gene expression resources</a><div class='pub-body'>Daniel Himmelstein, Frederic Bastian (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d81'>10.15363/thinklab.d81</a></div></div></td></tr><tr><td><a href='/doi/10.1109/TPAMI.2014.2343973' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>3.</div></td><td><div class='doi-body' data-key='10.1109/TPAMI.2014.2343973'><a href='/doi/10.1109/TPAMI.2014.2343973' class='pub-title'>Data Fusion by Matrix Factorization</a><div class='pub-body'>Marinka Zitnik, Blaz Zupan (2015) <i>IEEE Transactions on Pattern Analysis and Machine Intelligence</i>. doi:<a class='pub-doi' href='https://doi.org/10.1109/TPAMI.2014.2343973'>10.1109/TPAMI.2014.2343973</a></div></div></td></tr><tr><td><a href='/doi/10.1038/srep03202' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>4.</div></td><td><div class='doi-body' data-key='10.1038/srep03202'><a href='/doi/10.1038/srep03202' class='pub-title'>Discovering disease-disease associations by fusing systems-level molecular data</a><div class='pub-body'>Marinka Žitnik, Vuk Janjić, Chris Larminie, Blaž Zupan, Nataša Pržulj (2013) <i>Sci. Rep.</i>. doi:<a class='pub-doi' href='https://doi.org/10.1038/srep03202'>10.1038/srep03202</a></div></div></td></tr><tr><td><a href='/doi/10.7717/peerj.1054' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>5.</div></td><td><div class='doi-body' data-key='10.7717/peerj.1054'><a href='/doi/10.7717/peerj.1054' class='pub-title'>Comprehensive comparison of large-scale tissue expression datasets</a><div class='pub-body'>Alberto Santos, Kalliopi Tsafou, Christian Stolte, Sune Pletscher-Frankild, Seán I. O’Donoghue, Lars Juhl Jensen (2015) <i>PeerJ</i>. doi:<a class='pub-doi' href='https://doi.org/10.7717/peerj.1054'>10.7717/peerj.1054</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d48' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>6.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d48'><a href='/discussion/text-as-a-resource-for-network-population/48' class='pub-title'>Text as a resource for network population?</a><div class='pub-body'>Benjamin Good, Daniel Himmelstein (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d48'>10.15363/thinklab.d48</a></div></div></td></tr><tr><td><a href='/doi/10.5281/zenodo.27244' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>7.</div></td><td><div class='doi-body' data-key='10.5281/zenodo.27244'><a href='/doi/10.5281/zenodo.27244' class='pub-title'>Gene–Tissue relationships from the TISSUES database</a><div class='pub-body'>Daniel Himmelstein, Lars Juhl Jensen (2015) <i>Zenodo</i>. doi:<a class='pub-doi' href='https://doi.org/10.5281/zenodo.27244'>10.5281/zenodo.27244</a></div></div></td></tr></table>
+
+    
+
+
+	</td>
+	<td class="thread-sidebar">
+
+
+			
+
+      <a class="btn btn-default follow-link btn-follow btn-lg is-following tt-top full-width" title="Follow discussion" data-id="91" data-ctype="thread" data-is-following="false">&nbsp;</a>
+
+      
+        <div class="status-box text-center"><span style="">Status:</span> 
+  Completed
+
+</div>
+      
+
+      
+        
+      
+
+
+				
+
+					<div class="details">Views</div>
+					<span style="font-size:20px;">125</span>
+
+        
+
+				
+					<div class="details">Topics</div>
+					<div style="margin-bottom:15px;">
+		            <a href="/topics/tissues" class="tag">TISSUES</a><a href="/topics/tissue-specificity" class="tag">Tissue Specificity</a><a href="/topics/transcriptome" class="tag">Transcriptome</a><a href="/topics/proteome" class="tag">Proteome</a><a href="/topics/uniprotkb" class="tag">UniProtKB</a>
+					</div>
+				
+
+
+		
+			<div class="details">Referenced by</div>
+			<div style="font-size:12px;"><ul style="padding-left:16px !important;">
+			
+				<li>
+					
+					<a href='/discussion/brainstorming-future-directions-for-hetionet/227' class='thread-title'>Brainstorming future directions for Hetionet</a>
+				</li>
+			
+				<li>
+					
+					Research report: <a href='/p/rephetio/report'>Rephetio: Repurposing drugs on a hetnet</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/processing-the-diseases-resource-for-diseasegene-relationships/106' class='thread-title'>Processing the DISEASES resource for disease–gene relationships</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/processing-disgenet-for-disease-gene-relationships/105' class='thread-title'>Processing DisGeNET for disease-gene relationships</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/text-as-a-resource-for-network-population/48' class='thread-title'>Text as a resource for network population?</a>
+				</li>
+			
+				</ul>
+			</div>
+		
+
+		
+			<div class="details">Cite this as</div>
+			<span style="font-size:12px;">
+				Daniel Himmelstein, Lars Juhl Jensen (2015) The TISSUES resource for the tissue-specificity of genes. <i>Thinklab.</i> doi:<a href='https://doi.org/10.15363/thinklab.d91'>10.15363/thinklab.d91</a>
+			</span>
+		
+
+		<div class="details">License</div>
+		<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0;width:88px;height:31px;" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></p>
+
+		<div class="details">Share</div>
+		
+			
+				<a class="share-button fb" onclick="javascript:void(window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A//thinklab.com/discussion/the-tissues-resource-for-the-tissue-specificity-of-genes/91','','width=600,height=460,menubar=no,status=no'));" href="#"></a>
+<a class="share-button twitter" onclick="javascript:void(window.open('https://twitter.com/share?text=The%20TISSUES%20resource%20for%20the%20tissue-specificity%20of%20genes&url=https%3A//thinklab.com/discussion/the-tissues-resource-for-the-tissue-specificity-of-genes/91','','width=600,height=300,menubar=no,status=no'));" href="#"></a>
+<a class="share-button google" onclick="javascript:void(window.open('https://plus.google.com/share?url=https%3A//thinklab.com/discussion/the-tissues-resource-for-the-tissue-specificity-of-genes/91','','width=510,height=460,menubar=no,status=no'));" href="#"></a>
+
+			
+		
+
+	</td>
+</tr></table>
+
+
+		</div>
+
+
+		
+	    	<div class="footer">
+<div style="background:#dedede;">
+	<div class="main-centered-div text-center" style="padding:20px;">
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#5c34393030331c2834353237303d3e723f3331"><span class="__cf_email__" data-cfemail="bad2dfd6d6d5faced2d3d4d1d6dbd894d9d5d7">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+	</div>
+</div>
+<div class="main-footer">
+	<div class="main-centered-div">
+
+<table class="full-width"><tr>
+	<td class="footer-nav">
+
+        <div class="foot-head">Explore</div>
+        <a href="/proposals">Proposals</a><br>
+        <a href="/projects">Projects</a><br>
+        <a href="/publications">Article discussion</a><br>
+        <a href="/discussion">All discussion</a><br>
+        <a href="/topics">Topics</a><br>
+        <!-- <a href="/funders">Funders</a><br> -->
+        <a href="/funding">Funding opportunities</a><br>
+
+	</td>
+	<td class="footer-nav">
+
+        <!-- <div class="foot-head">Help &amp; feedback</div>	 -->
+        <!-- <div class="foot-head">Intro</div>
+        <a href="/benefits/for-science">Why</a><br>
+        <a href="/how-it-works">How it works</a><br>
+
+<br> -->
+
+        <div class="foot-head">Community</div>
+        <a href="/leaderboard">Leaderboard</a><br>
+        <a href="/p/meta">Thinklab Meta</a><br>
+				<a href="/help/faq">Help</a><br>
+				<!-- <a href="/new-project">Start a proposal</a><br> -->
+        <!-- <a href="/benefits/proposal">Benefits</a><br> -->
+        <!-- <a href="/funding">Get funded</a><br> -->
+        <!-- <a href="/participate">Become a contributor</a><br> -->
+        <!-- <a href="/for-funders">For science funders</a><br> -->
+        <!-- <a href="/for-institutions">For institutions</a><br> -->
+
+	</td>
+	<td class="footer-nav">
+
+
+
+        <div class="foot-head">About</div>
+        <a href="/about">Overview</a><br>
+        <a href="/benefits">Benefits</a><br>
+        <a href="/how-it-works">How it works</a><br>
+        <a href="/about/story">Our story</a><br>
+        <a href="/blog">Our blog</a><br>
+        <a href="/about/jobs">Join the team</a><br>
+        <br>
+
+        <!-- <div class="foot-head">Help</div>
+        <a href="/help">Help</a><br>
+		 -->
+
+
+	</td>
+	<td class="footer-nav">
+		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
+		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<br><br>
+		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
+
+	</td>
+
+</tr></table>
+
+</div>
+</div>
+</div>
+
+		
+
+	</div>
+
+
+  <script></script>
+  <script>
+  var MEDIA_URL = 'https://think-lab.s3.amazonaws.com/m/';
+  var STATIC_URL = 'https://think-lab.s3.amazonaws.com/s/';
+  var page_is_authenticated = false;
+  var page_page = 'discussion';
+  var page_profile_id = undefined;
+</script>
+
+
+
+	<!-- Note different script type. MUST come before MathJax.js -->
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	        "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"],
+	                        scale: 110, linebreaks: { automatic:true },
+	                        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+	        tex2jax: { inlineMath: [ ["$$", "$$"], ["\\(","\\)"] ],
+	                    displayMath: [ ["$$$","$$$"], ["\\[", "\\]"] ],
+	                    processEscapes: true,}
+	            });
+
+	</script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://think-lab.s3.amazonaws.com/s/dist/main.min.js"></script>
+  
+
+
+
+  
+	
+  
+  
+  
+<script>
+$(function() {
+  recordHit('thread', 91);
+});
+</script>
+
+
+
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>

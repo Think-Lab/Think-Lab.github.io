@@ -1,0 +1,1843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZgEOC19dW0QCEVtHU1gG","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":2231}</script>
+    <title>Incorporating DrugCentral data in our network | Thinklab</title>
+	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
+    <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/highlightjs/github.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/css.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/bootstrap-multiselect.css" />
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
+    
+    
+    
+    
+  
+    <meta name="citation_doi" content="10.15363/thinklab.d186">
+    <meta name="citation_title" content="Incorporating DrugCentral data in our network">
+    <meta name="citation_online_date" content="March 20, 2016">
+    <meta name="citation_author" content="Daniel Himmelstein, Oleg Ursu, Mike Gilson, Pouya Khankhanian, Tudor Oprea">
+    <meta name="citation_journal_title" content="Thinklab">
+    <meta name="citation_publisher" content="Thinklab">
+  
+
+    
+
+
+	<!-- GoogleAnalytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-48550230-1', 'thinklab.com');
+	ga('require', 'displayfeatures');
+	
+	ga('send', 'pageview');
+
+	</script>
+
+
+
+
+
+
+</head>
+<body >
+  <form id="form_action" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+</form>
+
+	
+
+	<div class="body-wrapper">
+
+		
+
+
+<!-- <div style="height:5px;background-image:url('https://think-lab.s3.amazonaws.com/s/img/top-bg.gif');"></div> -->
+<div class="gradient">
+	<div class="main-centered-div header-container">
+
+<table class="full-width" style="height:60px;"><tr>
+	<td style="width:200px;vertical-align:middle;padding-bottom:15px;">
+		<a href="/" style="font-weight:normal;color:#212121;"><img src="https://think-lab.s3.amazonaws.com/s/img/logo.png" width="160"></a>
+	</td><td style="vertical-align:middle;text-align:left;padding-top:6px;width:100%;padding-left:40px;">
+		<ul id="not-search-block"  class="main-header">
+
+
+			
+
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/proposals">Proposals</a></li>
+						<li><a href="/projects">Projects</a></li>
+						<li><a href="/publications">Article discussion</a></li>
+						<li><a href="/discussion">All discussion</a></li>
+					</ul>
+				</li>
+				<li><a href="/leaderboard">Leaderboard</a></li>
+
+			
+				<li><a href="/about">About</a></li>
+			
+
+
+		</ul>
+
+    <ul id="search-block" class="main-header" style="display: none; margin-right: 30px;">
+        <li class="full-width">
+            <form method="get" action="/search">
+			<div class="input-group full-width">
+				<input name="q" type="text" class="form-control search-input">
+			</div>
+            </form>
+        </li>
+    </ul>
+
+	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
+		<ul class="main-header pull-right" style="padding-left: 0;">
+    		
+                <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+            
+
+        </ul>
+    </ul>
+	</td>
+</tr></table>
+
+<!-- <div id="global-search-div" class="main-centered-div" style="display:none;">
+	<input type="text" value="" class="thread-search form-control" placeholder="Search" data-action="/discussion">
+</div> -->
+
+	</div>
+</div>
+
+		
+	  
+
+
+
+	  
+
+
+		
+
+		<div class="dark-head"><div class="main-centered-div">
+
+			
+
+		</div></div>
+		
+		<div class="main-centered-div" style="margin-top:40px;padding-bottom:340px">
+	    
+
+<div style="margin-top:-20px; margin-bottom:20px;">
+
+    <a class="side-box" href="/p/rephetio" style="background-color:#ebfdff;"><div class="side-type">Project:</div> <div class="side-title">Rephetio: Repurposing drugs on a hetnet [rephetio]</div></a><br>
+
+
+
+</div>
+
+<table style="margin-top:0px;"><tr>
+	<td class="thread-table-content">
+
+		<table class="full-width">
+			
+<tr class="comment-tr target-hl" id="1" data-comment-id="1182">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1182"></a>
+
+    
+
+			<h2 class="page-title" style="margin-bottom:5px;margin-top:0px !important;">Incorporating DrugCentral data in our network</h2>
+
+			<div style="margin-top:5px;color:gray;margin-bottom:20px;font-size:13px;">
+				<a style="font-weight:normal;color:#212121" href="/u/dhimmel"><strong>Daniel Himmelstein</strong></a>
+				<span class="is-researcher">Researcher</span>
+				&nbsp; <a href="#1" class="light">474 days ago</a>
+				
+			</div>
+
+      
+
+          <hr>
+		
+
+    <p>I spoke with <a href="/u/TIOprea" class="username">@TIOprea</a> and Oleg Ursu from the University of New Mexico. They are constructing a highly curated yet highly integrative database of pharmacology named <a href="http://datascience.unm.edu/drugdb/">DrugCentral</a>. They have not yet published a journal article detailing their database. However, they have posted an alpha <a href="http://pasilla.health.unm.edu/tomcat/drugcentral/drugcentral" title="DrugCentral Browser">webapp</a> and <a href="https://github.com/olegursu/drugtarget" title="olegursu/drugtarget on GitHub">data repository</a>, which provide access to select components of the database.</p>
+
+<p>My impression was that the database is similar in concept to <a href="http://www.drugbank.ca/">DrugBank</a> but has key advantages in certain areas. First, it has integrated types of data which are not currently part of DrugBank. Second, it takes a more clinical approach to curation compared to DrugBank. For example, drug–target relationships in DrugCentral adhere more to the "three pillars <span class="citation">[<a href="https://doi.org/10.1016/j.drudis.2011.12.020" class="citation" data-key="10.1016/j.drudis.2011.12.020">1</a>]</span>" of pharmacological activity.</p>
+
+<p>I created a repository (<a href="https://github.com/dhimmel/drugcentral" title="dhimmel/drugcentral on GitHub"><code>dhimmel/drugcentral</code></a>) to process parts of DrugCentral for inclusion in our network. Details of the integration will follow.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="2" data-comment-id="1183">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1183"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#2" class="light">474 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Contributions to our hetnet</h1>
+
+<p>I processed DrugCentral data and converted it into the identifier systems used by our network (<a href="https://github.com/dhimmel/drugcentral/blob/e80a0c966a53ce48650d98069b126801c2793517/drugcentral-to-rephetio.ipynb">notebook</a>). I have initially added two relationship types from DrugCentral into the hetnet (<a href="https://github.com/dhimmel/integrate/commit/0f2ef740197dd2767cb0de80f57d9f47e2e91c7a">commit</a>). </p>
+
+<h2>Drug targets</h2>
+
+<p>I extracted drug–target relationships from DrugCentral and converted them into the DrugBank and Entrez Gene identifiers in our network (<a href="https://github.com/dhimmel/drugcentral/blob/e80a0c966a53ce48650d98069b126801c2793517/rephetio/targets.tsv">dataset</a>). The table below shows the sources from which DrugCentral compiled drug targets and how many relationships each source contributed. </p>
+
+<table class="table markdown-table"><thead><tr><th>Resource</th><th>Count</th></tr></thead><tbody><tr><td>DrugCentral (ChEMBL)</td><td>2,922</td></tr><tr><td>DrugCentral (literature)</td><td>182</td></tr><tr><td>DrugCentral (label)</td><td>89</td></tr><tr><td>DrugCentral (IUPHAR)</td><td>56</td></tr><tr><td>DrugCentral (KEGG DRUG)</td><td>25</td></tr></tbody></table>
+
+<p>Prior to including DrugCentral, our network contained 10,747 <em>Compound–binds–Gene</em> relationships from <a href="http://thinklab.com/discussion/protein-target-carrier-transporter-and-enzyme-interactions-in-drugbank/65#1" class="citation thread-citation" data-key="10.15363/thinklab.d65">DrugBank</a> and <a href="http://thinklab.com/discussion/integrating-drug-target-information-from-bindingdb/53#6" class="citation thread-citation" data-key="10.15363/thinklab.d53">BindingDB</a>. Drug targets from DrugCentral added 824 additional binding relationships.</p>
+
+<h2>Pharmacologic classes</h2>
+
+<p>DrugCentral has compiled the membership of compounds in pharmacologic classes from several <a href="https://github.com/olegursu/drugtarget/blob/9a6d84bed8650c6c507a2d3d786814c774568610/README.md#pharmacologic-class-table">sources</a>, which contain the following types of classes:</p>
+
+<ul><li>FDA — Mechanism of Action</li><li>FDA — Physiologic Effect</li><li>FDA — Chemical/Ingredient</li><li>FDA — Established Pharmacologic Class</li><li>MeSH — Pharmacological Action</li><li>CHEBI — Application</li></ul>
+
+<p>I decided to assign all of these classes to a single node type (<em>Pharmacologic Class</em>). I added a new relationship type for <em>Pharmacologic Class–includes–Compound</em>. DrugCentral contributed 10,959 relationships for 1,262 <a href="https://github.com/dhimmel/drugcentral/blob/e80a0c966a53ce48650d98069b126801c2793517/rephetio/classes.tsv" title="Table of Pharmacologic Classes extracted from DrugCentral">pharmacologic classes</a>.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="3" data-comment-id="1184">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1184"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#3" class="light">474 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Medical indications</h1>
+
+<p>In my conversation with DrugCentral team members, we first discussed PharmacotherapyDB, our <a href="http://thinklab.com/discussion/announcing-pharmacotherapydb-the-open-catalog-of-drug-therapies-for-disease/182" class="citation thread-citation" data-key="10.15363/thinklab.d182">recently-released</a> physician-curated catalog of indications. One major takeaway was that we needed to more clearly explain that our definition of disease modifying differs from the clinical definition. Also, we need to more clearly state that <code>NOT</code> refers to non-indications.</p>
+
+<p>As part of DrugCentral, they've constructed their own indications catalog. Their seeded their catalog from <a href="http://omop.org/" title="Observational Medical Outcomes Partnership">OMOP</a> in 2012 and have since then manually added additional indications. OMOP has now become <a href="http://www.ohdsi.org/" title="Observational Health Data Sciences and Informatics">OHDSI</a> and hosts their vocabular on GitHub at <a href="https://github.com/OHDSI/Vocabulary-v5.0"><code>OHDSI/Vocabulary-v5.0</code></a>. As a side note, we were not aware of OMOP <span class="citation">[<a href="https://doi.org/10.7326/0003-4819-153-9-201011020-00010" class="citation" data-key="10.7326/0003-4819-153-9-201011020-00010">1</a>]</span> or OHDSI <span class="citation">[<a href="https://doi.org/10.3233/978-1-61499-564-7-574" class="citation" data-key="10.3233/978-1-61499-564-7-574">2</a>]</span> when we <a href="http://thinklab.com/discussion/how-should-we-construct-a-catalog-of-drug-indications/21#21" class="citation thread-citation" data-key="10.15363/thinklab.d21">assembled</a> our indications for version 1.0 of PharmacotherapyDB.</p>
+
+<h2>Aligning indications with PharmacotherapyDB</h2>
+
+<p>I converted the DrugCentral indications to the slim sets of DrugBank drugs and Disease Ontology diseases in PharmacotherapyDB 1.0 (<a href="https://github.com/dhimmel/drugcentral/blob/e80a0c966a53ce48650d98069b126801c2793517/drugcentral-to-rephetio.ipynb">notebook</a>, <a href="https://github.com/dhimmel/drugcentral/blob/e80a0c966a53ce48650d98069b126801c2793517/rephetio/indications.tsv">dataset</a>). For each disease, I aggregated direct indications as well as indications for subtypes (referred to as propagation). </p>
+
+<p>In the <a href="https://github.com/dhimmel/drugcentral/blob/e80a0c966a53ce48650d98069b126801c2793517/rephetio/indications.tsv">converted dataset</a>, I included a <code>category</code> column giving the indication's PharmacotherapyDB 1.0 status. Of a total of 671 indications extracted from DrugCentral, 210 were not in PharmacotherapyDB 1.0. Of the 461 indications in PharmacotherapyDB, 359 were classified as disease modifying (78%), 77 were classified as symptomatic (17%), and 25 were classified as non-indications (5%). </p>
+
+<p>6 of the non-indications were <a href="https://github.com/dhimmel/drugcentral/blob/e80a0c966a53ce48650d98069b126801c2793517/rephetio/indications.tsv#L38">for anemia</a> and 8 were <a href="https://github.com/dhimmel/drugcentral/blob/e80a0c966a53ce48650d98069b126801c2793517/rephetio/indications.tsv#L296">for hypertension</a>, two diseases for which we have a <a href="http://thinklab.com/discussion/expert-curation-of-our-indication-catalog-for-disease-modifying-treatments/95#8" class="citation thread-citation" data-key="10.15363/thinklab.d95">known problem</a> with their generality. <a href="http://thinklab.com/discussion/announcing-pharmacotherapydb-the-open-catalog-of-drug-therapies-for-disease/182#2" class="citation thread-citation" data-key="10.15363/thinklab.d182">Compared to the four sources</a> of PharmacotherapyDB indications, DrugCentral appears to have a higher percentage of disease modifying indications. However, we're basing this assessment on indications that appeared in DrugCentral and at least one other resource, so it's potentially biased.</p>
+
+<p><a href="/u/pouyakhankhanian" class="username">@pouyakhankhanian</a>, if you are up for curating the 210 new indications as <code>DM</code>, <code>SYM</code>, or <code>NOT</code>, we could potentially:</p>
+
+<ol><li>add these indications to a future release of PharmacotherapyDB</li><li>use these indications to test our predictions</li></ol>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-220" class="inline-note toggle-parent" data-note-id="220">
+	<p><a href="/u/pouyakhankhanian">Pouya Khankhanian</a>: I'm up for it. I should have some time either late this week or early next week. 
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="4" data-comment-id="1185">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1185"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#4" class="light">470 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Pharmacologic Classes that are indications</h1>
+
+<p>We've noticed that many of the <a href="https://github.com/dhimmel/drugcentral/blob/e80a0c966a53ce48650d98069b126801c2793517/rephetio/classes.tsv">pharmacologic classes</a> are essentially indications. This could be problematic since it could confound our classification approach. Specifically, it could lead to the appearance that our method predicts indications when in reality it just regurgitates indications which were encoded by a pharmacologic class.</p>
+
+<p>Some examples of classes that resemble indications are:</p>
+
+<table class="table markdown-table"><thead><tr><th>class_id</th><th>class_name</th><th>class_source</th><th>class_type</th></tr></thead><tbody><tr><td><a href="http://identifiers.org/chebi/CHEBI%3A35469">CHEBI:35469</a></td><td>antidepressant</td><td>CHEBI</td><td>Application</td></tr><tr><td><a href="http://purl.bioontology.org/ontology/NDFRT/N0000175482">N0000175482</a></td><td>Antimalarial</td><td>FDA</td><td>FDA Established Pharmacologic Class</td></tr><tr><td><a href="http://identifiers.org/mesh/D018501">D018501</a></td><td>Antirheumatic Agents</td><td>MeSH</td><td>Pharmacological Action</td></tr></tbody></table>
+
+<p><a href="/u/sergiobaranzini" class="username">@sergiobaranzini</a> and I looked through the 6 sources and found that 3 were <strong>less problematic</strong>:</p>
+
+<ul><li>FDA — Chemical/Ingredient</li><li>FDA — Mechanism of Action</li><li>FDA — Physiologic Effect</li></ul>
+
+<p>The other 3 were <strong>more problematic</strong>:</p>
+
+<ul><li>FDA — Established Pharmacologic Class</li><li>MeSH — Pharmacological Action</li><li>CHEBI — Application</li></ul>
+
+<p>Therefore, I excluded classes from the 3 more problematic sources. This reduced the number of classes from 1,262 to 345, the number of edges from 10,959 to 1,029, and the number of compounds in a class from 1,423 to 724 (<a href="https://github.com/dhimmel/integrate/commit/1229536c6d2146c4cae97f045cf8cbdd272420f6">commit</a>).</p>
+
+<p>One step would be to salvage many of the filtered classes by manual curation. The majority of the removed classes did not overlap with <a href="http://thinklab.com/discussion/unifying-disease-vocabularies/44#6" class="citation thread-citation" data-key="10.15363/thinklab.d44">DO Slim</a> diseases and thus shouldn't confound our analysis. If we decide to curate, we'll have to decide whether to exclude all indications or just indications in DO Slim.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="5" data-comment-id="1307">
+  <td class="comment-profile-avatar">
+		<a href="/u/olegursu"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/s/img/p_default_medium.png' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1307"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/olegursu">Oleg Ursu</a>
+				
+				<span class="light">&nbsp;<a href="#5" class="light">424 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p><a href="/u/dhimmel" class="username">@dhimmel</a> does bosentan indication for hypertension originate from DrugCentral? if so, there might be an error in your pipeline, the files uploaded to Github have pulmonary hypertension as an indication.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="6" data-comment-id="1308">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1308"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#6" class="light">424 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Greetings <a href="/u/olegursu" class="username">@olegursu</a>! I used transitive closure <span class="citation">[<a href="https://doi.org/10.1093/bioinformatics/btr164" class="citation" data-key="10.1093/bioinformatics/btr164">1</a>]</span> on to convert diseases to the level of specificity in Hetionet. This is what I meant by <a href="#3">saying</a>:</p>
+
+<blockquote><p>For each disease, I aggregated direct indications as well as indications for subtypes (referred to as propagation).</p></blockquote>
+
+<p>I think you've picked up on an issue that <a href="https://thinklab.com/discussion/expert-curation-of-our-indication-catalog-for-disease-modifying-treatments/95#8" class="citation thread-citation" data-key="10.15363/thinklab.d95">came up</a> during our curation. Specifically the Disease Ontology defines pulmonary hypertension (<code>DOID:6432</code>) as a subtype of hypertension (<code>DOID:10763</code>). However, our curator considered the definition of hypertension to be distinct from pulmonary hypertension.</p>
+
+<p>So in conclusion, DrugCentral included a bosentan indication for pulmonary hypertension, which was translated to an indication for hypertension in Hetionet. In the future, I'd like to make  transitive closure a query-time decision rather than a builtin, but for now that's not the case.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="7" data-comment-id="1394">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1394"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#7" class="light">219 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>DrugCentral now published</h1>
+
+<p>DrugCentral is now available at <a href="http://drugcentral.org/">http://drugcentral.org/</a> and published in <a href="https://doi.org/10.1093/nar/gkw993"><em>Nucleic Acids Research</em></a> <span class="citation">[<a href="https://doi.org/10.1093/nar/gkw993" class="citation" data-key="10.1093/nar/gkw993">1</a>]</span>.</p>
+
+<p>According to the <a href="http://drugcentral.org/privacy">website</a>, the resource is available under a <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode">CC BY-SA 4.0 License</a>.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="8" data-comment-id="1399">
+  <td class="comment-profile-avatar">
+		<a href="/u/mkgilson"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/s/img/p_default_medium.png' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1399"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/mkgilson">Mike Gilson</a>
+				
+				<span class="light">&nbsp;<a href="#8" class="light">218 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Looks cool. </p>
+
+<p>I tested it by searching for "lipitor", and was surprised to find hypertension listed as an "indication".  I don't think this is right, and I don't immediately see a way to determine how hypertension was assigned as an indication for lipitor.</p>
+
+<p>However, there is a lot of good information here as well.  For example, a search for "nifedipine" turned up a contraindication of which I was entirely unaware, and which I could easily confirm by a web search.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-288" class="inline-note toggle-parent" data-note-id="288">
+	<p><a href="/u/pouyakhankhanian">Pouya Khankhanian</a>: <a href="/u/mkgilson" class="username">@mkgilson</a> Would you be interested in doing a case study of hypertension predictions by this algorithm? For example, a case study similar to the case study done for epilepsy here (https://thinklab.com/p/rephetio). The algorithm made a great number of high probability predictions for hypertension (there can be a link to a file in thinklab here), as it did for epilepsy. We chose to do a case study of epilepsy in part because our three physician curators were all neurologists. It would be great to get input from someone who is more experienced in general internal medicine to evaluate the predictions for hypertension.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-291" class="inline-note toggle-parent" data-note-id="291">
+	<p><a href="/u/mkgilson">Mike Gilson</a>: I'd love to contribute, but don't have time, and also am probably too far from clinical practice these days. I'll bet someone at Stanford could look at this with you, though!
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="9" data-comment-id="1401">
+  <td class="comment-profile-avatar">
+		<a href="/u/olegursu"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/s/img/p_default_medium.png' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1401"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/olegursu">Oleg Ursu</a>
+				
+				<span class="light">&nbsp;<a href="#9" class="light">217 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Hi Mike,</p>
+
+<p>Thank you for feedback! Regarding indications for atorvastatin, most of indications for drugs approved before 2012 come from OMOP v4 which in turn imported data from First Data Bank, while quality assessed by us for few samples for this dataset appears to be high there are still indications which either address a disease symptom or associated co-morbidity and it is not clear what is the actual association. We will amend the data and re-upload. </p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="10" data-comment-id="1402">
+  <td class="comment-profile-avatar">
+		<a href="/u/mkgilson"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/s/img/p_default_medium.png' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1402"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/mkgilson">Mike Gilson</a>
+				
+				<span class="light">&nbsp;<a href="#10" class="light">217 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>You're welcome!  I just now looked for info on OMOP on line, but am not finding any relevant dataset. Is there a link you could provide?</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="11" data-comment-id="1400">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1400"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#11" class="light">217 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h2>Atorvastatin for hypertension</h2>
+
+<p><a href="/u/mkgilson" class="username">@mkgilson</a>, thanks for the feedback. According to the DrugCentral publication, here's their method for compiling indications <span class="citation">[<a href="https://doi.org/10.1093/nar/gkw993" class="citation" data-key="10.1093/nar/gkw993">1</a>]</span>:</p>
+
+<blockquote><p>Indications (10,707), contra-indications (27,851) and off-label indications (2496) were initially extracted from OMOP data model version 4.4 (http://omop.org/Vocabularies). Since the OMOP project transitioned to OHDSI (http://www.ohdsi.org), updated drug indication and contra-indication data are covered under a revised license agreement that in turn requires subscription licenses (i.e. it is no longer open-access). Therefore, indications for drugs approved after 2012 (322 pairs) were extracted from approved drug labels and mapped onto SNOMED-CT and UMLS concepts.</p></blockquote>
+
+<p>Note that we also created a catalog of indications called <a href="https://thinklab.com/discussion/announcing-pharmacotherapydb-the-open-catalog-of-drug-therapies-for-disease/182" class="citation thread-citation" data-key="10.15363/thinklab.d182">PharmacotherapyDB</a>. When creating this resource, we had three physicians <a href="https://thinklab.com/discussion/expert-curation-of-our-indication-catalog-for-disease-modifying-treatments/95" class="citation thread-citation" data-key="10.15363/thinklab.d95">curate</a> all of our indications. Interestingly, all three of our curators <a href="https://github.com/dhimmel/indications/blob/11d535ba0884ee56c3cd5756fdfb4985f313bd80/curation/results-three-curators.tsv#L636">classified</a> atorvastatin (lipitor) as a disease-modifying indication for hypertension. Atorvastatin <a href="http://het.io/repurpose/browse.html?id=DB01076" title="Project Rephetio predictions for Atorvastatin">was also considered</a> disease-modifying for coronary artery disease but not for type 2 diabetes mellitus.</p>
+
+<p>It appears that the verdict is still out on whether statins lower blood pressure <span class="citation">[<a href="https://doi.org/10.5114/aoms.2012.27270" class="citation" data-key="10.5114/aoms.2012.27270">2</a>, <a href="https://doi.org/10.1038/jhh.2011.80" class="citation" data-key="10.1038/jhh.2011.80">3</a>, <a href="https://doi.org/10.1177/1074248407300380" class="citation" data-key="10.1177/1074248407300380">4</a>, <a href="https://doi.org/10.3109/08037050903576726" class="citation" data-key="10.3109/08037050903576726">5</a>]</span>, but <a href="http://www.healthline.com/health/statins-will-they-lower-my-blood-pressure#Statins4">perhaps</a> physicians are prescribing atorvastatin as an off-label treatment for hypertension and this is what our curators picked up on. <a href="/u/pouyakhankhanian" class="username">@pouyakhankhanian</a>, do you remember your reasoning here?</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-285" class="inline-note toggle-parent" data-note-id="285">
+	<p><a href="/u/pouyakhankhanian">Pouya Khankhanian</a>: answer in post below
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="12" data-comment-id="1403">
+  <td class="comment-profile-avatar">
+		<a href="/u/olegursu"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/s/img/p_default_medium.png' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1403"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/olegursu">Oleg Ursu</a>
+				
+				<span class="light">&nbsp;<a href="#12" class="light">217 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Most likely the association is via cholesterol which is risk factor for hypertension, and statins lower cholesterol.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-283" class="inline-note toggle-parent" data-note-id="283">
+	<p><a href="/u/mkgilson">Mike Gilson</a>: But I don't think hypercholesterolemia is an independent risk factor for hypertension...
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="13" data-comment-id="1404">
+  <td class="comment-profile-avatar">
+		<a href="/u/mkgilson"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/s/img/p_default_medium.png' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1404"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/mkgilson">Mike Gilson</a>
+				
+				<span class="light">&nbsp;<a href="#13" class="light">217 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p><a href="/u/dhimmel" class="username">@dhimmel</a> Thanks, Daniel.  Before posting my original comment, I did a quick web search for atorvastatin and HTN, and found something very equivocal: there seemed to be supportive statistics, but the mean drop in BP observed was paltry, something like 0.5 - 1 mm Hg, on typical systolic and diastolic values of 120 and 70 mmHg.  I'd be interested to know if a more robust effect has in fact been observed.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="14" data-comment-id="1405">
+  <td class="comment-profile-avatar">
+		<a href="/u/pouyakhankhanian"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/188_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1405"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/pouyakhankhanian">Pouya Khankhanian</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#14" class="light">215 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Though I cannot speak for the other curators, my own clinical suspicion was call atorvastatin as NOT for hypertension (HTN), because, for example, the other two statins in our curation database are also listed as NOT for HTN. As the only curator who was not blind to the other two curators' selections, I saw the choice of DM by the other two reviewers and therefore did a cursory round of research, found <span class="citation">[<a href="https://doi.org/10.3109/08037050903576726" class="citation" data-key="10.3109/08037050903576726">1</a>]</span>, which is specific for atorvastatin, and therefore agreed with the other reviewers. Upon more detailed review of this, my thoughts below.</p>
+
+<p>Hyperlipidema (HLD) is treated with an HMG-COARi (the 'statins', such as atorvastatin, simvastatin, lovastatin). The decision to treat HLD with a statin, and the strength of statin to use, is a decision guided by a "risk factor" score which predicts poor cardiovascular outcomes, the ASCVD score is the latest in use in the last few years. The ASCVD risk score and many other scoring systems use your blood pressure as a major factor in determining if and how much statin you get for your HLD.</p>
+
+<p>HTN is treated with antihypertensives, commonly guided by the JNC8 paradigm <span class="citation">[<a href="https://doi.org/10.1001/jama.2013.284427" class="citation" data-key="10.1001/jama.2013.284427">2</a>]</span>. The decision to treat HTN and the aggressiveness of therapy is also guided toward reducing poor cardiovascular outcomes.</p>
+
+<p>Therefore, in clinical practice, the treatment of HTN and HLD is generally thought to be really two parts of the same battle, with the goal being to decrease the number of poor cardiovascular outcomes (death or major disability from MI or stroke or PVD). And the latest trend is combination treatments which include statins and antihypertensives such as <span class="citation">[<a href="https://doi.org/10.1016/j.clinthera.2016.09.005" class="citation" data-key="10.1016/j.clinthera.2016.09.005">3</a>]</span>.</p>
+
+<p>Given that clinically we are moving toward the use of mixing antihypertensive drugs with statins in clinical practice, I'm not sure we will have more evidence in the future as to the efficacy of a statin alone (in the absence of antihypertensive use) on hypertension alone (in the absence of hyperlipidemia). For example, note the possibility of confounding between HTN and HLD in the articles referenced by Daniel above. Therefore, the best evidence we have would be <span class="citation">[<a href="https://doi.org/10.3109/08037050903576726" class="citation" data-key="10.3109/08037050903576726">1</a>]</span>. In that case, I suppose one could say atorvastatin is DM for HTN, but I wouldn't disagree with calling it NOT for HTN. Furthermore, one could make a case that all three statins should be DM if one of them is DM, but I would personally think that's too much of a stretch. Here is the list of how the all of the statins were designated by the three curators. You will note the lack of completeness of the PharmacotherapyDB list (every statin not listed for every indication), and I would say this was quite usual other drug classes in the database as well.</p>
+
+<table class="table markdown-table"><thead><tr><th>drug</th><th>disease</th><th>CSH</th><th>AJG</th><th>PK</th></tr></thead><tbody><tr><td>Lovastatin</td><td>atherosclerosis</td><td>DM</td><td>DM</td><td>DM</td></tr><tr><td>Pravastatin</td><td>atherosclerosis</td><td>DM</td><td>DM</td><td>DM</td></tr><tr><td>Rosuvastatin</td><td>atherosclerosis</td><td>DM</td><td>DM</td><td>DM</td></tr><tr><td>Simvastatin</td><td>atherosclerosis</td><td>DM</td><td>DM</td><td>DM</td></tr><tr><td>Atorvastatin</td><td>coronary artery disease</td><td>DM</td><td>DM</td><td>DM</td></tr><tr><td>Lovastatin</td><td>coronary artery disease</td><td>DM</td><td>DM</td><td>DM</td></tr><tr><td>Pitavastatin</td><td>coronary artery disease</td><td>DM</td><td>DM</td><td>DM</td></tr><tr><td>Pravastatin</td><td>coronary artery disease</td><td>DM</td><td>DM</td><td>DM</td></tr><tr><td>Rosuvastatin</td><td>coronary artery disease</td><td>DM</td><td>DM</td><td>DM</td></tr><tr><td>Simvastatin</td><td>coronary artery disease</td><td>DM</td><td>DM</td><td>DM</td></tr><tr><td>Atorvastatin</td><td>hypertension</td><td>DM</td><td>DM</td><td>DM</td></tr><tr><td>Lovastatin</td><td>hypertension</td><td>NOT</td><td>NOT</td><td>NOT</td></tr><tr><td>Simvastatin</td><td>hypertension</td><td>NOT</td><td>NOT</td><td>NOT</td></tr><tr><td>Pravastatin</td><td>prostate cancer</td><td>NOT</td><td>DM</td><td>NOT</td></tr><tr><td>Atorvastatin</td><td>type 2 diabetes mellitus</td><td>NOT</td><td>NOT</td><td>NOT</td></tr><tr><td>Simvastatin</td><td>type 2 diabetes mellitus</td><td>NOT</td><td>NOT</td><td>NOT</td></tr></tbody></table>
+
+<p>Also of interest is how the statins were ranked to help in each disease.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-293" class="inline-note toggle-parent" data-note-id="293">
+	<p><a href="/u/TIOprea">Tudor Oprea</a>: see my post below about CADUET and the most likely (Occam's razor) explanation for how Atorvastatin got annotated as anti-hypertensive. I remain skeptical that this is the case, speaking from a molecular interactions perspective. the algorithm may be biased by the mixtures that feed into the system confounding factors. 
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="15" data-comment-id="1406">
+  <td class="comment-profile-avatar">
+		<a href="/u/pouyakhankhanian"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/188_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1406"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/pouyakhankhanian">Pouya Khankhanian</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#15" class="light">215 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>The algorithm predicts hypertension fairly highly for some of the other statins as well. Here are the top predictions of the algorithm for any statin:</p>
+
+<table class="table markdown-table"><thead><tr><th>compound_name</th><th>disease_name</th><th>category</th><th>prediction</th><th>disease_percentile</th></tr></thead><tbody><tr><td>Lovastatin</td><td>atherosclerosis</td><td>DM</td><td>28.4%</td><td>100.0%</td></tr><tr><td>Simvastatin</td><td>atherosclerosis</td><td>DM</td><td>23.6%</td><td>99.9%</td></tr><tr><td>Pravastatin</td><td>atherosclerosis</td><td>DM</td><td>20.2%</td><td>99.9%</td></tr><tr><td>Simvastatin</td><td>coronary artery disease</td><td>DM</td><td>19.0%</td><td>99.5%</td></tr><tr><td>Pitavastatin</td><td>atherosclerosis</td><td></td><td>17.1%</td><td>99.8%</td></tr><tr><td>Lovastatin</td><td>coronary artery disease</td><td>DM</td><td>16.9%</td><td>99.4%</td></tr><tr><td>Pravastatin</td><td>coronary artery disease</td><td>DM</td><td>14.8%</td><td>99.3%</td></tr><tr><td>Rosuvastatin</td><td>coronary artery disease</td><td>DM</td><td>13.2%</td><td>99.0%</td></tr><tr><td>Fluvastatin</td><td>coronary artery disease</td><td></td><td>6.7%</td><td>98.4%</td></tr><tr><td>Fluvastatin</td><td>atherosclerosis</td><td></td><td>6.2%</td><td>99.7%</td></tr><tr><td>Pitavastatin</td><td>coronary artery disease</td><td>DM</td><td>4.8%</td><td>97.4%</td></tr><tr><td>Atorvastatin</td><td>atherosclerosis</td><td></td><td>3.4%</td><td>99.7%</td></tr><tr><td>Atorvastatin</td><td>coronary artery disease</td><td>DM</td><td>3.2%</td><td>96.7%</td></tr><tr><td>Fluvastatin</td><td>hypertension</td><td></td><td>3.1%</td><td>92.0%</td></tr><tr><td>Pitavastatin</td><td>hypertension</td><td></td><td>2.6%</td><td>91.0%</td></tr><tr><td>Simvastatin</td><td>type 2 diabetes mellitus</td><td>NOT</td><td>1.6%</td><td>95.4%</td></tr><tr><td>Rosuvastatin</td><td>atherosclerosis</td><td>DM</td><td>1.4%</td><td>98.7%</td></tr><tr><td>Pravastatin</td><td>type 2 diabetes mellitus</td><td></td><td>1.3%</td><td>94.5%</td></tr><tr><td>Lovastatin</td><td>type 2 diabetes mellitus</td><td></td><td>1.3%</td><td>94.4%</td></tr><tr><td>Rosuvastatin</td><td>type 2 diabetes mellitus</td><td></td><td>1.3%</td><td>94.3%</td></tr><tr><td>Pitavastatin</td><td>type 2 diabetes mellitus</td><td></td><td>1.2%</td><td>93.6%</td></tr><tr><td>Atorvastatin</td><td>type 2 diabetes mellitus</td><td>NOT</td><td>1.1%</td><td>93.1%</td></tr><tr><td>Rosuvastatin</td><td>hypertension</td><td></td><td>1.0%</td><td>79.5%</td></tr></tbody></table>
+
+<p>It appears above the algorithm likes some of the other statins more than atorvastatin for hypertension. Here are the top <a href="http://het.io/repurpose/browse.html?id=DB01076">results for atorvastatin</a>:</p>
+
+<table class="table markdown-table"><thead><tr><th>compound_name</th><th>disease_name</th><th>category</th><th>prediction</th><th>compound_percentile</th><th>disease_percentile</th></tr></thead><tbody><tr><td>Atorvastatin</td><td>atherosclerosis</td><td></td><td>3.39%</td><td>100.00%</td><td>99.67%</td></tr><tr><td>Atorvastatin</td><td>coronary artery disease</td><td>DM</td><td>3.23%</td><td>99.26%</td><td>96.75%</td></tr><tr><td>Atorvastatin</td><td>type 2 diabetes mellitus</td><td>NOT</td><td>1.09%</td><td>98.53%</td><td>93.11%</td></tr><tr><td>Atorvastatin</td><td>obesity</td><td></td><td>0.46%</td><td>97.79%</td><td>76.20%</td></tr><tr><td>Atorvastatin</td><td>chronic kidney failure</td><td></td><td>0.42%</td><td>97.06%</td><td>95.45%</td></tr><tr><td>Atorvastatin</td><td>metabolic syndrome X</td><td></td><td>0.42%</td><td>96.32%</td><td>95.77%</td></tr><tr><td>Atorvastatin</td><td>epilepsy syndrome</td><td></td><td>0.36%</td><td>95.59%</td><td>53.38%</td></tr><tr><td>Atorvastatin</td><td>Kawasaki disease</td><td></td><td>0.36%</td><td>94.85%</td><td>95.12%</td></tr><tr><td>Atorvastatin</td><td>hypertension</td><td>DM</td><td>0.35%</td><td>94.12%</td><td>45.64%</td></tr><tr><td>Atorvastatin</td><td>focal segmental glomerulosclerosis</td><td></td><td>0.33%</td><td>93.38%</td><td>93.89%</td></tr><tr><td>Atorvastatin</td><td>primary biliary cirrhosis</td><td></td><td>0.32%</td><td>92.65%</td><td>87.78%</td></tr><tr><td>Atorvastatin</td><td>prostate cancer</td><td></td><td>0.32%</td><td>91.91%</td><td>66.38%</td></tr><tr><td>Atorvastatin</td><td>acquired immunodeficiency syndrome</td><td></td><td>0.30%</td><td>91.18%</td><td>62.74%</td></tr><tr><td>Atorvastatin</td><td>rheumatoid arthritis</td><td></td><td>0.29%</td><td>90.44%</td><td>79.00%</td></tr><tr><td>Atorvastatin</td><td>breast cancer</td><td></td><td>0.28%</td><td>89.71%</td><td>58.13%</td></tr><tr><td>Atorvastatin</td><td>pancreatic cancer</td><td></td><td>0.27%</td><td>88.97%</td><td>80.17%</td></tr><tr><td>Atorvastatin</td><td>lung cancer</td><td></td><td>0.27%</td><td>88.24%</td><td>73.02%</td></tr></tbody></table>
+
+<p>Hypertension is highly ranked for atorvastatin, but atorvastatin is not highly ranked for hypertension.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-289" class="inline-note toggle-parent" data-note-id="289">
+	<p><a href="/u/pouyakhankhanian">Pouya Khankhanian</a>: note, my filter above also included pentostatin as a statin. I manually removed this in a re-post
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="16" data-comment-id="1407">
+  <td class="comment-profile-avatar">
+		<a href="/u/mkgilson"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/s/img/p_default_medium.png' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1407"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/mkgilson">Mike Gilson</a>
+				
+				<span class="light">&nbsp;<a href="#16" class="light">215 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Thanks, this is very informative!  I agree that treatment of HTN and HLD are two parts of the same battle — reduction of cardiovascular risk — but this in itself would not be a good rationale for saying atorvastatin is indicated for HTN; only that elevated cardiovscular risk may be viewed as an indication for both statins and antihypertensives.  If being two parts of the same battle were valid, then one would, by the same token, say that hypercholesterolemia is an indication for antihypertensives!</p>
+
+<p>As to the literature regarding antihypertensive effects of statins– I'm skeptical that any physician would regard HTN as an off-label indication for a statin. I wonder if there is a way to find out...</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-286" class="inline-note toggle-parent" data-note-id="286">
+	<p><a href="/u/pouyakhankhanian">Pouya Khankhanian</a>: agree that this is not a rationale for saying atorva it is indicated in htn. i present this as a rationale for why we may never know the true answer.</p>
+
+<p>i also wholly agree that physicians do not regard HTN as an off-label indication for a statin. (note that this is not how "DM" was defined).
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="17" data-comment-id="1408">
+  <td class="comment-profile-avatar">
+		<a href="/u/mkgilson"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/s/img/p_default_medium.png' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1408"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/mkgilson">Mike Gilson</a>
+				
+				<span class="light">&nbsp;<a href="#17" class="light">215 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Thanks again.  What exactly does DM mean?</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-287" class="inline-note toggle-parent" data-note-id="287">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: It's a shorthand for disease-modifying indication. In <a href="https://thinklab.com/discussion/announcing-pharmacotherapydb-the-open-catalog-of-drug-therapies-for-disease/182" class="citation thread-citation" data-key="10.15363/thinklab.d182">PharmacotherapyDB</a>, the three physicians classified each indication as disease modifying (DM), symptomatic (SYM), or non-indication (NOT).
+		
+	</p>
+	
+	<table style="display:none;"><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d182' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d182'><a href='/discussion/announcing-pharmacotherapydb-the-open-catalog-of-drug-therapies-for-disease/182' class='pub-title'>Announcing PharmacotherapyDB: the Open Catalog of Drug Therapies for Disease</a><div class='pub-body'>Daniel Himmelstein (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d182'>10.15363/thinklab.d182</a></div></div></td></tr></table>
+</li>
+
+<li id="note-290" class="inline-note toggle-parent" data-note-id="290">
+	<p><a href="/u/pouyakhankhanian">Pouya Khankhanian</a>: The definition of DM was a subject of great debate, and was finally defined in <a href="https://thinklab.com/discussion/expert-curation-of-our-indication-catalog-for-disease-modifying-treatments/95" class="citation thread-citation" data-key="10.15363/thinklab.d95">this discussion</a></p>
+
+<p>Abstracted from that discussion:<br>Definitions:</p>
+
+<p>disease modifying (DM) — a drug that therapeutically changes the underlying or downstream biology of the disease<br>symptomatic (SYM) — a drug that treats a significant symptom of the disease<br>non-indication (NOT) — a drug that neither therapeutically changes the underlying or downstream biology nor treats a significant symptom of the disease<br>Guidelines:</p>
+
+<p>reasonable evidence of efficacy is required to be classified as disease modifying or symptomatic. This includes off-label use.<br>if no classification accurately describes an indication, the most appropriate (although imperfect) classification should be chosen</p>
+
+<p>Amendment 1: if a drug was previously indicated, but is no longer used due to side effects, or because there are better drugs, it is still considered DM<br>Amendment 2: it doesn't matter whether it is first line or fifth line, it's still considered DM<br>Assumptions:</p>
+
+<p>Assumption 1: DM trumps SYM. If a drug is clearly both disease modifying and also treats symptoms, then I will call it disease modifying. This is because most disease modifying drugs also treat symptoms.</p>
+
+<p>Assumption 2: SYM trumps NOT. If a drug is clearly symptomatic treatment, but can actually exacerbate the downstream biology of disease, then I chose SYM. I made this choice because this was the choice I saw most often made by AJG and CSH
+		
+	</p>
+	
+	<table style="display:none;"><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d95' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d95'><a href='/discussion/expert-curation-of-our-indication-catalog-for-disease-modifying-treatments/95' class='pub-title'>Expert curation of our indication catalog for disease-modifying treatments</a><div class='pub-body'>Daniel Himmelstein, Pouya Khankhanian, Chrissy Hessler (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d95'>10.15363/thinklab.d95</a></div></div></td></tr></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="18" data-comment-id="1409">
+  <td class="comment-profile-avatar">
+		<a href="/u/mkgilson"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/s/img/p_default_medium.png' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1409"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/mkgilson">Mike Gilson</a>
+				
+				<span class="light">&nbsp;<a href="#18" class="light">215 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Interesting classification. So for HTN, are all drugs either DM or NOT, given that HTN is typically asymptomatic?</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="19" data-comment-id="1410">
+  <td class="comment-profile-avatar">
+		<a href="/u/mkgilson"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/s/img/p_default_medium.png' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1410"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/mkgilson">Mike Gilson</a>
+				
+				<span class="light">&nbsp;<a href="#19" class="light">215 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>I can relate to the challenge of arriving at hard definitions for concepts in biology and medicine that turn out to be complicated and case-dependent!  </p>
+
+<p>One thing that comes to mind is that, in medicine, a "symptom" is something a patient experiences. Thus,  HTN is not a symptom. Instead, it is a "sign", something the physician may observe.  There's the further complexity that essential HTN is probably best regarded as its own disease, whereas secondary HTN (e.g. due to renal artery stenosis), might not be best to regard as its own disease. </p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="20" data-comment-id="1411">
+  <td class="comment-profile-avatar">
+		<a href="/u/pouyakhankhanian"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/188_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1411"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/pouyakhankhanian">Pouya Khankhanian</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#20" class="light">214 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p><a href="/u/mkgilson" class="username">@mkgilson</a> posts an interesting question about disease classification in hypertension.</p>
+
+<p>The answer is found in <a href="https://github.com/dhimmel/indications/blob/d3d57b07abcf8d7af55f8e42ef7c4c99acd87ca8/curation/pk/template-pk%20final.xlsx">this file</a> which documents our decision making for each call (in the first sheet). Also the <a href="https://thinklab.com/discussion/expert-curation-of-our-indication-catalog-for-disease-modifying-treatments/95#7" class="citation thread-citation" data-key="10.15363/thinklab.d95">discussion of the file here</a>. </p>
+
+<p>To answer your specific question, there were two medications (diazoxide and phentolamine) which were classified as SYM for HTN because they were only used in the treatment of hypertensive emergency, which we decided was a sort of symptom of hypertension. Again, a very grey line and open to <a href="https://thinklab.com/discussion/expert-curation-of-our-indication-catalog-for-disease-modifying-treatments/95#7" class="citation thread-citation" data-key="10.15363/thinklab.d95">debate regarding what "hypertension" is and what it means to be DM vs SYM, (if you search the word "hypertension" on this page)</a>. Interesting to note in the predictions for these two drugs, both were predicted to be good treatments for hypertension (the entity of hypertension as we have defined it). </p>
+
+<table class="table markdown-table"><thead><tr><th>compound_id</th><th>DB01119</th><th>DB00692</th></tr></thead><tbody><tr><td>compound_name</td><td>Diazoxide</td><td>Phentolamine</td></tr><tr><td>disease_id</td><td>DOID:10763</td><td>DOID:10763</td></tr><tr><td>disease_name</td><td>hypertension</td><td>hypertension</td></tr><tr><td>category</td><td>SYM</td><td>SYM</td></tr><tr><td>status</td><td>0</td><td>0</td></tr><tr><td>prior_prob</td><td>0</td><td>0</td></tr><tr><td>prediction</td><td>0.117634071</td><td>0.022183046</td></tr><tr><td>training_prediction</td><td></td><td></td></tr><tr><td>compound_percentile</td><td>1</td><td>1</td></tr><tr><td>disease_percentile</td><td>0.976592978</td><td>0.900520156</td></tr></tbody></table>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="21" data-comment-id="1412">
+  <td class="comment-profile-avatar">
+		<a href="/u/mkgilson"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/s/img/p_default_medium.png' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1412"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/mkgilson">Mike Gilson</a>
+				
+				<span class="light">&nbsp;<a href="#21" class="light">214 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Since other people may have similar questions to mine, how about putting your definitions/usage of DM, SYM and NOT in, e.g., the FAQ? Sorry if it's there and I'm missing it.</p>
+
+<p>Back to the details... my off the cuff thought would have been that essentially none of the common HTN drugs are disease modifying because they don't treat the underlying cause. They only compensate for it, so if you stop taking them, the HTN is back the same as ever.  So the disease isn't modified. In contrast, an antibiotic truly eliminates the root cause of an infection. </p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="22" data-comment-id="1413">
+  <td class="comment-profile-avatar">
+		<a href="/u/pouyakhankhanian"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/188_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1413"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/pouyakhankhanian">Pouya Khankhanian</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#22" class="light">214 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Regarding your comment about a drug not being designated as DM because withdrawal of the drug causes relapse of the disease, one could make the same argument for many other diseases: anti-epileptic drugs do not cure epilepsy, immuno-suppressants do not cure auto-immune disease, and chemo-therapies do not cure most cases of cancer. But this decision (DM vs SYM) is actually academic.</p>
+
+<p>When looking at the input to the algorithm, as you do here, recall that the data feeds in essentially as binary (and I believe SYM was essentially treated as "on" in the main report but we also ran it as "off", <a href="/u/dhimmel" class="username">@dhimmel</a> would have to confirm this). So to switch all of a disease's agents from SYM to DM would not really change the output of the algorithm. Also recall that there are abundant false negatives in the input data. This level of false negatives was unfortunately quite necessary but also very proved very important in testing the output of the data. </p>
+
+<p>So, assuming a connection is truly DM but we mis-label it as NOT, then that would add to the already abundant false negative rate in the input data and presumably have little effect on the output. Therefore, I would not be strongly against removing any edge (changing DM to NOT) in the input data in general. And I know that <a href="/u/dhimmel" class="username">@dhimmel</a> tested his algorithm to be robust to such perturbations in the input. </p>
+
+<p>Moving forward, the algorithm is meant to be automatically update-able in the future. I think it would be cool to crowdsource the input, essentially taking a vote as to whether things should be DM or SYM or NOT. </p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-292" class="inline-note toggle-parent" data-note-id="292">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: Great points. Just wanted to clarify that symptomatic treatments were not used as positives to train the model. Only disease-modifying (DM) treatments were. In fact, symptomatic treatments were considered negatives, but excluding them all together wouldn't have made a big difference (since there were 29,044 negatives, of which only 390 were symptomatic treatments).
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="23" data-comment-id="1414">
+  <td class="comment-profile-avatar">
+		<a href="/u/mkgilson"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/s/img/p_default_medium.png' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1414"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/mkgilson">Mike Gilson</a>
+				
+				<span class="light">&nbsp;<a href="#23" class="light">214 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>I'm perhaps overly influenced by the use of "disease modifying" in the context of rhematoid arthritis: <a href="https://en.wikipedia.org/wiki/Disease-modifying_antirheumatic_drug">https://en.wikipedia.org/wiki/Disease-modifying_antirheumatic_drug</a> The specific meaning is that such a drug prevents joint damage, rather than just reducing pain. By analogy, I'd agree that antiepileptics are not disease modifying.  Other cases get tougher.  I'm impressed in any case by the level of care you guys have put into all of this.  </p>
+
+<p>Dumb question: what algorithm? I was viewing this only as a database.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-295" class="inline-note toggle-parent" data-note-id="295">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: <a href="/u/mkgilson" class="username">@mkgilson</a> Just to clear things up. Three different resources have been discussed for whether a drug treats a disease. First, <a href="http://drugcentral.org/">DrugCentral</a> — a resource created by <a href="/u/TIOprea" class="username">@TIOprea</a> and <a href="/u/olegursu" class="username">@olegursu</a> <span class="citation">[<a href="https://doi.org/10.1093/nar/gkw993" class="citation" data-key="10.1093/nar/gkw993">1</a>]</span> — which is the main topic of this thread. Second, PharmacotherapyDB <span class="citation">[<a href="/discussion/announcing-pharmacotherapydb-the-open-catalog-of-drug-therapies-for-disease/182" class="citation" data-key="10.15363/thinklab.d182">2</a>, <a href="https://doi.org/10.6084/m9.figshare.3103054" class="citation" data-key="10.6084/m9.figshare.3103054">3</a>]</span>, which is a catalog of physician curated indications that <a href="/u/pouyakhankhanian" class="username">@pouyakhankhanian</a> helped create for this study (Project Rephetio). Third, the Project Rephetio predictions available at <a href="http://het.io/repurpose/">http://het.io/repurpose/</a> <span class="citation">[<a href="/p/rephetio/report" class="citation" data-key="10.15363/thinklab.a7">4</a>, <a href="/discussion/predictions-of-whether-a-compound-treats-a-disease/203" class="citation" data-key="10.15363/thinklab.d203">5</a>]</span>. DrugCentral and PharmacotherapyDB both compiled known indications and both considered atorvastatin as a treatment for hypertension. I <a href="https://github.com/dhimmel/indications/issues/1">opened an issue</a> on the PharmacotherapyDB GitHub repository, so future versions will correct this. The Project Rephetio predictions are the result of an algorithm, but are not themselves just probabilities of treatment, not definitive evidence of drug efficacy.
+		
+	</p>
+	
+	<table style="display:none;"><tr><td><a href='/doi/10.1093/nar/gkw993' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkw993'><a href='/doi/10.1093/nar/gkw993' class='pub-title'>DrugCentral: online drug compendium</a><div class='pub-body'>Oleg Ursu, Jayme Holmes, Jeffrey Knockel, Cristian G. Bologa, Jeremy J. Yang, Stephen L. Mathias, Stuart J. Nelson, Tudor I. Oprea (2016) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkw993'>10.1093/nar/gkw993</a></div></div></td></tr><tr><td><a href='/doi/10.15363/thinklab.d182' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>2.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d182'><a href='/discussion/announcing-pharmacotherapydb-the-open-catalog-of-drug-therapies-for-disease/182' class='pub-title'>Announcing PharmacotherapyDB: the Open Catalog of Drug Therapies for Disease</a><div class='pub-body'>Daniel Himmelstein (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d182'>10.15363/thinklab.d182</a></div></div></td></tr><tr><td><a href='/doi/10.6084/m9.figshare.3103054' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>3.</div></td><td><div class='doi-body' data-key='10.6084/m9.figshare.3103054'><a href='/doi/10.6084/m9.figshare.3103054' class='pub-title'>PharmacotherapyDB 1.0: the open catalog of drug therapies for disease</a><div class='pub-body'>Daniel Himmelstein, Pouya Khankhanian, Christine S. Hessler, Ari J. Green, Sergio Baranzini (2016) <i>Figshare</i>. doi:<a class='pub-doi' href='https://doi.org/10.6084/m9.figshare.3103054'>10.6084/m9.figshare.3103054</a></div></div></td></tr><tr><td><a href='/doi/10.15363/thinklab.a7' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>4.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.a7'><a href='/p/rephetio/report' class='pub-title'>Rephetio: Repurposing drugs on a hetnet [report]</a><div class='pub-body'>Daniel Himmelstein, Antoine Lizee, Chrissy Hessler, Leo Brueggeman, Sabrina Chen, Dexter Hadley, Ari Green, Pouya Khankhanian, Sergio Baranzini (2016) <i>Thinklab</i>. doi:<a class='pub-doi' href='https://doi.org/10.15363/thinklab.a7'>10.15363/thinklab.a7</a></div></div></td></tr><tr><td><a href='/doi/10.15363/thinklab.d203' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>5.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d203'><a href='/discussion/predictions-of-whether-a-compound-treats-a-disease/203' class='pub-title'>Predictions of whether a compound treats a disease</a><div class='pub-body'>Daniel Himmelstein, Chrissy Hessler, Pouya Khankhanian (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d203'>10.15363/thinklab.d203</a></div></div></td></tr></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="24" data-comment-id="1416">
+  <td class="comment-profile-avatar">
+		<a href="/u/pouyakhankhanian"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/188_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1416"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/pouyakhankhanian">Pouya Khankhanian</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#24" class="light">214 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>To answer <a href="/u/mkgilson" class="username">@mkgilson</a> 's question, the <a href="https://thinklab.com/discussion/predictions-of-whether-a-compound-treats-a-disease/203" class="citation thread-citation" data-key="10.15363/thinklab.d203">algorithm (described here)</a> used the database of connections to predict what drugs would treat what disease. The <a href="https://thinklab.com/discussion/predictions-of-whether-a-compound-treats-a-disease/203" class="citation thread-citation" data-key="10.15363/thinklab.d203">results</a> are also found in the same discussion.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="25" data-comment-id="1417">
+  <td class="comment-profile-avatar">
+		<a href="/u/TIOprea"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/75_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1417"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/TIOprea">Tudor Oprea</a>
+				
+				<span class="light">&nbsp;<a href="#25" class="light">213 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Should have responded sooner, but got side-tracked with my own work and was told by <a href="/u/olegursu" class="username">@olegursu</a> that he had answered this. So here's my two cents as to why Atorvastatin got annotated as treatment for essential hypertension, an indication "bleeding" from OMOP (now rebranded as OHDSI) that probably should have been carefully revised. <br>First off, I agree with <a href="/u/mkgilson" class="username">@mkgilson</a>, atorvastatin has no business treating HTN. It simply does not lower blood pressure. Some preliminary results suggested this to be the case, but systematic analysis did not reproduce this. <a href="http://www.medscape.org/viewarticle/494555">http://www.medscape.org/viewarticle/494555</a> - in particular the study from Ostra Sjuikuset / Gothenburg / Sweden shows no difference (though the UCSD Statin Study claims a small effect). <br>I went to STITCH and looked at direct evidence for interacting partners between atorvastatin and proteins (http://stitch.embl.de/cgi/network.pl?taskId=JEpR8IjKFotd) but could not piece together any direct (or even indirect) way for this molecule to lower blood pressure. As additional qualifier, I did my PhD in molecular physiology and studied catecholamines for 5 years, and am somewhat familiar with mechanisms for lowering blood pressure. <br>Second, and here's where I <em>hypothesize</em> that FirstDataBank annotators (hence OMOP and now DrugCentral) got this wrong: Atorvastatin is formulated not only as LIPITOR but also as CADUET. And CADUET contains amlodipine besylate in addition to atorvastatin calcium (https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=909fad96-a941-443a-a39f-4f93607410fb). Error understandable, case closed.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-294" class="inline-note toggle-parent" data-note-id="294">
+	<p><a href="/u/pouyakhankhanian">Pouya Khankhanian</a>: quite nice. thank you.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="26" data-comment-id="1418">
+  <td class="comment-profile-avatar">
+		<a href="/u/mkgilson"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/s/img/p_default_medium.png' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1418"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/mkgilson">Mike Gilson</a>
+				
+				<span class="light">&nbsp;<a href="#26" class="light">213 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Hi Tudor. I can see how the caduet case could have generated this anomaly.  Is the lesson to  omit data for combination drugs?</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="27" data-comment-id="1419">
+  <td class="comment-profile-avatar">
+		<a href="/u/TIOprea"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/75_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1419"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/TIOprea">Tudor Oprea</a>
+				
+				<span class="light">&nbsp;<a href="#27" class="light">212 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p><a href="/u/mkgilson" class="username">@mkgilson</a>: definitely, I would start with 1-active ingredient drugs only, and build my Indications that way. Then go through 2-APIs and match known indications, and look for synergies (e.g., are there new indications for the combo that do not work when taking the 2 drugs separately). And so forth...</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="28" data-comment-id="1420">
+  <td class="comment-profile-avatar">
+		<a href="/u/TIOprea"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/75_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1420"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/TIOprea">Tudor Oprea</a>
+				
+				<span class="light">&nbsp;<a href="#28" class="light">212 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Just one additional point of clarification, with respect to the 1-2 mm Hg blood pressure lowering effect of atorvastatin from the UCSD Statin Study group (http://www.medscape.org/viewarticle/494555). In the first 4 years of medical school, I measured blood pressure (manually) for more than 100 patients, as well as 20 healthy volunteers. Differences of 5 mm Hg are found just by shifting from left hand to right hand; measuring the same person the same time, next day, can give that variation; measurements done by someone else (recall this was done using a stethoscope under the cuff) can give even more variations; and so forth. This is important enough that it warrants its own error table... <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3104931/table/T2/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3104931/table/T2/</a>. Since that Statin Study group Medscape reference is an abstract at a conference (i.e., no follow-up peer reviewed paper), we can most likely attribute those differences to experimental error, and conclude that the effect is not there.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="29" data-comment-id="1421">
+  <td class="comment-profile-avatar">
+		<a href="/u/mkgilson"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/s/img/p_default_medium.png' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1421"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/mkgilson">Mike Gilson</a>
+				
+				<span class="light">&nbsp;<a href="#29" class="light">212 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>I agree with you, Tudor. That's why I characterized the drop as "paltry" :-)  (Though, in principle, if one averages over enough data, one could resolve a shift in the mean of 2 mm Hg using data with a 5 mm Hg standard deviation.)</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+    		
+		</table>
+
+    
+
+    &nbsp;<br>
+    <a class="btn btn-primary btn-lg" href="/signup?next=/discussion/incorporating-drugcentral-data-in-our-network/186&suppress_message=1" style>Join to Reply</a>
+
+
+		<table class="references table-td-5" style="display:none;"><tr><td><a href='/doi/10.1016/j.drudis.2011.12.020' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.1016/j.drudis.2011.12.020'><a href='/doi/10.1016/j.drudis.2011.12.020' class='pub-title'>Can the flow of medicines be improved? Fundamental pharmacokinetic and pharmacological principles toward improving Phase II survival</a><div class='pub-body'>Paul Morgan, Piet H. Van Der Graaf, John Arrowsmith, Doug E. Feltner, Kira S. Drummond, Craig D. Wegner, Steve D.A. Street (2012) <i>Drug Discovery Today</i>. doi:<a class='pub-doi' href='https://doi.org/10.1016/j.drudis.2011.12.020'>10.1016/j.drudis.2011.12.020</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d65' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>2.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d65'><a href='/discussion/protein-target-carrier-transporter-and-enzyme-interactions-in-drugbank/65' class='pub-title'>Protein (target, carrier, transporter, and enzyme) interactions in DrugBank</a><div class='pub-body'>Daniel Himmelstein, Sabrina Chen (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d65'>10.15363/thinklab.d65</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d53' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>3.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d53'><a href='/discussion/integrating-drug-target-information-from-bindingdb/53' class='pub-title'>Integrating drug target information from BindingDB</a><div class='pub-body'>Daniel Himmelstein, Mike Gilson (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d53'>10.15363/thinklab.d53</a></div></div></td></tr><tr><td><a href='/doi/10.7326/0003-4819-153-9-201011020-00010' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>4.</div></td><td><div class='doi-body' data-key='10.7326/0003-4819-153-9-201011020-00010'><a href='/doi/10.7326/0003-4819-153-9-201011020-00010' class='pub-title'>Advancing the Science for Active Surveillance: Rationale and Design for the Observational Medical Outcomes Partnership</a><div class='pub-body'>Paul E. Stang, Patrick B. Ryan, Judith A. Racoosin, J. Marc Overhage, Abraham G. Hartzema, Christian Reich, Emily Welebob, Thomas Scarnecchia, Janet Woodcock (2010) <i>Annals of Internal Medicine</i>. doi:<a class='pub-doi' href='https://doi.org/10.7326/0003-4819-153-9-201011020-00010'>10.7326/0003-4819-153-9-201011020-00010</a></div></div></td></tr><tr><td><a href='/doi/10.3233/978-1-61499-564-7-574' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>5.</div></td><td><div class='doi-body' data-key='10.3233/978-1-61499-564-7-574'><a href='/doi/10.3233/978-1-61499-564-7-574' class='pub-title'>Observational Health Data Sciences and Informatics (OHDSI): Opportunities for Observational Researchers</a><div class='pub-body'>Hripcsak George, Duke Jon D, Shah Nigam H, Reich Christian G, Huser Vojtech, Schuemie Martijn J, Suchard Marc A, Park Rae Woong, Wong Ian Chi Kei, Rijnbeek Peter R, van der Lei Johan, Pratt Nicole, Nor&amp;eacute;n G. Niklas, Li Yu-Chuan, Stang Paul E, Madigan David, Ryan Patrick B (2015) <i>Studies in Health Technology and Informatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.3233/978-1-61499-564-7-574'>10.3233/978-1-61499-564-7-574</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d182' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>6.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d182'><a href='/discussion/announcing-pharmacotherapydb-the-open-catalog-of-drug-therapies-for-disease/182' class='pub-title'>Announcing PharmacotherapyDB: the Open Catalog of Drug Therapies for Disease</a><div class='pub-body'>Daniel Himmelstein (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d182'>10.15363/thinklab.d182</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d21' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>7.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d21'><a href='/discussion/how-should-we-construct-a-catalog-of-drug-indications/21' class='pub-title'>How should we construct a catalog of drug indications?</a><div class='pub-body'>Daniel Himmelstein, Benjamin Good, Tudor Oprea, Allison McCoy, Antoine Lizee (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d21'>10.15363/thinklab.d21</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d95' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>8.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d95'><a href='/discussion/expert-curation-of-our-indication-catalog-for-disease-modifying-treatments/95' class='pub-title'>Expert curation of our indication catalog for disease-modifying treatments</a><div class='pub-body'>Daniel Himmelstein, Pouya Khankhanian, Chrissy Hessler (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d95'>10.15363/thinklab.d95</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d182' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>9.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d182'><a href='/discussion/announcing-pharmacotherapydb-the-open-catalog-of-drug-therapies-for-disease/182' class='pub-title'>Announcing PharmacotherapyDB: the Open Catalog of Drug Therapies for Disease</a><div class='pub-body'>Daniel Himmelstein (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d182'>10.15363/thinklab.d182</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d44' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>10.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d44'><a href='/discussion/unifying-disease-vocabularies/44' class='pub-title'>Unifying disease vocabularies</a><div class='pub-body'>Daniel Himmelstein, Tong Shu Li (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d44'>10.15363/thinklab.d44</a></div></div></td></tr><tr><td><a href='/doi/10.1093/bioinformatics/btr164' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>11.</div></td><td><div class='doi-body' data-key='10.1093/bioinformatics/btr164'><a href='/doi/10.1093/bioinformatics/btr164' class='pub-title'>Reasoning with bio-ontologies: using relational closure rules to enable practical querying</a><div class='pub-body'>W. Blonde, V. Mironov, A. Venkatesan, E. Antezana, B. De Baets, M. Kuiper (2011) <i>Bioinformatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/bioinformatics/btr164'>10.1093/bioinformatics/btr164</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d95' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>12.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d95'><a href='/discussion/expert-curation-of-our-indication-catalog-for-disease-modifying-treatments/95' class='pub-title'>Expert curation of our indication catalog for disease-modifying treatments</a><div class='pub-body'>Daniel Himmelstein, Pouya Khankhanian, Chrissy Hessler (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d95'>10.15363/thinklab.d95</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkw993' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>13.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkw993'><a href='/doi/10.1093/nar/gkw993' class='pub-title'>DrugCentral: online drug compendium</a><div class='pub-body'>Oleg Ursu, Jayme Holmes, Jeffrey Knockel, Cristian G. Bologa, Jeremy J. Yang, Stephen L. Mathias, Stuart J. Nelson, Tudor I. Oprea (2016) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkw993'>10.1093/nar/gkw993</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkw993' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>14.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkw993'><a href='/doi/10.1093/nar/gkw993' class='pub-title'>DrugCentral: online drug compendium</a><div class='pub-body'>Oleg Ursu, Jayme Holmes, Jeffrey Knockel, Cristian G. Bologa, Jeremy J. Yang, Stephen L. Mathias, Stuart J. Nelson, Tudor I. Oprea (2016) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkw993'>10.1093/nar/gkw993</a></div></div></td></tr><tr><td><a href='/doi/10.5114/aoms.2012.27270' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>15.</div></td><td><div class='doi-body' data-key='10.5114/aoms.2012.27270'><a href='/doi/10.5114/aoms.2012.27270' class='pub-title'>Editorial The effects of statins on blood pressure: current knowledge and future perspectives</a><div class='pub-body'>Manfredi Rizzo, Giuseppe Montalto, Maciej Banach (2012) <i>Archives of Medical Science</i>. doi:<a class='pub-doi' href='https://doi.org/10.5114/aoms.2012.27270'>10.5114/aoms.2012.27270</a></div></div></td></tr><tr><td><a href='/doi/10.1038/jhh.2011.80' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>16.</div></td><td><div class='doi-body' data-key='10.1038/jhh.2011.80'><a href='/doi/10.1038/jhh.2011.80' class='pub-title'>Low-dose atorvastatin reduces ambulatory blood pressure in patients with mild hypertension and hypercholesterolaemia: a double-blind, randomized, placebo-controlled study</a><div class='pub-body'>A I Kanaki, P A Sarafidis, P I Georgianos, P C Stafylas, K Kanavos, I M Tziolas, A N Lasaridis (2011) <i>Journal of Human Hypertension</i>. doi:<a class='pub-doi' href='https://doi.org/10.1038/jhh.2011.80'>10.1038/jhh.2011.80</a></div></div></td></tr><tr><td><a href='/doi/10.1177/1074248407300380' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>17.</div></td><td><div class='doi-body' data-key='10.1177/1074248407300380'><a href='/doi/10.1177/1074248407300380' class='pub-title'>Do Statins Lower Blood Pressure?</a><div class='pub-body'>S. Mangat, S. Agarwal, C. Rosendorff (2007) <i>Journal of Cardiovascular Pharmacology and Therapeutics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1177/1074248407300380'>10.1177/1074248407300380</a></div></div></td></tr><tr><td><a href='/doi/10.3109/08037050903576726' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>18.</div></td><td><div class='doi-body' data-key='10.3109/08037050903576726'><a href='/doi/10.3109/08037050903576726' class='pub-title'>Influence of atorvastatin on blood pressure control in treated hypertensive, normolipemic patients – An open, pilot study</a><div class='pub-body'>Agnieszka M. Kuklinska, Barbara Mroczko, Wlodzimierz J. Musial, Robert Sawicki, Anna Kozieradzka, Monika Usowicz-Szarynska, Karol Kaminski, Malgorzata Knapp, Maciej Szmitkowski (2010) <i>Blood Pressure</i>. doi:<a class='pub-doi' href='https://doi.org/10.3109/08037050903576726'>10.3109/08037050903576726</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d182' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>19.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d182'><a href='/discussion/announcing-pharmacotherapydb-the-open-catalog-of-drug-therapies-for-disease/182' class='pub-title'>Announcing PharmacotherapyDB: the Open Catalog of Drug Therapies for Disease</a><div class='pub-body'>Daniel Himmelstein (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d182'>10.15363/thinklab.d182</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d95' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>20.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d95'><a href='/discussion/expert-curation-of-our-indication-catalog-for-disease-modifying-treatments/95' class='pub-title'>Expert curation of our indication catalog for disease-modifying treatments</a><div class='pub-body'>Daniel Himmelstein, Pouya Khankhanian, Chrissy Hessler (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d95'>10.15363/thinklab.d95</a></div></div></td></tr><tr><td><a href='/doi/10.3109/08037050903576726' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>21.</div></td><td><div class='doi-body' data-key='10.3109/08037050903576726'><a href='/doi/10.3109/08037050903576726' class='pub-title'>Influence of atorvastatin on blood pressure control in treated hypertensive, normolipemic patients – An open, pilot study</a><div class='pub-body'>Agnieszka M. Kuklinska, Barbara Mroczko, Wlodzimierz J. Musial, Robert Sawicki, Anna Kozieradzka, Monika Usowicz-Szarynska, Karol Kaminski, Malgorzata Knapp, Maciej Szmitkowski (2010) <i>Blood Pressure</i>. doi:<a class='pub-doi' href='https://doi.org/10.3109/08037050903576726'>10.3109/08037050903576726</a></div></div></td></tr><tr><td><a href='/doi/10.1001/jama.2013.284427' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>22.</div></td><td><div class='doi-body' data-key='10.1001/jama.2013.284427'><a href='/doi/10.1001/jama.2013.284427' class='pub-title'>2014 Evidence-Based Guideline for the Management of High Blood Pressure in Adults</a><div class='pub-body'>Paul A. James, Suzanne Oparil, Barry L. Carter, William C. Cushman, Cheryl Dennison-Himmelfarb, Joel Handler, Daniel T. Lackland, Michael L. LeFevre, Thomas D. MacKenzie, Olugbenga Ogedegbe, Sidney C. Smith, Laura P. Svetkey, Sandra J. Taler, Raymond R. Townsend, Jackson T. Wright, Andrew S. Narva, Eduardo Ortiz (2014) <i>JAMA</i>. doi:<a class='pub-doi' href='https://doi.org/10.1001/jama.2013.284427'>10.1001/jama.2013.284427</a></div></div></td></tr><tr><td><a href='/doi/10.1016/j.clinthera.2016.09.005' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>23.</div></td><td><div class='doi-body' data-key='10.1016/j.clinthera.2016.09.005'><a href='/doi/10.1016/j.clinthera.2016.09.005' class='pub-title'>Blood Pressure and Cholesterol-lowering Efficacy of a Fixed-dose Combination With Irbesartan and Atorvastatin in Patients With Hypertension and Hypercholesterolemia: A Randomized, Double-blind, Factorial, Multicenter Phase III Study</a><div class='pub-body'>Sang-Hyun Kim, Sang-Ho Jo, Sang-Cheol Lee, Sung-Yoon Lee, Myung-Ho Yoon, Hyang-Lim Lee, Nae-Hee Lee, Jong-Won Ha, Nam-Ho Lee, Dong-Woon Kim, Gyu-Rok Han, Min-Su Hyon, Deok-Gyu Cho, Chang-Gyu Park, Young-Dae Kim, Gyu-Hyung Ryu, Cheol-Ho Kim, Kee-Sik Kim, Myung-Ho Chung, Sung-Chul Chae, Ki-Bae Seung, Byung-Hee Oh (2016) <i>Clinical Therapeutics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1016/j.clinthera.2016.09.005'>10.1016/j.clinthera.2016.09.005</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d182' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>24.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d182'><a href='/discussion/announcing-pharmacotherapydb-the-open-catalog-of-drug-therapies-for-disease/182' class='pub-title'>Announcing PharmacotherapyDB: the Open Catalog of Drug Therapies for Disease</a><div class='pub-body'>Daniel Himmelstein (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d182'>10.15363/thinklab.d182</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d95' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>25.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d95'><a href='/discussion/expert-curation-of-our-indication-catalog-for-disease-modifying-treatments/95' class='pub-title'>Expert curation of our indication catalog for disease-modifying treatments</a><div class='pub-body'>Daniel Himmelstein, Pouya Khankhanian, Chrissy Hessler (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d95'>10.15363/thinklab.d95</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d95' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>26.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d95'><a href='/discussion/expert-curation-of-our-indication-catalog-for-disease-modifying-treatments/95' class='pub-title'>Expert curation of our indication catalog for disease-modifying treatments</a><div class='pub-body'>Daniel Himmelstein, Pouya Khankhanian, Chrissy Hessler (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d95'>10.15363/thinklab.d95</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d95' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>27.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d95'><a href='/discussion/expert-curation-of-our-indication-catalog-for-disease-modifying-treatments/95' class='pub-title'>Expert curation of our indication catalog for disease-modifying treatments</a><div class='pub-body'>Daniel Himmelstein, Pouya Khankhanian, Chrissy Hessler (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d95'>10.15363/thinklab.d95</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkw993' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>28.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkw993'><a href='/doi/10.1093/nar/gkw993' class='pub-title'>DrugCentral: online drug compendium</a><div class='pub-body'>Oleg Ursu, Jayme Holmes, Jeffrey Knockel, Cristian G. Bologa, Jeremy J. Yang, Stephen L. Mathias, Stuart J. Nelson, Tudor I. Oprea (2016) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkw993'>10.1093/nar/gkw993</a></div></div></td></tr><tr><td><a href='/doi/10.15363/thinklab.d182' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>29.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d182'><a href='/discussion/announcing-pharmacotherapydb-the-open-catalog-of-drug-therapies-for-disease/182' class='pub-title'>Announcing PharmacotherapyDB: the Open Catalog of Drug Therapies for Disease</a><div class='pub-body'>Daniel Himmelstein (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d182'>10.15363/thinklab.d182</a></div></div></td></tr><tr><td><a href='/doi/10.6084/m9.figshare.3103054' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>30.</div></td><td><div class='doi-body' data-key='10.6084/m9.figshare.3103054'><a href='/doi/10.6084/m9.figshare.3103054' class='pub-title'>PharmacotherapyDB 1.0: the open catalog of drug therapies for disease</a><div class='pub-body'>Daniel Himmelstein, Pouya Khankhanian, Christine S. Hessler, Ari J. Green, Sergio Baranzini (2016) <i>Figshare</i>. doi:<a class='pub-doi' href='https://doi.org/10.6084/m9.figshare.3103054'>10.6084/m9.figshare.3103054</a></div></div></td></tr><tr><td><a href='/doi/10.15363/thinklab.a7' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>31.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.a7'><a href='/p/rephetio/report' class='pub-title'>Rephetio: Repurposing drugs on a hetnet [report]</a><div class='pub-body'>Daniel Himmelstein, Antoine Lizee, Chrissy Hessler, Leo Brueggeman, Sabrina Chen, Dexter Hadley, Ari Green, Pouya Khankhanian, Sergio Baranzini (2016) <i>Thinklab</i>. doi:<a class='pub-doi' href='https://doi.org/10.15363/thinklab.a7'>10.15363/thinklab.a7</a></div></div></td></tr><tr><td><a href='/doi/10.15363/thinklab.d203' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>32.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d203'><a href='/discussion/predictions-of-whether-a-compound-treats-a-disease/203' class='pub-title'>Predictions of whether a compound treats a disease</a><div class='pub-body'>Daniel Himmelstein, Chrissy Hessler, Pouya Khankhanian (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d203'>10.15363/thinklab.d203</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d203' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>33.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d203'><a href='/discussion/predictions-of-whether-a-compound-treats-a-disease/203' class='pub-title'>Predictions of whether a compound treats a disease</a><div class='pub-body'>Daniel Himmelstein, Chrissy Hessler, Pouya Khankhanian (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d203'>10.15363/thinklab.d203</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d203' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>34.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d203'><a href='/discussion/predictions-of-whether-a-compound-treats-a-disease/203' class='pub-title'>Predictions of whether a compound treats a disease</a><div class='pub-body'>Daniel Himmelstein, Chrissy Hessler, Pouya Khankhanian (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d203'>10.15363/thinklab.d203</a></div></div></td></tr></table>
+
+    
+
+
+	</td>
+	<td class="thread-sidebar">
+
+
+			
+
+      <a class="btn btn-default follow-link btn-follow btn-lg is-following tt-top full-width" title="Follow discussion" data-id="186" data-ctype="thread" data-is-following="false">&nbsp;</a>
+
+      
+        <div class="status-box text-center"><span style="">Status:</span> 
+  Completed
+
+</div>
+      
+
+      
+        
+
+          <div class="details">
+            
+            Labels
+          </div>
+
+          
+            <a href='/p/rephetio/discussion?q=[resource]' class='pl pl-sidebar ' style='background-color:#6b6b6b'><span class='glyphicon glyphicon-tag'></span>&nbsp; resource</a>
+          
+        
+      
+
+
+				
+
+					<div class="details">Views</div>
+					<span style="font-size:20px;">174</span>
+
+        
+
+				
+					<div class="details">Topics</div>
+					<div style="margin-bottom:15px;">
+		            <a href="/topics/pharmacology" class="tag">Pharmacology</a><a href="/topics/database" class="tag">Database</a><a href="/topics/drugcentral" class="tag">DrugCentral</a>
+					</div>
+				
+
+
+		
+			<div class="details">Referenced by</div>
+			<div style="font-size:12px;"><ul style="padding-left:16px !important;">
+			
+				<li>
+					
+					<a href='/doc/7/review' class='thread-title'><span class='inbox-icon tt-top glyphicon glyphicon-flash'></span>Report Review: Rephetio: Repurposing drugs on a hetnet</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/prediction-in-epilepsy/224' class='thread-title'>Prediction in epilepsy</a>
+				</li>
+			
+				<li>
+					
+					Research report: <a href='/p/rephetio/report'>Rephetio: Repurposing drugs on a hetnet</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/predictions-of-whether-a-compound-treats-a-disease/203' class='thread-title'>Predictions of whether a compound treats a disease</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/cataloging-drugdisease-therapies-in-the-clinicaltrialsgov-database/212' class='thread-title'>Cataloging drug–disease therapies in the ClinicalTrials.gov database</a>
+				</li>
+			
+				</ul>
+			</div>
+		
+
+		
+			<div class="details">Cite this as</div>
+			<span style="font-size:12px;">
+				Daniel Himmelstein, Oleg Ursu, Mike Gilson, Pouya Khankhanian, Tudor Oprea (2016) Incorporating DrugCentral data in our network. <i>Thinklab.</i> doi:<a href='https://doi.org/10.15363/thinklab.d186'>10.15363/thinklab.d186</a>
+			</span>
+		
+
+		<div class="details">License</div>
+		<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0;width:88px;height:31px;" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></p>
+
+		<div class="details">Share</div>
+		
+			
+				<a class="share-button fb" onclick="javascript:void(window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A//thinklab.com/discussion/incorporating-drugcentral-data-in-our-network/186','','width=600,height=460,menubar=no,status=no'));" href="#"></a>
+<a class="share-button twitter" onclick="javascript:void(window.open('https://twitter.com/share?text=Incorporating%20DrugCentral%20data%20in%20our%20network&url=https%3A//thinklab.com/discussion/incorporating-drugcentral-data-in-our-network/186','','width=600,height=300,menubar=no,status=no'));" href="#"></a>
+<a class="share-button google" onclick="javascript:void(window.open('https://plus.google.com/share?url=https%3A//thinklab.com/discussion/incorporating-drugcentral-data-in-our-network/186','','width=510,height=460,menubar=no,status=no'));" href="#"></a>
+
+			
+		
+
+	</td>
+</tr></table>
+
+
+		</div>
+
+
+		
+	    	<div class="footer">
+<div style="background:#dedede;">
+	<div class="main-centered-div text-center" style="padding:20px;">
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#2149444d4d4e615549484f4a4d40430f424e4c"><span class="__cf_email__" data-cfemail="741c1118181b34001c1d1a1f1815165a171b19">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+	</div>
+</div>
+<div class="main-footer">
+	<div class="main-centered-div">
+
+<table class="full-width"><tr>
+	<td class="footer-nav">
+
+        <div class="foot-head">Explore</div>
+        <a href="/proposals">Proposals</a><br>
+        <a href="/projects">Projects</a><br>
+        <a href="/publications">Article discussion</a><br>
+        <a href="/discussion">All discussion</a><br>
+        <a href="/topics">Topics</a><br>
+        <!-- <a href="/funders">Funders</a><br> -->
+        <a href="/funding">Funding opportunities</a><br>
+
+	</td>
+	<td class="footer-nav">
+
+        <!-- <div class="foot-head">Help &amp; feedback</div>	 -->
+        <!-- <div class="foot-head">Intro</div>
+        <a href="/benefits/for-science">Why</a><br>
+        <a href="/how-it-works">How it works</a><br>
+
+<br> -->
+
+        <div class="foot-head">Community</div>
+        <a href="/leaderboard">Leaderboard</a><br>
+        <a href="/p/meta">Thinklab Meta</a><br>
+				<a href="/help/faq">Help</a><br>
+				<!-- <a href="/new-project">Start a proposal</a><br> -->
+        <!-- <a href="/benefits/proposal">Benefits</a><br> -->
+        <!-- <a href="/funding">Get funded</a><br> -->
+        <!-- <a href="/participate">Become a contributor</a><br> -->
+        <!-- <a href="/for-funders">For science funders</a><br> -->
+        <!-- <a href="/for-institutions">For institutions</a><br> -->
+
+	</td>
+	<td class="footer-nav">
+
+
+
+        <div class="foot-head">About</div>
+        <a href="/about">Overview</a><br>
+        <a href="/benefits">Benefits</a><br>
+        <a href="/how-it-works">How it works</a><br>
+        <a href="/about/story">Our story</a><br>
+        <a href="/blog">Our blog</a><br>
+        <a href="/about/jobs">Join the team</a><br>
+        <br>
+
+        <!-- <div class="foot-head">Help</div>
+        <a href="/help">Help</a><br>
+		 -->
+
+
+	</td>
+	<td class="footer-nav">
+		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
+		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<br><br>
+		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
+
+	</td>
+
+</tr></table>
+
+</div>
+</div>
+</div>
+
+		
+
+	</div>
+
+
+  <script></script>
+  <script>
+  var MEDIA_URL = 'https://think-lab.s3.amazonaws.com/m/';
+  var STATIC_URL = 'https://think-lab.s3.amazonaws.com/s/';
+  var page_is_authenticated = false;
+  var page_page = 'discussion';
+  var page_profile_id = undefined;
+</script>
+
+
+
+	<!-- Note different script type. MUST come before MathJax.js -->
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	        "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"],
+	                        scale: 110, linebreaks: { automatic:true },
+	                        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+	        tex2jax: { inlineMath: [ ["$$", "$$"], ["\\(","\\)"] ],
+	                    displayMath: [ ["$$$","$$$"], ["\\[", "\\]"] ],
+	                    processEscapes: true,}
+	            });
+
+	</script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://think-lab.s3.amazonaws.com/s/dist/main.min.js"></script>
+  
+
+
+
+  
+	
+  
+  
+  
+<script>
+$(function() {
+  recordHit('thread', 186);
+});
+</script>
+
+
+
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>

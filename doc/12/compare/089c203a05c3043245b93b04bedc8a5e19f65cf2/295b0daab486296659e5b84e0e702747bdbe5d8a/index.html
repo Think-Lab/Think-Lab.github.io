@@ -1,0 +1,5501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08CV1taQlkRXEdFAz0WFFNIRVVcOkVcU049BxNcWw==","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":233}</script>
+    <title>Thinklab: A platform for open review of research grant proposals | Thinklab</title>
+	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
+    <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/highlightjs/github.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/css.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/bootstrap-multiselect.css" />
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
+    
+    
+    
+    
+    
+
+
+	<!-- GoogleAnalytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-48550230-1', 'thinklab.com');
+	ga('require', 'displayfeatures');
+	
+	ga('send', 'pageview');
+
+	</script>
+
+
+
+
+
+
+</head>
+<body >
+  <form id="form_action" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+</form>
+
+	
+
+	<div class="body-wrapper">
+
+		
+
+
+<!-- <div style="height:5px;background-image:url('https://think-lab.s3.amazonaws.com/s/img/top-bg.gif');"></div> -->
+<div class="gradient">
+	<div class="main-centered-div header-container">
+
+<table class="full-width" style="height:60px;"><tr>
+	<td style="width:200px;vertical-align:middle;padding-bottom:15px;">
+		<a href="/" style="font-weight:normal;color:#212121;"><img src="https://think-lab.s3.amazonaws.com/s/img/logo.png" width="160"></a>
+	</td><td style="vertical-align:middle;text-align:left;padding-top:6px;width:100%;padding-left:40px;">
+		<ul id="not-search-block"  class="main-header">
+
+
+			
+
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/proposals">Proposals</a></li>
+						<li><a href="/projects">Projects</a></li>
+						<li><a href="/publications">Article discussion</a></li>
+						<li><a href="/discussion">All discussion</a></li>
+					</ul>
+				</li>
+				<li><a href="/leaderboard">Leaderboard</a></li>
+
+			
+				<li><a href="/about">About</a></li>
+			
+
+
+		</ul>
+
+    <ul id="search-block" class="main-header" style="display: none; margin-right: 30px;">
+        <li class="full-width">
+            <form method="get" action="/search">
+			<div class="input-group full-width">
+				<input name="q" type="text" class="form-control search-input">
+			</div>
+            </form>
+        </li>
+    </ul>
+
+	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
+		<ul class="main-header pull-right" style="padding-left: 0;">
+    		
+                <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+            
+
+        </ul>
+    </ul>
+	</td>
+</tr></table>
+
+<!-- <div id="global-search-div" class="main-centered-div" style="display:none;">
+	<input type="text" value="" class="thread-search form-control" placeholder="Search" data-action="/discussion">
+</div> -->
+
+	</div>
+</div>
+
+		
+	  
+
+
+
+	  
+
+
+		
+
+		<div class="dark-head"><div class="main-centered-div">
+
+			
+
+	
+
+
+	<div class="header-object-type"></div>
+
+	
+			<a class="btn btn-lg follow-link btn-follow pull-right active tt-top" style="margin-left:20px;" title="Follow project discussion" data-id="18" data-ctype="project" data-is-following="false">&nbsp;</a>
+	
+
+	<h2 class="header-object-name">Thinklab: A platform for open review of research grant proposals</h2>
+
+	
+	<div class="project-team">
+		<a href='/u/jspauld'>Jesse Spaulding</a>, <a href='/u/glebpitsevich'>Gleb Pitsevich</a>
+		 <!-- &nbsp; &nbsp; doi:<a href="https://doi.org/10.15363/thinklab.18">10.15363/thinklab.18</a> -->
+	</div>
+	
+
+		<!-- <div class="project-team">
+			<b>DOI:</b> <a href="https://doi.org/10.15363/thinklab.18">10.15363/thinklab.18</a>
+		</div> -->
+
+		
+			<div class="project-team">
+			<div class="proj-funding">
+				<b>Funding opportunity:</b>
+				
+					<a href="/funding/7/proposals">The Open Science Prize</a>
+				
+			</div>
+			</div>
+		
+
+	<div class="project-team">
+		
+		<div class="proposal-status proposal-status-lg proposal-status-awaiting-funder">Awaiting Funder</div>
+		
+		
+		
+	</div>
+
+
+
+
+	
+
+
+	<!-- <div class="project-team">
+		
+	</div> -->
+
+    <ul class="nav nav-tabs project-nav" style="margin-top:25px;">
+
+		
+
+		
+
+    
+
+		
+	    
+	        <li class="active"><a href="/p/thinklabOSP/proposal">Proposal</a></li>
+	    
+	    
+		
+
+		<li><a href="/p/thinklabOSP/discussion"><span class="nav-fig">9</span>Discussions</a></li>
+
+		
+			<li><a href="/p/thinklabOSP/leaderboard"><span class="nav-fig">7</span>Reviewers</a></li>
+		
+
+		
+
+		
+
+
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown"><span style="opacity:0.5">More <span class="caret"></span></span></a>
+            <ul class="dropdown-menu" style="font-size:13px;background-color:#819ec8">
+
+				
+
+				
+
+            <li><a href="/p/thinklabOSP/followers"><span class="nav-fig">7</span>Followers</a></li>
+            </ul>
+        </li>
+
+			
+
+    </ul>
+
+
+
+		</div></div>
+		
+		<div class="main-centered-div" style="margin-top:40px;padding-bottom:340px">
+	    
+	<h2 class="page-title">Proposal revision comparison</h2>
+
+	<p>
+		You are comparing versions dated
+		<a href="/doc/12/revisions/089c203a05c3043245b93b04bedc8a5e19f65cf2">Feb. 14, 2016, 12:03 p.m.</a>
+		and <a href="/doc/12/revisions/295b0daab486296659e5b84e0e702747bdbe5d8a">March 31, 2017, 1:20 a.m.</a>
+	</p>
+
+	<hr>
+	
+    <h3>Content</h3>
+        <table class="full-width diff-table">
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;"># <span class='sub-word'>What is Thinklab?
+</span></td>
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;"># <span class='add-word'>Executive summary
+</span></td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">Thinklab is a platform that facilitates two things:
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">Thinklab is a platform for open review of research grant proposals.  We're creating Thinklab because we believe the interests of science and society are best served if the *entire* scientific process is open -- not just the software, data, and papers produced at the end. And while we're convinced this kind of openness is in the best interests of science as a whole, we understand many scientists will not feel it's in their *personal* interests. That's why our goal is not just to enable open research, it's to actually *create incentives* for it. We aim to create value for both scientists and science funders. Thinklab is intended for broad use across all of science, including biomedical research. An early version can be seen at [thinklab.com](http://thinklab.com).
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">1. Open review of research grant proposals
+<br>2. A highly collaborative version of open notebook science
+<br>
+<br>We're creating Thinklab because we believe the interests of science and society are best served if the *entire* scientific process is open -- not just the software, data, and papers produced at the end. And while we're convinced this kind of openness is in the best interests of science as a whole, we understand many scientists will not feel it's in their *personal* interests. That's why our goal is not just to *facilitate* open research, it's to actually *create incentives* for it.
+<br>
+<br>Thinklab is intended for broad use across all of science, including biomedical research. An early version can be seen at [thinklab.com](http://thinklab.com).
+<br>
+<br># Why grant proposals should be reviewed in the open
+<br>
+<br>1. **Researchers can get feedback when it's most valuable: before a project begins**
+<br>Scientists often work on projects for years at a time. Given this, it's critically important to work on the *right thing* and have the *right approach*. Feedback at an early stage -- especially when it comes from a cognitively diverse pool of people -- has the potential to save incredible amounts of time. It may reveal that an entire project was flawed from conception, or it may light the path towards a much more impactful approach.
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;"># How Thinklab works
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">- **Best practices can spread across science faster** 
+<br>Best practices in science are changing fast. Having proposals reviewed in the open, gives the community a chance to share those best practices -- even across disciplines. This could include sharing ideas on making data reusable, making research reproducible, or just recommending tools and methods.
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">Thinklab targets two groups: scientists and science funders. We'll start this proposal by looking at Thinklab from the perspective of scientists. Later on we'll explore how Thinklab can help science funders open up research and accelerate their impact.
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">- **Scientists can learn from and build upon each other's ideas** 
+<br>Research proposals are valuable scientific outputs in and of themselves. They will often contain some of the most cutting edge ideas in science. Having proposals (and the review discussion related to them) published openly on the internet would create a valuable resource that the entire scientific community can learn from and build upon.
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">## Posting an open proposal
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">- **Openness produces more collaboration and less redundancy** 
+<br>When people know what each other are working on, it creates more possibility for forming collaborations. At the same time, it reduces the redundancy of having multiple research groups working on the same thing in isolation.
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">The first challenge Thinklab faces is persuading scientists to publicly share their research proposals. This is tricky because there's a fear that ideas will be stolen. We believe this fear is valid but overblown. We also believe there are a number of benefits to grant writers that are not fully appreciated:
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">In conclusion, open review can improve research plans, reduce wasted resources, spread best practices, accelerate the exchange of ideas, and lead to more collaboration with less redundancy. In short, it should significantly accelerate scientific progress. Many of these ideas have been talked about by Daniel Mitchken: [The Transformative Nature of Transparency in Research Funding](http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002027) [@10.1371/journal.pbio.1002027]
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">**A validated research plan** -- Before embarking on a research project it's critically important to make sure you're working on the right thing and have the right approach. Early feedback can validate the research plan and give researchers confidence that when results come in, they'll be trusted and valued by the community. 
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;"># But will scientists participate?
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">**Improved funding odds** -- It's easy to forget that not everyone has the same set of background knowledge that we have. Getting an outside perspective can make sure the value of a proposed project is being communicated effectively -- presumably improving the proposals funding odds.
+<br> 
+<br>**More visibility and citations** -- Research proposals are valuable scientific outputs in and of themselves. Thinklab gives them a DOI and makes them a citable part of the scientific record.
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">While it may be clear that having grant proposals reviewed in the open would be a very good thing for science, the question is: will scientists participate? Won't they be concerned about people stealing their ideas?
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">**More collaboration opportunities** -- Instead of encouraging others to compete with you, an open proposal could do just the opposite. If people see you're already working on something it's likely they'll consider collaborating with you, or simply pursue another avenue of research.
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">The answer is yes, many will be concerned. Scientists currently operate under a system that values the publication of papers in journals above all else. Under this system, keeping ideas secret is seen as a good strategy in the publish-or-perish game -- a game that they're forced to play, but never asked to play. In our view, the solution to this predicament is clear: we need to change the rules of the game! We need to align the incentives of scientists with what's in the best interests of science and society as a whole.
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">## Thinklab as a service for science funders
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">## The open review process
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">If our goal is to open up grant proposal review, we believe science funders are in the best position to do it. Funders can use the power of the purse to create new incentives and compel adoption of new behaviors. In fact, they're already doing it. Many funders have started to *require* that the results of the research they fund be made publicly available. That changes the game!
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">Once a proposal has been published it's up to the research team to invite peers to review it. Alternatively, scientists (or any approved user) can review a proposal they find interesting. Thinklab will strongly encourage a two-part review process where ideas are first submitted as "one-pagers", and only later developed into full proposals. Here's what the review process looks like:
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">Thinklab wants to help funders take the next step. We want to help funders create grant programs that *require* openly posted proposals. In addition, we want to help them manage an open peer review process where anyone from the scientific community can share ideas and feedback to help improve research plans.
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">**Review Part 1: Annotate** -- In this step reviewers are asked to read the proposal and make annotations wherever they have feedback (see [Figure {n}](#annotation)). To ensure reviewers form opinions independently we hide annotations and comments from others at this stage.
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">With that said, we recognize that persuading funders to try a different model of funding will be challenging. Fortunately, there's something we can do in the meantime: we can do everything we can to drive adoption by making Thinklab a valuable service for grant writers directly.
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">**Review Part 2: Summarize** -- Next, reviewers are asked to summarize their most important thoughts and advice. They may also be asked to rate the proposal on various metrics.
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">**Review Part 3: Discuss** -- In this step we reveal comments from other users. Reviewers are asked to use the notes they made in part one to join a real-time discussion with the authors and other reviewers. Discussion can take place in inline comments or in longer form discussions that exist on their own page.
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">## Thinklab as a service for grant writers
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">**Review Part 4: Finalize** -- After discussing the proposal, reviewers have the option to update their review scores and/or provide updates on how their overall assessment of the proposal has changed.
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">Benjamin Good [suggested](http://thinklab.com/discussion/thinklab-as-a-vetting-system-for-traditional-grants/58) [@10.15363/thinklab.d58] that grant writers could use Thinklab to have their proposals openly reviewed prior to submission for funding. There are a number of benefits to this. In fact, we've used Thinklab to get feedback on the proposal you're reading right now! X reviewers provided feedback through a total of X annotations and X comments. You can take a look at the feedback we received here: [thinklab.com/p/thinklab-prize](http://thinklab.com/p/thinklab-prize).
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">This review process has been used [to gather feedback](http://thinklab.com/doc/12/review) on this proposal. Four reviewers made a total of 150 comments and 139 annotations. Casey Greene, a first time reviewer, [said](http://thinklab.com/doc/12/review#59): "The UI is very slick!"
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">### Benefits for grant writers
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">- Open review can help grant writers improve their proposals and increase their odds of funding. Getting an outside perspective can help make sure the value of a proposed project is being communicated effectively. 
+<br>- Open review can help validate the research plan before work begins. With this validation, the research team can be confident that when results come in, they'll be trusted and valued by the community.
+<br>- Engaging the community at such an early stage serves to increase the research team's visibility and connection with the community, leading to more collaboration opportunities.
+<br>- Grant writers can feel better about asking for feedback as there's more in it for the reviewer. Reviewer comments are public, and reviewers are publicly acknowledged based on peer assessment of the value of their feedback.
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">[:figure](annotation)
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+<br>
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+<br>
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;"># How Thinklab works
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">## Thinklab Impact Points
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">Thinklab is a platform that facilitates open review of grant proposals, and real-time open science. All content and discussion posted to Thinklab is licensed CC-BY. Note that at this point the code that runs Thinklab itself is not open source.
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">To reward reviewers for sharing valuable feedback and ideas, Thinklab has created an impact points system. This system allows us to highlight the "most impactful reviewers" for each proposal, while also creating a [global impact leaderboard](http://thinklab.com/leaderboard).
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">## The proposal review system
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">Reviewers earn impact points based on peer assessment of the value of their contributions. Contributions are rated by the research team, by users selected by a sponsoring funder, or by the community at large. To avoid any temptation for "reciprocal voting" ratings are submitted privately.
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">**Design goals:**
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">To create additional incentive, Thinklab aims to partner with science funders and offer monetary rewards that are tied to impact points. (More on this later.)
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">1. To have reviewers share independently formed opinions initially. 
+<br>2. To enable a real-time discussion between reviewers and proposal authors aimed at improving the proposal.
+<br>3. To reward reviewers by recognizing them based on the value of their contributions.
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">## Thinklab Inbox
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">**The review process:**
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">Users are notified of new content and discussion that is relevant to them via the Thinklab Inbox. Right now it simply shows any discussion that directly matches anything the user is following. Users can follow proposals, topics, or even funding opportunities. Over time we intend to make the system smarter such that we more efficiently direct scientific attention to the exact problems and discussions that need it.
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">1. **Part 1: Annotate** -- In this step reviewers are asked to read the proposal and make annotations wherever they have feedback (see [Figure {n}](#annotation)). To ensure an unbiased review we hide annotations and comments from other users in part 1 and 2.
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">## Real-time open science
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">2. **Part 2: Summarize** -- Next, reviewers are asked to summarize their most important thoughts and advice. They may also be asked to rate the proposal on various metrics.
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">When a proposal gets funded, the research team has the option to continue their work as an open research project. Researchers can engage the community by sharing ideas, project plans, updates, and questions in real-time as the project progresses.  Reviewers that made valuable suggestions during the proposal stage can continue to share ideas and give feedback throughout the project. This all occurs using the exact same discussion system that is used for proposal review.
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">3. **Part 3: Discuss** -- In this step we reveal the discussion that is already taking place. Reviewers use the inline notes they made in part one to join the discussion. Discussion can take place in inline comments, or on separate pages that link back to the proposal.
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">Daniel Himmelstein is currently using Thinklab to lead an open research project: [Repurposing drugs on a hetnet](http://thinklab.com/p/rephetio) [@10.15363/thinklab.4]. His project has accumulated over 300 comments from 28 contributors. In his [review](http://thinklab.com/discussion/review-summary/164) of this proposal Daniel says:
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">4. **Part 4: Finalize** -- After discussing the proposal with the authors and other users, reviewers have the option to update their initial review summary and/or review scores.
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">&gt; The best thing about Thinklab is that it not that it solves a major problem in science but that it solves most major problems in science. Having used Thinklab for over a year now, I have experienced the plethora of benefits.
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">When the review process is complete, the proposal authors (or designated reviewers if the review is on behalf of a funder) will rate the value of each reviewer's contributions. These ratings contribute to an impact points system that allows us to highlight the most impactful reviewers.
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">[:figure](annotation)
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">## Alternatives to Thinklab
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">## Real-time open science
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">If a researcher wants to get feedback on a grant proposal, a common solution is to put it in Google Docs, and send it to colleagues. Here are the important ways Thinklab is different:
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">When a proposal on Thinklab gets funded, the research team has the option to continue their work as an open research project. Researchers can engage the community by sharing ideas, project plans, updates, and questions in real-time as the project progresses. Reviewers that made valuable suggestions during the proposal stage can continue to share ideas and give feedback throughout the project.
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">- Thinklab is designed to have peer review and reviewer comments become a persistent, citable part of the scientific record. Each Thinklab discussion has a DOI and is citable.
+<br>- The Thinklab Inbox serves to direct researcher attention throughout the network by *automatically* showing users discussion that matches their interests and expertise.
+<br>- Conversation is not constrained by the need to fit in the sidebar of a Google Doc. Users can post more substantial discussion to it's own page where it's easier to read, and can attract more attention.
+<br>- Thinklab recognizes reviewer contribution through an impact points system that is based on peer assessment.
+<br>- Thinklab intends to build features that will integrate with workflows at funding organizations and enable them to manage an open peer review process.
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">The big payoff from open research comes not just from being open, it comes from the real-time collaboration that openness enables. It comes from bringing a cognitively diverse set of people together to tackle challenging problems. In support of this Thinklab is building a system that intelligently direct researcher attention to the exact discussions and problems that match their interests and areas of expertise. These ideas are described by Michael Nielsen in his book: [Reinventing Discovery: The New Era of Networked Science](http://www.amazon.com/gp/product/B005OQGZ54/ref=dp-kindle-redirect?ie=UTF8&amp;btkr=1) [@reinventing]
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">## Openness &amp; sustainability
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">There's one big problem with this vision: there needs to be incentives for scientists to participate. There needs to be an incentive for researchers to share their work, and their needs to be an incentive for outside scientists to share feedback and insights when they have something valuable to add.
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">Thinklab sees itself as a service that helps open up science. That's our mission and our most important work. For example, all content and discussion posted to Thinklab is licensed CC-BY.
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">## Benefits for reviewers/contributors
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">While we'd like to be in a position to open source the code for Thinklab itself, at this point we feel that might jeopardize our ability to create a sustainable business. First, it creates the possibility that a group of academics would launch a competing service and thereby hamper our ability to gain traction. Second, it would likely make it very hard for us to get funding from traditional investors. While we prefer to be funded by impact investors, the reality is we need to keep our options open at this point.
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">- **Everything is public**
+<br>To highlight the benefits of openness let's consider what will happen to this proposal when it's submitted to The Open Science Prize. We expect it to be discussed *in private* by three reviewers. Here's a question for those reviewers: wouldn't it be nice if your comments were public and would become part of the scientific record? Wouldn't it be nice if we (and others) could learn from what you said? Thinklab offers reviewers the chance for more impact and more recognition.
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;"># Thinklab as a service for science funders
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">- **Users are recognized based on the value of their contributions.**
+<br>Thinklab has an impact points system that allows us to highlight the most impactful reviewers or project contributors. Users gain impact points primarily by conducting review and making comments that the community rates as valuable. Contributions are rated by the research team, by users selected by the sponsoring funder, or by the community at large.
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">Thinklab's primary goal is to accelerate a transition to a much more open, collaborative, Internet-native model of research. We believe creating a service for grant writers -- as outlined above -- will produce *some* success towards that goal. However, given the inertia of our scientific system, and given the incentives that drive scientists towards secrecy, it is likely that progress will be slow.
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">## Monetary rewards
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">We see this as a problem of incentives. To drive rapid adoption of open grant proposal review we need the incentives of scientists to be aligned with what is good for science as a whole. We believe science funders hold the power to align these incentives. In fact, they're already starting to do this in other areas. Many funders have started to *require* that the results of the research they fund be made publicly available.
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">While we believe our impact points system will help create an incentive, we'd like to point out that it's *extremely* difficult to get scientists to take time away from *their* research, and share feedback and ideas on the work of their peers, over the internet [@reinventing]. At the same time, we can all recognize how incredibly valuable it would be if they were to do so. 
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">Thinklab wants to help funders take the next step -- we want to help funders create grant programs that *require* openly posted proposals. In addition, we want to help them manage an open peer review process where anyone from the scientific community can share ideas and feedback to help improve research plans.
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">For these reasons, Thinklab proposes that science funders create an additional incentive. We propose that a portion of project grant money is set aside to reward feedback and ideas from scientists in the community. These monetary rewards could be applied at the proposal stage and/or the research stage. The system would piggy-back on the impact points system we've already discussed.
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">## Monetary rewards for crowdsourced review
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">### Possible concerns
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">The big payoff from open research comes not just from being open, it comes from the real-time collaboration that openness enables. It comes from bringing a cognitively diverse set of people together to tackle challenging problems. [@10.1515/9781400839452]
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">- **Won't people game the system?**
+<br>It's very likely that some people will attempt to game the system. However, we believe it will be relatively easy to detect and prevent strategies such as voting rings between friends. The only way to game the system should be to actually take the time to write comments that peers find valuable.
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">To fully realize the potential of Thinklab, there needs to be strong incentives -- not just for grant writers -- but for reviewers too! If we want scientists to take time away from *their* research to share feedback and ideas on that of their peers, we need strong incentives.
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">- **The [overjustification effect](https://en.wikipedia.org/wiki/Overjustification_effect)**
+<br>This is where external incentives decrease a person's intrinsic  motivation to do something. It's a fascinating concept. However, this effect is only relevant if people have enough intrinsic motivation to do something in the first place. In the case of getting scientists to share feedback and ideas on the work of their peers over the Internet -- they're simply not doing it at all. And this is despite many platforms built for this purpose [@reinventing].
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">Thinklab proposes that science funders set aside a portion of grant money to financially reward an open crowdsourced review process. These rewards would go directly to reviewers and be paid out in proportion to how much value they add. Distribution is tied to the impact points system we described previously. The only way to game the system should be to actually write comments that peers find valuable! At some point there will likely be attempts to game the system via "voting rings", but we're confident this issue can be managed.
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">- **Money in science is always bad**
+<br>Many scientists seem to have a gut reaction that tells them introducing money into science is always a bad idea. To those people we would say this: money is *already* in science. Much of what scientists do is driven by the need to secure money to continue doing their work. We are simply proposing that some money is distributed in a way that creates a different set of incentives.
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">There has been some concern about the [overjustification effect](https://en.wikipedia.org/wiki/Overjustification_effect). This is where external incentives (money) will decrease a person's intrinsic motivation to do something. However, it should be noted that this doesn't really apply if very few people are doing the desired activity in the first place. And this is by and large the case when it comes to getting scientists to comment on their peers work on the Internet.
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">Finally, we want to emphasize that we consider monetary rewards to be an experiment, and that we see large value in the Thinklab even without them.
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">## Benefits for funders
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;"># What will the prize money be used for?
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">The following describes the benefits a Thinklab partnership can offer science funders. The theme here is accelerating scientific progress by making research more open and more collaborative.
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">- Continued development of our open review system. We will be working in close consultation with both grant writers and reviewers to create the most useful and user friendly service possible. 
+<br>- Development of features to enable a pilot program with a funder. This pilot program will likely involve having proposals openly submitted and reviewed though Thinklab.
+<br>- Creation of APIs so our CC-BY content can be more easily accessed.
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">**Reviewers are less likely to reject good proposals for faulty reasons.** An open real-time discussion gives authors a chance to address reviewer criticism and possibly alleviate concerns.
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">**Fundamentally flawed research is more likely to be filtered out.** If proposals are first submitted as one-page ideas, it's reasonable that 10-20 people could read each one. Anyone that notices a potential flaw can start a discussion and bring in experts to address that particular issue. 
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;"># Alternatives to Thinklab
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">**Ideas that have potential can be developed into great ideas.** The first ideas people have are not always the best. Thinklab gives reviewers the opportunity to work with authors to develop an average idea into a great idea.
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">### Google Docs for open review of proposals
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">**Best practices can spread across science faster.** Best practices are changing fast. Thinklab gives people an opportunity to share those best practices, even across disciplines. 
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">If a researcher wants to get feedback on a grant proposal, a common solution is to put it in Google Docs, and send it to colleagues. Here's why Thinklab is better:
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">**The exchange of ideas is accelerated.** Publishing proposals (and the review discussion related to them) creates a valuable resource of cutting edge ideas that scientists can learn from and build upon. Without Thinklab these ideas might not be shared until *years* later. Fundamentally, science progresses in proportion to the speed at which we share scientific information.
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">- Thinklab is designed to have peer review and review comments become a persistent, citable part of the scientific record.
+<br>- Thinklab facilitates more substantial discussion by allowing discussions to be posted to a separate page.
+<br>- Thinklab is able to draw more people into the conversation by directing people's attention to the discussion when it matches their interests or areas of expertise.
+<br>- Thinklab rewards participation through an impact points system that is based on peer assessment.
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">**More collaboration and less redundancy.** If scientists know what each other are working on, it creates more possibilities for working together. At the same time it will likely reduce the redundancy of having multiple research groups working on the same thing in isolation.
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">### GitHub as an electronic lab notebook
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;"># Product roadmap
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">The Open Source Malaria project [is using](https://github.com/OpenSourceMalaria/OSM_To_Do_List) GitHub to openly manage their project. There's a lot to like about GitHub. But here's what Thinklab can offer:
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">- Continued development of our open review system. We will be working in close consultation with both grant writers and reviewers to create the most useful and user friendly service possible. 
+<br>- Development of features to enable a pilot program with a funder. 
+<br>- Creation of APIs so Thinklab content can be more easily accessed.
+<br>- Integration with more external services such as CLOCKSS, Altmetrics, and PubMed.
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">- Thinklab is designed for science. Adding math is easy. Adding citations by DOI is easy. Each discussion (like a GitHub issue) has a DOI and is citable.
+<br>- When leading an open research project the big challenge is actually getting scientists to participate. Thinklab rewards participation through a system that highlights the most impactful contributors. If needed we can add the additional incentive of monetary rewards.
+<br>- In the domain of scientific discussion there is tremendous value in having a cognitively diverse set of people participate. Thinklab has a system that intelligently directs researcher attention to discussion that is relevant to their interests or areas of expertise. Such a system is not particularly relevant to software development so we wouldn't expect GitHub to be working on it.
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+<br># Team and resources
+<br>
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+<br># Team and resources
+<br>
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">Thinklab is founded by Jesse Spaulding. Jesse has a background in the startup world, and has founded and sold several startups. With no formal academic background, Jesse brings a fresh perspective to the challenges facing our scientific system. Jesse has been working with Gleb Pitsevich who has a broad background in mathematics, programming, and web development.
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">Thinklab is founded by [Jesse Spaulding](http://linkedin.com/in/jessespaulding). Jesse has created and sold several startups including [CourseTalk](https://www.coursetalk.com/), a student review site for MOOCs (Massive Open Online Courses). Previously, Jesse independently [developed a high frequency trading algorithm](http://jspauld.com/post/35126549635/how-i-made-500k-with-machine-learning-and-hft) that made 500k in profits. As someone who has spent his career in the startup world, Jesse is able to bring a fresh set of eyes to the challenges facing our scientific system. 
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">Thinklab is setup as a for-profit and we intend to use this status to attract talented people to help us pursue our mission. In the near term we're looking for a talented individual with a strong academic science or philanthropic background to join the team as a co-founder and lead business and community development.
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">Jesse is working with [Gleb Pitsevich](https://www.linkedin.com/in/pitsevich) who has a broad background in mathematics, programming, and web development. Gleb has a master's degree in computer science and is the founder of [Razor Theory](http://razortheory.com/), a web and mobile development company based out of Belarus.
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;"># Conclusion
+<br>
+<br>Thinklab is a bold experiment in open science. We understand there's powerful incentives working against us. But we also understand the future of science is not a world where scientists continue to hoard knowledge and work in silos.
+<br>
+<br>We believe Thinklab has a legitimate shot at opening up grant proposal review, and if we're able to do so, we believe the benefits will be enormous. Perhaps our most compelling argument is this: what we're doing has the potential to affect *all of science*. Anytime you can make changes that positively affect a *system* there's potential for massive impact. Given a [wide variety of problems](http://thinklab.com/blog/10-consequences-of-a-broken-scientific-reward-system/36) [@10.15363/thinklab.d36] in our current scientific system, isn't it worth experimenting with ways we might improve it? 
+</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">Thinklab is looking for a talented individual with a strong academic science or philanthropic background to join the team as a co-founder and lead business and community development.
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;"># Conclusion
+</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+
+                    <td class="" style="width: 35px;" colspan="3"></td>
+                    <td class="diff-context" style="width: 45%;">
+</td>
+                </tr>
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                <tr class="repo-line">
+                    <td class="diff-marker" style="width: 35px;" colspan="3">-</td>
+                    <td class="sub-line diff-context" style="width: 45%;">[@reinventing]: http://press.princeton.edu/quotes/q9517.html "Reinventing discovery: the new era of networked science, Michael Nielsen"</td>
+            
+
+            
+            
+        
+
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td style="width: 35px;" colspan="4"></td>
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+            
+            
+                    <td class="diff-marker" style="width: 35px;" colspan="3">+</td>
+                    <td class="add-line diff-context" style="width: 45%;">We believe open review of grant proposals will improve research plans, reduce wasted resources, spread best practices, accelerate the exchange of ideas, and lead to more collaboration with less redundancy. In short: it will significantly accelerate scientific progress. Perhaps the most compelling argument for Thinklab is this: what we're doing has the potential to catalyze changes that will affect *all of science*. Anytime you can make changes that positively affect a *system* there's potential for massive impact. Science needs people thinking outside the box!</td>
+                </tr>
+
+            
+        
+
+            
+            
+            
+            
+            
+            
+            
+            
+                <tr class="repo-line" height="25px">
+                    <td class="" style="width: 35px;" colspan="8"><hr></td>
+                </tr>
+            
+
+            
+            
+
+            
+            
+        
+        </table>
+
+    
+
+
+
+		</div>
+
+
+		
+	    	<div class="footer">
+<div style="background:#dedede;">
+	<div class="main-centered-div text-center" style="padding:20px;">
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#bed6dbd2d2d1fecad6d7d0d5d2dfdc90ddd1d3"><span class="__cf_email__" data-cfemail="741c1118181b34001c1d1a1f1815165a171b19">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+	</div>
+</div>
+<div class="main-footer">
+	<div class="main-centered-div">
+
+<table class="full-width"><tr>
+	<td class="footer-nav">
+
+        <div class="foot-head">Explore</div>
+        <a href="/proposals">Proposals</a><br>
+        <a href="/projects">Projects</a><br>
+        <a href="/publications">Article discussion</a><br>
+        <a href="/discussion">All discussion</a><br>
+        <a href="/topics">Topics</a><br>
+        <!-- <a href="/funders">Funders</a><br> -->
+        <a href="/funding">Funding opportunities</a><br>
+
+	</td>
+	<td class="footer-nav">
+
+        <!-- <div class="foot-head">Help &amp; feedback</div>	 -->
+        <!-- <div class="foot-head">Intro</div>
+        <a href="/benefits/for-science">Why</a><br>
+        <a href="/how-it-works">How it works</a><br>
+
+<br> -->
+
+        <div class="foot-head">Community</div>
+        <a href="/leaderboard">Leaderboard</a><br>
+        <a href="/p/meta">Thinklab Meta</a><br>
+				<a href="/help/faq">Help</a><br>
+				<!-- <a href="/new-project">Start a proposal</a><br> -->
+        <!-- <a href="/benefits/proposal">Benefits</a><br> -->
+        <!-- <a href="/funding">Get funded</a><br> -->
+        <!-- <a href="/participate">Become a contributor</a><br> -->
+        <!-- <a href="/for-funders">For science funders</a><br> -->
+        <!-- <a href="/for-institutions">For institutions</a><br> -->
+
+	</td>
+	<td class="footer-nav">
+
+
+
+        <div class="foot-head">About</div>
+        <a href="/about">Overview</a><br>
+        <a href="/benefits">Benefits</a><br>
+        <a href="/how-it-works">How it works</a><br>
+        <a href="/about/story">Our story</a><br>
+        <a href="/blog">Our blog</a><br>
+        <a href="/about/jobs">Join the team</a><br>
+        <br>
+
+        <!-- <div class="foot-head">Help</div>
+        <a href="/help">Help</a><br>
+		 -->
+
+
+	</td>
+	<td class="footer-nav">
+		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
+		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<br><br>
+		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
+
+	</td>
+
+</tr></table>
+
+</div>
+</div>
+</div>
+
+		
+
+	</div>
+
+
+  <script></script>
+  <script>
+  var MEDIA_URL = 'https://think-lab.s3.amazonaws.com/m/';
+  var STATIC_URL = 'https://think-lab.s3.amazonaws.com/s/';
+  var page_is_authenticated = false;
+  var page_page = '';
+  var page_profile_id = undefined;
+</script>
+
+
+
+	<!-- Note different script type. MUST come before MathJax.js -->
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	        "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"],
+	                        scale: 110, linebreaks: { automatic:true },
+	                        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+	        tex2jax: { inlineMath: [ ["$$", "$$"], ["\\(","\\)"] ],
+	                    displayMath: [ ["$$$","$$$"], ["\\[", "\\]"] ],
+	                    processEscapes: true,}
+	            });
+
+	</script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://think-lab.s3.amazonaws.com/s/dist/main.min.js"></script>
+  
+
+
+
+  
+	
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>

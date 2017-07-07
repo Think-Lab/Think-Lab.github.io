@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZgEOC19dW0QCEVtHU1gG","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":209}</script>
+    <title>Network Edge Prediction: how to deal with self-testing | Thinklab</title>
+	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
+    <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/highlightjs/github.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/css.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/bootstrap-multiselect.css" />
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
+    
+    
+    
+    
+  
+    <meta name="citation_doi" content="10.15363/thinklab.d194">
+    <meta name="citation_title" content="Network Edge Prediction: how to deal with self-testing">
+    <meta name="citation_online_date" content="April 5, 2016">
+    <meta name="citation_author" content="Antoine Lizee, Daniel Himmelstein">
+    <meta name="citation_journal_title" content="Thinklab">
+    <meta name="citation_publisher" content="Thinklab">
+  
+
+    
+
+
+	<!-- GoogleAnalytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-48550230-1', 'thinklab.com');
+	ga('require', 'displayfeatures');
+	
+	ga('send', 'pageview');
+
+	</script>
+
+
+
+
+
+
+</head>
+<body >
+  <form id="form_action" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+</form>
+
+	
+
+	<div class="body-wrapper">
+
+		
+
+
+<!-- <div style="height:5px;background-image:url('https://think-lab.s3.amazonaws.com/s/img/top-bg.gif');"></div> -->
+<div class="gradient">
+	<div class="main-centered-div header-container">
+
+<table class="full-width" style="height:60px;"><tr>
+	<td style="width:200px;vertical-align:middle;padding-bottom:15px;">
+		<a href="/" style="font-weight:normal;color:#212121;"><img src="https://think-lab.s3.amazonaws.com/s/img/logo.png" width="160"></a>
+	</td><td style="vertical-align:middle;text-align:left;padding-top:6px;width:100%;padding-left:40px;">
+		<ul id="not-search-block"  class="main-header">
+
+
+			
+
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/proposals">Proposals</a></li>
+						<li><a href="/projects">Projects</a></li>
+						<li><a href="/publications">Article discussion</a></li>
+						<li><a href="/discussion">All discussion</a></li>
+					</ul>
+				</li>
+				<li><a href="/leaderboard">Leaderboard</a></li>
+
+			
+				<li><a href="/about">About</a></li>
+			
+
+
+		</ul>
+
+    <ul id="search-block" class="main-header" style="display: none; margin-right: 30px;">
+        <li class="full-width">
+            <form method="get" action="/search">
+			<div class="input-group full-width">
+				<input name="q" type="text" class="form-control search-input">
+			</div>
+            </form>
+        </li>
+    </ul>
+
+	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
+		<ul class="main-header pull-right" style="padding-left: 0;">
+    		
+                <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+            
+
+        </ul>
+    </ul>
+	</td>
+</tr></table>
+
+<!-- <div id="global-search-div" class="main-centered-div" style="display:none;">
+	<input type="text" value="" class="thread-search form-control" placeholder="Search" data-action="/discussion">
+</div> -->
+
+	</div>
+</div>
+
+		
+	  
+
+
+
+	  
+
+
+		
+
+		<div class="dark-head"><div class="main-centered-div">
+
+			
+
+		</div></div>
+		
+		<div class="main-centered-div" style="margin-top:40px;padding-bottom:340px">
+	    
+
+<div style="margin-top:-20px; margin-bottom:20px;">
+
+    <a class="side-box" href="/p/rephetio" style="background-color:#ebfdff;"><div class="side-type">Project:</div> <div class="side-title">Rephetio: Repurposing drugs on a hetnet [rephetio]</div></a><br>
+
+
+
+</div>
+
+<table style="margin-top:0px;"><tr>
+	<td class="thread-table-content">
+
+		<table class="full-width">
+			
+<tr class="comment-tr target-hl" id="1" data-comment-id="1216">
+  <td class="comment-profile-avatar">
+		<a href="/u/alizee"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/23_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1216"></a>
+
+    
+
+			<h2 class="page-title" style="margin-bottom:5px;margin-top:0px !important;">Network Edge Prediction: how to deal with self-testing</h2>
+
+			<div style="margin-top:5px;color:gray;margin-bottom:20px;font-size:13px;">
+				<a style="font-weight:normal;color:#212121" href="/u/alizee"><strong>Antoine Lizee</strong></a>
+				<span class="is-researcher">Researcher</span>
+				&nbsp; <a href="#1" class="light">457 days ago</a>
+				
+			</div>
+
+      
+
+          <hr>
+		
+
+    <h1>The Prior Problem</h1>
+
+<p>The last step of our project <em>rephetio</em> is to use our heterogeneous Network <em>hetionet</em> † to create features that can predict missing edges in the Network. As the goal is to repurpose existing drugs to existing diseases, the outcome metaedge we are predicting is <em>treatments</em> (read 'treats' as a verb in our nomenclature). We tackle here a major issue that we call 'self-testing', which makes our Machine Learning approach non-conventional.</p>
+
+<h2>Self-testing</h2>
+
+<p>For computational and semantical reasons, we currently fit our machine-learned models and report evaluated performance based on the <strong>training</strong> error. Indeed, our Network architecture, implementation and data currently prevents us from creating separate training and testing sets, e.g. by selectively hiding predictor and predicted edges based on time of apparition. As a result (i) predictive models are trained with features that have intrinsic knowledge of the outcome, exposing us to overfitting of these features (ii) classical performance evaluation measures (like AUROC) lose relevance and applicability.</p>
+
+<h2>Source-Target Degrees as Features</h2>
+
+<p>We included source-target degrees as features of our edge prediction problem. The goal of this addition, as explained elsewhere, is to avoid misleading selection of DWPC features that are proxies for this basic topological information. </p>
+
+<p>In this discussion, we want to focus on treatment degrees. They can be noted <span class="math">$$n_{DtC}(Ci)$$</span> and <span class="math">$$n_{CtD}(D_j)$$</span>, and represent, respectively, the number of diseases treated by a Compound <span class="math">$$C_i$$</span> (source Node) and the number of compounds that treat a Disease <span class="math">$$D_j$$</span> (target Node). We believe that these degrees, as features, crystallizes the problem of self-testing in our edge-prediction problem.</p>
+
+<h2>Direct contamination</h2>
+
+<p>These degrees characterize with precision the (bipartite) subnetwork <span class="math">$$\mathcal{N}_O$$</span> that have only edges from the 'treatment' metaedge and source and target nodes (from the Compound and Disease metanodes). <span class="math">$$\mathcal{N}_O$$</span> contains no information apart from the actual outcomes we want to predict, and yet it is sufficient to compute all the treatment degrees <span class="math">$$n_{DtC}$$</span> and <span class="math">$$n_{CtD}$$</span>. As a result, outcome observations directly 'contaminates' our features on which the models are trained and evaluated. Because these degrees are so unequally distributed (they follow a <a href="https://en.wikipedia.org/wiki/Power_law">power law</a>), and since these degree features are directly linked to the probability of existence of a treatment, fitting a model with only these two degree features gives misleeading high performance numbers.</p>
+
+<p>A first pass gave a AUROC above 0.97.</p>
+
+<h2>Prior knowledge</h2>
+
+<p>The information encapsulated in these two degree features are solely characterizing the treatment edges, <em>as we use them for fitting and evaluation</em>. We are not tackling here the more general problem of knowledge bias, but the specific issue arising as a result of self-testing: actual outcome observations directly contaminates our features, inducing prior knowledge about their value (positive or negative) before any additional information being integrated in our network.</p>
+
+<hr>
+
+<p>† This is the first public use of the name '<em>hetionet</em>' for our heterogeneous network that powers — in particular — the project <em>rephetio</em>. We call it a 'soft disclosure' ;-)</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="2" data-comment-id="1220">
+  <td class="comment-profile-avatar">
+		<a href="/u/alizee"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/23_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1220"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/alizee">Antoine Lizee</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#2" class="light">456 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Characterizing the Prior</h1>
+
+<p>Removal of degree features would only obfuscate the problem at hand, since this trivial information about outcomes could be picked up in subtler ways by DWPC features. On the contrary, we found that embracing the concept of prior knowledge presented above could solve both problems of fitting and evaluating our models. We will strive here for more accurate characterization of this prior knowledge.</p>
+
+<h2>Computing prior probabilities</h2>
+
+<p>Solely from the two treatment degree features, we can directly compute a probability of a given Compound-Disease couple to be linked by a treatment edge. </p>
+
+<p>Let us consider a couple <span class="math">$$C_i\text{-}D_j$$</span> where the treatment degree from the compound <span class="math">$$C_i$$</span> is known, and the Disease <span class="math">$$D_j$$</span> is drawn at random. The probability of this couple to be a treatment is equal to the number of disease <span class="math">$$C_i$$</span> is connected to divided by the total number of diseases it could connect to. This can be written as:</p>
+
+<div class="math">$$$
+\begin{align}
+p_t(C_i\text{-}D) &amp; = \frac{n_{CtD}(C_i)}{N_{C_i\text{-}D}} \\
+p_t(C_i\text{-}D)  &amp; = \frac{n_{CtD}(C_i)}{N_D}
+\end{align}
+$$$</div>
+
+<p>... where <span class="math">$$N_{C_i\text{-}D}$$</span> is the total number of possible edges starting from <span class="math">$$C_i$$</span>, equal to <span class="math">$$N_D$$</span> the number of Diseases in the network.</p>
+
+<p>A similar formula can be derived for the Disease degrees:</p>
+
+<div class="math">$$$
+\begin{align}
+p_t(D_j\text{-}C)  &amp; = \frac{n_{DtC}(D_j)}{N_C}
+\end{align}
+$$$</div>
+
+<p>And both of these prior probabilities can be combined to get the prior probability of a given treatment edge knowing both degrees:</p>
+
+<div class="math">$$$
+\begin{equation}
+\boxed{p_{ij} = p_t(C_i\text{-}D_j) = \frac{n_{DtC}(C_i) \cdot n_{DtC}(D_j)}{N_D \cdot N_C}}
+\end{equation}
+$$$</div>
+
+<p>This probability fully describes the prior knowledge about the outcome that the treatment degrees hold.</p>
+
+<h2>A Null model</h2>
+
+<p>A null model can be specified, where the outcome for any source-target couple when predicting presence of a treatment edge is equal to the prior probability <span class="math">$$p_{ij}$$</span> above. This model is denoted <span class="math">$$\mathcal{M}_{prior}$$</span>.</p>
+
+<p><span class="math">$$\mathcal{M}_{prior}$$</span>, when tested on all observations, is expected to have a very high AUROC, because it successfully stratifies the population of potential edges into tiers that have increasing and radically different probabilities of being a true link. For instance, it successfully discriminates the huge majority (85%) of couples that have no chances of being a treatment edge because either the Compound and/or the Disease has a treatment degree equal to zero. </p>
+
+<hr>
+
+<h2>AUROC of the null model</h2>
+
+<p>Just considering this point in the ROC curve, with <span class="math">$$P_0 = P\left(p_{ij} = 0\right)$$</span> the proportion of edges that have a priori probability of zero, we can compute (for the fun) a lower bound for the AUROC that will illustrate why the expected performance is high. Every couple with prior probability of zero is ranked lower than any other couple, and each of these couples is actually a True Negative (TN) by design. Since we know that the model will be better than random for the remaining of the range of specificity, the lower bound for the AUROC of this null model is given by a simple linear interpolation based on one point we know in ROC space. </p>
+
+<p>This point corresponds to classifying only these "absolute negatives" that have <span class="math">$$p_{ij} = 0$$</span>, as negatives. We get a sensitivity <span class="math">$$sens = 1$$</span>, since all the real positives are predicted to be positives; and a specificity of </p>
+
+<div class="math">$$$
+\begin{align}
+spe &amp;= \frac{P_0}{P_0 + (1 - P_0) \cdot (1 - pre)}\\
+&amp;= \frac{P_0}{1 - pre \cdot (1 - P_0)}\\
+spe &amp;\simeq  P_0
+\end{align}
+$$$</div>
+
+<p>with the prevalence <span class="math">$$pre$$</span> being negligible (of the order of <span class="math">$$10^{-4}$$</span>).</p>
+
+<p>The linear interpolation gives us:</p>
+
+<div class="math">$$$ 
+\begin{align}
+auroc_{min}\left(\mathcal{M}_{prior}\right) &amp;= 1 - \frac{1 - P_0}{2}
+\end{align}
+$$$</div>
+
+<p>With <span class="math">$$P_0 = 0.85 $$</span>, we get <span class="math">$$ \boxed{auroc_{min}\left(\mathcal{M}_{prior}\right) = 92.5 \%} $$</span> as a lower bound for the null model performance.</p>
+
+<hr>
+
+<p>The measured AUROC of the this null model, on all observations is equal to:</p>
+
+<div class="math">$$$ auroc\left(\mathcal{M}_{prior}\right)  = 97.9 \%$$$</div>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="3" data-comment-id="1224">
+  <td class="comment-profile-avatar">
+		<a href="/u/alizee"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/23_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1224"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/alizee">Antoine Lizee</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#3" class="light">455 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Incorporating the prior in fitting and testing</h1>
+
+<h2>Using <span class="math">$$\mathcal{M}_{prior}$$</span> as baseline</h2>
+
+<p>The performance achieved by the null model <span class="math">$$\mathcal{M}_{prior}$$</span> should serve as a baseline, thus mitigating the lack of meaning of the AUROC: we'll use <span class="math">$$auroc(\mathcal{M}_{prior})$$</span> as a minimum value to improve on (instead of the usual <span class="math">$$auroc(\mathcal{M}_{random})= 0.5$$</span>).</p>
+
+<h2>Using <span class="math">$$p_{ij}$$</span> as covariate</h2>
+
+<p>Nevertheless, we also want to include as a covariate in our models this prior probability, in order to isolate the prior knowledge about the outcome it describes, and avoid selection of DWPC features that 'tag' it. </p>
+
+<p>In the framework of generalized linear regressions I propose to directly take the linear predictor that corresponds to the computed prior probability. In the case of logistic regression, the feature to use as covariate in the model would be equal to:</p>
+
+<div class="math">$$$
+\begin{align}
+\boxed{f_{prior}\left(C_i\text{-}D_j\right) = \text{logit}\left(p_{ij}\right)\strut}
+\end{align}
+$$$</div>
+
+<h2>Proposed procedure</h2>
+
+<p>We propose an incremental approach to the fitting and evaluation of the models, going through different iteration:</p>
+
+<div class="math">$$$
+\begin{align}
+\text{1.} &amp;&amp; \mathcal{M}_{prior}: \; &amp;\text{the null model described above} \\
+\text{2.} &amp;&amp; \mathcal{M}_{deg}: \; &amp;\delta_{CtD}  \sim f_{prior} + degrees \\
+\text{3.} &amp;&amp; \mathcal{M}_{perm}: \; &amp;\delta_{CtD}  \sim f_{prior} + degrees + DWPC_{permuted} \\
+\text{4.} &amp;&amp; \mathcal{M}_{real}: \; &amp;\delta_{CtD}  \sim f_{prior} + degrees + DWPC_{real} \\
+\end{align}
+$$$</div>
+
+<p>where we use the R formula notation to specify outcomes and features of the model;<br>where <span class="math">$$\delta_{CtD} = \delta_{DtC}$$</span> is the outcome variable that denotes the presence of a treatment edge between a given couple of Compound and Disease; <br>where '<span class="math">$$degrees$$</span>' are all the source/target degree features; and<br>where the <span class="math">$$DWPC_{permuted}$$</span> and <span class="math">$$DWPC_{real}$$</span> are the all DWPC features computed respectively from the degree-preserving permuted network <span class="math">$$ \mathcal{N}_{permuted} $$</span> (see ***) and the full network <span class="math">$$\mathcal{N}$$</span>.</p>
+
+<p>We expect <span class="math">$$ \mathcal{M}_{deg} $$</span> to bring no additional predictive value than the null model <span class="math">$$ \mathcal{M}_{prior} $$</span>, since the latter withholds already the best information possible at the atomicity of the source/target degrees level. For <span class="math">$$\mathcal{M}_{perm}$$</span> and <span class="math">$$\mathcal{M}_{real}$$</span>, the degrees might be useful in conjunction with the DWPC features.</p>
+
+<p>Testing of new or fitted data will be carried out using an arbitrary value for the prior in the models, e.g. an estimation of the prevalence.</p>
+
+<h2>Redefining the training &amp; testing sets</h2>
+
+<p>Finally, we propose to fit the models above only on couples that have a non-null prior probability of being a treatment edge, i.e. couples that verify both:</p>
+
+<div class="math">$$$
+\left\{ 
+\begin{array}{c}
+n_{CtD}(C_i) &gt; 0 \\
+n_{DtC}(D_j) &gt; 0
+\end{array}
+\right. 
+$$$</div>
+
+<p>Indeed, when the prior probability <span class="math">$$p_{ij}$$</span> is equal to zero, the points do not theoretically contribute to the fitting, whereas they practically induce complications (lack of convergence, problem with the numerical encoding of <span class="math">$$-\infty$$</span> ... ). Moreover, it gives us the opportunity to report results for the couples from the complementary set (of the couples that have a null prior), which seems quite independent from the set used for training.</p>
+
+<p>On this smaller training set, the performance of the prior alone as measured by the ROC decreases since we removed obvious negatives:</p>
+
+<div class="math">$$$ auroc\left(\mathcal{M}_{prior}\right)  = 85.1 \%$$$</div>
+
+<p>... while the area under the precision recall curve is exactly the same: <span class="math">$$auprc\left(\mathcal{M}_{prior}\right) = 0.16$$</span>.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="4" data-comment-id="1221">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1221"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#4" class="light">449 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Why we self-test</h1>
+
+<p><a href="/u/alizee" class="username">@alizee</a> mentions that we plan to use self-testing. Here I'll describe what that means, and why we chose this unconventional approach. Self-testing refers to our plan to not withhold any treatments (positives) and non-treatments (negatives) from our hetnet and subsequent model training. In a conventional testing/validation approach, a subset of compound–disease pairs would be entirely removed from the training process. Here are reasons we don't want to withhold compound–disease pairs for testing.</p>
+
+<p>We only have 755 treatments. Many of the best performing features rely on these edges. For example, we'll look for compounds that bind to similar genes to compounds that treat the target disease. The informativeness of this feature is proportional to how many compounds treat the target disease. Therefore, withholding too many treatments for testing will hurt performance. Conversely, withholding too few treatments will lead to unreliable performance estimates. One solution to this dilemma is cross-validation. However, each fold would require a distinct feature extraction on a distinct hetnet. With our current infrastructure, this would create a major runtime and implementation time bottleneck that would negatively influence our agility.</p>
+
+<p>So the question becomes whether this investment is warranted by the benefits of a true testing set. The main benefit is accurate assessment of performance. However, in our particular situation, I don't think this a major concern and is probably not even possible. We're focused on making good predictions, not comparing the performance of many different methods. Ultimately the predictions will be unaffected by whether we adopt a formal testing scheme.</p>
+
+<p>Next, I expect the extent of model-based overfitting to be low. When training our logistic regression model, we use cross-validation to find an optimal level of regularization (a penalty to prevent overfitting). Specifically, we adopt the "one-standard-error" rule to choose the optimal λ from deviance <span class="citation">[<a href="https://doi.org/10.18637/jss.v033.i01" class="citation" data-key="10.18637/jss.v033.i01">1</a>]</span>. This is a stringent choice that takes a more conservative regularization strength than the deviance-minimizing value as an extra precaution against overfitting. In our previous project, where we did mask edges from the hetnet for testing, we comment <span class="citation">[<a href="https://doi.org/10.1371/journal.pcbi.1004259" class="citation" data-key="10.1371/journal.pcbi.1004259">2</a>]</span>:</p>
+
+<blockquote><p>Importantly, we did not observe any significant degradation of performance from training to testing (<a href="https://doi.org/10.1371/journal.pcbi.1004259.g003">Fig 3A</a>), indicating that our disciplined regularization approach avoided overfitting and that predictions for associations included in the network were not biased by their presence in the network.</p></blockquote>
+
+<p>And finally, there are two much bigger biases than overfitting. The first is the bias of existing knowledge (study bias), which we realistically cannot control for. The second is the prior probability of treatment based on degrees, as <a href="/u/alizee" class="username">@alizee</a> has discussed. I don't think cross-validation can easily address the prior probability issue. The PREDICT study — which also incorporated treatment information in features used to predict treatments — attempted to address the issue with the following approach <span class="citation">[<a href="https://doi.org/10.1038/msb.2011.26" class="citation" data-key="10.1038/msb.2011.26">3</a>]</span>:</p>
+
+<blockquote><p>To evaluate our classification scheme, we applied it in a 10‐fold cross‐validation setting. To avoid easy prediction cases, we hid all the associations involved with 10% of the drugs in each iteration, rather than hiding 10% of the associations.</p></blockquote>
+
+<p>However, if you hide all treatments for a set of drugs, a non-uniform prior based on the treatment-degree of the diseases still exists. Therefore, I think the best way forward will be explicitly model the prior probability of treatment based on degree and proceed intelligently.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-241" class="inline-note toggle-parent" data-note-id="241">
+	<p><a href="/u/alizee">Antoine Lizee</a>: <blockquote><p>Ultimately the predictions will be unaffected by whether we adopt a formal testing scheme.</p></blockquote>
+
+<p>I don't really agree with that, as the self-testing here also applies when fitting the model. Correctly incorporating the prior should nevertheless mitigate this issue.</p>
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-242" class="inline-note toggle-parent" data-note-id="242">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: I was assuming an approach where you partition for assessing performance, but then refit on the entire dataset for your final predictions.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+    		
+		</table>
+
+    
+
+    &nbsp;<br>
+    <a class="btn btn-primary btn-lg" href="/signup?next=/discussion/network-edge-prediction-how-to-deal-with-self-testing/194&suppress_message=1" style>Join to Reply</a>
+
+
+		<table class="references table-td-5" style="display:none;"><tr><td><a href='/doi/10.18637/jss.v033.i01' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.18637/jss.v033.i01'><a href='/doi/10.18637/jss.v033.i01' class='pub-title'>Regularization Paths for Generalized Linear Models via Coordinate Descent</a><div class='pub-body'>Jerome Friedman, Trevor Hastie, Robert Tibshirani (2010) <i>Journal of Statistical Software</i>. doi:<a class='pub-doi' href='https://doi.org/10.18637/jss.v033.i01'>10.18637/jss.v033.i01</a></div></div></td></tr><tr><td><a href='/doi/10.1371/journal.pcbi.1004259' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>2.</div></td><td><div class='doi-body' data-key='10.1371/journal.pcbi.1004259'><a href='/doi/10.1371/journal.pcbi.1004259' class='pub-title'>Heterogeneous Network Edge Prediction: A Data Integration Approach to Prioritize Disease-Associated Genes</a><div class='pub-body'>Daniel S. Himmelstein, Sergio E. Baranzini (2015) <i>PLOS Computational Biology</i>. doi:<a class='pub-doi' href='https://doi.org/10.1371/journal.pcbi.1004259'>10.1371/journal.pcbi.1004259</a></div></div></td></tr><tr><td><a href='/doi/10.1038/msb.2011.26' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>3.</div></td><td><div class='doi-body' data-key='10.1038/msb.2011.26'><a href='/doi/10.1038/msb.2011.26' class='pub-title'>PREDICT: a method for inferring novel drug indications with application to personalized medicine</a><div class='pub-body'>A. Gottlieb, G. Y. Stein, E. Ruppin, R. Sharan (2011) <i>Molecular Systems Biology</i>. doi:<a class='pub-doi' href='https://doi.org/10.1038/msb.2011.26'>10.1038/msb.2011.26</a></div></div></td></tr></table>
+
+    
+
+
+	</td>
+	<td class="thread-sidebar">
+
+
+			
+
+      <a class="btn btn-default follow-link btn-follow btn-lg is-following tt-top full-width" title="Follow discussion" data-id="194" data-ctype="thread" data-is-following="false">&nbsp;</a>
+
+      
+        <div class="status-box text-center"><span style="">Status:</span> 
+  In Progress
+
+</div>
+      
+
+      
+        
+      
+
+
+				
+
+					<div class="details">Views</div>
+					<span style="font-size:20px;">80</span>
+
+        
+
+				
+					<div class="details">Topics</div>
+					<div style="margin-bottom:15px;">
+		            <a href="/topics/machine-learning" class="tag">Machine learning</a><a href="/topics/hetnets" class="tag">Hetnets</a><a href="/topics/self-testing" class="tag">Self-Testing</a><a href="/topics/hnep" class="tag">HNEP</a>
+					</div>
+				
+
+
+		
+			<div class="details">Referenced by</div>
+			<div style="font-size:12px;"><ul style="padding-left:16px !important;">
+			
+				<li>
+					
+					<a href='/doc/7/review' class='thread-title'><span class='inbox-icon tt-top glyphicon glyphicon-flash'></span>Report Review: Rephetio: Repurposing drugs on a hetnet</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/our-hetnet-edge-prediction-methodology-the-modeling-framework-for-project-rephetio/210' class='thread-title'>Our hetnet edge prediction methodology: the modeling framework for Project Rephetio</a>
+				</li>
+			
+				<li>
+					
+					Research report: <a href='/p/rephetio/report'>Rephetio: Repurposing drugs on a hetnet</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/predictions-of-whether-a-compound-treats-a-disease/203' class='thread-title'>Predictions of whether a compound treats a disease</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/edge-dropout-contamination-in-hetnet-edge-prediction/215' class='thread-title'>Edge dropout contamination in hetnet edge prediction</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/network-edge-prediction-estimating-the-prior/201' class='thread-title'>Network Edge Prediction: Estimating the prior</a>
+				</li>
+			
+				</ul>
+			</div>
+		
+
+		
+			<div class="details">Cite this as</div>
+			<span style="font-size:12px;">
+				Antoine Lizee, Daniel Himmelstein (2016) Network Edge Prediction: how to deal with self-testing. <i>Thinklab.</i> doi:<a href='https://doi.org/10.15363/thinklab.d194'>10.15363/thinklab.d194</a>
+			</span>
+		
+
+		<div class="details">License</div>
+		<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0;width:88px;height:31px;" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></p>
+
+		<div class="details">Share</div>
+		
+			
+				<a class="share-button fb" onclick="javascript:void(window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A//thinklab.com/discussion/network-edge-prediction-how-to-deal-with-self-testing/194','','width=600,height=460,menubar=no,status=no'));" href="#"></a>
+<a class="share-button twitter" onclick="javascript:void(window.open('https://twitter.com/share?text=Network%20Edge%20Prediction%3A%20how%20to%20deal%20with%20self-testing&url=https%3A//thinklab.com/discussion/network-edge-prediction-how-to-deal-with-self-testing/194','','width=600,height=300,menubar=no,status=no'));" href="#"></a>
+<a class="share-button google" onclick="javascript:void(window.open('https://plus.google.com/share?url=https%3A//thinklab.com/discussion/network-edge-prediction-how-to-deal-with-self-testing/194','','width=510,height=460,menubar=no,status=no'));" href="#"></a>
+
+			
+		
+
+	</td>
+</tr></table>
+
+
+		</div>
+
+
+		
+	    	<div class="footer">
+<div style="background:#dedede;">
+	<div class="main-centered-div text-center" style="padding:20px;">
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#f098959c9c9fb08498999e9b9c9192de939f9d"><span class="__cf_email__" data-cfemail="1c74797070735c6874757277707d7e327f7371">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+	</div>
+</div>
+<div class="main-footer">
+	<div class="main-centered-div">
+
+<table class="full-width"><tr>
+	<td class="footer-nav">
+
+        <div class="foot-head">Explore</div>
+        <a href="/proposals">Proposals</a><br>
+        <a href="/projects">Projects</a><br>
+        <a href="/publications">Article discussion</a><br>
+        <a href="/discussion">All discussion</a><br>
+        <a href="/topics">Topics</a><br>
+        <!-- <a href="/funders">Funders</a><br> -->
+        <a href="/funding">Funding opportunities</a><br>
+
+	</td>
+	<td class="footer-nav">
+
+        <!-- <div class="foot-head">Help &amp; feedback</div>	 -->
+        <!-- <div class="foot-head">Intro</div>
+        <a href="/benefits/for-science">Why</a><br>
+        <a href="/how-it-works">How it works</a><br>
+
+<br> -->
+
+        <div class="foot-head">Community</div>
+        <a href="/leaderboard">Leaderboard</a><br>
+        <a href="/p/meta">Thinklab Meta</a><br>
+				<a href="/help/faq">Help</a><br>
+				<!-- <a href="/new-project">Start a proposal</a><br> -->
+        <!-- <a href="/benefits/proposal">Benefits</a><br> -->
+        <!-- <a href="/funding">Get funded</a><br> -->
+        <!-- <a href="/participate">Become a contributor</a><br> -->
+        <!-- <a href="/for-funders">For science funders</a><br> -->
+        <!-- <a href="/for-institutions">For institutions</a><br> -->
+
+	</td>
+	<td class="footer-nav">
+
+
+
+        <div class="foot-head">About</div>
+        <a href="/about">Overview</a><br>
+        <a href="/benefits">Benefits</a><br>
+        <a href="/how-it-works">How it works</a><br>
+        <a href="/about/story">Our story</a><br>
+        <a href="/blog">Our blog</a><br>
+        <a href="/about/jobs">Join the team</a><br>
+        <br>
+
+        <!-- <div class="foot-head">Help</div>
+        <a href="/help">Help</a><br>
+		 -->
+
+
+	</td>
+	<td class="footer-nav">
+		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
+		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<br><br>
+		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
+
+	</td>
+
+</tr></table>
+
+</div>
+</div>
+</div>
+
+		
+
+	</div>
+
+
+  <script></script>
+  <script>
+  var MEDIA_URL = 'https://think-lab.s3.amazonaws.com/m/';
+  var STATIC_URL = 'https://think-lab.s3.amazonaws.com/s/';
+  var page_is_authenticated = false;
+  var page_page = 'discussion';
+  var page_profile_id = undefined;
+</script>
+
+
+
+	<!-- Note different script type. MUST come before MathJax.js -->
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	        "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"],
+	                        scale: 110, linebreaks: { automatic:true },
+	                        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+	        tex2jax: { inlineMath: [ ["$$", "$$"], ["\\(","\\)"] ],
+	                    displayMath: [ ["$$$","$$$"], ["\\[", "\\]"] ],
+	                    processEscapes: true,}
+	            });
+
+	</script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://think-lab.s3.amazonaws.com/s/dist/main.min.js"></script>
+  
+
+
+
+  
+	
+  
+  
+  
+<script>
+$(function() {
+  recordHit('thread', 194);
+});
+</script>
+
+
+
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>

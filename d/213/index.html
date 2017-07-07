@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZgEOC19dW0QCEVtHU1gG","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":558}</script>
+    <title>Sounding the alarm on DrugBank’s new license and terms of use | Thinklab</title>
+	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
+    <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/highlightjs/github.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/css.css" />
+<link rel="stylesheet" href="https://think-lab.s3.amazonaws.com/s/css/bootstrap-multiselect.css" />
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+
+    
+    
+    
+    
+  
+    <meta name="citation_doi" content="10.15363/thinklab.d213">
+    <meta name="citation_title" content="Sounding the alarm on DrugBank’s new license and terms of use">
+    <meta name="citation_online_date" content="May 8, 2016">
+    <meta name="citation_author" content="Daniel Himmelstein, Katie Fortney, Craig Knox, Christopher Southan">
+    <meta name="citation_journal_title" content="Thinklab">
+    <meta name="citation_publisher" content="Thinklab">
+  
+
+    
+
+
+	<!-- GoogleAnalytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-48550230-1', 'thinklab.com');
+	ga('require', 'displayfeatures');
+	
+	ga('send', 'pageview');
+
+	</script>
+
+
+
+
+
+
+</head>
+<body >
+  <form id="form_action" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+</form>
+
+	
+
+	<div class="body-wrapper">
+
+		
+
+
+<!-- <div style="height:5px;background-image:url('https://think-lab.s3.amazonaws.com/s/img/top-bg.gif');"></div> -->
+<div class="gradient">
+	<div class="main-centered-div header-container">
+
+<table class="full-width" style="height:60px;"><tr>
+	<td style="width:200px;vertical-align:middle;padding-bottom:15px;">
+		<a href="/" style="font-weight:normal;color:#212121;"><img src="https://think-lab.s3.amazonaws.com/s/img/logo.png" width="160"></a>
+	</td><td style="vertical-align:middle;text-align:left;padding-top:6px;width:100%;padding-left:40px;">
+		<ul id="not-search-block"  class="main-header">
+
+
+			
+
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/proposals">Proposals</a></li>
+						<li><a href="/projects">Projects</a></li>
+						<li><a href="/publications">Article discussion</a></li>
+						<li><a href="/discussion">All discussion</a></li>
+					</ul>
+				</li>
+				<li><a href="/leaderboard">Leaderboard</a></li>
+
+			
+				<li><a href="/about">About</a></li>
+			
+
+
+		</ul>
+
+    <ul id="search-block" class="main-header" style="display: none; margin-right: 30px;">
+        <li class="full-width">
+            <form method="get" action="/search">
+			<div class="input-group full-width">
+				<input name="q" type="text" class="form-control search-input">
+			</div>
+            </form>
+        </li>
+    </ul>
+
+	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
+		<ul class="main-header pull-right" style="padding-left: 0;">
+    		
+                <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+            
+
+        </ul>
+    </ul>
+	</td>
+</tr></table>
+
+<!-- <div id="global-search-div" class="main-centered-div" style="display:none;">
+	<input type="text" value="" class="thread-search form-control" placeholder="Search" data-action="/discussion">
+</div> -->
+
+	</div>
+</div>
+
+		
+	  
+
+
+
+	  
+
+
+		
+
+		<div class="dark-head"><div class="main-centered-div">
+
+			
+
+		</div></div>
+		
+		<div class="main-centered-div" style="margin-top:40px;padding-bottom:340px">
+	    
+
+<div style="margin-top:-20px; margin-bottom:20px;">
+
+    <a class="side-box" href="/p/rephetio" style="background-color:#ebfdff;"><div class="side-type">Project:</div> <div class="side-title">Rephetio: Repurposing drugs on a hetnet [rephetio]</div></a><br>
+
+
+
+</div>
+
+<table style="margin-top:0px;"><tr>
+	<td class="thread-table-content">
+
+		<table class="full-width">
+			
+<tr class="comment-tr target-hl" id="1" data-comment-id="1300">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1300"></a>
+
+    
+
+			<h2 class="page-title" style="margin-bottom:5px;margin-top:0px !important;">Sounding the alarm on DrugBank’s new license and terms of use</h2>
+
+			<div style="margin-top:5px;color:gray;margin-bottom:20px;font-size:13px;">
+				<a style="font-weight:normal;color:#212121" href="/u/dhimmel"><strong>Daniel Himmelstein</strong></a>
+				<span class="is-researcher">Researcher</span>
+				&nbsp; <a href="#1" class="light">425 days ago</a>
+				
+			</div>
+
+      
+
+          <hr>
+		
+
+    <p><strong>Update on 2016-06-21:</strong> The OMx team in charge of DrugBank's licensing was highly responsive and thoroughly addressed the issues I raised. See <a href="/u/cknoxrun" class="username">@cknoxrun</a>'s <a href="#10">description below</a> of the revised DrugBank licensing.</p>
+
+<hr>
+
+<p><a href="http://www.drugbank.ca/">DrugBank</a> is a database of drugs which includes information on drug biochemistry and pharmacology <span class="citation">[<a href="https://doi.org/10.1093/nar/gkj067" class="citation" data-key="10.1093/nar/gkj067">1</a>, <a href="https://doi.org/10.1093/nar/gkm958" class="citation" data-key="10.1093/nar/gkm958">2</a>, <a href="https://doi.org/10.1093/nar/gkq1126" class="citation" data-key="10.1093/nar/gkq1126">3</a>, <a href="https://doi.org/10.1093/nar/gkt1068" class="citation" data-key="10.1093/nar/gkt1068">4</a>]</span>. DrugBank is a publicly-funded resource that is frequently used for biomedical research. Google Scholar <a href="https://scholar.google.com/scholar?q=drugbank&amp;hl=en&amp;as_sdt=0%2C5&amp;as_ylo=2006&amp;as_yhi=2015" title="Google Scholar Search for articles mentioning DrugBank from 2006–2015">returns</a> 8,940 studies which mention "DrugBank" during its first decade of existence (2006–2015).</p>
+
+<p>When we began using DrugBank for Project Rephetio and Hetionet in 2015, DrugBank <a href="https://github.com/dhimmel/integrate/blob/7b95bf337d6e43e54457621f39a7341e620138f7/licenses/custom/DrugBank.md" title="Archive of DrugBank's legal statement from 2015-08-20">had</a> a brief legal statement:</p>
+
+<blockquote><p>DrugBank is offered to the public as a freely available resource. Use and re-distribution of the data, in whole or in part, for commercial purposes requires explicit permission of the authors and explicit acknowledgment of the source material (DrugBank) and the original publication.</p></blockquote>
+
+<p>Therefore, in accordance with our <a href="https://thinklab.com/discussion/integrating-resources-with-disparate-licensing-into-an-open-network/107#14" class="citation thread-citation" data-key="10.15363/thinklab.d107">data-licensing compliance strategy</a>, we applied a <a href="https://creativecommons.org/licenses/by-nc/4.0/" title="Creative Commons Attribution-NonCommercial 4.0 International">CC BY-NC</a> license to DrugBank data. The non-commercial stipulation was regrettable because it discriminates against a class of user and precludes the data from being <a href="http://opendefinition.org/od/2.1/en/" title="Open Definition 2.1">open knowledge</a>. Additionally, what qualifies as commercial reuse is unclear and potentially broad making NC stipulations especially toxic <span class="citation">[<a href="https://doi.org/10.3897/zookeys.150.2189" class="citation" data-key="10.3897/zookeys.150.2189">5</a>]</span>.</p>
+
+<p>Nonetheless, many publicly-funded resources will specify "academic use only" by habit, without appreciating the full ramifications of their discrimination. Hence, I assumed that DrugBank was effectively an open resource with a poorly-devised license statement.</p>
+
+<p>The <a href="http://www.drugbank.ca/releases/4-5-0/release_notes">release</a> of DrugBank 4.5 on April 20, 2016 dispelled my naiveté. DrugBank has been hijacked by the commercial interests of the University of Alberta and OMx. <a href="http://omx.io/" title="OMx Personal Health Analytics">OMx</a> is a company <a href="http://entrepreneurship.ualberta.ca/ehub/ehub-startups/omx" title="Entrepreneurship @ UAlberta eHUB Startups Interview">started</a> in 2012 at the University of Alberta, which currently lists DrugBank as their only product. While the University of Alberta asserts to own DrugBank, OMx is responsible for commercial DrugBank licensing.</p>
+
+<p>Downloading DrugBank now requires registration. To <a href="http://www.drugbank.ca/public_users/sign_up" title="Sign up for DrugBank account">register</a>, users must provide their name, contact information, university/institutional affiliation, and intended use of DrugBank. Additionally, registration is contingent upon entering into the following agreement:</p>
+
+<blockquote><p>I accept DrugBank's Privacy Policy, Terms of Use, and the above End User License Agreement (required)</p><p>By checking the above box, you are confirming that your use of DrugBank shall not be for commercial purposes. If you wish to use DrugBank for commercial purposes, contact <a href="/cdn-cgi/l/email-protection#7e171018113e111306501711"><span class="__cf_email__" data-cfemail="21484f474e614e4c590f484e">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a> to inquire about a separate agreement with OMx.</p></blockquote>
+
+<p>My next post will examine how the new <a href="https://github.com/dhimmel/drugbank/blob/27ca084815803dff5d8c2ee3a7e85b7ef5cf23a1/legal/privacy.md" title="Archive of the Privacy Policy from 2016-05-08">Privacy Policy</a>, <a href="https://github.com/dhimmel/drugbank/blob/27ca084815803dff5d8c2ee3a7e85b7ef5cf23a1/legal/terms.md" title="Archive of the Terms of Use from 2016-05-08">Terms of Use</a>, and <a href="https://github.com/dhimmel/drugbank/blob/27ca084815803dff5d8c2ee3a7e85b7ef5cf23a1/legal/EULA.md" title="Archive of the End User License Agreement from 2016-05-08">License Agreement</a> inhibit reuse of DrugBank. In essence, DrugBank has chosen a path that prioritizes licensing revenue over public reuse. Its heavy-handed legal infrastructure presents a grave barrier to reuse. The academic community must now consider parting ways with what has been a foundational resource.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="2" data-comment-id="1302">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1302"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#2" class="light">424 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Decoding the legal texts</h1>
+
+<p>Researchers looking to use DrugBank now have quite a bit of reading to do. As described in the 1,424-word <a href="https://github.com/dhimmel/drugbank/blob/27ca084815803dff5d8c2ee3a7e85b7ef5cf23a1/legal/privacy.md">Privacy Policy</a>:</p>
+
+<blockquote><p>You are prohibited from using the Platform unless you fully understand and agree to the Terms of Use and the [Privacy] Policy.</p></blockquote>
+
+<h2>Terms of Use</h2>
+
+<p>Let's start with the 3,529-word <a href="https://github.com/dhimmel/drugbank/blob/27ca084815803dff5d8c2ee3a7e85b7ef5cf23a1/legal/terms.md">Terms of Use</a>. Remember that these terms of use claim to govern any use of the Platform, which encompasses the drugbank.ca website. First make sure you understand the terms before using DrugBank:</p>
+
+<blockquote><p>If you do not agree to or understand all the provisions, terms and conditions set out below, then you may not access the Platform or use any of our services.</p></blockquote>
+
+<p>Second, it appears that using information from DrugBank in a publication is prohibited:</p>
+
+<blockquote><p>Users are not permitted to take any information from the site and share it with others ... unless they have obtained OMx’s consent.</p></blockquote>
+
+<p>In fact, you're not allowed to even copy information:</p>
+
+<blockquote><p>Users are prohibited from copying, reproducing, downloading, sharing, or storing the Platform, the data contained within DrugBank or any components thereof, to any device or server unless previously authorized to do so by OMx.</p></blockquote>
+
+<p>Third, it appears that showing a DrugBank page in your presentation is prohibited:</p>
+
+<blockquote><p>Users are prohibited from providing any display or demonstration of the Platform to others, either publicly or in private, for any purpose whatsoever without the prior express written consent of OMx.</p></blockquote>
+
+<p>Fourth, users under 18 are denied access:</p>
+
+<blockquote><p>We do not permit any User under the age of 18 to use our Service or Platform.</p></blockquote>
+
+<p>Finally, any past permissions you've received are no longer any good:</p>
+
+<blockquote><p>The Agreement, in combination with all policies and guidelines related thereto (including but not limited to the Privacy Policy), incorporated by reference, constitute the entire agreement between you and OMx and supersede all prior communications, agreements and understandings, written or oral, with respect to the subject matter of the Agreement.</p></blockquote>
+
+<h2>License Agreement</h2>
+
+<p>To register with DrugBank, which is necessary for downloading the database, users must agree to a 877-word <a href="https://github.com/dhimmel/drugbank/blob/27ca084815803dff5d8c2ee3a7e85b7ef5cf23a1/legal/EULA.md">Non-Commercial End User License Agreement</a> (EULA). Specifically, the agreement states:</p>
+
+<blockquote><p>Your use of DrugBank Database is governed by a legal agreement between you and OMx consisting of this Non-Commercial End User License Agreement, the Terms of Use (the "Terms") and the Privacy Policy, which you must accept by checking the box indicating your acceptance of this License, the Terms and the Privacy Policy.</p></blockquote>
+
+<p>Next, the EULA states:</p>
+
+<blockquote><p>1.2 Access to DrugBank Database is subject to this standard Non-Commercial End User License Agreement, which is <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/legalcode">Creative Common's Attribution-NonCommercial-ShareAlike 4.0 International License</a>. You must accept the license as an integrated part of this Agreement by checking the box indicating your acceptance.</p></blockquote>
+
+<p>I am confused because Section 1.2 claims that the EULA is a CC BY-NC-SA 4.0 license. However, the EULA also requires agreeing to the Terms of Use and other conditions that impose additional restrictions on top of CC BY-NC-SA 4.0. Is this a <a href="https://wiki.creativecommons.org/wiki/Modifying_the_CC_licenses">modified Creative Commons license</a>? Or does CC BY-NC-SA 4.0 become the only relevant license and terms once the EULA is accepted? <a href="/u/katiefortney" class="username">@katiefortney</a>, what's your take here?</p>
+
+<p>The EULA reiterates the age discrimination:</p>
+
+<blockquote><p>In order to use DrugBank Database you must be 18 years of age or older.</p></blockquote>
+
+<p>Additionally, it's not clear that you can access the DrugBank Database though other channels even though it's supposedly CC BY-NC-SA 4.0:</p>
+
+<blockquote><p>You agree not to access (or attempt to access) DrugBank Database by any means other than through the interface that is provided by the Platform (as defined in the Terms and Privacy Policy), unless you have been specifically allowed to do so in a separate agreement with OMx.</p></blockquote>
+
+<p>Posting a disclaimer is required (which is a condition of the CC license):</p>
+
+<blockquote><p>You warrant that you shall publish the following disclaimer to third parties</p></blockquote>
+
+<p>Additionally, users are bound by whatever the current License is at the time of use rather than just the one they agreed to:</p>
+
+<blockquote><p>You understand and agree that if you use DrugBank Database after the date on which this License, the Terms or the Privacy Policy have changed, we will treat your use as acceptance of the updated License, Terms or Privacy Policy</p></blockquote>
+
+<p>Finally, the EULA includes the CC definition of commercial use:</p>
+
+<blockquote><p>Commercial use is one primarily intended for commercial advantage or monetary compensation.</p></blockquote>
+
+<h2>Conclusion</h2>
+
+<p>The Terms of Use and License Agreement are deeply troubling. Imposing non-commercial share-alike stipulations is already severely limiting and disqualifies reuse in an open resource. However, the Terms of Use and License exceed CC BY-NC-SA. For example, they add age discrimination and the prohibition on displaying the Platform. Finally, the burden to "fully understand" 8,000+ words of legalese is placed on the academic user, before they are supposed to even access the Platform.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="3" data-comment-id="1301">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1301"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#3" class="light">424 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Funding</h1>
+
+<p>Ultimately science funders have the most leverage regarding data licensing issues. Public funding agencies and philanthropists are generally interested in making sure the research they fund is shared openly. DrugBank appears to have received both public and private funding. DrugBank has pursued commercial partnerships <a href="http://www.bio-itworld.com/issues/2008/feb/drugbank-database.html" title="DrugBank Database in Commercial Partnership">since at least 2008</a>.</p>
+
+<h2>Specific grants</h2>
+
+<p>The database has received at least $1,069,848 CAD from the Canadian Institutes of Health Research (CIHR) from the following two grants:</p>
+
+<ul><li><a href="http://agingportfolio.org/projects/project/CIHR-944397">$374,128 CAD from 2007–2010</a></li><li>$695,720 CAD from 2011–2016</li></ul>
+
+<p>Please leave a note if you find specifics on other DrugBank grants.</p>
+
+<h2>Funding Statements</h2>
+
+<p>As of May 8, 2016, the <a href="http://www.drugbank.ca/">DrugBank homepage</a> includes the following funding statement:</p>
+
+<blockquote><p>This project is supported by the <a href="http://www.cihr-irsc.gc.ca">Canadian Institutes of Health Research</a> (award #111062), <a href="http://www.aihealthsolutions.ca">Alberta Innovates - Health Solutions</a>, and by <a href="http://www.metabolomicscentre.ca/">The Metabolomics Innovation Centre (TMIC)</a>, a nationally-funded research and core facility that supports a wide range of cutting-edge metabolomic studies. TMIC is funded by <a href="http://www.genomealberta.ca">Genome Alberta</a>, <a href="http://www.genomebc.ca/">Genome British Columbia</a>, and <a href="http://www.genomecanada.ca">Genome Canada</a>, a not-for-profit organization that is leading Canada's national genomics strategy with $900 million in funding from the federal government. Maintenance, support, and commercial licensing is provided by <a href="http://omx.io">OMx Personal Health Analytics, Inc.</a></p></blockquote>
+
+<p>The DrugBank publications include the following funding statements:</p>
+
+<p>From 2006 <span class="citation">[<a href="https://doi.org/10.1093/nar/gkj067" class="citation" data-key="10.1093/nar/gkj067">1</a>]</span>:</p>
+
+<blockquote><p>The authors wish to thank Genome Prairie, a division of Genome Canada for financial support. Funding to pay the Open Access publication charges for this article was provided by Genome Canada.</p></blockquote>
+
+<p>From 2007 <span class="citation">[<a href="https://doi.org/10.1093/nar/gkm958" class="citation" data-key="10.1093/nar/gkm958">2</a>]</span>:</p>
+
+<blockquote><p>The authors wish to thank the Canadian Institutes for Health Research (CIHR), as well as Genome Alberta and Genome Canada for financial support. We are also indebted to the many users of DrugBank who have provided valuable feedback and suggestions. Funding to pay the Open Access publication charges was provided by Genome Alberta.</p></blockquote>
+
+<p>From 2010 <span class="citation">[<a href="https://doi.org/10.1093/nar/gkq1126" class="citation" data-key="10.1093/nar/gkq1126">3</a>]</span>:</p>
+
+<blockquote><p>Canadian Institutes of Health Research (CIHR); Genome Alberta; Genome Canada; GenomeQuest Inc. Funding for open access charge: CIHR.</p></blockquote>
+
+<p>From 2013 <span class="citation">[<a href="https://doi.org/10.1093/nar/gkt1068" class="citation" data-key="10.1093/nar/gkt1068">4</a>]</span>:</p>
+
+<blockquote><p>The authors wish to thank Genome Alberta (a division of Genome Canada), The Canadian Institutes of Health Research (CIHR), and Alberta Innovates Health Solutions (AIHS) for financial support. Funding for open access charge: CIHR.</p></blockquote>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="4" data-comment-id="1303">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1303"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#4" class="light">424 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1><em>NAR</em> Database Issue Compliance</h1>
+
+<p>The last three DrugBank papers have been published in <em>Nucleic Acids Research</em> Database Issue <span class="citation">[<a href="https://doi.org/10.1093/nar/gkm958" class="citation" data-key="10.1093/nar/gkm958">1</a>, <a href="https://doi.org/10.1093/nar/gkq1126" class="citation" data-key="10.1093/nar/gkq1126">2</a>, <a href="https://doi.org/10.1093/nar/gkt1068" class="citation" data-key="10.1093/nar/gkt1068">3</a>]</span>. The <em>NAR</em> <a href="http://www.oxfordjournals.org/our_journals/nar/for_authors/msprep_database.html">guidelines for the Database Issue</a> state that:</p>
+
+<blockquote><p>Databases must be freely available to all via the web without the need to register or login. If any part of the database (e.g. the one that deals with the user-submitted data) needs to be password-protected, only the freely available part will be considered by the reviewers. Authors are encouraged, but not required, to make the contents of their databases freely available as flat or relational files upon request.</p></blockquote>
+
+<p>Additionally,</p>
+
+<blockquote><p>All databases published in the NAR Database Issue are expected to be maintained under the same URL for at least 5 years after the publication data. Graduation or retirement of the database developers is not a valid reason for termination of the database.</p></blockquote>
+
+<p>I interpret the five year window to mean that DrugBank must be "must be freely available to all via the web without the need to register or login" through 2018. The age restrictions and registration requirements would therefore violate <em>NAR</em>'s policy.</p>
+
+<p>Since reviewers are directed to consider "only the freely available part", any future submission of DrugBank to the <em>NAR</em> Database Issue should be treated as lacking a bulk database download. Much of the value contributed by of DrugBank depends on high-throughput applications that use the bulk download. Hence, it would be interesting to see how reviewers respond to this feature being effectively removed.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-260" class="inline-note toggle-parent" data-note-id="260">
+	<p><a href="/u/larsjuhljensen">Lars Juhl Jensen</a>: As far as I know, the "freely available to all" is not about data download. By having their current web interface, which allows anyone to freely search DrugBank, they are in compliance with the NAR Database Issue rules. You are right that the bulk download option should be disregarded by the next reviewers.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-261" class="inline-note toggle-parent" data-note-id="261">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: <a href="/u/larsjuhljensen" class="username">@larsjuhljensen</a>, assuming users abide by the Terms of Use, the current web interface now forbids anyone under 18 from freely searching DrugBank.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+<li id="note-262" class="inline-note toggle-parent" data-note-id="262">
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: The 2013 paper mentions a Data Extractor <span class="citation">[<a href="https://doi.org/10.1093/nar/gkt1068" class="citation" data-key="10.1093/nar/gkt1068">1</a>]</span>:</p>
+
+<blockquote><p>The new Data Extractor appears in all of DrugBank’s standard browse and search windows, allowing users to easily extract, download and save their current data view at any point.</p></blockquote>
+
+<p>The current <a href="http://www.drugbank.ca/about">about page</a> on the website says:</p>
+
+<blockquote><p>The Data Extractor is the most sophisticated search tool for DrugBank. Users may download selected text components and sequence data from DrugBank and track the latest DrugBank statistics by clicking on the <a href="http://www.drugbank.ca/downloads">Download</a> button.</p></blockquote>
+
+<p>I don't really understand what features the Data Extractor is referring to. However, if the Data Extractor includes the download functionality, I interpret the <em>NAR</em> policies to preclude password-protecting the version 4.0 download until 2018.
+		
+	</p>
+	
+	<table style="display:none;"><tr><td><a href='/doi/10.1093/nar/gkt1068' class='pub-comments tt-right' title='Article comments'>4</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkt1068'><a href='/doi/10.1093/nar/gkt1068' class='pub-title'>DrugBank 4.0: shedding new light on drug metabolism</a><div class='pub-body'>V. Law, C. Knox, Y. Djoumbou, T. Jewison, A. C. Guo, Y. Liu, A. Maciejewski, D. Arndt, M. Wilson, V. Neveu, A. Tang, G. Gabriel, C. Ly, S. Adamjee, Z. T. Dame, B. Han, Y. Zhou, D. S. Wishart (2013) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkt1068'>10.1093/nar/gkt1068</a></div></div></td></tr></table>
+</li>
+
+<li id="note-264" class="inline-note toggle-parent" data-note-id="264">
+	<p><a href="/u/larsjuhljensen">Lars Juhl Jensen</a>: You may be right or you may be wrong. You're only asked to accept the terms of use if you sign up for an account to download the files. It is thus unclear to me if the terms of use apply to the download files only or also to the website.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="5" data-comment-id="1304">
+  <td class="comment-profile-avatar">
+		<a href="/u/katiefortney"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/137_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1304"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/katiefortney">Katie Fortney</a>
+				
+				<span class="light">&nbsp;<a href="#5" class="light">424 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>I would say it sounds like they don't understand CC licenses. The statement "Access to DrugBank Database is subject to this standard Non-Commercial End User License Agreement, <strong>which is</strong> Creative Common's Attribution-NonCommercial-ShareAlike 4.0 International License" is false. It's bad drafting. In a hypothetical universe where someone relied upon the CC BY-NC-SA terms because OMx said their use was subject to the CC license, and then OMx sued them for sharing the database, in such a way that complied with the terms of the CC license but violated OMx's other terms... I don't know. It'd be messy. I think it's most likely the <a href="https://en.wikipedia.org/wiki/Contra_proferentem">bad drafting is construed against the drafter</a>, but it's possible a court could find that OMx's restrictions were valid since <a href="http://www.lexology.com/library/detail.aspx?g=3e97d26c-bf45-4358-8106-c8f75840f91c">they're more specific</a>. And spread among multiple documents.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-263" class="inline-note toggle-parent" data-note-id="263">
+	<p><a href="/u/larsjuhljensen">Lars Juhl Jensen</a>: I completely agree with you that it seems like the people who drafted this license don't understand CC licenses. The license is either CC-BY-NC-SA 4.0 or it is not. The moment you change it in any way, such as adding additional usage restrictions, it is no longer a CC license.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="6" data-comment-id="1305">
+  <td class="comment-profile-avatar">
+		<a href="/u/cknoxrun"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/241_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1305"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/cknoxrun">Craig Knox</a>
+				
+				<span class="light">&nbsp;<a href="#6" class="light">424 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Daniel,</p>
+
+<p>Thanks for your post detailed post detailing your criticisms of the new terms/privacy policy and license for DrugBank. I wanted to reply and clear a couple things up here, and explain some of our thinking:</p>
+
+<p>1) You have some good points and I believe we have made some mistakes in our current documents. I apologize and hope that we can work to improve this to make our users happier. It would be great to have a discussion about ways to improve.</p>
+
+<p>2) Half of the founding members of OMx have been working on DrugBank since it’s inception in 2005. One of the things that has attracted and kept us working on DrugBank over the years is the passionate research community that has used the data to produce interesting and insightful work.</p>
+
+<p>3) The funding situation is not good. Over the past decade we have received significant funding from various levels of the Canadian government. This has allowed us to hire several annotators and programmers, and we have managed to produce several highly cited papers. However, over the past year we have seen several of our colleagues lose their positions (as well as our own) as the funding has disappeared. It seems no funding agency is interested in maintaining highly used databases, regardless of how useful they are. </p>
+
+<p>4) Our goal with DrugBank is to continue to improve and expand the database. The DrugBank database will always be free for non-commercial use, free to use in research, and by the public. At the same time we intend on funding further development by providing companies with affordable licensing, including small startups and enterprise customers. We are also working on some new things that we plan on releasing with fully open licensing.</p>
+
+<p>5) We are trying to give as much away for free as we can. Unlike some of the other databases mentioned on twitter and here (KEGG, etc.), we are not charging non-commercial users. Non-commercial can include corporations, depending on use. I think we need to do more work to explain what entails commercial use.</p>
+
+<p>6) As you pointed out, in the past there was a brief description that included: “Use and re-distribution of the data, in whole or in part, for commercial purposes requires explicit permission of the authors”, some commercial users requested permission, some were granted permission and some were required to get a commercial license, but the majority did not ask for permission. This is one of the things that pushed us to make a signup page for the downloads. Previously it was vague and inconsistently applied, and some groups did not use DrugBank because the licensing was unclear.</p>
+
+<p>7) We attempted to make our license simple and fair and easy for non-commercial researchers to access. I think we have more work to do here. We also agree that we need to address the requirement that our users are 18 or older, this is far too restrictive.</p>
+
+<p>We are new to this, and we are learning as we go, so it is good to get your feedback. <br>You have brought up some valid criticism that needs to be addressed. We propose that instead of “sounding the alarm”, we start the discussion on how to solve the issues you have brought up. We will be looking more closely at our terms of use in the next week to see how we can move forward in a way that allows us to secure a future for DrugBank as well as alleviate any fears people in the research community may have. We will be setting up a blog as a medium for this discussion, and look forward to working with you and other members of the research and data community.</p>
+
+<p>Thanks,<br>Mike and Craig<br>OMx/DrugBank</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="7" data-comment-id="1306">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1306"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#7" class="light">424 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Thanks <a href="/u/cknoxrun" class="username">@cknoxrun</a> for your <a href="#6">helpful comment</a>. I'm happy that you are open to discussion regarding these issues and I'd love to contribute. I really appreciate your quick response and willingness to address the issues we've raised.</p>
+
+<p>Sorry if I made too many assumptions based on our past experiences. Specifically, I assumed DrugBank's licensing was a done deal and in the hands of an intellectual property department that didn't prioritize data reuse. My experience with MIT's technology licensing (<a href="https://thinklab.com/discussion/msigdb-licensing/108" class="citation thread-citation" data-key="10.15363/thinklab.d108">primarily regarding MSigDB</a> and less so <a href="https://github.com/fraenkel-lab/OmicsIntegrator/issues/11" title="GitHub Issue · Switch OmicsIntegrator from CC BY-NC to an open source license">OmicsIntegrator</a>) led me to "sound the alarm" and reference "the hijacking". I think the close ties between DrugBank and OMx will help resolve any disconnect between the legal and community considerations DrugBank faces.</p>
+
+<p>I understand the difficult realities your team faces when seeking biocuration funding — a point that's been <a href="https://listserv.it.northwestern.edu/scripts/wa.exe?A2=ind1605&amp;L=ISB&amp;D=0&amp;P=10771" title="International Society for Biocuration Mailing List">echoed elsewhere</a>. DrugBank is a fantastic resource. Were I to have to choose between no DrugBank and a highly-restrictive DrugBank, I'd choose the later. Additionally, your team has done a great job of responding to demand and providing a clean user experience. Given the hard compromises imposed by the funding environment, I completely understand that releasing DrugBank <a href="http://opendefinition.org/" title="The Open Definition">openly</a> may not be most healthy long-term option for DrugBank's continued upkeep.</p>
+
+<p>That being said I do have a few suggestions, which I'll post next. Once the blog is up and running, we can copy any relevant discussion over.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="8" data-comment-id="1309">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1309"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#8" class="light">424 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>How to improve the reusability of DrugBank</h1>
+
+<p>Here, I'll provide my thoughts on steps DrugBank can take to foster its use in academic research.</p>
+
+<h2>A standard license</h2>
+
+<p>From a research perspective, having a license that allows for use, redistribution, and modification are of utmost importance. The CC BY-NC-SA 4.0 License mentioned in the EULA would allow for these uses. As <a href="#5">pointed out above</a>, some changes will be needed before DrugBank can be clearly considered as having a Creative Commons license. </p>
+
+<p>Redistribution rights are especially important for reproducible science (as some <a href="https://gu.com/p/4dcx2/sbl">weird situations</a> have shown) <span class="citation">[<a href="https://doi.org/10.5334/jors.ay" class="citation" data-key="10.5334/jors.ay">1</a>]</span>. One aspect of redistribution is that users could access DrugBank data from a third party and avoid having to sign up.</p>
+
+<p>I also think it's important to use a standard license, such as a Creative Commons license, rather than a custom one. Especially since most researchers have minimal legal expertise, a standard license helps reduce the burden academic users must endure to use the resource. Given OMx's commercial licensing goals, a <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC</a> license for the public seems to make sense. I'm not sure what OMx gains by adding the share alike (SA) restriction.</p>
+
+<h2>An open vocabulary</h2>
+
+<p>A standard non-commercial license like CC BY-NC would enable many academic research uses. For resources such as Hetionet (the network we're creating in Project Rephetio) that aim to integrate knowledge into an open database, the non-commercial stipulation is a disqualifying factor. Here there's no easy solution: one of our main long term goals is to integrate only <a href="http://opendefinition.org/licenses/" title="Open Definition Conformant Licenses">openly licensed</a> content, which would preclude DrugBank.</p>
+
+<p>In the short term, I have a more pressing concern. Since we use DrugBank to identify compounds in our networks, many of our datasets rely on DrugBank identifiers and drug names. For example, our catalog of medical indications named <a href="https://thinklab.com/discussion/announcing-pharmacotherapydb-the-open-catalog-of-drug-therapies-for-disease/182" class="citation thread-citation" data-key="10.15363/thinklab.d182">PharmacotherapyDB</a> <span class="citation">[<a href="https://doi.org/10.6084/m9.figshare.3103054" class="citation" data-key="10.6084/m9.figshare.3103054">2</a>]</span> and our forthcoming drug repurposing predictions both identify compounds with their DrugBank IDs. We're committed to releasing the results of our research under the <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a> Public Domain Dedication. As it turns out, our results will often include DrugBank identifiers. While I believe that using a portion of the DrugBank vocabulary is likely fair use, reducing uncertainty in arena would be helpful.</p>
+
+<p>Hence, I think it would make sense to release the DrugBank vocabulary under an open license (preferably CC0). By vocabulary, I'm referring the identifying information for each compound such as ID, name, and chemical structure. This would allow researchers to use DrugBank-coded compounds in their integrative research without having to worry about any legality issues.</p>
+
+<p>One final point, I don't want users to feel uncomfortable using our predictions because they include DrugBank identifiers. I hope many of our users will be commercial, and I don't want to scare them away.</p>
+
+<h2>Website Terms of Use</h2>
+
+<p>Finally, I think the website Terms of Use should be made less draconian. Many of the forbidden uses seem legitimate and even desirable from a business perspective. The current Terms of Service make the website an intimidating platform to use.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+<li id="note-265" class="inline-note toggle-parent" data-note-id="265">
+	<p><a href="/u/cknoxrun">Craig Knox</a>: Hi Daniel, some excellent ideas here. I think the idea of an open vocabulary makes sense, and we are looking at other data sets as well that would make sense to have under an open license. We are working on improving the website terms of use as well, however keep in mind we are bound by local Alberta privacy laws (this is the origin of the requirement that users are over 18; I believe we'll be able to relax this one with some additional terms regarding consent). </p>
+
+<p>We really appreciate the time and effort you are putting into this. Thanks for that. Just a heads up that it will take us a few more days to get revised versions of our documents up for review.
+		
+	</p>
+	
+	<table style="display:none;"></table>
+</li>
+
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="9" data-comment-id="1310">
+  <td class="comment-profile-avatar">
+		<a href="/u/christophersouthan"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/s/img/p_default_medium.png' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1310"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/christophersouthan">Christopher Southan</a>
+				
+				<span class="light">&nbsp;<a href="#9" class="light">422 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>I'm assuming Mike and Craig  at least contemplated the option of an open/Pro version split.  So what precludes this?  Wouldn't it make things sooooo much simpler?   Cheers</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="10" data-comment-id="1324">
+  <td class="comment-profile-avatar">
+		<a href="/u/cknoxrun"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/241_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1324"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/cknoxrun">Craig Knox</a>
+				
+				<span class="light">&nbsp;<a href="#10" class="light">381 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <p>Hi Everyone,</p>
+
+<p>We've done a bunch of work on improving DrugBank's terms of use, license, and privacy policy. It's taken us a little longer to release than we had hoped, but has now been released as version 5.0.0 (http://www.drugbank.ca/releases/latest).</p>
+
+<p>If you click on Downloads the first thing you will notice is that you aren't hit with a login screen. Here are some of the additional steps we've taken:</p>
+
+<ol><li><p>The licensing is now more clear, the downloads that require an account to access are all released under a straightforward Creative Common’s Attribution-NonCommercial 4.0 International License. The blurb you now agree to when signing up makes this clear (see <a href="http://drugbank.ca/public_users/sign_up">http://drugbank.ca/public_users/sign_up</a>). The blurb is now just there to provide a bit of extra context and disclaimers to warn against using DrugBank data as medical advice, as well as providing a better definition of what 'Non-commercial' means.</p></li><li><p>We have created a new 'Open Data' tab. The data here is released under a Creative Common’s CC0 International License, which is public domain. We have 2 datasets here and are working on more. 1) The DrugBank vocabulary which includes DrugBank IDs, names, UNIIs, CAS, InChI Key; 2) all DrugBank structures in SDF format. You do not have to create an account to download this data. We plan on adding more open datasets soon and on a regular basis.</p></li><li><p>Our terms of use have been updated to make it clear that the data on the DrugBank website can be freely copied and shared (in publications, presentations, documents, etc.)</p></li><li><p>Additionally the requirement for users being 18 or older has been changed to permit younger users (with parental consent). However, users are still required to be 13 or older.</p></li><li><p>We have tried to improve our definitions for 'Commercial Use' - we are expanding our FAQ to include more questions people might have about this. We will probably setup a dedicated page with different use cases very soon.</p></li></ol>
+
+<p>I hope this addresses everyone's concerns. We have a few more datasets that we will be putting in the Open Data section very soon, and hope to continue to push new datasets there regularly. Thanks for your patience and input (especially Daniel and Egon!). If you have any more questions or issues please don't hesitate to comment on here or email me directly at <a href="/cdn-cgi/l/email-protection#f79485969e90b7989a8fd99e98"><span class="__cf_email__" data-cfemail="0c6f7e6d656b4c636174226563">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a>.</p>
+
+<p>Thanks,<br>Craig, Mike, and the rest of the OMx/DrugBank team</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+<tr class="comment-tr target-hl" id="11" data-comment-id="1326">
+  <td class="comment-profile-avatar">
+		<a href="/u/dhimmel"><img class='profile_image photo-medium' src='https://think-lab.s3.amazonaws.com/m/profile/17_medium.jpg' width='60' height='60'></a>
+  </td>
+	<td class="comment-body">
+    <a name="1326"></a>
+
+    
+
+      <div class="comment-header">
+        <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
+				<span class="is-researcher">Researcher</span>
+				<span class="light">&nbsp;<a href="#11" class="light">378 days</a>
+          
+        </span>
+      </div>
+
+    
+
+    <h1>Closing remarks</h1>
+
+<p>Thanks Craig, Mike, and the rest of the OMx/DrugBank team. I really appreciate your commendable communication, dedication to your userbase, and expediency addressing these issues. You've set a high bar for other resources to strive towards. While the overall process took 44 days, the changes were substantial, and it sounds like University approval took a large chunk of the time. In other words, when dealing with major licensing changes, I expect very few prominent resources will deliver in under 44 days.</p>
+
+<p>I am particularly excited about the CC0 subset that includes basic drug information. From an adoption and marketing standpoint, I think this makes sense. For someone who wants to use DrugBank identifiers and not worry about licensing, the change is huge. I'm hopeful that DrugBank taking this major step will motivate other biodata resources (even CC BY ones) to release essential components under CC0.</p>
+
+<p>Also I'm glad you removed the share-alike stipulation. Our experience suggests that license compatibility is a major obstacle to data integration <span class="citation">[<a href="/discussion/integrating-resources-with-disparate-licensing-into-an-open-network/107" class="citation" data-key="10.15363/thinklab.d107">1</a>]</span>. Hence, applying share alike should be subject to strict scrutiny.</p>
+
+<p>The new licensing arrangement does a good job of balancing free public usage and commercial revenue generation. While for some applications, we may avoid using data with a non-commercial stipulation, it's nice to have the option of NC usage.</p>
+
+		<div style="margin-left:30px;">
+
+      
+
+
+      <ul class="comment-notes">
+				
+				
+			</ul>
+
+      
+
+		</div>
+
+		
+
+
+  </td>
+</tr>
+
+    		
+		</table>
+
+    
+
+    &nbsp;<br>
+    <a class="btn btn-primary btn-lg" href="/signup?next=/discussion/sounding-the-alarm-on-drugbanks-new-license-and-terms-of-use/213&suppress_message=1" style>Join to Reply</a>
+
+
+		<table class="references table-td-5" style="display:none;"><tr><td><a href='/doi/10.1093/nar/gkj067' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkj067'><a href='/doi/10.1093/nar/gkj067' class='pub-title'>DrugBank: a comprehensive resource for in silico drug discovery and exploration</a><div class='pub-body'>D. S. Wishart (2006) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkj067'>10.1093/nar/gkj067</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkm958' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>2.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkm958'><a href='/doi/10.1093/nar/gkm958' class='pub-title'>DrugBank: a knowledgebase for drugs, drug actions and drug targets</a><div class='pub-body'>D. S. Wishart, C. Knox, A. C. Guo, D. Cheng, S. Shrivastava, D. Tzur, B. Gautam, M. Hassanali (2007) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkm958'>10.1093/nar/gkm958</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkq1126' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>3.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkq1126'><a href='/doi/10.1093/nar/gkq1126' class='pub-title'>DrugBank 3.0: a comprehensive resource for &#39;Omics&#39; research on drugs</a><div class='pub-body'>C. Knox, V. Law, T. Jewison, P. Liu, S. Ly, A. Frolkis, A. Pon, K. Banco, C. Mak, V. Neveu, Y. Djoumbou, R. Eisner, A. C. Guo, D. S. Wishart (2010) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkq1126'>10.1093/nar/gkq1126</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkt1068' class='pub-comments tt-right' title='Article comments'>4</a></td><td><div class='pub-order'>4.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkt1068'><a href='/doi/10.1093/nar/gkt1068' class='pub-title'>DrugBank 4.0: shedding new light on drug metabolism</a><div class='pub-body'>V. Law, C. Knox, Y. Djoumbou, T. Jewison, A. C. Guo, Y. Liu, A. Maciejewski, D. Arndt, M. Wilson, V. Neveu, A. Tang, G. Gabriel, C. Ly, S. Adamjee, Z. T. Dame, B. Han, Y. Zhou, D. S. Wishart (2013) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkt1068'>10.1093/nar/gkt1068</a></div></div></td></tr><tr><td><a href='/doi/10.3897/zookeys.150.2189' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>5.</div></td><td><div class='doi-body' data-key='10.3897/zookeys.150.2189'><a href='/doi/10.3897/zookeys.150.2189' class='pub-title'>Creative Commons licenses and the non-commercial condition: Implications for the re-use of biodiversity information</a><div class='pub-body'>Gregor Hagedorn, Daniel Mietchen, Robert Morris, Donat Agosti, Lyubomir Penev, Walter Berendsohn, Donald Hobern (2011) <i>ZooKeys</i>. doi:<a class='pub-doi' href='https://doi.org/10.3897/zookeys.150.2189'>10.3897/zookeys.150.2189</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d107' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>6.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d107'><a href='/discussion/integrating-resources-with-disparate-licensing-into-an-open-network/107' class='pub-title'>Integrating resources with disparate licensing into an open network</a><div class='pub-body'>Daniel Himmelstein, Lars Juhl Jensen, MacKenzie Smith, Katie Fortney, Caty Chung (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d107'>10.15363/thinklab.d107</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkj067' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>7.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkj067'><a href='/doi/10.1093/nar/gkj067' class='pub-title'>DrugBank: a comprehensive resource for in silico drug discovery and exploration</a><div class='pub-body'>D. S. Wishart (2006) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkj067'>10.1093/nar/gkj067</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkm958' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>8.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkm958'><a href='/doi/10.1093/nar/gkm958' class='pub-title'>DrugBank: a knowledgebase for drugs, drug actions and drug targets</a><div class='pub-body'>D. S. Wishart, C. Knox, A. C. Guo, D. Cheng, S. Shrivastava, D. Tzur, B. Gautam, M. Hassanali (2007) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkm958'>10.1093/nar/gkm958</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkq1126' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>9.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkq1126'><a href='/doi/10.1093/nar/gkq1126' class='pub-title'>DrugBank 3.0: a comprehensive resource for &#39;Omics&#39; research on drugs</a><div class='pub-body'>C. Knox, V. Law, T. Jewison, P. Liu, S. Ly, A. Frolkis, A. Pon, K. Banco, C. Mak, V. Neveu, Y. Djoumbou, R. Eisner, A. C. Guo, D. S. Wishart (2010) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkq1126'>10.1093/nar/gkq1126</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkt1068' class='pub-comments tt-right' title='Article comments'>4</a></td><td><div class='pub-order'>10.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkt1068'><a href='/doi/10.1093/nar/gkt1068' class='pub-title'>DrugBank 4.0: shedding new light on drug metabolism</a><div class='pub-body'>V. Law, C. Knox, Y. Djoumbou, T. Jewison, A. C. Guo, Y. Liu, A. Maciejewski, D. Arndt, M. Wilson, V. Neveu, A. Tang, G. Gabriel, C. Ly, S. Adamjee, Z. T. Dame, B. Han, Y. Zhou, D. S. Wishart (2013) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkt1068'>10.1093/nar/gkt1068</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkm958' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>11.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkm958'><a href='/doi/10.1093/nar/gkm958' class='pub-title'>DrugBank: a knowledgebase for drugs, drug actions and drug targets</a><div class='pub-body'>D. S. Wishart, C. Knox, A. C. Guo, D. Cheng, S. Shrivastava, D. Tzur, B. Gautam, M. Hassanali (2007) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkm958'>10.1093/nar/gkm958</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkq1126' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>12.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkq1126'><a href='/doi/10.1093/nar/gkq1126' class='pub-title'>DrugBank 3.0: a comprehensive resource for &#39;Omics&#39; research on drugs</a><div class='pub-body'>C. Knox, V. Law, T. Jewison, P. Liu, S. Ly, A. Frolkis, A. Pon, K. Banco, C. Mak, V. Neveu, Y. Djoumbou, R. Eisner, A. C. Guo, D. S. Wishart (2010) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkq1126'>10.1093/nar/gkq1126</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkt1068' class='pub-comments tt-right' title='Article comments'>4</a></td><td><div class='pub-order'>13.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkt1068'><a href='/doi/10.1093/nar/gkt1068' class='pub-title'>DrugBank 4.0: shedding new light on drug metabolism</a><div class='pub-body'>V. Law, C. Knox, Y. Djoumbou, T. Jewison, A. C. Guo, Y. Liu, A. Maciejewski, D. Arndt, M. Wilson, V. Neveu, A. Tang, G. Gabriel, C. Ly, S. Adamjee, Z. T. Dame, B. Han, Y. Zhou, D. S. Wishart (2013) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkt1068'>10.1093/nar/gkt1068</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkt1068' class='pub-comments tt-right' title='Article comments'>4</a></td><td><div class='pub-order'>14.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkt1068'><a href='/doi/10.1093/nar/gkt1068' class='pub-title'>DrugBank 4.0: shedding new light on drug metabolism</a><div class='pub-body'>V. Law, C. Knox, Y. Djoumbou, T. Jewison, A. C. Guo, Y. Liu, A. Maciejewski, D. Arndt, M. Wilson, V. Neveu, A. Tang, G. Gabriel, C. Ly, S. Adamjee, Z. T. Dame, B. Han, Y. Zhou, D. S. Wishart (2013) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkt1068'>10.1093/nar/gkt1068</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d108' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>15.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d108'><a href='/discussion/msigdb-licensing/108' class='pub-title'>MSigDB licensing</a><div class='pub-body'>Daniel Himmelstein (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d108'>10.15363/thinklab.d108</a></div></div></td></tr><tr><td><a href='/doi/10.5334/jors.ay' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>16.</div></td><td><div class='doi-body' data-key='10.5334/jors.ay'><a href='/doi/10.5334/jors.ay' class='pub-title'>Best Practices for Computational Science: Software Infrastructure and
+     Environments for Reproducible and Extensible Research</a><div class='pub-body'>Victoria Stodden, Sheila Miguez (2014) <i>Journal of Open Research Software</i>. doi:<a class='pub-doi' href='https://doi.org/10.5334/jors.ay'>10.5334/jors.ay</a></div></div></td></tr><tr><td><a href='/doi/10.6084/m9.figshare.3103054' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>17.</div></td><td><div class='doi-body' data-key='10.6084/m9.figshare.3103054'><a href='/doi/10.6084/m9.figshare.3103054' class='pub-title'>PharmacotherapyDB 1.0: the open catalog of drug therapies for disease</a><div class='pub-body'>Daniel Himmelstein, Pouya Khankhanian, Christine S. Hessler, Ari J. Green, Sergio Baranzini (2016) <i>Figshare</i>. doi:<a class='pub-doi' href='https://doi.org/10.6084/m9.figshare.3103054'>10.6084/m9.figshare.3103054</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d182' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>18.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d182'><a href='/discussion/announcing-pharmacotherapydb-the-open-catalog-of-drug-therapies-for-disease/182' class='pub-title'>Announcing PharmacotherapyDB: the Open Catalog of Drug Therapies for Disease</a><div class='pub-body'>Daniel Himmelstein (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d182'>10.15363/thinklab.d182</a></div></div></td></tr><tr><td><a href='/doi/10.15363/thinklab.d107' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>19.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d107'><a href='/discussion/integrating-resources-with-disparate-licensing-into-an-open-network/107' class='pub-title'>Integrating resources with disparate licensing into an open network</a><div class='pub-body'>Daniel Himmelstein, Lars Juhl Jensen, MacKenzie Smith, Katie Fortney, Caty Chung (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d107'>10.15363/thinklab.d107</a></div></div></td></tr></table>
+
+    
+
+
+	</td>
+	<td class="thread-sidebar">
+
+
+			
+
+      <a class="btn btn-default follow-link btn-follow btn-lg is-following tt-top full-width" title="Follow discussion" data-id="213" data-ctype="thread" data-is-following="false">&nbsp;</a>
+
+      
+        <div class="status-box text-center"><span style="">Status:</span> 
+  Completed
+
+</div>
+      
+
+      
+        
+      
+
+
+				
+
+					<div class="details">Views</div>
+					<span style="font-size:20px;">552</span>
+
+        
+
+				
+					<div class="details">Topics</div>
+					<div style="margin-bottom:15px;">
+		            <a href="/topics/licensing" class="tag">Licensing</a><a href="/topics/legal" class="tag">Legal</a><a href="/topics/drugbank" class="tag">DrugBank</a>
+					</div>
+				
+
+
+		
+			<div class="details">Referenced by</div>
+			<div style="font-size:12px;"><ul style="padding-left:16px !important;">
+			
+				<li>
+					
+					<a href='/discussion/tracking-project-reuse-citation-and-publicity/113' class='thread-title'>Tracking project reuse, citation, and publicity</a>
+				</li>
+			
+				<li>
+					
+					<a href='/discussion/integrating-resources-with-disparate-licensing-into-an-open-network/107' class='thread-title'>Integrating resources with disparate licensing into an open network</a>
+				</li>
+			
+				<li>
+					
+					Research report: <a href='/p/rephetio/report'>Rephetio: Repurposing drugs on a hetnet</a>
+				</li>
+			
+				</ul>
+			</div>
+		
+
+		
+			<div class="details">Cite this as</div>
+			<span style="font-size:12px;">
+				Daniel Himmelstein, Katie Fortney, Craig Knox, Christopher Southan (2016) Sounding the alarm on DrugBank’s new license and terms of use. <i>Thinklab.</i> doi:<a href='https://doi.org/10.15363/thinklab.d213'>10.15363/thinklab.d213</a>
+			</span>
+		
+
+		<div class="details">License</div>
+		<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0;width:88px;height:31px;" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></p>
+
+		<div class="details">Share</div>
+		
+			
+				<a class="share-button fb" onclick="javascript:void(window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A//thinklab.com/discussion/sounding-the-alarm-on-drugbanks-new-license-and-terms-of-use/213','','width=600,height=460,menubar=no,status=no'));" href="#"></a>
+<a class="share-button twitter" onclick="javascript:void(window.open('https://twitter.com/share?text=Sounding%20the%20alarm%20on%20DrugBank%E2%80%99s%20new%20license%20and%20terms%20of%20use&url=https%3A//thinklab.com/discussion/sounding-the-alarm-on-drugbanks-new-license-and-terms-of-use/213','','width=600,height=300,menubar=no,status=no'));" href="#"></a>
+<a class="share-button google" onclick="javascript:void(window.open('https://plus.google.com/share?url=https%3A//thinklab.com/discussion/sounding-the-alarm-on-drugbanks-new-license-and-terms-of-use/213','','width=510,height=460,menubar=no,status=no'));" href="#"></a>
+
+			
+		
+
+	</td>
+</tr></table>
+
+
+		</div>
+
+
+		
+	    	<div class="footer">
+<div style="background:#dedede;">
+	<div class="main-centered-div text-center" style="padding:20px;">
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#4d25282121220d3925242326212c2f632e2220"><span class="__cf_email__" data-cfemail="3f575a5353507f4b57565154535e5d115c5052">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+	</div>
+</div>
+<div class="main-footer">
+	<div class="main-centered-div">
+
+<table class="full-width"><tr>
+	<td class="footer-nav">
+
+        <div class="foot-head">Explore</div>
+        <a href="/proposals">Proposals</a><br>
+        <a href="/projects">Projects</a><br>
+        <a href="/publications">Article discussion</a><br>
+        <a href="/discussion">All discussion</a><br>
+        <a href="/topics">Topics</a><br>
+        <!-- <a href="/funders">Funders</a><br> -->
+        <a href="/funding">Funding opportunities</a><br>
+
+	</td>
+	<td class="footer-nav">
+
+        <!-- <div class="foot-head">Help &amp; feedback</div>	 -->
+        <!-- <div class="foot-head">Intro</div>
+        <a href="/benefits/for-science">Why</a><br>
+        <a href="/how-it-works">How it works</a><br>
+
+<br> -->
+
+        <div class="foot-head">Community</div>
+        <a href="/leaderboard">Leaderboard</a><br>
+        <a href="/p/meta">Thinklab Meta</a><br>
+				<a href="/help/faq">Help</a><br>
+				<!-- <a href="/new-project">Start a proposal</a><br> -->
+        <!-- <a href="/benefits/proposal">Benefits</a><br> -->
+        <!-- <a href="/funding">Get funded</a><br> -->
+        <!-- <a href="/participate">Become a contributor</a><br> -->
+        <!-- <a href="/for-funders">For science funders</a><br> -->
+        <!-- <a href="/for-institutions">For institutions</a><br> -->
+
+	</td>
+	<td class="footer-nav">
+
+
+
+        <div class="foot-head">About</div>
+        <a href="/about">Overview</a><br>
+        <a href="/benefits">Benefits</a><br>
+        <a href="/how-it-works">How it works</a><br>
+        <a href="/about/story">Our story</a><br>
+        <a href="/blog">Our blog</a><br>
+        <a href="/about/jobs">Join the team</a><br>
+        <br>
+
+        <!-- <div class="foot-head">Help</div>
+        <a href="/help">Help</a><br>
+		 -->
+
+
+	</td>
+	<td class="footer-nav">
+		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
+		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<br><br>
+		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
+
+	</td>
+
+</tr></table>
+
+</div>
+</div>
+</div>
+
+		
+
+	</div>
+
+
+  <script></script>
+  <script>
+  var MEDIA_URL = 'https://think-lab.s3.amazonaws.com/m/';
+  var STATIC_URL = 'https://think-lab.s3.amazonaws.com/s/';
+  var page_is_authenticated = false;
+  var page_page = 'discussion';
+  var page_profile_id = undefined;
+</script>
+
+
+
+	<!-- Note different script type. MUST come before MathJax.js -->
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	        "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"],
+	                        scale: 110, linebreaks: { automatic:true },
+	                        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+	        tex2jax: { inlineMath: [ ["$$", "$$"], ["\\(","\\)"] ],
+	                    displayMath: [ ["$$$","$$$"], ["\\[", "\\]"] ],
+	                    processEscapes: true,}
+	            });
+
+	</script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://think-lab.s3.amazonaws.com/s/dist/main.min.js"></script>
+  
+
+
+
+  
+	
+  
+  
+  
+<script>
+$(function() {
+  recordHit('thread', 213);
+});
+</script>
+
+
+
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>
