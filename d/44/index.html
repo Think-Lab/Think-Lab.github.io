@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZgEOC19dW0QCEVtHU1gG","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":556}</script>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZgEOC19dW0QCEVtHU1gG","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":408}</script>
     <title>Unifying disease vocabularies | Thinklab</title>
 	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
     <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
@@ -52,7 +52,7 @@
 </head>
 <body >
   <form id="form_action" method="post">
-    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+    <input type='hidden' name='csrfmiddlewaretoken' value='ypamUdfXu4FnASUyTHPbTrQWcdTFmVrB' />
 </form>
 
 	
@@ -107,8 +107,8 @@
 	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
 		<ul class="main-header pull-right" style="padding-left: 0;">
     		
-                <li><a href="/login" style="color:silver;">Login</a></li>
-                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+                <!-- <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li> -->
             
 
         </ul>
@@ -169,7 +169,7 @@
 			<div style="margin-top:5px;color:gray;margin-bottom:20px;font-size:13px;">
 				<a style="font-weight:normal;color:#212121" href="/u/dhimmel"><strong>Daniel Himmelstein</strong></a>
 				<span class="is-researcher">Researcher</span>
-				&nbsp; <a href="#1" class="light">829 days ago</a>
+				&nbsp; <a href="#1" class="light">March 31, 2015</a>
 				
 			</div>
 
@@ -216,7 +216,7 @@
       <div class="comment-header">
         <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
 				<span class="is-researcher">Researcher</span>
-				<span class="light">&nbsp;<a href="#2" class="light">827 days</a>
+				<span class="light">&nbsp;<a href="#2" class="light">April 2, 2015</a>
           
         </span>
       </div>
@@ -261,7 +261,7 @@
       <div class="comment-header">
         <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
 				<span class="is-researcher">Researcher</span>
-				<span class="light">&nbsp;<a href="#3" class="light">820 days</a>
+				<span class="light">&nbsp;<a href="#3" class="light">April 9, 2015</a>
           
         </span>
       </div>
@@ -318,7 +318,7 @@
       <div class="comment-header">
         <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
 				<span class="is-researcher">Researcher</span>
-				<span class="light">&nbsp;<a href="#4" class="light">819 days</a>
+				<span class="light">&nbsp;<a href="#4" class="light">April 10, 2015</a>
           
         </span>
       </div>
@@ -373,7 +373,7 @@
       <div class="comment-header">
         <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
 				<span class="is-researcher">Researcher</span>
-				<span class="light">&nbsp;<a href="#5" class="light">819 days</a>
+				<span class="light">&nbsp;<a href="#5" class="light">April 10, 2015</a>
           
         </span>
       </div>
@@ -422,7 +422,7 @@
       <div class="comment-header">
         <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
 				<span class="is-researcher">Researcher</span>
-				<span class="light">&nbsp;<a href="#6" class="light">812 days</a>
+				<span class="light">&nbsp;<a href="#6" class="light">April 17, 2015</a>
           
         </span>
       </div>
@@ -483,7 +483,7 @@
       <div class="comment-header">
         <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
 				<span class="is-researcher">Researcher</span>
-				<span class="light">&nbsp;<a href="#7" class="light">502 days</a>
+				<span class="light">&nbsp;<a href="#7" class="light">Feb. 20, 2016</a>
           
         </span>
       </div>
@@ -530,7 +530,7 @@
       <div class="comment-header">
         <a style="font-weight:bold;color:#212121" href="/u/tongli">Tong Shu Li</a>
 				
-				<span class="light">&nbsp;<a href="#8" class="light">289 days</a>
+				<span class="light">&nbsp;<a href="#8" class="light">Sept. 21, 2016</a>
           
         </span>
       </div>
@@ -579,7 +579,7 @@
       <div class="comment-header">
         <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
 				<span class="is-researcher">Researcher</span>
-				<span class="light">&nbsp;<a href="#9" class="light">287 days</a>
+				<span class="light">&nbsp;<a href="#9" class="light">Sept. 22, 2016</a>
           
         </span>
       </div>
@@ -620,7 +620,7 @@
     
 
     &nbsp;<br>
-    <a class="btn btn-primary btn-lg" href="/signup?next=/discussion/unifying-disease-vocabularies/44&suppress_message=1" style>Join to Reply</a>
+    <!-- <a class="btn btn-primary btn-lg" href="/signup?next=/discussion/unifying-disease-vocabularies/44&suppress_message=1" style>Join to Reply</a> -->
 
 
 		<table class="references table-td-5" style="display:none;"><tr><td><a href='/doi/10.1136/amiajnl-2012-001431' class='pub-comments tt-right' title='Article comments'>2</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.1136/amiajnl-2012-001431'><a href='/doi/10.1136/amiajnl-2012-001431' class='pub-title'>Development and evaluation of an ensemble resource linking medications to their indications</a><div class='pub-body'>W.-Q. Wei, R. M. Cronin, H. Xu, T. A. Lasko, L. Bastarache, J. C. Denny (2013) <i>Journal of the American Medical Informatics Association</i>. doi:<a class='pub-doi' href='https://doi.org/10.1136/amiajnl-2012-001431'>10.1136/amiajnl-2012-001431</a></div></div></td></tr><tr><td><a href='/doi/10.1016/j.jbi.2014.08.004' class='pub-comments tt-right' title='Article comments'>5</a></td><td><div class='pub-order'>2.</div></td><td><div class='doi-body' data-key='10.1016/j.jbi.2014.08.004'><a href='/doi/10.1016/j.jbi.2014.08.004' class='pub-title'>LabeledIn: Cataloging labeled indications for human drugs</a><div class='pub-body'>Ritu Khare, Jiao Li, Zhiyong Lu (2014) <i>Journal of Biomedical Informatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1016/j.jbi.2014.08.004'>10.1016/j.jbi.2014.08.004</a></div></div></td></tr><tr><td><a href='/doi/10.1093/database/bav016' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>3.</div></td><td><div class='doi-body' data-key='10.1093/database/bav016'><a href='/doi/10.1093/database/bav016' class='pub-title'>Scaling drug indication curation through crowdsourcing</a><div class='pub-body'>R. Khare, J. D. Burger, J. S. Aberdeen, D. W. Tresner-Kirsch, T. J. Corrales, L. Hirchman, Z. Lu (2015) <i>Database</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/database/bav016'>10.1093/database/bav016</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkh061' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>4.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkh061'><a href='/doi/10.1093/nar/gkh061' class='pub-title'>The Unified Medical Language System (UMLS): integrating biomedical terminology</a><div class='pub-body'>O. Bodenreider (2004) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkh061'>10.1093/nar/gkh061</a></div></div></td></tr><tr><td><a href='/doi/10.1038/ncomms5212' class='pub-comments tt-right' title='Article comments'>4</a></td><td><div class='pub-order'>5.</div></td><td><div class='doi-body' data-key='10.1038/ncomms5212'><a href='/doi/10.1038/ncomms5212' class='pub-title'>Human symptoms–disease network</a><div class='pub-body'>XueZhong Zhou, Jörg Menche, Albert-László Barabási, Amitabh Sharma (2014) <i>Nat Comms</i>. doi:<a class='pub-doi' href='https://doi.org/10.1038/ncomms5212'>10.1038/ncomms5212</a></div></div></td></tr><tr><td><a href='/doi/10.1001/jama.271.14.1103' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>6.</div></td><td><div class='doi-body' data-key='10.1001/jama.271.14.1103'><a href='/doi/10.1001/jama.271.14.1103' class='pub-title'>Understanding and using the medical subject headings (MeSH) vocabulary to perform literature searches</a><div class='pub-body'>H. J. Lowe (1994) <i>JAMA: The Journal of the American Medical Association</i>. doi:<a class='pub-doi' href='https://doi.org/10.1001/jama.271.14.1103'>10.1001/jama.271.14.1103</a></div></div></td></tr><tr><td><a href='/doi/10.1101/011569' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>7.</div></td><td><div class='doi-body' data-key='10.1101/011569'><a href='/doi/10.1101/011569' class='pub-title'>Heterogeneous Network Edge Prediction: A Data Integration Approach to Prioritize Disease-Associated Genes</a><div class='pub-body'>D. S. Himmelstein, S. E. Baranzini (2014) <i>Cold Spring Harbor Laboratory Press</i>. doi:<a class='pub-doi' href='https://doi.org/10.1101/011569'>10.1101/011569</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkr972' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>8.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkr972'><a href='/doi/10.1093/nar/gkr972' class='pub-title'>Disease Ontology: a backbone for disease semantic integration</a><div class='pub-body'>L. M. Schriml, C. Arze, S. Nadendla, Y.-W. W. Chang, M. Mazaitis, V. Felix, G. Feng, W. A. Kibbe (2011) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkr972'>10.1093/nar/gkr972</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gku1011' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>9.</div></td><td><div class='doi-body' data-key='10.1093/nar/gku1011'><a href='/doi/10.1093/nar/gku1011' class='pub-title'>Disease Ontology 2015 update: an expanded and updated database of human diseases for linking biomedical knowledge through disease data</a><div class='pub-body'>W. A. Kibbe, C. Arze, V. Felix, E. Mitraka, E. Bolton, G. Fu, C. J. Mungall, J. X. Binder, J. Malone, D. Vasant, H. Parkinson, L. M. Schriml (2014) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gku1011'>10.1093/nar/gku1011</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkr972' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>10.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkr972'><a href='/doi/10.1093/nar/gkr972' class='pub-title'>Disease Ontology: a backbone for disease semantic integration</a><div class='pub-body'>L. M. Schriml, C. Arze, S. Nadendla, Y.-W. W. Chang, M. Mazaitis, V. Felix, G. Feng, W. A. Kibbe (2011) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkr972'>10.1093/nar/gkr972</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gku1011' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>11.</div></td><td><div class='doi-body' data-key='10.1093/nar/gku1011'><a href='/doi/10.1093/nar/gku1011' class='pub-title'>Disease Ontology 2015 update: an expanded and updated database of human diseases for linking biomedical knowledge through disease data</a><div class='pub-body'>W. A. Kibbe, C. Arze, V. Felix, E. Mitraka, E. Bolton, G. Fu, C. J. Mungall, J. X. Binder, J. Malone, D. Vasant, H. Parkinson, L. M. Schriml (2014) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gku1011'>10.1093/nar/gku1011</a></div></div></td></tr><tr><td><a href='/doi/10.1093/bioinformatics/btp193' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>12.</div></td><td><div class='doi-body' data-key='10.1093/bioinformatics/btp193'><a href='/doi/10.1093/bioinformatics/btp193' class='pub-title'>From disease ontology to disease-ontology lite: statistical methods to adapt a general-purpose ontology for the test of gene-ontology associations</a><div class='pub-body'>P. Du, G. Feng, J. Flatow, J. Song, M. Holko, W. A. Kibbe, S. M. Lin (2009) <i>Bioinformatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/bioinformatics/btp193'>10.1093/bioinformatics/btp193</a></div></div></td></tr><tr><td><a href='/doi/10.1093/database/bav032' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>13.</div></td><td><div class='doi-body' data-key='10.1093/database/bav032'><a href='/doi/10.1093/database/bav032' class='pub-title'>Generating a focused view of disease ontology cancer terms for pan-cancer data integration and analysis</a><div class='pub-body'>T.-J. Wu, L. M. Schriml, Q.-R. Chen, M. Colbert, D. J. Crichton, R. Finney, Y. Hu, W. A. Kibbe, H. Kincaid, D. Meerzaman, E. Mitraka, Y. Pan, K. M. Smith, S. Srivastava, S. Ward, C. Yan, R. Mazumder (2015) <i>Database</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/database/bav032'>10.1093/database/bav032</a></div></div></td></tr><tr><td><a href='/doi/10.1371/journal.pone.0049686' class='pub-comments tt-right' title='Article comments'>1</a></td><td><div class='pub-order'>14.</div></td><td><div class='doi-body' data-key='10.1371/journal.pone.0049686'><a href='/doi/10.1371/journal.pone.0049686' class='pub-title'>A Framework for Annotating Human Genome in Disease Context</a><div class='pub-body'>Wei Xu, Huisong Wang, Wenqing Cheng, Dong Fu, Tian Xia, Warren A. Kibbe, Simon M. Lin (2012) <i>PLoS ONE</i>. doi:<a class='pub-doi' href='https://doi.org/10.1371/journal.pone.0049686'>10.1371/journal.pone.0049686</a></div></div></td></tr><tr><td><a href='/doi/10.1186/1471-2164-10-S1-S6' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>15.</div></td><td><div class='doi-body' data-key='10.1186/1471-2164-10-S1-S6'><a href='/doi/10.1186/1471-2164-10-S1-S6' class='pub-title'>Annotating the human genome with Disease Ontology</a><div class='pub-body'>John D Osborne, Jared Flatow, Michelle Holko, Simon M Lin, Warren A Kibbe, Lihua Zhu, Maria I Danila, Gang Feng, Rex L Chisholm (2009) <i>BMC Genomics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1186/1471-2164-10-S1-S6'>10.1186/1471-2164-10-S1-S6</a></div></div></td></tr><tr><td><a href='/doi/10.1093/bioinformatics/btu684' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>16.</div></td><td><div class='doi-body' data-key='10.1093/bioinformatics/btu684'><a href='/doi/10.1093/bioinformatics/btu684' class='pub-title'>DOSE: an R/Bioconductor package for disease ontology semantic and enrichment analysis</a><div class='pub-body'>G. Yu, L.-G. Wang, G.-R. Yan, Q.-Y. He (2014) <i>Bioinformatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/bioinformatics/btu684'>10.1093/bioinformatics/btu684</a></div></div></td></tr><tr><td><a href='/doi/10.1186/1471-2105-12-266' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>17.</div></td><td><div class='doi-body' data-key='10.1186/1471-2105-12-266'><a href='/doi/10.1186/1471-2105-12-266' class='pub-title'>DOSim: An R package for similarity between diseases based on Disease Ontology</a><div class='pub-body'>Jiang Li, Binsheng Gong, Xi Chen, Tao Liu, Chao Wu, Fan Zhang, Chunquan Li, Xiang Li, Shaoqi Rao, Xia Li (2011) <i>BMC Bioinformatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1186/1471-2105-12-266'>10.1186/1471-2105-12-266</a></div></div></td></tr><tr><td><a href='/doi/10.1101/011569' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>18.</div></td><td><div class='doi-body' data-key='10.1101/011569'><a href='/doi/10.1101/011569' class='pub-title'>Heterogeneous Network Edge Prediction: A Data Integration Approach to Prioritize Disease-Associated Genes</a><div class='pub-body'>D. S. Himmelstein, S. E. Baranzini (2014) <i>Cold Spring Harbor Laboratory Press</i>. doi:<a class='pub-doi' href='https://doi.org/10.1101/011569'>10.1101/011569</a></div></div></td></tr><tr><td><a href='/doi/10.1093/bioinformatics/btp193' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>19.</div></td><td><div class='doi-body' data-key='10.1093/bioinformatics/btp193'><a href='/doi/10.1093/bioinformatics/btp193' class='pub-title'>From disease ontology to disease-ontology lite: statistical methods to adapt a general-purpose ontology for the test of gene-ontology associations</a><div class='pub-body'>P. Du, G. Feng, J. Flatow, J. Song, M. Holko, W. A. Kibbe, S. M. Lin (2009) <i>Bioinformatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/bioinformatics/btp193'>10.1093/bioinformatics/btp193</a></div></div></td></tr><tr><td><a href='/doi/10.1093/database/bav032' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>20.</div></td><td><div class='doi-body' data-key='10.1093/database/bav032'><a href='/doi/10.1093/database/bav032' class='pub-title'>Generating a focused view of disease ontology cancer terms for pan-cancer data integration and analysis</a><div class='pub-body'>T.-J. Wu, L. M. Schriml, Q.-R. Chen, M. Colbert, D. J. Crichton, R. Finney, Y. Hu, W. A. Kibbe, H. Kincaid, D. Meerzaman, E. Mitraka, Y. Pan, K. M. Smith, S. Srivastava, S. Ward, C. Yan, R. Mazumder (2015) <i>Database</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/database/bav032'>10.1093/database/bav032</a></div></div></td></tr><tr><td><a href='/doi/10.1093/database/bav032' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>21.</div></td><td><div class='doi-body' data-key='10.1093/database/bav032'><a href='/doi/10.1093/database/bav032' class='pub-title'>Generating a focused view of disease ontology cancer terms for pan-cancer data integration and analysis</a><div class='pub-body'>T.-J. Wu, L. M. Schriml, Q.-R. Chen, M. Colbert, D. J. Crichton, R. Finney, Y. Hu, W. A. Kibbe, H. Kincaid, D. Meerzaman, E. Mitraka, Y. Pan, K. M. Smith, S. Srivastava, S. Ward, C. Yan, R. Mazumder (2015) <i>Database</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/database/bav032'>10.1093/database/bav032</a></div></div></td></tr><tr><td><a href='/doi/10.1093/bioinformatics/btp193' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>22.</div></td><td><div class='doi-body' data-key='10.1093/bioinformatics/btp193'><a href='/doi/10.1093/bioinformatics/btp193' class='pub-title'>From disease ontology to disease-ontology lite: statistical methods to adapt a general-purpose ontology for the test of gene-ontology associations</a><div class='pub-body'>P. Du, G. Feng, J. Flatow, J. Song, M. Holko, W. A. Kibbe, S. M. Lin (2009) <i>Bioinformatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/bioinformatics/btp193'>10.1093/bioinformatics/btp193</a></div></div></td></tr><tr><td><a href='/doi/10.1371/journal.pcbi.1004259' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>23.</div></td><td><div class='doi-body' data-key='10.1371/journal.pcbi.1004259'><a href='/doi/10.1371/journal.pcbi.1004259' class='pub-title'>Heterogeneous Network Edge Prediction: A Data Integration Approach to Prioritize Disease-Associated Genes</a><div class='pub-body'>Daniel S. Himmelstein, Sergio E. Baranzini (2015) <i>PLOS Computational Biology</i>. doi:<a class='pub-doi' href='https://doi.org/10.1371/journal.pcbi.1004259'>10.1371/journal.pcbi.1004259</a></div></div></td></tr><tr><td><a href='/doi/10.1093/database/bav032' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>24.</div></td><td><div class='doi-body' data-key='10.1093/database/bav032'><a href='/doi/10.1093/database/bav032' class='pub-title'>Generating a focused view of disease ontology cancer terms for pan-cancer data integration and analysis</a><div class='pub-body'>T.-J. Wu, L. M. Schriml, Q.-R. Chen, M. Colbert, D. J. Crichton, R. Finney, Y. Hu, W. A. Kibbe, H. Kincaid, D. Meerzaman, E. Mitraka, Y. Pan, K. M. Smith, S. Srivastava, S. Ward, C. Yan, R. Mazumder (2015) <i>Database</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/database/bav032'>10.1093/database/bav032</a></div></div></td></tr><tr><td><a href='/doi/10.5281/zenodo.45584' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>25.</div></td><td><div class='doi-body' data-key='10.5281/zenodo.45584'><a href='/doi/10.5281/zenodo.45584' class='pub-title'>User-friendly extensions to the Disease Ontology v1.0</a><div class='pub-body'>Daniel S. Himmelstein (2016) <i>Zenodo</i>. doi:<a class='pub-doi' href='https://doi.org/10.5281/zenodo.45584'>10.5281/zenodo.45584</a></div></div></td></tr><tr><td><a href='/doi/10.1371/journal.pcbi.1004259' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>26.</div></td><td><div class='doi-body' data-key='10.1371/journal.pcbi.1004259'><a href='/doi/10.1371/journal.pcbi.1004259' class='pub-title'>Heterogeneous Network Edge Prediction: A Data Integration Approach to Prioritize Disease-Associated Genes</a><div class='pub-body'>Daniel S. Himmelstein, Sergio E. Baranzini (2015) <i>PLOS Computational Biology</i>. doi:<a class='pub-doi' href='https://doi.org/10.1371/journal.pcbi.1004259'>10.1371/journal.pcbi.1004259</a></div></div></td></tr><tr><td><a href='/doi/10.1093/database/bav032' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>27.</div></td><td><div class='doi-body' data-key='10.1093/database/bav032'><a href='/doi/10.1093/database/bav032' class='pub-title'>Generating a focused view of disease ontology cancer terms for pan-cancer data integration and analysis</a><div class='pub-body'>T.-J. Wu, L. M. Schriml, Q.-R. Chen, M. Colbert, D. J. Crichton, R. Finney, Y. Hu, W. A. Kibbe, H. Kincaid, D. Meerzaman, E. Mitraka, Y. Pan, K. M. Smith, S. Srivastava, S. Ward, C. Yan, R. Mazumder (2015) <i>Database</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/database/bav032'>10.1093/database/bav032</a></div></div></td></tr></table>
@@ -634,7 +634,7 @@
 
 			
 
-      <a class="btn btn-default follow-link btn-follow btn-lg is-following tt-top full-width" title="Follow discussion" data-id="44" data-ctype="thread" data-is-following="false">&nbsp;</a>
+      <!-- <a class="btn btn-default follow-link btn-follow btn-lg is-following tt-top full-width" title="Follow discussion" data-id="44" data-ctype="thread" data-is-following="false">&nbsp;</a> -->
 
       
         <div class="status-box text-center"><span style="">Status:</span> 
@@ -679,12 +679,12 @@
 			
 				<li>
 					
-					<a href='/discussion/incorporating-drugcentral-data-in-our-network/186' class='thread-title'>Incorporating DrugCentral data in our network</a>
+					<a href='/d/186' class='thread-title'>Incorporating DrugCentral data in our network</a>
 				</li>
 			
 				<li>
 					
-					<a href='/discussion/stargeo-expression-signatures-for-disease-using-crowdsourced-geo-annotation/96' class='thread-title'>STARGEO: expression signatures for disease using crowdsourced GEO annotation</a>
+					<a href='/d/96' class='thread-title'>STARGEO: expression signatures for disease using crowdsourced GEO annotation</a>
 				</li>
 			
 				<li>
@@ -694,67 +694,67 @@
 			
 				<li>
 					
-					<a href='/discussion/predictions-of-whether-a-compound-treats-a-disease/203' class='thread-title'>Predictions of whether a compound treats a disease</a>
+					<a href='/d/203' class='thread-title'>Predictions of whether a compound treats a disease</a>
 				</li>
 			
 				<li>
 					
-					<a href='/discussion/disease-ontology-feature-requests/68' class='thread-title'>Disease Ontology feature requests</a>
+					<a href='/d/68' class='thread-title'>Disease Ontology feature requests</a>
 				</li>
 			
 				<li>
 					
-					<a href='/discussion/cataloging-drugdisease-therapies-in-the-clinicaltrialsgov-database/212' class='thread-title'>Cataloging drug–disease therapies in the ClinicalTrials.gov database</a>
+					<a href='/d/212' class='thread-title'>Cataloging drug–disease therapies in the ClinicalTrials.gov database</a>
 				</li>
 			
 				<li>
 					
-					<a href='/discussion/how-should-we-construct-a-catalog-of-drug-indications/21' class='thread-title'>How should we construct a catalog of drug indications?</a>
+					<a href='/d/21' class='thread-title'>How should we construct a catalog of drug indications?</a>
 				</li>
 			
 				<li>
 					
-					<a href='/discussion/the-adeptus-resource-for-expression-signatures-of-disease/101' class='thread-title'>The ADEPTUS resource for expression signatures of disease</a>
+					<a href='/d/101' class='thread-title'>The ADEPTUS resource for expression signatures of disease</a>
 				</li>
 			
 				<li>
 					
-					<a href='/discussion/announcing-pharmacotherapydb-the-open-catalog-of-drug-therapies-for-disease/182' class='thread-title'>Announcing PharmacotherapyDB: the Open Catalog of Drug Therapies for Disease</a>
+					<a href='/d/182' class='thread-title'>Announcing PharmacotherapyDB: the Open Catalog of Drug Therapies for Disease</a>
 				</li>
 			
 				<li>
 					
-					<a href='/discussion/expert-curation-of-our-indication-catalog-for-disease-modifying-treatments/95' class='thread-title'>Expert curation of our indication catalog for disease-modifying treatments</a>
+					<a href='/d/95' class='thread-title'>Expert curation of our indication catalog for disease-modifying treatments</a>
 				</li>
 			
 				<li>
 					
-					<a href='/discussion/tissue-specific-gene-expression-resources/81' class='thread-title'>Tissue-specific gene expression resources</a>
+					<a href='/d/81' class='thread-title'>Tissue-specific gene expression resources</a>
 				</li>
 			
 				<li>
 					
-					<a href='/discussion/processing-the-diseases-resource-for-diseasegene-relationships/106' class='thread-title'>Processing the DISEASES resource for disease–gene relationships</a>
+					<a href='/d/106' class='thread-title'>Processing the DISEASES resource for disease–gene relationships</a>
 				</li>
 			
 				<li>
 					
-					<a href='/discussion/processing-disgenet-for-disease-gene-relationships/105' class='thread-title'>Processing DisGeNET for disease-gene relationships</a>
+					<a href='/d/105' class='thread-title'>Processing DisGeNET for disease-gene relationships</a>
 				</li>
 			
 				<li>
 					
-					<a href='/discussion/disease-similarity-from-medline-topic-cooccurrence/93' class='thread-title'>Disease similarity from MEDLINE topic cooccurrence</a>
+					<a href='/d/93' class='thread-title'>Disease similarity from MEDLINE topic cooccurrence</a>
 				</li>
 			
 				<li>
 					
-					<a href='/discussion/extracting-disease-gene-associations-from-the-gwas-catalog/80' class='thread-title'>Extracting disease-gene associations from the GWAS Catalog</a>
+					<a href='/d/80' class='thread-title'>Extracting disease-gene associations from the GWAS Catalog</a>
 				</li>
 			
 				<li>
 					
-					<a href='/discussion/human-symptom-disease-network-mesh-id-matching/52' class='thread-title'>Human Symptom Disease Network-MeSH ID Matching</a>
+					<a href='/d/52' class='thread-title'>Human Symptom Disease Network-MeSH ID Matching</a>
 				</li>
 			
 				</ul>
@@ -790,11 +790,11 @@
 
 		
 	    	<div class="footer">
-<div style="background:#dedede;">
+<!-- <div style="background:#dedede;">
 	<div class="main-centered-div text-center" style="padding:20px;">
-		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#f199949d9d9eb18599989f9a9d9093df929e9c"><span class="__cf_email__" data-cfemail="2f474a4343406f5b47464144434e4d014c4042">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="mailto:hello@thinklab.com">hello@thinklab.com</a></h4>
 	</div>
-</div>
+</div> -->
 <div class="main-footer">
 	<div class="main-centered-div">
 
@@ -852,10 +852,10 @@
 
 	</td>
 	<td class="footer-nav">
-		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<!-- <a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
 		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
 		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
-		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a> -->
 		<br><br>
 		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
 
@@ -922,5 +922,5 @@ $(function() {
 
 
 
-<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZgEOC19dW0QCEVtHU1gG","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":189}</script>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZgEOC19dW0QCEVtHU1gG","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":141}</script>
     <title>Unifying drug vocabularies | Thinklab</title>
 	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
     <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
@@ -52,7 +52,7 @@
 </head>
 <body >
   <form id="form_action" method="post">
-    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+    <input type='hidden' name='csrfmiddlewaretoken' value='ypamUdfXu4FnASUyTHPbTrQWcdTFmVrB' />
 </form>
 
 	
@@ -107,8 +107,8 @@
 	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
 		<ul class="main-header pull-right" style="padding-left: 0;">
     		
-                <li><a href="/login" style="color:silver;">Login</a></li>
-                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+                <!-- <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li> -->
             
 
         </ul>
@@ -169,7 +169,7 @@
 			<div style="margin-top:5px;color:gray;margin-bottom:20px;font-size:13px;">
 				<a style="font-weight:normal;color:#212121" href="/u/dhimmel"><strong>Daniel Himmelstein</strong></a>
 				<span class="is-researcher">Researcher</span>
-				&nbsp; <a href="#1" class="light">843 days ago</a>
+				&nbsp; <a href="#1" class="light">March 16, 2015</a>
 				
 			</div>
 
@@ -226,7 +226,7 @@
       <div class="comment-header">
         <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
 				<span class="is-researcher">Researcher</span>
-				<span class="light">&nbsp;<a href="#2" class="light">843 days</a>
+				<span class="light">&nbsp;<a href="#2" class="light">March 17, 2015</a>
           
         </span>
       </div>
@@ -275,7 +275,7 @@
       <div class="comment-header">
         <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
 				<span class="is-researcher">Researcher</span>
-				<span class="light">&nbsp;<a href="#3" class="light">843 days</a>
+				<span class="light">&nbsp;<a href="#3" class="light">March 17, 2015</a>
           
         </span>
       </div>
@@ -324,7 +324,7 @@ WHERE SAB = 'MTHSPL' AND TTY = 'SU' AND CODE != 'NOCODE';</code></pre>
       <div class="comment-header">
         <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
 				<span class="is-researcher">Researcher</span>
-				<span class="light">&nbsp;<a href="#4" class="light">840 days</a>
+				<span class="light">&nbsp;<a href="#4" class="light">March 20, 2015</a>
           
         </span>
       </div>
@@ -381,7 +381,7 @@ WHERE SAB = 'MTHSPL' AND TTY = 'SU' AND CODE != 'NOCODE';</code></pre>
       <div class="comment-header">
         <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
 				<span class="is-researcher">Researcher</span>
-				<span class="light">&nbsp;<a href="#5" class="light">794 days</a>
+				<span class="light">&nbsp;<a href="#5" class="light">May 5, 2015</a>
           
         </span>
       </div>
@@ -422,7 +422,7 @@ WHERE SAB = 'MTHSPL' AND TTY = 'SU' AND CODE != 'NOCODE';</code></pre>
     
 
     &nbsp;<br>
-    <a class="btn btn-primary btn-lg" href="/signup?next=/discussion/unifying-drug-vocabularies/40&suppress_message=1" style>Join to Reply</a>
+    <!-- <a class="btn btn-primary btn-lg" href="/signup?next=/discussion/unifying-drug-vocabularies/40&suppress_message=1" style>Join to Reply</a> -->
 
 
 		<table class="references table-td-5" style="display:none;"><tr><td><a href='/doi/10.1136/amiajnl-2012-001431' class='pub-comments tt-right' title='Article comments'>2</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.1136/amiajnl-2012-001431'><a href='/doi/10.1136/amiajnl-2012-001431' class='pub-title'>Development and evaluation of an ensemble resource linking medications to their indications</a><div class='pub-body'>W.-Q. Wei, R. M. Cronin, H. Xu, T. A. Lasko, L. Bastarache, J. C. Denny (2013) <i>Journal of the American Medical Informatics Association</i>. doi:<a class='pub-doi' href='https://doi.org/10.1136/amiajnl-2012-001431'>10.1136/amiajnl-2012-001431</a></div></div></td></tr><tr><td><a href='/doi/10.1136/amiajnl-2011-000116' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>2.</div></td><td><div class='doi-body' data-key='10.1136/amiajnl-2011-000116'><a href='/doi/10.1136/amiajnl-2011-000116' class='pub-title'>Normalized names for clinical drugs: RxNorm at 6 years</a><div class='pub-body'>S. J. Nelson, K. Zeng, J. Kilbourne, T. Powell, R. Moore (2011) <i>Journal of the American Medical Informatics Association</i>. doi:<a class='pub-doi' href='https://doi.org/10.1136/amiajnl-2011-000116'>10.1136/amiajnl-2011-000116</a></div></div></td></tr><tr><td><a href='/doi/10.1016/j.jbi.2014.08.004' class='pub-comments tt-right' title='Article comments'>5</a></td><td><div class='pub-order'>3.</div></td><td><div class='doi-body' data-key='10.1016/j.jbi.2014.08.004'><a href='/doi/10.1016/j.jbi.2014.08.004' class='pub-title'>LabeledIn: Cataloging labeled indications for human drugs</a><div class='pub-body'>Ritu Khare, Jiao Li, Zhiyong Lu (2014) <i>Journal of Biomedical Informatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1016/j.jbi.2014.08.004'>10.1016/j.jbi.2014.08.004</a></div></div></td></tr><tr><td><a href='/doi/10.1093/database/bav016' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>4.</div></td><td><div class='doi-body' data-key='10.1093/database/bav016'><a href='/doi/10.1093/database/bav016' class='pub-title'>Scaling drug indication curation through crowdsourcing</a><div class='pub-body'>R. Khare, J. D. Burger, J. S. Aberdeen, D. W. Tresner-Kirsch, T. J. Corrales, L. Hirchman, Z. Lu (2015) <i>Database</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/database/bav016'>10.1093/database/bav016</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkt1031' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>5.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkt1031'><a href='/doi/10.1093/nar/gkt1031' class='pub-title'>The ChEMBL bioactivity database: an update</a><div class='pub-body'>A. P. Bento, A. Gaulton, A. Hersey, L. J. Bellis, J. Chambers, M. Davies, F. A. Kruger, Y. Light, L. Mak, S. McGlinchey, M. Nowotka, G. Papadatos, R. Santos, J. P. Overington (2013) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkt1031'>10.1093/nar/gkt1031</a></div></div></td></tr><tr><td><a href='/doi/10.1038/msb.2009.98' class='pub-comments tt-right' title='Article comments'>7</a></td><td><div class='pub-order'>6.</div></td><td><div class='doi-body' data-key='10.1038/msb.2009.98'><a href='/doi/10.1038/msb.2009.98' class='pub-title'>A side effect resource to capture phenotypic effects of drugs</a><div class='pub-body'>Michael Kuhn, Monica Campillos, Ivica Letunic, Lars Juhl Jensen, Peer Bork (2010) <i>Mol Syst Biol</i>. doi:<a class='pub-doi' href='https://doi.org/10.1038/msb.2009.98'>10.1038/msb.2009.98</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkt1207' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>7.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkt1207'><a href='/doi/10.1093/nar/gkt1207' class='pub-title'>STITCH 4: integration of protein-chemical interactions with user data</a><div class='pub-body'>M. Kuhn, D. Szklarczyk, S. Pletscher-Frankild, T. H. Blicher, C. von Mering, L. J. Jensen, P. Bork (2013) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkt1207'>10.1093/nar/gkt1207</a></div></div></td></tr><tr><td><a href='/doi/10.1126/scitranslmed.3003377' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>8.</div></td><td><div class='doi-body' data-key='10.1126/scitranslmed.3003377'><a href='/doi/10.1126/scitranslmed.3003377' class='pub-title'>Data-Driven Prediction of Drug Effects and Interactions</a><div class='pub-body'>N. P. Tatonetti, P. P. Ye, R. Daneshjou, R. B. Altman (2012) <i>Science Translational Medicine</i>. doi:<a class='pub-doi' href='https://doi.org/10.1126/scitranslmed.3003377'>10.1126/scitranslmed.3003377</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkt1068' class='pub-comments tt-right' title='Article comments'>4</a></td><td><div class='pub-order'>9.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkt1068'><a href='/doi/10.1093/nar/gkt1068' class='pub-title'>DrugBank 4.0: shedding new light on drug metabolism</a><div class='pub-body'>V. Law, C. Knox, Y. Djoumbou, T. Jewison, A. C. Guo, Y. Liu, A. Maciejewski, D. Arndt, M. Wilson, V. Neveu, A. Tang, G. Gabriel, C. Ly, S. Adamjee, Z. T. Dame, B. Han, Y. Zhou, D. S. Wishart (2013) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkt1068'>10.1093/nar/gkt1068</a></div></div></td></tr><tr><td><a href='/doi/10.1186/1758-2946-5-3' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>10.</div></td><td><div class='doi-body' data-key='10.1186/1758-2946-5-3'><a href='/doi/10.1186/1758-2946-5-3' class='pub-title'>UniChem: a unified chemical structure cross-referencing and identifier tracking system</a><div class='pub-body'>Jon Chambers, Mark Davies, Anna Gaulton, Anne Hersey, Sameer Velankar, Robert Petryszak, Janna Hastings, Louisa Bellis, Shaun McGlinchey, John P Overington (2013) <i>Journal of Cheminformatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1186/1758-2946-5-3'>10.1186/1758-2946-5-3</a></div></div></td></tr><tr><td><a href='/doi/10.1016/j.ddtec.2015.01.005' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>11.</div></td><td><div class='doi-body' data-key='10.1016/j.ddtec.2015.01.005'><a href='/doi/10.1016/j.ddtec.2015.01.005' class='pub-title'>Chemical databases: curation or integration by user-defined equivalence?</a><div class='pub-body'>Anne Hersey, Jon Chambers, Louisa Bellis, A. Patrícia Bento, Anna Gaulton, John P. Overington (2015) <i>Drug Discovery Today: Technologies</i>. doi:<a class='pub-doi' href='https://doi.org/10.1016/j.ddtec.2015.01.005'>10.1016/j.ddtec.2015.01.005</a></div></div></td></tr><tr><td><a href='/doi/10.1186/s13321-014-0043-5' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>12.</div></td><td><div class='doi-body' data-key='10.1186/s13321-014-0043-5'><a href='/doi/10.1186/s13321-014-0043-5' class='pub-title'>UniChem: extension of InChI-based compound mapping to salt, connectivity and stereochemistry layers</a><div class='pub-body'>Jon Chambers, Mark Davies, Anna Gaulton, George Papadatos, Anne Hersey, John P Overington (2014) <i>Journal of Cheminformatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1186/s13321-014-0043-5'>10.1186/s13321-014-0043-5</a></div></div></td></tr><tr><td><a href='/doi/10.4088/pcc.v05n0202' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>13.</div></td><td><div class='doi-body' data-key='10.4088/pcc.v05n0202'><a href='/doi/10.4088/pcc.v05n0202' class='pub-title'>Stereochemistry in Drug Action</a><div class='pub-body'>Jonathan Mc.Conathy, Michael J. Owens (2003) <i>The Primary Care Companion to The Journal of Clinical Psychiatry</i>. doi:<a class='pub-doi' href='https://doi.org/10.4088/pcc.v05n0202'>10.4088/pcc.v05n0202</a></div></div></td></tr><tr><td><a href='/doi/10.1016/j.jbi.2012.06.005' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>14.</div></td><td><div class='doi-body' data-key='10.1016/j.jbi.2012.06.005'><a href='/doi/10.1016/j.jbi.2012.06.005' class='pub-title'>Cross-terminology mapping challenges: A demonstration using medication terminological systems</a><div class='pub-body'>Himali Saitwal, David Qing, Stephen Jones, Elmer V. Bernstam, Christopher G. Chute, Todd R. Johnson (2012) <i>Journal of Biomedical Informatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1016/j.jbi.2012.06.005'>10.1016/j.jbi.2012.06.005</a></div></div></td></tr><tr><td><a href='/doi/10.1136/amiajnl-2011-000116' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>15.</div></td><td><div class='doi-body' data-key='10.1136/amiajnl-2011-000116'><a href='/doi/10.1136/amiajnl-2011-000116' class='pub-title'>Normalized names for clinical drugs: RxNorm at 6 years</a><div class='pub-body'>S. J. Nelson, K. Zeng, J. Kilbourne, T. Powell, R. Moore (2011) <i>Journal of the American Medical Informatics Association</i>. doi:<a class='pub-doi' href='https://doi.org/10.1136/amiajnl-2011-000116'>10.1136/amiajnl-2011-000116</a></div></div></td></tr><tr><td><a href='/doi/10.1186/1758-2946-5-7' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>16.</div></td><td><div class='doi-body' data-key='10.1186/1758-2946-5-7'><a href='/doi/10.1186/1758-2946-5-7' class='pub-title'>InChI - the worldwide chemical structure identifier standard</a><div class='pub-body'>Stephen Heller, Alan McNaught, Stephen Stein, Dmitrii Tchekhovskoi, Igor Pletnev (2013) <i>Journal of Cheminformatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1186/1758-2946-5-7'>10.1186/1758-2946-5-7</a></div></div></td></tr><tr><td><a href='/doi/10.1186/1758-2946-5-3' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>17.</div></td><td><div class='doi-body' data-key='10.1186/1758-2946-5-3'><a href='/doi/10.1186/1758-2946-5-3' class='pub-title'>UniChem: a unified chemical structure cross-referencing and identifier tracking system</a><div class='pub-body'>Jon Chambers, Mark Davies, Anna Gaulton, Anne Hersey, Sameer Velankar, Robert Petryszak, Janna Hastings, Louisa Bellis, Shaun McGlinchey, John P Overington (2013) <i>Journal of Cheminformatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1186/1758-2946-5-3'>10.1186/1758-2946-5-3</a></div></div></td></tr><tr><td><a href='/doi/10.1186/s13321-014-0043-5' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>18.</div></td><td><div class='doi-body' data-key='10.1186/s13321-014-0043-5'><a href='/doi/10.1186/s13321-014-0043-5' class='pub-title'>UniChem: extension of InChI-based compound mapping to salt, connectivity and stereochemistry layers</a><div class='pub-body'>Jon Chambers, Mark Davies, Anna Gaulton, George Papadatos, Anne Hersey, John P Overington (2014) <i>Journal of Cheminformatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1186/s13321-014-0043-5'>10.1186/s13321-014-0043-5</a></div></div></td></tr><tr><td><a href='/doi/10.1016/j.ddtec.2015.01.005' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>19.</div></td><td><div class='doi-body' data-key='10.1016/j.ddtec.2015.01.005'><a href='/doi/10.1016/j.ddtec.2015.01.005' class='pub-title'>Chemical databases: curation or integration by user-defined equivalence?</a><div class='pub-body'>Anne Hersey, Jon Chambers, Louisa Bellis, A. Patrícia Bento, Anna Gaulton, John P. Overington (2015) <i>Drug Discovery Today: Technologies</i>. doi:<a class='pub-doi' href='https://doi.org/10.1016/j.ddtec.2015.01.005'>10.1016/j.ddtec.2015.01.005</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkt1068' class='pub-comments tt-right' title='Article comments'>4</a></td><td><div class='pub-order'>20.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkt1068'><a href='/doi/10.1093/nar/gkt1068' class='pub-title'>DrugBank 4.0: shedding new light on drug metabolism</a><div class='pub-body'>V. Law, C. Knox, Y. Djoumbou, T. Jewison, A. C. Guo, Y. Liu, A. Maciejewski, D. Arndt, M. Wilson, V. Neveu, A. Tang, G. Gabriel, C. Ly, S. Adamjee, Z. T. Dame, B. Han, Y. Zhou, D. S. Wishart (2013) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkt1068'>10.1093/nar/gkt1068</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkt1068' class='pub-comments tt-right' title='Article comments'>4</a></td><td><div class='pub-order'>21.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkt1068'><a href='/doi/10.1093/nar/gkt1068' class='pub-title'>DrugBank 4.0: shedding new light on drug metabolism</a><div class='pub-body'>V. Law, C. Knox, Y. Djoumbou, T. Jewison, A. C. Guo, Y. Liu, A. Maciejewski, D. Arndt, M. Wilson, V. Neveu, A. Tang, G. Gabriel, C. Ly, S. Adamjee, Z. T. Dame, B. Han, Y. Zhou, D. S. Wishart (2013) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkt1068'>10.1093/nar/gkt1068</a></div></div></td></tr><tr><td><a href='/doi/10.1186/s13321-014-0043-5' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>22.</div></td><td><div class='doi-body' data-key='10.1186/s13321-014-0043-5'><a href='/doi/10.1186/s13321-014-0043-5' class='pub-title'>UniChem: extension of InChI-based compound mapping to salt, connectivity and stereochemistry layers</a><div class='pub-body'>Jon Chambers, Mark Davies, Anna Gaulton, George Papadatos, Anne Hersey, John P Overington (2014) <i>Journal of Cheminformatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1186/s13321-014-0043-5'>10.1186/s13321-014-0043-5</a></div></div></td></tr><tr><td><a href='/doi/10.1186/1758-2946-5-7' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>23.</div></td><td><div class='doi-body' data-key='10.1186/1758-2946-5-7'><a href='/doi/10.1186/1758-2946-5-7' class='pub-title'>InChI - the worldwide chemical structure identifier standard</a><div class='pub-body'>Stephen Heller, Alan McNaught, Stephen Stein, Dmitrii Tchekhovskoi, Igor Pletnev (2013) <i>Journal of Cheminformatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1186/1758-2946-5-7'>10.1186/1758-2946-5-7</a></div></div></td></tr></table>
@@ -436,7 +436,7 @@ WHERE SAB = 'MTHSPL' AND TTY = 'SU' AND CODE != 'NOCODE';</code></pre>
 
 			
 
-      <a class="btn btn-default follow-link btn-follow btn-lg is-following tt-top full-width" title="Follow discussion" data-id="40" data-ctype="thread" data-is-following="false">&nbsp;</a>
+      <!-- <a class="btn btn-default follow-link btn-follow btn-lg is-following tt-top full-width" title="Follow discussion" data-id="40" data-ctype="thread" data-is-following="false">&nbsp;</a> -->
 
       
         <div class="status-box text-center"><span style="">Status:</span> 
@@ -481,12 +481,12 @@ WHERE SAB = 'MTHSPL' AND TTY = 'SU' AND CODE != 'NOCODE';</code></pre>
 			
 				<li>
 					
-					<a href='/discussion/integrating-resources-with-disparate-licensing-into-an-open-network/107' class='thread-title'>Integrating resources with disparate licensing into an open network</a>
+					<a href='/d/107' class='thread-title'>Integrating resources with disparate licensing into an open network</a>
 				</li>
 			
 				<li>
 					
-					<a href='/discussion/brainstorming-future-directions-for-hetionet/227' class='thread-title'>Brainstorming future directions for Hetionet</a>
+					<a href='/d/227' class='thread-title'>Brainstorming future directions for Hetionet</a>
 				</li>
 			
 				<li>
@@ -496,42 +496,42 @@ WHERE SAB = 'MTHSPL' AND TTY = 'SU' AND CODE != 'NOCODE';</code></pre>
 			
 				<li>
 					
-					<a href='/discussion/cataloging-drugdisease-therapies-in-the-clinicaltrialsgov-database/212' class='thread-title'>Cataloging drug–disease therapies in the ClinicalTrials.gov database</a>
+					<a href='/d/212' class='thread-title'>Cataloging drug–disease therapies in the ClinicalTrials.gov database</a>
 				</li>
 			
 				<li>
 					
-					<a href='/discussion/how-should-we-construct-a-catalog-of-drug-indications/21' class='thread-title'>How should we construct a catalog of drug indications?</a>
+					<a href='/d/21' class='thread-title'>How should we construct a catalog of drug indications?</a>
 				</li>
 			
 				<li>
 					
-					<a href='/discussion/announcing-pharmacotherapydb-the-open-catalog-of-drug-therapies-for-disease/182' class='thread-title'>Announcing PharmacotherapyDB: the Open Catalog of Drug Therapies for Disease</a>
+					<a href='/d/182' class='thread-title'>Announcing PharmacotherapyDB: the Open Catalog of Drug Therapies for Disease</a>
 				</li>
 			
 				<li>
 					
-					<a href='/discussion/expert-curation-of-our-indication-catalog-for-disease-modifying-treatments/95' class='thread-title'>Expert curation of our indication catalog for disease-modifying treatments</a>
+					<a href='/d/95' class='thread-title'>Expert curation of our indication catalog for disease-modifying treatments</a>
 				</li>
 			
 				<li>
 					
-					<a href='/discussion/unichem-mapping-to-lincs-small-molecules/51' class='thread-title'>UniChem Mapping to LINCS Small Molecules</a>
+					<a href='/d/51' class='thread-title'>UniChem Mapping to LINCS Small Molecules</a>
 				</li>
 			
 				<li>
 					
-					<a href='/discussion/tissue-specific-gene-expression-resources/81' class='thread-title'>Tissue-specific gene expression resources</a>
+					<a href='/d/81' class='thread-title'>Tissue-specific gene expression resources</a>
 				</li>
 			
 				<li>
 					
-					<a href='/discussion/calculating-molecular-similarities-between-drugbank-compounds/70' class='thread-title'>Calculating molecular similarities between DrugBank compounds</a>
+					<a href='/d/70' class='thread-title'>Calculating molecular similarities between DrugBank compounds</a>
 				</li>
 			
 				<li>
 					
-					<a href='/discussion/retrieving-the-ingredients-in-rxnorm-concepts/61' class='thread-title'>Retrieving the ingredients in RxNorm concepts</a>
+					<a href='/d/61' class='thread-title'>Retrieving the ingredients in RxNorm concepts</a>
 				</li>
 			
 				</ul>
@@ -567,11 +567,11 @@ WHERE SAB = 'MTHSPL' AND TTY = 'SU' AND CODE != 'NOCODE';</code></pre>
 
 		
 	    	<div class="footer">
-<div style="background:#dedede;">
+<!-- <div style="background:#dedede;">
 	<div class="main-centered-div text-center" style="padding:20px;">
-		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#167e737a7a7956627e7f787d7a77743875797b"><span class="__cf_email__" data-cfemail="f29a979e9e9db2869a9b9c999e9390dc919d9f">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="mailto:hello@thinklab.com">hello@thinklab.com</a></h4>
 	</div>
-</div>
+</div> -->
 <div class="main-footer">
 	<div class="main-centered-div">
 
@@ -629,10 +629,10 @@ WHERE SAB = 'MTHSPL' AND TTY = 'SU' AND CODE != 'NOCODE';</code></pre>
 
 	</td>
 	<td class="footer-nav">
-		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<!-- <a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
 		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
 		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
-		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a> -->
 		<br><br>
 		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
 
@@ -699,5 +699,5 @@ $(function() {
 
 
 
-<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</body>
 </html>

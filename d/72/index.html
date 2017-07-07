@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZgEOC19dW0QCEVtHU1gG","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":405}</script>
     <title>Adding pathway resources to your network | Thinklab</title>
 	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
     <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
@@ -52,7 +52,7 @@
 </head>
 <body >
   <form id="form_action" method="post">
-    <input type='hidden' name='csrfmiddlewaretoken' value='l7Uj18YzflVv8dlWHhRPsxnSwbbuTCcc' />
+    <input type='hidden' name='csrfmiddlewaretoken' value='ypamUdfXu4FnASUyTHPbTrQWcdTFmVrB' />
 </form>
 
 	
@@ -107,8 +107,8 @@
 	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
 		<ul class="main-header pull-right" style="padding-left: 0;">
     		
-                <li><a href="/login" style="color:silver;">Login</a></li>
-                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+                <!-- <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li> -->
             
 
         </ul>
@@ -169,7 +169,7 @@
 			<div style="margin-top:5px;color:gray;margin-bottom:20px;font-size:13px;">
 				<a style="font-weight:normal;color:#212121" href="/u/alexanderpico"><strong>Alexander Pico</strong></a>
 				
-				&nbsp; <a href="#1" class="light">759 days ago</a>
+				&nbsp; <a href="#1" class="light">June 9, 2015</a>
 				
 			</div>
 
@@ -218,7 +218,7 @@
       <div class="comment-header">
         <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
 				<span class="is-researcher">Researcher</span>
-				<span class="light">&nbsp;<a href="#2" class="light">758 days</a>
+				<span class="light">&nbsp;<a href="#2" class="light">June 10, 2015</a>
           
         </span>
       </div>
@@ -283,7 +283,7 @@
       <div class="comment-header">
         <a style="font-weight:bold;color:#212121" href="/u/alexanderpico">Alexander Pico</a>
 				
-				<span class="light">&nbsp;<a href="#3" class="light">758 days</a>
+				<span class="light">&nbsp;<a href="#3" class="light">June 10, 2015</a>
           
         </span>
       </div>
@@ -324,7 +324,7 @@
       <div class="comment-header">
         <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
 				<span class="is-researcher">Researcher</span>
-				<span class="light">&nbsp;<a href="#4" class="light">757 days</a>
+				<span class="light">&nbsp;<a href="#4" class="light">June 11, 2015</a>
           
         </span>
       </div>
@@ -367,7 +367,7 @@
       <div class="comment-header">
         <a style="font-weight:bold;color:#212121" href="/u/alexanderpico">Alexander Pico</a>
 				
-				<span class="light">&nbsp;<a href="#5" class="light">756 days</a>
+				<span class="light">&nbsp;<a href="#5" class="light">June 12, 2015</a>
           
         </span>
       </div>
@@ -408,7 +408,7 @@
       <div class="comment-header">
         <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
 				<span class="is-researcher">Researcher</span>
-				<span class="light">&nbsp;<a href="#6" class="light">742 days</a>
+				<span class="light">&nbsp;<a href="#6" class="light">June 26, 2015</a>
           
         </span>
       </div>
@@ -467,7 +467,7 @@
       <div class="comment-header">
         <a style="font-weight:bold;color:#212121" href="/u/alexanderpico">Alexander Pico</a>
 				
-				<span class="light">&nbsp;<a href="#7" class="light">741 days</a>
+				<span class="light">&nbsp;<a href="#7" class="light">June 27, 2015</a>
           
         </span>
       </div>
@@ -512,7 +512,7 @@
       <div class="comment-header">
         <a style="font-weight:bold;color:#212121" href="/u/alexanderpico">Alexander Pico</a>
 				
-				<span class="light">&nbsp;<a href="#8" class="light">739 days</a>
+				<span class="light">&nbsp;<a href="#8" class="light">June 29, 2015</a>
           
         </span>
       </div>
@@ -561,7 +561,7 @@
       <div class="comment-header">
         <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
 				<span class="is-researcher">Researcher</span>
-				<span class="light">&nbsp;<a href="#9" class="light">739 days</a>
+				<span class="light">&nbsp;<a href="#9" class="light">June 29, 2015</a>
           
         </span>
       </div>
@@ -604,7 +604,7 @@
       <div class="comment-header">
         <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
 				<span class="is-researcher">Researcher</span>
-				<span class="light">&nbsp;<a href="#10" class="light">640 days</a>
+				<span class="light">&nbsp;<a href="#10" class="light">Oct. 6, 2015</a>
           
         </span>
       </div>
@@ -647,7 +647,7 @@
       <div class="comment-header">
         <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
 				<span class="is-researcher">Researcher</span>
-				<span class="light">&nbsp;<a href="#11" class="light">461 days</a>
+				<span class="light">&nbsp;<a href="#11" class="light">April 2, 2016</a>
           
         </span>
       </div>
@@ -690,10 +690,10 @@
     
 
     &nbsp;<br>
-    <a class="btn btn-primary btn-lg" href="/signup?next=/discussion/adding-pathway-resources-to-your-network/72&suppress_message=1" style>Join to Reply</a>
+    <!-- <a class="btn btn-primary btn-lg" href="/signup?next=/discussion/adding-pathway-resources-to-your-network/72&suppress_message=1" style>Join to Reply</a> -->
 
 
-		<table class="references table-td-5" style="display:none;"><tr><td><a href='/doi/10.1073/pnas.0506580102' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.1073/pnas.0506580102'><a href='/doi/10.1073/pnas.0506580102' class='pub-title'>Gene set enrichment analysis: A knowledge-based approach for interpreting genome-wide expression profiles</a><div class='pub-body'>A. Subramanian, P. Tamayo, V. K. Mootha, S. Mukherjee, B. L. Ebert, M. A. Gillette, A. Paulovich, S. L. Pomeroy, T. R. Golub, E. S. Lander, J. P. Mesirov (2005) <i>Proceedings of the National Academy of Sciences</i>. doi:<a class='pub-doi' href='https://doi.org/10.1073/pnas.0506580102'>10.1073/pnas.0506580102</a></div></div></td></tr><tr><td><a href='/doi/10.1093/bioinformatics/btr260' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>2.</div></td><td><div class='doi-body' data-key='10.1093/bioinformatics/btr260'><a href='/doi/10.1093/bioinformatics/btr260' class='pub-title'>Molecular signatures database (MSigDB) 3.0</a><div class='pub-body'>A. Liberzon, A. Subramanian, R. Pinchback, H. Thorvaldsdottir, P. Tamayo, J. P. Mesirov (2011) <i>Bioinformatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/bioinformatics/btr260'>10.1093/bioinformatics/btr260</a></div></div></td></tr><tr><td><a href='/doi/10.1371/journal.pbio.0060184' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>3.</div></td><td><div class='doi-body' data-key='10.1371/journal.pbio.0060184'><a href='/doi/10.1371/journal.pbio.0060184' class='pub-title'>WikiPathways: Pathway Editing for the People</a><div class='pub-body'>Alexander R. Pico, Thomas Kelder, Martijn P. van Iersel, Kristina Hanspers, Bruce R. Conklin, Chris Evelo (2008) <i>Plos Biol</i>. doi:<a class='pub-doi' href='https://doi.org/10.1371/journal.pbio.0060184'>10.1371/journal.pbio.0060184</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkr1074' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>4.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkr1074'><a href='/doi/10.1093/nar/gkr1074' class='pub-title'>WikiPathways: building research communities on biological pathways</a><div class='pub-body'>T. Kelder, M. P. van Iersel, K. Hanspers, M. Kutmon, B. R. Conklin, C. T. Evelo, A. R. Pico (2011) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkr1074'>10.1093/nar/gkr1074</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkq1039' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>5.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkq1039'><a href='/doi/10.1093/nar/gkq1039' class='pub-title'>Pathway Commons, a web resource for biological pathway data</a><div class='pub-body'>E. G. Cerami, B. E. Gross, E. Demir, I. Rodchenkov, O. Babur, N. Anwar, N. Schultz, G. D. Bader, C. Sander (2010) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkq1039'>10.1093/nar/gkq1039</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkv1024' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>6.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkv1024'><a href='/doi/10.1093/nar/gkv1024' class='pub-title'>WikiPathways: capturing the full diversity of pathway knowledge</a><div class='pub-body'>Martina Kutmon, Anders Riutta, Nuno Nunes, Kristina Hanspers, Egon L. Willighagen, Anwesha Bohler, Jonathan Mélius, Andra Waagmeester, Sravanthi R. Sinha, Ryan Miller, Susan L. Coort, Elisa Cirillo, Bart Smeets, Chris T. Evelo, Alexander R. Pico (2015) <i>Nucleic Acids Res</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkv1024'>10.1093/nar/gkv1024</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d75' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>7.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d75'><a href='/discussion/pathway-novelty-based-on-unique-relationships-rather-than-genes/75' class='pub-title'>Pathway novelty based on unique relationships rather than genes</a><div class='pub-body'>Daniel Himmelstein, Alexander Pico (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d75'>10.15363/thinklab.d75</a></div></div></td></tr><tr><td><a href='/doi/10.5281/zenodo.31834' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>8.</div></td><td><div class='doi-body' data-key='10.5281/zenodo.31834'><a href='/doi/10.5281/zenodo.31834' class='pub-title'>A compilation of pathway gene sets: pathways v1.0 initial release</a><div class='pub-body'>Daniel Himmelstein, Alexander Pico (2015) <i>Zenodo</i>. doi:<a class='pub-doi' href='https://doi.org/10.5281/zenodo.31834'>10.5281/zenodo.31834</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkq1039' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>9.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkq1039'><a href='/doi/10.1093/nar/gkq1039' class='pub-title'>Pathway Commons, a web resource for biological pathway data</a><div class='pub-body'>E. G. Cerami, B. E. Gross, E. Demir, I. Rodchenkov, O. Babur, N. Anwar, N. Schultz, G. D. Bader, C. Sander (2010) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkq1039'>10.1093/nar/gkq1039</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkv1351' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>10.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkv1351'><a href='/doi/10.1093/nar/gkv1351' class='pub-title'>The Reactome pathway Knowledgebase</a><div class='pub-body'>Antonio Fabregat, Konstantinos Sidiropoulos, Phani Garapati, Marc Gillespie, Kerstin Hausmann, Robin Haw, Bijay Jassal, Steven Jupe, Florian Korninger, Sheldon McKay, Lisa Matthews, Bruce May, Marija Milacic, Karen Rothfels, Veronica Shamovsky, Marissa Webber, Joel Weiser, Mark Williams, Guanming Wu, Lincoln Stein, Henning Hermjakob, Peter D&#39;Eustachio (2015) <i>Nucleic Acids Res</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkv1351'>10.1093/nar/gkv1351</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkn653' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>11.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkn653'><a href='/doi/10.1093/nar/gkn653' class='pub-title'>PID: the Pathway Interaction Database</a><div class='pub-body'>C. F. Schaefer, K. Anthony, S. Krupa, J. Buchoff, M. Day, T. Hannay, K. H. Buetow (2009) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkn653'>10.1093/nar/gkn653</a></div></div></td></tr><tr><td><a href='/doi/10.5281/zenodo.48810' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>12.</div></td><td><div class='doi-body' data-key='10.5281/zenodo.48810'><a href='/doi/10.5281/zenodo.48810' class='pub-title'>dhimmel/pathways v2.0: Compiling human pathway gene sets</a><div class='pub-body'>Daniel S. Himmelstein, Alexander R. Pico (2016) <i>Zenodo</i>. doi:<a class='pub-doi' href='https://doi.org/10.5281/zenodo.48810'>10.5281/zenodo.48810</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d108' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>13.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d108'><a href='/discussion/msigdb-licensing/108' class='pub-title'>MSigDB licensing</a><div class='pub-body'>Daniel Himmelstein (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d108'>10.15363/thinklab.d108</a></div></div></td></tr></table>
+		<table class="references table-td-5" style="display:none;"><tr><td><a href='/doi/10.1073/pnas.0506580102' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.1073/pnas.0506580102'><a href='/doi/10.1073/pnas.0506580102' class='pub-title'>Gene set enrichment analysis: A knowledge-based approach for interpreting genome-wide expression profiles</a><div class='pub-body'>A. Subramanian, P. Tamayo, V. K. Mootha, S. Mukherjee, B. L. Ebert, M. A. Gillette, A. Paulovich, S. L. Pomeroy, T. R. Golub, E. S. Lander, J. P. Mesirov (2005) <i>Proceedings of the National Academy of Sciences</i>. doi:<a class='pub-doi' href='https://doi.org/10.1073/pnas.0506580102'>10.1073/pnas.0506580102</a></div></div></td></tr><tr><td><a href='/doi/10.1093/bioinformatics/btr260' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>2.</div></td><td><div class='doi-body' data-key='10.1093/bioinformatics/btr260'><a href='/doi/10.1093/bioinformatics/btr260' class='pub-title'>Molecular signatures database (MSigDB) 3.0</a><div class='pub-body'>A. Liberzon, A. Subramanian, R. Pinchback, H. Thorvaldsdottir, P. Tamayo, J. P. Mesirov (2011) <i>Bioinformatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/bioinformatics/btr260'>10.1093/bioinformatics/btr260</a></div></div></td></tr><tr><td><a href='/doi/10.1371/journal.pbio.0060184' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>3.</div></td><td><div class='doi-body' data-key='10.1371/journal.pbio.0060184'><a href='/doi/10.1371/journal.pbio.0060184' class='pub-title'>WikiPathways: Pathway Editing for the People</a><div class='pub-body'>Alexander R. Pico, Thomas Kelder, Martijn P. van Iersel, Kristina Hanspers, Bruce R. Conklin, Chris Evelo (2008) <i>Plos Biol</i>. doi:<a class='pub-doi' href='https://doi.org/10.1371/journal.pbio.0060184'>10.1371/journal.pbio.0060184</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkr1074' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>4.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkr1074'><a href='/doi/10.1093/nar/gkr1074' class='pub-title'>WikiPathways: building research communities on biological pathways</a><div class='pub-body'>T. Kelder, M. P. van Iersel, K. Hanspers, M. Kutmon, B. R. Conklin, C. T. Evelo, A. R. Pico (2011) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkr1074'>10.1093/nar/gkr1074</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkq1039' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>5.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkq1039'><a href='/doi/10.1093/nar/gkq1039' class='pub-title'>Pathway Commons, a web resource for biological pathway data</a><div class='pub-body'>E. G. Cerami, B. E. Gross, E. Demir, I. Rodchenkov, O. Babur, N. Anwar, N. Schultz, G. D. Bader, C. Sander (2010) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkq1039'>10.1093/nar/gkq1039</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkv1024' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>6.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkv1024'><a href='/doi/10.1093/nar/gkv1024' class='pub-title'>WikiPathways: capturing the full diversity of pathway knowledge</a><div class='pub-body'>Martina Kutmon, Anders Riutta, Nuno Nunes, Kristina Hanspers, Egon L. Willighagen, Anwesha Bohler, Jonathan Mélius, Andra Waagmeester, Sravanthi R. Sinha, Ryan Miller, Susan L. Coort, Elisa Cirillo, Bart Smeets, Chris T. Evelo, Alexander R. Pico (2015) <i>Nucleic Acids Res</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkv1024'>10.1093/nar/gkv1024</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d75' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>7.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d75'><a href='/d/75' class='pub-title'>Pathway novelty based on unique relationships rather than genes</a><div class='pub-body'>Daniel Himmelstein, Alexander Pico (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d75'>10.15363/thinklab.d75</a></div></div></td></tr><tr><td><a href='/doi/10.5281/zenodo.31834' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>8.</div></td><td><div class='doi-body' data-key='10.5281/zenodo.31834'><a href='/doi/10.5281/zenodo.31834' class='pub-title'>A compilation of pathway gene sets: pathways v1.0 initial release</a><div class='pub-body'>Daniel Himmelstein, Alexander Pico (2015) <i>Zenodo</i>. doi:<a class='pub-doi' href='https://doi.org/10.5281/zenodo.31834'>10.5281/zenodo.31834</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkq1039' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>9.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkq1039'><a href='/doi/10.1093/nar/gkq1039' class='pub-title'>Pathway Commons, a web resource for biological pathway data</a><div class='pub-body'>E. G. Cerami, B. E. Gross, E. Demir, I. Rodchenkov, O. Babur, N. Anwar, N. Schultz, G. D. Bader, C. Sander (2010) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkq1039'>10.1093/nar/gkq1039</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkv1351' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>10.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkv1351'><a href='/doi/10.1093/nar/gkv1351' class='pub-title'>The Reactome pathway Knowledgebase</a><div class='pub-body'>Antonio Fabregat, Konstantinos Sidiropoulos, Phani Garapati, Marc Gillespie, Kerstin Hausmann, Robin Haw, Bijay Jassal, Steven Jupe, Florian Korninger, Sheldon McKay, Lisa Matthews, Bruce May, Marija Milacic, Karen Rothfels, Veronica Shamovsky, Marissa Webber, Joel Weiser, Mark Williams, Guanming Wu, Lincoln Stein, Henning Hermjakob, Peter D&#39;Eustachio (2015) <i>Nucleic Acids Res</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkv1351'>10.1093/nar/gkv1351</a></div></div></td></tr><tr><td><a href='/doi/10.1093/nar/gkn653' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>11.</div></td><td><div class='doi-body' data-key='10.1093/nar/gkn653'><a href='/doi/10.1093/nar/gkn653' class='pub-title'>PID: the Pathway Interaction Database</a><div class='pub-body'>C. F. Schaefer, K. Anthony, S. Krupa, J. Buchoff, M. Day, T. Hannay, K. H. Buetow (2009) <i>Nucleic Acids Research</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/nar/gkn653'>10.1093/nar/gkn653</a></div></div></td></tr><tr><td><a href='/doi/10.5281/zenodo.48810' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>12.</div></td><td><div class='doi-body' data-key='10.5281/zenodo.48810'><a href='/doi/10.5281/zenodo.48810' class='pub-title'>dhimmel/pathways v2.0: Compiling human pathway gene sets</a><div class='pub-body'>Daniel S. Himmelstein, Alexander R. Pico (2016) <i>Zenodo</i>. doi:<a class='pub-doi' href='https://doi.org/10.5281/zenodo.48810'>10.5281/zenodo.48810</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d108' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>13.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d108'><a href='/d/108' class='pub-title'>MSigDB licensing</a><div class='pub-body'>Daniel Himmelstein (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d108'>10.15363/thinklab.d108</a></div></div></td></tr></table>
 
     
 
@@ -704,7 +704,7 @@
 
 			
 
-      <a class="btn btn-default follow-link btn-follow btn-lg is-following tt-top full-width" title="Follow discussion" data-id="72" data-ctype="thread" data-is-following="false">&nbsp;</a>
+      <!-- <a class="btn btn-default follow-link btn-follow btn-lg is-following tt-top full-width" title="Follow discussion" data-id="72" data-ctype="thread" data-is-following="false">&nbsp;</a> -->
 
       
         <div class="status-box text-center"><span style="">Status:</span> 
@@ -756,7 +756,7 @@
 			
 				<li>
 					
-					<a href='/discussion/integrating-resources-with-disparate-licensing-into-an-open-network/107' class='thread-title'>Integrating resources with disparate licensing into an open network</a>
+					<a href='/d/107' class='thread-title'>Integrating resources with disparate licensing into an open network</a>
 				</li>
 			
 				<li>
@@ -766,12 +766,12 @@
 			
 				<li>
 					
-					<a href='/discussion/msigdb-licensing/108' class='thread-title'>MSigDB licensing</a>
+					<a href='/d/108' class='thread-title'>MSigDB licensing</a>
 				</li>
 			
 				<li>
 					
-					<a href='/discussion/text-as-a-resource-for-network-population/48' class='thread-title'>Text as a resource for network population?</a>
+					<a href='/d/48' class='thread-title'>Text as a resource for network population?</a>
 				</li>
 			
 				</ul>
@@ -807,11 +807,11 @@
 
 		
 	    	<div class="footer">
-<div style="background:#dedede;">
+<!-- <div style="background:#dedede;">
 	<div class="main-centered-div text-center" style="padding:20px;">
-		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#f49c9198989bb4809c9d9a9f989596da979b99"><span class="__cf_email__" data-cfemail="375f525b5b5877435f5e595c5b56551954585a">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="mailto:hello@thinklab.com">hello@thinklab.com</a></h4>
 	</div>
-</div>
+</div> -->
 <div class="main-footer">
 	<div class="main-centered-div">
 
@@ -869,10 +869,10 @@
 
 	</td>
 	<td class="footer-nav">
-		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<!-- <a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
 		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
 		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
-		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a> -->
 		<br><br>
 		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
 
@@ -939,5 +939,5 @@ $(function() {
 
 
 
-<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</body>
 </html>

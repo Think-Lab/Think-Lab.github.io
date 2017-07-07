@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08CV1taQlkRXEdFAz0WFFNIRVVcOkVcU049BxNcWw==","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":1136}</script>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08CV1taQlkRXEdFAz0WFFNIRVVcOkVcU049BxNcWw==","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":952}</script>
     <title>Proposal Review: Predicting Bcr-Abl targets using a hybrid information extraction system</title>
 	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
     <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
@@ -43,7 +43,7 @@
 </head>
 <body >
   <form id="form_action" method="post">
-    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+    <input type='hidden' name='csrfmiddlewaretoken' value='ypamUdfXu4FnASUyTHPbTrQWcdTFmVrB' />
 </form>
 
 	
@@ -98,8 +98,8 @@
 	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
 		<ul class="main-header pull-right" style="padding-left: 0;">
     		
-                <li><a href="/login" style="color:silver;">Login</a></li>
-                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+                <!-- <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li> -->
             
 
         </ul>
@@ -134,7 +134,7 @@
 	<div class="header-object-type"></div>
 
 	
-			<a class="btn btn-lg follow-link btn-follow pull-right active tt-top" style="margin-left:20px;" title="Follow project discussion" data-id="17" data-ctype="project" data-is-following="false">&nbsp;</a>
+			<!-- <a class="btn btn-lg follow-link btn-follow pull-right active tt-top" style="margin-left:20px;" title="Follow project discussion" data-id="17" data-ctype="project" data-is-following="false">&nbsp;</a> -->
 	
 
 	<h2 class="header-object-name">Predicting Bcr-Abl targets using a hybrid information extraction system</h2>
@@ -777,7 +777,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/48_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#1" class="ic-time">535 days</a>
+			<a href="#1" class="ic-time">Jan. 18, 2016</a>
 			
 		</div>
 		<a href="/u/b_good" class="inline-comment-name">Benjamin Good</a>
@@ -796,7 +796,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/17_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#73" class="ic-time">518 days</a>
+			<a href="#73" class="ic-time">Feb. 5, 2016</a>
 			
 		</div>
 		<a href="/u/dhimmel" class="inline-comment-name">Daniel Himmelstein</a>
@@ -837,7 +837,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/181_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#26" class="ic-time">534 days</a>
+			<a href="#26" class="ic-time">Jan. 20, 2016</a>
 			
 		</div>
 		<a href="/u/andrewsu" class="inline-comment-name">Andrew Su</a>
@@ -877,11 +877,11 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/48_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<!-- <div class="pull-right">
-			<a href="#d143" class="ic-time">535 days</a>
+			<a href="#d143" class="ic-time">Jan. 19, 2016</a>
 		</div>
 		<a href="/u/b_good" class="inline-comment-name">Benjamin Good</a><br> -->
 		<div class="inline-discussion-comments">1</div>
-		<a class="inline-discussion-subject" href="/discussion/what-lies-downstream-of-bcr-abl/143">What lies ‘downstream’ of Bcr-Abl ?</a>
+		<a class="inline-discussion-subject" href="/d/143">What lies ‘downstream’ of Bcr-Abl ?</a>
 	</div>
 </div>
 
@@ -910,7 +910,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/17_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#74" class="ic-time">518 days</a>
+			<a href="#74" class="ic-time">Feb. 5, 2016</a>
 			
 		</div>
 		<a href="/u/dhimmel" class="inline-comment-name">Daniel Himmelstein</a>
@@ -949,7 +949,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#37" class="ic-time">523 days</a>
+			<a href="#37" class="ic-time">Jan. 31, 2016</a>
 			
 		</div>
 		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
@@ -968,7 +968,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/17_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#75" class="ic-time">518 days</a>
+			<a href="#75" class="ic-time">Feb. 5, 2016</a>
 			
 		</div>
 		<a href="/u/dhimmel" class="inline-comment-name">Daniel Himmelstein</a>
@@ -1007,7 +1007,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/48_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#2" class="ic-time">535 days</a>
+			<a href="#2" class="ic-time">Jan. 18, 2016</a>
 			
 		</div>
 		<a href="/u/b_good" class="inline-comment-name">Benjamin Good</a>
@@ -1046,7 +1046,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/48_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#3" class="ic-time">535 days</a>
+			<a href="#3" class="ic-time">Jan. 18, 2016</a>
 			
 		</div>
 		<a href="/u/b_good" class="inline-comment-name">Benjamin Good</a>
@@ -1085,7 +1085,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/181_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#27" class="ic-time">534 days</a>
+			<a href="#27" class="ic-time">Jan. 20, 2016</a>
 			
 		</div>
 		<a href="/u/andrewsu" class="inline-comment-name">Andrew Su</a>
@@ -1124,7 +1124,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/48_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#4" class="ic-time">535 days</a>
+			<a href="#4" class="ic-time">Jan. 18, 2016</a>
 			
 		</div>
 		<a href="/u/b_good" class="inline-comment-name">Benjamin Good</a>
@@ -1163,7 +1163,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#38" class="ic-time">523 days</a>
+			<a href="#38" class="ic-time">Jan. 31, 2016</a>
 			
 		</div>
 		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
@@ -1202,7 +1202,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/17_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#76" class="ic-time">518 days</a>
+			<a href="#76" class="ic-time">Feb. 5, 2016</a>
 			
 		</div>
 		<a href="/u/dhimmel" class="inline-comment-name">Daniel Himmelstein</a>
@@ -1241,7 +1241,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/181_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#28" class="ic-time">534 days</a>
+			<a href="#28" class="ic-time">Jan. 20, 2016</a>
 			
 		</div>
 		<a href="/u/andrewsu" class="inline-comment-name">Andrew Su</a>
@@ -1280,7 +1280,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/180_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#19" class="ic-time">535 days</a>
+			<a href="#19" class="ic-time">Jan. 19, 2016</a>
 			
 		</div>
 		<a href="/u/timputman" class="inline-comment-name">Tim Putman</a>
@@ -1319,7 +1319,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#39" class="ic-time">523 days</a>
+			<a href="#39" class="ic-time">Jan. 31, 2016</a>
 			
 		</div>
 		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
@@ -1358,7 +1358,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/17_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#77" class="ic-time">518 days</a>
+			<a href="#77" class="ic-time">Feb. 5, 2016</a>
 			
 		</div>
 		<a href="/u/dhimmel" class="inline-comment-name">Daniel Himmelstein</a>
@@ -1399,7 +1399,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/181_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#29" class="ic-time">534 days</a>
+			<a href="#29" class="ic-time">Jan. 20, 2016</a>
 			
 		</div>
 		<a href="/u/andrewsu" class="inline-comment-name">Andrew Su</a>
@@ -1438,7 +1438,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/181_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#30" class="ic-time">534 days</a>
+			<a href="#30" class="ic-time">Jan. 20, 2016</a>
 			
 		</div>
 		<a href="/u/andrewsu" class="inline-comment-name">Andrew Su</a>
@@ -1477,7 +1477,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/180_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#20" class="ic-time">535 days</a>
+			<a href="#20" class="ic-time">Jan. 19, 2016</a>
 			
 		</div>
 		<a href="/u/timputman" class="inline-comment-name">Tim Putman</a>
@@ -1516,7 +1516,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#40" class="ic-time">523 days</a>
+			<a href="#40" class="ic-time">Jan. 31, 2016</a>
 			
 		</div>
 		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
@@ -1555,7 +1555,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/48_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#5" class="ic-time">535 days</a>
+			<a href="#5" class="ic-time">Jan. 18, 2016</a>
 			
 		</div>
 		<a href="/u/b_good" class="inline-comment-name">Benjamin Good</a>
@@ -1596,7 +1596,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#41" class="ic-time">523 days</a>
+			<a href="#41" class="ic-time">Jan. 31, 2016</a>
 			
 		</div>
 		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
@@ -1635,7 +1635,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/48_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#6" class="ic-time">535 days</a>
+			<a href="#6" class="ic-time">Jan. 18, 2016</a>
 			
 		</div>
 		<a href="/u/b_good" class="inline-comment-name">Benjamin Good</a>
@@ -1674,7 +1674,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/48_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#7" class="ic-time">535 days</a>
+			<a href="#7" class="ic-time">Jan. 18, 2016</a>
 			
 		</div>
 		<a href="/u/b_good" class="inline-comment-name">Benjamin Good</a>
@@ -1693,7 +1693,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/17_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#78" class="ic-time">518 days</a>
+			<a href="#78" class="ic-time">Feb. 5, 2016</a>
 			
 		</div>
 		<a href="/u/dhimmel" class="inline-comment-name">Daniel Himmelstein</a>
@@ -1738,7 +1738,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/48_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#8" class="ic-time">535 days</a>
+			<a href="#8" class="ic-time">Jan. 18, 2016</a>
 			
 		</div>
 		<a href="/u/b_good" class="inline-comment-name">Benjamin Good</a>
@@ -1777,7 +1777,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/181_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#31" class="ic-time">534 days</a>
+			<a href="#31" class="ic-time">Jan. 20, 2016</a>
 			
 		</div>
 		<a href="/u/andrewsu" class="inline-comment-name">Andrew Su</a>
@@ -1816,7 +1816,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#42" class="ic-time">523 days</a>
+			<a href="#42" class="ic-time">Jan. 31, 2016</a>
 			
 		</div>
 		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
@@ -1855,7 +1855,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/181_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#32" class="ic-time">534 days</a>
+			<a href="#32" class="ic-time">Jan. 20, 2016</a>
 			
 		</div>
 		<a href="/u/andrewsu" class="inline-comment-name">Andrew Su</a>
@@ -1894,7 +1894,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#43" class="ic-time">523 days</a>
+			<a href="#43" class="ic-time">Jan. 31, 2016</a>
 			
 		</div>
 		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
@@ -1933,7 +1933,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#44" class="ic-time">523 days</a>
+			<a href="#44" class="ic-time">Jan. 31, 2016</a>
 			
 		</div>
 		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
@@ -1972,7 +1972,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#45" class="ic-time">523 days</a>
+			<a href="#45" class="ic-time">Jan. 31, 2016</a>
 			
 		</div>
 		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
@@ -2011,7 +2011,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/48_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#9" class="ic-time">535 days</a>
+			<a href="#9" class="ic-time">Jan. 18, 2016</a>
 			
 		</div>
 		<a href="/u/b_good" class="inline-comment-name">Benjamin Good</a>
@@ -2030,7 +2030,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/180_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#23" class="ic-time">535 days</a>
+			<a href="#23" class="ic-time">Jan. 19, 2016</a>
 			
 		</div>
 		<a href="/u/timputman" class="inline-comment-name">Tim Putman</a>
@@ -2069,7 +2069,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#46" class="ic-time">523 days</a>
+			<a href="#46" class="ic-time">Jan. 31, 2016</a>
 			
 		</div>
 		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
@@ -2108,7 +2108,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/17_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#79" class="ic-time">518 days</a>
+			<a href="#79" class="ic-time">Feb. 5, 2016</a>
 			
 		</div>
 		<a href="/u/dhimmel" class="inline-comment-name">Daniel Himmelstein</a>
@@ -2147,7 +2147,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/17_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#80" class="ic-time">518 days</a>
+			<a href="#80" class="ic-time">Feb. 5, 2016</a>
 			
 		</div>
 		<a href="/u/dhimmel" class="inline-comment-name">Daniel Himmelstein</a>
@@ -2186,7 +2186,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#47" class="ic-time">523 days</a>
+			<a href="#47" class="ic-time">Jan. 31, 2016</a>
 			
 		</div>
 		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
@@ -2225,7 +2225,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/48_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#10" class="ic-time">535 days</a>
+			<a href="#10" class="ic-time">Jan. 18, 2016</a>
 			
 		</div>
 		<a href="/u/b_good" class="inline-comment-name">Benjamin Good</a>
@@ -2264,7 +2264,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/48_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#11" class="ic-time">535 days</a>
+			<a href="#11" class="ic-time">Jan. 18, 2016</a>
 			
 		</div>
 		<a href="/u/b_good" class="inline-comment-name">Benjamin Good</a>
@@ -2304,11 +2304,11 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/48_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<!-- <div class="pull-right">
-			<a href="#d142" class="ic-time">535 days</a>
+			<a href="#d142" class="ic-time">Jan. 18, 2016</a>
 		</div>
 		<a href="/u/b_good" class="inline-comment-name">Benjamin Good</a><br> -->
 		<div class="inline-discussion-comments">1</div>
-		<a class="inline-discussion-subject" href="/discussion/applications-of-machine-learning-for-aggregating-judgments/142">Applications of machine learning for aggregating judgments</a>
+		<a class="inline-discussion-subject" href="/d/142">Applications of machine learning for aggregating judgments</a>
 	</div>
 </div>
 
@@ -2337,7 +2337,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#48" class="ic-time">523 days</a>
+			<a href="#48" class="ic-time">Jan. 31, 2016</a>
 			
 		</div>
 		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
@@ -2376,7 +2376,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/180_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#21" class="ic-time">535 days</a>
+			<a href="#21" class="ic-time">Jan. 19, 2016</a>
 			
 		</div>
 		<a href="/u/timputman" class="inline-comment-name">Tim Putman</a>
@@ -2415,7 +2415,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/17_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#83" class="ic-time">518 days</a>
+			<a href="#83" class="ic-time">Feb. 5, 2016</a>
 			
 		</div>
 		<a href="/u/dhimmel" class="inline-comment-name">Daniel Himmelstein</a>
@@ -2454,7 +2454,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#49" class="ic-time">523 days</a>
+			<a href="#49" class="ic-time">Jan. 31, 2016</a>
 			
 		</div>
 		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
@@ -2493,7 +2493,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/48_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#12" class="ic-time">535 days</a>
+			<a href="#12" class="ic-time">Jan. 18, 2016</a>
 			
 		</div>
 		<a href="/u/b_good" class="inline-comment-name">Benjamin Good</a>
@@ -2512,7 +2512,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/180_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#24" class="ic-time">535 days</a>
+			<a href="#24" class="ic-time">Jan. 19, 2016</a>
 			
 		</div>
 		<a href="/u/timputman" class="inline-comment-name">Tim Putman</a>
@@ -2551,7 +2551,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/181_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#33" class="ic-time">534 days</a>
+			<a href="#33" class="ic-time">Jan. 20, 2016</a>
 			
 		</div>
 		<a href="/u/andrewsu" class="inline-comment-name">Andrew Su</a>
@@ -2590,7 +2590,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/17_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#84" class="ic-time">518 days</a>
+			<a href="#84" class="ic-time">Feb. 5, 2016</a>
 			
 		</div>
 		<a href="/u/dhimmel" class="inline-comment-name">Daniel Himmelstein</a>
@@ -2629,7 +2629,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/48_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#13" class="ic-time">535 days</a>
+			<a href="#13" class="ic-time">Jan. 18, 2016</a>
 			
 		</div>
 		<a href="/u/b_good" class="inline-comment-name">Benjamin Good</a>
@@ -2668,7 +2668,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/17_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#81" class="ic-time">518 days</a>
+			<a href="#81" class="ic-time">Feb. 5, 2016</a>
 			
 		</div>
 		<a href="/u/dhimmel" class="inline-comment-name">Daniel Himmelstein</a>
@@ -2707,7 +2707,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/48_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#14" class="ic-time">535 days</a>
+			<a href="#14" class="ic-time">Jan. 18, 2016</a>
 			
 		</div>
 		<a href="/u/b_good" class="inline-comment-name">Benjamin Good</a>
@@ -2746,7 +2746,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/181_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#34" class="ic-time">534 days</a>
+			<a href="#34" class="ic-time">Jan. 20, 2016</a>
 			
 		</div>
 		<a href="/u/andrewsu" class="inline-comment-name">Andrew Su</a>
@@ -2785,7 +2785,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#50" class="ic-time">523 days</a>
+			<a href="#50" class="ic-time">Jan. 31, 2016</a>
 			
 		</div>
 		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
@@ -2824,7 +2824,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/48_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#15" class="ic-time">535 days</a>
+			<a href="#15" class="ic-time">Jan. 18, 2016</a>
 			
 		</div>
 		<a href="/u/b_good" class="inline-comment-name">Benjamin Good</a>
@@ -2863,7 +2863,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/17_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#82" class="ic-time">518 days</a>
+			<a href="#82" class="ic-time">Feb. 5, 2016</a>
 			
 		</div>
 		<a href="/u/dhimmel" class="inline-comment-name">Daniel Himmelstein</a>
@@ -2902,7 +2902,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/17_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#85" class="ic-time">518 days</a>
+			<a href="#85" class="ic-time">Feb. 5, 2016</a>
 			
 		</div>
 		<a href="/u/dhimmel" class="inline-comment-name">Daniel Himmelstein</a>
@@ -2941,7 +2941,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#51" class="ic-time">523 days</a>
+			<a href="#51" class="ic-time">Jan. 31, 2016</a>
 			
 		</div>
 		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
@@ -2980,7 +2980,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/48_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#16" class="ic-time">535 days</a>
+			<a href="#16" class="ic-time">Jan. 18, 2016</a>
 			
 		</div>
 		<a href="/u/b_good" class="inline-comment-name">Benjamin Good</a>
@@ -3019,7 +3019,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/48_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#17" class="ic-time">535 days</a>
+			<a href="#17" class="ic-time">Jan. 18, 2016</a>
 			
 		</div>
 		<a href="/u/b_good" class="inline-comment-name">Benjamin Good</a>
@@ -3040,7 +3040,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/180_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#25" class="ic-time">535 days</a>
+			<a href="#25" class="ic-time">Jan. 19, 2016</a>
 			
 		</div>
 		<a href="/u/timputman" class="inline-comment-name">Tim Putman</a>
@@ -3079,7 +3079,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#52" class="ic-time">523 days</a>
+			<a href="#52" class="ic-time">Jan. 31, 2016</a>
 			
 		</div>
 		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
@@ -3118,7 +3118,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/48_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#18" class="ic-time">535 days</a>
+			<a href="#18" class="ic-time">Jan. 18, 2016</a>
 			
 		</div>
 		<a href="/u/b_good" class="inline-comment-name">Benjamin Good</a>
@@ -3137,7 +3137,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/181_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#36" class="ic-time">534 days</a>
+			<a href="#36" class="ic-time">Jan. 20, 2016</a>
 			
 		</div>
 		<a href="/u/andrewsu" class="inline-comment-name">Andrew Su</a>
@@ -3176,7 +3176,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#53" class="ic-time">523 days</a>
+			<a href="#53" class="ic-time">Jan. 31, 2016</a>
 			
 		</div>
 		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
@@ -3215,7 +3215,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#54" class="ic-time">523 days</a>
+			<a href="#54" class="ic-time">Jan. 31, 2016</a>
 			
 		</div>
 		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
@@ -3254,7 +3254,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#55" class="ic-time">523 days</a>
+			<a href="#55" class="ic-time">Jan. 31, 2016</a>
 			
 		</div>
 		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
@@ -3293,7 +3293,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#56" class="ic-time">523 days</a>
+			<a href="#56" class="ic-time">Jan. 31, 2016</a>
 			
 		</div>
 		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
@@ -3332,7 +3332,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#57" class="ic-time">523 days</a>
+			<a href="#57" class="ic-time">Jan. 31, 2016</a>
 			
 		</div>
 		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
@@ -3371,7 +3371,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#58" class="ic-time">523 days</a>
+			<a href="#58" class="ic-time">Jan. 31, 2016</a>
 			
 		</div>
 		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
@@ -3410,7 +3410,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#59" class="ic-time">523 days</a>
+			<a href="#59" class="ic-time">Jan. 31, 2016</a>
 			
 		</div>
 		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
@@ -3449,7 +3449,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#60" class="ic-time">523 days</a>
+			<a href="#60" class="ic-time">Jan. 31, 2016</a>
 			
 		</div>
 		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
@@ -3488,7 +3488,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#61" class="ic-time">523 days</a>
+			<a href="#61" class="ic-time">Jan. 31, 2016</a>
 			
 		</div>
 		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
@@ -3527,7 +3527,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#62" class="ic-time">523 days</a>
+			<a href="#62" class="ic-time">Jan. 31, 2016</a>
 			
 		</div>
 		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
@@ -3566,7 +3566,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#63" class="ic-time">523 days</a>
+			<a href="#63" class="ic-time">Jan. 31, 2016</a>
 			
 		</div>
 		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
@@ -3605,7 +3605,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#64" class="ic-time">523 days</a>
+			<a href="#64" class="ic-time">Jan. 31, 2016</a>
 			
 		</div>
 		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
@@ -3644,7 +3644,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#65" class="ic-time">523 days</a>
+			<a href="#65" class="ic-time">Jan. 31, 2016</a>
 			
 		</div>
 		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
@@ -3683,7 +3683,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#66" class="ic-time">523 days</a>
+			<a href="#66" class="ic-time">Jan. 31, 2016</a>
 			
 		</div>
 		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
@@ -3722,7 +3722,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/17_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#86" class="ic-time">518 days</a>
+			<a href="#86" class="ic-time">Feb. 5, 2016</a>
 			
 		</div>
 		<a href="/u/dhimmel" class="inline-comment-name">Daniel Himmelstein</a>
@@ -3761,7 +3761,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#67" class="ic-time">523 days</a>
+			<a href="#67" class="ic-time">Jan. 31, 2016</a>
 			
 		</div>
 		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
@@ -3800,7 +3800,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#68" class="ic-time">523 days</a>
+			<a href="#68" class="ic-time">Jan. 31, 2016</a>
 			
 		</div>
 		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
@@ -3839,7 +3839,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/180_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#22" class="ic-time">535 days</a>
+			<a href="#22" class="ic-time">Jan. 19, 2016</a>
 			
 		</div>
 		<a href="/u/timputman" class="inline-comment-name">Tim Putman</a>
@@ -3858,7 +3858,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/181_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#35" class="ic-time">534 days</a>
+			<a href="#35" class="ic-time">Jan. 20, 2016</a>
 			
 		</div>
 		<a href="/u/andrewsu" class="inline-comment-name">Andrew Su</a>
@@ -3897,7 +3897,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#69" class="ic-time">523 days</a>
+			<a href="#69" class="ic-time">Jan. 31, 2016</a>
 			
 		</div>
 		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
@@ -3936,7 +3936,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#70" class="ic-time">523 days</a>
+			<a href="#70" class="ic-time">Jan. 31, 2016</a>
 			
 		</div>
 		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
@@ -3975,7 +3975,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#71" class="ic-time">523 days</a>
+			<a href="#71" class="ic-time">Jan. 31, 2016</a>
 			
 		</div>
 		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
@@ -4014,7 +4014,7 @@
 	<div class="inline-object-photo"><img class='profile_image photo-small' src='https://think-lab.s3.amazonaws.com/m/profile/187_small.jpg' width='30' height='30'></div>
 	<div class="inline-object-body">
 		<div class="pull-right">
-			<a href="#72" class="ic-time">523 days</a>
+			<a href="#72" class="ic-time">Jan. 31, 2016</a>
 			
 		</div>
 		<a href="/u/obigriffith" class="inline-comment-name">Obi Griffith</a>
@@ -4053,11 +4053,11 @@
 
 		
 	    	<div class="footer">
-<div style="background:#dedede;">
+<!-- <div style="background:#dedede;">
 	<div class="main-centered-div text-center" style="padding:20px;">
-		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#d4bcb1b8b8bb94a0bcbdbabfb8b5b6fab7bbb9"><span class="__cf_email__" data-cfemail="09616c656566497d6160676265686b276a6664">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="mailto:hello@thinklab.com">hello@thinklab.com</a></h4>
 	</div>
-</div>
+</div> -->
 <div class="main-footer">
 	<div class="main-centered-div">
 
@@ -4115,10 +4115,10 @@
 
 	</td>
 	<td class="footer-nav">
-		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<!-- <a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
 		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
 		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
-		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a> -->
 		<br><br>
 		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
 
@@ -4221,5 +4221,5 @@ $(function() {
 
 
 
-<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</body>
 </html>

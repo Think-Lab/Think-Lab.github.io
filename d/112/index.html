@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZgEOC19dW0QCEVtHU1gG","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":580}</script>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZgEOC19dW0QCEVtHU1gG","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":647}</script>
     <title>Using the neo4j graph database for hetnets | Thinklab</title>
 	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
     <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
@@ -52,7 +52,7 @@
 </head>
 <body >
   <form id="form_action" method="post">
-    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+    <input type='hidden' name='csrfmiddlewaretoken' value='ypamUdfXu4FnASUyTHPbTrQWcdTFmVrB' />
 </form>
 
 	
@@ -107,8 +107,8 @@
 	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
 		<ul class="main-header pull-right" style="padding-left: 0;">
     		
-                <li><a href="/login" style="color:silver;">Login</a></li>
-                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+                <!-- <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li> -->
             
 
         </ul>
@@ -169,7 +169,7 @@
 			<div style="margin-top:5px;color:gray;margin-bottom:20px;font-size:13px;">
 				<a style="font-weight:normal;color:#212121" href="/u/dhimmel"><strong>Daniel Himmelstein</strong></a>
 				<span class="is-researcher">Researcher</span>
-				&nbsp; <a href="#1" class="light">644 days ago</a>
+				&nbsp; <a href="#1" class="light">Oct. 2, 2015</a>
 				
 			</div>
 
@@ -226,7 +226,7 @@
       <div class="comment-header">
         <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
 				<span class="is-researcher">Researcher</span>
-				<span class="light">&nbsp;<a href="#2" class="light">642 days</a>
+				<span class="light">&nbsp;<a href="#2" class="light">Oct. 4, 2015</a>
           
         </span>
       </div>
@@ -271,7 +271,7 @@
       <div class="comment-header">
         <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
 				<span class="is-researcher">Researcher</span>
-				<span class="light">&nbsp;<a href="#3" class="light">640 days</a>
+				<span class="light">&nbsp;<a href="#3" class="light">Oct. 6, 2015</a>
           
         </span>
       </div>
@@ -318,7 +318,7 @@
       <div class="comment-header">
         <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
 				<span class="is-researcher">Researcher</span>
-				<span class="light">&nbsp;<a href="#4" class="light">630 days</a>
+				<span class="light">&nbsp;<a href="#4" class="light">Oct. 16, 2015</a>
           
         </span>
       </div>
@@ -384,7 +384,7 @@ RETURN sum(reduce(pdp = 1.0, d in degrees| pdp * d ^ -{ w }))</code></pre>
       <div class="comment-header">
         <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
 				<span class="is-researcher">Researcher</span>
-				<span class="light">&nbsp;<a href="#5" class="light">625 days</a>
+				<span class="light">&nbsp;<a href="#5" class="light">Oct. 21, 2015</a>
           
         </span>
       </div>
@@ -483,7 +483,7 @@ RETURN sum(reduce(pdp = 1.0, d in degrees| pdp * d ^ -{ w }))</code></pre>
       <div class="comment-header">
         <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
 				<span class="is-researcher">Researcher</span>
-				<span class="light">&nbsp;<a href="#6" class="light">589 days</a>
+				<span class="light">&nbsp;<a href="#6" class="light">Nov. 26, 2015</a>
           
         </span>
       </div>
@@ -565,7 +565,7 @@ RETURN
       <div class="comment-header">
         <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
 				<span class="is-researcher">Researcher</span>
-				<span class="light">&nbsp;<a href="#7" class="light">588 days</a>
+				<span class="light">&nbsp;<a href="#7" class="light">Nov. 26, 2015</a>
           
         </span>
       </div>
@@ -624,7 +624,7 @@ RETURN
       <div class="comment-header">
         <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
 				<span class="is-researcher">Researcher</span>
-				<span class="light">&nbsp;<a href="#8" class="light">525 days</a>
+				<span class="light">&nbsp;<a href="#8" class="light">Jan. 29, 2016</a>
           
         </span>
       </div>
@@ -675,7 +675,7 @@ RETURN
       <div class="comment-header">
         <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
 				<span class="is-researcher">Researcher</span>
-				<span class="light">&nbsp;<a href="#9" class="light">71 days</a>
+				<span class="light">&nbsp;<a href="#9" class="light">April 27, 2017</a>
           
         </span>
       </div>
@@ -714,10 +714,10 @@ RETURN
     
 
     &nbsp;<br>
-    <a class="btn btn-primary btn-lg" href="/signup?next=/discussion/using-the-neo4j-graph-database-for-hetnets/112&suppress_message=1" style>Join to Reply</a>
+    <!-- <a class="btn btn-primary btn-lg" href="/signup?next=/discussion/using-the-neo4j-graph-database-for-hetnets/112&suppress_message=1" style>Join to Reply</a> -->
 
 
-		<table class="references table-td-5" style="display:none;"><tr><td><a href='/doi/10.5281/zenodo.31763' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.5281/zenodo.31763'><a href='/doi/10.5281/zenodo.31763' class='pub-title'>Hetnets in Python: hetio v0.1.0 initial release</a><div class='pub-body'>Daniel Himmelstein (2015) <i>Zenodo</i>. doi:<a class='pub-doi' href='https://doi.org/10.5281/zenodo.31763'>10.5281/zenodo.31763</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d102' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>2.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d102'><a href='/discussion/one-network-to-rule-them-all/102' class='pub-title'>One network to rule them all</a><div class='pub-body'>Daniel Himmelstein, Lars Juhl Jensen (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d102'>10.15363/thinklab.d102</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d104' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>3.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d104'><a href='/discussion/renaming-heterogeneous-networks-to-a-more-concise-and-catchy-term/104' class='pub-title'>Renaming ‘heterogeneous networks’ to a more concise and catchy term</a><div class='pub-body'>Daniel Himmelstein, Casey Greene, Sergio Baranzini (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d104'>10.15363/thinklab.d104</a></div></div></td></tr><tr><td><a href='/doi/10.1371/journal.pcbi.1004259' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>4.</div></td><td><div class='doi-body' data-key='10.1371/journal.pcbi.1004259'><a href='/doi/10.1371/journal.pcbi.1004259' class='pub-title'>Heterogeneous Network Edge Prediction: A Data Integration Approach to Prioritize Disease-Associated Genes</a><div class='pub-body'>Daniel S. Himmelstein, Sergio E. Baranzini (2015) <i>PLOS Computational Biology</i>. doi:<a class='pub-doi' href='https://doi.org/10.1371/journal.pcbi.1004259'>10.1371/journal.pcbi.1004259</a></div></div></td></tr><tr><td><a href='/doi/10.1093/bioinformatics/btt549' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>5.</div></td><td><div class='doi-body' data-key='10.1093/bioinformatics/btt549'><a href='/doi/10.1093/bioinformatics/btt549' class='pub-title'>Are graph databases ready for bioinformatics?</a><div class='pub-body'>C. T. Have, L. J. Jensen (2013) <i>Bioinformatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/bioinformatics/btt549'>10.1093/bioinformatics/btt549</a></div></div></td></tr><tr><td><a href='/doi/10.5281/zenodo.31763' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>6.</div></td><td><div class='doi-body' data-key='10.5281/zenodo.31763'><a href='/doi/10.5281/zenodo.31763' class='pub-title'>Hetnets in Python: hetio v0.1.0 initial release</a><div class='pub-body'>Daniel Himmelstein (2015) <i>Zenodo</i>. doi:<a class='pub-doi' href='https://doi.org/10.5281/zenodo.31763'>10.5281/zenodo.31763</a></div></div></td></tr><tr><td><a href='/doi/10.1093/bioinformatics/btt549' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>7.</div></td><td><div class='doi-body' data-key='10.1093/bioinformatics/btt549'><a href='/doi/10.1093/bioinformatics/btt549' class='pub-title'>Are graph databases ready for bioinformatics?</a><div class='pub-body'>C. T. Have, L. J. Jensen (2013) <i>Bioinformatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/bioinformatics/btt549'>10.1093/bioinformatics/btt549</a></div></div></td></tr><tr><td><a href='/doi/10.1186/s13040-016-0102-8' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>8.</div></td><td><div class='doi-body' data-key='10.1186/s13040-016-0102-8'><a href='/doi/10.1186/s13040-016-0102-8' class='pub-title'>Representing and querying disease networks using graph databases</a><div class='pub-body'>Artem Lysenko, Irina A. Roznovăţ, Mansoor Saqi, Alexander Mazein, Christopher J Rawlings, Charles Auffray (2016) <i>BioData Mining</i>. doi:<a class='pub-doi' href='https://doi.org/10.1186/s13040-016-0102-8'>10.1186/s13040-016-0102-8</a></div></div></td></tr><tr><td><a href='/doi/10.5808/GI.2017.15.1.19' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>9.</div></td><td><div class='doi-body' data-key='10.5808/GI.2017.15.1.19'>Citation not found.</div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d216' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>10.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d216'><a href='/discussion/hosting-hetionet-in-the-cloud-creating-a-public-neo4j-instance/216' class='pub-title'>Hosting Hetionet in the cloud: creating a public Neo4j instance</a><div class='pub-body'>Daniel Himmelstein (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d216'>10.15363/thinklab.d216</a></div></div></td></tr></table>
+		<table class="references table-td-5" style="display:none;"><tr><td><a href='/doi/10.5281/zenodo.31763' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.5281/zenodo.31763'><a href='/doi/10.5281/zenodo.31763' class='pub-title'>Hetnets in Python: hetio v0.1.0 initial release</a><div class='pub-body'>Daniel Himmelstein (2015) <i>Zenodo</i>. doi:<a class='pub-doi' href='https://doi.org/10.5281/zenodo.31763'>10.5281/zenodo.31763</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d102' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>2.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d102'><a href='/d/102' class='pub-title'>One network to rule them all</a><div class='pub-body'>Daniel Himmelstein, Lars Juhl Jensen (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d102'>10.15363/thinklab.d102</a></div></div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d104' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>3.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d104'><a href='/d/104' class='pub-title'>Renaming ‘heterogeneous networks’ to a more concise and catchy term</a><div class='pub-body'>Daniel Himmelstein, Casey Greene, Sergio Baranzini (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d104'>10.15363/thinklab.d104</a></div></div></td></tr><tr><td><a href='/doi/10.1371/journal.pcbi.1004259' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>4.</div></td><td><div class='doi-body' data-key='10.1371/journal.pcbi.1004259'><a href='/doi/10.1371/journal.pcbi.1004259' class='pub-title'>Heterogeneous Network Edge Prediction: A Data Integration Approach to Prioritize Disease-Associated Genes</a><div class='pub-body'>Daniel S. Himmelstein, Sergio E. Baranzini (2015) <i>PLOS Computational Biology</i>. doi:<a class='pub-doi' href='https://doi.org/10.1371/journal.pcbi.1004259'>10.1371/journal.pcbi.1004259</a></div></div></td></tr><tr><td><a href='/doi/10.1093/bioinformatics/btt549' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>5.</div></td><td><div class='doi-body' data-key='10.1093/bioinformatics/btt549'><a href='/doi/10.1093/bioinformatics/btt549' class='pub-title'>Are graph databases ready for bioinformatics?</a><div class='pub-body'>C. T. Have, L. J. Jensen (2013) <i>Bioinformatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/bioinformatics/btt549'>10.1093/bioinformatics/btt549</a></div></div></td></tr><tr><td><a href='/doi/10.5281/zenodo.31763' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>6.</div></td><td><div class='doi-body' data-key='10.5281/zenodo.31763'><a href='/doi/10.5281/zenodo.31763' class='pub-title'>Hetnets in Python: hetio v0.1.0 initial release</a><div class='pub-body'>Daniel Himmelstein (2015) <i>Zenodo</i>. doi:<a class='pub-doi' href='https://doi.org/10.5281/zenodo.31763'>10.5281/zenodo.31763</a></div></div></td></tr><tr><td><a href='/doi/10.1093/bioinformatics/btt549' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>7.</div></td><td><div class='doi-body' data-key='10.1093/bioinformatics/btt549'><a href='/doi/10.1093/bioinformatics/btt549' class='pub-title'>Are graph databases ready for bioinformatics?</a><div class='pub-body'>C. T. Have, L. J. Jensen (2013) <i>Bioinformatics</i>. doi:<a class='pub-doi' href='https://doi.org/10.1093/bioinformatics/btt549'>10.1093/bioinformatics/btt549</a></div></div></td></tr><tr><td><a href='/doi/10.1186/s13040-016-0102-8' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>8.</div></td><td><div class='doi-body' data-key='10.1186/s13040-016-0102-8'><a href='/doi/10.1186/s13040-016-0102-8' class='pub-title'>Representing and querying disease networks using graph databases</a><div class='pub-body'>Artem Lysenko, Irina A. Roznovăţ, Mansoor Saqi, Alexander Mazein, Christopher J Rawlings, Charles Auffray (2016) <i>BioData Mining</i>. doi:<a class='pub-doi' href='https://doi.org/10.1186/s13040-016-0102-8'>10.1186/s13040-016-0102-8</a></div></div></td></tr><tr><td><a href='/doi/10.5808/GI.2017.15.1.19' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>9.</div></td><td><div class='doi-body' data-key='10.5808/GI.2017.15.1.19'>Citation not found.</div></td></tr><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d216' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>10.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d216'><a href='/d/216' class='pub-title'>Hosting Hetionet in the cloud: creating a public Neo4j instance</a><div class='pub-body'>Daniel Himmelstein (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d216'>10.15363/thinklab.d216</a></div></div></td></tr></table>
 
     
 
@@ -728,7 +728,7 @@ RETURN
 
 			
 
-      <a class="btn btn-default follow-link btn-follow btn-lg is-following tt-top full-width" title="Follow discussion" data-id="112" data-ctype="thread" data-is-following="false">&nbsp;</a>
+      <!-- <a class="btn btn-default follow-link btn-follow btn-lg is-following tt-top full-width" title="Follow discussion" data-id="112" data-ctype="thread" data-is-following="false">&nbsp;</a> -->
 
       
         <div class="status-box text-center"><span style="">Status:</span> 
@@ -773,12 +773,12 @@ RETURN
 			
 				<li>
 					
-					<a href='/discussion/hosting-hetionet-in-the-cloud-creating-a-public-neo4j-instance/216' class='thread-title'>Hosting Hetionet in the cloud: creating a public Neo4j instance</a>
+					<a href='/d/216' class='thread-title'>Hosting Hetionet in the cloud: creating a public Neo4j instance</a>
 				</li>
 			
 				<li>
 					
-					<a href='/discussion/tracking-project-reuse-citation-and-publicity/113' class='thread-title'>Tracking project reuse, citation, and publicity</a>
+					<a href='/d/113' class='thread-title'>Tracking project reuse, citation, and publicity</a>
 				</li>
 			
 				<li>
@@ -793,27 +793,27 @@ RETURN
 			
 				<li>
 					
-					<a href='/discussion/assessing-the-informativeness-of-features/115' class='thread-title'>Assessing the informativeness of features</a>
+					<a href='/d/115' class='thread-title'>Assessing the informativeness of features</a>
 				</li>
 			
 				<li>
 					
-					<a href='/discussion/data-nomenclature-naming-and-abbreviating-our-network-types/162' class='thread-title'>Data nomenclature: naming and abbreviating our network types</a>
+					<a href='/d/162' class='thread-title'>Data nomenclature: naming and abbreviating our network types</a>
 				</li>
 			
 				<li>
 					[<a href="/p/meta/discussion" style="color:#333333">meta</a>] 
-					<a href='/discussion/markdown-bug-hyperlink-with-title-attribute-causes-excision/163' class='thread-title'>Markdown bug: hyperlink with title attribute causes excision</a>
+					<a href='/d/163' class='thread-title'>Markdown bug: hyperlink with title attribute causes excision</a>
 				</li>
 			
 				<li>
 					
-					<a href='/discussion/licensing-neo4j/130' class='thread-title'>Licensing neo4j</a>
+					<a href='/d/130' class='thread-title'>Licensing neo4j</a>
 				</li>
 			
 				<li>
 					
-					<a href='/discussion/permuting-hetnets-and-implementing-randomized-edge-swaps-in-cypher/136' class='thread-title'>Permuting hetnets and implementing randomized edge swaps in cypher</a>
+					<a href='/d/136' class='thread-title'>Permuting hetnets and implementing randomized edge swaps in cypher</a>
 				</li>
 			
 				<li>
@@ -823,7 +823,7 @@ RETURN
 			
 				<li>
 					
-					<a href='/discussion/path-exclusion-conditions/134' class='thread-title'>Path exclusion conditions</a>
+					<a href='/d/134' class='thread-title'>Path exclusion conditions</a>
 				</li>
 			
 				</ul>
@@ -859,11 +859,11 @@ RETURN
 
 		
 	    	<div class="footer">
-<div style="background:#dedede;">
+<!-- <div style="background:#dedede;">
 	<div class="main-centered-div text-center" style="padding:20px;">
-		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#3a525f5656557a4e52535451565b5814595557"><span class="__cf_email__" data-cfemail="6b030e0707042b1f03020500070a0945080406">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="mailto:hello@thinklab.com">hello@thinklab.com</a></h4>
 	</div>
-</div>
+</div> -->
 <div class="main-footer">
 	<div class="main-centered-div">
 
@@ -921,10 +921,10 @@ RETURN
 
 	</td>
 	<td class="footer-nav">
-		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<!-- <a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
 		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
 		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
-		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a> -->
 		<br><br>
 		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
 
@@ -991,5 +991,5 @@ $(function() {
 
 
 
-<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</body>
 </html>

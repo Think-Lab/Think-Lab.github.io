@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZgEOC19dW0QCEVtHU1gG","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":302}</script>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZgEOC19dW0QCEVtHU1gG","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":304}</script>
     <title>Exploring the power of Hetionet: a Cypher query depot | Thinklab</title>
 	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
     <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
@@ -52,7 +52,7 @@
 </head>
 <body >
   <form id="form_action" method="post">
-    <input type='hidden' name='csrfmiddlewaretoken' value='pQNiZQX4gF2vyFeXrnbUl9EmuTWA5MG1' />
+    <input type='hidden' name='csrfmiddlewaretoken' value='ypamUdfXu4FnASUyTHPbTrQWcdTFmVrB' />
 </form>
 
 	
@@ -107,8 +107,8 @@
 	</td><td style="vertical-align:middle;text-align:right;padding-top:6px; min-width: 1%; white-space: nowrap;">
 		<ul class="main-header pull-right" style="padding-left: 0;">
     		
-                <li><a href="/login" style="color:silver;">Login</a></li>
-                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li>
+                <!-- <li><a href="/login" style="color:silver;">Login</a></li>
+                <li style="margin-right:0"><a class="btn btn-default btn-sm btn-upper" href="/signup">Join</a></li> -->
             
 
         </ul>
@@ -169,7 +169,7 @@
 			<div style="margin-top:5px;color:gray;margin-bottom:20px;font-size:13px;">
 				<a style="font-weight:normal;color:#212121" href="/u/dhimmel"><strong>Daniel Himmelstein</strong></a>
 				<span class="is-researcher">Researcher</span>
-				&nbsp; <a href="#1" class="light">377 days ago</a>
+				&nbsp; <a href="#1" class="light">June 25, 2016</a>
 				
 			</div>
 
@@ -214,7 +214,7 @@
       <div class="comment-header">
         <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
 				<span class="is-researcher">Researcher</span>
-				<span class="light">&nbsp;<a href="#2" class="light">377 days</a>
+				<span class="light">&nbsp;<a href="#2" class="light">June 25, 2016</a>
           
         </span>
       </div>
@@ -289,7 +289,7 @@ LIMIT 5</code></pre>
       <div class="comment-header">
         <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
 				<span class="is-researcher">Researcher</span>
-				<span class="light">&nbsp;<a href="#3" class="light">377 days</a>
+				<span class="light">&nbsp;<a href="#3" class="light">June 25, 2016</a>
           
         </span>
       </div>
@@ -372,7 +372,7 @@ RETURN path</code></pre>
       <div class="comment-header">
         <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
 				<span class="is-researcher">Researcher</span>
-				<span class="light">&nbsp;<a href="#4" class="light">375 days</a>
+				<span class="light">&nbsp;<a href="#4" class="light">June 27, 2016</a>
           
         </span>
       </div>
@@ -403,7 +403,7 @@ LIMIT 5</code></pre>
 
 <table class="table markdown-table"><thead><tr><th>anatomy_id</th><th>anatomy_name</th><th>PC</th><th>DWPC</th><th>n_genes</th></tr></thead><tbody><tr><td>UBERON:0001645</td><td>trigeminal nerve</td><td>7</td><td>0.022</td><td>36</td></tr><tr><td>UBERON:0001785</td><td>cranial nerve</td><td>10</td><td>0.020</td><td>66</td></tr><tr><td>UBERON:0002363</td><td>dura mater</td><td>2</td><td>0.017</td><td>4</td></tr><tr><td>UBERON:0002925</td><td>trigeminal nucleus</td><td>4</td><td>0.016</td><td>7</td></tr><tr><td>UBERON:0002360</td><td>meninx</td><td>1</td><td>0.012</td><td>3</td></tr></tbody></table>
 
-<p>The query does a good job identifying migraine-relevant tissues. However, notice that the expression profiles for the retrieved tissues are not very comprehensive: only four genes are known to be expressed in the dura mater, two of which are migraine associated. Therefore, these results are dependent on our gene expression catalog <span class="citation">[<a href="/discussion/processing-bgee-for-tissue-specific-gene-presence-and-overunder-expression/124" class="citation" data-key="10.15363/thinklab.d124">1</a>]</span>, which varies considerably in comprehension by tissue.</p>
+<p>The query does a good job identifying migraine-relevant tissues. However, notice that the expression profiles for the retrieved tissues are not very comprehensive: only four genes are known to be expressed in the dura mater, two of which are migraine associated. Therefore, these results are dependent on our gene expression catalog <span class="citation">[<a href="/d/124" class="citation" data-key="10.15363/thinklab.d124">1</a>]</span>, which varies considerably in comprehension by tissue.</p>
 
 		<div style="margin-left:30px;">
 
@@ -437,7 +437,7 @@ LIMIT 5</code></pre>
       <div class="comment-header">
         <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
 				<span class="is-researcher">Researcher</span>
-				<span class="light">&nbsp;<a href="#5" class="light">375 days</a>
+				<span class="light">&nbsp;<a href="#5" class="light">June 27, 2016</a>
           
         </span>
       </div>
@@ -456,7 +456,7 @@ RETURN path</code></pre>
 
 <p>The query identifies 8 myelination-involved genes that are targeted by 33 compounds. To retrieve these counts yourself, change the last line of the query to <code>RETURN count(DISTINCT n1) AS targets,  count(DISTINCT n2) AS compounds</code>. If you're interested in myelination, see <a href="https://github.com/dhimmel/myelinet" title="dhimmel/myelinet on GitHub"><code>dhimmel/myelinet</code></a> for additional queries.</p>
 
-<p>We can modify the above query to find compounds that upregulate rather than bind a myelination gene/protein. <em>Compound–upregulates–Gene</em> relationships in Hetionet are from LINCS L1000 <span class="citation">[<a href="/discussion/computing-consensus-transcriptional-profiles-for-lincs-l1000-perturbations/43" class="citation" data-key="10.15363/thinklab.d43">1</a>]</span>. Here we set an extreme <code>z_score</code> threshold to thin the results:</p>
+<p>We can modify the above query to find compounds that upregulate rather than bind a myelination gene/protein. <em>Compound–upregulates–Gene</em> relationships in Hetionet are from LINCS L1000 <span class="citation">[<a href="/d/43" class="citation" data-key="10.15363/thinklab.d43">1</a>]</span>. Here we set an extreme <code>z_score</code> threshold to thin the results:</p>
 
 <pre><code class="no-highlight hljs">MATCH path = (n0:BiologicalProcess)-[:PARTICIPATES_GpBP]-(n1)-[e2:UPREGULATES_CuG]-(n2:Compound)
 WHERE n0.name = 'myelination' AND
@@ -495,7 +495,7 @@ RETURN path</code></pre>
       <div class="comment-header">
         <a style="font-weight:bold;color:#212121" href="/u/dhimmel">Daniel Himmelstein</a>
 				<span class="is-researcher">Researcher</span>
-				<span class="light">&nbsp;<a href="#6" class="light">310 days</a>
+				<span class="light">&nbsp;<a href="#6" class="light">Aug. 31, 2016</a>
           
         </span>
       </div>
@@ -571,10 +571,10 @@ RETURN path</code></pre>
     
 
     &nbsp;<br>
-    <a class="btn btn-primary btn-lg" href="/signup?next=/discussion/exploring-the-power-of-hetionet-a-cypher-query-depot/220&suppress_message=1" style>Join to Reply</a>
+    <!-- <a class="btn btn-primary btn-lg" href="/signup?next=/discussion/exploring-the-power-of-hetionet-a-cypher-query-depot/220&suppress_message=1" style>Join to Reply</a> -->
 
 
-		<table class="references table-td-5" style="display:none;"><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d216' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d216'><a href='/discussion/hosting-hetionet-in-the-cloud-creating-a-public-neo4j-instance/216' class='pub-title'>Hosting Hetionet in the cloud: creating a public Neo4j instance</a><div class='pub-body'>Daniel Himmelstein (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d216'>10.15363/thinklab.d216</a></div></div></td></tr><tr><td><a href='/doi/10.1038/ng.3259' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>2.</div></td><td><div class='doi-body' data-key='10.1038/ng.3259'><a href='/doi/10.1038/ng.3259' class='pub-title'>Understanding multicellular function and disease with human tissue-specific networks</a><div class='pub-body'>Casey S Greene, Arjun Krishnan, Aaron K Wong, Emanuela Ricciotti, Rene A Zelaya, Daniel S Himmelstein, Ran Zhang, Boris M Hartmann, Elena Zaslavsky, Stuart C Sealfon, Daniel I Chasman, Garret A FitzGerald, Kara Dolinski, Tilo Grosser, Olga G Troyanskaya (2015) <i>Nat Genet</i>. doi:<a class='pub-doi' href='https://doi.org/10.1038/ng.3259'>10.1038/ng.3259</a></div></div></td></tr><tr><td><a href='/doi/10.15363/thinklab.d124' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>3.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d124'><a href='/discussion/processing-bgee-for-tissue-specific-gene-presence-and-overunder-expression/124' class='pub-title'>Processing Bgee for tissue-specific gene presence and over/under-expression</a><div class='pub-body'>Daniel Himmelstein, Frederic Bastian (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d124'>10.15363/thinklab.d124</a></div></div></td></tr><tr><td><a href='/doi/10.15363/thinklab.d43' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>4.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d43'><a href='/discussion/computing-consensus-transcriptional-profiles-for-lincs-l1000-perturbations/43' class='pub-title'>Computing consensus transcriptional profiles for LINCS L1000 perturbations</a><div class='pub-body'>Daniel Himmelstein, Caty Chung (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d43'>10.15363/thinklab.d43</a></div></div></td></tr><tr><td><a href='/doi/10.1016/j.tips.2013.07.003' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>5.</div></td><td><div class='doi-body' data-key='10.1016/j.tips.2013.07.003'><a href='/doi/10.1016/j.tips.2013.07.003' class='pub-title'>Glucocorticoid receptor signaling in health and disease</a><div class='pub-body'>Mahita Kadmiel, John A. Cidlowski (2013) <i>Trends in Pharmacological Sciences</i>. doi:<a class='pub-doi' href='https://doi.org/10.1016/j.tips.2013.07.003'>10.1016/j.tips.2013.07.003</a></div></div></td></tr><tr><td><a href='/doi/10.1038/nature11159' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>6.</div></td><td><div class='doi-body' data-key='10.1038/nature11159'><a href='/doi/10.1038/nature11159' class='pub-title'>Large-scale prediction and testing of drug activity on side-effect targets</a><div class='pub-body'>Eugen Lounkine, Michael J. Keiser, Steven Whitebread, Dmitri Mikhailov, Jacques Hamon, Jeremy L. Jenkins, Paul Lavan, Eckhard Weber, Allison K. Doak, Serge Côté, Brian K. Shoichet, Laszlo Urban (2012) <i>Nature</i>. doi:<a class='pub-doi' href='https://doi.org/10.1038/nature11159'>10.1038/nature11159</a></div></div></td></tr></table>
+		<table class="references table-td-5" style="display:none;"><tr style=&#39;display:none;&#39;><td><a href='/doi/10.15363/thinklab.d216' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>1.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d216'><a href='/d/216' class='pub-title'>Hosting Hetionet in the cloud: creating a public Neo4j instance</a><div class='pub-body'>Daniel Himmelstein (2016) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d216'>10.15363/thinklab.d216</a></div></div></td></tr><tr><td><a href='/doi/10.1038/ng.3259' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>2.</div></td><td><div class='doi-body' data-key='10.1038/ng.3259'><a href='/doi/10.1038/ng.3259' class='pub-title'>Understanding multicellular function and disease with human tissue-specific networks</a><div class='pub-body'>Casey S Greene, Arjun Krishnan, Aaron K Wong, Emanuela Ricciotti, Rene A Zelaya, Daniel S Himmelstein, Ran Zhang, Boris M Hartmann, Elena Zaslavsky, Stuart C Sealfon, Daniel I Chasman, Garret A FitzGerald, Kara Dolinski, Tilo Grosser, Olga G Troyanskaya (2015) <i>Nat Genet</i>. doi:<a class='pub-doi' href='https://doi.org/10.1038/ng.3259'>10.1038/ng.3259</a></div></div></td></tr><tr><td><a href='/doi/10.15363/thinklab.d124' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>3.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d124'><a href='/d/124' class='pub-title'>Processing Bgee for tissue-specific gene presence and over/under-expression</a><div class='pub-body'>Daniel Himmelstein, Frederic Bastian (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d124'>10.15363/thinklab.d124</a></div></div></td></tr><tr><td><a href='/doi/10.15363/thinklab.d43' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>4.</div></td><td><div class='doi-body' data-key='10.15363/thinklab.d43'><a href='/d/43' class='pub-title'>Computing consensus transcriptional profiles for LINCS L1000 perturbations</a><div class='pub-body'>Daniel Himmelstein, Caty Chung (2015) <i>Thinklab</i>. doi:<a href='https://doi.org/10.15363/thinklab.d43'>10.15363/thinklab.d43</a></div></div></td></tr><tr><td><a href='/doi/10.1016/j.tips.2013.07.003' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>5.</div></td><td><div class='doi-body' data-key='10.1016/j.tips.2013.07.003'><a href='/doi/10.1016/j.tips.2013.07.003' class='pub-title'>Glucocorticoid receptor signaling in health and disease</a><div class='pub-body'>Mahita Kadmiel, John A. Cidlowski (2013) <i>Trends in Pharmacological Sciences</i>. doi:<a class='pub-doi' href='https://doi.org/10.1016/j.tips.2013.07.003'>10.1016/j.tips.2013.07.003</a></div></div></td></tr><tr><td><a href='/doi/10.1038/nature11159' class='pub-comments tt-right zero-items' title='Article comments'>0</a></td><td><div class='pub-order'>6.</div></td><td><div class='doi-body' data-key='10.1038/nature11159'><a href='/doi/10.1038/nature11159' class='pub-title'>Large-scale prediction and testing of drug activity on side-effect targets</a><div class='pub-body'>Eugen Lounkine, Michael J. Keiser, Steven Whitebread, Dmitri Mikhailov, Jacques Hamon, Jeremy L. Jenkins, Paul Lavan, Eckhard Weber, Allison K. Doak, Serge Côté, Brian K. Shoichet, Laszlo Urban (2012) <i>Nature</i>. doi:<a class='pub-doi' href='https://doi.org/10.1038/nature11159'>10.1038/nature11159</a></div></div></td></tr></table>
 
     
 
@@ -585,7 +585,7 @@ RETURN path</code></pre>
 
 			
 
-      <a class="btn btn-default follow-link btn-follow btn-lg is-following tt-top full-width" title="Follow discussion" data-id="220" data-ctype="thread" data-is-following="false">&nbsp;</a>
+      <!-- <a class="btn btn-default follow-link btn-follow btn-lg is-following tt-top full-width" title="Follow discussion" data-id="220" data-ctype="thread" data-is-following="false">&nbsp;</a> -->
 
       
 
@@ -651,11 +651,11 @@ RETURN path</code></pre>
 
 		
 	    	<div class="footer">
-<div style="background:#dedede;">
+<!-- <div style="background:#dedede;">
 	<div class="main-centered-div text-center" style="padding:20px;">
-		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="/cdn-cgi/l/email-protection#660e030a0a0926120e0f080d0a07044805090b"><span class="__cf_email__" data-cfemail="9cf4f9f0f0f3dce8f4f5f2f7f0fdfeb2fff3f1">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></h4>
+		<h4 style="margin-bottom:0px;font-weight:bold;color:gray;">Feedback? Questions? Email us: <a href="mailto:hello@thinklab.com">hello@thinklab.com</a></h4>
 	</div>
-</div>
+</div> -->
 <div class="main-footer">
 	<div class="main-centered-div">
 
@@ -713,10 +713,10 @@ RETURN path</code></pre>
 
 	</td>
 	<td class="footer-nav">
-		<a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
+		<!-- <a href="http://twitter.com/thinklab" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/twitter_com.png" width="40"/></a>
 		<a href="https://www.facebook.com/pages/Thinklab/310895039088185" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/facebook_com.png" width="40"/></a>
 		<a href="https://plus.google.com/115578983466800753402/" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/plus_google_com.png" width="40"/></a>
-		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a>
+		<a href="https://www.linkedin.com/company/thinklab-co" class="social-icon"><img src="https://think-lab.s3.amazonaws.com/s/img/icons/linkedin_com.png" width="40"/></a> -->
 		<br><br>
 		<span class="light" style='font-size:12px;'>&copy; 2015 Thinklab</span>
 
@@ -783,5 +783,5 @@ $(function() {
 
 
 
-<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</body>
 </html>
