@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZhITCVRRWVUCFUFaUFAOBA==","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":486}</script>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZhITCVRRWVUCFUFaUFAOBA==","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":886}</script>
     <title>Daniel Himmelstein - Thinklab</title>
 	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
     <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
@@ -28,7 +28,7 @@
 	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-	ga('create', 'UA-48550230-1', 'thinklab.com');
+	ga('create', 'UA-48550230-1', 'thinklab.org');
 	ga('require', 'displayfeatures');
 	
 	ga('send', 'pageview');
@@ -43,7 +43,7 @@
 </head>
 <body >
   <form id="form_action" method="post">
-    <input type='hidden' name='csrfmiddlewaretoken' value='ypamUdfXu4FnASUyTHPbTrQWcdTFmVrB' />
+    <input type='hidden' name='csrfmiddlewaretoken' value='JC3hnVSWzcwBOS226QTq2eGyHXj1YAM6' />
 </form>
 
 	
@@ -243,6 +243,54 @@
       <table class="table discussions">
         
     			
+<tr data-thread-status="50" class="list-thread   " id="thread_21" data-thread-id="21">
+  <td style="width:1px;"><div class="inbox-comments tt-top" title="comments">27</div></td>
+  <td>
+    
+    <a href='/d/21' class='thread-title'>How should we construct a catalog of drug indications?</a>
+    <div class="thread-detail">
+      
+        [<a href="/p/rephetio/discussion" class="thread-identifier">rephetio</a>]
+      
+      
+        
+        July 8, 2017
+      
+    </div>
+  </td>
+
+
+  
+  
+
+</tr>
+
+    		
+    			
+<tr data-thread-status="50" class="list-thread   " id="thread_178" data-thread-id="178">
+  <td style="width:1px;"><div class="inbox-comments tt-top" title="comments">3</div></td>
+  <td>
+    
+    <a href='/d/178' class='thread-title'>Assessing the effectiveness of our hetnet permutations</a>
+    <div class="thread-detail">
+      
+        [<a href="/p/rephetio/discussion" class="thread-identifier">rephetio</a>]
+      
+      
+        
+        July 8, 2017
+      
+    </div>
+  </td>
+
+
+  
+  
+
+</tr>
+
+    		
+    			
 <tr data-thread-status="100" class="list-thread   " id="thread_216" data-thread-id="216">
   <td style="width:1px;"><div class="inbox-comments tt-top" title="comments">3</div></td>
   <td>
@@ -434,54 +482,6 @@
 </tr>
 
     		
-    			
-<tr data-thread-status="30" class="list-thread   " id="thread_107" data-thread-id="107">
-  <td style="width:1px;"><div class="inbox-comments tt-top" title="comments">16</div></td>
-  <td>
-    
-    <a href='/d/107' class='thread-title'>Integrating resources with disparate licensing into an open network</a>
-    <div class="thread-detail">
-      
-        [<a href="/p/rephetio/discussion" class="thread-identifier">rephetio</a>]
-      
-      
-        
-        Feb. 2, 2017
-      
-    </div>
-  </td>
-
-
-  
-  
-
-</tr>
-
-    		
-    			
-<tr data-thread-status="100" class="list-thread   " id="thread_230" data-thread-id="230">
-  <td style="width:1px;"><div class="inbox-comments tt-top" title="comments">14</div></td>
-  <td>
-    
-    <a href='/d/230' class='thread-title'>Visualizing the top epilepsy predictions in Cytoscape</a>
-    <div class="thread-detail">
-      
-        [<a href="/p/rephetio/discussion" class="thread-identifier">rephetio</a>]
-      
-      
-        
-        Jan. 31, 2017
-      
-    </div>
-  </td>
-
-
-  
-  
-
-</tr>
-
-    		
       </table>
 			<a href="/u/dhimmel/discussion">View all 135 discussions</a>
 		
@@ -611,7 +611,7 @@
 				<!-- <table class="full-width"><tr>
 					<td style="width:50%;padding-right:2px;">
 						<div style="background-color:#b9f2ff;padding:5px;text-align:center;border-radius: 5px;">
-						<div style="font-size:22px;">2208</div>
+						<div style="font-size:22px;">2214</div>
 						<div style="font-size:10px;margin-top:-5px;">Points</div>
 						</div>
 					</td>
@@ -649,10 +649,10 @@
 	<h3><strong>Stats</strong></h3>
 
 		<table class="table table-profile-stats table-edge">
-			<tr><td>Impact points</td><td style="font-size:22px;padding:5px;"><span class="points points-profile">2208</span></td></tr>
+			<tr><td>Impact points</td><td style="font-size:22px;padding:5px;"><span class="points points-profile">2214</span></td></tr>
       <tr><td>Est. earnings</td><td>$454</td></tr>
       <tr><td>Proposals</td><td>1</td></tr>
-      <tr><td>Comments</td><td>518</td></tr>
+      <tr><td>Comments</td><td>520</td></tr>
 			<tr><td>Comments rated</td><td>200</td></tr>
 			<tr><td>Annotations</td><td>69</td></tr>
 		</table>
@@ -661,7 +661,7 @@
 
 
    	<h3><strong>Interests</strong></h3>
-    <p><a href="/topics/bioinformatics" class="tag">Bioinformatics</a><a href="/topics/biomedical-informatics" class="tag">Biomedical Informatics</a><a href="/topics/computer-science" class="tag">Computer Science</a><a href="/topics/heterogeneous-networks" class="tag">Heterogeneous Networks</a><a href="/topics/statistics" class="tag">Statistics</a><a href="/topics/genomics" class="tag">Genomics</a><a href="/topics/machine-learning" class="tag">Machine learning</a><a href="/topics/networks" class="tag">Networks</a><a href="/topics/algorithms" class="tag">Algorithms</a><a href="/topics/biostatistics" class="tag">Biostatistics</a><a href="/topics/network-biology" class="tag">Network Biology</a><a href="/topics/computational-biology" class="tag">Computational Biology</a><a href="/topics/terminologies" class="tag">Terminologies</a></p>
+    <p><a href="/topics/heterogeneous-networks" class="tag">Heterogeneous Networks</a><a href="/topics/statistics" class="tag">Statistics</a><a href="/topics/genomics" class="tag">Genomics</a><a href="/topics/machine-learning" class="tag">Machine learning</a><a href="/topics/networks" class="tag">Networks</a><a href="/topics/algorithms" class="tag">Algorithms</a><a href="/topics/biostatistics" class="tag">Biostatistics</a><a href="/topics/bioinformatics" class="tag">Bioinformatics</a><a href="/topics/biomedical-informatics" class="tag">Biomedical Informatics</a><a href="/topics/computer-science" class="tag">Computer Science</a><a href="/topics/computational-biology" class="tag">Computational Biology</a><a href="/topics/terminologies" class="tag">Terminologies</a><a href="/topics/network-biology" class="tag">Network Biology</a></p>
 	
 
 

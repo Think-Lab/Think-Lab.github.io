@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZgEOC19dW0QCFUFaUFAOBDlGUEdVWQFA","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":855}</script>
+    <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"cd1101aa94","agent":"","transactionName":"bgcDMkBZW0NZBkdcWVdNJxNcW0FZVwscV1dKB08QW11CQxYTWlBBZgEOC19dW0QCFUFaUFAOBDlGUEdVWQFA","applicationID":"6369297","errorBeacon":"bam.nr-data.net","applicationTime":1621}</script>
     <title>Daniel Himmelstein | Thinklab</title>
 	  <link rel="shortcut icon" href="https://think-lab.s3.amazonaws.com/s/img/favicon.ico" type="image/x-icon" />
     <meta property="og:image" content="https://think-lab.s3.amazonaws.com/s/img" />
@@ -28,7 +28,7 @@
 	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-	ga('create', 'UA-48550230-1', 'thinklab.com');
+	ga('create', 'UA-48550230-1', 'thinklab.org');
 	ga('require', 'displayfeatures');
 	
 	ga('send', 'pageview');
@@ -43,7 +43,7 @@
 </head>
 <body >
   <form id="form_action" method="post">
-    <input type='hidden' name='csrfmiddlewaretoken' value='ypamUdfXu4FnASUyTHPbTrQWcdTFmVrB' />
+    <input type='hidden' name='csrfmiddlewaretoken' value='JC3hnVSWzcwBOS226QTq2eGyHXj1YAM6' />
 </form>
 
 	
@@ -231,6 +231,64 @@
 	<tbody>
 		
 			
+<tr data-thread-status="50" class="list-thread   " id="thread_21" data-thread-id="21">
+    <td style="width:1px;"><div class="inbox-comments tt-top" title="comments">27</div></td>
+  
+    <td style="text-align:left;"><a href="/p/rephetio/discussion" class="thread-identifier">rephetio</a></td>
+  
+  
+  <td>
+    
+    <a href='/d/21' class='thread-title'>How should we construct a catalog of drug indications?</a>
+    <!--  -->
+  </td>
+  
+    
+      <td style='width:150px;font-size:12px;'>
+        <a href="/u/dhimmel">Daniel Himmelstein</a>
+      </td>
+    
+    <td class="light" style='font-size:12px;white-space:nowrap;'>July 8, 2017</td>
+  
+
+  
+    <td>900</td>
+  
+  
+
+</tr>
+
+		
+			
+<tr data-thread-status="50" class="list-thread   " id="thread_178" data-thread-id="178">
+    <td style="width:1px;"><div class="inbox-comments tt-top" title="comments">3</div></td>
+  
+    <td style="text-align:left;"><a href="/p/rephetio/discussion" class="thread-identifier">rephetio</a></td>
+  
+  
+  <td>
+    
+    <a href='/d/178' class='thread-title'>Assessing the effectiveness of our hetnet permutations</a>
+    <!--  -->
+  </td>
+  
+    
+      <td style='width:150px;font-size:12px;'>
+        <a href="/u/dhimmel">Daniel Himmelstein</a>
+      </td>
+    
+    <td class="light" style='font-size:12px;white-space:nowrap;'>July 8, 2017</td>
+  
+
+  
+    <td>78</td>
+  
+  
+
+</tr>
+
+		
+			
 <tr data-thread-status="100" class="list-thread   " id="thread_216" data-thread-id="216">
     <td style="width:1px;"><div class="inbox-comments tt-top" title="comments">3</div></td>
   
@@ -252,7 +310,7 @@
   
 
   
-    <td>288</td>
+    <td>292</td>
   
   
 
@@ -281,7 +339,7 @@
   
 
   
-    <td>209</td>
+    <td>213</td>
   
   
 
@@ -310,7 +368,7 @@
   
 
   
-    <td>655</td>
+    <td>657</td>
   
   
 
@@ -339,7 +397,7 @@
   
 
   
-    <td>136</td>
+    <td>139</td>
   
   
 
@@ -368,7 +426,7 @@
   
 
   
-    <td>125</td>
+    <td>126</td>
   
   
 
@@ -397,7 +455,7 @@
   
 
   
-    <td>85</td>
+    <td>87</td>
   
   
 
@@ -426,7 +484,7 @@
   
 
   
-    <td>322</td>
+    <td>324</td>
   
   
 
@@ -455,7 +513,7 @@
   
 
   
-    <td>517</td>
+    <td>518</td>
   
   
 
@@ -484,7 +542,7 @@
   
 
   
-    <td>31</td>
+    <td>32</td>
   
   
 
@@ -513,7 +571,7 @@
   
 
   
-    <td>94</td>
+    <td>95</td>
   
   
 
@@ -542,7 +600,7 @@
   
 
   
-    <td>265</td>
+    <td>267</td>
   
   
 
@@ -571,7 +629,7 @@
   
 
   
-    <td>151</td>
+    <td>155</td>
   
   
 
@@ -600,7 +658,7 @@
   
 
   
-    <td>132</td>
+    <td>133</td>
   
   
 
@@ -629,7 +687,7 @@
   
 
   
-    <td>30</td>
+    <td>31</td>
   
   
 
@@ -658,7 +716,7 @@
   
 
   
-    <td>21</td>
+    <td>23</td>
   
   
 
@@ -687,7 +745,7 @@
   
 
   
-    <td>174</td>
+    <td>175</td>
   
   
 
@@ -716,7 +774,7 @@
   
 
   
-    <td>358</td>
+    <td>359</td>
   
   
 
@@ -745,7 +803,7 @@
   
 
   
-    <td>75</td>
+    <td>77</td>
   
   
 
@@ -774,7 +832,7 @@
   
 
   
-    <td>280</td>
+    <td>282</td>
   
   
 
@@ -803,7 +861,7 @@
   
 
   
-    <td>113</td>
+    <td>114</td>
   
   
 
@@ -832,7 +890,7 @@
   
 
   
-    <td>224</td>
+    <td>225</td>
   
   
 
@@ -861,7 +919,7 @@
   
 
   
-    <td>330</td>
+    <td>331</td>
   
   
 
@@ -890,7 +948,7 @@
   
 
   
-    <td>313</td>
+    <td>314</td>
   
   
 
@@ -919,7 +977,7 @@
   
 
   
-    <td>160</td>
+    <td>162</td>
   
   
 
@@ -948,7 +1006,7 @@
   
 
   
-    <td>144</td>
+    <td>145</td>
   
   
 
@@ -977,7 +1035,7 @@
   
 
   
-    <td>162</td>
+    <td>163</td>
   
   
 
@@ -1006,7 +1064,7 @@
   
 
   
-    <td>75</td>
+    <td>76</td>
   
   
 
@@ -1035,7 +1093,7 @@
   
 
   
-    <td>552</td>
+    <td>553</td>
   
   
 
@@ -1064,7 +1122,7 @@
   
 
   
-    <td>37</td>
+    <td>38</td>
   
   
 
@@ -1093,7 +1151,7 @@
   
 
   
-    <td>67</td>
+    <td>68</td>
   
   
 
@@ -1122,7 +1180,7 @@
   
 
   
-    <td>121</td>
+    <td>122</td>
   
   
 
@@ -1151,7 +1209,7 @@
   
 
   
-    <td>1615</td>
+    <td>1621</td>
   
   
 
@@ -1180,7 +1238,7 @@
   
 
   
-    <td>56</td>
+    <td>57</td>
   
   
 
@@ -1209,7 +1267,7 @@
   
 
   
-    <td>164</td>
+    <td>165</td>
   
   
 
@@ -1238,7 +1296,7 @@
   
 
   
-    <td>165</td>
+    <td>166</td>
   
   
 
@@ -1267,7 +1325,7 @@
   
 
   
-    <td>75</td>
+    <td>76</td>
   
   
 
@@ -1296,7 +1354,7 @@
   
 
   
-    <td>72</td>
+    <td>73</td>
   
   
 
@@ -1325,7 +1383,7 @@
   
 
   
-    <td>78</td>
+    <td>79</td>
   
   
 
@@ -1354,7 +1412,7 @@
   
 
   
-    <td>50</td>
+    <td>51</td>
   
   
 
@@ -1383,7 +1441,7 @@
   
 
   
-    <td>80</td>
+    <td>81</td>
   
   
 
@@ -1412,7 +1470,7 @@
   
 
   
-    <td>49</td>
+    <td>50</td>
   
   
 
@@ -1441,36 +1499,7 @@
   
 
   
-    <td>181</td>
-  
-  
-
-</tr>
-
-		
-			
-<tr data-thread-status="50" class="list-thread   " id="thread_21" data-thread-id="21">
-    <td style="width:1px;"><div class="inbox-comments tt-top" title="comments">26</div></td>
-  
-    <td style="text-align:left;"><a href="/p/rephetio/discussion" class="thread-identifier">rephetio</a></td>
-  
-  
-  <td>
-    
-    <a href='/d/21' class='thread-title'>How should we construct a catalog of drug indications?</a>
-    <!--  -->
-  </td>
-  
-    
-      <td style='width:150px;font-size:12px;'>
-        <a href="/u/dhimmel">Daniel Himmelstein</a>
-      </td>
-    
-    <td class="light" style='font-size:12px;white-space:nowrap;'>April 10, 2016</td>
-  
-
-  
-    <td>893</td>
+    <td>183</td>
   
   
 
@@ -1528,7 +1557,7 @@
   
 
   
-    <td>43</td>
+    <td>44</td>
   
   
 
@@ -1557,7 +1586,7 @@
   
 
   
-    <td>45</td>
+    <td>46</td>
   
   
 
@@ -1586,7 +1615,7 @@
   
 
   
-    <td>40</td>
+    <td>41</td>
   
   
 
@@ -1615,7 +1644,7 @@
   
 
   
-    <td>35</td>
+    <td>36</td>
   
   
 
@@ -1644,7 +1673,7 @@
   
 
   
-    <td>195</td>
+    <td>196</td>
   
   
 
@@ -1673,7 +1702,7 @@
   
 
   
-    <td>153</td>
+    <td>154</td>
   
   
 
@@ -1702,7 +1731,7 @@
   
 
   
-    <td>131</td>
+    <td>132</td>
   
   
 
@@ -1731,7 +1760,7 @@
   
 
   
-    <td>60</td>
+    <td>62</td>
   
   
 
@@ -1760,7 +1789,7 @@
   
 
   
-    <td>42</td>
+    <td>43</td>
   
   
 
@@ -1789,7 +1818,7 @@
   
 
   
-    <td>44</td>
+    <td>45</td>
   
   
 
@@ -1818,7 +1847,7 @@
   
 
   
-    <td>306</td>
+    <td>307</td>
   
   
 
@@ -1847,7 +1876,7 @@
   
 
   
-    <td>261</td>
+    <td>262</td>
   
   
 
@@ -1876,36 +1905,7 @@
   
 
   
-    <td>198</td>
-  
-  
-
-</tr>
-
-		
-			
-<tr data-thread-status="50" class="list-thread   " id="thread_178" data-thread-id="178">
-    <td style="width:1px;"><div class="inbox-comments tt-top" title="comments">2</div></td>
-  
-    <td style="text-align:left;"><a href="/p/rephetio/discussion" class="thread-identifier">rephetio</a></td>
-  
-  
-  <td>
-    
-    <a href='/d/178' class='thread-title'>Assessing the effectiveness of our hetnet permutations</a>
-    <!--  -->
-  </td>
-  
-    
-      <td style='width:150px;font-size:12px;'>
-        <a href="/u/dhimmel">Daniel Himmelstein</a>
-      </td>
-    
-    <td class="light" style='font-size:12px;white-space:nowrap;'>March 11, 2016</td>
-  
-
-  
-    <td>76</td>
+    <td>199</td>
   
   
 
@@ -1934,7 +1934,7 @@
   
 
   
-    <td>268</td>
+    <td>269</td>
   
   
 
@@ -1963,7 +1963,7 @@
   
 
   
-    <td>183</td>
+    <td>184</td>
   
   
 
@@ -1992,7 +1992,7 @@
   
 
   
-    <td>139</td>
+    <td>140</td>
   
   
 
@@ -2021,7 +2021,7 @@
   
 
   
-    <td>679</td>
+    <td>680</td>
   
   
 
@@ -2050,7 +2050,7 @@
   
 
   
-    <td>450</td>
+    <td>451</td>
   
   
 
@@ -2079,7 +2079,7 @@
   
 
   
-    <td>106</td>
+    <td>108</td>
   
   
 
@@ -2108,7 +2108,7 @@
   
 
   
-    <td>62</td>
+    <td>63</td>
   
   
 
@@ -2137,7 +2137,7 @@
   
 
   
-    <td>45</td>
+    <td>46</td>
   
   
 
@@ -2166,7 +2166,7 @@
   
 
   
-    <td>47</td>
+    <td>48</td>
   
   
 
@@ -2195,7 +2195,7 @@
   
 
   
-    <td>43</td>
+    <td>44</td>
   
   
 
@@ -2224,7 +2224,7 @@
   
 
   
-    <td>150</td>
+    <td>151</td>
   
   
 
@@ -2253,7 +2253,7 @@
   
 
   
-    <td>32</td>
+    <td>33</td>
   
   
 
@@ -2282,7 +2282,7 @@
   
 
   
-    <td>35</td>
+    <td>36</td>
   
   
 
@@ -2311,7 +2311,7 @@
   
 
   
-    <td>31</td>
+    <td>32</td>
   
   
 
@@ -2340,7 +2340,7 @@
   
 
   
-    <td>47</td>
+    <td>48</td>
   
   
 
@@ -2369,7 +2369,7 @@
   
 
   
-    <td>46</td>
+    <td>47</td>
   
   
 
@@ -2398,7 +2398,7 @@
   
 
   
-    <td>86</td>
+    <td>87</td>
   
   
 
@@ -2427,7 +2427,7 @@
   
 
   
-    <td>199</td>
+    <td>200</td>
   
   
 
@@ -2456,7 +2456,7 @@
   
 
   
-    <td>69</td>
+    <td>70</td>
   
   
 
@@ -2485,7 +2485,7 @@
   
 
   
-    <td>318</td>
+    <td>320</td>
   
   
 
@@ -2514,7 +2514,7 @@
   
 
   
-    <td>112</td>
+    <td>113</td>
   
   
 
@@ -2543,7 +2543,7 @@
   
 
   
-    <td>331</td>
+    <td>332</td>
   
   
 
@@ -2572,7 +2572,7 @@
   
 
   
-    <td>51</td>
+    <td>52</td>
   
   
 
@@ -2601,7 +2601,7 @@
   
 
   
-    <td>986</td>
+    <td>988</td>
   
   
 
@@ -2630,7 +2630,7 @@
   
 
   
-    <td>42</td>
+    <td>43</td>
   
   
 
@@ -2659,7 +2659,7 @@
   
 
   
-    <td>118</td>
+    <td>119</td>
   
   
 
@@ -2688,7 +2688,7 @@
   
 
   
-    <td>297</td>
+    <td>298</td>
   
   
 
@@ -2717,7 +2717,7 @@
   
 
   
-    <td>823</td>
+    <td>826</td>
   
   
 
@@ -2746,7 +2746,7 @@
   
 
   
-    <td>387</td>
+    <td>389</td>
   
   
 
@@ -2775,7 +2775,7 @@
   
 
   
-    <td>57</td>
+    <td>58</td>
   
   
 
@@ -2804,7 +2804,7 @@
   
 
   
-    <td>684</td>
+    <td>686</td>
   
   
 
@@ -2833,7 +2833,7 @@
   
 
   
-    <td>1109</td>
+    <td>1110</td>
   
   
 
@@ -2862,7 +2862,7 @@
   
 
   
-    <td>83</td>
+    <td>84</td>
   
   
 
@@ -2891,7 +2891,7 @@
   
 
   
-    <td>153</td>
+    <td>154</td>
   
   
 
@@ -2920,7 +2920,7 @@
   
 
   
-    <td>101</td>
+    <td>102</td>
   
   
 
@@ -2949,7 +2949,7 @@
   
 
   
-    <td>46</td>
+    <td>47</td>
   
   
 
@@ -2978,7 +2978,7 @@
   
 
   
-    <td>78</td>
+    <td>79</td>
   
   
 
@@ -3007,7 +3007,7 @@
   
 
   
-    <td>188</td>
+    <td>189</td>
   
   
 
@@ -3036,7 +3036,7 @@
   
 
   
-    <td>177</td>
+    <td>178</td>
   
   
 
@@ -3065,7 +3065,7 @@
   
 
   
-    <td>125</td>
+    <td>126</td>
   
   
 
@@ -3094,7 +3094,7 @@
   
 
   
-    <td>992</td>
+    <td>994</td>
   
   
 
@@ -3123,7 +3123,7 @@
   
 
   
-    <td>239</td>
+    <td>241</td>
   
   
 
@@ -3152,7 +3152,7 @@
   
 
   
-    <td>180</td>
+    <td>181</td>
   
   
 
@@ -3181,7 +3181,7 @@
   
 
   
-    <td>351</td>
+    <td>352</td>
   
   
 
@@ -3210,7 +3210,7 @@
   
 
   
-    <td>86</td>
+    <td>87</td>
   
   
 
@@ -3239,7 +3239,7 @@
   
 
   
-    <td>89</td>
+    <td>90</td>
   
   
 
@@ -3268,7 +3268,7 @@
   
 
   
-    <td>305</td>
+    <td>306</td>
   
   
 
@@ -3297,7 +3297,7 @@
   
 
   
-    <td>57</td>
+    <td>58</td>
   
   
 
@@ -3326,7 +3326,7 @@
   
 
   
-    <td>102</td>
+    <td>103</td>
   
   
 
@@ -3355,7 +3355,7 @@
   
 
   
-    <td>46</td>
+    <td>47</td>
   
   
 
@@ -3384,7 +3384,7 @@
   
 
   
-    <td>54</td>
+    <td>55</td>
   
   
 
@@ -3413,7 +3413,7 @@
   
 
   
-    <td>38</td>
+    <td>39</td>
   
   
 
@@ -3442,7 +3442,7 @@
   
 
   
-    <td>55</td>
+    <td>56</td>
   
   
 
@@ -3471,7 +3471,7 @@
   
 
   
-    <td>48</td>
+    <td>49</td>
   
   
 
@@ -3500,7 +3500,7 @@
   
 
   
-    <td>132</td>
+    <td>133</td>
   
   
 
@@ -3529,7 +3529,7 @@
   
 
   
-    <td>75</td>
+    <td>76</td>
   
   
 
@@ -3558,7 +3558,7 @@
   
 
   
-    <td>63</td>
+    <td>64</td>
   
   
 
@@ -3587,7 +3587,7 @@
   
 
   
-    <td>119</td>
+    <td>120</td>
   
   
 
@@ -3616,7 +3616,7 @@
   
 
   
-    <td>68</td>
+    <td>69</td>
   
   
 
@@ -3645,7 +3645,7 @@
   
 
   
-    <td>429</td>
+    <td>430</td>
   
   
 
@@ -3674,7 +3674,7 @@
   
 
   
-    <td>110</td>
+    <td>111</td>
   
   
 
@@ -3703,7 +3703,7 @@
   
 
   
-    <td>681</td>
+    <td>682</td>
   
   
 
@@ -3732,7 +3732,7 @@
   
 
   
-    <td>380</td>
+    <td>383</td>
   
   
 
@@ -3761,7 +3761,7 @@
   
 
   
-    <td>72</td>
+    <td>73</td>
   
   
 
@@ -3790,7 +3790,7 @@
   
 
   
-    <td>46</td>
+    <td>47</td>
   
   
 
@@ -3819,7 +3819,7 @@
   
 
   
-    <td>35</td>
+    <td>36</td>
   
   
 
@@ -3848,7 +3848,7 @@
   
 
   
-    <td>144</td>
+    <td>147</td>
   
   
 
@@ -3877,7 +3877,7 @@
   
 
   
-    <td>34</td>
+    <td>35</td>
   
   
 
@@ -3906,7 +3906,7 @@
   
 
   
-    <td>61</td>
+    <td>62</td>
   
   
 
@@ -3935,7 +3935,7 @@
   
 
   
-    <td>138</td>
+    <td>139</td>
   
   
 
@@ -3964,7 +3964,7 @@
   
 
   
-    <td>58</td>
+    <td>59</td>
   
   
 
@@ -3993,7 +3993,7 @@
   
 
   
-    <td>79</td>
+    <td>80</td>
   
   
 
@@ -4051,7 +4051,7 @@
   
 
   
-    <td>44</td>
+    <td>45</td>
   
   
 
@@ -4080,7 +4080,7 @@
   
 
   
-    <td>127</td>
+    <td>128</td>
   
   
 
@@ -4109,7 +4109,7 @@
   
 
   
-    <td>183</td>
+    <td>184</td>
   
   
 
@@ -4138,7 +4138,7 @@
   
 
   
-    <td>29</td>
+    <td>30</td>
   
   
 
