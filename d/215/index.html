@@ -178,9 +178,9 @@
           <hr>
 		
 
-    <p>Our current approach revolves around modeling treatments that are included in the hetnet as <em>treats</em> edges. We've previously discussed and dealt with some implications of this <a href="https://thinklab.com/discussion/network-edge-prediction-how-to-deal-with-self-testing/194" class="citation thread-citation" data-key="10.15363/thinklab.d194">self-testing methodology</a>. This post will introduce another issue related to modeling edges that are part of the hetnet used to extract features.</p>
+    <p>Our current approach revolves around modeling treatments that are included in the hetnet as <em>treats</em> edges. We've previously discussed and dealt with some implications of this <a href="https://think-lab.github.io/d/194" class="citation thread-citation" data-key="10.15363/thinklab.d194">self-testing methodology</a>. This post will introduce another issue related to modeling edges that are part of the hetnet used to extract features.</p>
 
-<p>Previously, we looked into whether paths with duplicate nodes should be excluded. Without the duplicate node exclusion, we were allowing paths that directly contained the prediction edge (the prediction edge refers to the compound–disease pair that a feature describes). We <a href="https://thinklab.com/discussion/path-exclusion-conditions/134#4" class="citation thread-citation" data-key="10.15363/thinklab.d134">found that</a>:</p>
+<p>Previously, we looked into whether paths with duplicate nodes should be excluded. Without the duplicate node exclusion, we were allowing paths that directly contained the prediction edge (the prediction edge refers to the compound–disease pair that a feature describes). We <a href="https://think-lab.github.io/d/134#4" class="citation thread-citation" data-key="10.15363/thinklab.d134">found that</a>:</p>
 
 <blockquote><p>paths including the prediction edge cause overfitting by incorporating the outcome (indication status) into the predictor (DWPC)</p></blockquote>
 

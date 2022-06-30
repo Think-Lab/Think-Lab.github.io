@@ -180,7 +180,7 @@
 
     <p>Last week a seminal paper on tissue-specificity of the transciptome, proteome, knowledgeome, and literome was published <span class="citation">[<a href="https://doi.org/10.7717/peerj.1054" class="citation" data-key="10.7717/peerj.1054">1</a>]</span>, along with an <a href="http://tissues.jensenlab.org/">accompanying webapp</a>. This study is notable for intelligently merging expression studies and performing informative comparisons between studies and data types.</p>
 
-<p>We have already <a href="http://thinklab.com/discussion/tissue-specific-gene-expression-resources/81#8" class="citation thread-citation" data-key="10.15363/thinklab.d81">processed Bgee</a> for anatomy-specific transcription. Compared to Bgee, the anatomical coverage of TISSUES is much lower, but edges are likely of higher quality. Therefore I think Bgee and TISSUES will be complimentary. Additionally, TISSUES contains other measures of tissue-specific gene expression such as UniProtKB, proteomics, and literature mining. We are particularly interested in including these data sources.</p>
+<p>We have already <a href="https://think-lab.github.io/d/81#8" class="citation thread-citation" data-key="10.15363/thinklab.d81">processed Bgee</a> for anatomy-specific transcription. Compared to Bgee, the anatomical coverage of TISSUES is much lower, but edges are likely of higher quality. Therefore I think Bgee and TISSUES will be complimentary. Additionally, TISSUES contains other measures of tissue-specific gene expression such as UniProtKB, proteomics, and literature mining. We are particularly interested in including these data sources.</p>
 
 <p>Our first step is to retrieve the data for each of the four methods. We want entities encoded using identifiers rather than names or symbols. We will need to pick a confidence threshold. And for each method, we would like the broadest tissue coverage permitted by that method. Advice appreciated!</p>
 
@@ -403,7 +403,7 @@
 
     
 
-    <p><a href="/u/larsjuhljensen" class="username">@larsjuhljensen</a>, we will use the integrated dataset as the primary resource. However, the integrated dataset is subject to knowledge biases (stemming from text mining and UniProtKB). Since we <a href="http://thinklab.com/discussion/text-as-a-resource-for-network-population/48#3">want the option</a> to subset the network to only include knowledge-unbaised edges, we would also like a consolidated score using only the experimental dataset.</p>
+    <p><a href="/u/larsjuhljensen" class="username">@larsjuhljensen</a>, we will use the integrated dataset as the primary resource. However, the integrated dataset is subject to knowledge biases (stemming from text mining and UniProtKB). Since we <a href="https://think-lab.github.io/d/48#3">want the option</a> to subset the network to only include knowledge-unbaised edges, we would also like a consolidated score using only the experimental dataset.</p>
 
 <p>In other words, if a gene–tissue edge scores above the cutoff in the consolidated experimental dataset, it's considered unbiased. However, if it only passes the cutoff in the integrated dataset, it's considered biased.</p>
 

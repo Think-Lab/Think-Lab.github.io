@@ -480,7 +480,7 @@
 
     <p><a href="/u/idrdex" class="username">@idrdex</a>, we're referring to this data as the Human Interaction Database (HID) and found that the systematic datasets were wholly included in the Incomplete Interactome (<code>II</code>) data (<a href="#323">comment</a>, <a href="https://github.com/dhimmel/ppi/blob/77862798448c4272c55e9c718323a3ec5d8db571/compile-PPIs.ipynb">notebook</a>).</p>
 
-<p>You are right that once we introduce PPIs from targeted or curated analyses, we have introduce knowledge bias. While we prefer systematic data, we <a href="http://thinklab.com/discussion/text-as-a-resource-for-network-population/48#120">decided to incorporate</a> biased knowledge. We will likely perform a parallel analysis on an network built from only unbiased data sources. For this analysis, we'll use the Y2H datasets used in your autism study <span class="citation">[<a href="https://doi.org/10.1038/ncomms5074" class="citation" data-key="10.1038/ncomms5074">1</a>]</span>.</p>
+<p>You are right that once we introduce PPIs from targeted or curated analyses, we have introduce knowledge bias. While we prefer systematic data, we <a href="https://think-lab.github.io/d/48#120">decided to incorporate</a> biased knowledge. We will likely perform a parallel analysis on an network built from only unbiased data sources. For this analysis, we'll use the Y2H datasets used in your autism study <span class="citation">[<a href="https://doi.org/10.1038/ncomms5074" class="citation" data-key="10.1038/ncomms5074">1</a>]</span>.</p>
 
 		<div style="margin-left:30px;">
 
@@ -531,7 +531,7 @@
 
     <h1>Unbiased PPI datasets</h1>
 
-<p>Since we now include a <a href="http://thinklab.com/d/48#3">edge attribute for bias</a> in our network, we need to identify a subset of our PPIs that are derived from hypothesis free, i.e. unbiased, experiments.</p>
+<p>Since we now include a <a href="https://think-lab.github.io/d/48#3">edge attribute for bias</a> in our network, we need to identify a subset of our PPIs that are derived from hypothesis free, i.e. unbiased, experiments.</p>
 
 <p>The <em>Incomplete Interactome</em> <span class="citation">[<a href="https://doi.org/10.1126/science.1257601" class="citation" data-key="10.1126/science.1257601">1</a>]</span> <a href="http://www.sciencemag.org/content/suppl/2015/02/18/347.6224.1257601.DC1/Menche_SM.pdf#page=5">describes</a> their creation of an unbiased interactome:</p>
 
@@ -680,7 +680,7 @@
 
 <table class="table markdown-table"><thead><tr><th>Protein A</th><th>Gene A</th><th>Taxon A</th><th>Protein B</th><th>Gene B</th><th>Taxon B</th><th>Score</th><th>PMID</th></tr></thead><tbody><tr><td>Q86UX7</td><td>FERMT3</td><td>9606</td><td>Q06830</td><td>PRDX1</td><td>9606</td><td>0.126</td><td>26496610</td></tr><tr><td>Q9LK77</td><td>Q9LK77</td><td>3702</td><td>A0A088QD33</td><td>OEC103 {ECO:0000313|EMBL:AIN81148.1}</td><td>62715</td><td>0.236</td><td>25211078</td></tr><tr><td>Q96QD9</td><td>FYTTD1</td><td>9606</td><td>Q86UX7</td><td>FERMT3</td><td>9606</td><td>0.126</td><td>26496610</td></tr><tr><td>F4J5N9</td><td>BZIP24 {ECO:0000313|EMBL:AEE78868.1}</td><td>3702</td><td>A0A088QD42</td><td>OEC112 {ECO:0000313|EMBL:AIN81158.1}</td><td>62715</td><td>0.236</td><td>25211078</td></tr><tr><td>Q9Y5Q8</td><td>GTF3C5</td><td>9606</td><td>Q86U86</td><td>PBRM1</td><td>9606</td><td>0.155</td><td>22939629 26344197</td></tr></tbody></table>
 
-<p>Two features that caught my eye are the reliability scores and the PubMed IDs of the original source(s). It looks like the file format could be a little bit cleaner (see for example <code>{ECO:0000313|EMBL:AEE78868.1}</code>). Also I didn't see a license on the Mentha website. Going forward I plan to avoid resources without an <a href="http://opendefinition.org/licenses/" title="Conformant Licenses: Open Definition">open license</a> — something we <a href="http://thinklab.com/discussion/integrating-resources-with-disparate-licensing-into-an-open-network/107#14" class="citation thread-citation" data-key="10.15363/thinklab.d107">learned the importance</a> of during this project.</p>
+<p>Two features that caught my eye are the reliability scores and the PubMed IDs of the original source(s). It looks like the file format could be a little bit cleaner (see for example <code>{ECO:0000313|EMBL:AEE78868.1}</code>). Also I didn't see a license on the Mentha website. Going forward I plan to avoid resources without an <a href="http://opendefinition.org/licenses/" title="Conformant Licenses: Open Definition">open license</a> — something we <a href="https://think-lab.github.io/d/107#14" class="citation thread-citation" data-key="10.15363/thinklab.d107">learned the importance</a> of during this project.</p>
 
 		<div style="margin-left:30px;">
 

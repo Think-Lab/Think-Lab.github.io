@@ -180,7 +180,7 @@
           <hr>
 		
 
-    <p>SIDER is a project to extract side effects from drug labels <span class="citation">[<a href="https://doi.org/10.1038/msb.2009.98" class="citation" data-key="10.1038/msb.2009.98">1</a>]</span>, originally motivated by off-target prediction <span class="citation">[<a href="https://doi.org/10.1126/science.1158140" class="citation" data-key="10.1126/science.1158140">2</a>]</span>. We <a href="http://thinklab.com/discussion/assessing-the-quality-and-applicability-of-the-sider-2-resource/30#1" class="citation thread-citation" data-key="10.15363/thinklab.d30">evaluated version 2</a> and produced an <a href="http://git.dhimmel.com/SIDER2/">online tutorial</a>. We found that side effect similarity was a <a href="http://thinklab.com/discussion/assessing-the-quality-and-applicability-of-the-sider-2-resource/30#3" class="citation thread-citation" data-key="10.15363/thinklab.d30">weak predictor</a> of chemical and indication similarity.</p>
+    <p>SIDER is a project to extract side effects from drug labels <span class="citation">[<a href="https://doi.org/10.1038/msb.2009.98" class="citation" data-key="10.1038/msb.2009.98">1</a>]</span>, originally motivated by off-target prediction <span class="citation">[<a href="https://doi.org/10.1126/science.1158140" class="citation" data-key="10.1126/science.1158140">2</a>]</span>. We <a href="https://think-lab.github.io/d/30#1" class="citation thread-citation" data-key="10.15363/thinklab.d30">evaluated version 2</a> and produced an <a href="http://git.dhimmel.com/SIDER2/">online tutorial</a>. We found that side effect similarity was a <a href="https://think-lab.github.io/d/30#3" class="citation thread-citation" data-key="10.15363/thinklab.d30">weak predictor</a> of chemical and indication similarity.</p>
 
 <p>Just two days ago, <a href="http://sideeffects.embl.de/">version 4</a> was released. Here, we will detail our extraction of side effects from SIDER4.</p>
 
@@ -225,7 +225,7 @@
 
     <h1>Data release formatting</h1>
 
-<p>We ran into some issues when parsing the SIDER4 datasets. In defense of the creators, version 4 is still in beta and hasn't become the default version (the url was <a href="http://thinklab.com/discussion/assessing-the-quality-and-applicability-of-the-sider-2-resource/30#4">provided to us</a> by a project member).</p>
+<p>We ran into some issues when parsing the SIDER4 datasets. In defense of the creators, version 4 is still in beta and hasn't become the default version (the url was <a href="https://think-lab.github.io/d/30#4">provided to us</a> by a project member).</p>
 
 <p>The remainder of the post refers to <a href="https://github.com/dhimmel/SIDER4/blob/master/SIDER4.ipynb">this notebook</a>. I ran into the following issues:</p>
 
@@ -296,7 +296,7 @@
 
 <h2>Data quality</h2>
 
-<p>Compared to version 2, I subjectively noticed a considerable quality improvement. However, many of the <a href="http://thinklab.com/discussion/assessing-the-quality-and-applicability-of-the-sider-2-resource/30#2">problems</a> inherent to label based NLP extraction remain. I think there are two potential methods for extracting higher confidence side effects:</p>
+<p>Compared to version 2, I subjectively noticed a considerable quality improvement. However, many of the <a href="https://think-lab.github.io/d/30#2">problems</a> inherent to label based NLP extraction remain. I think there are two potential methods for extracting higher confidence side effects:</p>
 
 <ol><li><strong>Number of labels approach</strong>: Most drugs have multiple labels. Side effects reported by more labels may be of higher quality. <a href="http://sideeffects.embl.de/drugs/3007/">Amphetamine</a> is a good example.</li><li><strong>Frequency approach</strong>: Some side effects have associated frequency information. Placebo comparisons are also sometimes present. Thus enrichment in frequency compared to placebo, other drugs, or a cutoff is feasible. <a href="http://sideeffects.embl.de/drugs/3672/">Ibuprofen</a> is a good example. </li></ol>
 

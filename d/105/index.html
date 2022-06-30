@@ -184,9 +184,9 @@
 
 <p>DisGeNET integrates <a href="http://www.disgenet.org/web/DisGeNET/menu/dbinfo#ontology">associations</a> from many <a href="http://www.disgenet.org/web/DisGeNET/menu/dbinfo#sources">sources</a> and provides a unified <a href="http://www.disgenet.org/web/DisGeNET/menu/dbinfo#score">score</a> for each gene–disease pair.</p>
 
-<p>We will likely replace or merge the function edge we <a href="http://thinklab.com/discussion/functional-disease-annotations-for-genes-using-doaf/94" class="citation thread-citation" data-key="10.15363/thinklab.d94">extracted from DOAF</a> with DisGeNET.</p>
+<p>We will likely replace or merge the function edge we <a href="https://think-lab.github.io/d/94" class="citation thread-citation" data-key="10.15363/thinklab.d94">extracted from DOAF</a> with DisGeNET.</p>
 
-<p>Diseases in DisGeNET are identified with UMLS identifiers. We were <a href="https://github.com/dhimmel/disgenet/blob/2154cd74307f92d00d2ed192c584cfb33733d7da/disgenet.ipynb">able to map</a> 125 out of 137 of our <a href="http://thinklab.com/discussion/unifying-disease-vocabularies/44#6" class="citation thread-citation" data-key="10.15363/thinklab.d44">DO Slim</a> diseases.</p>
+<p>Diseases in DisGeNET are identified with UMLS identifiers. We were <a href="https://github.com/dhimmel/disgenet/blob/2154cd74307f92d00d2ed192c584cfb33733d7da/disgenet.ipynb">able to map</a> 125 out of 137 of our <a href="https://think-lab.github.io/d/44#6" class="citation thread-citation" data-key="10.15363/thinklab.d44">DO Slim</a> diseases.</p>
 
 		<div style="margin-left:30px;">
 
@@ -374,7 +374,7 @@ rm all_gene_disease_associations.tar.gz</code></pre>
 
 <blockquote><p>The score ranges from 0 to 1 and is computed according to the formula described in ‘Methods’ section. The DisGeNET score allows obtaining a ranking of GDAs and a straightforward classification of curated vs predicted vs literature-based associations since it stratifies the associations based on their level of evidence. For instance, associations only reported by UniProt or CTD, which have been curated by experts, have higher scores (i.e. associations with S ≥ 0.3) than those only supported by animal models or text-mining based sources.</p></blockquote>
 
-<p>We will need to choose a <a href="http://thinklab.com/discussion/the-tissues-resource-for-the-tissue-specificity-of-genes/91#4" class="citation thread-citation" data-key="10.15363/thinklab.d91">minumum threshold</a> for edge inclusion in our network. <a href="/u/janispi" class="username">@janispi</a>, can you give us some more information regarding scores? Specifically,</p>
+<p>We will need to choose a <a href="https://think-lab.github.io/d/91#4" class="citation thread-citation" data-key="10.15363/thinklab.d91">minumum threshold</a> for edge inclusion in our network. <a href="/u/janispi" class="username">@janispi</a>, can you give us some more information regarding scores? Specifically,</p>
 
 <ul><li>how do scores correspond to precision (the probability of the relationship being real)?</li><li>what is a reasonable cutoff to eliminate junk? Does any relationship with score &gt; 0 already have acceptable confidence?</li></ul>
 
@@ -429,7 +429,7 @@ rm all_gene_disease_associations.tar.gz</code></pre>
 
     <h1>Naming disease–gene metaedges</h1>
 
-<p>Up till now, we have been calling our <a href="http://thinklab.com/discussion/extracting-disease-gene-associations-from-the-gwas-catalog/80" class="citation thread-citation" data-key="10.15363/thinklab.d80">edges from GWAS</a> "associations" and our <a href="http://thinklab.com/discussion/functional-disease-annotations-for-genes-using-doaf/94" class="citation thread-citation" data-key="10.15363/thinklab.d94">edges from DOAF</a> "functions".</p>
+<p>Up till now, we have been calling our <a href="https://think-lab.github.io/d/80" class="citation thread-citation" data-key="10.15363/thinklab.d80">edges from GWAS</a> "associations" and our <a href="https://think-lab.github.io/d/94" class="citation thread-citation" data-key="10.15363/thinklab.d94">edges from DOAF</a> "functions".</p>
 
 <p>DisGeNET uses a different <a href="http://www.disgenet.org/web/DisGeNET/menu/dbinfo#ontology">nomenclature</a>. 'Association' refers to all disease–gene relationships while 'genetic variation' is more in line with what we call 'association'.</p>
 
@@ -519,7 +519,7 @@ rm all_gene_disease_associations.tar.gz</code></pre>
 
 <p>We processed DisGeNET by converting to DO Slim diseases (<a href="https://github.com/dhimmel/disgenet/blob/b21553d7fced15c309f0a7aa15fc68e4d3edaa03/disgenet.ipynb">notebook</a>, <a href="https://github.com/dhimmel/disgenet/blob/b21553d7fced15c309f0a7aa15fc68e4d3edaa03/data/consolidated.tsv">download</a>). We used propagated mappings, so for example relationships with relapsing-remitting multiple sclerosis would be included for multiple sclerosis.</p>
 
-<p>The result was 82,833 gene–disease associations. After filtering for scores ≥ 0.06, 7,779 associations remained with large variability in the number of associations per disease. Additionally, many of the associations appear to be 'genetic variation' edges, which may be captured by our <a href="http://thinklab.com/discussion/extracting-disease-gene-associations-from-the-gwas-catalog/80" class="citation thread-citation" data-key="10.15363/thinklab.d80">GWAS edge</a>. As a reminder, the 0.06 score threshold includes the following (thanks <a href="/u/janispi" class="username">@janispi</a>):</p>
+<p>The result was 82,833 gene–disease associations. After filtering for scores ≥ 0.06, 7,779 associations remained with large variability in the number of associations per disease. Additionally, many of the associations appear to be 'genetic variation' edges, which may be captured by our <a href="https://think-lab.github.io/d/80" class="citation thread-citation" data-key="10.15363/thinklab.d80">GWAS edge</a>. As a reminder, the 0.06 score threshold includes the following (thanks <a href="/u/janispi" class="username">@janispi</a>):</p>
 
 <blockquote><p>If you choose score ≥ 0.06, then you will be including associations reporting by curated sources, or having animal models supporting them, or being reported by several papers (20–200).</p></blockquote>
 

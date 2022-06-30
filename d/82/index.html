@@ -229,7 +229,7 @@
 
     <h1>Mapping GTEx sites to Uberon and CL</h1>
 
-<p>We <a href="//thinklab.com/discussion/tissue-node/41">are using</a> <a href="https://uberon.github.io/">Uberon</a> <span class="citation">[<a href="https://doi.org/10.1186/gb-2012-13-1-r5" class="citation" data-key="10.1186/gb-2012-13-1-r5">1</a>]</span> terms to identify anatomical structures and <a href="https://github.com/obophenotype/cell-ontology">Cell Ontology</a> (CL) <span class="citation">[<a href="https://doi.org/10.1186/gb-2005-6-2-r21" class="citation" data-key="10.1186/gb-2005-6-2-r21">2</a>]</span> terms to identify cell types. Thus, we need to map GTEx sites to their corresponding ontology terms.</p>
+<p>We <a href="//think-lab.github.io/discussion/tissue-node/41">are using</a> <a href="https://uberon.github.io/">Uberon</a> <span class="citation">[<a href="https://doi.org/10.1186/gb-2012-13-1-r5" class="citation" data-key="10.1186/gb-2012-13-1-r5">1</a>]</span> terms to identify anatomical structures and <a href="https://github.com/obophenotype/cell-ontology">Cell Ontology</a> (CL) <span class="citation">[<a href="https://doi.org/10.1186/gb-2005-6-2-r21" class="citation" data-key="10.1186/gb-2005-6-2-r21">2</a>]</span> terms to identify cell types. Thus, we need to map GTEx sites to their corresponding ontology terms.</p>
 
 <p>From the sample attribute documentation (<code>GTEx_Data_V4_Annotations_SampleAttributesDS.txt</code>), we <a href="https://github.com/dhimmel/gtex/blob/8acb90fea2613f8b27814401e361bb6ae4b29078/gtex.ipynb">identified</a> 54 sites using the <code>SMTSD</code> attribute. I have mapped about half of the sites to Uberon. The remainder would benefit from a skilled anatomist or GTEx consortium member.</p>
 
@@ -278,7 +278,7 @@
 
     <h1>Handing over GTEx processing responsibility to Bgee</h1>
 
-<p>We have <a href="http://thinklab.com/discussion/tissue-specific-gene-expression-resources/81#278">decided to use Bgee</a> for tissue-specific transcript presence, over-, and under-expression. Bgee doesn't currently include GTEx data but <a href="https://github.com/obophenotype/uberon/issues/704#issuecomment-113134400">will soon</a>.</p>
+<p>We have <a href="https://think-lab.github.io/d/81#278">decided to use Bgee</a> for tissue-specific transcript presence, over-, and under-expression. Bgee doesn't currently include GTEx data but <a href="https://github.com/obophenotype/uberon/issues/704#issuecomment-113134400">will soon</a>.</p>
 
 <p>Therefore, we are not going to proceed with GTEx data directly for this project. However, we did already process the data into a usable gene × site format (<a href="https://github.com/dhimmel/gtex/blob/93c3800cef1ced48b100d57b8d6efab831f8533b/gtex.ipynb">notebook</a>, <a href="https://github.com/dhimmel/gtex/blob/93c3800cef1ced48b100d57b8d6efab831f8533b/data/expression-SMTSD.tsv.gz">download</a>). We converted genes to Entrez GeneIDs. The sites are still in GTEx strings rather than Uberon terms. Expression values are log-transformed. Check out the notebook for a visualization of tissue-specific transcript abundance distributions.</p>
 
@@ -838,7 +838,7 @@
       <ul class="comment-notes">
 				
 <li id="note-179" class="inline-note toggle-parent" data-note-id="179">
-	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: Exciting, thanks for the update. On another note, I wasn't able to find any licensing information on the Bgee website, which technically means <a href="http://choosealicense.com/no-license/">all rights reserved</a>. We're <a href="http://thinklab.com/discussion/integrating-resources-with-disparate-licensing-into-an-open-network/107#3" class="citation thread-citation" data-key="10.15363/thinklab.d107">tying to compile</a> licenses for each resource we use. It would be great if you could add a license.
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: Exciting, thanks for the update. On another note, I wasn't able to find any licensing information on the Bgee website, which technically means <a href="http://choosealicense.com/no-license/">all rights reserved</a>. We're <a href="https://think-lab.github.io/d/107#3" class="citation thread-citation" data-key="10.15363/thinklab.d107">tying to compile</a> licenses for each resource we use. It would be great if you could add a license.
 		
 	</p>
 	

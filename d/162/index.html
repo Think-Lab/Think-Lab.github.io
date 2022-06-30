@@ -178,7 +178,7 @@
           <hr>
 		
 
-    <p>We've created a <a href="http://thinklab.com/discussion/one-network-to-rule-them-all/102" title="Preliminary hetnet release">preliminary network</a> with 10 types of nodes (metanodes) and 27 types of edges (metaedges). Now an important detail is naming node and edge types appropriately.</p>
+    <p>We've created a <a href="https://think-lab.github.io/d/102" title="Preliminary hetnet release">preliminary network</a> with 10 types of nodes (metanodes) and 27 types of edges (metaedges). Now an important detail is naming node and edge types appropriately.</p>
 
 <p>For each metanode and metaedge, we also need abbreviations. We use the abbreviations to make writing out complete paths less cumbersome. For example, in our previous project, we <a href="https://doi.org/10.1371/journal.pcbi.1004259.s010" title="S1 Table. Features · Hetnet-Based Prioritization of Disease Associations">abbreviated</a> the <code>Gene - interaction - Gene - expression - Tissue - localization - Disease</code> path to <code>GiGeTlD</code> <span class="citation">[<a href="https://doi.org/10.1371/journal.pcbi.1004259.s010" class="citation" data-key="10.1371/journal.pcbi.1004259.s010">1</a>]</span>.</p>
 
@@ -235,7 +235,7 @@
 
 <table class="table markdown-table"><thead><tr><th>Source</th><th>Target</th><th>Metaedge (noun)</th><th>Metaedge (verb)</th></tr></thead><tbody><tr><td>compound</td><td>gene</td><td>binding</td><td>binds</td></tr><tr><td>compound</td><td>side effect</td><td>causation</td><td>causes</td></tr><tr><td>compound</td><td>gene</td><td>downregulation</td><td>downregulates</td></tr><tr><td>compound</td><td>disease</td><td>indication</td><td>palliates</td></tr><tr><td>compound</td><td>compound</td><td>similarity</td><td>resembles</td></tr><tr><td>compound</td><td>disease</td><td>indication</td><td>treats</td></tr><tr><td>compound</td><td>gene</td><td>upregulation</td><td>upregulates</td></tr><tr><td>disease</td><td>gene</td><td>association</td><td>associates</td></tr><tr><td>disease</td><td>gene</td><td>downregulation</td><td>downregulates</td></tr><tr><td>disease</td><td>anatomy</td><td>localization</td><td>localizes</td></tr><tr><td>disease</td><td>symptom</td><td>presence</td><td>presents</td></tr><tr><td>disease</td><td>disease</td><td>similarity</td><td>resembles</td></tr><tr><td>disease</td><td>gene</td><td>upregulation</td><td>upregulates</td></tr><tr><td>gene</td><td>anatomy</td><td>downregulation</td><td>downregulates</td></tr><tr><td>gene</td><td>gene</td><td>evolution</td><td>evolves</td></tr><tr><td>gene</td><td>anatomy</td><td>expression</td><td>expresses</td></tr><tr><td>gene</td><td>gene</td><td>interaction</td><td>interacts</td></tr><tr><td>gene</td><td>biological process</td><td>participation</td><td>participates</td></tr><tr><td>gene</td><td>cellular component</td><td>participation</td><td>participates</td></tr><tr><td>gene</td><td>molecular function</td><td>participation</td><td>participates</td></tr><tr><td>gene</td><td>pathway</td><td>participation</td><td>participates</td></tr><tr><td>gene</td><td>perturbation</td><td>regulation</td><td>regulates</td></tr><tr><td>gene</td><td>anatomy</td><td>upregulation</td><td>upregulates</td></tr><tr><td>gene</td><td>gene</td><td>knockdown downregulation</td><td>knockdown downregulates</td></tr><tr><td>gene</td><td>gene</td><td>knockdown upregulation</td><td>knockdown upregulates</td></tr><tr><td>gene</td><td>gene</td><td>overexpression downregulation</td><td>overexpression downregulates</td></tr><tr><td>gene</td><td>gene</td><td>overexpression upregulation</td><td>overexpression upregulates</td></tr></tbody></table>
 
-<p>In several cases, switching from noun to verb cut out several characters — a welcome occurrence. Switching relationship types to verbs also makes sense as part of our <a href="http://thinklab.com/discussion/using-the-neo4j-graph-database-for-hetnets/112" class="citation thread-citation" data-key="10.15363/thinklab.d112">migration to neo4j</a>. The neo4j convention is to use verbs for relationship types. In fact, a neo4j company <a href="https://www.graphstory.com/elements-of-a-graph-database">explains relationships</a> by saying:</p>
+<p>In several cases, switching from noun to verb cut out several characters — a welcome occurrence. Switching relationship types to verbs also makes sense as part of our <a href="https://think-lab.github.io/d/112" class="citation thread-citation" data-key="10.15363/thinklab.d112">migration to neo4j</a>. The neo4j convention is to use verbs for relationship types. In fact, a neo4j company <a href="https://www.graphstory.com/elements-of-a-graph-database">explains relationships</a> by saying:</p>
 
 <blockquote><p>Where nodes can be thought of as nouns, relationships can be thought of as verbs.</p></blockquote>
 
@@ -329,11 +329,11 @@
 
     <blockquote><p>I assume that when, for example, a compound downregulates a gene, it is supposed to mean that the compound inhibits the protein product encoded by the gene. However, if read at face value, it would mean that the compound binds to something else that through some signaling results in down-regulation of the gene (i.e. less transcription).</p></blockquote>
 
-<p>Your face value interpretation is correct. Compound–downregulates–Gene means the compound decreases the transcriptional expression of the gene. We <a href="http://thinklab.com/discussion/computing-consensus-transcriptional-profiles-for-compounds-using-lincs/43#6" class="citation thread-citation" data-key="10.15363/thinklab.d43">extracted these relationships</a> from LINCS L1000.</p>
+<p>Your face value interpretation is correct. Compound–downregulates–Gene means the compound decreases the transcriptional expression of the gene. We <a href="https://think-lab.github.io/d/43#6" class="citation thread-citation" data-key="10.15363/thinklab.d43">extracted these relationships</a> from LINCS L1000.</p>
 
 <blockquote><p>The gene-gene association "evolves" is bit of a misnomer</p></blockquote>
 
-<p>I agree, "evolves" is not good. This edge signifies <a href="http://thinklab.com/discussion/selecting-informative-erc-evolutionary-rate-covariation-values-between-genes/57" class="citation thread-citation" data-key="10.15363/thinklab.d57">evolutionary rate covariation</a> <span class="citation">[<a href="https://doi.org/10.1371/journal.pgen.1004967" class="citation" data-key="10.1371/journal.pgen.1004967">1</a>]</span>. It's a mouthful, and I don't know the best way to shorten and verbify it. Perhaps "covaries" is an improvement?</p>
+<p>I agree, "evolves" is not good. This edge signifies <a href="https://think-lab.github.io/d/57" class="citation thread-citation" data-key="10.15363/thinklab.d57">evolutionary rate covariation</a> <span class="citation">[<a href="https://doi.org/10.1371/journal.pgen.1004967" class="citation" data-key="10.1371/journal.pgen.1004967">1</a>]</span>. It's a mouthful, and I don't know the best way to shorten and verbify it. Perhaps "covaries" is an improvement?</p>
 
 <blockquote><p>Are the gene-anatomy relationships not backwards? … Same goes for gene-pertubation relationships.</p></blockquote>
 
@@ -388,7 +388,7 @@
 
 <p>We've been referred to when a drug treats a disease as an "<a href="https://en.wikipedia.org/w/index.php?title=Indication_(medicine)&amp;oldid=703054912" title="Wikipedia · Indication (medicine)">indication</a>". While readers with a medical background understand the term, others find "indication" confusing. </p>
 
-<p>Now <a href="http://thinklab.com/discussion/expert-curation-of-our-indication-catalog-for-disease-modifying-treatments/95" class="citation thread-citation" data-key="10.15363/thinklab.d95">we've split our indications</a> into two categories: disease-modifying and symptomatic. Additionally, we've switched to <a href="#2">using verbs</a> to describe relationships. </p>
+<p>Now <a href="https://think-lab.github.io/d/95" class="citation thread-citation" data-key="10.15363/thinklab.d95">we've split our indications</a> into two categories: disease-modifying and symptomatic. Additionally, we've switched to <a href="#2">using verbs</a> to describe relationships. </p>
 
 <p>Given these factors, I chose "treats" for disease-modifying indications and "palliates" for symptomatic indications. This terminology aligns with a recent repurposing study <span class="citation">[<a href="https://doi.org/10.1038/ncomms10331" class="citation" data-key="10.1038/ncomms10331">1</a>]</span>, which refers to</p>
 
@@ -535,7 +535,7 @@
 
 <h2>Neo4j type nomenclature</h2>
 
-<p>We conform to the Neo4j style of CamelCase labels and ALL_CAPS relationship types. In addition, Neo4j relationship types are appended with metaedge standard abbreviations. This adds source/target-metanode awareness to relationship types and <a href="https://thinklab.com/discussion/using-the-neo4j-graph-database-for-hetnets/112#6" class="citation thread-citation" data-key="10.15363/thinklab.d112">enables optimized queries</a>.</p>
+<p>We conform to the Neo4j style of CamelCase labels and ALL_CAPS relationship types. In addition, Neo4j relationship types are appended with metaedge standard abbreviations. This adds source/target-metanode awareness to relationship types and <a href="https://think-lab.github.io/d/112#6" class="citation thread-citation" data-key="10.15363/thinklab.d112">enables optimized queries</a>.</p>
 
 		<div style="margin-left:30px;">
 

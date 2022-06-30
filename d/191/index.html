@@ -182,7 +182,7 @@
 
 <blockquote><p>In total, XX non-team member commented across the 65 discussions, which generated XX comments totaling XX words and XX characters.</p></blockquote>
 
-<p>Essentially, I want to summarize how much content, participation, and viewership <a href="http://thinklab.com/p/rephetio">our project</a> has generated. <a href="/u/jspauld" class="username">@jspauld</a>, what's the best way to go about computing these numbers (I can do it manually but is there an easier way)?</p>
+<p>Essentially, I want to summarize how much content, participation, and viewership <a href="https://think-lab.github.io/p/rephetio">our project</a> has generated. <a href="/u/jspauld" class="username">@jspauld</a>, what's the best way to go about computing these numbers (I can do it manually but is there an easier way)?</p>
 
 <p>Does it make sense to add these summary statistics somewhere on the project page?</p>
 
@@ -317,7 +317,7 @@
 
     
 
-    <p>I setup a project export. It is available here: <a href="http://thinklab.com/p/rephetio/export">http://thinklab.com/p/rephetio/export</a>. Note number of views is a calculated field and thus I prefer not to add it to the export for now. </p>
+    <p>I setup a project export. It is available here: <a href="https://think-lab.github.io/p/rephetio/export">https://think-lab.github.io/p/rephetio/export</a>. Note number of views is a calculated field and thus I prefer not to add it to the export for now. </p>
 
 <p>It currently contains the following tables and fields for each project:</p>
 
@@ -382,7 +382,7 @@
 
 <p>I'm having a bit of trouble reading the file. The two methods that I usually use to download and load a JSON from Python are not working (<code>JSONDecodeError</code>):</p>
 
-<pre><code class="python">url = 'http://thinklab.com/p/rephetio/export'
+<pre><code class="python">url = 'https://think-lab.github.io/p/rephetio/export'
 
 # Method 1 (Python 3)
 import urllib.request
@@ -439,7 +439,7 @@ export = json.loads(requests.get(url).text)</code></pre>
 
     <p>Yes, I thought something looked off. I was serializing things twice. Try again with:</p>
 
-<p><a href="http://thinklab.com/p/rephetio/export.json">http://thinklab.com/p/rephetio/export.json</a></p>
+<p><a href="https://think-lab.github.io/p/rephetio/export.json">https://think-lab.github.io/p/rephetio/export.json</a></p>
 
 		<div style="margin-left:30px;">
 
@@ -496,7 +496,7 @@ export = json.loads(requests.get(url).text)</code></pre>
       <ul class="comment-notes">
 				
 <li id="note-236" class="inline-note toggle-parent" data-note-id="236">
-	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: I agree the visitor counts would be great. I'm already learning from our project's <a href="http://thinklab.com/p/rephetio/discussion">discussion view counts</a>. And if we set up an automatic export every week, we will be able to do fascinating analytics of interest in subjects over time.
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: I agree the visitor counts would be great. I'm already learning from our project's <a href="https://think-lab.github.io/p/rephetio/discussion">discussion view counts</a>. And if we set up an automatic export every week, we will be able to do fascinating analytics of interest in subjects over time.
 		
 	</p>
 	
@@ -544,7 +544,7 @@ import datetime
 import requests
 
 with requests.Session() as session:
-    login_url = 'http://thinklab.com/login'
+    login_url = 'https://think-lab.github.io/login'
     session.get(login_url)
     csrf_token = session.cookies['csrftoken']
     payload = {
@@ -554,7 +554,7 @@ with requests.Session() as session:
     }
     session.post(login_url, data=payload)
 
-    export_url = 'http://thinklab.com/p/rephetio/export.json'
+    export_url = 'https://think-lab.github.io/p/rephetio/export.json'
     response = session.get(export_url)
     export = response.json()
 
@@ -608,7 +608,7 @@ with open('export.json', 'wt') as write_file:
 
 <p>I created a repository (<a href="https://github.com/dhimmel/thinklytics" title="dhimmel/thinklytics on GitHub"><code>thinklytics</code></a>) for exporting and analyzing Thinklab content.</p>
 
-<p><a href="/u/alizee" class="username">@alizee</a>, I think <a href="http://thinklab.com/discussion/discussion-summary-statistics-for-illustrating-project-impact/191#7" class="citation thread-citation" data-key="10.15363/thinklab.d191">you want</a> data for all <a href="http://thinklab.com/projects">projects</a> and <a href="http://thinklab.com/proposals">proposals</a> using my <a href="https://github.com/dhimmel/thinklytics/blob/e6c64cf1a709653032605e008fcc828f6e4f0d0f/export.py"><code>export.py</code></a>. The only missing piece to programmatic retrieval of all content is a complete list of proposal and project IDs. For now this can be compiled manually, but it would be nice to have a <code>thinklab.com/projects.json</code> for getting this list. Consider forking <code>thinklytics</code>.</p>
+<p><a href="/u/alizee" class="username">@alizee</a>, I think <a href="https://think-lab.github.io/d/191#7" class="citation thread-citation" data-key="10.15363/thinklab.d191">you want</a> data for all <a href="https://think-lab.github.io/projects">projects</a> and <a href="https://think-lab.github.io/proposals">proposals</a> using my <a href="https://github.com/dhimmel/thinklytics/blob/e6c64cf1a709653032605e008fcc828f6e4f0d0f/export.py"><code>export.py</code></a>. The only missing piece to programmatic retrieval of all content is a complete list of proposal and project IDs. For now this can be compiled manually, but it would be nice to have a <code>think-lab.github.io/projects.json</code> for getting this list. Consider forking <code>thinklytics</code>.</p>
 
 		<div style="margin-left:30px;">
 
@@ -653,7 +653,7 @@ with open('export.json', 'wt') as write_file:
 
 <p>I <a href="https://github.com/antoine-lizee/thinklytics">updated the code</a> and the syntax of the command line. Noticeable changes are (i) specification of the directory instead of the path of the exported file, (ii) specification of username and password as arguments for enhanced security (iii) automatic scraping of all projects and proposals with the 'all' keyword. (iv) adapted defaults.</p>
 
-<p>I realized later on that (ii) was kind of pointless since there is no <code>https</code> enabled for Thinklab. <a href="/u/jspauld" class="username">@jspauld</a>, <a href="http://thinklab.com/discussion/support-and-enforce-ssl-connections-to-thinklab/197" class="citation thread-citation" data-key="10.15363/thinklab.d197">do you have</a> any plan on that ?</p>
+<p>I realized later on that (ii) was kind of pointless since there is no <code>https</code> enabled for Thinklab. <a href="/u/jspauld" class="username">@jspauld</a>, <a href="https://think-lab.github.io/d/197" class="citation thread-citation" data-key="10.15363/thinklab.d197">do you have</a> any plan on that ?</p>
 
 		<div style="margin-left:30px;">
 
@@ -820,7 +820,7 @@ with open('export.json', 'wt') as write_file:
 
 <p>We made some changes to <a href="https://github.com/antoine-lizee/thinklytics/">thinklytics</a> again, mainly an overhaul of the pictures - changes are reflected in the previous post. </p>
 
-<p>We also created a <a href="https://github.com/antoine-lizee/thinklytics/blob/master/R-Code/03-singleProject.R">'singleProject'</a> script to create project-specific analytics, <a href="http://thinklab.com/discussion/measuring-user-contribution-and-content-creation/200#2" class="citation thread-citation" data-key="10.15363/thinklab.d200">as we did for rephetio</a>. </p>
+<p>We also created a <a href="https://github.com/antoine-lizee/thinklytics/blob/master/R-Code/03-singleProject.R">'singleProject'</a> script to create project-specific analytics, <a href="https://think-lab.github.io/d/200#2" class="citation thread-citation" data-key="10.15363/thinklab.d200">as we did for rephetio</a>. </p>
 
 		<div style="margin-left:30px;">
 
@@ -953,7 +953,7 @@ with open('export.json', 'wt') as write_file:
 
     <h1>Error retrieving the JSON export</h1>
 
-<p>I'm configuring <a href="https://github.com/dhimmel/thinklytics" title="Thinklab project exports and analytics on GitHub"><code>dhimmel/thinklytics</code></a> to use continuous integration with a set environment managed by docker <span class="citation">[<a href="https://doi.org/10.1101/056473" class="citation" data-key="10.1101/056473">1</a>]</span>. Unfortunately, I've been getting an error exporting the rephetio project to JSON. The error returns an HTML page rather than JSON for <code>https://thinklab.com/p/rephetio/export.json</code>. Highlights of the HTML response include (<a href="https://travis-ci.org/dhimmel/thinklytics/builds/150759922#L275">see full log</a>):</p>
+<p>I'm configuring <a href="https://github.com/dhimmel/thinklytics" title="Thinklab project exports and analytics on GitHub"><code>dhimmel/thinklytics</code></a> to use continuous integration with a set environment managed by docker <span class="citation">[<a href="https://doi.org/10.1101/056473" class="citation" data-key="10.1101/056473">1</a>]</span>. Unfortunately, I've been getting an error exporting the rephetio project to JSON. The error returns an HTML page rather than JSON for <code>https://think-lab.github.io/p/rephetio/export.json</code>. Highlights of the HTML response include (<a href="https://travis-ci.org/dhimmel/thinklytics/builds/150759922#L275">see full log</a>):</p>
 
 <ul><li>Host Error</li><li>What happened? The web server reported a bad gateway error.</li><li>What can I do? Please try again in a few minutes.</li></ul>
 

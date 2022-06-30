@@ -192,7 +192,7 @@
       <ul class="comment-notes">
 				
 <li id="note-59" class="inline-note toggle-parent" data-note-id="59">
-	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: <span><a href="/u/vsmalladi" class="username">@vsmalladi</a>, you may consider switching the associated publication to the Uberon paper <span class="citation">[<a href="https://doi.org/10.1186/gb-2012-13-1-r5" class="citation" data-key="10.1186/gb-2012-13-1-r5">1</a>]</span> and move the ENCODE use-case paper <span class="citation">[<a href="https://doi.org/10.1093/database/bav010" class="citation" data-key="10.1093/database/bav010">2</a>]</span> as an <a href="http://thinklab.com/help/writing-in-markdown">inline citation</a>.</span>
+	<p><a href="/u/dhimmel">Daniel Himmelstein</a>: <span><a href="/u/vsmalladi" class="username">@vsmalladi</a>, you may consider switching the associated publication to the Uberon paper <span class="citation">[<a href="https://doi.org/10.1186/gb-2012-13-1-r5" class="citation" data-key="10.1186/gb-2012-13-1-r5">1</a>]</span> and move the ENCODE use-case paper <span class="citation">[<a href="https://doi.org/10.1093/database/bav010" class="citation" data-key="10.1093/database/bav010">2</a>]</span> as an <a href="https://think-lab.github.io/help/writing-in-markdown">inline citation</a>.</span>
 		
 	</p>
 	
@@ -379,7 +379,7 @@
 
     
 
-    <p>I <a href="http://thinklab.com/p/rephetio/plan/compare/cf0af88368d84640e6face839932af64a0963f5f/438864fde53c372dfa654dd59674f4bfc6cf249c">updated the proposal</a> to replace BTO with Uberon.</p>
+    <p>I <a href="https://think-lab.github.io/p/rephetio/plan/compare/cf0af88368d84640e6face839932af64a0963f5f/438864fde53c372dfa654dd59674f4bfc6cf249c">updated the proposal</a> to replace BTO with Uberon.</p>
 
 <p>As for the BTO mapping, I didn't see <a href="https://github.com/obophenotype/uberon/tree/master/bridge">any bridges on the GitHub</a> and the <a href="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-bto.owl">BTO bridge download</a> produces an error. Am I looking in the wrong place or are the BTO mappings not populated yet?</p>
 
@@ -468,7 +468,7 @@
 
     
 
-    <p>Hi <a href="/u/vsmalladi" class="username">@vsmalladi</a>, we have proceeded with Uberon and incorporated the MeSH cross-references. Specifically, we <a href="http://thinklab.com/d/67#229">identified</a> disease–anatomy localization using literature mining.</p>
+    <p>Hi <a href="/u/vsmalladi" class="username">@vsmalladi</a>, we have proceeded with Uberon and incorporated the MeSH cross-references. Specifically, we <a href="https://think-lab.github.io/d/67#229">identified</a> disease–anatomy localization using literature mining.</p>
 
 <p>We would like a way to restrict terms to structures in humans. Does anyone know how to implement a species filter?</p>
 
@@ -921,7 +921,7 @@ treat-xrefs-as-reverse-genus-differentia: HsapDv part_of NCBITaxon:9606</code></
 
     <blockquote><p>formally speaking 'anatomical structure' would exclude non-material entities such as lumens, 2D boundaries</p></blockquote>
 
-<p>Nodes that don't have expression may still be connected via a disease localization edge. These edges are currently <a href="http://thinklab.com/discussion/mining-knowledge-from-medline-articles-and-their-indexed-mesh-terms/67#229">created via MEDLINE cooccurrence</a> and can connect any uberon or CL terms that map to MeSH.</p>
+<p>Nodes that don't have expression may still be connected via a disease localization edge. These edges are currently <a href="https://think-lab.github.io/d/67#229">created via MEDLINE cooccurrence</a> and can connect any uberon or CL terms that map to MeSH.</p>
 
 <p>I am leaning towards calling the metanode <em>Anatomy</em>. We would end up with metapaths (path types) like: <strong>C</strong>ompound–<strong>t</strong>arget–<strong>G</strong>ene–<strong>e</strong>xpression–<strong>A</strong>natomy–<strong>l</strong>ocalization–<strong>D</strong>isease (abbreviated as <em>CtGeAlD</em>). This metapath refers to when a compound targets a gene that is expressed in an anatomy/tissue/cell-type where the disease is localized. Does that seem like a misuse of the word Anatomy?</p>
 
